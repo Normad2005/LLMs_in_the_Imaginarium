@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-08-08T18:38:31.109582",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"Can you tell me the general weather in Los Angeles on December 25th?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Los Angeles",
+      "date": "YYYY-12-25"
+    },
+    "observation": "Error: ❌ get_weather only accepts date in YYYY-MM-DD format.",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-08T18:38:40.436103",
+    "episode_id": 2,
+    "trial_id": 2,
+    "query": "\"Can you provide the weather forecast for Sydney on January 1st?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Sydney",
+      "date": "2023-01-01"
+    },
+    "observation": "Error: ❌ get_weather does not support 'Sydney'. Try Taipei, London, or Tokyo.",
+    "success": false
+  }
+]

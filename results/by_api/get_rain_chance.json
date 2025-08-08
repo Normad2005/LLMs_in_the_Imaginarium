@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-08-08T18:38:27.142905",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What's the chance of rain in Seattle on April 15th?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "Seattle",
+      "date": "2022-04-15"
+    },
+    "observation": "The chance of rain in Seattle on 2022-04-15 is 40%.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-08T18:38:35.727731",
+    "episode_id": 2,
+    "trial_id": 1,
+    "query": "\"Is it likely to rain in London on July 7th?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "London",
+      "date": "2022-07-07"
+    },
+    "observation": "The chance of rain in London on 2022-07-07 is 40%.",
+    "success": true
+  }
+]

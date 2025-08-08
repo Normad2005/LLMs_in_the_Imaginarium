@@ -1,0 +1,80 @@
+[
+  {
+    "timestamp": "2025-08-08T18:38:22.395711",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"What will be the temperature in New York on October 31st?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York",
+      "date": "2022-10-31"
+    },
+    "observation": "The temperature in New York on 2022-10-31 will range between 24°C and 30°C.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-08T18:38:27.142905",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What's the chance of rain in Seattle on April 15th?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "Seattle",
+      "date": "2022-04-15"
+    },
+    "observation": "The chance of rain in Seattle on 2022-04-15 is 40%.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-08T18:38:31.109582",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"Can you tell me the general weather in Los Angeles on December 25th?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Los Angeles",
+      "date": "YYYY-12-25"
+    },
+    "observation": "Error: ❌ get_weather only accepts date in YYYY-MM-DD format.",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-08T18:38:35.727731",
+    "episode_id": 2,
+    "trial_id": 1,
+    "query": "\"Is it likely to rain in London on July 7th?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "London",
+      "date": "2022-07-07"
+    },
+    "observation": "The chance of rain in London on 2022-07-07 is 40%.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-08T18:38:40.436103",
+    "episode_id": 2,
+    "trial_id": 2,
+    "query": "\"Can you provide the weather forecast for Sydney on January 1st?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Sydney",
+      "date": "2023-01-01"
+    },
+    "observation": "Error: ❌ get_weather does not support 'Sydney'. Try Taipei, London, or Tokyo.",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-08T18:38:45.301935",
+    "episode_id": 2,
+    "trial_id": 3,
+    "query": "\"What's the expected temperature range in Tokyo on May 5th?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo",
+      "date": "2022-05-05"
+    },
+    "observation": "The temperature in Tokyo on 2022-05-05 will range between 24°C and 30°C.",
+    "success": true
+  }
+]
