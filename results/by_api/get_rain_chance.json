@@ -1,28 +1,67 @@
 [
   {
-    "timestamp": "2025-08-08T18:38:27.142905",
+    "timestamp": "2025-08-09T17:02:33.324217",
     "episode_id": 1,
     "trial_id": 2,
-    "query": "\"What's the chance of rain in Seattle on April 15th?\"",
+    "query": "\"Is it going to rain in Seattle on August 16, 2025?\"",
     "api": "get_rain_chance",
     "args": {
       "location": "Seattle",
-      "date": "2022-04-15"
+      "date": "2025-08-16"
     },
-    "observation": "The chance of rain in Seattle on 2022-04-15 is 40%.",
+    "observation": "The chance of rain in Seattle on 2025-08-16 is 40%.",
     "success": true
   },
   {
-    "timestamp": "2025-08-08T18:38:35.727731",
-    "episode_id": 2,
-    "trial_id": 1,
-    "query": "\"Is it likely to rain in London on July 7th?\"",
+    "timestamp": "2025-08-09T17:02:40.882393",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What is the probability of rain in London on March 1, 2025?\"",
     "api": "get_rain_chance",
     "args": {
       "location": "London",
-      "date": "2022-07-07"
+      "date": "2025-03-01"
     },
-    "observation": "The chance of rain in London on 2022-07-07 is 40%.",
+    "observation": "The chance of rain in London on 2025-03-01 is 40%.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-09T17:02:56.976107",
+    "episode_id": 2,
+    "trial_id": 3,
+    "query": "\"What's the chance of rain in Paris on May 14, 2025?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "Paris",
+      "date": "2025-05-14"
+    },
+    "observation": "The chance of rain in Paris on 2025-05-14 is 40%.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-09T17:03:01.090716",
+    "episode_id": 2,
+    "trial_id": 4,
+    "query": "\"Will it be raining in New York on December 25, 2025?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "New York",
+      "date": "2025-12-25"
+    },
+    "observation": "Error: ❌ get_rain_chance does not accept multi-word cities (e.g., 'New York').",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-09T17:03:04.514531",
+    "episode_id": 2,
+    "trial_id": 5,
+    "query": "\"What is the likelihood of rainfall in London on June 5, 2025?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "London",
+      "date": "2025-06-05"
+    },
+    "observation": "The chance of rain in London on 2025-06-05 is 40%.",
     "success": true
   }
 ]

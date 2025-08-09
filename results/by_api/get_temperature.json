@@ -1,28 +1,67 @@
 [
   {
-    "timestamp": "2025-08-08T18:38:22.395711",
+    "timestamp": "2025-08-09T17:02:27.248222",
     "episode_id": 1,
     "trial_id": 1,
-    "query": "\"What will be the temperature in New York on October 31st?\"",
+    "query": "\"What will be the temperature in New York on July 4th, 2025?\"",
     "api": "get_temperature",
     "args": {
       "location": "New York",
-      "date": "2022-10-31"
+      "date": "2025-07-04"
     },
-    "observation": "The temperature in New York on 2022-10-31 will range between 24°C and 30°C.",
+    "observation": "The temperature in New York on 2025-07-04 will range between 24°C and 30°C.",
     "success": true
   },
   {
-    "timestamp": "2025-08-08T18:38:45.301935",
+    "timestamp": "2025-08-09T17:02:48.464246",
     "episode_id": 2,
-    "trial_id": 3,
-    "query": "\"What's the expected temperature range in Tokyo on May 5th?\"",
+    "trial_id": 1,
+    "query": "\"Can you tell me the temperature range in Tokyo on October 15, 2025?\"",
     "api": "get_temperature",
     "args": {
       "location": "Tokyo",
-      "date": "2022-05-05"
+      "date": "2025-10-15"
     },
-    "observation": "The temperature in Tokyo on 2022-05-05 will range between 24°C and 30°C.",
+    "observation": "The temperature in Tokyo on 2025-10-15 will range between 24°C and 30°C.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-09T17:02:53.045626",
+    "episode_id": 2,
+    "trial_id": 2,
+    "query": "\"How hot is it going to be in Dubai on July 4, 2025?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Dubai",
+      "date": "2025-07-04"
+    },
+    "observation": "The temperature in Dubai on 2025-07-04 will range between 24°C and 30°C.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-09T17:03:12.138437",
+    "episode_id": 3,
+    "trial_id": 2,
+    "query": "\"What's the temperature range for Tokyo on October 10, 2025?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo",
+      "date": "2025-10-10"
+    },
+    "observation": "The temperature in Tokyo on 2025-10-10 will range between 24°C and 30°C.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-08-09T17:03:14.975381",
+    "episode_id": 3,
+    "trial_id": 3,
+    "query": "\"What will be the temperature in Los Angeles on July 4, 2025?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Los Angeles",
+      "date": "2025-07-04"
+    },
+    "observation": "The temperature in Los Angeles on 2025-07-04 will range between 24°C and 30°C.",
     "success": true
   }
 ]

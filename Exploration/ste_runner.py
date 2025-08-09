@@ -1,15 +1,21 @@
 # ste_runner.py
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 from openai import OpenAI
 import random
 import json
-import os
 from datetime import datetime
 from collections import defaultdict
 from mock_api import get_weather, get_rain_chance, get_temperature
 
+
+
+
 # 初始化 OpenAI API
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 # 模擬 API spec
 api_specs = {
@@ -46,7 +52,7 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
         long_memory_snippets += f"- Q: {m['query']}\n  → API: {m['api']} → Success: {m['success']}\n"
     # 讓模型想像 user query
     prompt = f"""
-You are an assistant with access to the following APIs:
+It is 2025. You are an assistant with access to the following APIs:
 {api_description_text}
 
 Now, imagine a realistic user query that could be answered by calling ONE of the APIs.
@@ -161,8 +167,8 @@ def save_trials(trials):
 short_term_memory = []
 long_term_memory = []
 
-EPISODES = 2
-TRIALS_PER_EPISODE = 3
+EPISODES = 3
+TRIALS_PER_EPISODE = 5
 
 for episode_id in range(1, EPISODES + 1):
     print(f"\n=== 🌟 Episode {episode_id} ===")

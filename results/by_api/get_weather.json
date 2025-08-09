@@ -1,28 +1,67 @@
 [
   {
-    "timestamp": "2025-08-08T18:38:31.109582",
+    "timestamp": "2025-08-09T17:02:37.244143",
     "episode_id": 1,
     "trial_id": 3,
-    "query": "\"Can you tell me the general weather in Los Angeles on December 25th?\"",
+    "query": "\"What's the general weather going to be like in Los Angeles on December 25, 2025?\"",
     "api": "get_weather",
     "args": {
       "location": "Los Angeles",
-      "date": "YYYY-12-25"
+      "date": "2025-12-25"
     },
-    "observation": "Error: ❌ get_weather only accepts date in YYYY-MM-DD format.",
+    "observation": "Error: ❌ get_weather does not support 'Los Angeles'. Try Taipei, London, or Tokyo.",
     "success": false
   },
   {
-    "timestamp": "2025-08-08T18:38:40.436103",
-    "episode_id": 2,
-    "trial_id": 2,
-    "query": "\"Can you provide the weather forecast for Sydney on January 1st?\"",
+    "timestamp": "2025-08-09T17:02:44.893108",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"What is the weather forecast for Sydney on September 10, 2025?\"",
     "api": "get_weather",
     "args": {
       "location": "Sydney",
-      "date": "2023-01-01"
+      "date": "2025-09-10"
     },
     "observation": "Error: ❌ get_weather does not support 'Sydney'. Try Taipei, London, or Tokyo.",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-09T17:03:08.946768",
+    "episode_id": 3,
+    "trial_id": 1,
+    "query": "\"Could you provide me with the general weather info for Sydney on March 12, 2025?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Sydney",
+      "date": "2025-03-12"
+    },
+    "observation": "Error: ❌ get_weather does not support 'Sydney'. Try Taipei, London, or Tokyo.",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-09T17:03:18.242848",
+    "episode_id": 3,
+    "trial_id": 4,
+    "query": "\"What's the general weather in Paris on May 15, 2025?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Paris",
+      "date": "2025-05-15"
+    },
+    "observation": "Error: ❌ get_weather does not support 'Paris'. Try Taipei, London, or Tokyo.",
+    "success": false
+  },
+  {
+    "timestamp": "2025-08-09T17:03:21.377979",
+    "episode_id": 3,
+    "trial_id": 5,
+    "query": "\"What is the forecasted weather for New York City on December 25, 2025?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "New York City",
+      "date": "2025-12-25"
+    },
+    "observation": "Error: ❌ get_weather does not support 'New York City'. Try Taipei, London, or Tokyo.",
     "success": false
   }
 ]
