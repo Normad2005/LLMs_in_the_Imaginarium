@@ -1,37 +1,35 @@
-# ste_runner.py
+# === ste_runner.py ===
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
-from openai import OpenAI
-import random
 import json
+import re
 from datetime import datetime
-from collections import defaultdict
-from mock_api import get_weather, get_rain_chance, get_temperature
+from openai import OpenAI
 
+# 讓 Exploration/ste_runner.py 找得到上層的 real_api.py
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from real_api import get_weather, get_rain_chance, get_temperature  # noqa: E402
 
+# ====== 直接寫 API Key ======
+OPENAI_API_KEY = "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"  # ← 換成你的真實金鑰
+client = OpenAI(api_key=OPENAI_API_KEY)
 
+ALLOWED_APIS = {"get_weather", "get_rain_chance", "get_temperature"}
 
-# 初始化 OpenAI API
-client = OpenAI(api_key="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")
-
-# 模擬 API spec
+# ====== API 說明（會放進 prompt）======
 api_specs = {
-    "get_weather": {"description": "Returns general weather info", "params": ["location", "date"]},
-    "get_rain_chance": {"description": "Returns the chance of rain", "params": ["location", "date"]},
-    "get_temperature": {"description": "Returns the temperature range", "params": ["location", "date"]},
+    "get_weather": {"description": "Get general weather condition (current).", "params": ["location", "date(optional)"]},
+    "get_rain_chance": {"description": "Estimate rain chance (current/now).", "params": ["location", "date(optional)"]},
+    "get_temperature": {"description": "Get current temperature.", "params": ["location", "date(optional)"]},
 }
+api_description_text = "\n".join(
+    [f"- {n}: {s['description']}, params: {', '.join(s['params'])}" for n, s in api_specs.items()]
+)
 
-# 顯示給模型的 API 說明
-api_description_text = "\n".join([
-    f"- {name}: {spec['description']}, params: {', '.join(spec['params'])}"
-    for name, spec in api_specs.items()
-])
-
-# 模擬 API 呼叫
+# ====== 呼叫 real_api ======
 def call_api(api_name, args):
+    if "date" in args and (not isinstance(args["date"], str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", args["date"])):
+        args.pop("date", None)
     try:
         if api_name == "get_weather":
             return get_weather(**args)
@@ -44,92 +42,94 @@ def call_api(api_name, args):
     except Exception as e:
         return f"Error: {e}"
 
-# 執行一個 trial
+# ====== 單次 trial ======
 def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
-    # 取過去所有成功或失敗的 trial 概要（long-term memory）
+    memory_snippets = ""
+    for m in short_term_memory[-3:]:
+        memory_snippets += f"- Q: {m['query']}\n  → Called: {m['api']}({m['args']})\n  → Success: {m['success']}\n"
+
     long_memory_snippets = ""
-    for m in long_term_memory[-10:]:  # 最多顯示 10 筆
+    for m in long_term_memory[-5:]:
         long_memory_snippets += f"- Q: {m['query']}\n  → API: {m['api']} → Success: {m['success']}\n"
-    # 讓模型想像 user query
+
     prompt = f"""
-It is 2025. You are an assistant with access to the following APIs:
+You are an assistant with access to the following APIs:
 {api_description_text}
 
-Now, imagine a realistic user query that could be answered by calling ONE of the APIs.
-Avoid repeating previous queries. Here are some past examples:
-{[m['query'] for m in long_term_memory[-5:]]}
+Only use these APIs: {', '.join(sorted(ALLOWED_APIS))}.
+Dates, if provided, should be ISO YYYY-MM-DD; otherwise omit 'date'.
+
+Previous episodes (summary):
+{long_memory_snippets if long_memory_snippets else '(no long-term memory yet)'}
+
+Recent trials in this episode:
+{memory_snippets if memory_snippets else '(no recent trials yet)'}
+
+Now, imagine a NEW user query that can be answered by a SINGLE call to one API.
+Make it natural and not too similar to the above.
 
 User Query:
 """.strip()
 
-    response = client.chat.completions.create(
+    resp = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.7
+        temperature=0.7,
     )
-    user_query = response.choices[0].message.content.strip()
-    print(f"\n🤔 Imagined Query: {user_query}")
+    user_query = resp.choices[0].message.content.strip()
 
-    # 讓模型選擇 API 與參數
     action_prompt = f"""
 User query: "{user_query}"
 
-Now decide:
-1) which API to call (from: {list(api_specs.keys())})
-2) provide values for 'location' and 'date' (e.g., YYYY-MM-DD)
+Pick ONE API and provide arguments in JSON. Use ONLY: {', '.join(sorted(ALLOWED_APIS))}.
+If date is not needed, omit it.
 
-Use the following JSON format:
 {{
-  "api_name": "...",
-  "args": {{
-    "location": "...",
-    "date": "YYYY-MM-DD"
-  }}
+  "api_name": "get_weather | get_rain_chance | get_temperature",
+  "args": {{"location": "City name" [,"date": "YYYY-MM-DD"]}}
 }}
 """.strip()
 
-    action_response = client.chat.completions.create(
+    action_resp = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": action_prompt}],
-        temperature=0.7
+        temperature=0.4,
     )
 
     try:
-        action_json = json.loads(action_response.choices[0].message.content)
+        action_json = json.loads(action_resp.choices[0].message.content)
         api_name = action_json["api_name"]
-        args = action_json["args"]
+        args = action_json.get("args", {})
+        if api_name not in ALLOWED_APIS:
+            raise ValueError(f"Disallowed API: {api_name}")
         observation = call_api(api_name, args)
     except Exception as e:
-        print("❌ Failed to parse or call API:", e)
-        api_name = "invalid"
-        args = {}
+        api_name, args = "invalid", {}
         observation = f"Error: {e}"
 
-    print(f"🛠️ API called: {api_name} with args {args}")
-    print(f"📡 Observation: {observation}")
-
-    # 模型自我反思
     reflection_prompt = f"""
-Here is the user query: "{user_query}"
-You chose to call: {api_name}({args})
-The API returned: "{observation}"
+You asked: "{user_query}"
+You called: {api_name} with args {args}
+API returned: "{observation}"
 
-Do you think this API call was helpful and relevant to answer the query?
-Respond only "Yes" or "No".
+Was this API call appropriate and helpful? Reply only "Yes" or "No".
 """.strip()
 
-    reflection_response = client.chat.completions.create(
+    refl = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": reflection_prompt}],
-        temperature=0
+        temperature=0,
     )
+    is_success = (refl.choices[0].message.content.strip().lower().startswith("yes")
+                  and not str(observation).startswith("Error"))
+    
+    print("Q:", user_query)
+    print("Action:", api_name, args)
+    print("Observation:", observation)
+    print("Success:", is_success)
+    print("-" * 60)
 
-    reflection_text = reflection_response.choices[0].message.content.strip().lower()
-    is_success = reflection_text.startswith("yes") and not observation.startswith("Error")
 
-    print(f"🪞 Self-reflection: {'✅ Successful' if is_success else '❌ Unsuccessful'}")
-
-    # 記錄 trial
     trial = {
         "timestamp": datetime.now().isoformat(),
         "episode_id": episode_id,
@@ -138,43 +138,28 @@ Respond only "Yes" or "No".
         "api": api_name,
         "args": args,
         "observation": observation,
-        "success": is_success
+        "success": is_success,
     }
-
     short_term_memory.append(trial)
     long_term_memory.append(trial)
 
-# 儲存結果到 json
+# ====== 儲存 ======
 def save_trials(trials):
     os.makedirs("results", exist_ok=True)
     with open("results/ste_trials.json", "w", encoding="utf-8") as f:
         json.dump(trials, f, indent=2, ensure_ascii=False)
+    print("✅ Trials saved to results/ste_trials.json")
 
-    # 依 API 分類
-    per_api = defaultdict(list)
-    for t in trials:
-        per_api[t["api"]].append(t)
+# ====== 入口 ======
+if __name__ == "__main__":
+    short_term_memory, long_term_memory = [], []
+    EPISODES, TRIALS_PER_EPISODE = 1, 5
 
-    os.makedirs("results/by_api", exist_ok=True)
-    for api, trials in per_api.items():
-        path = f"results/by_api/{api}.json"
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(trials, f, indent=2, ensure_ascii=False)
+    for eid in range(1, EPISODES + 1):
+        print(f"\n=== Episode {eid} ===")
+        short_term_memory.clear()
+        for tid in range(1, TRIALS_PER_EPISODE + 1):
+            print(f"\n--- Trial {tid} ---")
+            run_trial(short_term_memory, long_term_memory, eid, tid)
 
-    print("✅ Trials saved to results/")
-
-# ==== 主程式執行 ====
-short_term_memory = []
-long_term_memory = []
-
-EPISODES = 3
-TRIALS_PER_EPISODE = 5
-
-for episode_id in range(1, EPISODES + 1):
-    print(f"\n=== 🌟 Episode {episode_id} ===")
-    short_term_memory.clear()
-    for trial_id in range(1, TRIALS_PER_EPISODE + 1):
-        print(f"\n--- Trial {trial_id} ---")
-        run_trial(short_term_memory, long_term_memory, episode_id, trial_id)
-
-save_trials(long_term_memory)
+    save_trials(long_term_memory)

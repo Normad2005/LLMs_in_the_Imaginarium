@@ -1,197 +1,62 @@
 [
   {
-    "timestamp": "2025-08-09T17:02:27.248222",
+    "timestamp": "2025-08-09T17:42:32.222817",
     "episode_id": 1,
     "trial_id": 1,
-    "query": "\"What will be the temperature in New York on July 4th, 2025?\"",
+    "query": "\"Could you tell me what the current temperature is in New York City?\"",
     "api": "get_temperature",
     "args": {
-      "location": "New York",
-      "date": "2025-07-04"
+      "location": "New York City"
     },
-    "observation": "The temperature in New York on 2025-07-04 will range between 24°C and 30°C.",
+    "observation": "The temperature in New York City now is 15.9°C.",
     "success": true
   },
   {
-    "timestamp": "2025-08-09T17:02:33.324217",
+    "timestamp": "2025-08-09T17:42:36.720913",
     "episode_id": 1,
     "trial_id": 2,
-    "query": "\"Is it going to rain in Seattle on August 16, 2025?\"",
-    "api": "get_rain_chance",
+    "query": "\"What's the current weather condition in Los Angeles?\"",
+    "api": "get_weather",
     "args": {
-      "location": "Seattle",
-      "date": "2025-08-16"
+      "location": "Los Angeles"
     },
-    "observation": "The chance of rain in Seattle on 2025-08-16 is 40%.",
+    "observation": "The weather in Los Angeles now is clear sky.",
     "success": true
   },
   {
-    "timestamp": "2025-08-09T17:02:37.244143",
+    "timestamp": "2025-08-09T17:42:41.578265",
     "episode_id": 1,
     "trial_id": 3,
-    "query": "\"What's the general weather going to be like in Los Angeles on December 25, 2025?\"",
-    "api": "get_weather",
+    "query": "\"Can you estimate the chance of rain in Seattle today?\"",
+    "api": "get_rain_chance",
     "args": {
-      "location": "Los Angeles",
-      "date": "2025-12-25"
+      "location": "Seattle"
     },
-    "observation": "Error: ❌ get_weather does not support 'Los Angeles'. Try Taipei, London, or Tokyo.",
-    "success": false
+    "observation": "The chance of rain in Seattle right now is estimated based on last hour rain volume: 0.0 mm.",
+    "success": true
   },
   {
-    "timestamp": "2025-08-09T17:02:40.882393",
+    "timestamp": "2025-08-09T17:42:45.456934",
     "episode_id": 1,
     "trial_id": 4,
-    "query": "\"What is the probability of rain in London on March 1, 2025?\"",
+    "query": "\"What is the chance of rain in Chicago right now?\"",
     "api": "get_rain_chance",
     "args": {
-      "location": "London",
-      "date": "2025-03-01"
+      "location": "Chicago"
     },
-    "observation": "The chance of rain in London on 2025-03-01 is 40%.",
+    "observation": "The chance of rain in Chicago right now is estimated based on last hour rain volume: 0.0 mm.",
     "success": true
   },
   {
-    "timestamp": "2025-08-09T17:02:44.893108",
+    "timestamp": "2025-08-09T17:42:50.185494",
     "episode_id": 1,
     "trial_id": 5,
-    "query": "\"What is the weather forecast for Sydney on September 10, 2025?\"",
-    "api": "get_weather",
-    "args": {
-      "location": "Sydney",
-      "date": "2025-09-10"
-    },
-    "observation": "Error: ❌ get_weather does not support 'Sydney'. Try Taipei, London, or Tokyo.",
-    "success": false
-  },
-  {
-    "timestamp": "2025-08-09T17:02:48.464246",
-    "episode_id": 2,
-    "trial_id": 1,
-    "query": "\"Can you tell me the temperature range in Tokyo on October 15, 2025?\"",
+    "query": "\"Can you tell me the current temperature in Miami?\"",
     "api": "get_temperature",
     "args": {
-      "location": "Tokyo",
-      "date": "2025-10-15"
+      "location": "Miami"
     },
-    "observation": "The temperature in Tokyo on 2025-10-15 will range between 24°C and 30°C.",
+    "observation": "The temperature in Miami now is 24.8°C.",
     "success": true
-  },
-  {
-    "timestamp": "2025-08-09T17:02:53.045626",
-    "episode_id": 2,
-    "trial_id": 2,
-    "query": "\"How hot is it going to be in Dubai on July 4, 2025?\"",
-    "api": "get_temperature",
-    "args": {
-      "location": "Dubai",
-      "date": "2025-07-04"
-    },
-    "observation": "The temperature in Dubai on 2025-07-04 will range between 24°C and 30°C.",
-    "success": true
-  },
-  {
-    "timestamp": "2025-08-09T17:02:56.976107",
-    "episode_id": 2,
-    "trial_id": 3,
-    "query": "\"What's the chance of rain in Paris on May 14, 2025?\"",
-    "api": "get_rain_chance",
-    "args": {
-      "location": "Paris",
-      "date": "2025-05-14"
-    },
-    "observation": "The chance of rain in Paris on 2025-05-14 is 40%.",
-    "success": true
-  },
-  {
-    "timestamp": "2025-08-09T17:03:01.090716",
-    "episode_id": 2,
-    "trial_id": 4,
-    "query": "\"Will it be raining in New York on December 25, 2025?\"",
-    "api": "get_rain_chance",
-    "args": {
-      "location": "New York",
-      "date": "2025-12-25"
-    },
-    "observation": "Error: ❌ get_rain_chance does not accept multi-word cities (e.g., 'New York').",
-    "success": false
-  },
-  {
-    "timestamp": "2025-08-09T17:03:04.514531",
-    "episode_id": 2,
-    "trial_id": 5,
-    "query": "\"What is the likelihood of rainfall in London on June 5, 2025?\"",
-    "api": "get_rain_chance",
-    "args": {
-      "location": "London",
-      "date": "2025-06-05"
-    },
-    "observation": "The chance of rain in London on 2025-06-05 is 40%.",
-    "success": true
-  },
-  {
-    "timestamp": "2025-08-09T17:03:08.946768",
-    "episode_id": 3,
-    "trial_id": 1,
-    "query": "\"Could you provide me with the general weather info for Sydney on March 12, 2025?\"",
-    "api": "get_weather",
-    "args": {
-      "location": "Sydney",
-      "date": "2025-03-12"
-    },
-    "observation": "Error: ❌ get_weather does not support 'Sydney'. Try Taipei, London, or Tokyo.",
-    "success": false
-  },
-  {
-    "timestamp": "2025-08-09T17:03:12.138437",
-    "episode_id": 3,
-    "trial_id": 2,
-    "query": "\"What's the temperature range for Tokyo on October 10, 2025?\"",
-    "api": "get_temperature",
-    "args": {
-      "location": "Tokyo",
-      "date": "2025-10-10"
-    },
-    "observation": "The temperature in Tokyo on 2025-10-10 will range between 24°C and 30°C.",
-    "success": true
-  },
-  {
-    "timestamp": "2025-08-09T17:03:14.975381",
-    "episode_id": 3,
-    "trial_id": 3,
-    "query": "\"What will be the temperature in Los Angeles on July 4, 2025?\"",
-    "api": "get_temperature",
-    "args": {
-      "location": "Los Angeles",
-      "date": "2025-07-04"
-    },
-    "observation": "The temperature in Los Angeles on 2025-07-04 will range between 24°C and 30°C.",
-    "success": true
-  },
-  {
-    "timestamp": "2025-08-09T17:03:18.242848",
-    "episode_id": 3,
-    "trial_id": 4,
-    "query": "\"What's the general weather in Paris on May 15, 2025?\"",
-    "api": "get_weather",
-    "args": {
-      "location": "Paris",
-      "date": "2025-05-15"
-    },
-    "observation": "Error: ❌ get_weather does not support 'Paris'. Try Taipei, London, or Tokyo.",
-    "success": false
-  },
-  {
-    "timestamp": "2025-08-09T17:03:21.377979",
-    "episode_id": 3,
-    "trial_id": 5,
-    "query": "\"What is the forecasted weather for New York City on December 25, 2025?\"",
-    "api": "get_weather",
-    "args": {
-      "location": "New York City",
-      "date": "2025-12-25"
-    },
-    "observation": "Error: ❌ get_weather does not support 'New York City'. Try Taipei, London, or Tokyo.",
-    "success": false
   }
 ]
