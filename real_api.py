@@ -1,3 +1,5 @@
+#Open Weather Map api connected
+
 import requests
 
 API_KEY = "01f863cd8a24c54dfe2042949f4d20e2"
