@@ -193,5 +193,135 @@
     },
     "observation": "The weather in Sydney now is moderate rain.",
     "success": true
+  },
+  {
+    "run_id": "20250810-192612",
+    "timestamp": "2025-08-10T19:26:18.542147",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"What does the Wikipedia say about the history of the Eiffel Tower?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "History of the Eiffel Tower"
+    },
+    "observation": "No Wikipedia page found for 'History of the Eiffel Tower'.",
+    "success": false
+  },
+  {
+    "run_id": "20250810-192612",
+    "timestamp": "2025-08-10T19:26:22.215770",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What's the current temperature in New York City?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York City"
+    },
+    "observation": "The temperature in New York City now is 16.8°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-192612",
+    "timestamp": "2025-08-10T19:26:26.845813",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What's the current weather condition in Los Angeles?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Los Angeles"
+    },
+    "observation": "The weather in Los Angeles now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-192612",
+    "timestamp": "2025-08-10T19:26:30.374369",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"How much rain has fallen in London in the last hour?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The rain volume in London over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-192612",
+    "timestamp": "2025-08-10T19:26:36.226094",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"What does the Wikipedia say about the Mona Lisa?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Mona Lisa"
+    },
+    "observation": "Wikipedia summary for 'Mona Lisa': The Mona Lisa is a half-length portrait painting by the Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, [and] the most parodied work of art in the world.\" The painting's novel qualities include the subject's enigmatic expression, monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-193642",
+    "timestamp": "2025-08-10T19:36:47.520157",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the current temperature in New York?",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The temperature in New York now is 19.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-193642",
+    "timestamp": "2025-08-10T19:36:52.031534",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Can you tell me about the general weather condition in Los Angeles today?",
+    "api": "get_weather",
+    "args": {
+      "location": "Los Angeles"
+    },
+    "observation": "The weather in Los Angeles now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-193642",
+    "timestamp": "2025-08-10T19:36:55.451326",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "How much rain has fallen in London in the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The rain volume in London over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-193642",
+    "timestamp": "2025-08-10T19:37:01.362675",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "Can you provide a brief summary of the Eiffel Tower from Wikipedia?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-193642",
+    "timestamp": "2025-08-10T19:37:05.026074",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What's the current temperature in Tokyo?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 28.0°C.",
+    "success": true
   }
 ]

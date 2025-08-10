@@ -5,20 +5,19 @@ import json
 import re
 from datetime import datetime
 from openai import OpenAI
-from datetime import datetime
 
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
 
 
 # 讓 Exploration/ste_runner.py 找得到上層的 real_api.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from real_api import get_weather, get_rain_volume, get_temperature
+from real_api import get_weather, get_rain_volume, get_temperature, get_wikipedia_summary
 
 # ====== 直接寫 API Key ======
 OPENAI_API_KEY = "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"  # ← 換成你的真實金鑰
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature"}
+ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature", "get_wikipedia_summary"}
 
 # ====== API 說明（會放進 prompt）======
 api_specs = {
@@ -33,6 +32,10 @@ api_specs = {
     "get_temperature": {
         "description": "Get current temperature.",
         "params": ["location", "date(optional)"]
+    },
+    "get_wikipedia_summary": {
+        "description": "Get the first few sentences of a Wikipedia article for a given query.",
+        "params": ["query", "sentences(optional)"]
     },
 }
 api_description_text = "\n".join(
@@ -50,6 +53,8 @@ def call_api(api_name, args):
             return get_rain_volume(**args)
         elif api_name == "get_temperature":
             return get_temperature(**args)
+        elif api_name == "get_wikipedia_summary":
+            return get_wikipedia_summary(**args)
         else:
             return f"Error: Unknown API '{api_name}'"
     except Exception as e:
