@@ -323,5 +323,465 @@
     },
     "observation": "The temperature in Tokyo now is 28.0°C.",
     "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:06.250977",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"Can you tell me the current weather condition in Tokyo?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The weather in Tokyo now is heavy intensity rain.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:10.182500",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What is the current temperature in New York?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The temperature in New York now is 19.6°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:15.224076",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What was the volume of rainfall in London in the last hour?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The rain volume in London over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:22.340189",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"Can you give me a brief summary of the Eiffel Tower from Wikipedia?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:27.217739",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"Can you provide a forecast for the weather in Paris for the next 5 days?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is clear sky.",
+    "success": false
+  },
+  {
+    "run_id": "20250810-203302",
+    "timestamp": "2025-08-10T20:33:07.361206",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What is the weather forecast for Paris for the next five days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "days": 5
+    },
+    "observation": "Error: name 'FORECAST_URL' is not defined",
+    "success": false
+  },
+  {
+    "run_id": "20250810-203302",
+    "timestamp": "2025-08-10T20:33:11.714020",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "What's the current weather in New York?",
+    "api": "get_weather",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The weather in New York now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203302",
+    "timestamp": "2025-08-10T20:33:15.928610",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What was the volume of rain in London in the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The rain volume in London over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203302",
+    "timestamp": "2025-08-10T20:33:19.381833",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "Can you get me the current temperature in Tokyo?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 27.9°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203302",
+    "timestamp": "2025-08-10T20:33:24.702494",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What is the Wikipedia summary for the Eiffel Tower?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203454",
+    "timestamp": "2025-08-10T20:35:00.266834",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the weather like in London right now?",
+    "api": "get_weather",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The weather in London now is few clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203454",
+    "timestamp": "2025-08-10T20:35:07.306585",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "What is the temperature in New York at the moment?",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The temperature in New York now is 19.6°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203454",
+    "timestamp": "2025-08-10T20:35:11.214818",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "Can you tell me about the rain volume in Tokyo for the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The rain volume in Tokyo over the last hour is 7.49 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203454",
+    "timestamp": "2025-08-10T20:35:15.874085",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "Can you provide the weather forecast for Paris for the next 5 days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "days": 5
+    },
+    "observation": "2025-08-10 15:00:00: clear sky, 18.2°C, Rain chance: 0%\n2025-08-10 18:00:00: clear sky, 23.3°C, Rain chance: 0%\n2025-08-10 21:00:00: scattered clouds, 26.2°C, Rain chance: 0%\n2025-08-11 00:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-11 03:00:00: broken clouds, 19.4°C, Rain chance: 0%\n2025-08-11 06:00:00: scattered clouds, 16.6°C, Rain chance: 0%\n2025-08-11 09:00:00: clear sky, 16.2°C, Rain chance: 0%\n2025-08-11 12:00:00: clear sky, 19.0°C, Rain chance: 0%\n2025-08-11 15:00:00: clear sky, 27.6°C, Rain chance: 0%\n2025-08-11 18:00:00: clear sky, 29.6°C, Rain chance: 0%\n2025-08-11 21:00:00: broken clouds, 26.2°C, Rain chance: 0%\n2025-08-12 00:00:00: broken clouds, 23.4°C, Rain chance: 0%\n2025-08-12 03:00:00: overcast clouds, 21.3°C, Rain chance: 0%\n2025-08-12 06:00:00: scattered clouds, 18.5°C, Rain chance: 0%\n2025-08-12 09:00:00: clear sky, 17.6°C, Rain chance: 0%\n2025-08-12 12:00:00: clear sky, 20.7°C, Rain chance: 0%\n2025-08-12 15:00:00: light rain, 28.1°C, Rain chance: 21%\n2025-08-12 18:00:00: clear sky, 31.1°C, Rain chance: 11%\n2025-08-12 21:00:00: scattered clouds, 29.8°C, Rain chance: 0%\n2025-08-13 00:00:00: broken clouds, 23.6°C, Rain chance: 0%\n2025-08-13 03:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-13 06:00:00: scattered clouds, 19.0°C, Rain chance: 0%\n2025-08-13 09:00:00: light rain, 18.2°C, Rain chance: 24%\n2025-08-13 12:00:00: light rain, 19.7°C, Rain chance: 47%\n2025-08-13 15:00:00: light rain, 23.0°C, Rain chance: 100%\n2025-08-13 18:00:00: moderate rain, 25.9°C, Rain chance: 100%\n2025-08-13 21:00:00: light rain, 26.3°C, Rain chance: 100%\n2025-08-14 00:00:00: light rain, 21.3°C, Rain chance: 100%\n2025-08-14 03:00:00: moderate rain, 19.4°C, Rain chance: 100%\n2025-08-14 06:00:00: light rain, 19.1°C, Rain chance: 100%\n2025-08-14 09:00:00: light rain, 18.3°C, Rain chance: 72%\n2025-08-14 12:00:00: light rain, 18.8°C, Rain chance: 100%\n2025-08-14 15:00:00: overcast clouds, 20.5°C, Rain chance: 0%\n2025-08-14 18:00:00: overcast clouds, 26.0°C, Rain chance: 0%\n2025-08-14 21:00:00: light rain, 24.0°C, Rain chance: 100%\n2025-08-15 00:00:00: light rain, 20.6°C, Rain chance: 100%\n2025-08-15 03:00:00: clear sky, 18.4°C, Rain chance: 0%\n2025-08-15 06:00:00: clear sky, 17.7°C, Rain chance: 0%\n2025-08-15 09:00:00: clear sky, 17.1°C, Rain chance: 0%\n2025-08-15 12:00:00: clear sky, 19.2°C, Rain chance: 0%",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203454",
+    "timestamp": "2025-08-10T20:35:21.070573",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "Can you give me a summary of the Eiffel Tower from Wikipedia?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203522",
+    "timestamp": "2025-08-10T20:35:29.586229",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What is the current weather in London?",
+    "api": "get_weather",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The weather in London now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203522",
+    "timestamp": "2025-08-10T20:35:35.235397",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Can you provide a summary of the Eiffel Tower from Wikipedia?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203522",
+    "timestamp": "2025-08-10T20:35:40.337542",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What is the weather forecast for New York for the next 5 days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "New York",
+      "days": 5
+    },
+    "observation": "2025-08-10 15:00:00: clear sky, 18.2°C, Rain chance: 0%\n2025-08-10 18:00:00: clear sky, 23.3°C, Rain chance: 0%\n2025-08-10 21:00:00: scattered clouds, 26.2°C, Rain chance: 0%\n2025-08-11 00:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-11 03:00:00: broken clouds, 19.4°C, Rain chance: 0%\n2025-08-11 06:00:00: scattered clouds, 16.6°C, Rain chance: 0%\n2025-08-11 09:00:00: clear sky, 16.2°C, Rain chance: 0%\n2025-08-11 12:00:00: clear sky, 19.0°C, Rain chance: 0%\n2025-08-11 15:00:00: clear sky, 27.6°C, Rain chance: 0%\n2025-08-11 18:00:00: clear sky, 29.6°C, Rain chance: 0%\n2025-08-11 21:00:00: broken clouds, 26.2°C, Rain chance: 0%\n2025-08-12 00:00:00: broken clouds, 23.4°C, Rain chance: 0%\n2025-08-12 03:00:00: overcast clouds, 21.3°C, Rain chance: 0%\n2025-08-12 06:00:00: scattered clouds, 18.5°C, Rain chance: 0%\n2025-08-12 09:00:00: clear sky, 17.6°C, Rain chance: 0%\n2025-08-12 12:00:00: clear sky, 20.7°C, Rain chance: 0%\n2025-08-12 15:00:00: light rain, 28.1°C, Rain chance: 21%\n2025-08-12 18:00:00: clear sky, 31.1°C, Rain chance: 11%\n2025-08-12 21:00:00: scattered clouds, 29.8°C, Rain chance: 0%\n2025-08-13 00:00:00: broken clouds, 23.6°C, Rain chance: 0%\n2025-08-13 03:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-13 06:00:00: scattered clouds, 19.0°C, Rain chance: 0%\n2025-08-13 09:00:00: light rain, 18.2°C, Rain chance: 24%\n2025-08-13 12:00:00: light rain, 19.7°C, Rain chance: 47%\n2025-08-13 15:00:00: light rain, 23.0°C, Rain chance: 100%\n2025-08-13 18:00:00: moderate rain, 25.9°C, Rain chance: 100%\n2025-08-13 21:00:00: light rain, 26.3°C, Rain chance: 100%\n2025-08-14 00:00:00: light rain, 21.3°C, Rain chance: 100%\n2025-08-14 03:00:00: moderate rain, 19.4°C, Rain chance: 100%\n2025-08-14 06:00:00: light rain, 19.1°C, Rain chance: 100%\n2025-08-14 09:00:00: light rain, 18.3°C, Rain chance: 72%\n2025-08-14 12:00:00: light rain, 18.8°C, Rain chance: 100%\n2025-08-14 15:00:00: overcast clouds, 20.5°C, Rain chance: 0%\n2025-08-14 18:00:00: overcast clouds, 26.0°C, Rain chance: 0%\n2025-08-14 21:00:00: light rain, 24.0°C, Rain chance: 100%\n2025-08-15 00:00:00: light rain, 20.6°C, Rain chance: 100%\n2025-08-15 03:00:00: clear sky, 18.4°C, Rain chance: 0%\n2025-08-15 06:00:00: clear sky, 17.7°C, Rain chance: 0%\n2025-08-15 09:00:00: clear sky, 17.1°C, Rain chance: 0%\n2025-08-15 12:00:00: clear sky, 19.2°C, Rain chance: 0%",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203522",
+    "timestamp": "2025-08-10T20:35:45.368282",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What is the current temperature in Madrid?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Madrid"
+    },
+    "observation": "The temperature in Madrid now is 37.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203522",
+    "timestamp": "2025-08-10T20:35:50.002548",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "How much rain has fallen in the last hour in Seattle?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Seattle"
+    },
+    "observation": "The rain volume in Seattle over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203827",
+    "timestamp": "2025-08-10T20:38:31.986088",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What is the current temperature in Paris?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The temperature in Paris now is 26.3°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203827",
+    "timestamp": "2025-08-10T20:38:37.788419",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Can you tell me about the Eiffel Tower from Wikipedia?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203827",
+    "timestamp": "2025-08-10T20:38:41.708853",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What's the weather like in New York right now?",
+    "api": "get_weather",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The weather in New York now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203827",
+    "timestamp": "2025-08-10T20:38:48.020779",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What is the weather forecast for Tokyo for the next three days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "2025-08-10 15:00:00: clear sky, 18.2°C, Rain chance: 0%\n2025-08-10 18:00:00: clear sky, 23.3°C, Rain chance: 0%\n2025-08-10 21:00:00: scattered clouds, 26.2°C, Rain chance: 0%\n2025-08-11 00:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-11 03:00:00: broken clouds, 19.4°C, Rain chance: 0%\n2025-08-11 06:00:00: scattered clouds, 16.6°C, Rain chance: 0%\n2025-08-11 09:00:00: clear sky, 16.2°C, Rain chance: 0%\n2025-08-11 12:00:00: clear sky, 19.0°C, Rain chance: 0%\n2025-08-11 15:00:00: clear sky, 27.6°C, Rain chance: 0%\n2025-08-11 18:00:00: clear sky, 29.6°C, Rain chance: 0%\n2025-08-11 21:00:00: broken clouds, 26.2°C, Rain chance: 0%\n2025-08-12 00:00:00: broken clouds, 23.4°C, Rain chance: 0%\n2025-08-12 03:00:00: overcast clouds, 21.3°C, Rain chance: 0%\n2025-08-12 06:00:00: scattered clouds, 18.5°C, Rain chance: 0%\n2025-08-12 09:00:00: clear sky, 17.6°C, Rain chance: 0%\n2025-08-12 12:00:00: clear sky, 20.7°C, Rain chance: 0%\n2025-08-12 15:00:00: light rain, 28.1°C, Rain chance: 21%\n2025-08-12 18:00:00: clear sky, 31.1°C, Rain chance: 11%\n2025-08-12 21:00:00: scattered clouds, 29.8°C, Rain chance: 0%\n2025-08-13 00:00:00: broken clouds, 23.6°C, Rain chance: 0%\n2025-08-13 03:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-13 06:00:00: scattered clouds, 19.0°C, Rain chance: 0%\n2025-08-13 09:00:00: light rain, 18.2°C, Rain chance: 24%\n2025-08-13 12:00:00: light rain, 19.7°C, Rain chance: 47%\n2025-08-13 15:00:00: light rain, 23.0°C, Rain chance: 100%\n2025-08-13 18:00:00: moderate rain, 25.9°C, Rain chance: 100%\n2025-08-13 21:00:00: light rain, 26.3°C, Rain chance: 100%\n2025-08-14 00:00:00: light rain, 21.3°C, Rain chance: 100%\n2025-08-14 03:00:00: moderate rain, 19.4°C, Rain chance: 100%\n2025-08-14 06:00:00: light rain, 19.1°C, Rain chance: 100%\n2025-08-14 09:00:00: light rain, 18.3°C, Rain chance: 72%\n2025-08-14 12:00:00: light rain, 18.8°C, Rain chance: 100%\n2025-08-14 15:00:00: overcast clouds, 20.5°C, Rain chance: 0%\n2025-08-14 18:00:00: overcast clouds, 26.0°C, Rain chance: 0%\n2025-08-14 21:00:00: light rain, 24.0°C, Rain chance: 100%\n2025-08-15 00:00:00: light rain, 20.6°C, Rain chance: 100%\n2025-08-15 03:00:00: clear sky, 18.4°C, Rain chance: 0%\n2025-08-15 06:00:00: clear sky, 17.7°C, Rain chance: 0%\n2025-08-15 09:00:00: clear sky, 17.1°C, Rain chance: 0%\n2025-08-15 12:00:00: clear sky, 19.2°C, Rain chance: 0%",
+    "success": true
+  },
+  {
+    "run_id": "20250810-203827",
+    "timestamp": "2025-08-10T20:38:51.871185",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "How much rain has fallen in London over the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The rain volume in London over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204515",
+    "timestamp": "2025-08-10T20:45:21.895013",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"Can you tell me the current weather condition in New York?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The weather in New York now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204515",
+    "timestamp": "2025-08-10T20:45:26.056519",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What is the current temperature in London?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The temperature in London now is 25.2°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204515",
+    "timestamp": "2025-08-10T20:45:31.123302",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What's the weather forecast for Tokyo for the next 5 days?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo",
+      "days": 5
+    },
+    "observation": "2025-08-10 15:00:00: clear sky, 18.2°C, Rain chance: 0%\n2025-08-10 18:00:00: clear sky, 23.3°C, Rain chance: 0%\n2025-08-10 21:00:00: scattered clouds, 26.2°C, Rain chance: 0%\n2025-08-11 00:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-11 03:00:00: broken clouds, 19.4°C, Rain chance: 0%\n2025-08-11 06:00:00: scattered clouds, 16.6°C, Rain chance: 0%\n2025-08-11 09:00:00: clear sky, 16.2°C, Rain chance: 0%\n2025-08-11 12:00:00: clear sky, 19.0°C, Rain chance: 0%\n2025-08-11 15:00:00: clear sky, 27.6°C, Rain chance: 0%\n2025-08-11 18:00:00: clear sky, 29.6°C, Rain chance: 0%\n2025-08-11 21:00:00: broken clouds, 26.2°C, Rain chance: 0%\n2025-08-12 00:00:00: broken clouds, 23.4°C, Rain chance: 0%\n2025-08-12 03:00:00: overcast clouds, 21.3°C, Rain chance: 0%\n2025-08-12 06:00:00: scattered clouds, 18.5°C, Rain chance: 0%\n2025-08-12 09:00:00: clear sky, 17.6°C, Rain chance: 0%\n2025-08-12 12:00:00: clear sky, 20.7°C, Rain chance: 0%\n2025-08-12 15:00:00: light rain, 28.1°C, Rain chance: 21%\n2025-08-12 18:00:00: clear sky, 31.1°C, Rain chance: 11%\n2025-08-12 21:00:00: scattered clouds, 29.8°C, Rain chance: 0%\n2025-08-13 00:00:00: broken clouds, 23.6°C, Rain chance: 0%\n2025-08-13 03:00:00: broken clouds, 21.7°C, Rain chance: 0%\n2025-08-13 06:00:00: scattered clouds, 19.0°C, Rain chance: 0%\n2025-08-13 09:00:00: light rain, 18.2°C, Rain chance: 24%\n2025-08-13 12:00:00: light rain, 19.7°C, Rain chance: 47%\n2025-08-13 15:00:00: light rain, 23.0°C, Rain chance: 100%\n2025-08-13 18:00:00: moderate rain, 25.9°C, Rain chance: 100%\n2025-08-13 21:00:00: light rain, 26.3°C, Rain chance: 100%\n2025-08-14 00:00:00: light rain, 21.3°C, Rain chance: 100%\n2025-08-14 03:00:00: moderate rain, 19.4°C, Rain chance: 100%\n2025-08-14 06:00:00: light rain, 19.1°C, Rain chance: 100%\n2025-08-14 09:00:00: light rain, 18.3°C, Rain chance: 72%\n2025-08-14 12:00:00: light rain, 18.8°C, Rain chance: 100%\n2025-08-14 15:00:00: overcast clouds, 20.5°C, Rain chance: 0%\n2025-08-14 18:00:00: overcast clouds, 26.0°C, Rain chance: 0%\n2025-08-14 21:00:00: light rain, 24.0°C, Rain chance: 100%\n2025-08-15 00:00:00: light rain, 20.6°C, Rain chance: 100%\n2025-08-15 03:00:00: clear sky, 18.4°C, Rain chance: 0%\n2025-08-15 06:00:00: clear sky, 17.7°C, Rain chance: 0%\n2025-08-15 09:00:00: clear sky, 17.1°C, Rain chance: 0%\n2025-08-15 12:00:00: clear sky, 19.2°C, Rain chance: 0%",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204515",
+    "timestamp": "2025-08-10T20:45:34.784605",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What is the volume of rain that has fallen in the last hour in Seattle?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Seattle"
+    },
+    "observation": "The rain volume in Seattle over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204515",
+    "timestamp": "2025-08-10T20:45:40.867483",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"Can you provide me the Wikipedia summary for the Eiffel Tower?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204952",
+    "timestamp": "2025-08-10T20:49:59.657256",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "Could you provide a summary of the Eiffel Tower from Wikipedia?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204952",
+    "timestamp": "2025-08-10T20:50:04.879476",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "What's the weather like in New York right now?",
+    "api": "get_weather",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The weather in New York now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204952",
+    "timestamp": "2025-08-10T20:50:09.623385",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "Can you tell me the rain volume in Paris for the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The rain volume in Paris over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204952",
+    "timestamp": "2025-08-10T20:50:14.127437",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What's the forecast for London for the next 3 days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "London",
+      "days": 3
+    },
+    "observation": "Weather forecast for {'location': 'London', 'days': 3}:\n2025-08-10 15:00:00: clear sky, 18.7°C\n2025-08-10 18:00:00: clear sky, 23.5°C\n2025-08-10 21:00:00: scattered clouds, 26.2°C\n2025-08-11 00:00:00: broken clouds, 21.7°C\n2025-08-11 03:00:00: broken clouds, 19.4°C\n2025-08-11 06:00:00: scattered clouds, 16.6°C\n2025-08-11 09:00:00: clear sky, 16.2°C\n2025-08-11 12:00:00: clear sky, 19.0°C\n2025-08-11 15:00:00: clear sky, 27.6°C\n2025-08-11 18:00:00: clear sky, 29.6°C\n2025-08-11 21:00:00: broken clouds, 26.2°C\n2025-08-12 00:00:00: broken clouds, 23.4°C\n2025-08-12 03:00:00: overcast clouds, 21.3°C\n2025-08-12 06:00:00: scattered clouds, 18.5°C\n2025-08-12 09:00:00: clear sky, 17.6°C\n2025-08-12 12:00:00: clear sky, 20.7°C\n2025-08-12 15:00:00: light rain, 28.1°C\n2025-08-12 18:00:00: clear sky, 31.1°C\n2025-08-12 21:00:00: scattered clouds, 29.8°C\n2025-08-13 00:00:00: broken clouds, 23.6°C\n2025-08-13 03:00:00: broken clouds, 21.7°C\n2025-08-13 06:00:00: scattered clouds, 19.0°C\n2025-08-13 09:00:00: light rain, 18.2°C\n2025-08-13 12:00:00: light rain, 19.7°C\n2025-08-13 15:00:00: light rain, 23.0°C\n2025-08-13 18:00:00: moderate rain, 25.9°C\n2025-08-13 21:00:00: light rain, 26.3°C\n2025-08-14 00:00:00: light rain, 21.3°C\n2025-08-14 03:00:00: moderate rain, 19.4°C\n2025-08-14 06:00:00: light rain, 19.1°C\n2025-08-14 09:00:00: light rain, 18.3°C\n2025-08-14 12:00:00: light rain, 18.8°C\n2025-08-14 15:00:00: overcast clouds, 20.5°C\n2025-08-14 18:00:00: overcast clouds, 26.0°C\n2025-08-14 21:00:00: light rain, 24.0°C\n2025-08-15 00:00:00: light rain, 20.6°C\n2025-08-15 03:00:00: clear sky, 18.4°C\n2025-08-15 06:00:00: clear sky, 17.7°C\n2025-08-15 09:00:00: clear sky, 17.1°C\n2025-08-15 12:00:00: clear sky, 19.2°C",
+    "success": true
+  },
+  {
+    "run_id": "20250810-204952",
+    "timestamp": "2025-08-10T20:50:18.543621",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What's the current temperature in Tokyo?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 28.5°C.",
+    "success": true
   }
 ]

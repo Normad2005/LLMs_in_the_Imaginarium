@@ -5,14 +5,7 @@ import wikipedia
 
 API_KEY = "01f863cd8a24c54dfe2042949f4d20e2"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
-
-# 地名 → 經緯度（可選）
-city_coords = {
-    "Taipei": (25.0330, 121.5654),
-    "Tokyo": (35.6828, 139.7595),
-    "London": (51.5074, -0.1278),
-    "Paris": (48.8566, 2.3522),
-}
+FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
 def get_weather(location, date=None):
     params = {
@@ -53,6 +46,39 @@ def get_rain_volume(location, date=None):
 
     rain = data.get("rain", {}).get("1h", 0.0)  # mm
     return f"The rain volume in {location} over the last hour is {rain} mm."
+
+def get_forecast(location, date=None, days=None):
+    params = {
+        "q": location,
+        "appid": API_KEY,
+        "units": "metric",
+        "cnt": 40  # 40筆資料涵蓋5天的3小時預報
+    }
+    response = requests.get(FORECAST_URL, params=params)
+    data = response.json()
+    if response.status_code != 200:
+        raise Exception(data.get("message", "API call failed"))
+
+    forecasts = data["list"]
+
+    # 如果有指定 date，只保留該日期的預報
+    if date:
+        forecasts = [item for item in forecasts if item["dt_txt"].startswith(date)]
+
+    # 如果有指定 days，則取未來幾天(天數8筆)
+    elif days is not None:
+        forecasts = forecasts[:days * 8]
+
+    if not forecasts:
+        return f"No forecast data available for {location}."
+
+    return "Weather forecast for {}:\n{}".format(
+        location,
+        "\n".join(
+            f"{item['dt_txt']}: {item['weather'][0]['description']}, {item['main']['temp']:.1f}°C"
+            for item in forecasts
+        )
+    )
 
 def get_wikipedia_summary(query, sentences=2):
     try:

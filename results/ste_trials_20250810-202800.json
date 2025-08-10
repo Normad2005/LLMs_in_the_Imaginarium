@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:06.250977",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"Can you tell me the current weather condition in Tokyo?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The weather in Tokyo now is heavy intensity rain.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:10.182500",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What is the current temperature in New York?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The temperature in New York now is 19.6°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:15.224076",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What was the volume of rainfall in London in the last hour?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The rain volume in London over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:22.340189",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"Can you give me a brief summary of the Eiffel Tower from Wikipedia?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-202800",
+    "timestamp": "2025-08-10T20:28:27.217739",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"Can you provide a forecast for the weather in Paris for the next 5 days?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is clear sky.",
+    "success": false
+  }
+]
