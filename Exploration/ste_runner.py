@@ -5,22 +5,35 @@ import json
 import re
 from datetime import datetime
 from openai import OpenAI
+from datetime import datetime
+
+RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
+
 
 # 讓 Exploration/ste_runner.py 找得到上層的 real_api.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from real_api import get_weather, get_rain_chance, get_temperature  # noqa: E402
+from real_api import get_weather, get_rain_volume, get_temperature
 
 # ====== 直接寫 API Key ======
 OPENAI_API_KEY = "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"  # ← 換成你的真實金鑰
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-ALLOWED_APIS = {"get_weather", "get_rain_chance", "get_temperature"}
+ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature"}
 
 # ====== API 說明（會放進 prompt）======
 api_specs = {
-    "get_weather": {"description": "Get general weather condition (current).", "params": ["location", "date(optional)"]},
-    "get_rain_chance": {"description": "Estimate rain chance (current/now).", "params": ["location", "date(optional)"]},
-    "get_temperature": {"description": "Get current temperature.", "params": ["location", "date(optional)"]},
+    "get_weather": {
+        "description": "Get general weather condition (current).",
+        "params": ["location", "date(optional)"]
+    },
+    "get_rain_volume": {
+        "description": "Get rain volume in mm for the last hour.",
+        "params": ["location", "date(optional)"]
+    },
+    "get_temperature": {
+        "description": "Get current temperature.",
+        "params": ["location", "date(optional)"]
+    },
 }
 api_description_text = "\n".join(
     [f"- {n}: {s['description']}, params: {', '.join(s['params'])}" for n, s in api_specs.items()]
@@ -33,8 +46,8 @@ def call_api(api_name, args):
     try:
         if api_name == "get_weather":
             return get_weather(**args)
-        elif api_name == "get_rain_chance":
-            return get_rain_chance(**args)
+        elif api_name == "get_rain_volume":
+            return get_rain_volume(**args)
         elif api_name == "get_temperature":
             return get_temperature(**args)
         else:
@@ -131,6 +144,7 @@ Was this API call appropriate and helpful? Reply only "Yes" or "No".
 
 
     trial = {
+        "run_id": RUN_ID,
         "timestamp": datetime.now().isoformat(),
         "episode_id": episode_id,
         "trial_id": trial_id,
@@ -144,11 +158,37 @@ Was this API call appropriate and helpful? Reply only "Yes" or "No".
     long_term_memory.append(trial)
 
 # ====== 儲存 ======
-def save_trials(trials):
-    os.makedirs("results", exist_ok=True)
-    with open("results/ste_trials.json", "w", encoding="utf-8") as f:
-        json.dump(trials, f, indent=2, ensure_ascii=False)
-    print("✅ Trials saved to results/ste_trials.json")
+
+
+
+def _load_existing_trials(path):
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        # 如果舊檔破損或非 JSON，就保守起見回傳空陣列避免整個流程掛掉
+        return []
+
+def save_trials(new_trials, path="results/ste_trials.json"):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
+    # 讀舊檔 → 合併 → 回存
+    existing = _load_existing_trials(path)
+    merged = existing + new_trials
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(merged, f, indent=2, ensure_ascii=False)
+
+    # 另外寫一份本次 run 的快照（備查，非必要）
+    snapshot = os.path.join(os.path.dirname(path), f"ste_trials_{RUN_ID}.json")
+    with open(snapshot, "w", encoding="utf-8") as f:
+        json.dump(new_trials, f, indent=2, ensure_ascii=False)
+
+    print(f"✅ Appended {len(new_trials)} trials. Total now: {len(merged)}")
+    print(f"📄 Master: {os.path.abspath(path)}")
+    print(f"🗂  Snapshot for this run: {os.path.abspath(snapshot)}")
 
 # ====== 入口 ======
 if __name__ == "__main__":

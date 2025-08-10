@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250810-190020",
+    "timestamp": "2025-08-10T19:00:25.203647",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"What is the current weather condition in New York?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The weather in New York now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190020",
+    "timestamp": "2025-08-10T19:00:29.526973",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What is the current temperature in London?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The temperature in London now is 23.5°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190020",
+    "timestamp": "2025-08-10T19:00:33.842126",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What is the chance of rain today in Paris?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The chance of rain in Paris right now is estimated based on last hour rain volume: 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190020",
+    "timestamp": "2025-08-10T19:00:37.857834",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What is the chance of rain in Berlin right now?\"",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "Berlin"
+    },
+    "observation": "The chance of rain in Berlin right now is estimated based on last hour rain volume: 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190020",
+    "timestamp": "2025-08-10T19:00:42.225581",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"What is the general weather condition in Tokyo now?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The weather in Tokyo now is heavy intensity rain.",
+    "success": true
+  }
+]

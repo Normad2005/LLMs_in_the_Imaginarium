@@ -9,7 +9,8 @@ BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 city_coords = {
     "Taipei": (25.0330, 121.5654),
     "Tokyo": (35.6828, 139.7595),
-    "London": (51.5074, -0.1278)
+    "London": (51.5074, -0.1278),
+    "Paris": (48.8566, 2.3522),
 }
 
 def get_weather(location, date=None):
@@ -38,7 +39,7 @@ def get_temperature(location, date=None):
     temp = data["main"]["temp"]
     return f"The temperature in {location} now is {temp:.1f}°C."
 
-def get_rain_chance(location, date=None):
+def get_rain_volume(location, date=None):
     params = {
         "q": location,
         "appid": API_KEY,
@@ -48,5 +49,6 @@ def get_rain_chance(location, date=None):
     data = response.json()
     if response.status_code != 200:
         raise Exception(data.get("message", "API call failed"))
-    rain = data.get("rain", {}).get("1h", 0.0)
-    return f"The chance of rain in {location} right now is estimated based on last hour rain volume: {rain} mm."
+
+    rain = data.get("rain", {}).get("1h", 0.0)  # mm
+    return f"The rain volume in {location} over the last hour is {rain} mm."

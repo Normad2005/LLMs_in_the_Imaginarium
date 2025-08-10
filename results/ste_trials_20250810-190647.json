@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250810-190647",
+    "timestamp": "2025-08-10T19:06:54.021445",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the current temperature in New York?",
+    "api": "get_temperature",
+    "args": {
+      "location": "New York"
+    },
+    "observation": "The temperature in New York now is 17.4°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190647",
+    "timestamp": "2025-08-10T19:06:59.935005",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "What's the weather like in London right now?",
+    "api": "get_weather",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The weather in London now is few clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190647",
+    "timestamp": "2025-08-10T19:07:04.122472",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What are the chances of rain in Paris today?",
+    "api": "get_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250810-190647",
+    "timestamp": "2025-08-10T19:07:07.683456",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "Is it going to rain in Seattle today?",
+    "api": "get_rain_chance",
+    "args": {
+      "location": "Seattle"
+    },
+    "observation": "Error: Unknown location: Seattle",
+    "success": false
+  },
+  {
+    "run_id": "20250810-190647",
+    "timestamp": "2025-08-10T19:07:12.228665",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What is the current temperature in Tokyo?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 28.8°C.",
+    "success": true
+  }
+]
