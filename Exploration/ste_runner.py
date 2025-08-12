@@ -4,7 +4,9 @@ import os
 import json
 import re
 from datetime import datetime
+import random
 from openai import OpenAI
+
 
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
 
@@ -77,6 +79,16 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
     for m in long_term_memory[-5:]:
         long_memory_snippets += f"- Q: {m['query']}\n  → API: {m['api']} → Success: {m['success']}\n"
 
+    # === 新增多樣化主題 ===
+    topic_types = [
+        "Ask about current weather in a random city",
+        "Ask about weather forecast for a specific future date",
+        "Ask about current rain volume in a location",
+        "Ask about the current temperature somewhere",
+        "Ask for Wikipedia facts about a notable person, place, or event"
+    ]
+    chosen_topic = random.choice(topic_types)
+
     prompt = f"""
 You are an assistant with access to the following APIs:
 {api_description_text}
@@ -90,16 +102,22 @@ Previous episodes (summary):
 Recent trials in this episode:
 {memory_snippets if memory_snippets else '(no recent trials yet)'}
 
-Now, imagine a NEW user query that can be answered by a SINGLE call to one API.
-Make it natural and not too similar to the above.
+Now, imagine a NEW and UNIQUE user query that can be answered by a SINGLE call to one API.
+Follow this theme: {chosen_topic}
 
+Requirements:
+- Make the query significantly different from all previous examples in topic, wording, and focus.
+- Vary the location, date, subject, and style.
+- Do not repeat the same location or same API type too frequently.
+- Make it sound like a natural user question.
 User Query:
 """.strip()
 
     resp = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
+        temperature=1.1,   # 提高多樣性
+        top_p=0.9
     )
     user_query = resp.choices[0].message.content.strip()
 

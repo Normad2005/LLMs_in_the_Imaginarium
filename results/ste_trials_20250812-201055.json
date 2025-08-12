@@ -1,0 +1,68 @@
+[
+  {
+    "run_id": "20250812-201055",
+    "timestamp": "2025-08-12T20:11:01.061822",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "Could you please inform me what's the current temperature in Madrid, Spain?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Madrid, Spain"
+    },
+    "observation": "The temperature in Madrid, Spain now is 36.6°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-201055",
+    "timestamp": "2025-08-12T20:11:06.051567",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "How much rainfall has Tokyo, Japan received in the past hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Tokyo, Japan"
+    },
+    "observation": "The rain volume in Tokyo, Japan over the last hour is 4.86 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-201055",
+    "timestamp": "2025-08-12T20:11:09.622518",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "Can you tell me the weather conditions right now in Toronto, Canada?",
+    "api": "get_weather",
+    "args": {
+      "location": "Toronto, Canada"
+    },
+    "observation": "The weather in Toronto, Canada now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-201055",
+    "timestamp": "2025-08-12T20:11:15.373327",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What's the weather prediction for Paris, France on the 15th of next month?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris, France",
+      "date": "2022-05-15"
+    },
+    "observation": "Weather forecast for {'location': 'Paris, France', 'date': '2022-05-15'}:\n2025-08-12 15:00:00: light rain, 20.6°C\n2025-08-12 18:00:00: light rain, 24.4°C\n2025-08-12 21:00:00: light rain, 26.7°C\n2025-08-13 00:00:00: light rain, 22.9°C\n2025-08-13 03:00:00: broken clouds, 21.2°C\n2025-08-13 06:00:00: overcast clouds, 19.6°C\n2025-08-13 09:00:00: light rain, 18.6°C\n2025-08-13 12:00:00: light rain, 19.0°C\n2025-08-13 15:00:00: light rain, 22.9°C\n2025-08-13 18:00:00: light rain, 23.2°C\n2025-08-13 21:00:00: moderate rain, 22.7°C\n2025-08-14 00:00:00: light rain, 20.4°C\n2025-08-14 03:00:00: light rain, 19.6°C\n2025-08-14 06:00:00: light rain, 18.6°C\n2025-08-14 09:00:00: light rain, 18.0°C\n2025-08-14 12:00:00: overcast clouds, 19.1°C\n2025-08-14 15:00:00: light rain, 23.6°C\n2025-08-14 18:00:00: overcast clouds, 27.9°C\n2025-08-14 21:00:00: light rain, 23.2°C\n2025-08-15 00:00:00: light rain, 20.6°C\n2025-08-15 03:00:00: clear sky, 18.6°C\n2025-08-15 06:00:00: clear sky, 17.8°C\n2025-08-15 09:00:00: clear sky, 17.4°C\n2025-08-15 12:00:00: clear sky, 20.0°C\n2025-08-15 15:00:00: light rain, 24.6°C\n2025-08-15 18:00:00: light rain, 28.2°C\n2025-08-15 21:00:00: light rain, 27.3°C\n2025-08-16 00:00:00: light rain, 21.9°C\n2025-08-16 03:00:00: few clouds, 19.2°C\n2025-08-16 06:00:00: scattered clouds, 18.6°C\n2025-08-16 09:00:00: few clouds, 18.1°C\n2025-08-16 12:00:00: few clouds, 20.7°C\n2025-08-16 15:00:00: clear sky, 28.9°C\n2025-08-16 18:00:00: clear sky, 31.5°C\n2025-08-16 21:00:00: scattered clouds, 29.1°C\n2025-08-17 00:00:00: broken clouds, 23.3°C\n2025-08-17 03:00:00: broken clouds, 20.5°C\n2025-08-17 06:00:00: scattered clouds, 19.1°C\n2025-08-17 09:00:00: few clouds, 19.0°C\n2025-08-17 12:00:00: scattered clouds, 21.0°C",
+    "success": false
+  },
+  {
+    "run_id": "20250812-201055",
+    "timestamp": "2025-08-12T20:11:19.985520",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "Is it raining a lot in Sydney, Australia at the moment?",
+    "api": "get_weather",
+    "args": {
+      "location": "Sydney, Australia"
+    },
+    "observation": "The weather in Sydney, Australia now is clear sky.",
+    "success": true
+  }
+]

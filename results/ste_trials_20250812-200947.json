@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250812-200947",
+    "timestamp": "2025-08-12T20:09:52.655847",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "Can you tell me what's the temperature right now in Tokyo, Japan?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo, Japan"
+    },
+    "observation": "The temperature in Tokyo, Japan now is 27.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200947",
+    "timestamp": "2025-08-12T20:09:57.656072",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Can you let me know the current temperature in Barcelona, Spain?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Barcelona, Spain"
+    },
+    "observation": "The temperature in Barcelona, Spain now is 32.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200947",
+    "timestamp": "2025-08-12T20:10:01.747554",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "Could you inform me of the current temperature in Sydney, Australia?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Sydney, Australia"
+    },
+    "observation": "The temperature in Sydney, Australia now is 10.2°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200947",
+    "timestamp": "2025-08-12T20:10:06.355168",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What's the weather situation in Rome, Italy at this moment?",
+    "api": "get_weather",
+    "args": {
+      "location": "Rome, Italy"
+    },
+    "observation": "The weather in Rome, Italy now is overcast clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200947",
+    "timestamp": "2025-08-12T20:10:11.561335",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "Could you provide me with the volume of rainfall in London, UK in the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "London, UK"
+    },
+    "observation": "The rain volume in London, UK over the last hour is 0.0 mm.",
+    "success": true
+  }
+]

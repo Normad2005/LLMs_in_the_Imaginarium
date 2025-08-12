@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250812-200842",
+    "timestamp": "2025-08-12T20:08:47.479386",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "Can you tell me what the temperature is like in Barcelona right now?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Barcelona"
+    },
+    "observation": "The temperature in Barcelona now is 31.9°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200842",
+    "timestamp": "2025-08-12T20:08:55.778362",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Who won the 2019 Wimbledon Men's Singles title?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "2019 Wimbledon Championships – Men's Singles"
+    },
+    "observation": "Wikipedia summary for '2019 Wimbledon Championships – Men's Singles': Defending champion Novak Djokovic defeated Roger Federer in the final, 7–6(7–5), 1–6, 7–6(7–4), 4–6, 13–12(7–3), to win the gentlemen's singles tennis title at the 2019 Wimbledon Championships. At four hours and 57 minutes in length, it was the longest singles final in Wimbledon history.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200842",
+    "timestamp": "2025-08-12T20:08:59.054021",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "Is it raining heavily in Seattle at the moment?",
+    "api": "get_weather",
+    "args": {
+      "location": "Seattle"
+    },
+    "observation": "The weather in Seattle now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200842",
+    "timestamp": "2025-08-12T20:09:05.506490",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "Can you provide a brief overview of the Great Wall of China from Wikipedia?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Great Wall of China"
+    },
+    "observation": "Wikipedia summary for 'Great Wall of China': The Great Wall of China (traditional Chinese: 萬里長城; simplified Chinese: 万里长城; pinyin: Wànlǐ Chángchéng, literally \"ten thousand li long wall\") is a series of fortifications in China. They were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe.",
+    "success": true
+  },
+  {
+    "run_id": "20250812-200842",
+    "timestamp": "2025-08-12T20:09:09.079853",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What's the current temperature in Sydney, Australia?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Sydney, Australia"
+    },
+    "observation": "The temperature in Sydney, Australia now is 10.2°C.",
+    "success": true
+  }
+]
