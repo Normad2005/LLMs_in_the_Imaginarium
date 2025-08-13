@@ -103,24 +103,25 @@ Recent trials in this episode:
 {memory_snippets if memory_snippets else '(no recent trials yet)'}
 
 Now, imagine a NEW and UNIQUE user query that can be answered by a SINGLE call to one API.
-Follow this theme: {chosen_topic}
 
-Requirements:
-- Make the query significantly different from all previous examples in topic, wording, and focus.
-- Vary the location, date, subject, and style.
-- Do not repeat the same location or same API type too frequently.
-- Make it sound like a natural user question.
+Rules for diversity:
+- Alternate between different API types across trials (do not always use the same API).
+- Change location names frequently, using different countries, cities, or landmarks.
+- Vary the date: sometimes today, sometimes yesterday, sometimes a specific date.
+- Use different sentence styles: casual, formal, short, long, question with context, etc.
+- Avoid reusing any wording from previous queries in this session or past sessions.
+- The question should sound like a natural human request.
+
 User Query:
 """.strip()
 
     resp = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
-        temperature=1.1,   # 提高多樣性
-        top_p=0.9
+        temperature=1.2,   # 提高創意
+        top_p=0.95
     )
     user_query = resp.choices[0].message.content.strip()
-
     action_prompt = f"""
 User query: "{user_query}"
 
@@ -198,20 +199,17 @@ def _load_existing_trials(path):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
-        # 如果舊檔破損或非 JSON，就保守起見回傳空陣列避免整個流程掛掉
         return []
 
 def save_trials(new_trials, path="results/ste_trials.json"):
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
-    # 讀舊檔 → 合併 → 回存
     existing = _load_existing_trials(path)
     merged = existing + new_trials
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
 
-    # 另外寫一份本次 run 的快照（備查，非必要）
     snapshot = os.path.join(os.path.dirname(path), f"ste_trials_{RUN_ID}.json")
     with open(snapshot, "w", encoding="utf-8") as f:
         json.dump(new_trials, f, indent=2, ensure_ascii=False)
@@ -220,7 +218,7 @@ def save_trials(new_trials, path="results/ste_trials.json"):
     print(f"📄 Master: {os.path.abspath(path)}")
     print(f"🗂  Snapshot for this run: {os.path.abspath(snapshot)}")
 
-# ====== 入口 ======
+# ====== entrance ======
 if __name__ == "__main__":
     short_term_memory, long_term_memory = [], []
     EPISODES, TRIALS_PER_EPISODE = 1, 5

@@ -1,0 +1,68 @@
+[
+  {
+    "run_id": "20250813-151009",
+    "timestamp": "2025-08-13T15:10:16.543214",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"Can you find out the weather forecast for the next 5 days in Toronto, Canada?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Toronto, Canada",
+      "days": 5
+    },
+    "observation": "Weather forecast for {'location': 'Toronto, Canada', 'days': 5}:\n2025-08-13 09:00:00: light rain, 19.4°C\n2025-08-13 12:00:00: light rain, 19.7°C\n2025-08-13 15:00:00: light rain, 23.8°C\n2025-08-13 18:00:00: light rain, 24.0°C\n2025-08-13 21:00:00: light rain, 28.3°C\n2025-08-14 00:00:00: light rain, 22.1°C\n2025-08-14 03:00:00: moderate rain, 19.1°C\n2025-08-14 06:00:00: moderate rain, 18.8°C\n2025-08-14 09:00:00: moderate rain, 18.3°C\n2025-08-14 12:00:00: light rain, 19.4°C\n2025-08-14 15:00:00: light rain, 20.7°C\n2025-08-14 18:00:00: light rain, 23.6°C\n2025-08-14 21:00:00: scattered clouds, 27.3°C\n2025-08-15 00:00:00: broken clouds, 21.1°C\n2025-08-15 03:00:00: clear sky, 17.2°C\n2025-08-15 06:00:00: clear sky, 16.1°C\n2025-08-15 09:00:00: clear sky, 15.2°C\n2025-08-15 12:00:00: clear sky, 18.0°C\n2025-08-15 15:00:00: clear sky, 25.9°C\n2025-08-15 18:00:00: clear sky, 29.3°C\n2025-08-15 21:00:00: clear sky, 29.3°C\n2025-08-16 00:00:00: clear sky, 20.4°C\n2025-08-16 03:00:00: clear sky, 18.2°C\n2025-08-16 06:00:00: clear sky, 17.4°C\n2025-08-16 09:00:00: clear sky, 17.4°C\n2025-08-16 12:00:00: clear sky, 20.2°C\n2025-08-16 15:00:00: clear sky, 27.7°C\n2025-08-16 18:00:00: clear sky, 30.1°C\n2025-08-16 21:00:00: few clouds, 28.6°C\n2025-08-17 00:00:00: few clouds, 21.4°C\n2025-08-17 03:00:00: clear sky, 18.4°C\n2025-08-17 06:00:00: clear sky, 17.3°C\n2025-08-17 09:00:00: clear sky, 16.9°C\n2025-08-17 12:00:00: clear sky, 20.0°C\n2025-08-17 15:00:00: clear sky, 27.6°C\n2025-08-17 18:00:00: clear sky, 30.1°C\n2025-08-17 21:00:00: clear sky, 29.8°C\n2025-08-18 00:00:00: clear sky, 22.4°C\n2025-08-18 03:00:00: clear sky, 20.0°C\n2025-08-18 06:00:00: clear sky, 19.4°C",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151009",
+    "timestamp": "2025-08-13T15:10:20.733215",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What's the rainfall amount been like in the past hour over in Seattle?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Seattle"
+    },
+    "observation": "The rain volume in Seattle over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151009",
+    "timestamp": "2025-08-13T15:10:24.564345",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What is the current temperature in Paris, France?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Paris, France"
+    },
+    "observation": "The temperature in Paris, France now is 22.7°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151009",
+    "timestamp": "2025-08-13T15:10:29.059553",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"Could you give me the general weather condition in Cairo, Egypt today?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Cairo, Egypt"
+    },
+    "observation": "The weather in Cairo, Egypt now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151009",
+    "timestamp": "2025-08-13T15:10:34.813307",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"Can you give me a summary of the Wikipedia page on the Sydney Opera House?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Sydney Opera House"
+    },
+    "observation": "Wikipedia summary for 'Sydney Opera House': The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia. Located on the foreshore of Sydney Harbour, it is widely regarded as one of the world's most famous and distinctive buildings, and a masterpiece of 20th-century architecture.",
+    "success": true
+  }
+]

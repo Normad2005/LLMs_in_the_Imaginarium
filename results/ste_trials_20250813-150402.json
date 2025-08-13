@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250813-150402",
+    "timestamp": "2025-08-13T15:04:10.194117",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"Can you give me a brief summary of the history and cultural significance of the Taj Mahal?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Taj Mahal"
+    },
+    "observation": "Wikipedia summary for 'Taj Mahal': The Taj Mahal ( TAHJ mə-HAHL, TAHZH -⁠; Hindustani: [taːdʒ ˈmɛɦ(ɛ)l]; lit. 'Crown of the Palace') is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan (r. 1628–1658), to house the tomb of his beloved wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150402",
+    "timestamp": "2025-08-13T15:04:14.677987",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"How much rain has fallen in the last hour in Seattle?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Seattle"
+    },
+    "observation": "The rain volume in Seattle over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150402",
+    "timestamp": "2025-08-13T15:04:19.753430",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What is the current temperature in Buenos Aires?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Buenos Aires"
+    },
+    "observation": "The temperature in Buenos Aires now is 12.6°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150402",
+    "timestamp": "2025-08-13T15:04:23.847359",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What's the general weather like in Dublin right now?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Dublin"
+    },
+    "observation": "The weather in Dublin now is scattered clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150402",
+    "timestamp": "2025-08-13T15:04:29.105549",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"What is the current temperature in Tokyo, Japan?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo, Japan"
+    },
+    "observation": "The temperature in Tokyo, Japan now is 30.1°C.",
+    "success": true
+  }
+]
