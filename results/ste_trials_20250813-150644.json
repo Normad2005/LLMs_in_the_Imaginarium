@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250813-150644",
+    "timestamp": "2025-08-13T15:06:50.322170",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"What's the rain volume in Sydney for the last hour?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Sydney"
+    },
+    "observation": "The rain volume in Sydney over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150644",
+    "timestamp": "2025-08-13T15:06:54.149570",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"Could you tell me what the temperature is in Tokyo right now?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 30.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150644",
+    "timestamp": "2025-08-13T15:06:59.684495",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What is the current temperature in Los Angeles?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Los Angeles"
+    },
+    "observation": "The temperature in Los Angeles now is 19.8°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150644",
+    "timestamp": "2025-08-13T15:07:03.258832",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What's the weather like in Paris at the moment?\"",
+    "api": "get_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is overcast clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150644",
+    "timestamp": "2025-08-13T15:07:08.193994",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"How much rainfall has New York City experienced in the past hour?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "New York City"
+    },
+    "observation": "The rain volume in New York City over the last hour is 0.0 mm.",
+    "success": true
+  }
+]

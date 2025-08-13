@@ -1,0 +1,67 @@
+[
+  {
+    "run_id": "20250813-150601",
+    "timestamp": "2025-08-13T15:06:08.302373",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"How much rainfall has Los Angeles received in the last hour?\"",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "Los Angeles"
+    },
+    "observation": "The rain volume in Los Angeles over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150601",
+    "timestamp": "2025-08-13T15:06:12.967880",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"Can you provide a summary from Wikipedia about the Great Wall of China?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "title": "Great Wall of China"
+    },
+    "observation": "Error: get_wikipedia_summary() got an unexpected keyword argument 'title'",
+    "success": false
+  },
+  {
+    "run_id": "20250813-150601",
+    "timestamp": "2025-08-13T15:06:18.005489",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"Can you give me a brief summary from Wikipedia about the Eiffel Tower?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "location": "Eiffel Tower"
+    },
+    "observation": "Error: get_wikipedia_summary() got an unexpected keyword argument 'location'",
+    "success": false
+  },
+  {
+    "run_id": "20250813-150601",
+    "timestamp": "2025-08-13T15:06:22.519375",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What is the temperature in Tokyo right now?\"",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 30.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-150601",
+    "timestamp": "2025-08-13T15:06:28.746030",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"Can you give me a summary from Wikipedia about the Mona Lisa?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Mona Lisa"
+    },
+    "observation": "Wikipedia summary for 'Mona Lisa': The Mona Lisa is a half-length portrait painting by the Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, [and] the most parodied work of art in the world.\" The painting's novel qualities include the subject's enigmatic expression, monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
+    "success": true
+  }
+]

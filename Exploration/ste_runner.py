@@ -19,7 +19,7 @@ from real_api import get_weather, get_rain_volume, get_temperature, get_forecast
 OPENAI_API_KEY = "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"  # ← 換成你的真實金鑰
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-ALLOWED_APIS = {"get_weather", "get_rain_volume","get_forecast" , "get_temperature", "get_wikipedia_summary"}
+ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature", "get_forecast", "get_wikipedia_summary"}
 
 # ====== API 說明（會放進 prompt）======
 api_specs = {
@@ -51,6 +51,7 @@ api_description_text = "\n".join(
 
 # ====== 呼叫 real_api ======
 def call_api(api_name, args):
+    # 如果 date 不符合 YYYY-MM-DD 格式，移除它
     if "date" in args and (not isinstance(args["date"], str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", args["date"])):
         args.pop("date", None)
     try:
@@ -58,10 +59,10 @@ def call_api(api_name, args):
             return get_weather(**args)
         elif api_name == "get_rain_volume":
             return get_rain_volume(**args)
-        elif api_name == "get_forecast":
-            return get_forecast(args)
         elif api_name == "get_temperature":
             return get_temperature(**args)
+        elif api_name == "get_forecast":
+            return get_forecast(**args)  # 修正這裡，改用解包
         elif api_name == "get_wikipedia_summary":
             return get_wikipedia_summary(**args)
         else:
@@ -79,6 +80,8 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
     for m in long_term_memory[-5:]:
         long_memory_snippets += f"- Q: {m['query']}\n  → API: {m['api']} → Success: {m['success']}\n"
 
+    today_str = datetime.now().strftime("%Y-%m-%d")
+
     # === 新增多樣化主題 ===
     topic_types = [
         "Ask about current weather in a random city",
@@ -93,6 +96,7 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
 You are an assistant with access to the following APIs:
 {api_description_text}
 
+Today is {today_str}.
 Only use these APIs: {', '.join(sorted(ALLOWED_APIS))}.
 Dates, if provided, should be ISO YYYY-MM-DD; otherwise omit 'date'.
 
@@ -116,7 +120,7 @@ User Query:
     resp = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
-        temperature=1.1,   # 提高多樣性
+        temperature=0.9,   # 提高多樣性
         top_p=0.9
     )
     user_query = resp.choices[0].message.content.strip()
@@ -127,8 +131,9 @@ User query: "{user_query}"
 Pick ONE API and provide arguments in JSON. Use ONLY: {', '.join(sorted(ALLOWED_APIS))}.
 If date is not needed, omit it.
 
+Example format:
 {{
-  "api_name": "get_weather | get_rain_chance | get_temperature",
+  "api_name": "get_weather | get_rain_volume | get_temperature | get_forecast | get_wikipedia_summary",
   "args": {{"location": "City name" [,"date": "YYYY-MM-DD"]}}
 }}
 """.strip()
@@ -165,13 +170,12 @@ Was this API call appropriate and helpful? Reply only "Yes" or "No".
     )
     is_success = (refl.choices[0].message.content.strip().lower().startswith("yes")
                   and not str(observation).startswith("Error"))
-    
+
     print("Q:", user_query)
     print("Action:", api_name, args)
     print("Observation:", observation)
     print("Success:", is_success)
     print("-" * 60)
-
 
     trial = {
         "run_id": RUN_ID,
@@ -188,8 +192,6 @@ Was this API call appropriate and helpful? Reply only "Yes" or "No".
     long_term_memory.append(trial)
 
 # ====== 儲存 ======
-
-
 
 def _load_existing_trials(path):
     if not os.path.exists(path):
