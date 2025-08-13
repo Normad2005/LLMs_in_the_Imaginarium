@@ -457,5 +457,71 @@
     },
     "observation": "Wikipedia summary for 'Sydney Opera House': The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia. Located on the foreshore of Sydney Harbour, it is widely regarded as one of the world's most famous and distinctive buildings, and a masterpiece of 20th-century architecture.",
     "success": true
+  },
+  {
+    "run_id": "20250813-151829",
+    "timestamp": "2025-08-13T15:18:34.942427",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "Can you provide me with the general weather condition of Cape Town right now?",
+    "api": "get_weather",
+    "args": {
+      "location": "Cape Town"
+    },
+    "observation": "The weather in Cape Town now is overcast clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151829",
+    "timestamp": "2025-08-13T15:18:40.327167",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Can you tell me the temperature in Tokyo at the moment?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 30.1°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151829",
+    "timestamp": "2025-08-13T15:18:44.492648",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What is the expected weather forecast in Rome for the next 3 days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Rome",
+      "days": 3
+    },
+    "observation": "Weather forecast for {'location': 'Rome', 'days': 3}:\n2025-08-13 09:00:00: light rain, 19.4°C\n2025-08-13 12:00:00: light rain, 19.7°C\n2025-08-13 15:00:00: light rain, 23.8°C\n2025-08-13 18:00:00: light rain, 24.0°C\n2025-08-13 21:00:00: light rain, 28.3°C\n2025-08-14 00:00:00: light rain, 22.1°C\n2025-08-14 03:00:00: moderate rain, 19.1°C\n2025-08-14 06:00:00: moderate rain, 18.8°C\n2025-08-14 09:00:00: moderate rain, 18.3°C\n2025-08-14 12:00:00: light rain, 19.4°C\n2025-08-14 15:00:00: light rain, 20.7°C\n2025-08-14 18:00:00: light rain, 23.6°C\n2025-08-14 21:00:00: scattered clouds, 27.3°C\n2025-08-15 00:00:00: broken clouds, 21.1°C\n2025-08-15 03:00:00: clear sky, 17.2°C\n2025-08-15 06:00:00: clear sky, 16.1°C\n2025-08-15 09:00:00: clear sky, 15.2°C\n2025-08-15 12:00:00: clear sky, 18.0°C\n2025-08-15 15:00:00: clear sky, 25.9°C\n2025-08-15 18:00:00: clear sky, 29.3°C\n2025-08-15 21:00:00: clear sky, 29.3°C\n2025-08-16 00:00:00: clear sky, 20.4°C\n2025-08-16 03:00:00: clear sky, 18.2°C\n2025-08-16 06:00:00: clear sky, 17.4°C\n2025-08-16 09:00:00: clear sky, 17.4°C\n2025-08-16 12:00:00: clear sky, 20.2°C\n2025-08-16 15:00:00: clear sky, 27.7°C\n2025-08-16 18:00:00: clear sky, 30.1°C\n2025-08-16 21:00:00: few clouds, 28.6°C\n2025-08-17 00:00:00: few clouds, 21.4°C\n2025-08-17 03:00:00: clear sky, 18.4°C\n2025-08-17 06:00:00: clear sky, 17.3°C\n2025-08-17 09:00:00: clear sky, 16.9°C\n2025-08-17 12:00:00: clear sky, 20.0°C\n2025-08-17 15:00:00: clear sky, 27.6°C\n2025-08-17 18:00:00: clear sky, 30.1°C\n2025-08-17 21:00:00: clear sky, 29.8°C\n2025-08-18 00:00:00: clear sky, 22.4°C\n2025-08-18 03:00:00: clear sky, 20.0°C\n2025-08-18 06:00:00: clear sky, 19.4°C",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151829",
+    "timestamp": "2025-08-13T15:18:47.613329",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "How much rain has fallen in New York City in the last hour?",
+    "api": "get_rain_volume",
+    "args": {
+      "location": "New York City"
+    },
+    "observation": "The rain volume in New York City over the last hour is 0.0 mm.",
+    "success": true
+  },
+  {
+    "run_id": "20250813-151829",
+    "timestamp": "2025-08-13T15:18:55.387168",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "Can you give me a brief summary from Wikipedia about the Eiffel Tower?",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Eiffel Tower"
+    },
+    "observation": "Wikipedia summary for 'Eiffel Tower': The Eiffel Tower (  EYE-fəl; French: Tour Eiffel [tuʁ ɛfɛl] ) is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
+    "success": true
   }
 ]
