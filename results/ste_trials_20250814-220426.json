@@ -1,0 +1,59 @@
+[
+  {
+    "run_id": "20250814-220426",
+    "timestamp": "2025-08-14T22:04:32.376616",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the weather looking like in Tokyo for the next few days, especially around the weekend?",
+    "api": "invalid",
+    "args": {},
+    "observation": "Error: Expecting value: line 1 column 1 (char 0)",
+    "success": false
+  },
+  {
+    "run_id": "20250814-220426",
+    "timestamp": "2025-08-14T22:04:35.769407",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Hey, I'm planning a picnic in Sydney on August 20, 2025. Can you tell me what the weather forecast looks like for that day?",
+    "api": "invalid",
+    "args": {},
+    "observation": "Error: Expecting value: line 1 column 1 (char 0)",
+    "success": false
+  },
+  {
+    "run_id": "20250814-220426",
+    "timestamp": "2025-08-14T22:04:39.564926",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What’s the current temperature in Cape Town, South Africa?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Cape Town, South Africa"
+    },
+    "observation": "The temperature in Cape Town, South Africa now is 15.0°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250814-220426",
+    "timestamp": "2025-08-14T22:04:42.512213",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What's the rain situation like in London right now? I'm curious if I should carry an umbrella while I'm out and about today, August 14, 2025.",
+    "api": "invalid",
+    "args": {},
+    "observation": "Error: Expecting value: line 1 column 1 (char 0)",
+    "success": false
+  },
+  {
+    "run_id": "20250814-220426",
+    "timestamp": "2025-08-14T22:04:44.933226",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "I'm thinking about taking a trip to New York City in early September. Can you tell me what the weather is usually like around September 5, 2025?",
+    "api": "invalid",
+    "args": {},
+    "observation": "Error: Expecting value: line 1 column 1 (char 0)",
+    "success": false
+  }
+]

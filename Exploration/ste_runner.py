@@ -7,16 +7,12 @@ from datetime import datetime
 import random
 from openai import OpenAI
 
-
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
 
-
-# 讓 Exploration/ste_runner.py 找得到上層的 real_api.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from real_api import get_weather, get_rain_volume, get_temperature, get_forecast, get_wikipedia_summary
 
-# ====== 直接寫 API Key ======
-OPENAI_API_KEY = "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"  # ← 換成你的真實金鑰
+OPENAI_API_KEY = "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"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature", "get_forecast", "get_wikipedia_summary"}
@@ -51,7 +47,6 @@ api_description_text = "\n".join(
 
 # ====== 呼叫 real_api ======
 def call_api(api_name, args):
-    # 如果 date 不符合 YYYY-MM-DD 格式，移除它
     if "date" in args and (not isinstance(args["date"], str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", args["date"])):
         args.pop("date", None)
     try:
@@ -62,7 +57,7 @@ def call_api(api_name, args):
         elif api_name == "get_temperature":
             return get_temperature(**args)
         elif api_name == "get_forecast":
-            return get_forecast(**args)  # 修正這裡，改用解包
+            return get_forecast(**args)
         elif api_name == "get_wikipedia_summary":
             return get_wikipedia_summary(**args)
         else:
@@ -82,23 +77,13 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
 
     today_str = datetime.now().strftime("%Y-%m-%d")
 
-    # === 新增多樣化主題 ===
-    topic_types = [
-        "Ask about current weather in a random city",
-        "Ask about weather forecast for a specific future date",
-        "Ask about current rain volume in a location",
-        "Ask about the current temperature somewhere",
-        "Ask for Wikipedia facts about a notable person, place, or event"
-    ]
-    chosen_topic = random.choice(topic_types)
-
+    # 讓 LLM 自行生成多元化問題
     prompt = f"""
-You are an assistant with access to the following APIs:
+You are a creative assistant with access to the following APIs:
 {api_description_text}
 
 Today is {today_str}.
 Only use these APIs: {', '.join(sorted(ALLOWED_APIS))}.
-Dates, if provided, should be ISO YYYY-MM-DD; otherwise omit 'date'.
 
 Previous episodes (summary):
 {long_memory_snippets if long_memory_snippets else '(no long-term memory yet)'}
@@ -106,21 +91,21 @@ Previous episodes (summary):
 Recent trials in this episode:
 {memory_snippets if memory_snippets else '(no recent trials yet)'}
 
-Now, imagine a NEW and UNIQUE user query that can be answered by a SINGLE call to one API.
-Follow this theme: {chosen_topic}
-
+Task:
+Come up with ONE natural, realistic, and diverse user question that can be answered by exactly ONE of these APIs.
 Requirements:
-- Make the query significantly different from all previous examples in topic, wording, and focus.
-- Vary the location, date, subject, and style.
-- Do not repeat the same location or same API type too frequently.
-- Make it sound like a natural user question.
-User Query:
+- Be different in style, location, date, and subject from previous queries.
+- Make it conversational and human-like, not robotic.
+- Can use different sentence structures, e.g., rhetorical questions, travel planning, curiosity, etc.
+- If relevant, include specific dates in YYYY-MM-DD format.
+- Avoid repeating the same city or person too often.
+Output ONLY the question text.
 """.strip()
 
     resp = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-mini",  # 省錢
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.9,   # 提高多樣性
+        temperature=0.9,
         top_p=0.9
     )
     user_query = resp.choices[0].message.content.strip()
@@ -136,10 +121,13 @@ Example format:
   "api_name": "get_weather | get_rain_volume | get_temperature | get_forecast | get_wikipedia_summary",
   "args": {{"location": "City name" [,"date": "YYYY-MM-DD"]}}
 }}
+
+Output **only JSON**, no explanation, no extra text.
 """.strip()
 
+    #模型決定api
     action_resp = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": action_prompt}],
         temperature=0.4,
     )
@@ -164,7 +152,7 @@ Was this API call appropriate and helpful? Reply only "Yes" or "No".
 """.strip()
 
     refl = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": reflection_prompt}],
         temperature=0,
     )
@@ -192,7 +180,6 @@ Was this API call appropriate and helpful? Reply only "Yes" or "No".
     long_term_memory.append(trial)
 
 # ====== 儲存 ======
-
 def _load_existing_trials(path):
     if not os.path.exists(path):
         return []
@@ -205,24 +192,19 @@ def _load_existing_trials(path):
 
 def save_trials(new_trials, path="results/ste_trials.json"):
     os.makedirs(os.path.dirname(path), exist_ok=True)
-
-    # 讀舊檔 → 合併 → 回存
     existing = _load_existing_trials(path)
     merged = existing + new_trials
-
     with open(path, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
 
-    # 另外寫一份本次 run 的快照（備查，非必要）
+    # 另外寫一份本次 run 的快照（備查）
     snapshot = os.path.join(os.path.dirname(path), f"ste_trials_{RUN_ID}.json")
     with open(snapshot, "w", encoding="utf-8") as f:
         json.dump(new_trials, f, indent=2, ensure_ascii=False)
-
     print(f"✅ Appended {len(new_trials)} trials. Total now: {len(merged)}")
     print(f"📄 Master: {os.path.abspath(path)}")
     print(f"🗂  Snapshot for this run: {os.path.abspath(snapshot)}")
 
-# ====== 入口 ======
 if __name__ == "__main__":
     short_term_memory, long_term_memory = [], []
     EPISODES, TRIALS_PER_EPISODE = 1, 5
