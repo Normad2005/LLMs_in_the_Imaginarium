@@ -12,7 +12,7 @@ RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 ru
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from real_api import get_weather, get_rain_volume, get_temperature, get_forecast, get_wikipedia_summary
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "my api key"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature", "get_forecast", "get_wikipedia_summary"}
