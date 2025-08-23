@@ -4,7 +4,7 @@ import requests
 import wikipedia
 from datetime import datetime, timedelta
 
-API_KEY = "01f863cd8a24c54dfe2042949f4d20e2"
+API_KEY = "api key"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
