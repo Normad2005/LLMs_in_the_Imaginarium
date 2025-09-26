@@ -4,16 +4,16 @@ import os
 import json
 import re
 from datetime import datetime
-import random
-from openai import OpenAI
+#from openai import OpenAI
+import requests
 
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from real_api import get_weather, get_rain_volume, get_temperature, get_forecast, get_wikipedia_summary
 
-OPENAI_API_KEY = "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"
-client = OpenAI(api_key=OPENAI_API_KEY)
+#OPENAI_API_KEY = "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"
+#client = OpenAI(api_key=OPENAI_API_KEY)
 
 ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature", "get_forecast", "get_wikipedia_summary"}
 
@@ -65,6 +65,23 @@ def call_api(api_name, args):
     except Exception as e:
         return f"Error: {e}"
 
+# ====== 呼叫 Ollama ======
+def call_ollama(model: str, prompt: str, temperature: float = 0.7):
+    url = "http://localhost:11434/api/generate"
+    payload = {
+        "model": model,
+        "prompt": prompt,
+        "options": {"temperature": temperature}
+    }
+    resp = requests.post(url, json=payload, stream=True)
+    output = ""
+    for line in resp.iter_lines():
+        if line:
+            data = json.loads(line.decode("utf-8"))
+            if "response" in data:
+                output += data["response"]
+    return output.strip()
+
 # ====== 單次 trial ======
 def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
     memory_snippets = ""
@@ -83,7 +100,7 @@ You are a creative assistant with access to the following APIs:
 {api_description_text}
 
 Today is {today_str}.
-Only use these APIs: {', '.join(sorted(ALLOWED_APIS))}.
+Only use ONE of these APIs: {', '.join(sorted(ALLOWED_APIS))}.
 
 Previous episodes (summary):
 {long_memory_snippets if long_memory_snippets else '(no long-term memory yet)'}
@@ -97,18 +114,20 @@ Requirements:
 - Be different in style, location, date, and subject from previous queries.
 - Make it conversational and human-like, not robotic.
 - Can use different sentence structures, e.g., rhetorical questions, travel planning, curiosity, etc.
-- If relevant, include specific dates in YYYY-MM-DD format.
+- You may include dates in any natural way (e.g., "tomorrow", "next weekend", "2025/09/25", or "September 25").
 - Avoid repeating the same city or person too often.
 Output ONLY the question text.
 """.strip()
 
-    resp = client.chat.completions.create(
-        model="gpt-4o-mini",  # 省錢
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.9,
-        top_p=0.9
-    )
-    user_query = resp.choices[0].message.content.strip()
+    #resp = client.chat.completions.create(
+    #    model="gpt-4o-mini",
+    #    messages=[{"role": "user", "content": prompt}],
+    #    temperature=0.9,
+    #    top_p=0.9
+    #)
+    #user_query = resp.choices[0].message.content.strip()
+
+    user_query = call_ollama("llama3", prompt, temperature=0.9)
 
     action_prompt = f"""
 User query: "{user_query}"
@@ -118,22 +137,28 @@ If date is not needed, omit it.
 
 Example format:
 {{
-  "api_name": "get_weather | get_rain_volume | get_temperature | get_forecast | get_wikipedia_summary",
+  "api_name": "get_forecast",
   "args": {{"location": "City name" [,"date": "YYYY-MM-DD"]}}
 }}
 
-Output **only JSON**, no explanation, no extra text.
+You MUST output only a JSON object with exactly these two keys: "api_name" and "args".
+- "api_name" must be exactly one of: get_weather, get_rain_volume, get_temperature, get_forecast, get_wikipedia_summary.
+- "args" must be an object that matches the required parameters.
+- Do not invent extra structure (like "OpenWeatherMap") or include multiple APIs.
+- Do not include explanations or additional text.
 """.strip()
 
-    #模型決定api
-    action_resp = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": action_prompt}],
-        temperature=0.4,
-    )
+    #action_resp = client.chat.completions.create(
+    #    model="gpt-4o-mini",
+    #    messages=[{"role": "user", "content": action_prompt}],
+    #    temperature=0.4,
+    #)
+    action_resp = call_ollama("llama3", action_prompt, temperature=0.4)
+    print("DEBUG action_resp:", action_resp)
 
     try:
-        action_json = json.loads(action_resp.choices[0].message.content)
+        #action_json = json.loads(action_resp.choices[0].message.content)
+        action_json = json.loads(action_resp)
         api_name = action_json["api_name"]
         args = action_json.get("args", {})
         if api_name not in ALLOWED_APIS:
@@ -151,13 +176,17 @@ API returned: "{observation}"
 Was this API call appropriate and helpful? Reply only "Yes" or "No".
 """.strip()
 
-    refl = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": reflection_prompt}],
-        temperature=0,
-    )
-    is_success = (refl.choices[0].message.content.strip().lower().startswith("yes")
-                  and not str(observation).startswith("Error"))
+    #refl = client.chat.completions.create(
+    #    model="gpt-4o-mini",
+    #    messages=[{"role": "user", "content": reflection_prompt}],
+    #    temperature=0,
+    #)
+    refl = call_ollama("llama3", reflection_prompt, temperature=0)
+
+    #is_success = (refl.choices[0].message.content.strip().lower().startswith("yes")
+    #              and not str(observation).startswith("Error"))
+    is_success = (refl.strip().lower().startswith("yes")
+              and not str(observation).startswith("Error"))
 
     print("Q:", user_query)
     print("Action:", api_name, args)

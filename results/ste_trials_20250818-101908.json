@@ -1,0 +1,69 @@
+[
+  {
+    "run_id": "20250818-101908",
+    "timestamp": "2025-08-18T10:19:15.211554",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the weather looking like in Tokyo for the next few days? I'm planning a trip there starting on 2025-08-20!",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "Weather forecast for Tokyo:\n2025-08-18 03:00:00: overcast clouds, 33.8°C\n2025-08-18 06:00:00: overcast clouds, 34.3°C\n2025-08-18 09:00:00: light rain, 31.9°C\n2025-08-18 12:00:00: light rain, 28.8°C\n2025-08-18 15:00:00: light rain, 27.9°C\n2025-08-18 18:00:00: light rain, 27.1°C\n2025-08-18 21:00:00: broken clouds, 27.1°C\n2025-08-19 00:00:00: broken clouds, 29.3°C\n2025-08-19 03:00:00: few clouds, 32.4°C\n2025-08-19 06:00:00: clear sky, 32.0°C\n2025-08-19 09:00:00: scattered clouds, 31.2°C\n2025-08-19 12:00:00: scattered clouds, 30.9°C\n2025-08-19 15:00:00: scattered clouds, 29.8°C\n2025-08-19 18:00:00: broken clouds, 29.6°C\n2025-08-19 21:00:00: few clouds, 28.6°C\n2025-08-20 00:00:00: scattered clouds, 30.7°C\n2025-08-20 03:00:00: overcast clouds, 32.9°C\n2025-08-20 06:00:00: broken clouds, 32.9°C\n2025-08-20 09:00:00: overcast clouds, 31.3°C\n2025-08-20 12:00:00: light rain, 30.4°C\n2025-08-20 15:00:00: overcast clouds, 30.7°C\n2025-08-20 18:00:00: light rain, 29.2°C\n2025-08-20 21:00:00: broken clouds, 28.9°C\n2025-08-21 00:00:00: broken clouds, 31.1°C\n2025-08-21 03:00:00: scattered clouds, 33.9°C\n2025-08-21 06:00:00: broken clouds, 35.0°C\n2025-08-21 09:00:00: scattered clouds, 32.7°C\n2025-08-21 12:00:00: scattered clouds, 30.5°C\n2025-08-21 15:00:00: light rain, 29.4°C\n2025-08-21 18:00:00: light rain, 28.2°C\n2025-08-21 21:00:00: broken clouds, 28.0°C\n2025-08-22 00:00:00: broken clouds, 30.1°C\n2025-08-22 03:00:00: broken clouds, 33.2°C\n2025-08-22 06:00:00: light rain, 33.4°C\n2025-08-22 09:00:00: overcast clouds, 31.9°C\n2025-08-22 12:00:00: overcast clouds, 29.4°C\n2025-08-22 15:00:00: overcast clouds, 28.8°C\n2025-08-22 18:00:00: overcast clouds, 28.4°C\n2025-08-22 21:00:00: overcast clouds, 28.5°C\n2025-08-23 00:00:00: overcast clouds, 30.7°C",
+    "success": true
+  },
+  {
+    "run_id": "20250818-101908",
+    "timestamp": "2025-08-18T10:19:18.746613",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "I'm curious, what's the current temperature in Cape Town right now?",
+    "api": "get_temperature",
+    "args": {
+      "location": "Cape Town"
+    },
+    "observation": "The temperature in Cape Town now is 13.4°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250818-101908",
+    "timestamp": "2025-08-18T10:19:23.408516",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "Could you tell me what the current weather is like in Paris today?",
+    "api": "get_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is clear sky.",
+    "success": true
+  },
+  {
+    "run_id": "20250818-101908",
+    "timestamp": "2025-08-18T10:19:27.403261",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What’s the expected temperature in Sydney this coming Wednesday, August 20, 2025?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Sydney",
+      "date": "2025-08-20"
+    },
+    "observation": "Weather forecast for Sydney:\n2025-08-20 00:00:00: light rain, 16.0°C\n2025-08-20 03:00:00: light rain, 15.9°C\n2025-08-20 06:00:00: light rain, 14.8°C\n2025-08-20 09:00:00: moderate rain, 13.8°C\n2025-08-20 12:00:00: moderate rain, 14.3°C\n2025-08-20 15:00:00: light rain, 15.2°C\n2025-08-20 18:00:00: light rain, 15.1°C\n2025-08-20 21:00:00: light rain, 15.2°C",
+    "success": true
+  },
+  {
+    "run_id": "20250818-101908",
+    "timestamp": "2025-08-18T10:19:32.667599",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What’s the weather forecast for New York City this upcoming Saturday, August 23, 2025?",
+    "api": "get_forecast",
+    "args": {
+      "location": "New York City",
+      "date": "2025-08-23"
+    },
+    "observation": "Weather forecast for New York City:\n2025-08-23 00:00:00: broken clouds, 23.3°C",
+    "success": true
+  }
+]
