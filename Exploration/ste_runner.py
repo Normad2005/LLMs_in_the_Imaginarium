@@ -82,6 +82,13 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7):
                 output += data["response"]
     return output.strip()
 
+# ====== 只抓第一個 { ... } ======
+def safe_json_loads(s: str):
+    match = re.search(r"\{[\s\S]*\}", s)
+    if match:
+        return json.loads(match.group(0))
+    raise ValueError("No valid JSON found")
+
 # ====== 單次 trial ======
 def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
     memory_snippets = ""
@@ -92,7 +99,7 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
     for m in long_term_memory[-5:]:
         long_memory_snippets += f"- Q: {m['query']}\n  → API: {m['api']} → Success: {m['success']}\n"
 
-    today_str = datetime.now().strftime("%Y-%m-%d")
+    today_str = datetime.now().strftime("%Y-%m-%d (%A)")
 
     # 讓 LLM 自行生成多元化問題
     prompt = f"""
@@ -109,14 +116,13 @@ Recent trials in this episode:
 {memory_snippets if memory_snippets else '(no recent trials yet)'}
 
 Task:
-Come up with ONE natural, realistic, and diverse user question that can be answered by exactly ONE of these APIs.
+Generate ONE natural and diverse user-style question that can be answered by exactly ONE of these APIs.
 Requirements:
-- Be different in style, location, date, and subject from previous queries.
-- Make it conversational and human-like, not robotic.
-- Can use different sentence structures, e.g., rhetorical questions, travel planning, curiosity, etc.
-- You may include dates in any natural way (e.g., "tomorrow", "next weekend", "2025/09/25", or "September 25").
-- Avoid repeating the same city or person too often.
-Output ONLY the question text.
+- Must be different in style, location, date, or subject from recent queries.
+- Keep it conversational and realistic.
+- Dates may be natural language (e.g., tomorrow, next weekend, 2025/09/25).
+- Avoid repeating the same city or person often.
+Output only the question text.
 """.strip()
 
     #resp = client.chat.completions.create(
@@ -132,20 +138,21 @@ Output ONLY the question text.
     action_prompt = f"""
 User query: "{user_query}"
 
-Pick ONE API and provide arguments in JSON. Use ONLY: {', '.join(sorted(ALLOWED_APIS))}.
-If date is not needed, omit it.
-
-Example format:
+Return exactly ONE JSON object in this format:
 {{
-  "api_name": "get_forecast",
-  "args": {{"location": "City name" [,"date": "YYYY-MM-DD"]}}
+  "api_name": "get_weather" | "get_rain_volume" | "get_temperature" | "get_forecast" | "get_wikipedia_summary",
+  "args": {{
+    "location": "City, Country" [,"date": "YYYY-MM-DD"]
+  }}
 }}
 
-You MUST output only a JSON object with exactly these two keys: "api_name" and "args".
-- "api_name" must be exactly one of: get_weather, get_rain_volume, get_temperature, get_forecast, get_wikipedia_summary.
-- "args" must be an object that matches the required parameters.
-- Do not invent extra structure (like "OpenWeatherMap") or include multiple APIs.
-- Do not include explanations or additional text.
+Rules:
+- Today is {today_str}.
+- api_name must be EXACTLY one of the allowed names.
+- args must only contain required fields ("query" instead of "location" for get_wikipedia_summary).
+- Always map landmarks to the nearest known city (e.g., "Machu Picchu" → "Cusco, Peru").
+- If the user mentions a date without a year, ALWAYS use the year {datetime.now().year}, never 2023 or other years.
+- Return only one JSON object, no extra text.
 """.strip()
 
     #action_resp = client.chat.completions.create(
@@ -158,7 +165,7 @@ You MUST output only a JSON object with exactly these two keys: "api_name" and "
 
     try:
         #action_json = json.loads(action_resp.choices[0].message.content)
-        action_json = json.loads(action_resp)
+        action_json = safe_json_loads(action_resp)
         api_name = action_json["api_name"]
         args = action_json.get("args", {})
         if api_name not in ALLOWED_APIS:
