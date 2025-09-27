@@ -1,0 +1,687 @@
+[
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:42:06.101552",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the average temperature in Tokyo this week?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 24.9°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:42:16.953384",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "What's the weather forecast for the weekend in Paris if I plan to travel there on Sunday?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "date": "2025-09-29",
+      "days": 2
+    },
+    "observation": "Weather forecast for Paris:\n2025-09-29 00:00:00: overcast clouds, 15.3°C\n2025-09-29 03:00:00: overcast clouds, 14.1°C\n2025-09-29 06:00:00: broken clouds, 13.2°C\n2025-09-29 09:00:00: clear sky, 16.6°C\n2025-09-29 12:00:00: clear sky, 20.7°C\n2025-09-29 15:00:00: clear sky, 21.8°C\n2025-09-29 18:00:00: few clouds, 19.8°C\n2025-09-29 21:00:00: overcast clouds, 18.6°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:42:28.337842",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "What's the latest news on the new AI-powered robot that's scheduled to debut at Tokyo's Robot Restaurant tonight?",
+    "api": "get_latest_news",
+    "args": {
+      "query": "AI-powered robot Tokyo Robot Restaurant",
+      "language": "en"
+    },
+    "observation": "Latest news for 'AI-powered robot Tokyo Robot Restaurant':\n- AI-Powered Japanese Ikejime Robotics Delivers Pristine, Humanely Treated Fish To All (https://www.forbes.com/sites/akikokatayama/2025/08/31/ai-powered-japanese-ikejime-robotics-delivers-pristine-humanely-treated-fish-to-all/)",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:42:39.461412",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "What's the current temperature in New York City for my morning run tomorrow?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "New York City"
+    },
+    "observation": "The temperature in New York City now is 17.3°C.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:42:51.482167",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What's the current exchange rate between the Japanese yen and euros if I'm planning to buy souvenirs in Tokyo for my European friends this holiday season?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "JPY",
+      "target_currency": "EUR"
+    },
+    "observation": "1 JPY = 0.0057 EUR (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:43:01.279888",
+    "episode_id": 2,
+    "trial_id": 1,
+    "query": "What's the current weather like in Sydney this evening?",
+    "api": "get_current_weather",
+    "args": {
+      "location": "Sydney"
+    },
+    "observation": "The weather in Sydney now is broken clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:43:11.474424",
+    "episode_id": 2,
+    "trial_id": 2,
+    "query": "What's the current temperature like in Berlin this Friday morning as I'm getting ready to start my weekend getaway?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Berlin"
+    },
+    "observation": "The temperature in Berlin now is 17.6°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:43:22.306811",
+    "episode_id": 2,
+    "trial_id": 3,
+    "query": "What's the current weather forecast for my friend's wedding party in Tokyo this weekend?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "Weather forecast for Tokyo:\n2025-09-27 12:00:00: broken clouds, 24.7°C\n2025-09-27 15:00:00: broken clouds, 24.6°C\n2025-09-27 18:00:00: broken clouds, 24.2°C\n2025-09-27 21:00:00: broken clouds, 23.5°C\n2025-09-28 00:00:00: light rain, 24.4°C\n2025-09-28 03:00:00: light rain, 26.6°C\n2025-09-28 06:00:00: overcast clouds, 27.2°C\n2025-09-28 09:00:00: broken clouds, 26.0°C\n2025-09-28 12:00:00: broken clouds, 25.1°C\n2025-09-28 15:00:00: overcast clouds, 24.9°C\n2025-09-28 18:00:00: overcast clouds, 24.5°C\n2025-09-28 21:00:00: overcast clouds, 24.4°C\n2025-09-29 00:00:00: overcast clouds, 25.0°C\n2025-09-29 03:00:00: overcast clouds, 28.3°C\n2025-09-29 06:00:00: overcast clouds, 29.5°C\n2025-09-29 09:00:00: light rain, 28.6°C\n2025-09-29 12:00:00: moderate rain, 23.4°C\n2025-09-29 15:00:00: moderate rain, 22.0°C\n2025-09-29 18:00:00: light rain, 21.7°C\n2025-09-29 21:00:00: light rain, 22.3°C\n2025-09-30 00:00:00: light rain, 22.6°C\n2025-09-30 03:00:00: broken clouds, 25.4°C\n2025-09-30 06:00:00: broken clouds, 25.6°C\n2025-09-30 09:00:00: overcast clouds, 24.6°C\n2025-09-30 12:00:00: overcast clouds, 23.2°C\n2025-09-30 15:00:00: overcast clouds, 22.7°C\n2025-09-30 18:00:00: overcast clouds, 22.3°C\n2025-09-30 21:00:00: overcast clouds, 21.9°C\n2025-10-01 00:00:00: light rain, 21.6°C\n2025-10-01 03:00:00: overcast clouds, 23.6°C\n2025-10-01 06:00:00: overcast clouds, 24.3°C\n2025-10-01 09:00:00: overcast clouds, 23.1°C\n2025-10-01 12:00:00: light rain, 21.4°C\n2025-10-01 15:00:00: light rain, 21.6°C\n2025-10-01 18:00:00: scattered clouds, 21.8°C\n2025-10-01 21:00:00: clear sky, 21.6°C\n2025-10-02 00:00:00: few clouds, 23.7°C\n2025-10-02 03:00:00: scattered clouds, 26.8°C\n2025-10-02 06:00:00: scattered clouds, 28.2°C\n2025-10-02 09:00:00: clear sky, 26.3°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:43:37.061342",
+    "episode_id": 2,
+    "trial_id": 4,
+    "query": "What's the current exchange rate between US dollars and Canadian dollars if I'm planning to buy some maple syrup for my morning pancakes on Monday?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "USD",
+      "target_currency": "CAD"
+    },
+    "observation": "1 USD = 1.3948 CAD (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:43:47.509979",
+    "episode_id": 2,
+    "trial_id": 5,
+    "query": "What's the current time in Mumbai if I'm calling my friend who lives there, as I want to catch them when they're having breakfast?",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "Asia/Kolkata"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/Asia/Kolkata (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:43:59.218194",
+    "episode_id": 3,
+    "trial_id": 1,
+    "query": "\"What's the latest news on advancements in sustainable agriculture in Europe that I can share with my friends at our upcoming campfire gathering?\"",
+    "api": "get_latest_news",
+    "args": {
+      "query": "sustainable agriculture Europe",
+      "language": "en"
+    },
+    "observation": "Latest news for 'sustainable agriculture Europe':\n- Georgia’s $100 Million Blockchain Almond Bet (https://www.forbes.com/sites/feliciajackson/2025/09/26/georgias-100-million-blockchain-almond-bet/)\n- Butter Market Forecast and Company Analysis Report 2025-2033 Featuring Lactalis, Fonterra, Ornua, Organic Valley, Dairy Farmers of America, Amul, Meadow Foods, Arla Foods, MS Iceland Dairies, Muller (https://www.globenewswire.com/news-release/2025/09/26/3156899/28124/en/Butter-Market-Forecast-and-Company-Analysis-Report-2025-2033-Featuring-Lactalis-Fonterra-Ornua-Organic-Valley-Dairy-Farmers-of-America-Amul-Meadow-Foods-Arla-Foods-MS-Iceland-Dairi.html)\n- Biorefinery Market Size to Worth USD 468.51 Billion by 2034 (https://www.globenewswire.com/news-release/2025/09/26/3156859/0/en/Biorefinery-Market-Size-to-Worth-USD-468-51-Billion-by-2034.html)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:44:10.485529",
+    "episode_id": 3,
+    "trial_id": 2,
+    "query": "What's the current weather forecast for my grandma's birthday party in Paris on Tuesday, so I can suggest some outdoor games if it's sunny?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "date": "2025-09-27",
+      "days": 1
+    },
+    "observation": "Weather forecast for Paris:\n2025-09-27 12:00:00: scattered clouds, 15.8°C\n2025-09-27 15:00:00: scattered clouds, 16.9°C\n2025-09-27 18:00:00: broken clouds, 16.2°C\n2025-09-27 21:00:00: broken clouds, 13.7°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:44:20.874105",
+    "episode_id": 3,
+    "trial_id": 3,
+    "query": "What's the current temperature in Hong Kong this evening if I'm planning a romantic dinner cruise on the harbor?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Hong Kong"
+    },
+    "observation": "The temperature in Hong Kong now is 30.2°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:44:31.418027",
+    "episode_id": 3,
+    "trial_id": 4,
+    "query": "What's the current temperature in Tokyo this afternoon if I'm planning a spontaneous picnic in the Imperial Palace East Garden for my friend's birthday?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 24.9°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:44:42.842146",
+    "episode_id": 3,
+    "trial_id": 5,
+    "query": "\"What's the current weather forecast for my family's camping trip in Yellowstone National Park on Sunday, so I can make sure to pack a rain jacket if it looks like it might rain?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Yellowstone National Park, USA",
+      "date": "2025-09-29"
+    },
+    "observation": "❌ API 呼叫失敗: city not found",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:44:54.232252",
+    "episode_id": 4,
+    "trial_id": 1,
+    "query": "What's the current exchange rate between Japanese yen and British pounds if I'm planning to exchange some cash for souvenirs on my trip to London this weekend?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "JPY",
+      "target_currency": "GBP"
+    },
+    "observation": "1 JPY = 0.0050 GBP (Date: 2025-09-26)",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:45:06.166863",
+    "episode_id": 4,
+    "trial_id": 2,
+    "query": "What's the current weather forecast for my morning run in Berlin on Tuesday if I want to make sure to wear a jacket and not get caught in a chilly mist?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Berlin",
+      "date": "2025-09-29",
+      "days": 1
+    },
+    "observation": "Weather forecast for Berlin:\n2025-09-29 00:00:00: clear sky, 11.8°C\n2025-09-29 03:00:00: clear sky, 10.6°C\n2025-09-29 06:00:00: clear sky, 10.6°C\n2025-09-29 09:00:00: scattered clouds, 14.6°C\n2025-09-29 12:00:00: scattered clouds, 17.6°C\n2025-09-29 15:00:00: broken clouds, 15.7°C\n2025-09-29 18:00:00: broken clouds, 13.1°C\n2025-09-29 21:00:00: few clouds, 12.1°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:45:18.082146",
+    "episode_id": 4,
+    "trial_id": 3,
+    "query": "\"What's the current weather forecast for my family's afternoon BBQ on the lake in Chicago this Sunday if I want to make sure to bring a hat and sunglasses to protect from the sun?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Chicago",
+      "date": "2025-09-27",
+      "days": 1
+    },
+    "observation": "Weather forecast for Chicago:\n2025-09-27 12:00:00: clear sky, 15.0°C\n2025-09-27 15:00:00: clear sky, 17.7°C\n2025-09-27 18:00:00: clear sky, 24.6°C\n2025-09-27 21:00:00: few clouds, 30.5°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:45:28.032422",
+    "episode_id": 4,
+    "trial_id": 4,
+    "query": "What's the current temperature in Paris this evening if I want to take a romantic stroll along the Seine River tomorrow?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The temperature in Paris now is 14.8°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:45:38.786409",
+    "episode_id": 4,
+    "trial_id": 5,
+    "query": "What's the average high temperature in Tokyo this time next year if I want to plan my summer vacation there?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo",
+      "date": "2026-06-01",
+      "days": 30
+    },
+    "observation": "❌ 2026-06-01 不在未來五天範圍內，無法提供預報。",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:45:50.845620",
+    "episode_id": 5,
+    "trial_id": 1,
+    "query": "\"What's a good summary about the origin of sushi on my phone for my friend who loves Japanese food and is curious to learn more while we're waiting for our dinner reservations in Rome next Friday?\"",
+    "api": "get_wikipedia_summary",
+    "args": {
+      "query": "Origin of Sushi",
+      "sentences": 1
+    },
+    "observation": "No Wikipedia page found for 'Origin of Sushi'.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:46:02.688853",
+    "episode_id": 5,
+    "trial_id": 2,
+    "query": "\"What's the current weather forecast for my outdoor concert in Tokyo tonight if I want to make sure to bring an umbrella and not get caught in a sudden rain shower?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "Weather forecast for Tokyo:\n2025-09-27 12:00:00: broken clouds, 24.7°C\n2025-09-27 15:00:00: broken clouds, 24.6°C\n2025-09-27 18:00:00: broken clouds, 24.2°C\n2025-09-27 21:00:00: broken clouds, 23.5°C\n2025-09-28 00:00:00: light rain, 24.4°C\n2025-09-28 03:00:00: light rain, 26.6°C\n2025-09-28 06:00:00: overcast clouds, 27.2°C\n2025-09-28 09:00:00: broken clouds, 26.0°C\n2025-09-28 12:00:00: broken clouds, 25.1°C\n2025-09-28 15:00:00: overcast clouds, 24.9°C\n2025-09-28 18:00:00: overcast clouds, 24.5°C\n2025-09-28 21:00:00: overcast clouds, 24.4°C\n2025-09-29 00:00:00: overcast clouds, 25.0°C\n2025-09-29 03:00:00: overcast clouds, 28.3°C\n2025-09-29 06:00:00: overcast clouds, 29.5°C\n2025-09-29 09:00:00: light rain, 28.6°C\n2025-09-29 12:00:00: moderate rain, 23.4°C\n2025-09-29 15:00:00: moderate rain, 22.0°C\n2025-09-29 18:00:00: light rain, 21.7°C\n2025-09-29 21:00:00: light rain, 22.3°C\n2025-09-30 00:00:00: light rain, 22.6°C\n2025-09-30 03:00:00: broken clouds, 25.4°C\n2025-09-30 06:00:00: broken clouds, 25.6°C\n2025-09-30 09:00:00: overcast clouds, 24.6°C\n2025-09-30 12:00:00: overcast clouds, 23.2°C\n2025-09-30 15:00:00: overcast clouds, 22.7°C\n2025-09-30 18:00:00: overcast clouds, 22.3°C\n2025-09-30 21:00:00: overcast clouds, 21.9°C\n2025-10-01 00:00:00: light rain, 21.6°C\n2025-10-01 03:00:00: overcast clouds, 23.6°C\n2025-10-01 06:00:00: overcast clouds, 24.3°C\n2025-10-01 09:00:00: overcast clouds, 23.1°C\n2025-10-01 12:00:00: light rain, 21.4°C\n2025-10-01 15:00:00: light rain, 21.6°C\n2025-10-01 18:00:00: scattered clouds, 21.8°C\n2025-10-01 21:00:00: clear sky, 21.6°C\n2025-10-02 00:00:00: few clouds, 23.7°C\n2025-10-02 03:00:00: scattered clouds, 26.8°C\n2025-10-02 06:00:00: scattered clouds, 28.2°C\n2025-10-02 09:00:00: clear sky, 26.3°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:46:15.261263",
+    "episode_id": 5,
+    "trial_id": 3,
+    "query": "\"What's the current exchange rate for my trip to Australia this Christmas if I want to buy a souvenir kangaroo plush toy for my niece in Tokyo?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "USD",
+      "target_currency": "JPY"
+    },
+    "observation": "1 USD = 149.7500 JPY (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:46:26.205248",
+    "episode_id": 5,
+    "trial_id": 4,
+    "query": "\"What's the current temperature in Rio de Janeiro today if I want to enjoy a morning coffee on the beach tomorrow and make sure it's not too chilly?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Rio de Janeiro"
+    },
+    "observation": "The temperature in Rio de Janeiro now is 20.0°C.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:46:37.906735",
+    "episode_id": 5,
+    "trial_id": 5,
+    "query": "\"What's the current time in New York City tonight so I can schedule a call with my business partner who is flying in from there for our meeting in Paris next Monday?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/New_York"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/America/New_York (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:46:50.449133",
+    "episode_id": 6,
+    "trial_id": 1,
+    "query": "\"What's the current weather forecast for my camping trip in Yellowstone National Park this Saturday morning so I can pack accordingly and enjoy a beautiful sunrise hike with friends?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Yellowstone National Park, Wyoming, USA",
+      "date": "2025-09-28",
+      "days": 1
+    },
+    "observation": "❌ API 呼叫失敗: city not found",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:47:01.986858",
+    "episode_id": 6,
+    "trial_id": 2,
+    "query": "\"What's the current temperature in Tokyo tomorrow morning so I can plan a morning stroll through the Shibuya Crossing with my friend who's visiting from there this weekend?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 24.9°C.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:47:13.416649",
+    "episode_id": 6,
+    "trial_id": 3,
+    "query": "\"What's the current weather forecast for my hiking trip in the Pyrenees Mountains next Saturday morning so I can make sure to bring the right gear and enjoy a stunning sunrise hike with friends?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Pyrenees Mountains",
+      "date": "2025-10-03",
+      "days": 1
+    },
+    "observation": "❌ 2025-10-03 不在未來五天範圍內，無法提供預報。",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:47:24.649541",
+    "episode_id": 6,
+    "trial_id": 4,
+    "query": "\"What's the current exchange rate between US dollars and Japanese yen so I can convert my friends' gifts correctly when we meet in Kyoto for our friend's birthday celebration this coming weekend?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "USD",
+      "target_currency": "JPY"
+    },
+    "observation": "1 USD = 149.7500 JPY (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:47:36.207249",
+    "episode_id": 6,
+    "trial_id": 5,
+    "query": "\"What's the current temperature in Bangkok today so I can plan a relaxing afternoon stroll along the Chao Phraya River with my family this weekend?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Bangkok"
+    },
+    "observation": "The temperature in Bangkok now is 29.8°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:47:47.207914",
+    "episode_id": 7,
+    "trial_id": 1,
+    "query": "\"What's the current temperature in Cairo today so I can plan a refreshing morning walk through the Nile River promenade with my aunt who's visiting from there this week?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Cairo"
+    },
+    "observation": "The temperature in Cairo now is 31.5°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:47:58.429609",
+    "episode_id": 7,
+    "trial_id": 2,
+    "query": "\"What's the current time in New York City when my friend is visiting for a conference in the heart of Manhattan, and can I find some authentic bagels to bring as a welcome gift?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/New_York"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/America/New_York (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:48:10.162057",
+    "episode_id": 7,
+    "trial_id": 3,
+    "query": "\"What's the current temperature in Tokyo today so I can decide whether to wear a light jacket when meeting my cousin who just got back from hiking the Japanese Alps and wants to share some stories with me?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 24.9°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:48:20.510970",
+    "episode_id": 7,
+    "trial_id": 4,
+    "query": "What's the current weather forecast for our family vacation to the Bahamas next week so we can pack accordingly and make the most of our beach days?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Nassau, Bahamas",
+      "date": "2025-10-04",
+      "days": 7
+    },
+    "observation": "❌ 2025-10-04 不在未來五天範圍內，無法提供預報。",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:48:32.871954",
+    "episode_id": 7,
+    "trial_id": 5,
+    "query": "\"What's the current exchange rate between euros and pounds sterling today so I can help my niece plan her trip to London and get an idea of how much she'll need to spend on souvenirs?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "GBP"
+    },
+    "observation": "1 EUR = 0.8740 GBP (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:48:44.405640",
+    "episode_id": 8,
+    "trial_id": 1,
+    "query": "\"What's today's weather forecast in Sydney so I can decide whether to bring a sun hat when meeting my coworker from the local coffee shop who's been bragging about their beachside wedding this weekend?\"",
+    "api": "get_current_weather",
+    "args": {
+      "location": "Sydney"
+    },
+    "observation": "The weather in Sydney now is broken clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:48:56.633764",
+    "episode_id": 8,
+    "trial_id": 2,
+    "query": "\"What's the latest news on AI advancements that I can bring up at my cousin's birthday party tonight so we can geek out and celebrate their special day?\"",
+    "api": "get_latest_news",
+    "args": {
+      "query": "AI advancements",
+      "language": "en"
+    },
+    "observation": "Latest news for 'AI advancements':\n- U.S. Employer and Workplace Drug Testing (Pre-, Post-employment) Market Size, Share & Trends Analysis Report 2025-2033 (https://www.globenewswire.com/news-release/2025/09/26/3156928/28124/en/U-S-Employer-and-Workplace-Drug-Testing-Pre-Post-employment-Market-Size-Share-Trends-Analysis-Report-2025-2033.html)\n- The Art of Prompting ChatGPT 5 Correctly : Secrets to Better AI Responses (https://www.geeky-gadgets.com/prompt-chatgpt-5-correctly/)\n- What's Driving NuScale Stock 250% Rally? (https://www.forbes.com/sites/greatspeculations/2025/09/26/whats-driving-nuscale-stock-250-rally/)",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:49:07.769938",
+    "episode_id": 8,
+    "trial_id": 3,
+    "query": "\"What's today's weather like in Tokyo so I can decide whether to grab an umbrella for my friend's birthday party there tomorrow?\"",
+    "api": "get_current_weather",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The weather in Tokyo now is broken clouds.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:49:19.569733",
+    "episode_id": 8,
+    "trial_id": 4,
+    "query": "\"What's the current temperature in Paris so I can pack accordingly for my upcoming art history conference and make the most of the city's famous museums this Saturday?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The temperature in Paris now is 14.8°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:49:31.019381",
+    "episode_id": 8,
+    "trial_id": 5,
+    "query": "\"What's the weather looking like for my upcoming trip to New York City over the next three days so I can plan accordingly and enjoy the famous museums without getting caught in a rainstorm?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "New York City",
+      "date": "2025-09-27",
+      "days": 3
+    },
+    "observation": "Weather forecast for New York City:\n2025-09-27 12:00:00: overcast clouds, 18.6°C\n2025-09-27 15:00:00: overcast clouds, 20.2°C\n2025-09-27 18:00:00: overcast clouds, 23.4°C\n2025-09-27 21:00:00: overcast clouds, 24.5°C",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:49:42.953712",
+    "episode_id": 9,
+    "trial_id": 1,
+    "query": "\"What's the current exchange rate for converting my Japanese yen to euros so I can purchase some art supplies online for an upcoming project and avoid any last-minute conversion hassles when I visit Europe in a few months?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "JPY",
+      "target_currency": "EUR"
+    },
+    "observation": "1 JPY = 0.0057 EUR (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:49:53.564912",
+    "episode_id": 9,
+    "trial_id": 2,
+    "query": "What's the current temperature in Buenos Aires so I can plan a comfortable outfit for my first day of exploring the famous Recoleta Cemetery and avoid the heatwaves that hit the city during this time of year?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Buenos Aires"
+    },
+    "observation": "The temperature in Buenos Aires now is 13.9°C.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:50:05.253228",
+    "episode_id": 9,
+    "trial_id": 3,
+    "query": "What's the current weather forecast for my Sunday brunch plans in Melbourne so I can decide whether to pack a rain jacket and bring an umbrella just in case?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Melbourne"
+    },
+    "observation": "Weather forecast for Melbourne:\n2025-09-27 12:00:00: clear sky, 24.5°C\n2025-09-27 15:00:00: clear sky, 26.3°C\n2025-09-27 18:00:00: light rain, 29.7°C\n2025-09-27 21:00:00: light rain, 29.3°C\n2025-09-28 00:00:00: moderate rain, 26.9°C\n2025-09-28 03:00:00: overcast clouds, 27.5°C\n2025-09-28 06:00:00: light rain, 27.2°C\n2025-09-28 09:00:00: light rain, 26.7°C\n2025-09-28 12:00:00: moderate rain, 26.2°C\n2025-09-28 15:00:00: light rain, 28.7°C\n2025-09-28 18:00:00: moderate rain, 28.2°C\n2025-09-28 21:00:00: light rain, 27.2°C\n2025-09-29 00:00:00: light rain, 26.2°C\n2025-09-29 03:00:00: overcast clouds, 25.8°C\n2025-09-29 06:00:00: light rain, 25.2°C\n2025-09-29 09:00:00: light rain, 25.2°C\n2025-09-29 12:00:00: light rain, 25.2°C\n2025-09-29 15:00:00: moderate rain, 24.2°C\n2025-09-29 18:00:00: moderate rain, 25.9°C\n2025-09-29 21:00:00: light rain, 25.3°C\n2025-09-30 00:00:00: overcast clouds, 25.5°C\n2025-09-30 03:00:00: overcast clouds, 25.1°C\n2025-09-30 06:00:00: overcast clouds, 24.6°C\n2025-09-30 09:00:00: light rain, 24.3°C\n2025-09-30 12:00:00: overcast clouds, 23.1°C\n2025-09-30 15:00:00: broken clouds, 25.9°C\n2025-09-30 18:00:00: overcast clouds, 28.3°C\n2025-09-30 21:00:00: light rain, 28.4°C\n2025-10-01 00:00:00: light rain, 27.0°C\n2025-10-01 03:00:00: overcast clouds, 25.5°C\n2025-10-01 06:00:00: overcast clouds, 23.5°C\n2025-10-01 09:00:00: broken clouds, 22.5°C\n2025-10-01 12:00:00: scattered clouds, 22.1°C\n2025-10-01 15:00:00: clear sky, 25.5°C\n2025-10-01 18:00:00: clear sky, 29.0°C\n2025-10-01 21:00:00: overcast clouds, 26.1°C\n2025-10-02 00:00:00: light rain, 24.8°C\n2025-10-02 03:00:00: scattered clouds, 23.7°C\n2025-10-02 06:00:00: scattered clouds, 23.1°C\n2025-10-02 09:00:00: scattered clouds, 22.2°C",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:50:16.618342",
+    "episode_id": 9,
+    "trial_id": 4,
+    "query": "\"What's the current temperature in Tokyo this Saturday so I can dress comfortably for my friend's surprise birthday party and not worry about getting overheated with all the excitement?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 24.9°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:50:27.355649",
+    "episode_id": 9,
+    "trial_id": 5,
+    "query": "What's the current temperature in Cairo on Monday so I can plan my morning jog along the Nile River without worrying about the heat?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Cairo"
+    },
+    "observation": "The temperature in Cairo now is 31.5°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:50:38.240036",
+    "episode_id": 10,
+    "trial_id": 1,
+    "query": "\"What's the current weather forecast for my friend's backyard camping trip in Austin this upcoming weekend so I can decide whether to bring a tent or not?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Austin",
+      "date": "2025-09-30"
+    },
+    "observation": "Weather forecast for Austin:\n2025-09-30 00:00:00: overcast clouds, 32.1°C\n2025-09-30 03:00:00: overcast clouds, 29.6°C\n2025-09-30 06:00:00: broken clouds, 26.9°C\n2025-09-30 09:00:00: broken clouds, 25.5°C\n2025-09-30 12:00:00: scattered clouds, 24.3°C\n2025-09-30 15:00:00: clear sky, 29.1°C\n2025-09-30 18:00:00: clear sky, 34.1°C\n2025-09-30 21:00:00: clear sky, 35.5°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:50:49.933938",
+    "episode_id": 10,
+    "trial_id": 2,
+    "query": "\"What's the current exchange rate for euros to yen so I can plan my trip to Tokyo and budget accordingly for the upcoming Tokyo Game Show?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "JPY"
+    },
+    "observation": "1 EUR = 174.7900 JPY (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:51:01.383028",
+    "episode_id": 10,
+    "trial_id": 3,
+    "query": "\"What's the current time in Paris when my friend gets back from their vacation so I can plan a quick celebratory dinner for their return?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "Europe/Paris"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/Europe/Paris (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "success": false
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:51:13.403367",
+    "episode_id": 10,
+    "trial_id": 4,
+    "query": "\"What's the weather forecast for my sister's beachside wedding in Cancun this coming Thursday so I can pack accordingly and not ruin her special day with a rain-soaked outfit?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Cancun, Mexico",
+      "date": "2025-09-29",
+      "days": 1
+    },
+    "observation": "Weather forecast for Cancun, Mexico:\n2025-09-29 00:00:00: light rain, 27.2°C\n2025-09-29 03:00:00: clear sky, 26.4°C\n2025-09-29 06:00:00: clear sky, 25.9°C\n2025-09-29 09:00:00: light rain, 25.0°C\n2025-09-29 12:00:00: few clouds, 24.8°C\n2025-09-29 15:00:00: clear sky, 30.1°C\n2025-09-29 18:00:00: light rain, 30.4°C\n2025-09-29 21:00:00: light rain, 28.9°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-184156",
+    "timestamp": "2025-09-27T18:51:24.759486",
+    "episode_id": 10,
+    "trial_id": 5,
+    "query": "\"What's the current weather like in Rome tomorrow so I can decide whether to wear my new Italian scarf on our family dinner date?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Rome",
+      "date": "2025-09-28"
+    },
+    "observation": "Weather forecast for Rome:\n2025-09-28 00:00:00: scattered clouds, 25.5°C\n2025-09-28 03:00:00: broken clouds, 22.2°C\n2025-09-28 06:00:00: broken clouds, 21.2°C\n2025-09-28 09:00:00: few clouds, 17.5°C\n2025-09-28 12:00:00: clear sky, 17.0°C\n2025-09-28 15:00:00: clear sky, 25.3°C\n2025-09-28 18:00:00: clear sky, 30.2°C\n2025-09-28 21:00:00: broken clouds, 26.5°C",
+    "success": true
+  }
+]

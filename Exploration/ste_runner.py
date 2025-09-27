@@ -258,7 +258,7 @@ def save_trials(new_trials, path="results/ste_trials.json"):
 
 if __name__ == "__main__":
     short_term_memory, long_term_memory = [], []
-    EPISODES, TRIALS_PER_EPISODE = 1, 5
+    EPISODES, TRIALS_PER_EPISODE = 10, 5
 
     for eid in range(1, EPISODES + 1):
         print(f"\n=== Episode {eid} ===")
