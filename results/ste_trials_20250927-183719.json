@@ -1,0 +1,68 @@
+[
+  {
+    "run_id": "20250927-183719",
+    "timestamp": "2025-09-27T18:37:37.952969",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"Will it rain on my outdoor picnic plans for this upcoming Saturday's family gathering in Tokyo?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "Weather forecast for Tokyo:\n2025-09-27 12:00:00: broken clouds, 24.7°C\n2025-09-27 15:00:00: broken clouds, 24.6°C\n2025-09-27 18:00:00: broken clouds, 24.2°C\n2025-09-27 21:00:00: broken clouds, 23.5°C\n2025-09-28 00:00:00: light rain, 24.4°C\n2025-09-28 03:00:00: light rain, 26.6°C\n2025-09-28 06:00:00: overcast clouds, 27.2°C\n2025-09-28 09:00:00: broken clouds, 26.0°C\n2025-09-28 12:00:00: broken clouds, 25.1°C\n2025-09-28 15:00:00: overcast clouds, 24.9°C\n2025-09-28 18:00:00: overcast clouds, 24.5°C\n2025-09-28 21:00:00: overcast clouds, 24.4°C\n2025-09-29 00:00:00: overcast clouds, 25.0°C\n2025-09-29 03:00:00: overcast clouds, 28.3°C\n2025-09-29 06:00:00: overcast clouds, 29.5°C\n2025-09-29 09:00:00: light rain, 28.6°C\n2025-09-29 12:00:00: moderate rain, 23.4°C\n2025-09-29 15:00:00: moderate rain, 22.0°C\n2025-09-29 18:00:00: light rain, 21.7°C\n2025-09-29 21:00:00: light rain, 22.3°C\n2025-09-30 00:00:00: light rain, 22.6°C\n2025-09-30 03:00:00: broken clouds, 25.4°C\n2025-09-30 06:00:00: broken clouds, 25.6°C\n2025-09-30 09:00:00: overcast clouds, 24.6°C\n2025-09-30 12:00:00: overcast clouds, 23.2°C\n2025-09-30 15:00:00: overcast clouds, 22.7°C\n2025-09-30 18:00:00: overcast clouds, 22.3°C\n2025-09-30 21:00:00: overcast clouds, 21.9°C\n2025-10-01 00:00:00: light rain, 21.6°C\n2025-10-01 03:00:00: overcast clouds, 23.6°C\n2025-10-01 06:00:00: overcast clouds, 24.3°C\n2025-10-01 09:00:00: overcast clouds, 23.1°C\n2025-10-01 12:00:00: light rain, 21.4°C\n2025-10-01 15:00:00: light rain, 21.6°C\n2025-10-01 18:00:00: scattered clouds, 21.8°C\n2025-10-01 21:00:00: clear sky, 21.6°C\n2025-10-02 00:00:00: few clouds, 23.7°C\n2025-10-02 03:00:00: scattered clouds, 26.8°C\n2025-10-02 06:00:00: scattered clouds, 28.2°C\n2025-10-02 09:00:00: clear sky, 26.3°C",
+    "success": true
+  },
+  {
+    "run_id": "20250927-183719",
+    "timestamp": "2025-09-27T18:37:48.317102",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Here's a question that fits the requirements:\n\n\"What's the weather like in London this week?\"\n\nThis question is different from recent queries and can be answered by the get_current_weather API.",
+    "api": "get_current_weather",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The weather in London now is overcast clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-183719",
+    "timestamp": "2025-09-27T18:37:58.774267",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What's the current temperature in Cairo this morning?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Cairo"
+    },
+    "observation": "The temperature in Cairo now is 29.8°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-183719",
+    "timestamp": "2025-09-27T18:38:10.616483",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What's the current exchange rate between euros and pounds for this afternoon in Paris?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "GBP"
+    },
+    "observation": "1 EUR = 0.8740 GBP (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-183719",
+    "timestamp": "2025-09-27T18:38:21.622002",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"What's the current time in New York City tomorrow morning?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/New_York"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/America/New_York (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "success": false
+  }
+]
