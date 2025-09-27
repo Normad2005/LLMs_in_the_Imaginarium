@@ -10,35 +10,43 @@ import requests
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from real_api import get_weather, get_rain_volume, get_temperature, get_forecast, get_wikipedia_summary
+from real_api import get_current_weather, get_current_temperature, get_forecast, get_wikipedia_summary, get_exchange_rate, get_time_by_timezone, get_latest_news
 
 #OPENAI_API_KEY = "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"
 #client = OpenAI(api_key=OPENAI_API_KEY)
 
-ALLOWED_APIS = {"get_weather", "get_rain_volume", "get_temperature", "get_forecast", "get_wikipedia_summary"}
+ALLOWED_APIS = {"get_current_weather", "get_current_temperature", "get_forecast", "get_wikipedia_summary", "get_exchange_rate", "get_time_by_timezone", "get_latest_news"}
 
 # ====== API 說明（會放進 prompt）======
 api_specs = {
-    "get_weather": {
-        "description": "Get general weather condition (current).",
-        "params": ["location", "date(optional)"]
+    "get_current_weather": {
+        "description": "Get **today's current weather description** (e.g., sunny, cloudy, rainy).",
+        "params": ["location"]
     },
-    "get_rain_volume": {
-        "description": "Get rain volume in mm for the last hour.",
-        "params": ["location", "date(optional)"]
-    },
-    "get_temperature": {
-        "description": "Get current temperature.",
-        "params": ["location", "date(optional)"]
+    "get_current_temperature": {
+        "description": "Get **today's current temperature in Celsius**.",
+        "params": ["location"]
     },
     "get_forecast": {
-        "description": "Get weather forecast for upcoming days.",
+        "description": "Get **weather forecast for upcoming days**.",
         "params": ["location", "date(optional)", "days(optional, max 5)"]
     },
     "get_wikipedia_summary": {
-        "description": "Get the first few sentences of a Wikipedia article for a given query.",
+        "description": "Get a short Wikipedia summary for the given query.",
         "params": ["query", "sentences(optional)"]
     },
+    "get_exchange_rate": {
+        "description": "Get the current exchange rate between two currencies (e.g., USD to JPY).",
+        "params": ["base_currency", "target_currency"]
+    },
+    "get_time_by_timezone": {
+        "description": "Get the current time for a given timezone (e.g., Asia/Taipei, Europe/London).",
+        "params": ["timezone"]
+    },
+    "get_latest_news": {
+        "description": "Get the latest 3 news headlines for a topic (e.g., AI, sports).",
+        "params": ["query", "language(optional, default=en)"]
+    }
 }
 
 api_description_text = "\n".join(
@@ -50,16 +58,20 @@ def call_api(api_name, args):
     if "date" in args and (not isinstance(args["date"], str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", args["date"])):
         args.pop("date", None)
     try:
-        if api_name == "get_weather":
-            return get_weather(**args)
-        elif api_name == "get_rain_volume":
-            return get_rain_volume(**args)
-        elif api_name == "get_temperature":
-            return get_temperature(**args)
+        if api_name == "get_current_weather":
+            return get_current_weather(**args)
+        elif api_name == "get_current_temperature":
+            return get_current_temperature(**args)
         elif api_name == "get_forecast":
             return get_forecast(**args)
         elif api_name == "get_wikipedia_summary":
             return get_wikipedia_summary(**args)
+        elif api_name == "get_exchange_rate":
+            return get_exchange_rate(**args)
+        elif api_name == "get_time_by_timezone":
+            return get_time_by_timezone(**args)
+        elif api_name == "get_latest_news":
+            return get_latest_news(**args)
         else:
             return f"Error: Unknown API '{api_name}'"
     except Exception as e:
@@ -138,21 +150,24 @@ Output only the question text.
     action_prompt = f"""
 User query: "{user_query}"
 
-Return exactly ONE JSON object in this format:
-{{
-  "api_name": "get_weather" | "get_rain_volume" | "get_temperature" | "get_forecast" | "get_wikipedia_summary",
-  "args": {{
-    "location": "City, Country" [,"date": "YYYY-MM-DD"]
-  }}
-}}
+You must choose exactly ONE API from the list below and return its call in JSON.
+
+Available APIs:
+{api_description_text}
 
 Rules:
 - Today is {today_str}.
-- api_name must be EXACTLY one of the allowed names.
-- args must only contain required fields ("query" instead of "location" for get_wikipedia_summary).
-- Always map landmarks to the nearest known city (e.g., "Machu Picchu" → "Cusco, Peru").
-- If the user mentions a date without a year, ALWAYS use the year {datetime.now().year}, never 2023 or other years.
-- Return only one JSON object, no extra text.
+- api_name must match exactly one of the names above.
+- args must strictly follow the listed parameters (no extra fields).
+- If the user asks about a landmark, replace it with the nearest city (e.g., "Machu Picchu" → "Cusco, Peru").
+- If a date is mentioned without a year, always use {datetime.now().year}.
+- Output exactly ONE JSON object, with no extra text or explanation.
+
+Format:
+{{
+  "api_name": "...",
+  "args": {{ ... }}
+}}
 """.strip()
 
     #action_resp = client.chat.completions.create(

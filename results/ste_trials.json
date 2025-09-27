@@ -1096,5 +1096,139 @@
     },
     "observation": "Weather forecast for Berlin, Germany:\n2025-09-26 15:00:00: overcast clouds, 15.0°C\n2025-09-26 18:00:00: overcast clouds, 14.2°C\n2025-09-26 21:00:00: overcast clouds, 13.8°C\n2025-09-27 00:00:00: overcast clouds, 13.7°C\n2025-09-27 03:00:00: broken clouds, 11.3°C\n2025-09-27 06:00:00: scattered clouds, 10.8°C\n2025-09-27 09:00:00: clear sky, 15.1°C\n2025-09-27 12:00:00: clear sky, 18.9°C\n2025-09-27 15:00:00: clear sky, 19.1°C\n2025-09-27 18:00:00: clear sky, 15.9°C\n2025-09-27 21:00:00: overcast clouds, 14.1°C\n2025-09-28 00:00:00: overcast clouds, 12.6°C\n2025-09-28 03:00:00: scattered clouds, 11.3°C\n2025-09-28 06:00:00: scattered clouds, 10.5°C\n2025-09-28 09:00:00: few clouds, 15.3°C\n2025-09-28 12:00:00: few clouds, 18.6°C\n2025-09-28 15:00:00: clear sky, 18.5°C\n2025-09-28 18:00:00: clear sky, 14.9°C\n2025-09-28 21:00:00: clear sky, 13.1°C\n2025-09-29 00:00:00: clear sky, 11.8°C\n2025-09-29 03:00:00: clear sky, 10.8°C\n2025-09-29 06:00:00: clear sky, 10.6°C\n2025-09-29 09:00:00: clear sky, 15.3°C\n2025-09-29 12:00:00: few clouds, 17.2°C\n2025-09-29 15:00:00: broken clouds, 15.9°C\n2025-09-29 18:00:00: broken clouds, 13.4°C\n2025-09-29 21:00:00: broken clouds, 12.8°C\n2025-09-30 00:00:00: broken clouds, 10.9°C\n2025-09-30 03:00:00: clear sky, 8.7°C\n2025-09-30 06:00:00: clear sky, 8.3°C\n2025-09-30 09:00:00: clear sky, 12.6°C\n2025-09-30 12:00:00: clear sky, 14.9°C\n2025-09-30 15:00:00: clear sky, 14.9°C\n2025-09-30 18:00:00: clear sky, 12.2°C\n2025-09-30 21:00:00: clear sky, 10.2°C\n2025-10-01 00:00:00: clear sky, 8.9°C\n2025-10-01 03:00:00: clear sky, 7.8°C\n2025-10-01 06:00:00: clear sky, 7.2°C\n2025-10-01 09:00:00: clear sky, 11.7°C\n2025-10-01 12:00:00: clear sky, 14.3°C",
     "success": true
+  },
+  {
+    "run_id": "20250927-172529",
+    "timestamp": "2025-09-27T17:26:16.675582",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "\"What's the current temperature in Tokyo on a typical September day?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 26.2°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-172529",
+    "timestamp": "2025-09-27T17:27:19.810465",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "\"What's the current exchange rate for converting Euros to Japanese Yen on a typical Monday morning?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "JPY"
+    },
+    "observation": "1 EUR = 174.7900 JPY (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-172529",
+    "timestamp": "2025-09-27T17:28:19.299592",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What's the weather forecast like for my friend's wedding on October 3rd in Paris?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "date": "2025-10-03"
+    },
+    "observation": "❌ 2025-10-03 不在未來五天範圍內，無法提供預報。",
+    "success": false
+  },
+  {
+    "run_id": "20250927-172529",
+    "timestamp": "2025-09-27T17:29:22.548167",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What's the current time in Sydney when I wake up to enjoy the sunrise on my birthday, which is this Sunday?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "Australia/Sydney"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/Australia/Sydney (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))",
+    "success": false
+  },
+  {
+    "run_id": "20250927-172529",
+    "timestamp": "2025-09-27T17:30:17.244673",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "What's the average high temperature in New York City this time of year?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "New York City"
+    },
+    "observation": "The temperature in New York City now is 16.5°C.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-174937",
+    "timestamp": "2025-09-27T17:50:28.450858",
+    "episode_id": 1,
+    "trial_id": 1,
+    "query": "What's the current temperature like in Tokyo tomorrow morning?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 25.3°C.",
+    "success": false
+  },
+  {
+    "run_id": "20250927-174937",
+    "timestamp": "2025-09-27T17:51:24.182169",
+    "episode_id": 1,
+    "trial_id": 2,
+    "query": "Here's a natural and diverse user-style question that can be answered by exactly one of these APIs:\n\n\"What's the current exchange rate for converting euros to Japanese yen right now?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "JPY"
+    },
+    "observation": "1 EUR = 174.7900 JPY (Date: 2025-09-26)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-174937",
+    "timestamp": "2025-09-27T17:52:22.653215",
+    "episode_id": 1,
+    "trial_id": 3,
+    "query": "\"What's the latest news about the Tokyo Olympics after the closing ceremony?\"\n\n(Note: This question can be answered by calling the get_latest_news API with query='Tokyo Olympics' and language=en)",
+    "api": "get_latest_news",
+    "args": {
+      "query": "Tokyo Olympics",
+      "language": "en"
+    },
+    "observation": "Latest news for 'Tokyo Olympics':\n- ‘Neeraj is a speed thrower, needs to return to his strengths’: Javelin legend Uwe Hohn (https://indianexpress.com/article/explained/explained-sports/neeraj-is-a-speed-thrower-needs-to-return-to-his-strengths-javelin-legend-uwe-hohn-10271678/)\n- Kara Lawson on memorizing Olympic coaches, her Sue Bird chat, TODAY appearance as a kid (https://www.nbcsports.com/olympics/news/kara-lawson-usa-basketball-head-coach-national-team)\n- Bryson DeChambeau: Maga’s golf champion looks to be unlikely unifier for US at Ryder Cup (https://sports.yahoo.com/article/bryson-dechambeau-maga-golf-champion-192422316.html)",
+    "success": true
+  },
+  {
+    "run_id": "20250927-174937",
+    "timestamp": "2025-09-27T17:53:08.393313",
+    "episode_id": 1,
+    "trial_id": 4,
+    "query": "\"What's the current weather like in London on Monday?\"",
+    "api": "get_current_weather",
+    "args": {
+      "location": "London"
+    },
+    "observation": "The weather in London now is overcast clouds.",
+    "success": true
+  },
+  {
+    "run_id": "20250927-174937",
+    "timestamp": "2025-09-27T17:53:56.599363",
+    "episode_id": 1,
+    "trial_id": 5,
+    "query": "\"What's the time in Sydney tomorrow evening?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "Australia/Sydney"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/Australia/Sydney (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))",
+    "success": false
   }
 ]
