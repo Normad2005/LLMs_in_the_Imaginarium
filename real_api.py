@@ -45,20 +45,6 @@ def get_current_temperature(location, date=None):
     temp = data["main"]["temp"]
     return f"The temperature in {location} now is {temp:.1f}°C."
 
-#def get_rain_volume(location, date=None):
-#    _validate_today(date)
-#    params = {
-#        "q": location,
-#        "appid": API_KEY,
-#        "units": "metric"
-#    }
-#    response = requests.get(BASE_URL, params=params)
-#    data = response.json()
-#    if response.status_code != 200:
-#        raise Exception(data.get("message", "API call failed"))
-
-#    rain = data.get("rain", {}).get("1h", 0.0)  # mm
-#    return f"The rain volume in {location} over the last hour is {rain} mm."
 
 def get_forecast(location, date=None, days=None):
     # 計算可用日期範圍 (今天 ~ +5天)
