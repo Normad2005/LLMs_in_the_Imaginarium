@@ -1,0 +1,30 @@
+api_specs = {
+    "get_current_weather": {
+        "description": "Get **today's current weather description** (e.g., sunny, cloudy, rainy).",
+        "params": ["location"]
+    },
+    "get_current_temperature": {
+        "description": "Get **today's current temperature in Celsius**.",
+        "params": ["location"]
+    },
+    "get_forecast": {
+        "description": "Get **weather forecast for upcoming days**.",
+        "params": ["location", "date(optional)", "days(optional, max 5)"]
+    },
+    "get_wikipedia_summary": {
+        "description": "Get a short Wikipedia summary for the given query.",
+        "params": ["query", "sentences(optional)"]
+    },
+    "get_exchange_rate": {
+        "description": "Get the current exchange rate between two currencies (e.g., USD to JPY).",
+        "params": ["base_currency", "target_currency"]
+    },
+    "get_time_by_timezone": {
+        "description": "Get the current time for a given timezone (e.g., Asia/Taipei, Europe/London).",
+        "params": ["timezone"]
+    },
+    "get_latest_news": {
+        "description": "Get the latest 3 news headlines for a topic (e.g., AI, sports).",
+        "params": ["query", "language(optional, default=en)"]
+    }
+}
