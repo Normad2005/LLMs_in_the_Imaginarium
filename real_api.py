@@ -158,17 +158,21 @@ def get_latest_news(query, language="en"):
         "q": query,
         "language": language,
         "sortBy": "publishedAt",
-        "pageSize": 3,  # 回傳最新三則
+        "pageSize": 3,
         "apiKey": NEWS_API_KEY
     }
-    resp = requests.get(url, params=params)
-    data = resp.json()
-    if resp.status_code != 200 or data.get("status") != "ok":
-        return f"❌ 新聞查詢失敗: {data.get('message', data)}"
 
-    articles = data.get("articles", [])
-    if not articles:
-        return f"No recent news found for '{query}'."
+    try:
+        resp = requests.get(url, params=params)
+        data = resp.json()
+        if resp.status_code != 200 or data.get("status") != "ok":
+            return f"Error: failed to fetch news ({data.get('message', data)})"
 
-    result = "\n".join([f"- {a['title']} ({a['url']})" for a in articles])
-    return f"Latest news for '{query}':\n{result}"
+        articles = data.get("articles", [])
+        if not articles:
+            return f"No recent news articles found related to '{query}'."
+
+        result = "\n".join([f"- {a['title']} ({a['url']})" for a in articles])
+        return f"Here are the most relevant recent news articles about '{query}':\n{result}"
+    except Exception as e:
+        return f"Error: {e}"

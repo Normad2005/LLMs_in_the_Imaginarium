@@ -101,8 +101,78 @@ def safe_json_loads(s: str):
         return json.loads(match.group(0))
     raise ValueError("No valid JSON found")
 
-# ====== 單次 trial ======
+# ====== 單次嘗試 ======
+def attempt_call(user_query, error_summary=None):
+    """嘗試呼叫一次 API，並由 LLM 判斷 outcome。"""
+
+    today_str = datetime.now().strftime("%Y-%m-%d (%A)")
+    extra_hint = f"\nNote: Last error was '{error_summary}'. Try to avoid the same mistake." if error_summary else ""
+
+    action_prompt = f"""
+User query: "{user_query}"{extra_hint}
+
+You must choose exactly ONE API from the list below and return its call in JSON.
+
+Available APIs:
+{api_description_text}
+
+Rules:
+- Today is {today_str}.
+- api_name must match exactly one of the names above.
+- args must strictly follow the listed parameters (no extra fields).
+- If the user asks about a landmark, replace it with the nearest city (e.g., "Machu Picchu" → "Cusco, Peru").
+- If a date is mentioned without a year, always use {datetime.now().year}.
+- Output exactly ONE JSON object, with no extra text or explanation.
+
+Format:
+{{
+  "api_name": "...",
+  "args": {{ ... }}
+}}
+""".strip()
+
+    action_resp = call_ollama("llama3", action_prompt, temperature=0.4)
+    print("DEBUG action_resp:", action_resp)
+
+    try:
+        action_json = safe_json_loads(action_resp)
+        api_name = action_json["api_name"]
+        args = action_json.get("args", {})
+        if api_name not in ALLOWED_APIS:
+            raise ValueError(f"Disallowed API: {api_name}")
+        observation = call_api(api_name, args)
+    except Exception as e:
+        api_name, args = "invalid", {}
+        observation = f"Error: {e}"
+
+    # === 由 LLM 產生 outcome ===
+    reflection_prompt = f"""
+You asked: "{user_query}"
+API returned: "{observation}"
+
+Decide the outcome:
+- If the call was appropriate and helpful, reply exactly: success
+- If not, reply exactly: error, followed by a short one-sentence reason summary
+""".strip()
+
+    refl = call_ollama("llama3", reflection_prompt, temperature=0).strip()
+    print("DEBUG reflection:", refl)
+
+    if refl.lower().startswith("success"):
+        is_success = True
+        outcome = "success"
+    elif refl.lower().startswith("error"):
+        is_success = False
+        outcome = refl  # LLM 會輸出 "error, ..."
+    else:
+        is_success = False
+        outcome = "error, LLM gave invalid reflection"
+
+    return api_name, args, observation, is_success, outcome
+
+# ====== 單次 trial，包含最多三輪嘗試 ======
 def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
+    # 生成 user query
     memory_snippets = ""
     for m in short_term_memory[-3:]:
         memory_snippets += f"- Q: {m['query']}\n  → Called: {m['api']}({m['args']})\n  → Success: {m['success']}\n"
@@ -113,7 +183,6 @@ def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
 
     today_str = datetime.now().strftime("%Y-%m-%d (%A)")
 
-    # 讓 LLM 自行生成多元化問題
     prompt = f"""
 You are a creative assistant with access to the following APIs:
 {api_description_text}
@@ -137,98 +206,34 @@ Requirements:
 Output only the question text.
 """.strip()
 
-    #resp = client.chat.completions.create(
-    #    model="gpt-4o-mini",
-    #    messages=[{"role": "user", "content": prompt}],
-    #    temperature=0.9,
-    #    top_p=0.9
-    #)
-    #user_query = resp.choices[0].message.content.strip()
-
     user_query = call_ollama("llama3", prompt, temperature=0.9)
 
-    action_prompt = f"""
-User query: "{user_query}"
+    error_summary = None
+    final_result = None
 
-You must choose exactly ONE API from the list below and return its call in JSON.
+    for round_id in range(1, 4):
+        api_name, args, observation, is_success, outcome = attempt_call(user_query, error_summary)
 
-Available APIs:
-{api_description_text}
+        print(f"Round {round_id} → {api_name} {args} → {observation} → {outcome}")
 
-Rules:
-- Today is {today_str}.
-- api_name must match exactly one of the names above.
-- args must strictly follow the listed parameters (no extra fields).
-- If the user asks about a landmark, replace it with the nearest city (e.g., "Machu Picchu" → "Cusco, Peru").
-- If a date is mentioned without a year, always use {datetime.now().year}.
-- Output exactly ONE JSON object, with no extra text or explanation.
+        final_result = {
+            "run_id": RUN_ID,
+            "query": user_query,
+            "api": api_name,
+            "args": args,
+            "observation": observation,
+            "outcome": outcome,
+            "success": is_success,
+        }
 
-Format:
-{{
-  "api_name": "...",
-  "args": {{ ... }}
-}}
-""".strip()
+        if is_success:
+            break
+        else:
+            # 更新 error_summary 給下一輪參考
+            error_summary = outcome.replace("error,", "").strip()
 
-    #action_resp = client.chat.completions.create(
-    #    model="gpt-4o-mini",
-    #    messages=[{"role": "user", "content": action_prompt}],
-    #    temperature=0.4,
-    #)
-    action_resp = call_ollama("llama3", action_prompt, temperature=0.4)
-    print("DEBUG action_resp:", action_resp)
-
-    try:
-        #action_json = json.loads(action_resp.choices[0].message.content)
-        action_json = safe_json_loads(action_resp)
-        api_name = action_json["api_name"]
-        args = action_json.get("args", {})
-        if api_name not in ALLOWED_APIS:
-            raise ValueError(f"Disallowed API: {api_name}")
-        observation = call_api(api_name, args)
-    except Exception as e:
-        api_name, args = "invalid", {}
-        observation = f"Error: {e}"
-
-    reflection_prompt = f"""
-You asked: "{user_query}"
-You called: {api_name} with args {args}
-API returned: "{observation}"
-
-Was this API call appropriate and helpful? Reply only "Yes" or "No".
-""".strip()
-
-    #refl = client.chat.completions.create(
-    #    model="gpt-4o-mini",
-    #    messages=[{"role": "user", "content": reflection_prompt}],
-    #    temperature=0,
-    #)
-    refl = call_ollama("llama3", reflection_prompt, temperature=0)
-
-    #is_success = (refl.choices[0].message.content.strip().lower().startswith("yes")
-    #              and not str(observation).startswith("Error"))
-    is_success = (refl.strip().lower().startswith("yes")
-              and not str(observation).startswith("Error"))
-
-    print("Q:", user_query)
-    print("Action:", api_name, args)
-    print("Observation:", observation)
-    print("Success:", is_success)
-    print("-" * 60)
-
-    trial = {
-        "run_id": RUN_ID,
-        "timestamp": datetime.now().isoformat(),
-        "episode_id": episode_id,
-        "trial_id": trial_id,
-        "query": user_query,
-        "api": api_name,
-        "args": args,
-        "observation": observation,
-        "success": is_success,
-    }
-    short_term_memory.append(trial)
-    long_term_memory.append(trial)
+    short_term_memory.append(final_result)
+    long_term_memory.append(final_result)
 
 # ====== 儲存 ======
 def _load_existing_trials(path):
@@ -238,7 +243,6 @@ def _load_existing_trials(path):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
-        # 如果舊檔破損或非 JSON，就保守起見回傳空陣列避免整個流程掛掉
         return []
 
 def save_trials(new_trials, path="results/ste_trials.json"):
@@ -248,7 +252,6 @@ def save_trials(new_trials, path="results/ste_trials.json"):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
 
-    # 另外寫一份本次 run 的快照（備查）
     snapshot = os.path.join(os.path.dirname(path), f"ste_trials_{RUN_ID}.json")
     with open(snapshot, "w", encoding="utf-8") as f:
         json.dump(new_trials, f, indent=2, ensure_ascii=False)
@@ -258,7 +261,7 @@ def save_trials(new_trials, path="results/ste_trials.json"):
 
 if __name__ == "__main__":
     short_term_memory, long_term_memory = [], []
-    EPISODES, TRIALS_PER_EPISODE = 10, 5
+    EPISODES, TRIALS_PER_EPISODE = 1, 5
 
     for eid in range(1, EPISODES + 1):
         print(f"\n=== Episode {eid} ===")

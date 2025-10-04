@@ -2049,5 +2049,119 @@
     },
     "observation": "Weather forecast for Rome:\n2025-09-28 00:00:00: scattered clouds, 25.5°C\n2025-09-28 03:00:00: broken clouds, 22.2°C\n2025-09-28 06:00:00: broken clouds, 21.2°C\n2025-09-28 09:00:00: few clouds, 17.5°C\n2025-09-28 12:00:00: clear sky, 17.0°C\n2025-09-28 15:00:00: clear sky, 25.3°C\n2025-09-28 18:00:00: clear sky, 30.2°C\n2025-09-28 21:00:00: broken clouds, 26.5°C",
     "success": true
+  },
+  {
+    "run_id": "20251004-115121",
+    "query": "\"What's the weather like in Tokyo this weekend?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "Weather forecast for Tokyo:\n2025-10-04 06:00:00: light rain, 23.1°C\n2025-10-04 09:00:00: light rain, 23.0°C\n2025-10-04 12:00:00: overcast clouds, 23.1°C\n2025-10-04 15:00:00: overcast clouds, 23.0°C\n2025-10-04 18:00:00: overcast clouds, 22.7°C\n2025-10-04 21:00:00: overcast clouds, 22.8°C\n2025-10-05 00:00:00: overcast clouds, 24.3°C\n2025-10-05 03:00:00: broken clouds, 27.0°C\n2025-10-05 06:00:00: overcast clouds, 27.5°C\n2025-10-05 09:00:00: overcast clouds, 26.4°C\n2025-10-05 12:00:00: light rain, 25.3°C\n2025-10-05 15:00:00: light rain, 24.7°C\n2025-10-05 18:00:00: light rain, 24.9°C\n2025-10-05 21:00:00: overcast clouds, 24.6°C\n2025-10-06 00:00:00: overcast clouds, 26.2°C\n2025-10-06 03:00:00: broken clouds, 29.1°C\n2025-10-06 06:00:00: light rain, 26.9°C\n2025-10-06 09:00:00: overcast clouds, 22.9°C\n2025-10-06 12:00:00: light rain, 21.1°C\n2025-10-06 15:00:00: light rain, 20.5°C\n2025-10-06 18:00:00: overcast clouds, 20.0°C\n2025-10-06 21:00:00: light rain, 19.5°C\n2025-10-07 00:00:00: light rain, 19.1°C\n2025-10-07 03:00:00: light rain, 18.7°C\n2025-10-07 06:00:00: light rain, 19.4°C\n2025-10-07 09:00:00: overcast clouds, 19.5°C\n2025-10-07 12:00:00: overcast clouds, 19.4°C\n2025-10-07 15:00:00: overcast clouds, 19.6°C\n2025-10-07 18:00:00: overcast clouds, 19.6°C\n2025-10-07 21:00:00: broken clouds, 19.7°C\n2025-10-08 00:00:00: light rain, 20.5°C\n2025-10-08 03:00:00: scattered clouds, 23.8°C\n2025-10-08 06:00:00: few clouds, 25.4°C\n2025-10-08 09:00:00: clear sky, 24.6°C\n2025-10-08 12:00:00: clear sky, 24.4°C\n2025-10-08 15:00:00: clear sky, 23.9°C\n2025-10-08 18:00:00: clear sky, 23.2°C\n2025-10-08 21:00:00: clear sky, 21.9°C\n2025-10-09 00:00:00: clear sky, 23.6°C\n2025-10-09 03:00:00: broken clouds, 25.5°C",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-115121",
+    "query": "\"What's the temperature in Bangkok like on Tuesday for my trip?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Bangkok"
+    },
+    "observation": "The temperature in Bangkok now is 32.6°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-115121",
+    "query": "\"What's the latest news on the 2025 Tokyo Marathon schedule?\"",
+    "api": "get_latest_news",
+    "args": {
+      "query": "2025 Tokyo Marathon schedule"
+    },
+    "observation": "Latest news for '2025 Tokyo Marathon schedule':\n- Sony State of Play September 2025 live – the latest rumors and leaks as countdown to today's PS5 showcase (https://www.gamesradar.com/news/live/ps5-state-of-play-september-2025-news-reveals-everything-announced/)",
+    "outcome": "error, The API returned news about Sony's State of Play September 2025 live event, which is unrelated to the Tokyo Marathon schedule.",
+    "success": false
+  },
+  {
+    "run_id": "20251004-115121",
+    "query": "\"What's the current temperature in Zurich tomorrow morning?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Zurich"
+    },
+    "observation": "The temperature in Zurich now is 11.7°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-115121",
+    "query": "\"What's the current weather like in Paris this Sunday morning for my picnic plans?\"",
+    "api": "get_current_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is overcast clouds.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "What's the current temperature in Tokyo on Sunday?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 22.3°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "What's the current exchange rate for converting euros to Japanese yen tomorrow?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "JPY"
+    },
+    "observation": "1 EUR = 172.9000 JPY (Date: 2025-10-03)",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "What's the weather forecast for the upcoming music festival in Los Angeles this Friday?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Los Angeles",
+      "date": "2025-10-07"
+    },
+    "observation": "Weather forecast for Los Angeles:\n2025-10-07 00:00:00: few clouds, 22.9°C\n2025-10-07 03:00:00: clear sky, 19.8°C\n2025-10-07 06:00:00: clear sky, 18.8°C\n2025-10-07 09:00:00: clear sky, 18.2°C\n2025-10-07 12:00:00: clear sky, 17.8°C\n2025-10-07 15:00:00: clear sky, 18.0°C\n2025-10-07 18:00:00: few clouds, 21.1°C\n2025-10-07 21:00:00: clear sky, 22.6°C",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "\"What's the current time in New York City this morning?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/New_York"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/America/New_York (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "outcome": "error, The API request failed due to an SSL error.",
+    "success": false
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "\"What's the average high temperature in Paris over the next week, and will it still be warm enough for a picnic on Sunday?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "date": "2025-10-11",
+      "days": 7
+    },
+    "observation": "❌ 2025-10-11 不在未來五天範圍內，無法提供預報。",
+    "outcome": "error, because the API returned an error message indicating that it cannot provide forecasts for dates beyond the next 5 days.",
+    "success": false
   }
 ]

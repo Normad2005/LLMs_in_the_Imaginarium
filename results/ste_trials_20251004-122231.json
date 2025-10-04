@@ -1,0 +1,61 @@
+[
+  {
+    "run_id": "20251004-122231",
+    "query": "What's the current temperature in Tokyo on Sunday?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 22.3°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "What's the current exchange rate for converting euros to Japanese yen tomorrow?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "EUR",
+      "target_currency": "JPY"
+    },
+    "observation": "1 EUR = 172.9000 JPY (Date: 2025-10-03)",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "What's the weather forecast for the upcoming music festival in Los Angeles this Friday?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Los Angeles",
+      "date": "2025-10-07"
+    },
+    "observation": "Weather forecast for Los Angeles:\n2025-10-07 00:00:00: few clouds, 22.9°C\n2025-10-07 03:00:00: clear sky, 19.8°C\n2025-10-07 06:00:00: clear sky, 18.8°C\n2025-10-07 09:00:00: clear sky, 18.2°C\n2025-10-07 12:00:00: clear sky, 17.8°C\n2025-10-07 15:00:00: clear sky, 18.0°C\n2025-10-07 18:00:00: few clouds, 21.1°C\n2025-10-07 21:00:00: clear sky, 22.6°C",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "\"What's the current time in New York City this morning?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/New_York"
+    },
+    "observation": "❌ 取得時間失敗: HTTPSConnectionPool(host='worldtimeapi.org', port=443): Max retries exceeded with url: /api/timezone/America/New_York (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))",
+    "outcome": "error, The API request failed due to an SSL error.",
+    "success": false
+  },
+  {
+    "run_id": "20251004-122231",
+    "query": "\"What's the average high temperature in Paris over the next week, and will it still be warm enough for a picnic on Sunday?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Paris",
+      "date": "2025-10-11",
+      "days": 7
+    },
+    "observation": "❌ 2025-10-11 不在未來五天範圍內，無法提供預報。",
+    "outcome": "error, because the API returned an error message indicating that it cannot provide forecasts for dates beyond the next 5 days.",
+    "success": false
+  }
+]
