@@ -7,7 +7,7 @@ from datetime import datetime
 #from openai import OpenAI
 import requests
 
-RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")  # 每次啟動一個唯一 run 標識
+RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from real_api import get_current_weather, get_current_temperature, get_forecast, get_wikipedia_summary, get_exchange_rate, get_time_by_timezone, get_latest_news
@@ -106,7 +106,13 @@ def attempt_call(user_query, error_summary=None):
     """嘗試呼叫一次 API，並由 LLM 判斷 outcome。"""
 
     today_str = datetime.now().strftime("%Y-%m-%d (%A)")
-    extra_hint = f"\nNote: Last error was '{error_summary}'. Try to avoid the same mistake." if error_summary else ""
+    extra_hint = ""
+    if error_summary:
+        extra_hint = f"\nNote: The previous attempt failed with the following issue: '{error_summary}'. " \
+                    f"Please fix this problem in your next JSON output. " \
+                    f"If it mentioned something like 'Expecting property name enclosed in double quotes', " \
+                    f"it means your JSON had invalid syntax (e.g., comments or missing quotes). " \
+                    f"Ensure your output is valid JSON with no comments."
 
     action_prompt = f"""
 User query: "{user_query}"{extra_hint}

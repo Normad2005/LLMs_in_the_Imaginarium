@@ -6,16 +6,6 @@ OLLAMA_MODEL = "llama3"
 
 
 def generate_semantic_rule(cluster, model=OLLAMA_MODEL):
-    """
-    我要去改ste讓他outcome加入錯誤訊息
-    cluster: list of dict
-      - query
-      - api
-      - args
-      - observation (str)
-      - outcome
-    """
-
     examples = """
 Here are the examples of how to generalize trials into semantic rules:
 

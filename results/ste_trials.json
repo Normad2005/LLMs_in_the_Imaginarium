@@ -2163,5 +2163,177 @@
     "observation": "❌ 2025-10-11 不在未來五天範圍內，無法提供預報。",
     "outcome": "error, because the API returned an error message indicating that it cannot provide forecasts for dates beyond the next 5 days.",
     "success": false
+  },
+  {
+    "run_id": "20251006-164529",
+    "query": "What's the current temperature in Tokyo on this upcoming Saturday?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 21.9°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251006-164529",
+    "query": "What's the current exchange rate for converting USD to euros on November 1st?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "USD",
+      "target_currency": "EUR"
+    },
+    "observation": "Here is the latest exchange rate:\n1 USD = 0.8522 EUR (Date: 2025-10-03)",
+    "outcome": "error, The API returned an outdated exchange rate for November 1st, which is not relevant to the original request.",
+    "success": false
+  },
+  {
+    "run_id": "20251006-164529",
+    "query": "\"What's the weather like in Sydney this Friday?\"",
+    "api": "get_current_weather",
+    "args": {
+      "location": "Sydney"
+    },
+    "observation": "The weather in Sydney now is light rain.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251006-164529",
+    "query": "What's the current weather like in Vancouver on Tuesday morning?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Vancouver",
+      "date": "2025-10-06",
+      "days": 1
+    },
+    "observation": "Here is the weather forecast for Vancouver:\n2025-10-06 09:00:00: scattered clouds, 8.9°C\n2025-10-06 12:00:00: scattered clouds, 8.9°C\n2025-10-06 15:00:00: scattered clouds, 9.2°C\n2025-10-06 18:00:00: broken clouds, 16.8°C\n2025-10-06 21:00:00: broken clouds, 19.6°C",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251006-164529",
+    "query": "\"What's the current temperature in Paris right now?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The temperature in Paris now is 13.3°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251006-221731",
+    "query": "\"What's the current weather like in Tokyo tomorrow?\"",
+    "api": "get_forecast",
+    "args": {
+      "location": "Tokyo",
+      "date": "2025-10-07"
+    },
+    "observation": "Here is the weather forecast for Tokyo:\n2025-10-07 00:00:00: overcast clouds, 20.8°C\n2025-10-07 03:00:00: broken clouds, 22.8°C\n2025-10-07 06:00:00: overcast clouds, 22.7°C\n2025-10-07 09:00:00: overcast clouds, 21.9°C\n2025-10-07 12:00:00: overcast clouds, 21.4°C\n2025-10-07 15:00:00: broken clouds, 21.0°C\n2025-10-07 18:00:00: broken clouds, 20.7°C\n2025-10-07 21:00:00: overcast clouds, 20.6°C",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251006-221731",
+    "query": "What's the current temperature in Paris on my upcoming business trip next Saturday?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The temperature in Paris now is 16.6°C.",
+    "outcome": "error, The API provided current temperature, but I asked for the temperature on a specific date (next Saturday) which is not available.",
+    "success": false
+  },
+  {
+    "run_id": "20251006-221731",
+    "query": "\"What's the current exchange rate between USD and JPY if I were to travel to Singapore next week?\"",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "USD",
+      "target_currency": "JPY"
+    },
+    "observation": "Here is the latest exchange rate:\n1 USD = 147.3500 JPY (Date: 2025-10-03)",
+    "outcome": "error, The question asked about Singapore, but the API returned an exchange rate for Japan (JPY).",
+    "success": false
+  },
+  {
+    "run_id": "20251006-221731",
+    "query": "\"What's the current time in Los Angeles when my friends celebrate their anniversary this Saturday?\"",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/Los_Angeles"
+    },
+    "observation": "Error: HTTPSConnectionPool(host='timeapi.io', port=443): Read timed out. (read timeout=10)",
+    "outcome": "error, The API request timed out, preventing the retrieval of the current time in Los Angeles.",
+    "success": false
+  },
+  {
+    "run_id": "20251006-221731",
+    "query": "\"What's the current temperature in New York City this afternoon?\"",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "New York City"
+    },
+    "observation": "The temperature in New York City now is 20.6°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251007-003430",
+    "query": "What's the temperature like in Tokyo today?",
+    "api": "get_current_temperature",
+    "args": {
+      "location": "Tokyo"
+    },
+    "observation": "The temperature in Tokyo now is 20.8°C.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251007-003430",
+    "query": "What's the current weather like in Paris this weekend?",
+    "api": "get_current_weather",
+    "args": {
+      "location": "Paris"
+    },
+    "observation": "The weather in Paris now is scattered clouds.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251007-003430",
+    "query": "What's the current exchange rate between USD and EUR on Friday?",
+    "api": "get_exchange_rate",
+    "args": {
+      "base_currency": "USD",
+      "target_currency": "EUR"
+    },
+    "observation": "Here is the latest exchange rate:\n1 USD = 0.8563 EUR (Date: 2025-10-06 (latest available business day))",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251007-003430",
+    "query": "What's the current time in New York this evening?",
+    "api": "get_time_by_timezone",
+    "args": {
+      "timezone": "America/New_York"
+    },
+    "observation": "The current time in America/New_York is 2025-10-06 12:37:15.",
+    "outcome": "success",
+    "success": true
+  },
+  {
+    "run_id": "20251007-003430",
+    "query": "What's the forecast looking like for a hiking trip to the Swiss Alps on Saturday?",
+    "api": "get_forecast",
+    "args": {
+      "location": "Swiss Alps, Switzerland",
+      "date": "2025-10-09"
+    },
+    "observation": "Error: failed to fetch forecast (city not found)",
+    "outcome": "error, The API did not provide a useful forecast for the Swiss Alps due to an inability to find the city.",
+    "success": false
   }
 ]

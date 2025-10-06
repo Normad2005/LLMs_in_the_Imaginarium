@@ -12,10 +12,11 @@ def _validate_today(date):
         try:
             d = datetime.strptime(date, "%Y-%m-%d").date()
         except ValueError:
-            raise Exception("❌ 日期格式錯誤，請使用 YYYY-MM-DD。")
+            raise Exception("Invalid date format. Please use YYYY-MM-DD.")
+        
         today = datetime.now().date()
         if d != today:
-            raise Exception(f"❌ 該API只能查詢今日的天氣。")
+            raise Exception("This API only supports querying the weather for today.")
 
 def get_current_weather(location, date=None):
     _validate_today(date)
@@ -60,8 +61,11 @@ def get_current_temperature(location, date=None):
 #    rain = data.get("rain", {}).get("1h", 0.0)  # mm
 #    return f"The rain volume in {location} over the last hour is {rain} mm."
 
+from datetime import datetime, timedelta
+import requests
+
 def get_forecast(location, date=None, days=None):
-    # 計算可用日期範圍 (今天 ~ +5天)
+    """Get weather forecast (1–5 days) for a given location."""
     today = datetime.now().date()
     max_date = today + timedelta(days=5)
 
@@ -69,42 +73,46 @@ def get_forecast(location, date=None, days=None):
         try:
             date_obj = datetime.strptime(date, "%Y-%m-%d").date()
         except ValueError:
-            return f"❌ 日期格式錯誤，請使用 YYYY-MM-DD。"
+            return "Invalid date format. Please use YYYY-MM-DD."
         if not (today <= date_obj <= max_date):
-            return f"❌ {date} 不在未來五天範圍內，無法提供預報。"
+            return f"The date {date} is outside the 5-day forecast range. Only forecasts within the next 5 days are supported."
 
     if days is not None:
         if not (1 <= days <= 5):
-            return f"❌ days 參數必須在 1~5 之間。"
+            return "The 'days' parameter must be between 1 and 5."
 
     params = {
         "q": location,
         "appid": API_KEY,
         "units": "metric",
-        "cnt": 40  # 40筆資料涵蓋5天的3小時預報
+        "cnt": 40  # 40 data points = 5 days * 8 per day (3-hour intervals)
     }
-    response = requests.get(FORECAST_URL, params=params)
-    if response.status_code != 200:
-        data = response.json()
-        return f"❌ API 呼叫失敗: {data.get('message', 'Unknown error')}"
-    
-    forecasts = response.json()["list"]
 
-    # 如果同時有 date 和 days，優先使用 date
+    try:
+        response = requests.get(FORECAST_URL, params=params)
+        data = response.json()
+        if response.status_code != 200:
+            return f"Error: failed to fetch forecast ({data.get('message', 'Unknown error')})"
+    except Exception as e:
+        return f"Error: {e}"
+
+    forecasts = data.get("list", [])
+
     if date:
         forecasts = [item for item in forecasts if item["dt_txt"].startswith(date)]
     elif days:
-        # 3小時一筆，一天8筆
         forecasts = forecasts[:days * 8]
 
     if not forecasts:
-        return f"❌ 沒有可用的預報資料。"
+        return "No forecast data available for the specified range."
 
     result = "\n".join(
         f"{item['dt_txt']}: {item['weather'][0]['description']}, {item['main']['temp']:.1f}°C"
         for item in forecasts
     )
-    return f"Weather forecast for {location}:\n{result}"
+
+    return f"Here is the weather forecast for {location}:\n{result}"
+
 
 def get_wikipedia_summary(query, sentences=2):
     try:
@@ -121,35 +129,50 @@ def get_wikipedia_summary(query, sentences=2):
 def get_exchange_rate(base_currency, target_currency):
     url = "https://api.frankfurter.app/latest"
     params = {"from": base_currency.upper(), "to": target_currency.upper()}
+
     try:
         resp = requests.get(url, params=params, timeout=10)
         if resp.status_code != 200:
-            return f"❌ 匯率查詢失敗: {resp.text}"
+            return f"Error: failed to fetch exchange rate ({resp.text})"
+
         data = resp.json()
         rates = data.get("rates", {})
         rate = rates.get(target_currency.upper())
+
         if rate is None:
-            return f"❌ 無法取得 {base_currency.upper()} 對 {target_currency.upper()} 的匯率"
-        return f"1 {base_currency.upper()} = {rate:.4f} {target_currency.upper()} (Date: {data.get('date')})"
+            return f"Unable to retrieve exchange rate from {base_currency.upper()} to {target_currency.upper()}."
+
+        date_str = data.get("date")
+        if date_str:
+            note = " (latest available business day)" if date_str != datetime.now().strftime("%Y-%m-%d") else ""
+        else:
+            note = ""
+
+        return (
+            f"Here is the latest exchange rate:\n"
+            f"1 {base_currency.upper()} = {rate:.4f} {target_currency.upper()} "
+            f"(Date: {date_str}{note})"
+        )
     except Exception as e:
-        return f"❌ 匯率查詢錯誤: {e}"
+        return f"Error: {e}"
 
 # ========== 世界時間 ==========
 def get_time_by_timezone(timezone):
-    url = f"https://worldtimeapi.org/api/timezone/{timezone}"
+    url = f"https://timeapi.io/api/Time/current/zone?timeZone={timezone}"
     try:
         resp = requests.get(url, timeout=10)
         if resp.status_code != 200:
-            return f"❌ 無法取得 {timezone} 的時間"
-        data = resp.json()
-        dt_str = data.get("datetime")
-        if not dt_str:
-            return f"❌ API 回傳無效資料: {data}"
-        dt = datetime.fromisoformat(dt_str.replace("Z", "+00:00"))
-        return f"The current time in {timezone} is {dt.strftime('%Y-%m-%d %H:%M:%S')}"
-    except Exception as e:
-        return f"❌ 取得時間失敗: {e}"
+            return f"Error: failed to retrieve time for timezone '{timezone}' (status {resp.status_code})."
 
+        data = resp.json()
+        dt_str = data.get("dateTime")
+        if not dt_str:
+            return f"Error: invalid API response: {data}"
+
+        dt = datetime.fromisoformat(dt_str)
+        return f"The current time in {timezone} is {dt.strftime('%Y-%m-%d %H:%M:%S')}."
+    except Exception as e:
+        return f"Error: {e}"
 
 # ========== 新聞 ==========
 def get_latest_news(query, language="en"):
