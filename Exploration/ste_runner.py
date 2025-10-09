@@ -4,16 +4,12 @@ import os
 import json
 import re
 from datetime import datetime
-#from openai import OpenAI
 import requests
 
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from real_api import get_current_weather, get_current_temperature, get_forecast, get_wikipedia_summary, get_exchange_rate, get_time_by_timezone, get_latest_news
-
-#OPENAI_API_KEY = "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"
-#client = OpenAI(api_key=OPENAI_API_KEY)
 
 ALLOWED_APIS = {"get_current_weather", "get_current_temperature", "get_forecast", "get_wikipedia_summary", "get_exchange_rate", "get_time_by_timezone", "get_latest_news"}
 
@@ -53,7 +49,7 @@ api_description_text = "\n".join(
     [f"- {n}: {s['description']}, params: {', '.join(s['params'])}" for n, s in api_specs.items()]
 )
 
-# ====== 呼叫 real_api ======
+# ====== call real_api ======
 def call_api(api_name, args):
     if "date" in args and (not isinstance(args["date"], str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", args["date"])):
         args.pop("date", None)
@@ -77,14 +73,10 @@ def call_api(api_name, args):
     except Exception as e:
         return f"Error: {e}"
 
-# ====== 呼叫 Ollama ======
-def call_ollama(model: str, prompt: str, temperature: float = 0.7):
+# ====== call Ollama ======
+def call_ollama(model, prompt, temperature=0.7):
     url = "http://localhost:11434/api/generate"
-    payload = {
-        "model": model,
-        "prompt": prompt,
-        "options": {"temperature": temperature}
-    }
+    payload = {"model": model, "prompt": prompt, "options": {"temperature": temperature}}
     resp = requests.post(url, json=payload, stream=True)
     output = ""
     for line in resp.iter_lines():
@@ -94,91 +86,148 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7):
                 output += data["response"]
     return output.strip()
 
-# ====== 只抓第一個 { ... } ======
+# ====== safe JSON parser ======
 def safe_json_loads(s: str):
     match = re.search(r"\{[\s\S]*\}", s)
-    if match:
-        return json.loads(match.group(0))
-    raise ValueError("No valid JSON found")
+    if not match:
+        raise ValueError("No valid JSON found")
 
-# ====== 單次嘗試 ======
-def attempt_call(user_query, error_summary=None):
-    """嘗試呼叫一次 API，並由 LLM 判斷 outcome。"""
+    json_str = match.group(0)
+    # remove comments
+    json_str = re.sub(r"//.*?(?=\n|$)", "", json_str)
+    json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
+    json_str = re.sub(r",\s*}", "}", json_str)
+    json_str = re.sub(r",\s*\]", "]", json_str)
+    json_str = json_str.strip()
+    return json.loads(json_str)
 
+# ====== ReAct with success-based reasoning ======
+def attempt_call(user_query):
     today_str = datetime.now().strftime("%Y-%m-%d (%A)")
-    extra_hint = ""
-    if error_summary:
-        extra_hint = f"\nNote: The previous attempt failed with the following issue: '{error_summary}'. " \
-                    f"Please fix this problem in your next JSON output. " \
-                    f"If it mentioned something like 'Expecting property name enclosed in double quotes', " \
-                    f"it means your JSON had invalid syntax (e.g., comments or missing quotes). " \
-                    f"Ensure your output is valid JSON with no comments."
+    MAX_TURNS = 4
+    previous_steps = [{
+    "thought": "(no previous thought)",
+    "api_name": "(none yet)",
+    "args": {},
+    "observation": "(no observation yet)"
+    }]
 
-    action_prompt = f"""
-User query: "{user_query}"{extra_hint}
+    prompt_header = f"""
+Your task is to help answer the user's query using one of the following APIs.
 
-You must choose exactly ONE API from the list below and return its call in JSON.
-
-Available APIs:
 {api_description_text}
 
+Today is {today_str}.
+You will reason step-by-step. At each step, you may choose one API to call.
+
 Rules:
-- Today is {today_str}.
-- api_name must match exactly one of the names above.
-- args must strictly follow the listed parameters (no extra fields).
-- If the user asks about a landmark, replace it with the nearest city (e.g., "Machu Picchu" → "Cusco, Peru").
-- If a date is mentioned without a year, always use {datetime.now().year}.
+- If you want to make an API call, include:
+  - "thought": your reasoning
+  - "api_name": the API to call
+  - "args": a JSON object with its arguments
+  - "success": "false"
+- If the the observation of your previous API call was appropriate for the question
+  - "success": "true"
+- You will receive the "observation" (API output) after each call.
+- If the API output seems incomplete, that’s an API limitation, not an error in API choice.
 - Output exactly ONE JSON object, with no extra text or explanation.
 
 Format:
 {{
-  "api_name": "...",
-  "args": {{ ... }}
+  "thought": "reasoning here",
+  "api_name": "API name",
+  "args": {{
+    "key": "value",
+    "key": "value"
+  }},
+  "success": "false"
 }}
+last step:
+{{
+  "success": "true"
+}}
+
+User Query: {user_query}
 """.strip()
 
-    action_resp = call_ollama("llama3", action_prompt, temperature=0.4)
-    print("DEBUG action_resp:", action_resp)
+    conversation = prompt_header + "\n\nBegin!\n"
+    api_name, args, observation = None, {}, None
+    final_answer, last_thought = None, None
 
-    try:
-        action_json = safe_json_loads(action_resp)
-        api_name = action_json["api_name"]
-        args = action_json.get("args", {})
-        if api_name not in ALLOWED_APIS:
-            raise ValueError(f"Disallowed API: {api_name}")
-        observation = call_api(api_name, args)
-    except Exception as e:
-        api_name, args = "invalid", {}
-        observation = f"Error: {e}"
+    for turn in range(MAX_TURNS):
+        memory_block = ""
+        if previous_steps:
+            memory_block = "\nPrevious steps:\n"
+            for i, step in enumerate(previous_steps, 1):
+                memory_block += f"Step {i}:\nThought: {step['thought']}\nObservation: {step['observation']}\n\n"
 
-    # === 由 LLM 產生 outcome ===
-    reflection_prompt = f"""
-You asked: "{user_query}"
-API returned: "{observation}"
+        react_prompt = conversation + memory_block + f"\n(Step {turn+1})\n"
+        react_output = call_ollama("llama3", react_prompt, temperature=0.4)
+        print(f"\n=== ReAct Turn {turn+1} ===\n{react_output}\n")
 
-Decide the outcome:
-- If the call was appropriate and helpful, reply exactly: success
-- If not, reply exactly: error, followed by a short one-sentence reason summary
+        # --- 解析 JSON ---
+        try:
+            step_obj = safe_json_loads(react_output)
+            thought = step_obj.get("thought")
+            success_flag = str(step_obj.get("success", "false")).lower() == "true"
+            api_name = step_obj.get("api_name")
+            args = step_obj.get("args", {})
+        except Exception as e:
+            observation = f"Error parsing JSON: {e}"
+            print(f">>> Observation: {observation}")
+            continue
+
+        # --- 第一步不可 success=true ---
+        if turn == 0 and success_flag:
+            print("⚠️  Model marked success=true on Step 1, forcing to false.")
+            success_flag = False
+
+        # --- 若 success=true 則不呼叫 API ---
+        if not success_flag:
+            if api_name in ALLOWED_APIS:
+                observation = call_api(api_name, args)
+            else:
+                observation = f"Error: Unknown or missing API '{api_name}'"
+        else:
+            observation = previous_steps[-1]["observation"] if previous_steps else "No prior observation"
+
+        print(f">>> Observation: {observation}\n")
+
+        # --- 記錄本輪 ---
+        previous_steps.append({
+            "thought": thought,
+            "observation": observation,
+            "api_name": api_name,
+            "args": args,
+            "success": success_flag
+        })
+        last_thought = thought
+
+        # --- 若成功就結束 ---
+        if success_flag:
+            break
+
+        conversation += f"\nObservation: {observation}\n"
+
+    # === 生成最終回答 ===
+    answer_prompt = f"""
+User Query: {user_query}
+Last Observation: {observation}
+
+Write a concise, natural final answer for the user based on the observation.
+If the observation is incomplete, explain that this may be due to API limitations.
+Final Answer:
 """.strip()
 
-    refl = call_ollama("llama3", reflection_prompt, temperature=0).strip()
-    print("DEBUG reflection:", refl)
+    final_answer = call_ollama("llama3", answer_prompt, temperature=0.4).strip()
+    desc = api_specs.get(api_name, {}).get("description", "N/A")
 
-    if refl.lower().startswith("success"):
-        is_success = True
-        outcome = "success"
-    elif refl.lower().startswith("error"):
-        is_success = False
-        outcome = refl  # LLM 會輸出 "error, ..."
-    else:
-        is_success = False
-        outcome = "error, LLM gave invalid reflection"
+    return api_name, args, observation, final_answer, last_thought, desc, success_flag
 
-    return api_name, args, observation, is_success, outcome
-
-# ====== 單次 trial，包含最多三輪嘗試 ======
+# ====== Trial ======
 def run_trial(short_term_memory, long_term_memory, episode_id, trial_id):
-    # 生成 user query
+    today_str = datetime.now().strftime("%Y-%m-%d (%A)")
+
     memory_snippets = ""
     for m in short_term_memory[-3:]:
         memory_snippets += f"- Q: {m['query']}\n  → Called: {m['api']}({m['args']})\n  → Success: {m['success']}\n"
@@ -212,36 +261,26 @@ Requirements:
 Output only the question text.
 """.strip()
 
-    user_query = call_ollama("llama3", prompt, temperature=0.9)
+    user_query = call_ollama("llama3", prompt, temperature=0.4)
+    api_name, args, observation, final_answer, thought, desc, success_flag = attempt_call(user_query)
 
-    error_summary = None
-    final_result = None
+    final_result = {
+        "run_id": RUN_ID,
+        "query": user_query,
+        "api": api_name,
+        "api_description": desc,
+        "args": args,
+        "observation": observation,
+        "final_ans": final_answer,
+        "thought": thought,
+        "success": success_flag
+    }
 
-    for round_id in range(1, 4):
-        api_name, args, observation, is_success, outcome = attempt_call(user_query, error_summary)
-
-        print(f"Round {round_id} → {api_name} {args} → {observation} → {outcome}")
-
-        final_result = {
-            "run_id": RUN_ID,
-            "query": user_query,
-            "api": api_name,
-            "args": args,
-            "observation": observation,
-            "outcome": outcome,
-            "success": is_success,
-        }
-
-        if is_success:
-            break
-        else:
-            # 更新 error_summary 給下一輪參考
-            error_summary = outcome.replace("error,", "").strip()
-
+    print(json.dumps(final_result, indent=2, ensure_ascii=False))
     short_term_memory.append(final_result)
     long_term_memory.append(final_result)
 
-# ====== 儲存 ======
+# ====== Save results ======
 def _load_existing_trials(path):
     if not os.path.exists(path):
         return []
@@ -257,7 +296,6 @@ def save_trials(new_trials, path="results/ste_trials.json"):
     merged = existing + new_trials
     with open(path, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
-
     snapshot = os.path.join(os.path.dirname(path), f"ste_trials_{RUN_ID}.json")
     with open(snapshot, "w", encoding="utf-8") as f:
         json.dump(new_trials, f, indent=2, ensure_ascii=False)
@@ -265,6 +303,7 @@ def save_trials(new_trials, path="results/ste_trials.json"):
     print(f"📄 Master: {os.path.abspath(path)}")
     print(f"🗂  Snapshot for this run: {os.path.abspath(snapshot)}")
 
+# ====== Main ======
 if __name__ == "__main__":
     short_term_memory, long_term_memory = [], []
     EPISODES, TRIALS_PER_EPISODE = 1, 5
