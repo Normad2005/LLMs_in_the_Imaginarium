@@ -1,0 +1,32 @@
+{
+  "cluster_1": {
+    "rule": "Based on the provided trials and the desired rule from the previous set, I can generalize a new semantic rule as follows:\n\nRule (derived): If the query asks about a location-specific condition or status (\"right now\", \"current\") without specifying a time frame, use the API to retrieve the current information for that location.\n\nThis rule captures the pattern of queries that ask about the present state or situation at a specific location, without requiring any further temporal context.",
+    "examples": [
+      "\"What is the temperature in Tokyo right now?\""
+    ]
+  },
+  "cluster_2": {
+    "rule": "A new set of trials!\n\nBased on the patterns I've learned from the previous examples, here is a generalized rule that can guide future API selection:\n\n**If the query does not mention a specific date or time, resolve it relative to today's date and use the correct location when calling the API.**\n\nIn other words, if the user doesn't specify a particular day or time, assume they mean the current day/time and proceed with the API call using the provided location (e.g., city).",
+    "examples": [
+      "\"What's the current temperature in Sydney?\""
+    ]
+  },
+  "cluster_3": {
+    "rule": "Based on the provided trails and my semantic abstraction engine capabilities, I can generalize the rules as follows:\n\n**Rule:** If the query mentions a specific location (e.g., New York City) without referencing a date or time range, simply pass this information to the API along with no additional date-specific arguments.\n\nIn other words, when the query only asks about a location and doesn't specify any timing-related information, use the provided location in the API call and omit any date or time-related parameters.",
+    "examples": [
+      "\"How much rain has New York City received in the last hour?\""
+    ]
+  },
+  "cluster_4": {
+    "rule": "Here is the generalized rule:\n\nIf a query mentions a day of the week (e.g., Sunday), resolve it relative to today's date and use the correct calendar date when calling the relevant API.",
+    "examples": [
+      "\"What's the current weather like in Paris this Sunday morning for my picnic plans?\""
+    ]
+  },
+  "cluster_5": {
+    "rule": "After analyzing the new cluster of trials, I can generalize the underlying rule as follows:\n\n**Rule**: When a query contains a specific topic or entity (e.g., \"Great Wall of China\"), resolve it using the provided topic/entity name and use that name when calling the Wikipedia summary API.",
+    "examples": [
+      "\"Can you give me a brief summary about the Great Wall of China from Wikipedia?\""
+    ]
+  }
+}

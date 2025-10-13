@@ -97,9 +97,17 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7):
 # ====== 只抓第一個 { ... } ======
 def safe_json_loads(s: str):
     match = re.search(r"\{[\s\S]*\}", s)
-    if match:
-        return json.loads(match.group(0))
-    raise ValueError("No valid JSON found")
+    if not match:
+        raise ValueError("No valid JSON found")
+
+    json_str = match.group(0)
+    # remove comments
+    json_str = re.sub(r"//.*?(?=\n|$)", "", json_str)
+    json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
+    json_str = re.sub(r",\s*}", "}", json_str)
+    json_str = re.sub(r",\s*\]", "]", json_str)
+    json_str = json_str.strip()
+    return json.loads(json_str)
 
 # ====== 單次嘗試 ======
 def attempt_call(user_query, error_summary=None):

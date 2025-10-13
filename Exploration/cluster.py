@@ -6,7 +6,7 @@ from sklearn.metrics import silhouette_score
 import difflib
 from openai import OpenAI
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = ""
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 VERBOSE = True
