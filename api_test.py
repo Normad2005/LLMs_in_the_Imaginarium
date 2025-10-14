@@ -1,7 +1,7 @@
 import json
-from tool_runner import get_rapidapi_response
+from toolbench.tool_runner import get_rapidapi_response
 from config.api_keys import RAPIDAPI_KEY
-from tool_registry import TOOL_REGISTRY
+from toolbench.tool_registry import TOOL_REGISTRY
 
 
 def run_tool(api_name: str, args: dict, truncate: int = 2048):
