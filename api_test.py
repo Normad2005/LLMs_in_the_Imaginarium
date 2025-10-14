@@ -34,6 +34,7 @@ def run_tool(api_name: str, args: dict, truncate: int = 2048):
 
 
 if __name__ == "__main__":
+    
     print("=== 🔧 Tool Test Interface ===")
     print("可用 API：")
     for name in TOOL_REGISTRY.keys():

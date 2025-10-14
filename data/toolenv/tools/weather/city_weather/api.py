@@ -2,10 +2,10 @@
 
 import http.client
 import json
-from config import RAPIDAPI_KEY
+from config.api_keys import RAPIDAPI_KEY 
 
 
-def get_city_weather(city_name: str):
+def get_city_weather(city_name: str = "Taipei", toolbench_rapidapi_key: str = RAPIDAPI_KEY):
     """
     取得指定城市的即時天氣狀況。
     Args:
@@ -17,7 +17,7 @@ def get_city_weather(city_name: str):
         conn = http.client.HTTPSConnection("weather-api138.p.rapidapi.com")
 
         headers = {
-            "x-rapidapi-key": RAPIDAPI_KEY,
+            "x-rapidapi-key": toolbench_rapidapi_key,
             "x-rapidapi-host": "weather-api138.p.rapidapi.com",
         }
 

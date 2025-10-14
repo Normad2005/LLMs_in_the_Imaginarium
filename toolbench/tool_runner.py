@@ -45,10 +45,12 @@ def run(toolbench_code_string, toolbench_api_name, toolbench_input_params_str):
     success_flag = False
     switch_flag = False
     save_cache = False
-    exec(toolbench_code_string)
+
+    global_namespace = {}
+    exec(toolbench_code_string, global_namespace)
     try:
         eval_func_str = f"{toolbench_api_name}({toolbench_input_params_str})"
-        new_func = eval(eval_func_str)
+        new_func = eval(eval_func_str, global_namespace)
         response, save_cache, switch_flag = process_error(new_func)
         success_flag = True
     except Exception as e:

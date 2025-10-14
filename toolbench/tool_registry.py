@@ -5,4 +5,7 @@ TOOL_REGISTRY = {
     # weather 類
     "get_city_weather": {"category": "weather", "tool_name": "city_weather"},
 
+    # jobs 類
+    "get_job_list": {"category": "jobs", "tool_name": "jsearch"},
+
 }
