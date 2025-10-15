@@ -1,11 +1,50 @@
 TOOL_REGISTRY = {
-    # quotes 類
-    "get_fun_quote": {"category": "quotes", "tool_name": "pquotes"},
+    # Business
 
-    # weather 類
-    "get_city_weather": {"category": "weather", "tool_name": "city_weather"},
 
-    # jobs 類
-    "get_job_list": {"category": "jobs", "tool_name": "jsearch"},
+    # Business_Software
+    "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
+
+    # Communication
+
+
+    # Data
+
+
+    # Datebase
+
+
+    # Education
+
+
+    # Finance
+
+
+    # Food
+
+
+    # Gaming
+
+
+    # Location
+
+
+    # Mapping
+
+
+    # Other
+
+
+    # Sports
+
+
+    # Tools
+
+
+    # Travel
+
+
+    # Video, Images
+    
 
 }
