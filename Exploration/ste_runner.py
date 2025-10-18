@@ -116,6 +116,11 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
                 if not parsed["parse_successful"]:
                     obs = parsed["parse_error_msg"]
                 elif parsed["finish"]:
+                    item["chains"].append({
+                        "step": turn,
+                        "parsed": parsed,
+                        "observation": "Final Answer"
+                    })
                     break
                 else:
                     try:
@@ -157,7 +162,6 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
             # === Step 4: Follow-up ===
             for f_idx in range(num_stm_slots - 1):
                 print(f"\n--- Follow-up #{f_idx + 1} ---")
-                item_follow = {"chains": []}
 
                 follow_q = template_q_follow.format(api_descriptions=api_info)
                 if explored_queries:
@@ -167,7 +171,7 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
                 follow_query = response.strip()
                 print(f"💬 Follow Query: {follow_query}")
                 explored_queries.append(follow_query)
-                item_follow["query"] = follow_query
+                item_follow = {"query": follow_query, "chains": []}
 
                 # === ReAct for follow-up ===
                 prompt_follow_a = template_a_follow.format(api_names=api_name, query=follow_query)
@@ -179,6 +183,11 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
                     if not parsed["parse_successful"]:
                         obs = parsed["parse_error_msg"]
                     elif parsed["finish"]:
+                        item_follow["chains"].append({
+                            "step": turn,
+                            "parsed": parsed,
+                            "observation": "Final Answer"
+                        })
                         break
                     else:
                         try:
