@@ -4,11 +4,8 @@ from config.api_keys import RAPIDAPI_KEY  # ← 共用金鑰
 
 def verify_email(email: str, toolbench_rapidapi_key: str = RAPIDAPI_KEY):
     """
-    呼叫 Global Email API 驗證電子郵件地址的真實性。
-
     參數：
         email (str): 要驗證的電子郵件地址。
-        toolbench_rapidapi_key (str): API 金鑰，預設使用共用 RAPIDAPI_KEY。
     """
     conn = http.client.HTTPSConnection("global-email-v4.p.rapidapi.com")
 

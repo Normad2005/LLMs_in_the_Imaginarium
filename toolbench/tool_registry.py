@@ -1,4 +1,4 @@
-TOOL_REGISTRY = {
+TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Business
 
 
