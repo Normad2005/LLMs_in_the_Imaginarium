@@ -7,12 +7,12 @@ from my_llm import chat_my, call_ollama
 
 
 def main(
-    input_path: str = "results/ste/data_latest.json",
+    input_path: str = "results/ste/data_20251018-152508.json",
     filter_model_ckpt: str = "llama3",
     paraphrase_model_ckpt: str = "llama3",
-    target_num_train_per_API: int = 150,
-    num_para_train_max: int = 6,
-    dir_write: str = "results/ste/",
+    target_num_train_per_API: int = 30, #平均每個api產出量目標
+    num_para_train_max: int = 3, #每筆最多改寫幾次
+    dir_write: str = "results/",
     save_file_name: str = "tool_data_train.json",
 ):
     os.makedirs(dir_write, exist_ok=True)
@@ -34,11 +34,11 @@ def main(
 
         for session in sessions:
             for item in session.get("chains", []):
-                pass  # safeguard (older data formats)
+                pass
 
             # 每個 session 可能有多個 item（episode slot）
             for item in session.get("chains", []):
-                pass  # placeholder in case structure varies
+                pass
 
         # 你的 ste_runner 結構是 all_sessions → item["chains"]
         for item in sessions:
@@ -52,9 +52,13 @@ def main(
 
             # 取得最後成功的 API 呼叫
             last_action = None
-            for step in reversed(chains):
-                if step["parsed"].get("parse_successful", False):
-                    last_action = step["parsed"]
+            observation = ""
+            for i in range(len(chains) - 2, -1, -1):  # 從倒數第二個元素開始往前找
+                step = chains[i]
+                parsed = step.get("parsed", {})
+                if parsed.get("parse_successful", False):
+                    last_action = parsed
+                    observation = step.get("observation", "")
                     break
             if not last_action:
                 continue
@@ -67,7 +71,9 @@ def main(
                 final_ans=last_step.get("final_ans", ""),
             )
 
-            judgment = call_ollama(filter_model_ckpt, prompt_criticize)
+            #太慢先關掉
+            #judgment = call_ollama(filter_model_ckpt, prompt_criticize).strip()
+            judgment = "Yes"
             item["judgment"] = judgment
 
             if "No" in judgment:
@@ -78,7 +84,7 @@ def main(
                 "query": item["query"],
                 "action": last_action.get("action", api_name),
                 "action_input": last_action.get("action_input", {}),
-                "observation": chains[-1]["observation"],
+                "observation": observation,
                 "final_ans": last_step.get("final_ans", ""),
             })
 
@@ -103,20 +109,25 @@ def main(
             base_query = ex["query"]
             ex_list = [ex]
 
+            messages = [
+                {"role": "system", "content": "You are a helpful assistant."}
+            ]
+
             # 第一次改寫
             para_prompt = f"""Below is a user query. Rephrase it in a different way but keep the meaning.
 Original query:
 {base_query}
 
+Only output the **paraphrase itself**, nothing else.
 Your paraphrase:"""
-            paraphrased = call_ollama(paraphrase_model_ckpt, para_prompt).strip()
-            ex_list.append({"query": paraphrased})
+            messages = chat_my(messages, para_prompt)
+            ex_list.append({"query": messages[-1]['content']})
 
             # 其他改寫版本
             for _ in range(num_para - 1):
                 follow_prompt = "Try paraphrasing it again in a new way (avoid being too similar):"
-                new_para = call_ollama(paraphrase_model_ckpt, follow_prompt).strip()
-                ex_list.append({"query": new_para})
+                messages = chat_my(messages, follow_prompt)
+                ex_list.append({"query": messages[-1]['content']})
 
             para_list.append(ex_list)
         dataset_paraphrased[api_name] = para_list

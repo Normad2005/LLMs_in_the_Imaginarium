@@ -45,6 +45,8 @@ User Query (the same you just synthesized): {query}
 =========
 
 Now you know a bit more about the API. You can synthesize another user query to explore the API a bit further and consolidate your understanding of the API, based on things that you discovered about this API. Again, just input the user query alone; do NOT solve the query for now.
+Do not ask about the API itself or what it can do; instead, create a concrete request that could be fulfilled using this API.
+Only output the **query itself**, nothing else.
 
 User Query:
 
