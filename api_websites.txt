@@ -1,0 +1,95 @@
+"get_arxiv_article_information" (BM tool)
+
+https://rapidapi.com/adminMelissa/api/global-email-v4/playground/apiendpoint_072a19b8-7c65-4fe5-ba66-b9815cb7df78
+
+https://rapidapi.com/weatherapi.me/api/weather_dataset/playground/apiendpoint_4e0968b3-4232-41d7-bac9-60ece9f31290
+
+https://rapidapi.com/sfbart/api/bart/playground/53aa610ee4b0596140341d80
+
+https://rapidapi.com/gssteam/api/ptl/playground/apiendpoint_f0739b9b-7388-41dc-bab5-12048bb18f65
+
+https://rapidapi.com/Jonak-Adipta-Kalita/api/jak_api/playground/apiendpoint_cc7ed303-9f51-43c0-86ec-7dbfc9bb88bd
+
+https://rapidapi.com/digiwalls/api/gamerpower/playground/apiendpoint_8e033252-74ef-4731-917f-8c9a563929a0
+"GamerPower%%Filter & Group Giveaways","GamerPower%%Live giveaways by type"
+(這個重複)
+
+https://rapidapi.com/maatheusb96/api/english-talking2/playground
+
+search(BM tool)
+
+https://rapidapi.com/souzadie/api/colegiosantaana/playground/apiendpoint_56abf0b5-51a3-4659-b419-0e4ea9370d3f
+"colegiosantaana%%Disciplina-1","colegiosantaana%%Mensajes-1","colegiosantaana%%Evaluaciones-1"
+(這個重複)
+
+https://rapidapi.com/aless2003/api/mikuapi/playground/apiendpoint_3aab09d2-a9e4-4538-ae0e-ad3ce33da633
+
+https://rapidapi.com/BroadageSports/api/handball-data/playground/apiendpoint_6ccc48fb-1125-4a4f-bcf6-ac39325231f7
+"Handball Data%%Daily Match List-Live","Handball Data%%Daily Match List-Scheduled"
+(這個重複)
+
+https://rapidapi.com/opensorted/api/token-api/playground/apiendpoint_fb5c8494-03d6-4655-a9d1-b31a064322b4
+
+https://rapidapi.com/orthosie/api/numbers-translator/playground/59136e84e4b0bcc488299c8f
+
+https://rapidapi.com/amanxyou/api/password-generator-api/playground/apiendpoint_f3969613-e762-4622-b443-9c90468bb574
+"Password Generator API%%Password of length 50", "Password Generator API%%Base" (這個重複)
+
+https://rapidapi.com/opentripmap/api/places1/playground/apiendpoint_d38b69f9-9fae-47de-80c8-8796ecd3fd52
+
+https://rapidapi.com/Josiassejod1-WNU9Fi2D8/api/marvel-vs-capcom-2/playground/apiendpoint_e1d732b9-1e22-4d82-ba0a-9e60a10fb08e
+"Marvel Vs Capcom 2%%All Characters","Marvel Vs Capcom 2%%Show Character"
+(這個重複)
+
+https://rapidapi.com/fernandelcapo/api/pizzaallapala/playground/apiendpoint_552b250e-8245-4f94-9309-6ce4ffbcb362
+
+https://rapidapi.com/Jonak-Adipta-Kalita/api/jak_api/playground/apiendpoint_cc7ed303-9f51-43c0-86ec-7dbfc9bb88bd
+"JAK_API%%Miraculous","JAK_API%%Genshin Impact","JAK_API%%Ben 10"
+(這個重複)
+
+https://rapidapi.com/cas8398/api/grup-terbuka/playground/apiendpoint_3c09e016-f41a-416d-a6d0-74070b2a7895
+
+https://rapidapi.com/kenshi.hyweb/api/sitedomain1/playground/apiendpoint_d027f14e-5455-47ed-bebc-8c56864d6182
+"siteDomain%%language list", "siteDomain%%industry list"
+(這個重複)
+
+https://rapidapi.com/fluximmo-fluximmo-default/api/fluximmo/playground/apiendpoint_212d0925-14eb-47df-925c-fbd9caf3efb3
+
+search_places(BM tool)
+
+https://rapidapi.com/jalajoninc/api/thailand/playground/apiendpoint_665a6acf-2d68-4fc0-805f-04df0d917d2f
+
+https://rapidapi.com/BroadageSports/api/soccer-data/playground/apiendpoint_1b4b08fc-9664-49e9-97a0-1a0a95ac68fd
+
+https://rapidapi.com/siltest/api/fake-brightcove/playground/apiendpoint_b4a27517-ee75-4af5-8c09-91456032adca
+
+https://rapidapi.com/krlos013/api/numberstoletters/playground/apiendpoint_2435bcbc-4088-48d6-a8d7-cfd457c024e8
+"NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles",
+"NumbersToLetters%%Convertir cantidad a letra Moneda MXN Espa\u00f1ol"
+(這個重複)
+
+https://rapidapi.com/mattfoster02/api/f1-latest-news/playground/apiendpoint_37a25c55-c251-4ff8-93ef-257520c66369
+
+https://rapidapi.com/stadia-maps-stadia-maps-default/api/stadia-maps-time-zone-api/playground/apiendpoint_89d3284c-7c2b-403a-ab33-5c067ceb783c
+
+"get_weather_today"(BM tool)
+
+"get_today_date"(BM tool)
+
+"Numbers%%Get math fact"(沒找到)
+
+"forecast_weather"(BM tool)
+
+"getWolframAlphaResults"(BM tool)
+
+https://rapidapi.com/ashurbekovram/api/car-database/playground/apiendpoint_d2e141e7-272f-44dd-8b52-7c8597c3e6c3
+
+"disambiguation"(BM tool)
+
+"search_general"(BM tool)
+
+https://rapidapi.com/spacosa-corp-spacosa-corp-default/api/catchloc/playground/apiendpoint_61650c81-a3bc-4065-aa03-34280807a8e1
+
+https://rapidapi.com/georgievdatascience-bYAvW_z25SU/api/football-dolphin/playground/apiendpoint_bdad070b-6763-4e22-a63a-5e26b5098ab2
+
+"add_date"(BM tool)
