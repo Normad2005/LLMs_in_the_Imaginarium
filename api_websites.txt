@@ -2,11 +2,11 @@
 
 https://rapidapi.com/adminMelissa/api/global-email-v4/playground/apiendpoint_072a19b8-7c65-4fe5-ba66-b9815cb7df78
 
-https://rapidapi.com/weatherapi.me/api/weather_dataset/playground/apiendpoint_4e0968b3-4232-41d7-bac9-60ece9f31290
+*https://rapidapi.com/weatherapi.me/api/weather_dataset/playground/apiendpoint_4e0968b3-4232-41d7-bac9-60ece9f31290
 
-https://rapidapi.com/sfbart/api/bart/playground/53aa610ee4b0596140341d80
+*https://rapidapi.com/sfbart/api/bart/playground/53aa610ee4b0596140341d80
 
-https://rapidapi.com/gssteam/api/ptl/playground/apiendpoint_f0739b9b-7388-41dc-bab5-12048bb18f65
+*https://rapidapi.com/gssteam/api/ptl/playground/apiendpoint_f0739b9b-7388-41dc-bab5-12048bb18f65
 
 https://rapidapi.com/Jonak-Adipta-Kalita/api/jak_api/playground/apiendpoint_cc7ed303-9f51-43c0-86ec-7dbfc9bb88bd
 
