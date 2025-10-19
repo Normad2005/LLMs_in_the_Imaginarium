@@ -6,7 +6,7 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
 
     # Communication
-
+    "get_weather_data": {"category": "Communication", "tool_name": "weather_dataset"}
 
     # Data
 
