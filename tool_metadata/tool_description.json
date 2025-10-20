@@ -34,24 +34,6 @@
     "optional_parameters": []
   },
 
-  "Convertir cantidad a letra Moneda MXN Español": {
-    "description": "Convierte de cantidad a letras pesos Mexicano EndPoind Español. Se agrego el parametro **moneda**, los tipos aceptados para este parametro son los siguientes (PESOS, DOLARES, EUROS), TODO EN MAYUSCULAS.",
-    "required_parameters": [
-      {"name": "moneda", "type": "STRING", "default": "DOLARES"},
-      {"name": "monto", "type": "STRING", "default": "1000"}
-    ],
-    "optional_parameters": []
-  },
-
-  "Convertir cantidad a letra Moneda MXN Ingles": {
-    "description": "Convertir cantidad a letra Moneda MXN en Ingles",
-    "required_parameters": [
-      {"name": "moneda", "type": "STRING", "default": "DOLARES"},
-      {"name": "monto", "type": "STRING", "default": "1000"}
-    ],
-    "optional_parameters": []
-  },
-
   "get_timezone_info": {
     "description": "The Stadia TZ Lookup API provides time zone information, as well as information about any special offset (such as DST) in effect based on the latest IANA TZDB. Note that this API may not be accurate for timestamps in the past and does not claim to report precise nautical times in the open ocean beyond territorial waters.",
     "required_parameters": [
@@ -59,6 +41,49 @@
         "name": "lat",
         "type": "NUMBER",
         "description": "The latitude component of any point on land."
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "modify_group_info": {
+    "description": "API access to modifying location object's group information\n\nrequired parameter : api (api.common.group.set.modify)",
+    "required_parameters": [
+      {
+        "name": "timestamp",
+        "type": "STRING",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "api_key",
+        "type": "STRING",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "group_name",
+        "type": "STRING",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "api",
+        "type": "STRING",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "cert_key",
+        "type": "STRING",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "group_key",
+        "type": "STRING",
+        "description": "",
+        "default": ""
       }
     ],
     "optional_parameters": []
@@ -72,6 +97,37 @@
 
   "get_f1_latest_news": {
     "description": "This endpoint returns back recent articles from all sources",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+
+  "get_head_to_head_statistics": {
+    "description": "Head to head statistics about English Premier League",
+    "required_parameters": [
+      {
+        "name": "first_team",
+        "type": "STRING",
+        "description": "**Enter first team from all available teams:** Arsenal, Aston Villa, Barnsley, Birmingham, Blackburn, Blackpool, Bolton, Bournemouth, Bradford, Brighton, Burnley, Cardiff, Charlton, Chelsea, Coventry, Crystal Palace, Derby, Everton, Fulham, Huddersfield, Hull, Ipswich, Leeds, Leicester, Liverpool, Man City, Man United, Middlesbrough, Newcastle, Norwich, Nott'm Forest, Portsmouth, QPR, Reading, Sheffield United, Sheffield Weds, Southampton, Stoke, Sunderland, Swansea, Tottenham, Watford, West Brom, West Ham, Wigan, Wimbledon, Wolves",
+        "default": "Man United"
+      },
+      {
+        "name": "second_team",
+        "type": "STRING",
+        "description": "**Enter second team from all available teams:** Arsenal, Aston Villa, Barnsley, Birmingham, Blackburn, Blackpool, Bolton, Bournemouth, Bradford, Brighton, Burnley, Cardiff, Charlton, Chelsea, Coventry, Crystal Palace, Derby, Everton, Fulham, Huddersfield, Hull, Ipswich, Leeds, Leicester, Liverpool, Man City, Man United, Middlesbrough, Newcastle, Norwich, Nott'm Forest, Portsmouth, QPR, Reading, Sheffield United, Sheffield Weds, Southampton, Stoke, Sunderland, Swansea, Tottenham, Watford, West Brom, West Ham, Wigan, Wimbledon, Wolves",
+        "default": "Liverpool"
+      },
+      {
+        "name": "type_of_statistics",
+        "type": "STRING",
+        "description": "**Enter one from available types of statistics:** \nfull time result, \nhome vs away full time result, \nresult first half and the match,\nexact number of goals in the match, \ngoals over, \ngoals under",
+        "default": "full time result"
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "get_thailand_info": {
+    "description": "Thailand",
     "required_parameters": [],
     "optional_parameters": []
   }

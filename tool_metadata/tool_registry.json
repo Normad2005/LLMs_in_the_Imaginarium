@@ -7,8 +7,14 @@
 
   "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
 
+  "modify_group_info": {"category": "Location", "tool_name": "CatchLoc"},
+
   "get_soccer_tournaments": {"category": "Sports", "tool_name": "Soccer Data"},
 
-  "get_f1_latest_news": {"category": "Sports", "tool_name": "F1 Latest News"}
+  "get_f1_latest_news": {"category": "Sports", "tool_name": "F1 Latest News"},
+
+  "get_head_to_head_statistics": {"category": "Sports", "tool_name": "Football Dolphin"},
+
+  "get_thailand_info": {"category": "Travel", "tool_name": "Thailand"}
 
 }
