@@ -3,7 +3,7 @@ import sys, os
 import re
 import json
 from datetime import datetime
-from utils import strip_end, parse_response
+from utils import parse_response
 from my_llm import chat_my, call_ollama
 import textwrap
 

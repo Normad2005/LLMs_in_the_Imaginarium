@@ -12,7 +12,7 @@ def main(
     paraphrase_model_ckpt: str = "llama3",
     target_num_train_per_API: int = 30, #平均每個api產出量目標
     num_para_train_max: int = 3, #每筆最多改寫幾次
-    dir_write: str = "results/",
+    dir_write: str = "results/ste/",
     save_file_name: str = "tool_data_train.json",
 ):
     os.makedirs(dir_write, exist_ok=True)
