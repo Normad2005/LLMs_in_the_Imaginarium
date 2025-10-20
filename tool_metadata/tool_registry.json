@@ -1,8 +1,10 @@
 {
-  "verify_email": {
-    "category": "Business Software",
-    "tool_name": "Global Email V4",
-    "description": "Verify whether an email address is valid and active.",
-    "params": ["email"]
-  }
+  "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
+
+  "update_ptl_info": {"category": "Business Software", "tool_name": "ptl"},
+
+  "get_weather_data": {"category": "Communication", "tool_name": "Weather_dataSet"},
+  
+  "get_bart_schedule": {"category": "Travel", "tool_name": "bart"}
+
 }

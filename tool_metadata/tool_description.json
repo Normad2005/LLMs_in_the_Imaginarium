@@ -1,0 +1,32 @@
+{
+  "verify_email": {
+    "description": "Verify whether an email address is valid and active",
+    "required_parameters": [
+      {
+        "name": "opt",
+        "type": "STRING",
+        "description": "Express/Premium",
+        "default": "VerifyMailbox:Express|VerifyMailbox:ExpressPremium"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "description": "Input Email",
+        "default": "support@melissa.com"
+      }
+    ],
+    "optional_parameters": []
+  },
+  "get_weather_data": {
+    "description": "Check The Weather Api Process",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "data",
+        "type": "STRING",
+        "description": "Check The weather data into Weather_API Process",
+        "default": "1"
+      }
+    ]
+  }
+}
