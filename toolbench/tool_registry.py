@@ -36,7 +36,8 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
 
     # Sports
-
+    "get_soccer_tournaments": {"category": "Sports", "tool_name": "Soccer Data"},
+    "get_f1_latest_news": {"category": "Sports", "tool_name": "F1 Latest News"}
 
     # Tools
 

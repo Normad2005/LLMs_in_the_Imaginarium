@@ -6,7 +6,7 @@ import os
 
 string_match_APIs = [
     'verify_email',
-    'get_weather_data'
+    'get_portail_api'
 ]
 
 from my_llm import chat_my, visualize_messages, get_chat_completion_my

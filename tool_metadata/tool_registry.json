@@ -1,10 +1,14 @@
 {
+  "get_ingest_status": {"category": "Business", "tool_name": "Fake Brightcove"},
+
   "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
 
-  "update_ptl_info": {"category": "Business Software", "tool_name": "ptl"},
+  "get_car_makes": {"category": "Data", "tool_name": "Car database"},
 
-  "get_weather_data": {"category": "Communication", "tool_name": "Weather_dataSet"},
-  
-  "get_bart_schedule": {"category": "Travel", "tool_name": "bart"}
+  "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
+
+  "get_soccer_tournaments": {"category": "Sports", "tool_name": "Soccer Data"},
+
+  "get_f1_latest_news": {"category": "Sports", "tool_name": "F1 Latest News"}
 
 }

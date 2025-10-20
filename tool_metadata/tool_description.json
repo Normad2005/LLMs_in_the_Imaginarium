@@ -1,6 +1,16 @@
 {
+  "get_ingest_status": {
+    "description": "Fake Brightcove Ingest Job Status",
+    "required_parameters": [
+      {"name": "account_id", "type": "string"},
+      {"name": "video_id", "type": "string"},
+      {"name": "job_id", "type": "string"}
+    ],
+    "optional_parameters": []
+  },
+
   "verify_email": {
-    "description": "Verify whether an email address is valid and active",
+    "description": "Verify whether an email address is valid and active.",
     "required_parameters": [
       {
         "name": "opt",
@@ -17,16 +27,53 @@
     ],
     "optional_parameters": []
   },
-  "get_weather_data": {
-    "description": "Check The Weather Api Process",
+
+  "get_car_makes": {
+    "description": "Return all makes",
     "required_parameters": [],
-    "optional_parameters": [
+    "optional_parameters": []
+  },
+
+  "Convertir cantidad a letra Moneda MXN Español": {
+    "description": "Convierte de cantidad a letras pesos Mexicano EndPoind Español. Se agrego el parametro **moneda**, los tipos aceptados para este parametro son los siguientes (PESOS, DOLARES, EUROS), TODO EN MAYUSCULAS.",
+    "required_parameters": [
+      {"name": "moneda", "type": "STRING", "default": "DOLARES"},
+      {"name": "monto", "type": "STRING", "default": "1000"}
+    ],
+    "optional_parameters": []
+  },
+
+  "Convertir cantidad a letra Moneda MXN Ingles": {
+    "description": "Convertir cantidad a letra Moneda MXN en Ingles",
+    "required_parameters": [
+      {"name": "moneda", "type": "STRING", "default": "DOLARES"},
+      {"name": "monto", "type": "STRING", "default": "1000"}
+    ],
+    "optional_parameters": []
+  },
+
+  "get_timezone_info": {
+    "description": "The Stadia TZ Lookup API provides time zone information, as well as information about any special offset (such as DST) in effect based on the latest IANA TZDB. Note that this API may not be accurate for timestamps in the past and does not claim to report precise nautical times in the open ocean beyond territorial waters.",
+    "required_parameters": [
       {
-        "name": "data",
-        "type": "STRING",
-        "description": "Check The weather data into Weather_API Process",
-        "default": "1"
+        "name": "lat",
+        "type": "NUMBER",
+        "description": "The latitude component of any point on land."
       }
-    ]
+    ],
+    "optional_parameters": []
+  },
+
+  "get_soccer_tournaments": {
+    "description": "Provides list of tournaments.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+
+  "get_f1_latest_news": {
+    "description": "This endpoint returns back recent articles from all sources",
+    "required_parameters": [],
+    "optional_parameters": []
   }
+
 }
