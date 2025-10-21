@@ -25,7 +25,7 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
 
     # Gaming
-
+    "gamerpower_filter_and_group_giveaways": {"category": "Gaming", "tool_name": "gamerpower"},
 
     # Location
 
@@ -34,7 +34,7 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
 
     # Other
-
+    "get_brawl_stars_data": {"category": "Other", "tool_name": "jak_api"},
 
     # Sports
 
