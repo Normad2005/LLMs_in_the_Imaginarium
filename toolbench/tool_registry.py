@@ -1,6 +1,6 @@
 TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Business
-    "get_ingest_status": {"category": "Business", "tool_name": "Fake Brightcove"},
+    "generate_temp_upload_urls": {"category": "Business", "tool_name": "Fake Brightcove"},
 
     # Business_Software
     "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
@@ -17,19 +17,22 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Education
 
 
-    # Finance
+    # Entertainment
+    "get_random_joke": {"category": "Entertainment", "tool_name": "Joke"},
 
+    # Finance
+    "get_financial_data": {"category": "Finance", "tool_name": "Alpha Vantage"},
+
+    "convert_currency": {"category": "Finance", "tool_name": "Exchange Rate API"},
 
     # Food
-
+    "get_recipe": {"category": "Food", "tool_name": "Recipe"},
 
     # Gaming
 
 
     # Location
     "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
-
-    "modify_group_info": {"category": "Location", "tool_name": "CatchLoc"},
 
     # Mapping
 
@@ -48,7 +51,6 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
 
     # Travel
-    "get_thailand_info": {"category": "Travel", "tool_name": "Thailand"}
 
     # Video, Images
     

@@ -2,7 +2,7 @@ import http.client
 import json
 from config.api_keys import RAPIDAPI_KEY  # ← 共用金鑰
 
-def verify_email(email: str, toolbench_rapidapi_key: str = RAPIDAPI_KEY):
+def verify_email(email: str = "support@melissa.com", toolbench_rapidapi_key: str = RAPIDAPI_KEY):
     """
     參數：
         email (str): 要驗證的電子郵件地址。

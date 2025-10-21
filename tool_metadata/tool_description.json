@@ -1,10 +1,25 @@
 {
-  "get_ingest_status": {
-    "description": "Fake Brightcove Ingest Job Status",
+  "generate_temp_upload_urls": {
+    "description": "Generate Temp Upload URLs",
     "required_parameters": [
-      {"name": "account_id", "type": "string"},
-      {"name": "video_id", "type": "string"},
-      {"name": "job_id", "type": "string"}
+      {
+        "name": "source_name",
+        "type": "string",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "video_id",
+        "type": "string",
+        "description": "",
+        "default": ""
+      },
+      {
+        "name": "account_id",
+        "type": "string",
+        "description": "",
+        "default": ""
+      }
     ],
     "optional_parameters": []
   },
@@ -12,12 +27,6 @@
   "verify_email": {
     "description": "Verify whether an email address is valid and active.",
     "required_parameters": [
-      {
-        "name": "opt",
-        "type": "STRING",
-        "description": "Express/Premium",
-        "default": "VerifyMailbox:Express|VerifyMailbox:ExpressPremium"
-      },
       {
         "name": "email",
         "type": "STRING",
@@ -33,6 +42,69 @@
     "required_parameters": [],
     "optional_parameters": []
   },
+  
+  "get_random_joke": {
+    "description": "Returns a random joke.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+
+  "get_financial_data": {
+    "description": "Customizable Endpoint for various financial data functions.",
+    "required_parameters": [
+      {
+        "name": "function",
+        "type": "String",
+        "description": "The function of your choice (This is required for all API calls). For this example, the value is GLOBAL_QUOTE.",
+        "default": "GLOBAL_QUOTE"
+      },
+      {
+        "name": "symbol",
+        "type": "String",
+        "description": "Any additional optional parameters may be added. Some functions have multiple required parameters, check the documentation for more information.",
+        "default": "TSLA"
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "convert_currency": {
+    "description": "Convert currency using the three-letter currency codes.",
+    "required_parameters": [
+      {
+        "name": "base",
+        "type": "String",
+        "description": "The three-letter currency code of the currency you would like to convert from.",
+        "default": "USD"
+      },
+      {
+        "name": "target",
+        "type": "String",
+        "description": "The three-letter currency code of the currency you would like to convert to.",
+        "default": "JPY"
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "get_recipe": {
+    "description": "Searches for recipes based on a text query.",
+    "required_parameters": [
+      {
+        "name": "query",
+        "type": "String",
+        "description": "query text to search.",
+        "default": "italian wedding soup"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "offset",
+        "type": "String",
+        "description": "number of results to offset for pagination."
+      }
+    ]
+  },
 
   "get_timezone_info": {
     "description": "The Stadia TZ Lookup API provides time zone information, as well as information about any special offset (such as DST) in effect based on the latest IANA TZDB. Note that this API may not be accurate for timestamps in the past and does not claim to report precise nautical times in the open ocean beyond territorial waters.",
@@ -41,49 +113,6 @@
         "name": "lat",
         "type": "NUMBER",
         "description": "The latitude component of any point on land."
-      }
-    ],
-    "optional_parameters": []
-  },
-
-  "modify_group_info": {
-    "description": "API access to modifying location object's group information\n\nrequired parameter : api (api.common.group.set.modify)",
-    "required_parameters": [
-      {
-        "name": "timestamp",
-        "type": "STRING",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "api_key",
-        "type": "STRING",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "group_name",
-        "type": "STRING",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "api",
-        "type": "STRING",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "cert_key",
-        "type": "STRING",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "group_key",
-        "type": "STRING",
-        "description": "",
-        "default": ""
       }
     ],
     "optional_parameters": []
@@ -123,12 +152,6 @@
         "default": "full time result"
       }
     ],
-    "optional_parameters": []
-  },
-
-  "get_thailand_info": {
-    "description": "Thailand",
-    "required_parameters": [],
     "optional_parameters": []
   }
 

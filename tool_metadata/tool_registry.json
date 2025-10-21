@@ -1,20 +1,24 @@
 {
-  "get_ingest_status": {"category": "Business", "tool_name": "Fake Brightcove"},
+  "generate_temp_upload_urls": {"category": "Business", "tool_name": "Fake Brightcove"},
 
   "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
 
   "get_car_makes": {"category": "Data", "tool_name": "Car database"},
 
-  "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
+  "get_random_joke": {"category": "Entertainment", "tool_name": "Joke"},
 
-  "modify_group_info": {"category": "Location", "tool_name": "CatchLoc"},
+  "get_financial_data": {"category": "Finance", "tool_name": "Alpha Vantage"},
+
+  "convert_currency": {"category": "Finance", "tool_name": "Exchange Rate API"},
+
+  "get_recipe": {"category": "Food", "tool_name": "Recipe"},
+
+  "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
 
   "get_soccer_tournaments": {"category": "Sports", "tool_name": "Soccer Data"},
 
   "get_f1_latest_news": {"category": "Sports", "tool_name": "F1 Latest News"},
 
-  "get_head_to_head_statistics": {"category": "Sports", "tool_name": "Football Dolphin"},
-
-  "get_thailand_info": {"category": "Travel", "tool_name": "Thailand"}
+  "get_head_to_head_statistics": {"category": "Sports", "tool_name": "Football Dolphin"}
 
 }

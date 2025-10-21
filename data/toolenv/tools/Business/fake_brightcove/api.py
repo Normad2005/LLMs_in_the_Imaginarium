@@ -2,33 +2,33 @@ import http.client
 import json
 from config.api_keys import RAPIDAPI_KEY  # ← 共用金鑰
 
-def get_ingest_status(
+def generate_temp_upload_urls(
     account_id: str,
     video_id: str,
-    job_id: str,
+    source_name: str,
     toolbench_rapidapi_key: str = RAPIDAPI_KEY
 ):
     """
-    呼叫 Fake Brightcove API 取得指定影片的 Ingest Job 狀態。
+    呼叫 Fake Brightcove API 產生暫時上傳 URL。
 
     API 說明：
-        服務：fake-brightcove.p.rapidapi.com
-        功能：查詢影片上傳 (Ingest) 任務狀態。
+        "Temp Upload URLs" 用於生成指定帳號與影片的暫時上傳連結。
 
     參數：
-        account_id (str): 帳戶 ID。
+        account_id (str): Brightcove 帳號 ID。
         video_id (str): 影片 ID。
-        job_id (str): 上傳任務 (Ingest Job) ID。
+        source_name (str): 來源檔案名稱。
         toolbench_rapidapi_key (str): API 金鑰，預設使用共用 RAPIDAPI_KEY。
 
     回傳：
-        dict: 包含 Ingest Job 狀態資訊的 JSON 物件。
-              若解析失敗，則回傳 {"error": "...", "raw": "..."}。
+        dict: 包含 API 回應結果的 JSON 物件。
+              若解析失敗，則回傳 {"error": ..., "raw": ...}
     """
+
     conn = http.client.HTTPSConnection("fake-brightcove.p.rapidapi.com")
 
-    # 建立查詢路徑（動態插入參數）
-    endpoint = f"/v1/accounts/{account_id}/videos/{video_id}/ingest_jobs/{job_id}"
+    # 組合 API 路徑
+    path = f"/v1/accounts/{account_id}/videos/{video_id}/upload-urls/{source_name}"
 
     headers = {
         "x-rapidapi-key": toolbench_rapidapi_key,
@@ -36,7 +36,7 @@ def get_ingest_status(
     }
 
     # 發送 GET 請求
-    conn.request("GET", endpoint, headers=headers)
+    conn.request("GET", path, headers=headers)
 
     res = conn.getresponse()
     data = res.read()
