@@ -14,12 +14,13 @@ from config.api_keys import RAPIDAPI_KEY
 # === 全域設定 ===
 RUN_ID = datetime.now().strftime("%Y%m%d-%H%M%S")
 
-# === 載入 TOOL_REGISTRY ===
-def load_tool_registry():
-    with open("tool_metadata/TOOL_REGISTRY.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+# === 載入 TOOL ===
+with open("tool_metadata/tool_registry.json", "r", encoding="utf-8") as f:
+    TOOL_REGISTRY = json.load(f)
 
-TOOL_REGISTRY = load_tool_registry()
+with open("tool_metadata/tool_description.json", "r", encoding="utf-8") as f:
+    TOOL_DESCRIPTION = json.load(f)
+
 
 # === API 呼叫 ===
 def run_tool(api_name: str, args: dict, truncate: int = 2048):
@@ -82,14 +83,13 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
 
     # === 從 RapidAPI Registry 載入所有 API ===
     api_list = list(TOOL_REGISTRY.keys())
-    api_desc = {k: v.get("description", f"No description for {k}") for k, v in TOOL_REGISTRY.items()}
 
     # === 每次只探索一個 API ===
     for api_name in api_list:
         print(f"\n===== Exploring {api_name} =====")
 
         explored_queries, success_labels, all_sessions = [], [], []
-        api_info = f"API_name: {api_name}\nDescription: {api_desc[api_name]}"
+        api_info = f"API_name: {api_name}\nDescription:\n{json.dumps(TOOL_DESCRIPTION[api_name], indent=2, ensure_ascii=False)}"
 
         for ep in range(num_episodes):
             print(f"\n=== Episode {ep} ===")
