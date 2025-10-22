@@ -14,7 +14,7 @@
 "GamerPower%%Filter & Group Giveaways","GamerPower%%Live giveaways by type"
 (這個重複)
 
-https://rapidapi.com/maatheusb96/api/english-talking2/playground
+*https://rapidapi.com/maatheusb96/api/english-talking2/playground
 
 search(BM tool)
 

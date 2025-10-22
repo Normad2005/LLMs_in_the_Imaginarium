@@ -4,10 +4,8 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
     # Business_Software
     "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
-    "update_ptl_info": {"category": "Business Software", "tool_name": "ptl"},
 
     # Communication
-    "get_weather_data": {"category": "Communication", "tool_name": "weather_dataset"},
 
     # Data
 
@@ -34,8 +32,8 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
 
     # Other
-    "get_brawl_stars_data": {"category": "Other", "tool_name": "jak_api"},
-
+    "get_message": {"category": "Other", "tool_name": "colegiosantaana"},
+    "get_student_evaluations": {"category": "Other", "tool_name": "colegiosantaana"},
     # Sports
 
 
@@ -43,7 +41,6 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
 
     # Travel
-    "get_bart_schedule": {"category": "Travel", "tool_name": "bart"},
 
     # Video, Images
     
