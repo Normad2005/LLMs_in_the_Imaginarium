@@ -37,9 +37,78 @@
     "optional_parameters": []
   },
 
+  "English Talking%%Get an answer": {
+    "description": "Get an answer",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "status",
+        "type": "STRING",
+        "description": "approved or analyzing",
+        "default": "approved"
+      },
+      {
+        "name": "answer",
+        "type": "STRING",
+        "description": "Response to the initial speech of the dialogue",
+        "default": "Hi, how are you?"
+      },
+      {
+        "name": "_id",
+        "type": "STRING",
+        "description": "Unique dialog identifier (automatically generated)\n\n",
+        "default": "5ec47b3d8958430d6a6d5898"
+      },
+      {
+        "name": "speech",
+        "type": "STRING",
+        "description": "Speak in which the usuairio wants to get an answer",
+        "default": "Hi"
+      },
+      {
+        "name": "user",
+        "type": "STRING",
+        "description": "User who created the dialogue",
+        "default": "5ec479048958430d6a6d5895"
+      }
+    ]
+  },
+
   "get_car_makes": {
     "description": "Return all makes",
     "required_parameters": [],
+    "optional_parameters": []
+  },
+
+  "get_industry_list": {
+    "description": "Returns the list of industry two-digit codes.",
+    "required_parameters": [
+      {
+        "name": "alias",
+        "type": "string",
+        "description": "",
+        "default": ""
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "get_language_list": {
+    "description": "Returns the list of available system languages.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+
+  "spell_number": {
+    "description": "Numbers Translator",
+    "required_parameters": [
+      {
+        "name": "number_text",
+        "type": "STRING",
+        "description": "Numerical value of the number",
+        "default": "23879908709817834"
+      }
+    ],
     "optional_parameters": []
   },
   
@@ -106,6 +175,45 @@
     ]
   },
 
+  "get_all_mvc2_characters": {
+    "description": "Access all characters in MVC2 (Marvel Vs Capcom) Universe",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+
+  "get_single_mvsc2_character": {
+    "description": "Get details about a single character and their traits",
+    "required_parameters": [
+      {
+        "name": "name",
+        "type": "string",
+        "description": "The name of the character to retrieve details for.",
+        "default": "Cabel"
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "gamerpower_filter_and_group_giveaways": {
+    "description": "Filter and group platforms and giveaway types to get personalized results.",
+    "required_parameters": [
+      {
+        "name": "platform",
+        "type": "STRING",
+        "description": "The gaming platform(s) to filter by. (e.g., epic-games-store, steam, android)",
+        "default": "epic-games-store.steam.android"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "type",
+        "type": "STRING",
+        "description": "The type of giveaway to filter by. (e.g., game, loot)",
+        "default": "game.loot"
+      }
+    ]
+  },
+
   "get_timezone_info": {
     "description": "The Stadia TZ Lookup API provides time zone information, as well as information about any special offset (such as DST) in effect based on the latest IANA TZDB. Note that this API may not be accurate for timestamps in the past and does not claim to report precise nautical times in the open ocean beyond territorial waters.",
     "required_parameters": [
@@ -130,29 +238,53 @@
     "optional_parameters": []
   },
 
-  "get_head_to_head_statistics": {
-    "description": "Head to head statistics about English Premier League",
+  "get_handball_scheduled_matches": {
+    "description": "Daily match list including scheduled matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
     "required_parameters": [
       {
-        "name": "first_team",
+        "name": "date",
         "type": "STRING",
-        "description": "**Enter first team from all available teams:** Arsenal, Aston Villa, Barnsley, Birmingham, Blackburn, Blackpool, Bolton, Bournemouth, Bradford, Brighton, Burnley, Cardiff, Charlton, Chelsea, Coventry, Crystal Palace, Derby, Everton, Fulham, Huddersfield, Hull, Ipswich, Leeds, Leicester, Liverpool, Man City, Man United, Middlesbrough, Newcastle, Norwich, Nott'm Forest, Portsmouth, QPR, Reading, Sheffield United, Sheffield Weds, Southampton, Stoke, Sunderland, Swansea, Tottenham, Watford, West Brom, West Ham, Wigan, Wimbledon, Wolves",
-        "default": "Man United"
-      },
-      {
-        "name": "second_team",
-        "type": "STRING",
-        "description": "**Enter second team from all available teams:** Arsenal, Aston Villa, Barnsley, Birmingham, Blackburn, Blackpool, Bolton, Bournemouth, Bradford, Brighton, Burnley, Cardiff, Charlton, Chelsea, Coventry, Crystal Palace, Derby, Everton, Fulham, Huddersfield, Hull, Ipswich, Leeds, Leicester, Liverpool, Man City, Man United, Middlesbrough, Newcastle, Norwich, Nott'm Forest, Portsmouth, QPR, Reading, Sheffield United, Sheffield Weds, Southampton, Stoke, Sunderland, Swansea, Tottenham, Watford, West Brom, West Ham, Wigan, Wimbledon, Wolves",
-        "default": "Liverpool"
-      },
-      {
-        "name": "type_of_statistics",
-        "type": "STRING",
-        "description": "**Enter one from available types of statistics:** \nfull time result, \nhome vs away full time result, \nresult first half and the match,\nexact number of goals in the match, \ngoals over, \ngoals under",
-        "default": "full time result"
+        "description": "The date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+        "default": "28/01/2021"
       }
     ],
     "optional_parameters": []
+  },
+
+  "get_handball_daily_matches": {
+    "description": "Daily match list including live matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+    "required_parameters": [
+      {
+        "name": "date",
+        "type": "STRING",
+        "description": "The date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+        "default": "28/01/2021"
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "get_airlines": {
+    "description": "Searches for airline information using various identifiers or name.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "icao",
+        "type": "String",
+        "description": "International Civil Aviation Organization (ICAO) 3-character airline code."
+      },
+      {
+        "name": "iata",
+        "type": "String",
+        "description": "International Air Transport Association (IATA) 2-character airline code."
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "description": "Airline name. This parameter supports partial matching (e.g. United will match United Airlines)",
+        "default": "Singapore Airlines"
+      }
+    ]
   }
 
 }
