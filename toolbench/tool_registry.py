@@ -35,7 +35,7 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     "get_message": {"category": "Other", "tool_name": "colegiosantaana"},
     "get_student_evaluations": {"category": "Other", "tool_name": "colegiosantaana"},
     # Sports
-
+    "get_handball_scheduled_matches": {"category": "Sports", "tool_name": "handball_data"},
 
     # Tools
 

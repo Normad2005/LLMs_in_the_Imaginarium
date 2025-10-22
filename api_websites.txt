@@ -18,13 +18,13 @@
 
 search(BM tool)
 
-https://rapidapi.com/souzadie/api/colegiosantaana/playground/apiendpoint_56abf0b5-51a3-4659-b419-0e4ea9370d3f
+*https://rapidapi.com/souzadie/api/colegiosantaana/playground/apiendpoint_56abf0b5-51a3-4659-b419-0e4ea9370d3f
 "colegiosantaana%%Disciplina-1","colegiosantaana%%Mensajes-1","colegiosantaana%%Evaluaciones-1"
 (這個重複)
 
-https://rapidapi.com/aless2003/api/mikuapi/playground/apiendpoint_3aab09d2-a9e4-4538-ae0e-ad3ce33da633
+*https://rapidapi.com/aless2003/api/mikuapi/playground/apiendpoint_3aab09d2-a9e4-4538-ae0e-ad3ce33da633
 
-https://rapidapi.com/BroadageSports/api/handball-data/playground/apiendpoint_6ccc48fb-1125-4a4f-bcf6-ac39325231f7
+*https://rapidapi.com/BroadageSports/api/handball-data/playground/apiendpoint_6ccc48fb-1125-4a4f-bcf6-ac39325231f7
 "Handball Data%%Daily Match List-Live","Handball Data%%Daily Match List-Scheduled"
 (這個重複)
 
