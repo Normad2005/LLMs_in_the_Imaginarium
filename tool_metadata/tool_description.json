@@ -37,8 +37,8 @@
     "optional_parameters": []
   },
 
-  "English Talking%%Get an answer": {
-    "description": "Get an answer",
+  "english_talking_get_answer": {
+    "description": "This API aims to provide users with the possibility of conducting dialogues in English where the conversations and answers are registered and evaluated by the users themselves.",
     "required_parameters": [],
     "optional_parameters": [
       {
@@ -100,7 +100,7 @@
   },
 
   "spell_number": {
-    "description": "Numbers Translator",
+    "description": "Convert numerical numbers to words.",
     "required_parameters": [
       {
         "name": "number_text",
@@ -212,6 +212,19 @@
         "default": "game.loot"
       }
     ]
+  },
+
+  "gamerpower_get_giveaways_by_type": {
+    "description": "Get live giveaways by type, eg: game, loot, beta",
+    "required_parameters": [
+      {
+        "name": "type",
+        "type": "STRING",
+        "description": "The type of giveaway to filter by (e.g., game, loot, beta).",
+        "default": "game"
+      }
+    ],
+    "optional_parameters": []
   },
 
   "get_timezone_info": {

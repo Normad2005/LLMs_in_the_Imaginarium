@@ -27,6 +27,8 @@
 
   "gamerpower_filter_and_group_giveaways": {"category": "Gaming", "tool_name": "gamerpower"},
 
+  "gamerpower_get_giveaways_by_type": {"category": "Gaming", "tool_name": "gamerpower"},
+
   "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
 
   "get_soccer_tournaments": {"category": "Sports", "tool_name": "Soccer Data"},

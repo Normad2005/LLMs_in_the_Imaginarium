@@ -37,6 +37,8 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
     "gamerpower_filter_and_group_giveaways": {"category": "Gaming", "tool_name": "gamerpower"},
 
+    "gamerpower_get_giveaways_by_type": {"category": "Gaming", "tool_name": "gamerpower"},
+
     # Location
     "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
 
