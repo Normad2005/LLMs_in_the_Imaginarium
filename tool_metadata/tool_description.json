@@ -157,7 +157,7 @@
   },
 
   "get_recipe": {
-    "description": "Searches for recipes based on a text query.",
+    "description": "Searches for recipes where the dish name includes the query text.",
     "required_parameters": [
       {
         "name": "query",
