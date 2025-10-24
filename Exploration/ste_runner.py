@@ -97,8 +97,9 @@ def main(model_ckpt="llama3", num_episodes=2, num_stm_slots=2, max_turn=3, dir_w
 
             # === Step 1: Query 生成 ===
             prompt_q = template_q.format(api_descriptions=api_info)
+            strip_end(prompt_q, "User Query:").strip()
             if explored_queries:
-                prompt_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}"
+                prompt_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}"+ "\n\nUser Query:"
 
             response = call_ollama(model_ckpt, prompt_q)
             query = response.strip()
