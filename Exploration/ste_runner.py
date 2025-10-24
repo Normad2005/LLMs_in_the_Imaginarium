@@ -3,7 +3,7 @@ import sys, os
 import re
 import json
 from datetime import datetime
-from utils import parse_response
+from utils import parse_response, strip_end
 from my_llm import chat_my, call_ollama
 import textwrap
 
@@ -63,7 +63,7 @@ def LTM(queries, results):
     return [f"Query: {q} | Solved: {results[i]}" for i, q in enumerate(queries)]
 
 # === STE 主程式 ===
-def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_write="results/ste/"):
+def main(model_ckpt="llama3", num_episodes=2, num_stm_slots=2, max_turn=3, dir_write="results/ste/"):
     os.makedirs(dir_write, exist_ok=True)
 
     # === 載入 Prompt Template ===
@@ -107,7 +107,7 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
             item = {"query": query, "chains": []}
 
             # === Step 2: ReAct Chain ===
-            prompt_a = template_a.format(api_names=api_name, query=query)
+            prompt_a = template_a.format(api_descriptions=api_info,api_names=api_name, query=query)
             messages = chat_my(messages, prompt_a)
             temp = messages[-1]["content"]
             parsed = parse_response(temp, [api_name], api_info)
@@ -156,6 +156,8 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
             res = call_ollama(model_ckpt, reflection_prompt, temperature=0)
             successful = "Yes" if "Yes" in res else "No"
             print(f"✅ Reflection: {successful}")
+
+            item["reflection"] = successful
             success_labels.append(successful)
             all_sessions.append(item)
 
@@ -163,18 +165,18 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
             for f_idx in range(num_stm_slots - 1):
                 print(f"\n--- Follow-up #{f_idx + 1} ---")
 
-                follow_q = template_q_follow.format(api_descriptions=api_info)
+                follow_q = strip_end(template_q_follow, "User Query:").strip()
                 if explored_queries:
-                    follow_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}"
+                    follow_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}" + "\n\nUser Query:"
 
-                response = call_ollama(model_ckpt, follow_q)
+                response = chat_my(messages, follow_q)[-1]["content"]
                 follow_query = response.strip()
                 print(f"💬 Follow Query: {follow_query}")
                 explored_queries.append(follow_query)
                 item_follow = {"query": follow_query, "chains": []}
 
                 # === ReAct for follow-up ===
-                prompt_follow_a = template_a_follow.format(api_names=api_name, query=follow_query)
+                prompt_follow_a = template_a_follow.format(query=follow_query)
                 messages = chat_my(messages, prompt_follow_a)
                 temp = messages[-1]["content"]
                 parsed = parse_response(temp, [api_name], api_info)
@@ -223,6 +225,8 @@ def main(model_ckpt="llama3", num_episodes=1, num_stm_slots=2, max_turn=3, dir_w
                 res = call_ollama(model_ckpt, reflection_prompt, temperature=0)
                 successful = "Yes" if "Yes" in res else "No"
                 print(f"✅ Follow-up Reflection: {successful}")
+
+                item["reflection"] = successful
                 success_labels.append(successful)
                 all_sessions.append(item_follow)
 

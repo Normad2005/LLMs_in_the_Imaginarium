@@ -32,16 +32,12 @@ def main(
         examples = []
         print(f"\n=== Processing {api_name} ===")
 
-        for session in sessions:
-            for item in session.get("chains", []):
-                pass
-
-            # 每個 session 可能有多個 item（episode slot）
-            for item in session.get("chains", []):
-                pass
-
         # 你的 ste_runner 結構是 all_sessions → item["chains"]
         for item in sessions:
+            # 跳過沒成功推理的樣本
+            if item.get("reflection", "No") == "No":
+                continue
+
             chains = item.get("chains", [])
             if not chains:
                 continue
