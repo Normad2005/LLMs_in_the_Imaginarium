@@ -5,14 +5,32 @@ import json
 import os
 
 string_match_APIs = [
-    'verify_email',
-    'get_portail_api'
+    "generate_temp_upload_urls",
+    "verify_email",
+    "english_talking_get_answer",
+    "get_car_makes",
+    "get_industry_list",
+    "get_language_list",
+    "spell_number",
+    "get_random_joke",
+    "get_financial_data",
+    "convert_currency",
+    "get_recipe",
+    "get_all_mvc2_characters",
+    "get_single_mvsc2_character",
+    "gamerpower_filter_and_group_giveaways",
+    "gamerpower_get_giveaways_by_type",
+    "get_timezone_info",
+    "get_soccer_tournaments",
+    "get_f1_latest_news",
+    "get_handball_scheduled_matches",
+    "get_handball_daily_matches",
+    "get_airlines"
 ]
 
-from my_llm import chat_my, visualize_messages, get_chat_completion_my
-model_ckpts = 'gpt-3.5-turbo-16k-0613'
+from my_llm import chat_my
 
-def eval_pred_file(file_name, key_output='model_output', is_parsed=False, visualize=False):
+def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visualize=False):
 
     with open(file_name, "r", encoding='utf-8') as f:
         dataset = json.load(f)
@@ -27,8 +45,8 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=False, visual
             if is_parsed:
                 parsed = item['parsed_result']
             else:
-                res = item[key_output].strip()
-                parsed = parse_response(res, API_name_list=list(dataset.keys()), api_descriptions="XXX", proc_toolken=True, ground_API=True)
+                res = item[key_output].strip() #暫時用不到
+                #parsed = parse_response(res, API_name_list=list(dataset.keys()), api_descriptions="XXX", proc_toolken=True, ground_API=True)
             
             if parsed['finish']:
                 item['err'] = 0
@@ -86,8 +104,7 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=False, visual
                     "The API call that you need to verify the correctness is:\nAPI name: {}\nAPI arguments: {}\n\n" \
                     "Now say your judgment. Your response should always start with \"Yes.\" or \"No.\" indicating whether it's correct.\nYour response:"
 
-                    jud = chat_my(messages, msg.format(gt_api, json.dumps(gt_dict), gt_api, json.dumps(model_dict)), 
-                                  temp=0.0, stop="Observation:", visualize=visualize, max_tokens=256, model=model_ckpts)[-1]['content']
+                    jud = chat_my(messages, msg.format(gt_api, json.dumps(gt_dict), gt_api, json.dumps(model_dict)))[-1]['content']
 
                     item['args_correct'] = int("No." not in jud)
                     
@@ -139,4 +156,5 @@ def eval_batch(file_name, key_list=None):
     print("correct:", round(100*correct/total, 3))
 
 if __name__ == "__main__":
+    eval_pred_file("results/icl/icl_result.json")
     eval_batch("results/icl/icl_result.json")

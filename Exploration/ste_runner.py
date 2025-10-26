@@ -227,7 +227,7 @@ def main(model_ckpt="llama3", num_episodes=2, num_stm_slots=2, max_turn=3, dir_w
                 successful = "Yes" if "Yes" in res else "No"
                 print(f"✅ Follow-up Reflection: {successful}")
 
-                item["reflection"] = successful
+                item_follow["reflection"] = successful
                 success_labels.append(successful)
                 all_sessions.append(item_follow)
 
