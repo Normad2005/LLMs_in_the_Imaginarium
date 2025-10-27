@@ -1,4 +1,5 @@
 {
+  "get_airlines": {"category": "Transportation", "tool_name": "Airlines"},
   "generate_temp_upload_urls": {"category": "Business", "tool_name": "Fake Brightcove"},
 
   "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
@@ -37,8 +38,8 @@
 
   "get_handball_scheduled_matches": {"category": "Sports", "tool_name": "handball_data"},
 
-  "get_handball_daily_matches": {"category": "Sports", "tool_name": "handball_data"},
+  "get_handball_daily_matches": {"category": "Sports", "tool_name": "handball_data"}
 
-  "get_airlines": {"category": "Transportation", "tool_name": "Airlines"}
+  
 
 }

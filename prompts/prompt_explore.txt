@@ -52,9 +52,6 @@ Based on both the description and the previous usage, propose another realistic 
 that could genuinely be solved using this API, but in a different scenario, with varied parameters,
 values, or contexts.
 
-Avoid simply rephrasing or copying the earlier query — instead, create a new situation
-where this API would be meaningfully useful.
-
 =========
 
 Now try to solve the query using the API. Remember to follow the same format, i.e,\nThought:\nAction:\nAction Input:\nObservation:\nFinal Answer:\n.
