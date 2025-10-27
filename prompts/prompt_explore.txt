@@ -7,9 +7,6 @@ Now you have the chance to explore the available APIs. You can do this by 1) syn
 When you create your query:
 - Avoid explicitly mentioning the API name or description (since users do not know the internal API names).
 - Include realistic and meaningful input values (e.g., a valid email address, a real city name, a date, or an ID) so that the API can actually be tested.
-Only output the query itself, nothing else.
-
-User Query:
 
 =========
 
@@ -47,11 +44,16 @@ User Query (the same you just synthesized): {query}
 
 =========
 
-Now you have seen an example of how this API can be used through a previous query and result.
-Try to propose another realistic user query that might be solved by this API, but with different or varied inputs (for example, different parameters, values, or contexts).
-Only output the query itself, nothing else.
+Now you know a bit more about the API.  
+Here is its description again to remind you of what it can do:  
+{api_descriptions}
 
-User Query:
+Based on both the description and the previous usage, propose another realistic user query
+that could genuinely be solved using this API, but in a different scenario, with varied parameters,
+values, or contexts.
+
+Avoid simply rephrasing or copying the earlier query — instead, create a new situation
+where this API would be meaningfully useful.
 
 =========
 

@@ -75,7 +75,7 @@
   },
 
   "get_car_makes": {
-    "description": "Return all makes",
+    "description": "Return all car makes from a dataset",
     "required_parameters": [],
     "optional_parameters": []
   },
@@ -113,7 +113,7 @@
   },
   
   "get_random_joke": {
-    "description": "Returns a random joke.",
+    "description": "Provide a random joke.",
     "required_parameters": [],
     "optional_parameters": []
   },

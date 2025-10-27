@@ -97,9 +97,10 @@ def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_w
 
             # === Step 1: Query 生成 ===
             prompt_q = template_q.format(api_descriptions=api_info)
-            strip_end(prompt_q, "User Query:").strip()
             if explored_queries:
-                prompt_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}"+ "\n\nUser Query:"
+                prompt_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}"+ "\n\nOnly output the query itself, nothing else.\nUser Query:"
+            else:
+                prompt_q += "\n\nOnly output the query itself, nothing else.\nUser Query:"
 
             response = call_ollama(model_ckpt, prompt_q)
             query = response.strip()
@@ -111,7 +112,7 @@ def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_w
             prompt_a = template_a.format(api_descriptions=api_info,api_names=api_name, query=query)
             messages = chat_my(messages, prompt_a)
             temp = messages[-1]["content"]
-            parsed = parse_response(temp, [api_name], api_info)
+            parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
             for turn in range(max_turn):
                 if not parsed["parse_successful"]:
@@ -139,7 +140,7 @@ def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_w
 
                 messages = chat_my(messages, "Observation: " + obs)
                 temp = messages[-1]["content"]
-                parsed = parse_response(temp, [api_name], api_info)
+                parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
             # === Step 3: Reflection ===
             chain_summary = json.dumps(item["chains"][-1], ensure_ascii=False, indent=2) #取最後一回合
@@ -166,9 +167,11 @@ def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_w
             for f_idx in range(num_stm_slots - 1):
                 print(f"\n--- Follow-up #{f_idx + 1} ---")
 
-                follow_q = strip_end(template_q_follow, "User Query:").strip()
+                follow_q = template_q_follow.format(api_descriptions=api_info)
                 if explored_queries:
-                    follow_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}" + "\n\nUser Query:"
+                    follow_q += f"\n\n{past_msg_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{past_msg_post}"+ "\n\nOnly output the query itself, nothing else.\nUser Query:"
+                else:
+                    follow_q += "\n\nOnly output the query itself, nothing else.\nUser Query:"
 
                 response = chat_my(messages, follow_q)[-1]["content"]
                 follow_query = response.strip()
@@ -180,7 +183,7 @@ def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_w
                 prompt_follow_a = template_a_follow.format(query=follow_query)
                 messages = chat_my(messages, prompt_follow_a)
                 temp = messages[-1]["content"]
-                parsed = parse_response(temp, [api_name], api_info)
+                parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
                 for turn in range(max_turn):
                     if not parsed["parse_successful"]:
@@ -208,7 +211,7 @@ def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_w
 
                     messages = chat_my(messages, "Observation: " + obs)
                     temp = messages[-1]["content"]
-                    parsed = parse_response(temp, [api_name], api_info)
+                    parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
                 # === Reflection for follow-up ===
                 chain_summary = json.dumps(item_follow["chains"][-1], ensure_ascii=False, indent=2) #取最後一回合
