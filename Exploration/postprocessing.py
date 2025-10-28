@@ -7,7 +7,7 @@ from my_llm import chat_my, call_ollama
 
 
 def main(
-    input_path: str = "results/ste/data_20251026-190106.json",
+    input_path: str = "results/ste/data_20251028-002733.json",
     filter_model_ckpt: str = "llama3",
     paraphrase_model_ckpt: str = "llama3",
     target_num_train_per_API: int = 30, #平均每個api產出量目標

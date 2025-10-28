@@ -1,0 +1,56 @@
+{
+  "get_airlines": {
+    "rule": "The recurring failure cause is that the API requires at least one parameter (e.g., `name`, `icao`, or `iata`) to be specified, but many attempts fail to provide any parameters. Here's a clear rule for how to correctly use this API: \"Always specify at least one parameter when calling the get_airlines API.\""
+  },
+  "generate_temp_upload_urls": {
+    "rule": "The recurring failure cause is that the \"bucket\" parameter is being included in the API call, which is not a valid input as per the API description. Correct usage rule: Only include the required parameters (\"source_name\", \"video_id\", and \"account_id\") in the API call, without any additional or optional parameters."
+  },
+  "english_talking_get_answer": {
+    "rule": "The recurring failure cause is that the API URL contains control characters, specifically spaces, which are not allowed. To correctly use this API, **encode all special characters in the speech parameter using encodeURIComponent()**."
+  },
+  "get_industry_list": {
+    "rule": "The recurring failure cause is the lack of a valid `alias` parameter in the API call, which results in an error message indicating that the endpoint does not exist. Here's a clear rule for using this API: Always provide a non-empty string value for the `alias` parameter."
+  },
+  "get_language_list": {
+    "rule": "The recurring failure cause is that the API is being used to ask a specific question (\"What is the most commonly used language in our system?\"), which is not supported by the API's description. The correct usage rule is: \"Only retrieve the list of available system languages, do not attempt to extract specific information or make requests beyond what is described in the API.\""
+  },
+  "spell_number": {
+    "rule": "The recurring failure cause is due to exceeding the rate limit of 10 requests per hour, resulting in a 429 error. To correctly use this API, **wait at least 1 hour between consecutive requests**."
+  },
+  "get_random_joke": {
+    "rule": "The recurring failure cause is that the API is not designed to handle queries or varied parameters, but rather provides a random joke. Therefore, the correct usage rule is: **Do not provide any input or query when calling this API, as it is intended solely for retrieving a random joke**."
+  },
+  "get_financial_data": {
+    "rule": "The recurring failure cause is that some API functions do not exist, such as DAILY_ADJUSTED_HISTORICAL_DATA, INTRADAY, QUARTERLY_EARNINGS, and QUARTERLY. Here's a clear rule for how to correctly use this API: Always check the documentation of the API function before calling it to ensure its existence."
+  },
+  "convert_currency": {
+    "rule": "The recurring failure cause is that the API call does not provide a valid JSON input, which leads to errors in parsing the response. Here's a clear rule for how to correctly use this API: Always provide a single JSON object with the required parameters \"base\" and \"target\" as key-value pairs in the action_input field."
+  },
+  "get_recipe": {
+    "rule": "The recurring failure cause is that the query parameter does not match the expected format, as the API expects a simple string query text, but the failed attempts include complex queries with multiple ingredients and instructions. Here's a clear rule for how to correctly use this API: Only provide a single keyword or phrase in the \"query\" parameter."
+  },
+  "get_all_mvc2_characters": {
+    "rule": "The recurring failure cause is that the API expects no input parameters, but the system keeps trying to pass invalid or null inputs. To correctly use this API: Do not provide any input parameters when calling the get_all_mvc2_characters function."
+  },
+  "get_single_mvsc2_character": {
+    "rule": "The recurring failure cause is that the API call does not return any information when the provided name parameter does not match the default value specified in the API description, which is \"Cabel\". To correctly use this API: Always specify the default value \"Cabel\" for the \"name\" parameter unless you know the character's actual name."
+  },
+  "gamerpower_filter_and_group_giveaways": {
+    "rule": "The recurring failure causes are: 1. Incorrect parameter naming (e.g., \"type\" instead of \"type_\"). 2. Improper formatting of the platform parameter (e.g., not separating multiple values with commas). 3. URL control characters. Here is a clear rule for how to correctly use this API: Use the correct parameter names and format the platform parameter as a string of comma-separated values, without any control characters."
+  },
+  "gamerpower_get_giveaways_by_type": {
+    "rule": "The recurring failure cause is that the API requires a specific parameter structure, specifically a \"type\" parameter with no default value. Correct usage rule: Always specify the required \"type\" parameter when calling the gamerpower_get_giveaways_by_type API."
+  },
+  "get_timezone_info": {
+    "rule": "The recurring failure causes are: * Missing or incomplete longitude value * Missing timestamp value Here is a clear rule for how to correctly use this API: \"Always provide both the latitude and longitude values, as well as a valid timestamp, when calling the get_timezone_info API.\""
+  },
+  "get_soccer_tournaments": {
+    "rule": "The recurring failure cause is that the API does not support filtering by continent or location, and the API description does not specify any required or optional parameters. Here's a clear rule for how to correctly use this API: \"Call the get_soccer_tournaments API with no input parameters to retrieve all soccer tournaments.\""
+  },
+  "get_f1_latest_news": {
+    "rule": "The recurring failure cause is that the API function `get_f1_latest_news` does not accept a 'sources' parameter, despite attempts to pass it as an input. To correctly use this API: Always call the API without specifying any input parameters."
+  },
+  "get_handball_daily_matches": {
+    "rule": "The recurring failure cause is that the API function 'get_handball_daily_matches' cannot be imported from the specified location, likely due to incorrect module or path specification. Here's a clear rule for how to correctly use this API: Specify the correct date format as per the API documentation and ensure the input date falls within the allowed ± 7 days period."
+  }
+}
