@@ -1,99 +1,217 @@
+# === semantic_generator_v3b.py ===
 import os
+import re
 import json
-import numpy as np
-import requests
-from tqdm import tqdm
-from cluster import load_trials, cluster_and_select_medoid, embed_texts
+from collections import Counter
+from typing import Dict, Any
+from my_llm import call_ollama
 
-# === Llama3 接口設定 ===
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "llama3"
+# ---------- config ----------
+DATA_PATH = "results/ste/data_20251028-002733.json"
+TOOL_DESC_PATH = "tool_metadata/tool_description.json"
+OUT_PATH = "results/semantic_memory.json"
+MODEL_CKPT = "llama3"
 
-VERBOSE = True
+MAX_CHAINS_PER_SESSION = 6
+MAX_EXAMPLES_PER_API = 6
+MAX_PROMPT_EXAMPLES = 4
+TRUNCATE_OBS_LEN = 800
 
-# === 調用 Llama3 產生語意規則 ===
-def generate_semantic_rule(cluster, model=OLLAMA_MODEL):
-    examples = """
-Here are the examples of how to generalize trials into semantic rules:
 
-Trials:
-"query": "I'm curious, will it rain in Taichung next Monday?" 
-"api": get_forecast 
-"args": {"city": "Taichung", "date": "2025-10-04"} 
-"observation": "It will rain in Taichung next Monday" 
-"outcome": error, today is 2025-10-03(Friday), next Monday is not 2025-10-04
-
-"query": "What's the weather like in Taipei this Sunday?",
-"api": "get_forecast",
-"args": {"city": "Taipei", "date": "2025-10-03"},
-"observation": "Clear skies expected on 2025-10-03",
-"outcome": "error, system mapped 'this Sunday' incorrectly (used current date instead of calculating weekday offset)"
-
-Rule (desired): If the query mentions a day of the week (e.g., Monday, Friday), resolve it relative to today's date and use the correct calendar date when calling the forecast API.
-"""
-
-    trials_text = []
-    for t in cluster:
-        trials_text.append(
-            f'Q: "{t["query"]}" | API: {t["api"]} | args: {json.dumps(t.get("args", {}))} | success: {t.get("success", False)}'
-        )
-    trials_text = "\n".join(trials_text)
-
-    prompt = f"""
-You are a semantic abstraction engine. Your job is to read a group of similar trials
-and summarize the underlying rule that can guide future API selection.
-
-{examples}
-
-Now here is the new cluster of trials:
-{trials_text}
-
-Please output ONE clear, generalized rule in English.
-"""
-
-    payload = {"model": model, "prompt": prompt, "stream": False}
+# ---------- helpers ----------
+def safe_json_loads(s: str):
+    if not isinstance(s, str):
+        return s
+    m = re.search(r"\{[\s\S]*\}", s)
+    if not m:
+        return s.strip()
+    js = m.group(0)
+    js = re.sub(r",\s*}", "}", js)
+    js = re.sub(r",\s*\]", "]", js)
     try:
-        resp = requests.post(OLLAMA_URL, json=payload, timeout=120)
-        resp.raise_for_status()
-        data = resp.json()
-        return data.get("response", "").strip()
-    except Exception as e:
-        return f"[ERROR calling model: {e}]"
+        return json.loads(js)
+    except Exception:
+        return js.strip()
 
-# === Main Function ===
-def main(output_path="semantic_rules.json"):
-    # 1️⃣ 讀取 trials
-    trials = load_trials()  # 從 embedding_cluster.py
-    if not trials:
-        print("[Main] No trials loaded.")
-        return
 
-    print(f"[Main] Loaded {len(trials)} trials.")
+def normalize_action_input(action_input: str):
+    parsed = safe_json_loads(action_input or "")
+    if isinstance(parsed, dict):
+        return {k: parsed[k] for k in sorted(parsed.keys())}
+    return parsed
 
-    # 2️⃣ Embedding
-    print("[Main] Embedding all trials (this will call OpenAI API)...")
-    queries = [t["query"] for t in trials]
-    embeddings = np.array(embed_texts(queries))
 
-    # 3️⃣ 聚類 + 選 medoid
-    print("[Main] Clustering and selecting medoids...")
-    selected_demos = cluster_and_select_medoid(trials, embeddings, do_template=False)
+def extract_error_msg(obs: str):
+    if not isinstance(obs, str):
+        return ""
+    if "error" in obs.lower():
+        m = re.search(r"\{[\s\S]*?\}", obs)
+        if m:
+            return m.group(0)
+        else:
+            return obs.strip()[:200]
+    return ""
 
-    # 將每個代表放入 cluster list，保持舊 semantic_generator 格式
-    clusters = [[t] for t in selected_demos]
 
-    # 4️⃣ 生成語意規則
+def shorten(s: str, L=200):
+    if not isinstance(s, str):
+        return s
+    return s if len(s) <= L else s[:L] + "..."
+
+
+def parse_rule(resp: str):
+    """Extract 'Rule: ...' line from LLM response."""
+    if not resp:
+        return None
+    m = re.search(r"Rule\s*:\s*(.+)", resp)
+    if m:
+        return m.group(1).strip()
+    return None
+
+
+# ---------- core processing ----------
+def collect_failed_examples(data: Dict[str, Any]):
     results = {}
-    for idx, cluster in enumerate(tqdm(clusters, desc="Generating rules")):
-        rule = generate_semantic_rule(cluster)
-        examples = [t["query"] for t in cluster]
-        results[f"cluster_{idx+1}"] = {"rule": rule, "examples": examples}
+    for api_name, sessions in data.items():
+        failed = [s for s in sessions if s.get("reflection") == "No"]
+        if not failed:
+            continue
 
-    # 5️⃣ 儲存結果
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+        examples = []
+        error_counter = Counter()
+        total_chains = 0
+        missing_action_input_count = 0
 
-    print(f"✅ Semantic rules saved to {output_path}")
+        for s in failed:
+            q = s.get("query", "")
+            chains = s.get("chains", [])[:MAX_CHAINS_PER_SESSION]
+            for c in chains:
+                parsed = c.get("parsed", {})
+                action = parsed.get("action", "")
+                action_input_raw = parsed.get("action_input", "")
+                action_input = normalize_action_input(action_input_raw)
+                obs = c.get("observation", "")
+                err = extract_error_msg(obs)
+                if err:
+                    error_counter[err] += 1
+                if not action_input or action_input == {} or action_input == "":
+                    missing_action_input_count += 1
+                total_chains += 1
+                examples.append({
+                    "query": shorten(q, 240),
+                    "action_input": action_input,
+                    "error": shorten(err, 200)
+                })
+
+        seen = set()
+        uniq_examples = []
+        for ex in examples:
+            key = json.dumps(ex["action_input"], ensure_ascii=False, sort_keys=True) if isinstance(ex["action_input"], dict) else str(ex["action_input"])
+            if key in seen:
+                continue
+            seen.add(key)
+            uniq_examples.append(ex)
+            if len(uniq_examples) >= MAX_EXAMPLES_PER_API:
+                break
+
+        # format top errors for readability
+        top_err_list = []
+        for e, c in error_counter.most_common(6):
+            short = e.replace("\n", " ")[:200]
+            top_err_list.append(f"[{c}x] {short}")
+
+        results[api_name] = {
+            "stats": {
+                "total_failed_sessions": len(failed),
+                "missing_action_input_count": missing_action_input_count,
+                "top_errors": top_err_list
+            },
+            "examples": uniq_examples
+        }
+    return results
+
+
+# ---------- prompt builder ----------
+PROMPT_TEMPLATE = """
+You are an assistant that writes a single actionable rule for an API, based on recurring failure traces.
+
+API name: {api_name}
+API description:
+{api_description}
+
+Summary statistics:
+- total_failed_sessions: {total_failed_sessions}
+- missing_action_input_count: {missing_action_input_count}
+- top_errors (most common): {top_errors}
+
+Representative failed attempts:
+{examples_block}
+
+Task:
+Please carefully analyze what went wrong in these examples and explain:
+- Why these failures occurred (the likely reasoning or parameter mistake)
+- How to fix them or what rule to follow next time
+Then finally summarize ONE clear actionable sentence starting with:
+Rule: <your concise rule here>
+"""
+
+
+def build_prompt(api_name: str, api_desc: dict, info: dict, max_prompt_examples=4):
+    s = info["stats"]
+    examples = info["examples"][:max_prompt_examples]
+    example_lines = [json.dumps(ex, ensure_ascii=False) for ex in examples]
+    examples_text = "\n".join(example_lines) if example_lines else "None"
+
+    prompt = PROMPT_TEMPLATE.format(
+        api_name=api_name,
+        api_description=json.dumps(api_desc, ensure_ascii=False, indent=2),
+        total_failed_sessions=s["total_failed_sessions"],
+        missing_action_input_count=s["missing_action_input_count"],
+        top_errors="\n  ".join(s["top_errors"]) if s["top_errors"] else "None",
+        examples_block=examples_text,
+        max_prompt_examples=max_prompt_examples
+    )
+    return prompt
+
+
+# ---------- main ----------
+def main():
+    with open(DATA_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    with open(TOOL_DESC_PATH, "r", encoding="utf-8") as f:
+        tool_desc = json.load(f)
+
+    failed_summary = collect_failed_examples(data)
+    semantic_memory = {}
+
+    for api_name, info in failed_summary.items():
+        desc = tool_desc.get(api_name, {"description": "No description available."})
+        prompt = build_prompt(api_name, desc, info, max_prompt_examples=MAX_PROMPT_EXAMPLES)
+
+        try:
+            resp = call_ollama(MODEL_CKPT, prompt, temperature=0)
+            rule = parse_rule(resp)
+            if not rule:
+                rule = "(no rule extracted)"
+                print(f"[WARN] No rule parsed for {api_name}")
+
+            semantic_memory[api_name] = {
+                "rule": rule,
+                "_meta": {
+                    "failed_sessions": info["stats"]["total_failed_sessions"],
+                    "missing_action_input": info["stats"]["missing_action_input_count"]
+                }
+            }
+            print(f"🧠 {api_name}: {rule}")
+
+        except Exception as e:
+            print(f"[ERROR] call_ollama failed for {api_name}: {e}")
+            semantic_memory[api_name] = {"error": str(e)}
+
+    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(semantic_memory, f, indent=2, ensure_ascii=False)
+    print(f"Saved semantic memory to {OUT_PATH}")
 
 
 if __name__ == "__main__":
