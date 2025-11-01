@@ -63,7 +63,7 @@ def LTM(queries, results):
     return [f"Query: {q} | Solved: {results[i]}" for i, q in enumerate(queries)]
 
 # === STE 主程式 ===
-def main(model_ckpt="llama3", num_episodes=3, num_stm_slots=2, max_turn=3, dir_write="results/ste/"):
+def main(model_ckpt="llama3.1:8b-instruct-fp16", num_episodes=3, num_stm_slots=2, max_turn=3, dir_write="results/ste/"):
     os.makedirs(dir_write, exist_ok=True)
 
     # === 載入 Prompt Template ===

@@ -1,19 +1,40 @@
 import json
 import requests
 
-def call_ollama(model: str, prompt: str, temperature: float = 0.7):
-    url = "http://localhost:11434/api/generate"
-    payload = {"model": model, "prompt": prompt, "options": {"temperature": temperature}}
-    resp = requests.post(url, json=payload, stream=True)
-    output = ""
-    for line in resp.iter_lines():
-        if line:
-            data = json.loads(line.decode("utf-8"))
-            if "response" in data:
-                output += data["response"]
-    return output.strip()
+LAB_KEY = "zhuantisheng"
 
-def chat_my(messages, new_message, visualize=True, model="llama3"):
+def call_ollama(model: str, prompt: str, temperature: float = 0.7,
+                host: str = "https://ollama.nlpnchu.org"):
+    
+    if host == "local":
+        url = "http://localhost:11434/api/generate"
+        payload = {"model": model, "prompt": prompt, "options": {"temperature": temperature}}
+        resp = requests.post(url, json=payload, stream=True)
+        output = ""
+        for line in resp.iter_lines():
+            if line:
+                data = json.loads(line.decode("utf-8"))
+                if "response" in data:
+                    output += data["response"]
+        return output.strip()
+    else:
+        # 雲端 API
+        url = f"{host}/api/generate"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {LAB_KEY}"
+        }
+        payload = {"model": model, "prompt": prompt}
+        resp = requests.post(url, json=payload, headers=headers, stream=True)
+        output = ""
+        for line in resp.iter_lines():
+            if line:
+                data = json.loads(line.decode("utf-8"))
+                if "response" in data:
+                    output += data["response"]
+        return output.strip()
+
+def chat_my(messages, new_message, visualize=True, model="llama3.1:8b-instruct-fp16"):
     messages.append({"role": "user", "content": new_message})
     resp = get_chat_completion_my(model, messages)
     messages.append({"role": "assistant", "content": resp})
