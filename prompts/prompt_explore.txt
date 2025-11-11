@@ -35,12 +35,14 @@ Action: the API function name
 Action Input: the input parameters of the API call in json string format
 Observation: the return result of the API call. This is what I will provide you with; you do not need to repeat it in your response.
 ... (this Thought/Action/Action Input/Observation can repeat N times)
+
+In each turn, output only one Thought, one Action, and one Action Input, then stop and wait for the Observation before continuing.
+
+Once you have gathered enough information to answer the user query, do NOT produce another Action. Instead, continue with:
 Thought: I now know the final answer
-Final Answer: the response to the user query
+Final Answer: your response to the user query
 
-Begin! Remember that your response should never start with "Observation:" since that is what I will provide you with. Once you have enough information, please immediately use \nThought: I now know the final answer\nFinal Answer:
-
-User Query (the same you just synthesized): {query}
+User Query: {query}
 
 =========
 
@@ -54,6 +56,17 @@ values, or contexts.
 
 =========
 
-Now try to solve the query using the API. Remember to follow the same format, i.e,\nThought:\nAction:\nAction Input:\nObservation:\nFinal Answer:\n.
+Now try to solve a new query using the API. Remember to follow the same format:
+
+Thought: your reasoning about what to do next
+Action: the API function name to call
+Action Input: the input parameters of the API call in JSON string format
+Observation: This will be provided to you later. Do NOT generate or assume it yourself.
+
+In each turn, output only one Thought, one Action, and one Action Input, then stop and wait for the Observation before continuing.
+
+Once you have gathered enough information to answer the user query, do NOT produce another Action. Instead, continue with:
+Thought: I now know the final answer
+Final Answer: your response to the user query
 
 User Query: {query}

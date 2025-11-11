@@ -1,6 +1,4 @@
 {
-  "generate_temp_upload_urls": {"category": "Business", "tool_name": "Fake Brightcove"},
-
   "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
 
   "get_car_makes": {"category": "Data", "tool_name": "Car database"},
@@ -8,10 +6,6 @@
   "get_animal_facts": {"category": "Data", "tool_name": "Animals"},
 
   "search_public_restrooms": {"category": "Data", "tool_name": "Public Bathrooms"},
-
-  "get_industry_list": {"category": "Database", "tool_name": "siteDomain"},
-
-  "get_language_list": {"category": "Database", "tool_name": "siteDomain"},
 
   "spell_number": {"category": "Education", "tool_name": "Numbers Translator"},
 

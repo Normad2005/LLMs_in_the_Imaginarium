@@ -1,8 +1,4 @@
 {
-  "generate_temp_upload_urls": [
-    
-  ],
-
   "verify_email": [
     
   ],
@@ -16,14 +12,6 @@
   ],
 
   "search_public_restrooms": [
-    
-  ],
-
-  "get_industry_list": [
-    
-  ],
-
-  "get_language_list": [
     
   ],
 

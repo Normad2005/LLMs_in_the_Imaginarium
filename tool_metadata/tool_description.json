@@ -1,31 +1,6 @@
 {
-  "generate_temp_upload_urls": {
-    "description": "Generate Temp Upload URLs",
-    "required_parameters": [
-      {
-        "name": "source_name",
-        "type": "string",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "video_id",
-        "type": "string",
-        "description": "",
-        "default": ""
-      },
-      {
-        "name": "account_id",
-        "type": "string",
-        "description": "",
-        "default": ""
-      }
-    ],
-    "optional_parameters": []
-  },
-
   "verify_email": {
-    "description": "Verify whether an email address is valid and active.",
+    "description": "Provides real-time email mailbox checking, including domain-specific logic and SMTP commands, to verify email addresses and remove up to 95% of bad emails, ensuring the inbox is live and reducing bounce rates. Includes features like typo correction, mobile domain detection, Whois details, and a Deliverability Confidence Score.",
     "required_parameters": [
       {
         "name": "email",
@@ -90,25 +65,6 @@
     ]
   },
 
-  "get_industry_list": {
-    "description": "Returns the list of industry two-digit codes.",
-    "required_parameters": [
-      {
-        "name": "alias",
-        "type": "string",
-        "description": "",
-        "default": ""
-      }
-    ],
-    "optional_parameters": []
-  },
-
-  "get_language_list": {
-    "description": "Returns the list of available system languages.",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-
   "spell_number": {
     "description": "Convert numerical numbers to words.",
     "required_parameters": [
@@ -123,24 +79,24 @@
   },
   
   "get_random_joke": {
-    "description": "Provide a random joke.",
+    "description": "Get a random joke from this api.",
     "required_parameters": [],
     "optional_parameters": []
   },
 
-  "get_media_info": {
-    "description": "Access movie and TV information similar to the official one, including Title, Year, Metascore Rating, IMDB rating, Release date, Runtime, Genre, Directors, Writers, Actors, Plot, Awards, and Posters.",
+  "get_media_news": {
+    "description": "Access current and trending news and articles related to movies, TV shows, and celebrities. Allows filtering by media category, country, and language, and supports result pagination.",
     "required_parameters": [],
     "optional_parameters": [
       {
         "name": "category",
         "type": "String",
-        "description": "The type of media to search for. One of the followings: TOP, MOVIE, TV, CELEBRITY, UNKNOWN."
+        "description": "The type of media or topic to search for. One of the followings: TOP (Trending/General News), MOVIE, TV, CELEBRITY, UNKNOWN."
       },
       {
         "name": "first",
         "type": "Number",
-        "description": "The number of items per response for paging purpose.",
+        "description": "The number of news items per response for paging purpose.",
         "default": "20"
       },
       {
@@ -156,7 +112,7 @@
       {
         "name": "language",
         "type": "String",
-        "description": "The language code. Must be used in pair with the 'country' parameter to get information in the related language if available."
+        "description": "The language code. Must be used in pair with the 'country' parameter to get news information in the related language if available."
       }
     ]
   },
