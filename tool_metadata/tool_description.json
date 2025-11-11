@@ -37,47 +37,57 @@
     "optional_parameters": []
   },
 
-  "english_talking_get_answer": {
-    "description": "This API aims to provide users with the possibility of conducting dialogues in English where the conversations and answers are registered and evaluated by the users themselves.",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "status",
-        "type": "STRING",
-        "description": "approved or analyzing",
-        "default": "approved"
-      },
-      {
-        "name": "answer",
-        "type": "STRING",
-        "description": "Response to the initial speech of the dialogue",
-        "default": "Hi, how are you?"
-      },
-      {
-        "name": "_id",
-        "type": "STRING",
-        "description": "Unique dialog identifier (automatically generated)\n\n",
-        "default": "5ec47b3d8958430d6a6d5898"
-      },
-      {
-        "name": "speech",
-        "type": "STRING",
-        "description": "Speak in which the usuairio wants to get an answer",
-        "default": "Hi"
-      },
-      {
-        "name": "user",
-        "type": "STRING",
-        "description": "User who created the dialogue",
-        "default": "5ec479048958430d6a6d5895"
-      }
-    ]
-  },
-
   "get_car_makes": {
     "description": "Return all car makes from a dataset",
     "required_parameters": [],
     "optional_parameters": []
+  },
+
+  "get_animal_facts": {
+    "description": "Provides interesting scientific facts on thousands of different animal species.",
+    "required_parameters": [
+      {
+        "name": "name",
+        "type": "String",
+        "description": "Common name of animal to search. This parameter supports partial matches (e.g. fox will match gray fox and red fox)."
+      }
+    ],
+    "optional_parameters": []
+  },
+
+  "search_public_restrooms": {
+    "description": "Searches for public bathrooms, toilets, and restrooms worldwide. The database has over 60,000+ entries and supports searching by location and pagination.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "states",
+        "type": "String",
+        "description": "A comma-separated list of US state abbreviations to filter the search (e.g., NY,FL).",
+        "default": "NY,FL"
+      },
+      {
+        "name": "lat",
+        "type": "Number",
+        "description": "Latitude of the desired location for proximity search."
+      },
+      {
+        "name": "lon",
+        "type": "Number",
+        "description": "Longitude of the desired location for proximity search. Must be supplied if 'lat' is used."
+      },
+      {
+        "name": "page",
+        "type": "Number",
+        "description": "The page number for result pagination.",
+        "default": "1"
+      },
+      {
+        "name": "per_page",
+        "type": "Number",
+        "description": "The number of results to return per page.",
+        "default": "10"
+      }
+    ]
   },
 
   "get_industry_list": {
@@ -118,6 +128,39 @@
     "optional_parameters": []
   },
 
+  "get_media_info": {
+    "description": "Access movie and TV information similar to the official one, including Title, Year, Metascore Rating, IMDB rating, Release date, Runtime, Genre, Directors, Writers, Actors, Plot, Awards, and Posters.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "category",
+        "type": "String",
+        "description": "The type of media to search for. One of the followings: TOP, MOVIE, TV, CELEBRITY, UNKNOWN."
+      },
+      {
+        "name": "first",
+        "type": "Number",
+        "description": "The number of items per response for paging purpose.",
+        "default": "20"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "description": "Paging cursor. Leave empty to load the first page, or use the value of 'endCursor' from the previous response to load the next page."
+      },
+      {
+        "name": "country",
+        "type": "String",
+        "description": "The country code. Must be used in pair with the 'language' parameter."
+      },
+      {
+        "name": "language",
+        "type": "String",
+        "description": "The language code. Must be used in pair with the 'country' parameter to get information in the related language if available."
+      }
+    ]
+  },
+
   "get_financial_data": {
     "description": "Customizable Endpoint for various financial data functions.",
     "required_parameters": [
@@ -156,6 +199,85 @@
     "optional_parameters": []
   },
 
+  "calculate_mortgage_payment": {
+    "description": "Provides detailed mortgage and other home financing payment information. It uses the standard mortgage calculation formulas to calculate interest and monthly/annual payments.",
+    "required_parameters": [
+      {
+        "name": "interest_rate",
+        "type": "Number",
+        "description": "Annual interest rate (in %). For example, a 3.5% interest rate would be 3.5. Cannot exceed 10000."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "loan_amount",
+        "type": "Number",
+        "description": "Principal loan amount.",
+        "default": "200000"
+      },
+      {
+        "name": "home_value",
+        "type": "Number",
+        "description": "Total value of the home or asset. Must be greater than downpayment.",
+        "default": "0"
+      },
+      {
+        "name": "downpayment",
+        "type": "Number",
+        "description": "Downpayment on the home or asset. Cannot exceed home_value.",
+        "default": "0"
+      },
+      {
+        "name": "duration_years",
+        "type": "Number",
+        "description": "Duration of the loan in years. Must be between 1 and 10000. If not set, default value is 30 years.",
+        "default": "30"
+      },
+      {
+        "name": "monthly_hoa",
+        "type": "Number",
+        "description": "Monthly homeowner association fees.",
+        "default": "0"
+      },
+      {
+        "name": "annual_property_tax",
+        "type": "String",
+        "description": "Annual property tax owed."
+      },
+      {
+        "name": "annual_home_insurance",
+        "type": "Number",
+        "description": "Annual homeowner's insurance bill.",
+        "default": "0"
+      }
+    ]
+  },
+
+  "get_inflation_data": {
+    "description": "Provides current economic inflation data for 38 major countries. The stats are usually updated monthly, although certain countries may lag behind or update more infrequently.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "type",
+        "type": "String",
+        "description": "Inflation indicator type. Can be either CPI (Consumer Price Index) or HICP (Harmonized Index of Consumer Prices). If not provided, CPI will be used by default.",
+        "default": "CPI"
+      }
+    ]
+  },
+
+  "get_crypto_price": {
+    "description": "Provides real-time market price data for hundreds of different cryptocurrencies.",
+    "required_parameters": [
+      {
+        "name": "symbol",
+        "type": "String",
+        "description": "The ticker symbol of the cryptocurrency to query (e.g., BTC, ETH, DOGE)."
+      }
+    ],
+    "optional_parameters": []
+  },
+
   "get_recipe": {
     "description": "Searches for recipes where the dish name includes the query text.",
     "required_parameters": [
@@ -181,20 +303,7 @@
     "optional_parameters": []
   },
 
-  "get_single_mvsc2_character": {
-    "description": "Get details about a single character and their traits",
-    "required_parameters": [
-      {
-        "name": "name",
-        "type": "string",
-        "description": "The name of the character to retrieve details for.",
-        "default": "Cabel"
-      }
-    ],
-    "optional_parameters": []
-  },
-
-  "gamerpower_filter_and_group_giveaways": {
+  "get_filtered_game_giveaways": {
     "description": "Filter and group platforms and giveaway types to get personalized results.",
     "required_parameters": [
       {
@@ -214,7 +323,7 @@
     ]
   },
 
-  "gamerpower_get_giveaways_by_type": {
+  "get_game_giveaways_by_type": {
     "description": "Get live giveaways by type, eg: game, loot, beta",
     "required_parameters": [
       {
@@ -237,6 +346,126 @@
       }
     ],
     "optional_parameters": []
+  },
+
+  "get_planet_data": {
+    "description": "Provides astronomical data on thousands of planets and exoplanets discovered in our universe.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "name",
+        "type": "String",
+        "description": "Name of the planet."
+      },
+      {
+        "name": "min_mass",
+        "type": "Number",
+        "description": "Minimum mass of the planet in Jupiters (1 Jupiter = 1.898 × 10^27 kg).",
+        "default": "0"
+      },
+      {
+        "name": "max_mass",
+        "type": "Number",
+        "description": "Maximum mass of the planet in Jupiters (1 Jupiter = 1.898 × 10^27 kg).",
+        "default": "0"
+      },
+      {
+        "name": "min_radius",
+        "type": "Number",
+        "description": "Minimum average radius of the planet in Jupiters (1 Jupiter = 69911 km).",
+        "default": "0"
+      },
+      {
+        "name": "max_radius",
+        "type": "Number",
+        "description": "Maximum average radius of the planet in Jupiters (1 Jupiter = 69911 km).",
+        "default": "0"
+      },
+      {
+        "name": "min_period",
+        "type": "Number",
+        "description": "Minimum orbital period of the planet in Earth days.",
+        "default": "0"
+      },
+      {
+        "name": "max_period",
+        "type": "Number",
+        "description": "Maximum orbital period of the planet in Earth days.",
+        "default": "0"
+      },
+      {
+        "name": "min_temperature",
+        "type": "Number",
+        "description": "Minimum average surface temperature of the planet in Kelvin.",
+        "default": "0"
+      },
+      {
+        "name": "max_temperature",
+        "type": "Number",
+        "description": "Maximum average surface temperature of the planet in Kelvin.",
+        "default": "0"
+      },
+      {
+        "name": "min_distance_light_year",
+        "type": "Number",
+        "description": "Minimum distance the planet is from Earth in light years.",
+        "default": "0"
+      },
+      {
+        "name": "max_distance_light_year",
+        "type": "Number",
+        "description": "Maximum distance the planet is from Earth in light years."
+      }
+    ]
+  },
+
+  "search_arxiv_papers": {
+    "description": "Provides a way to search the arXiv repository for scientific papers using a variety of filters and search parameters.",
+    "required_parameters": [
+      {
+        "name": "search_term",
+        "type": "String",
+        "description": "Search term to query arXiv."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "date_from",
+        "type": "String",
+        "description": "The start date for filtering papers by submission date in 'YYYY-MM-DD' format."
+      },
+      {
+        "name": "start",
+        "type": "Number",
+        "description": "The starting index for pagination. Default is 0 (first page).",
+        "default": "0",
+        "minimum": "0"
+      },
+      {
+        "name": "date_type",
+        "type": "String",
+        "description": "The type of date to filter papers by.",
+        "default": "Submission Date"
+      },
+      {
+        "name": "field",
+        "type": "String",
+        "description": "The field to search in. Options are 'Title', 'Authors', 'Comments', or 'All fields'.",
+        "default": "All fields"
+      },
+      {
+        "name": "date_to",
+        "type": "String",
+        "description": "The end date for filtering papers by submission date in 'YYYY-MM-DD' format."
+      },
+      {
+        "name": "num_results",
+        "type": "Number",
+        "description": "The maximum number of results to return.",
+        "default": "5",
+        "minimum": "1"
+      }
+    ]
   },
 
   "get_soccer_tournaments": {
@@ -296,6 +525,87 @@
         "type": "String",
         "description": "Airline name. This parameter supports partial matching (e.g. United will match United Airlines)",
         "default": "Singapore Airlines"
+      }
+    ]
+  },
+
+  "get_motorcycle_data": {
+    "description": "Provides highly-detailed technical data on tens of thousands of different motorcycle models from hundreds of manufacturers.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "make",
+        "type": "String",
+        "description": "Name of manufacturer/brand. Supports partial matching (e.g. Harley will match Harley-Davidson)."
+      },
+      {
+        "name": "model",
+        "type": "String",
+        "description": "Name of motorcycle model. Supports partial matching (e.g. Ninja will match Ninja 650)."
+      },
+      {
+        "name": "year",
+        "type": "String",
+        "description": "Release year of motorcycle model. Must be in the form of YYYY (e.g. 2022)."
+      },
+      {
+        "name": "offset",
+        "type": "Number",
+        "description": "Number of results to offset for pagination.",
+        "default": "0"
+      }
+    ]
+  },
+
+  "get_air_quality_data": {
+    "description": "Provides the latest air quality information for any city or geographic location in the world, including the Air Quality Index (AQI) and concentrations for major pollutants (CO, NO2, O3, SO2, PM2.5, PM10).",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "lat",
+        "type": "Number",
+        "description": "Latitude of desired location. If used, the 'lon' parameter must also be supplied.",
+        "default": "0"
+      },
+      {
+        "name": "lon",
+        "type": "Number",
+        "description": "Longitude of desired location. If used, the 'lat' parameter must also be supplied.",
+        "default": "0"
+      },
+      {
+        "name": "city",
+        "type": "String",
+        "description": "City name."
+      },
+      {
+        "name": "state",
+        "type": "String",
+        "description": "US state (United States only)."
+      },
+      {
+        "name": "country",
+        "type": "String",
+        "description": "Country name."
+      }
+    ]
+  },
+
+  "get_weather_forecast": {
+    "description": "Provides up to 14-day hourly and 15-minute weather forecast data.",
+    "required_parameters": [
+      {
+        "name": "q",
+        "type": "String",
+        "description": "Query parameter based on which data is sent back. Can be Latitude and Longitude (e.g: 48.8567,2.3508), city name (e.g: Paris), US zip, UK/Canada postal code, metar code (e.g: metar:EGLL), IATA code (e.g: iata:DXB), or IP address (e.g: auto:ip or 100.0.0.1)."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "days",
+        "type": "Number",
+        "description": "Number of days of forecast required (up to 14 days).",
+        "default": "3"
       }
     ]
   }

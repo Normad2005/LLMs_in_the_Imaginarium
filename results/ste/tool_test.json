@@ -1,0 +1,180 @@
+{
+  "generate_temp_upload_urls": [
+    
+  ],
+
+  "verify_email": [
+    
+  ],
+
+  "get_car_makes": [
+    
+  ],
+
+  "get_animal_facts": [
+    
+  ],
+
+  "search_public_restrooms": [
+    
+  ],
+
+  "get_industry_list": [
+    
+  ],
+
+  "get_language_list": [
+    
+  ],
+
+  "spell_number": [
+    
+  ],
+
+  "get_random_joke": [
+    {
+      "query": "Make me laugh.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "I'm bored, tell me something funny.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Tell me a dad joke.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "I want to hear a joke.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Got any good material?",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Hit me with a joke",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "What's your best joke?",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "I need a good laugh.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Random joke, please.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Cheer me up.",
+      "action": "get_random_joke",
+      "action_input": {}
+    }
+  ],
+
+  "get_media_info": [
+    
+  ],
+
+  "get_financial_data": [
+    
+  ],
+
+  "convert_currency": [
+    {
+      "query": "How many British Pounds can I exchange for 2000 Swiss Francs?",
+      "action": "convert_currency",
+      "action_input": {"base": "CHF", "target": "GBP"}
+    },
+    {
+      "query": "Convert 1000 USD to EUR.",
+      "action": "convert_currency",
+      "action_input": {"base": "USD", "target": "EUR"}
+    }
+  ],
+
+  "calculate_mortgage_payment": [
+    
+  ],
+
+  "get_inflation_data": [
+    
+  ],
+
+  "get_crypto_price": [
+    
+  ],
+
+  "get_recipe": [
+    
+  ],
+
+  "get_all_mvc2_characters": [
+    
+  ],
+
+  "get_filtered_game_giveaways": [
+    
+  ],
+
+  "get_game_giveaways_by_type": [
+    
+  ],
+
+  "get_timezone_info": [
+    
+  ],
+
+  "get_planet_data": [
+    
+  ],
+
+  "search_arxiv_papers": [
+    
+  ],
+
+  "get_soccer_tournaments": [
+    
+  ],
+
+  "get_f1_latest_news": [
+    
+  ],
+
+  "get_handball_scheduled_matches": [
+    
+  ],
+
+  "get_handball_daily_matches": [
+    
+  ],
+
+  "get_airlines": [
+    
+  ],
+
+  "get_motorcycle_data": [
+    
+  ],
+
+  "get_air_quality_data": [
+    
+  ],
+
+  "get_weather_forecast": [
+    
+  ]
+
+}

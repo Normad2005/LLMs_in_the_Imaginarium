@@ -5,11 +5,12 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Business_Software
     "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
 
-    # Communication
-    "english_talking_get_answer": {"category": "Communication", "tool_name": "English Talking"},
-
     # Data
     "get_car_makes": {"category": "Data", "tool_name": "Car database"},
+
+    "get_animal_facts": {"category": "Data", "tool_name": "Animals"},
+
+    "search_public_restrooms": {"category": "Data", "tool_name": "Public Bathrooms"},
 
     # Datebase
     "get_industry_list": {"category": "Database", "tool_name": "siteDomain"},
@@ -22,10 +23,18 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Entertainment
     "get_random_joke": {"category": "Entertainment", "tool_name": "Joke"},
 
+    "get_media_info": {"category": "Entertainment", "tool_name": "Media"},
+
     # Finance
     "get_financial_data": {"category": "Finance", "tool_name": "Alpha Vantage"},
 
     "convert_currency": {"category": "Finance", "tool_name": "Exchange Rate API"},
+
+    "calculate_mortgage_payment": {"category": "Finance", "tool_name": "Mortgage Calculator"},
+
+    "get_inflation_data": {"category": "Finance", "tool_name": "Inflation"},
+
+    "get_crypto_price": {"category": "Finance", "tool_name": "Crypto Price"},
 
     # Food
     "get_recipe": {"category": "Food", "tool_name": "Recipe"},
@@ -33,19 +42,18 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Gaming
     "get_all_mvc2_characters": {"category": "Gaming", "tool_name": "Marvel Vs Capcom 2"},
 
-    "get_single_mvsc2_character": {"category": "Gaming", "tool_name": "Marvel Vs Capcom 2"},
+    "get_filtered_game_giveaways": {"category": "Gaming", "tool_name": "gamerpower"},
 
-    "gamerpower_filter_and_group_giveaways": {"category": "Gaming", "tool_name": "gamerpower"},
-
-    "gamerpower_get_giveaways_by_type": {"category": "Gaming", "tool_name": "gamerpower"},
+    "get_game_giveaways_by_type": {"category": "Gaming", "tool_name": "gamerpower"},
 
     # Location
     "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
 
-    # Mapping
+    #Science
+    "get_planet_data": {"category": "Science", "tool_name": "Planets"},
 
-
-    # Other
+    #Search
+    "search_arxiv_papers": {"category": "Search", "tool_name": "arXiv"},
 
     # Sports
     "get_soccer_tournaments": {"category": "Sports", "tool_name": "Soccer Data"},
@@ -56,13 +64,14 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
     "get_handball_daily_matches": {"category": "Sports", "tool_name": "handball_data"},
 
-    # Tools
-
-
-    # Travel
-
     # Transportation
     "get_airlines": {"category": "Transportation", "tool_name": "Airlines"},
-    
 
+    "get_motorcycle_data": {"category": "Transportation", "tool_name": "Motorcycles"},
+
+    #Weather
+    "get_air_quality_data": {"category": "Weather", "tool_name": "Air Quality"},
+
+    "get_weather_forecast": {"category": "Weather", "tool_name": "WeatherAPI"}
+    
 }

@@ -3,7 +3,7 @@ import json
 from config.api_keys import RAPIDAPI_KEY
 
 
-def gamerpower_filter_and_group_giveaways(
+def get_filtered_game_giveaways(
     platform: str = "epic-games-store.steam.android",
     type_: str = "game.loot",
     toolbench_rapidapi_key: str = RAPIDAPI_KEY
@@ -43,7 +43,7 @@ def gamerpower_filter_and_group_giveaways(
     except Exception as e:
         return {"error": str(e), "response": ""}
     
-def gamerpower_get_giveaways_by_type(
+def get_game_giveaways_by_type(
     giveaway_type: str = "game",
     toolbench_rapidapi_key: str = RAPIDAPI_KEY
 ):
