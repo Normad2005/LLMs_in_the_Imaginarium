@@ -26,4 +26,5 @@ Observation: the return result of the API call. This is what I will provide you 
 ... (this Action/Action Input/Observation can repeat N times)
 Final Answer: the final answer to the original input question
 
-Begin! Remember that your response should never start with "Observation:" since that is what I will provide you with. Once you have enough information, please immediately use \nFinal Answer:
+In each turn, output only one Thought, one Action, and one Action Input, then stop and wait for the Observation before continuing.
+Once you have enough information, please immediately use \nFinal Answer:

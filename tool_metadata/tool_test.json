@@ -258,9 +258,9 @@
       "action_input": {"number_text": "0"}
     },
     {
-      "query": "How do you say 345.67 in words?",
+      "query": "How do you say 2,134,567 in words?",
       "action": "spell_number",
-      "action_input": {"number_text": "345.67"}
+      "action_input": {"number_text": "2134567"}
     }
   ],
 
@@ -317,7 +317,7 @@
     }
   ],
 
-  "get_media_info": [
+  "get_media_news": [
     {
       "query": "Show me the latest trending entertainment news.",
       "action": "get_media_news",
@@ -584,54 +584,54 @@
 
   "get_crypto_price": [
     {
-    "query": "What’s the current price of Bitcoin?",
-    "action": "get_crypto_price",
-    "action_input": { "symbol": "BTC" }
-    },
-    {
-      "query": "Check Ethereum’s latest market value.",
+      "query": "What’s the current price of Bitcoin?",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "ETH" }
+      "action_input": { "symbol": "BTC" }
     },
     {
-      "query": "How much is Dogecoin trading for right now?",
+      "query": "Check Ethereum’s value in USD.",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "DOGE" }
+      "action_input": { "symbol": "ETH", "base": "USD" }
     },
     {
-      "query": "Give me the real-time price of Solana.",
+      "query": "Show me the latest Dogecoin price in Tether.",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "SOL" }
+      "action_input": { "symbol": "DOGE", "base": "USDT" }
     },
     {
-      "query": "Fetch the market price for Cardano.",
+      "query": "How much is Solana worth in Euros?",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "ADA" }
+      "action_input": { "symbol": "SOL", "base": "EUR" }
     },
     {
-      "query": "Show me the current value of XRP.",
+      "query": "Get the price of XRP in Japanese Yen.",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "XRP" }
+      "action_input": { "symbol": "XRP", "base": "JPY" }
     },
     {
-      "query": "Get the latest Litecoin price.",
+      "query": "What’s the exchange rate of BNB to ETH?",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "BNB", "base": "ETH" }
+    },
+    {
+      "query": "Tell me the current value of Cardano in Canadian dollars.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "ADA", "base": "CAD" }
+    },
+    {
+      "query": "How much is Litecoin worth right now?",
       "action": "get_crypto_price",
       "action_input": { "symbol": "LTC" }
     },
     {
-      "query": "What’s the price of Polkadot right now?",
+      "query": "Check the price of Polygon (MATIC) in Bitcoin.",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "DOT" }
+      "action_input": { "symbol": "MATIC", "base": "BTC" }
     },
     {
-      "query": "Tell me how much Avalanche is worth currently.",
+      "query": "Show me the current Shiba Inu price in US dollars.",
       "action": "get_crypto_price",
-      "action_input": { "symbol": "AVAX" }
-    },
-    {
-      "query": "Find the current trading price of Shiba Inu coin.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "SHIB" }
+      "action_input": { "symbol": "SHIB", "base": "USD" }
     }
   ],
 
@@ -849,54 +849,54 @@
 
   "get_timezone_info": [
     {
-    "query": "Get the timezone for latitude 37.7749.",
-    "action": "get_timezone_info",
-    "action_input": { "lat": 37.7749 }
+      "query": "What’s the timezone at latitude 40.7128 and longitude -74.0060?",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 40.7128, "lng": -74.0060 }
     },
     {
-      "query": "What’s the current timezone at latitude 51.5074?",
+      "query": "Find the timezone info for Tokyo, Japan at coordinates 35.6895, 139.6917.",
       "action": "get_timezone_info",
-      "action_input": { "lat": 51.5074 }
+      "action_input": { "lat": 35.6895, "lng": 139.6917 }
     },
     {
-      "query": "Find timezone info for the point at latitude -33.8688.",
+      "query": "Get the UTC offset for Paris at 48.8566, 2.3522 as of January 1, 2020.",
       "action": "get_timezone_info",
-      "action_input": { "lat": -33.8688 }
+      "action_input": { "lat": 48.8566, "lng": 2.3522, "timestamp": 1577836800 }
     },
     {
-      "query": "Tell me the timezone corresponding to 35.6895 latitude.",
+      "query": "What timezone is at -33.8688 latitude, 151.2093 longitude right now?",
       "action": "get_timezone_info",
-      "action_input": { "lat": 35.6895 }
+      "action_input": { "lat": -33.8688, "lng": 151.2093 }
     },
     {
-      "query": "Check the timezone for 40.7128 latitude.",
+      "query": "Show me timezone data for Los Angeles (34.0522, -118.2437) during summer 2022.",
       "action": "get_timezone_info",
-      "action_input": { "lat": 40.7128 }
+      "action_input": { "lat": 34.0522, "lng": -118.2437, "timestamp": 1656633600 }
     },
     {
-      "query": "Retrieve timezone info for the location at latitude -23.5505.",
+      "query": "Get the time zone details for London (51.5074, -0.1278).",
       "action": "get_timezone_info",
-      "action_input": { "lat": -23.5505 }
+      "action_input": { "lat": 51.5074, "lng": -0.1278 }
     },
     {
-      "query": "Find out which timezone covers latitude 55.7558.",
+      "query": "What was the timezone offset for New York City (40.7128, -74.0060) on December 25, 1995?",
       "action": "get_timezone_info",
-      "action_input": { "lat": 55.7558 }
+      "action_input": { "lat": 40.7128, "lng": -74.0060, "timestamp": 819590400 }
     },
     {
-      "query": "Show me the timezone details for 48.8566 latitude.",
+      "query": "Give me timezone information for 19.4326 latitude and -99.1332 longitude.",
       "action": "get_timezone_info",
-      "action_input": { "lat": 48.8566 }
+      "action_input": { "lat": 19.4326, "lng": -99.1332 }
     },
     {
-      "query": "Get timezone information for latitude -1.2921.",
+      "query": "What’s the local time offset for Rio de Janeiro at -22.9068, -43.1729 on March 15, 2023?",
       "action": "get_timezone_info",
-      "action_input": { "lat": -1.2921 }
+      "action_input": { "lat": -22.9068, "lng": -43.1729, "timestamp": 1678838400 }
     },
     {
-      "query": "What timezone is at latitude 19.4326?",
+      "query": "Find timezone and DST info for Cape Town, South Africa (-33.9249, 18.4241).",
       "action": "get_timezone_info",
-      "action_input": { "lat": 19.4326 }
+      "action_input": { "lat": -33.9249, "lng": 18.4241 }
     }
   ],
 

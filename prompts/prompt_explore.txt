@@ -38,7 +38,7 @@ Observation: the return result of the API call. This is what I will provide you 
 
 In each turn, output only one Thought, one Action, and one Action Input, then stop and wait for the Observation before continuing.
 
-Once you have gathered enough information to answer the user query, do NOT produce another Action. Instead, continue with:
+Once you have gathered enough information to answer the user query, do NOT produce anything. Instead, directly output:
 Thought: I now know the final answer
 Final Answer: your response to the user query
 
@@ -65,7 +65,7 @@ Observation: This will be provided to you later. Do NOT generate or assume it yo
 
 In each turn, output only one Thought, one Action, and one Action Input, then stop and wait for the Observation before continuing.
 
-Once you have gathered enough information to answer the user query, do NOT produce another Action. Instead, continue with:
+Once you have gathered enough information to answer the user query, do NOT produce anything. Instead, directly output:
 Thought: I now know the final answer
 Final Answer: your response to the user query
 
