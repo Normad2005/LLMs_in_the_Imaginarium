@@ -7,7 +7,7 @@ from typing import Dict, Any
 from my_llm import call_ollama
 
 # ---------- config ----------
-DATA_PATH = "results/ste/data_20251028-002733.json"
+DATA_PATH = "results/ste/data_20251112-091248.json"
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 OUT_PATH = "results/semantic_memory.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
