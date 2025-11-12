@@ -8,7 +8,7 @@ def main(
     train_path="results/ste/tool_data_train.json",
     test_path="tool_metadata/tool_test.json",
     save_path="tool_metadata/tool_test_with_demo.json",
-    num_examples_retrieve=8,
+    num_examples_retrieve=3,
     model_name="sentence-transformers/paraphrase-mpnet-base-v2"
 ):
 

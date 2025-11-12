@@ -18,49 +18,51 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7,
                 if "response" in data:
                     output += data["response"]
         return output.strip()
+
     else:
-        # 雲端 API
+        # === 雲端 API ===
         url = "https://ollama.nlpnchu.org/api/generate"
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {LAB_KEY}"
         }
-        payload = {"model": model, "prompt": prompt}
-        resp = requests.post(url, json=payload, headers=headers)
-        output = ""
+        payload = {"model": "llama3.1:8b-instruct-fp16", "prompt": prompt}
 
         for attempt in range(1, max_retries + 1):
-            resp = requests.post(url, json=payload, headers=headers)
-            output = ""
-            html_detected = False
+            try:
+                resp = requests.post(url, json=payload, headers=headers, stream=True, timeout=120)
+                output = ""
+                html_detected = False
 
-            for line in resp.iter_lines():
-                if not line:
-                    continue
-                text = line.decode("utf-8").strip()
+                for line in resp.iter_lines():
+                    if not line:
+                        continue
+                    text = line.decode("utf-8").strip()
 
-                # 如果回傳 HTML，標記並中斷
-                if text.startswith("<!DOCTYPE html>") or text.startswith("<html"):
-                    html_detected = True
-                    print(f"[warn] Received HTML response, will retry after {retry_delay}s.")
-                    break
+                    # 檢測 HTML 錯誤頁（Cloudflare timeout 或伺服器錯誤）
+                    if text.startswith("<!DOCTYPE html>") or text.startswith("<html"):
+                        html_detected = True
+                        print(f"[warn] Received HTML response on attempt {attempt}/{max_retries}, retrying after {retry_delay}s...")
+                        break
 
-                try:
-                    data = json.loads(text)
-                    if "response" in data:
-                        output += data["response"]
-                except json.JSONDecodeError:
-                    # 忽略非 JSON 格式行
-                    continue
+                    try:
+                        data = json.loads(text)
+                        if "response" in data:
+                            output += data["response"]
+                    except json.JSONDecodeError:
+                        continue
 
-            if not html_detected:
-                return output.strip()
+                if not html_detected:
+                    return output.strip()
 
-            # 若偵測到 HTML 或輸出為空，則延遲重試
+            except requests.exceptions.RequestException as e:
+                print(f"[warn] Network error on attempt {attempt}/{max_retries}: {e}")
+                # 若是伺服器連線中斷、ChunkedEncodingError 等都會被捕捉
+
             if attempt < max_retries:
                 time.sleep(retry_delay)
 
-        return "Ollama cloud API returned an HTML error page. Likely a server timeout or service issue."
+        return "Ollama cloud API failed after multiple retries. Possible server timeout or network issue."
 
 
 def chat_my(messages, new_message, visualize=True, model="llama3.1:8b-instruct-fp16"):

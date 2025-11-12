@@ -223,15 +223,22 @@
   },
 
   "get_crypto_price": {
-    "description": "Provides real-time market price data for hundreds of different cryptocurrencies.",
+    "description": "Provides lightning-fast access to real-time crypto market data, including prices and exchange rates for over 4000 cryptocurrencies and 100 fiat currencies.",
     "required_parameters": [
       {
         "name": "symbol",
         "type": "String",
-        "description": "The ticker symbol of the cryptocurrency to query (e.g., BTC, ETH, DOGE)."
+        "description": "Cryptocurrency symbol (e.g., BTC, ETH, BNB). Case insensitive."
       }
     ],
-    "optional_parameters": []
+    "optional_parameters": [
+      {
+        "name": "base",
+        "type": "String",
+        "description": "The pricing currency to convert to. Can be a fiat or another supported cryptocurrency. Defaults to USDT.",
+        "default": "USDT"
+      }
+    ]
   },
 
   "get_recipe": {
@@ -293,15 +300,26 @@
   },
 
   "get_timezone_info": {
-    "description": "The Stadia TZ Lookup API provides time zone information, as well as information about any special offset (such as DST) in effect based on the latest IANA TZDB. Note that this API may not be accurate for timestamps in the past and does not claim to report precise nautical times in the open ocean beyond territorial waters.",
+    "description": "Provides time zone information, including UTC and DST offsets, for any specified point on land based on latitude, longitude, and an optional UNIX timestamp. Note: Accuracy is not guaranteed for historical timestamps due to potential changes in time zone boundaries.",
     "required_parameters": [
       {
         "name": "lat",
-        "type": "NUMBER",
+        "type": "Number",
         "description": "The latitude component of any point on land."
+      },
+      {
+        "name": "lng",
+        "type": "Number",
+        "description": "The longitude component of any point on land."
       }
     ],
-    "optional_parameters": []
+    "optional_parameters": [
+      {
+        "name": "timestamp",
+        "type": "Number",
+        "description": "The UNIX timestamp at which the UTC and DST offsets will be calculated. Defaults to the present time."
+      }
+    ]
   },
 
   "get_planet_data": {

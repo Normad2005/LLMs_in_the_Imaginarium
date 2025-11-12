@@ -2,7 +2,7 @@ import http.client
 import json
 from config.api_keys import RAPIDAPI_KEY  # ← 共用金鑰
 
-def get_media_info(
+def get_media_news(
     category: str = "MOVIE",
     first: int = 20,
     after: str = "",

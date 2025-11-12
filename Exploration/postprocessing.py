@@ -3,13 +3,13 @@ import os
 import json
 import random
 from copy import deepcopy
-from my_llm import chat_my, call_ollama
+from my_llm import chat_my
 
 
 def main(
-    input_path: str = "results/ste/data_20251028-002733.json",
-    filter_model_ckpt: str = "llama3",
-    paraphrase_model_ckpt: str = "llama3",
+    input_path: str = "results/ste/data_20251112-091248.json",
+    filter_model_ckpt: str = "llama3.1:8b-instruct-fp16",
+    paraphrase_model_ckpt: str = "llama3.1:8b-instruct-fp16",
     target_num_train_per_API: int = 30, #平均每個api產出量目標
     num_para_train_max: int = 3, #每筆最多改寫幾次
     dir_write: str = "results/ste/",

@@ -10,7 +10,7 @@ from my_llm import call_ollama
 DATA_PATH = "results/ste/data_20251028-002733.json"
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 OUT_PATH = "results/semantic_memory.json"
-MODEL_CKPT = "llama3"
+MODEL_CKPT = "llama3.1:8b-instruct-fp16"
 
 MAX_CHAINS_PER_SESSION = 6
 MAX_EXAMPLES_PER_API = 6

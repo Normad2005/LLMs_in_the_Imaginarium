@@ -39,7 +39,7 @@ def get_handball_scheduled_matches(
     except Exception:
         return {"error": "Invalid JSON response", "raw": data.decode("utf-8")}
     
-def get_daily_handball_matches(
+def get_handball_daily_matches(
     date: str = "28/01/2021",
     toolbench_rapidapi_key: str = RAPIDAPI_KEY
 ):

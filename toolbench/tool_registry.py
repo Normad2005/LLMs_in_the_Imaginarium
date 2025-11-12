@@ -23,7 +23,7 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     # Entertainment
     "get_random_joke": {"category": "Entertainment", "tool_name": "Joke"},
 
-    "get_media_info": {"category": "Entertainment", "tool_name": "Media"},
+    "get_media_news": {"category": "Entertainment", "tool_name": "Media"},
 
     # Finance
     "get_financial_data": {"category": "Finance", "tool_name": "Alpha Vantage"},

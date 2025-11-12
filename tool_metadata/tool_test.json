@@ -1,0 +1,1466 @@
+{
+  "verify_email": [
+    {
+    "query": "Check if john.doe@gmail.com is a valid email address.",
+    "action": "verify_email",
+    "action_input": {"email": "john.doe@gmail.com"}
+    },
+    {
+      "query": "Verify the email support@melissa.com.",
+      "action": "verify_email",
+      "action_input": {"email": "support@melissa.com"}
+    },
+    {
+      "query": "Can you confirm if sales@company.co.uk exists?",
+      "action": "verify_email",
+      "action_input": {"email": "sales@company.co.uk"}
+    },
+    {
+      "query": "Is info@mybusiness.org a deliverable email?",
+      "action": "verify_email",
+      "action_input": {"email": "info@mybusiness.org"}
+    },
+    {
+      "query": "Check deliverability for test.email@outlook.com.",
+      "action": "verify_email",
+      "action_input": {"email": "test.email@outlook.com"}
+    },
+    {
+      "query": "Validate if support@gnail.com is a typo or real address.",
+      "action": "verify_email",
+      "action_input": {"email": "support@gnail.com"}
+    },
+    {
+      "query": "Does admin@university.edu pass email verification?",
+      "action": "verify_email",
+      "action_input": {"email": "admin@university.edu"}
+    },
+    {
+      "query": "Check if hello@mobile-domain.me is valid.",
+      "action": "verify_email",
+      "action_input": {"email": "hello@mobile-domain.me"}
+    },
+    {
+      "query": "Can you verify contact@nonexistent-domain.xyz?",
+      "action": "verify_email",
+      "action_input": {"email": "contact@nonexistent-domain.xyz"}
+    },
+    {
+      "query": "Is noreply@github.com a valid inbox?",
+      "action": "verify_email",
+      "action_input": {"email": "noreply@github.com"}
+    }
+  ],
+
+  "get_car_makes": [
+    {
+    "query": "List all car makes.",
+    "action": "get_car_makes",
+    "action_input": {}
+    },
+    {
+      "query": "Show me every car brand you have.",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "What car manufacturers are in your database?",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "Give me a list of all car makes available.",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "Return all vehicle brands.",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "Which car makes do you support?",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "Show all automaker names.",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "I want to see the full list of car makes.",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "Get all car manufacturers in the dataset.",
+      "action": "get_car_makes",
+      "action_input": {}
+    },
+    {
+      "query": "Fetch every car make you know of.",
+      "action": "get_car_makes",
+      "action_input": {}
+    }
+  ],
+
+  "get_animal_facts": [
+    {
+    "query": "Tell me some facts about elephants.",
+    "action": "get_animal_facts",
+    "action_input": {"name": "elephant"}
+    },
+    {
+      "query": "I want to learn interesting facts about penguins.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "penguin"}
+    },
+    {
+      "query": "Give me scientific facts about dolphins.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "dolphin"}
+    },
+    {
+      "query": "Share some fun facts about lions.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "lion"}
+    },
+    {
+      "query": "Find information about red foxes.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "fox"}
+    },
+    {
+      "query": "What can you tell me about pandas?",
+      "action": "get_animal_facts",
+      "action_input": {"name": "panda"}
+    },
+    {
+      "query": "Give me some facts on bald eagles.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "eagle"}
+    },
+    {
+      "query": "Show me some information about sharks.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "shark"}
+    },
+    {
+      "query": "Tell me about koalas.",
+      "action": "get_animal_facts",
+      "action_input": {"name": "koala"}
+    },
+    {
+      "query": "I’m curious about owls. Can you give me some facts?",
+      "action": "get_animal_facts",
+      "action_input": {"name": "owl"}
+    }
+  ],
+
+  "search_public_restrooms": [
+    {
+    "query": "Find public restrooms near New York City.",
+    "action": "search_public_restrooms",
+    "action_input": {"states": "NY"}
+    },
+    {
+      "query": "Show me bathrooms around Los Angeles.",
+      "action": "search_public_restrooms",
+      "action_input": {"lat": 34.0522, "lon": -118.2437}
+    },
+    {
+      "query": "List public toilets in Florida and Georgia.",
+      "action": "search_public_restrooms",
+      "action_input": {"states": "FL,GA"}
+    },
+    {
+      "query": "Search for nearby restrooms around 37.7749, -122.4194.",
+      "action": "search_public_restrooms",
+      "action_input": {"lat": 37.7749, "lon": -122.4194}
+    },
+    {
+      "query": "Find public bathrooms in Texas.",
+      "action": "search_public_restrooms",
+      "action_input": {"states": "TX"}
+    },
+    {
+      "query": "Show me page 2 of restrooms near Chicago.",
+      "action": "search_public_restrooms",
+      "action_input": {"lat": 41.8781, "lon": -87.6298, "page": 2}
+    },
+    {
+      "query": "Get 5 restroom listings per page for New York.",
+      "action": "search_public_restrooms",
+      "action_input": {"states": "NY", "per_page": 5}
+    },
+    {
+      "query": "Find public toilets near Miami Beach.",
+      "action": "search_public_restrooms",
+      "action_input": {"lat": 25.7907, "lon": -80.1300}
+    },
+    {
+      "query": "Show all public restrooms in California.",
+      "action": "search_public_restrooms",
+      "action_input": {"states": "CA"}
+    },
+    {
+      "query": "Locate the nearest public restroom around 40.7128, -74.0060 with 20 results per page.",
+      "action": "search_public_restrooms",
+      "action_input": {"lat": 40.7128, "lon": -74.0060, "per_page": 20}
+    }
+  ],
+
+  "spell_number": [
+    {
+    "query": "Convert 42 to words.",
+    "action": "spell_number",
+    "action_input": {"number_text": "42"}
+    },
+    {
+      "query": "Spell out the number 1050.",
+      "action": "spell_number",
+      "action_input": {"number_text": "1050"}
+    },
+    {
+      "query": "What is 9999 in words?",
+      "action": "spell_number",
+      "action_input": {"number_text": "9999"}
+    },
+    {
+      "query": "Write 1000000 as words.",
+      "action": "spell_number",
+      "action_input": {"number_text": "1000000"}
+    },
+    {
+      "query": "Turn 23879908709817834 into words.",
+      "action": "spell_number",
+      "action_input": {"number_text": "23879908709817834"}
+    },
+    {
+      "query": "Please spell 123456789.",
+      "action": "spell_number",
+      "action_input": {"number_text": "123456789"}
+    },
+    {
+      "query": "Convert the number 57 into text form.",
+      "action": "spell_number",
+      "action_input": {"number_text": "57"}
+    },
+    {
+      "query": "I need the word form of 87009.",
+      "action": "spell_number",
+      "action_input": {"number_text": "87009"}
+    },
+    {
+      "query": "Spell out 0.",
+      "action": "spell_number",
+      "action_input": {"number_text": "0"}
+    },
+    {
+      "query": "How do you say 345.67 in words?",
+      "action": "spell_number",
+      "action_input": {"number_text": "345.67"}
+    }
+  ],
+
+  "get_random_joke": [
+    {
+      "query": "Make me laugh.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "I'm bored, tell me something funny.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Tell me a dad joke.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "I want to hear a joke.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Got any good material?",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Hit me with a joke",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "What's your best joke?",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "I need a good laugh.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Random joke, please.",
+      "action": "get_random_joke",
+      "action_input": {}
+    },
+    {
+      "query": "Cheer me up.",
+      "action": "get_random_joke",
+      "action_input": {}
+    }
+  ],
+
+  "get_media_info": [
+    {
+      "query": "Show me the latest trending entertainment news.",
+      "action": "get_media_news",
+      "action_input": {"category": "TOP"}
+    },
+    {
+      "query": "Get the newest movie-related news articles.",
+      "action": "get_media_news",
+      "action_input": {"category": "MOVIE"}
+    },
+    {
+      "query": "Find recent TV show news.",
+      "action": "get_media_news",
+      "action_input": {"category": "TV"}
+    },
+    {
+      "query": "Show celebrity gossip and updates.",
+      "action": "get_media_news",
+      "action_input": {"category": "CELEBRITY"}
+    },
+    {
+      "query": "Give me trending movie news from the United States in English.",
+      "action": "get_media_news",
+      "action_input": {"category": "MOVIE", "country": "US", "language": "en"}
+    },
+    {
+      "query": "Fetch top media stories in Japan, in Japanese.",
+      "action": "get_media_news",
+      "action_input": {"category": "TOP", "country": "JP", "language": "ja"}
+    },
+    {
+      "query": "Get 10 latest celebrity news articles.",
+      "action": "get_media_news",
+      "action_input": {"category": "CELEBRITY", "first": 10}
+    },
+    {
+      "query": "Continue loading the next page of movie news results.",
+      "action": "get_media_news",
+      "action_input": {"category": "MOVIE", "after": "cursor12345"}
+    },
+    {
+      "query": "Show trending TV news in France, in French.",
+      "action": "get_media_news",
+      "action_input": {"category": "TV", "country": "FR", "language": "fr"}
+    },
+    {
+      "query": "List the most recent general entertainment headlines.",
+      "action": "get_media_news",
+      "action_input": {"category": "TOP", "first": 15}
+    }
+  ],
+
+  "get_financial_data": [
+    {
+    "query": "Get the global quote for TSLA.",
+    "action": "get_financial_data",
+    "action_input": {"function": "GLOBAL_QUOTE", "symbol": "TSLA"}
+    },
+    {
+      "query": "Fetch the daily time series for AAPL.",
+      "action": "get_financial_data",
+      "action_input": {"function": "TIME_SERIES_DAILY", "symbol": "AAPL"}
+    },
+    {
+      "query": "Show me the real-time stock data for MSFT.",
+      "action": "get_financial_data",
+      "action_input": {"function": "GLOBAL_QUOTE", "symbol": "MSFT"}
+    },
+    {
+      "query": "Get the weekly stock prices for AMZN.",
+      "action": "get_financial_data",
+      "action_input": {"function": "TIME_SERIES_WEEKLY", "symbol": "AMZN"}
+    },
+    {
+      "query": "Retrieve intraday financial data for GOOGL.",
+      "action": "get_financial_data",
+      "action_input": {"function": "TIME_SERIES_INTRADAY", "symbol": "GOOGL"}
+    },
+    {
+      "query": "Get the currency exchange rate between USD and JPY.",
+      "action": "get_financial_data",
+      "action_input": {"function": "CURRENCY_EXCHANGE_RATE", "symbol": "USDJPY"}
+    },
+    {
+      "query": "Show me the global quote for NVDA.",
+      "action": "get_financial_data",
+      "action_input": {"function": "GLOBAL_QUOTE", "symbol": "NVDA"}
+    },
+    {
+      "query": "Retrieve daily stock data for META.",
+      "action": "get_financial_data",
+      "action_input": {"function": "TIME_SERIES_DAILY", "symbol": "META"}
+    },
+    {
+      "query": "Get the exchange rate between EUR and USD.",
+      "action": "get_financial_data",
+      "action_input": {"function": "CURRENCY_EXCHANGE_RATE", "symbol": "EURUSD"}
+    },
+    {
+      "query": "Provide the global stock quote for IBM.",
+      "action": "get_financial_data",
+      "action_input": {"function": "GLOBAL_QUOTE", "symbol": "IBM"}
+    }
+  ],
+
+  "convert_currency": [
+    {
+    "query": "How many British Pounds can I exchange for 2000 Swiss Francs?",
+    "action": "convert_currency",
+    "action_input": {"base": "CHF", "target": "GBP"}
+    },
+    {
+      "query": "Convert 1000 USD to EUR.",
+      "action": "convert_currency",
+      "action_input": {"base": "USD", "target": "EUR"}
+    },
+    {
+      "query": "What’s the value of 500 Canadian Dollars in Japanese Yen?",
+      "action": "convert_currency",
+      "action_input": {"base": "CAD", "target": "JPY"}
+    },
+    {
+      "query": "Exchange 75 Euros into US Dollars.",
+      "action": "convert_currency",
+      "action_input": {"base": "EUR", "target": "USD"}
+    },
+    {
+      "query": "Convert 1500 INR to GBP.",
+      "action": "convert_currency",
+      "action_input": {"base": "INR", "target": "GBP"}
+    },
+    {
+      "query": "How much is 100 Australian Dollars in Chinese Yuan?",
+      "action": "convert_currency",
+      "action_input": {"base": "AUD", "target": "CNY"}
+    },
+    {
+      "query": "Convert 0.05 BTC to USD.",
+      "action": "convert_currency",
+      "action_input": {"base": "BTC", "target": "USD"}
+    },
+    {
+      "query": "How many Euros can I get for 10,000 Norwegian Kroner?",
+      "action": "convert_currency",
+      "action_input": {"base": "NOK", "target": "EUR"}
+    },
+    {
+      "query": "Exchange 200 Singapore Dollars to Malaysian Ringgit.",
+      "action": "convert_currency",
+      "action_input": {"base": "SGD", "target": "MYR"}
+    },
+    {
+      "query": "Convert 5000 South Korean Won to Thai Baht.",
+      "action": "convert_currency",
+      "action_input": {"base": "KRW", "target": "THB"}
+    }
+  ],
+
+  "calculate_mortgage_payment": [
+    {
+    "query": "Calculate my mortgage payments for a 3.5% interest rate.",
+    "action": "calculate_mortgage_payment",
+    "action_input": { "interest_rate": 3.5 }
+    },
+    {
+      "query": "If my loan has a 4.2% interest rate and is worth 400000, what’s my monthly payment?",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 4.2, "loan_amount": 400000 }
+    },
+    {
+      "query": "Estimate payments on a $250,000 loan at 5% over 20 years.",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 5, "loan_amount": 250000, "duration_years": 20 }
+    },
+    {
+      "query": "I’m buying a $600,000 home with $100,000 down and a 3.8% interest rate. What are my payments?",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 3.8, "home_value": 600000, "downpayment": 100000 }
+    },
+    {
+      "query": "Compute my mortgage with 6% interest, 500000 home value, 50000 down, and 25 years duration.",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 6, "home_value": 500000, "downpayment": 50000, "duration_years": 25 }
+    },
+    {
+      "query": "What’s my annual cost if I borrow 300000 at 4% with $1200 yearly insurance and $3500 property tax?",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 4, "loan_amount": 300000, "annual_home_insurance": 1200, "annual_property_tax": "3500" }
+    },
+    {
+      "query": "For a 7% loan on a $750,000 house, with $150,000 down and $200 monthly HOA, what’s my payment?",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 7, "home_value": 750000, "downpayment": 150000, "monthly_hoa": 200 }
+    },
+    {
+      "query": "Calculate my mortgage if I take a $100,000 loan at 2.9% for 15 years.",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 2.9, "loan_amount": 100000, "duration_years": 15 }
+    },
+    {
+      "query": "I want to see monthly payments for a 5.5% interest rate, $350k home, $50k down, 30-year mortgage.",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 5.5, "home_value": 350000, "downpayment": 50000, "duration_years": 30 }
+    },
+    {
+      "query": "Tell me the payment for a 10-year mortgage, $200,000 loan, 3% rate, and $100 HOA fees.",
+      "action": "calculate_mortgage_payment",
+      "action_input": { "interest_rate": 3, "loan_amount": 200000, "duration_years": 10, "monthly_hoa": 100 }
+    }
+  ],
+
+  "get_inflation_data": [
+    {
+    "query": "Show me the latest inflation data.",
+    "action": "get_inflation_data",
+    "action_input": {}
+    },
+    {
+      "query": "What’s the current inflation rate around the world?",
+      "action": "get_inflation_data",
+      "action_input": {}
+    },
+    {
+      "query": "Give me global CPI inflation numbers.",
+      "action": "get_inflation_data",
+      "action_input": { "type": "CPI" }
+    },
+    {
+      "query": "Fetch the HICP inflation stats for all countries.",
+      "action": "get_inflation_data",
+      "action_input": { "type": "HICP" }
+    },
+    {
+      "query": "Can you tell me the current consumer price index inflation data?",
+      "action": "get_inflation_data",
+      "action_input": { "type": "CPI" }
+    },
+    {
+      "query": "Retrieve harmonized inflation figures for major economies.",
+      "action": "get_inflation_data",
+      "action_input": { "type": "HICP" }
+    },
+    {
+      "query": "I want the most recent global CPI inflation report.",
+      "action": "get_inflation_data",
+      "action_input": { "type": "CPI" }
+    },
+    {
+      "query": "Show me the international HICP index update.",
+      "action": "get_inflation_data",
+      "action_input": { "type": "HICP" }
+    },
+    {
+      "query": "Give me an overview of inflation data for major countries.",
+      "action": "get_inflation_data",
+      "action_input": {}
+    },
+    {
+      "query": "What’s the latest consumer inflation information available?",
+      "action": "get_inflation_data",
+      "action_input": { "type": "CPI" }
+    }
+  ],
+
+  "get_crypto_price": [
+    {
+    "query": "What’s the current price of Bitcoin?",
+    "action": "get_crypto_price",
+    "action_input": { "symbol": "BTC" }
+    },
+    {
+      "query": "Check Ethereum’s latest market value.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "ETH" }
+    },
+    {
+      "query": "How much is Dogecoin trading for right now?",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "DOGE" }
+    },
+    {
+      "query": "Give me the real-time price of Solana.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "SOL" }
+    },
+    {
+      "query": "Fetch the market price for Cardano.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "ADA" }
+    },
+    {
+      "query": "Show me the current value of XRP.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "XRP" }
+    },
+    {
+      "query": "Get the latest Litecoin price.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "LTC" }
+    },
+    {
+      "query": "What’s the price of Polkadot right now?",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "DOT" }
+    },
+    {
+      "query": "Tell me how much Avalanche is worth currently.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "AVAX" }
+    },
+    {
+      "query": "Find the current trading price of Shiba Inu coin.",
+      "action": "get_crypto_price",
+      "action_input": { "symbol": "SHIB" }
+    }
+  ],
+
+  "get_recipe": [
+    {
+    "query": "Find me a recipe for chocolate cake.",
+    "action": "get_recipe",
+    "action_input": { "query": "chocolate cake" }
+    },
+    {
+      "query": "Show me how to make spaghetti carbonara.",
+      "action": "get_recipe",
+      "action_input": { "query": "spaghetti carbonara" }
+    },
+    {
+      "query": "Search for a recipe with chicken curry.",
+      "action": "get_recipe",
+      "action_input": { "query": "chicken curry" }
+    },
+    {
+      "query": "I want to cook pancakes. Give me a recipe.",
+      "action": "get_recipe",
+      "action_input": { "query": "pancakes" }
+    },
+    {
+      "query": "Find lasagna recipes for me.",
+      "action": "get_recipe",
+      "action_input": { "query": "lasagna" }
+    },
+    {
+      "query": "Show me some sushi roll recipes.",
+      "action": "get_recipe",
+      "action_input": { "query": "sushi roll" }
+    },
+    {
+      "query": "Give me a good recipe for beef stew.",
+      "action": "get_recipe",
+      "action_input": { "query": "beef stew" }
+    },
+    {
+      "query": "Find more pasta recipes after the first page.",
+      "action": "get_recipe",
+      "action_input": { "query": "pasta", "offset": "10" }
+    },
+    {
+      "query": "Can you find me a recipe for apple pie?",
+      "action": "get_recipe",
+      "action_input": { "query": "apple pie" }
+    },
+    {
+      "query": "Show the next set of burger recipes.",
+      "action": "get_recipe",
+      "action_input": { "query": "burger", "offset": "20" }
+    }
+  ],
+
+  "get_all_mvc2_characters": [
+    {
+    "query": "Show me all MVC2 characters.",
+    "action": "get_all_mvc2_characters",
+    "action_input": {}
+    },
+    {
+      "query": "List every character available in Marvel vs Capcom 2.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "Give me a full roster of MVC2 fighters.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "Who are all the characters in Marvel vs Capcom 2?",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "I want to see all playable MVC2 heroes and villains.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "Fetch the entire MVC2 character list.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "Show every fighter from Marvel vs Capcom 2.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "Display all MVC2 roster names.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "Retrieve the complete Marvel vs Capcom 2 cast.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    },
+    {
+      "query": "List out all the characters from MVC2.",
+      "action": "get_all_mvc2_characters",
+      "action_input": {}
+    }
+  ],
+
+  "get_filtered_game_giveaways": [
+    {
+    "query": "Show me all free games available on Steam.",
+    "action": "get_filtered_game_giveaways",
+    "action_input": { "platform": "steam" }
+    },
+    {
+      "query": "Find current giveaways on the Epic Games Store.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "epic-games-store" }
+    },
+    {
+      "query": "List all Android game giveaways.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "android" }
+    },
+    {
+      "query": "Get all available loot giveaways on Steam.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "steam", "type": "loot" }
+    },
+    {
+      "query": "Show me all free games from Epic and Steam.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "epic-games-store.steam", "type": "game" }
+    },
+    {
+      "query": "Find game giveaways for mobile platforms like Android.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "android", "type": "game" }
+    },
+    {
+      "query": "List loot drops for PC players on Steam.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "steam", "type": "loot" }
+    },
+    {
+      "query": "Show all Epic Games Store loot bundles.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "epic-games-store", "type": "loot" }
+    },
+    {
+      "query": "Get every current giveaway across Steam and Android.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "steam.android" }
+    },
+    {
+      "query": "Find all types of giveaways from Epic, including loot and games.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": { "platform": "epic-games-store", "type": "game.loot" }
+    }
+  ],
+
+  "get_game_giveaways_by_type": [
+    {
+    "query": "Show me all live game giveaways.",
+    "action": "get_game_giveaways_by_type",
+    "action_input": { "type": "game" }
+    },
+    {
+      "query": "Find all current loot giveaways.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "loot" }
+    },
+    {
+      "query": "List any beta access giveaways happening right now.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "beta" }
+    },
+    {
+      "query": "Get every active free game giveaway.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "game" }
+    },
+    {
+      "query": "Are there any loot drops or rewards available?",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "loot" }
+    },
+    {
+      "query": "Check for any beta test giveaways for upcoming games.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "beta" }
+    },
+    {
+      "query": "Show all the game giveaways currently running.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "game" }
+    },
+    {
+      "query": "Fetch live loot giveaways right now.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "loot" }
+    },
+    {
+      "query": "Find available beta access promotions.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "beta" }
+    },
+    {
+      "query": "Give me a list of active giveaways for free games.",
+      "action": "get_game_giveaways_by_type",
+      "action_input": { "type": "game" }
+    }
+  ],
+
+  "get_timezone_info": [
+    {
+    "query": "Get the timezone for latitude 37.7749.",
+    "action": "get_timezone_info",
+    "action_input": { "lat": 37.7749 }
+    },
+    {
+      "query": "What’s the current timezone at latitude 51.5074?",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 51.5074 }
+    },
+    {
+      "query": "Find timezone info for the point at latitude -33.8688.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": -33.8688 }
+    },
+    {
+      "query": "Tell me the timezone corresponding to 35.6895 latitude.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 35.6895 }
+    },
+    {
+      "query": "Check the timezone for 40.7128 latitude.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 40.7128 }
+    },
+    {
+      "query": "Retrieve timezone info for the location at latitude -23.5505.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": -23.5505 }
+    },
+    {
+      "query": "Find out which timezone covers latitude 55.7558.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 55.7558 }
+    },
+    {
+      "query": "Show me the timezone details for 48.8566 latitude.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 48.8566 }
+    },
+    {
+      "query": "Get timezone information for latitude -1.2921.",
+      "action": "get_timezone_info",
+      "action_input": { "lat": -1.2921 }
+    },
+    {
+      "query": "What timezone is at latitude 19.4326?",
+      "action": "get_timezone_info",
+      "action_input": { "lat": 19.4326 }
+    }
+  ],
+
+  "get_planet_data": [
+    {
+    "query": "Show me data for the planet Earth.",
+    "action": "get_planet_data",
+    "action_input": { "name": "Earth" }
+    },
+    {
+      "query": "Find planets with a mass between 0.5 and 2 Jupiters.",
+      "action": "get_planet_data",
+      "action_input": { "min_mass": 0.5, "max_mass": 2 }
+    },
+    {
+      "query": "List planets with radius smaller than 0.8 Jupiters.",
+      "action": "get_planet_data",
+      "action_input": { "max_radius": 0.8 }
+    },
+    {
+      "query": "Get planets with an orbital period between 100 and 400 Earth days.",
+      "action": "get_planet_data",
+      "action_input": { "min_period": 100, "max_period": 400 }
+    },
+    {
+      "query": "Find exoplanets with a surface temperature between 200K and 500K.",
+      "action": "get_planet_data",
+      "action_input": { "min_temperature": 200, "max_temperature": 500 }
+    },
+    {
+      "query": "Show planets that are within 50 light years from Earth.",
+      "action": "get_planet_data",
+      "action_input": { "max_distance_light_year": 50 }
+    },
+    {
+      "query": "Give me all planets larger than 1 Jupiter radius.",
+      "action": "get_planet_data",
+      "action_input": { "min_radius": 1 }
+    },
+    {
+      "query": "Search for planets named Kepler-22b.",
+      "action": "get_planet_data",
+      "action_input": { "name": "Kepler-22b" }
+    },
+    {
+      "query": "Find hot exoplanets with temperatures above 1000K.",
+      "action": "get_planet_data",
+      "action_input": { "min_temperature": 1000 }
+    },
+    {
+      "query": "List distant planets located between 100 and 1000 light years away.",
+      "action": "get_planet_data",
+      "action_input": { "min_distance_light_year": 100, "max_distance_light_year": 1000 }
+    }
+  ],
+
+  "search_arxiv_papers": [
+    {
+    "query": "Search for quantum computing papers.",
+    "action": "search_arxiv_papers",
+    "action_input": { "search_term": "quantum computing" }
+    },
+    {
+      "query": "Find deep learning papers published between 2023-01-01 and 2023-06-30.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "deep learning",
+        "date_from": "2023-01-01",
+        "date_to": "2023-06-30"
+      }
+    },
+    {
+      "query": "Show 10 papers about graph neural networks in the title field.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "graph neural networks",
+        "field": "Title",
+        "num_results": 10
+      }
+    },
+    {
+      "query": "Get papers about black holes by author Stephen Hawking.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "Stephen Hawking",
+        "field": "Authors"
+      }
+    },
+    {
+      "query": "Search for reinforcement learning papers, starting from the 11th result.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "reinforcement learning",
+        "start": 10
+      }
+    },
+    {
+      "query": "Find AI papers submitted after 2024-01-01.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "artificial intelligence",
+        "date_from": "2024-01-01"
+      }
+    },
+    {
+      "query": "Get 3 papers related to LLMs in the comments field.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "LLM",
+        "field": "Comments",
+        "num_results": 3
+      }
+    },
+    {
+      "query": "Search for astrophysics research papers between 2022-05-01 and 2022-08-01.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "astrophysics",
+        "date_from": "2022-05-01",
+        "date_to": "2022-08-01"
+      }
+    },
+    {
+      "query": "Show 15 recent computer vision papers submitted in 2024.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "computer vision",
+        "date_from": "2024-01-01",
+        "date_to": "2024-12-31",
+        "num_results": 15
+      }
+    },
+    {
+      "query": "Find natural language processing papers with keyword transformer, show 8 results.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "transformer NLP",
+        "num_results": 8
+      }
+    }
+  ],
+
+  "get_soccer_tournaments": [
+    {
+      "query": "Show me all soccer tournaments.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "List the current soccer tournaments.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "What soccer tournaments are happening now?",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "Give me a list of football tournaments.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "Show soccer competitions around the world.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "Tell me about major soccer tournaments.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "Which soccer tournaments are available?",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "I want to see a list of soccer leagues and tournaments.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "Show all the football cups and tournaments.",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    },
+    {
+      "query": "Can you list every soccer tournament for me?",
+      "action": "get_soccer_tournaments",
+      "action_input": {}
+    }
+  ],
+
+  "get_f1_latest_news": [
+    {
+      "query": "Show me the latest F1 news.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "What’s new in Formula 1 today?",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "Give me recent articles about F1.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "Tell me the latest updates from Formula 1.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "I want to read the newest F1 headlines.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "Get me the most recent Formula 1 stories.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "Any new F1 articles published today?",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "Show Formula 1 breaking news.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "Fetch all the current Formula 1 news.",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    },
+    {
+      "query": "What are the recent happenings in F1?",
+      "action": "get_f1_latest_news",
+      "action_input": {}
+    }
+  ],
+
+  "get_handball_scheduled_matches": [
+    {
+      "query": "Show me all handball matches scheduled for today.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "12/11/2025"}
+    },
+    {
+      "query": "List the handball games happening on 10/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "10/11/2025"}
+    },
+    {
+      "query": "What handball matches are planned for 13/11/2025?",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "13/11/2025"}
+    },
+    {
+      "query": "Get me the handball schedule for 08/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "08/11/2025"}
+    },
+    {
+      "query": "Show the handball fixtures on 11/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "11/11/2025"}
+    },
+    {
+      "query": "I want to see all handball matches for 09/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "09/11/2025"}
+    },
+    {
+      "query": "Display handball matches scheduled for 14/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "14/11/2025"}
+    },
+    {
+      "query": "What are the handball matches on 07/11/2025?",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "07/11/2025"}
+    },
+    {
+      "query": "Get the upcoming handball games for 15/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "15/11/2025"}
+    },
+    {
+      "query": "List handball matches happening on 06/11/2025.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {"date": "06/11/2025"}
+    }
+  ],
+
+  "get_handball_daily_matches": [
+    {
+      "query": "Show me today's handball matches, including live ones.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "12/11/2025"}
+    },
+    {
+      "query": "List all handball games for 10/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "10/11/2025"}
+    },
+    {
+      "query": "What handball matches are happening on 13/11/2025?",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "13/11/2025"}
+    },
+    {
+      "query": "Get me the handball games scheduled for 09/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "09/11/2025"}
+    },
+    {
+      "query": "Show the live and scheduled handball matches for 11/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "11/11/2025"}
+    },
+    {
+      "query": "I want to see handball games for 08/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "08/11/2025"}
+    },
+    {
+      "query": "Display all handball matches on 14/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "14/11/2025"}
+    },
+    {
+      "query": "What are the handball matches on 07/11/2025?",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "07/11/2025"}
+    },
+    {
+      "query": "Get me today’s live handball fixtures for 12/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "12/11/2025"}
+    },
+    {
+      "query": "List all handball matches, including ongoing ones, for 06/11/2025.",
+      "action": "get_handball_daily_matches",
+      "action_input": {"date": "06/11/2025"}
+    }
+  ],
+
+  "get_airlines": [
+    {
+      "query": "Find information about Singapore Airlines.",
+      "action": "get_airlines",
+      "action_input": {"name": "Singapore Airlines"}
+    },
+    {
+      "query": "Search for airline details using the IATA code SQ.",
+      "action": "get_airlines",
+      "action_input": {"iata": "SQ"}
+    },
+    {
+      "query": "Get airline info for ICAO code SIA.",
+      "action": "get_airlines",
+      "action_input": {"icao": "SIA"}
+    },
+    {
+      "query": "Tell me about Delta Airlines.",
+      "action": "get_airlines",
+      "action_input": {"name": "Delta Airlines"}
+    },
+    {
+      "query": "Show airline details for IATA code EK.",
+      "action": "get_airlines",
+      "action_input": {"iata": "EK"}
+    },
+    {
+      "query": "Search for Emirates airline information.",
+      "action": "get_airlines",
+      "action_input": {"name": "Emirates"}
+    },
+    {
+      "query": "Get details for the airline with ICAO code AAL.",
+      "action": "get_airlines",
+      "action_input": {"icao": "AAL"}
+    },
+    {
+      "query": "Find airline information for Lufthansa.",
+      "action": "get_airlines",
+      "action_input": {"name": "Lufthansa"}
+    },
+    {
+      "query": "Look up the airline using IATA code CX.",
+      "action": "get_airlines",
+      "action_input": {"iata": "CX"}
+    },
+    {
+      "query": "Show me information about Qantas Airways.",
+      "action": "get_airlines",
+      "action_input": {"name": "Qantas Airways"}
+    }
+  ],
+
+  "get_motorcycle_data": [
+    {
+      "query": "Show me details for the 2023 Yamaha MT-07.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Yamaha", "model": "MT-07", "year": "2023"}
+    },
+    {
+      "query": "Find specifications for Honda CBR500R 2022.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Honda", "model": "CBR500R", "year": "2022"}
+    },
+    {
+      "query": "Get data on all 2021 Harley-Davidson bikes.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Harley-Davidson", "year": "2021"}
+    },
+    {
+      "query": "List Kawasaki Ninja models from 2020.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Kawasaki", "model": "Ninja", "year": "2020"}
+    },
+    {
+      "query": "Show Ducati Panigale specifications.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Ducati", "model": "Panigale"}
+    },
+    {
+      "query": "Give me technical data for BMW R1250GS 2024.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "BMW", "model": "R1250GS", "year": "2024"}
+    },
+    {
+      "query": "Retrieve all Suzuki motorcycles from 2019.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Suzuki", "year": "2019"}
+    },
+    {
+      "query": "Get details on the 2022 Triumph Street Triple.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Triumph", "model": "Street Triple", "year": "2022"}
+    },
+    {
+      "query": "Show me KTM Duke models.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "KTM", "model": "Duke"}
+    },
+    {
+      "query": "Find 2023 Yamaha motorcycle data, starting from the 10th result.",
+      "action": "get_motorcycle_data",
+      "action_input": {"make": "Yamaha", "year": "2023", "offset": 10}
+    }
+  ],
+
+  "get_air_quality_data": [
+    {
+      "query": "Show me the air quality in Taipei.",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Taipei", "country": "Taiwan"}
+    },
+    {
+      "query": "Get the latest air quality index for Los Angeles, California.",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Los Angeles", "state": "California", "country": "United States"}
+    },
+    {
+      "query": "What’s the AQI in Tokyo, Japan?",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Tokyo", "country": "Japan"}
+    },
+    {
+      "query": "Check air pollution levels in Paris, France.",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Paris", "country": "France"}
+    },
+    {
+      "query": "Show air quality data for coordinates 40.7128, -74.0060.",
+      "action": "get_air_quality_data",
+      "action_input": {"lat": 40.7128, "lon": -74.0060}
+    },
+    {
+      "query": "Give me air quality info for New Delhi, India.",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "New Delhi", "country": "India"}
+    },
+    {
+      "query": "Get the current AQI for Sydney, Australia.",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Sydney", "country": "Australia"}
+    },
+    {
+      "query": "Retrieve air pollution data for Mexico City, Mexico.",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Mexico City", "country": "Mexico"}
+    },
+    {
+      "query": "Check the air quality near coordinates 51.5072, -0.1276.",
+      "action": "get_air_quality_data",
+      "action_input": {"lat": 51.5072, "lon": -0.1276}
+    },
+    {
+      "query": "What is the air quality index in Beijing, China?",
+      "action": "get_air_quality_data",
+      "action_input": {"city": "Beijing", "country": "China"}
+    }
+  ],
+
+  "get_weather_forecast": [
+    {
+      "query": "Show me the weather forecast for Paris for the next 5 days.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "Paris", "days": 5}
+    },
+    {
+      "query": "Get the 3-day forecast for New York City.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "New York", "days": 3}
+    },
+    {
+      "query": "What’s the 7-day weather outlook for Tokyo?",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "Tokyo", "days": 7}
+    },
+    {
+      "query": "Provide weather forecast for coordinates 48.8567,2.3508.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "48.8567,2.3508"}
+    },
+    {
+      "query": "Show me the next 10 days of weather in London.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "London", "days": 10}
+    },
+    {
+      "query": "Get forecast data for Dubai using its IATA code.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "iata:DXB", "days": 4}
+    },
+    {
+      "query": "What’s the weather like in Toronto postal code M5V 2T6 for the next 2 days?",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "M5V 2T6", "days": 2}
+    },
+    {
+      "query": "Give me a 14-day forecast for Sydney, Australia.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "Sydney", "days": 14}
+    },
+    {
+      "query": "Show weather predictions for Los Angeles ZIP 90001.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "90001", "days": 3}
+    },
+    {
+      "query": "Get me the weather forecast automatically based on my IP address.",
+      "action": "get_weather_forecast",
+      "action_input": {"q": "auto:ip"}
+    }
+  ]
+
+}
