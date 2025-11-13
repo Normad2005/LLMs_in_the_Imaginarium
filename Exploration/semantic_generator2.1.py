@@ -1,7 +1,7 @@
 # === semantic_generator_v4_thought.py ===
 """
 Semantic Generator 2.1
-🧠 版本說明：
+版本說明：
 - 基於 v4（Semantic Generator 2.0）
 - 額外將每個 chain 的 thought 加入到 examples 中
 - Prompt 會一起顯示 thought，讓模型能從思考過程推導錯誤規則
@@ -223,7 +223,7 @@ def main():
                     "missing_action_input": info["stats"]["missing_action_input_count"]
                 }
             }
-            print(f"🧠 {api_name}: {rule}")
+            print(f"{api_name}: {rule}")
 
         except Exception as e:
             print(f"[ERROR] call_ollama failed for {api_name}: {e}")
