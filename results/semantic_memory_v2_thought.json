@@ -1,181 +1,181 @@
 {
   "verify_email": {
-    "rule": "When processing responses from `verify_email`, always verify the presence and integrity of expected fields, ignoring any unexpected or extraneous data.",
+    "rule": "If the `verify_email` API returns a response with extra data or multiple values for the DeliverabilityConfidenceScore, verify that the input email address is valid and check the API documentation to ensure you're parsing the response correctly.",
     "_meta": {
       "problem_sessions": 2,
       "missing_action_input": 0
     }
   },
   "get_car_makes": {
-    "rule": "Always check the API documentation or description before using it, and only use the parameters explicitly mentioned as available.**",
+    "rule": "Use only the 'get_car_makes' API with no additional parameters or those specifically documented for this API.**",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 9
     }
   },
   "get_animal_facts": {
-    "rule": "Always provide an exact animal name as input when using the get_animal_facts API.**",
+    "rule": "Always provide a valid and specific animal name as input to the get_animal_facts API, without any additional keyword arguments other than the required 'name' parameter.**",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 0
     }
   },
   "search_public_restrooms": {
-    "rule": "When using the search_public_restrooms API, always include the states parameter as a comma-separated list of US state abbreviations and only use accepted optional parameters listed in the API description.",
+    "rule": "When using the `search_public_restrooms` API, always provide the required `states` parameter as a comma-separated list of US state abbreviations, and use the optional parameters correctly by filtering within the JSON data of each result, if necessary.",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 2
     }
   },
   "spell_number": {
-    "rule": "The \"number_text\" parameter must be a valid string without special characters or control characters, and the input value should not exceed the API rate limit.**",
+    "rule": "When calling the `spell_number` API, ensure that all input values are free of special characters and control characters.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 3
     }
   },
   "get_random_joke": {
-    "rule": "Provide only required parameters and no additional arguments when calling the get_random_joke API, as it does not accept any parameters.",
+    "rule": "The get_random_joke API expects no input parameters; passing any keyword argument will result in an error.**",
     "_meta": {
       "problem_sessions": 2,
       "missing_action_input": 4
     }
   },
   "get_media_news": {
-    "rule": "Always specify both 'category' and 'country' parameters when calling get_media_news, and avoid using unknown or non-existent parameter names.**",
+    "rule": "** When calling `get_media_news`, ensure that you only pass valid and accepted parameters, such as `category`, `country`, `first`, and `after`, without using non-existent keyword arguments like `query`.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 4
     }
   },
   "get_financial_data": {
-    "rule": "Always check the API documentation and verify the existence of the chosen function within the get_financial_data API before making an API call.",
+    "rule": "**",
     "_meta": {
       "problem_sessions": 2,
       "missing_action_input": 0
     }
   },
   "convert_currency": {
-    "rule": "Always include the \"amount\" parameter when calling the convert_currency API, in addition to the required \"base\" and \"target\" parameters.**",
+    "rule": "**",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 2
     }
   },
   "get_inflation_data": {
-    "rule": "Use the correct parameter name (\"type\" instead of \"country\" or \"country_code\") when calling the get_inflation_data API, unless you're sure that a specific country is covered by a default value or a special case.",
+    "rule": "When using the get_inflation_data API, always provide either the 'country' or 'country_code' parameter as a string, but not both.**",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 5
     }
   },
   "get_crypto_price": {
-    "rule": "Always include the required 'symbol' parameter and verify that the API response does not contain any unexpected or extraneous data.**",
+    "rule": "**",
     "_meta": {
       "problem_sessions": 3,
       "missing_action_input": 3
     }
   },
   "get_recipe": {
-    "rule": "Always use a single ingredient or dish name in the `query` parameter when searching for recipes.",
+    "rule": "When searching for recipes using the get_recipe API, ensure that the query text includes a concise and specific description of the dish you're looking for, including relevant ingredients.",
     "_meta": {
       "problem_sessions": 1,
       "missing_action_input": 0
     }
   },
   "get_all_mvc2_characters": {
-    "rule": "When calling the `get_all_mvc2_characters` API, do not pass any additional arguments beyond those explicitly listed in the API description.",
+    "rule": "** The `get_all_mvc2_characters` API requires no input arguments. If an input argument is provided, it will raise an error due to unexpected keyword arguments.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 11
     }
   },
   "get_filtered_game_giveaways": {
-    "rule": "When using the optional `type` parameter in the `get_filtered_game_giveaways` API, pass it as a string without a dot (e.g., \"game\" instead of \"game.loot\"). Ensure that you use this parameter correctly and consistently with your query intent.",
+    "rule": "** To avoid errors with the get_filtered_game_giveaways API, always ensure you only use the required \"platform\" parameter and do not include any optional \"type\" parameter in your API call.",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 3
     }
   },
   "get_game_giveaways_by_type": {
-    "rule": "**",
+    "rule": "Always use the exact parameter name as specified in the API description when calling get_game_giveaways_by_type, and ensure you provide the correct value or use the default value if applicable.",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 2
     }
   },
   "get_timezone_info": {
-    "rule": "When calling the get_timezone_info API, always use a timestamp that is within the current year or up to 5 years into the future to ensure accuracy in time zone information.",
+    "rule": "When calling the get_timezone_info API, always use a timestamp at least 5 years ahead of the present moment to ensure accurate time zone information.",
     "_meta": {
       "problem_sessions": 1,
       "missing_action_input": 0
     }
   },
   "get_planet_data": {
-    "rule": "Always include the **name** parameter when filtering for specific planets within a given mass and distance range.",
+    "rule": "**",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 1
     }
   },
   "search_arxiv_papers": {
-    "rule": "** Always include the required \"search_term\" parameter and ensure that all specified parameters are correctly formatted and utilized to accurately filter search results.",
+    "rule": "Always include relevant filter parameters in addition to the search term when querying the arXiv papers repository through the `search_arxiv_papers` API to ensure accurate and relevant results are returned.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 2
     }
   },
   "get_soccer_tournaments": {
-    "rule": "**Always pass empty action inputs (i.e., {}) if no filtering or sorting is desired for the get_soccer_tournaments API**.",
+    "rule": "Only call the get_soccer_tournaments API with an empty action input (i.e., no additional parameters) as it doesn't expect any.",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 11
     }
   },
   "get_f1_latest_news": {
-    "rule": "**",
+    "rule": "** **Always pass all required action inputs with their corresponding parameters, or remove them from the input if they're optional.**",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 4
     }
   },
   "get_handball_scheduled_matches": {
-    "rule": "Always pass parameters as separate key-value pairs with commas separating each key-value pair, using the exact required date format (dd/MM/yyyy).**",
+    "rule": "** The `date` parameter must be provided in the exact format `dd/MM/yyyy` (e.g., 28/02/2023), without any additional parameters or invalid date formats.",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 4
     }
   },
   "get_handball_daily_matches": {
-    "rule": "Date parameters must be strings in the format \"dd/MM/yyyy\" without any control characters, and date calculations should be performed using proper datetime operations.**",
+    "rule": "** When calling the get_handball_daily_matches API, always ensure that the date parameter is provided in the correct format \"dd/MM/yyyy\" and avoid using control characters or invalid attribute names.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 0
     }
   },
   "get_airlines": {
-    "rule": "When using the get_airlines API, always specify at least one valid airline identifier (icao, iata, or name) in the input parameters.",
+    "rule": "When using the get_airlines API, always provide the 'name' parameter or at least one of the optional parameters (icao, iata) to ensure successful execution.",
     "_meta": {
       "problem_sessions": 3,
       "missing_action_input": 3
     }
   },
   "get_motorcycle_data": {
-    "rule": "Always check if you have provided all required parameters (`make`, `model`, and `year`) before calling the get_motorcycle_data API, and verify that the year is in the correct format (YYYY).",
+    "rule": "When using the get_motorcycle_data API, always provide both \"make\" and \"model\" parameters to retrieve accurate and consistent data.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 2
     }
   },
   "get_air_quality_data": {
-    "rule": "City names and string-based input parameters must be provided without spaces; instead, use the full name with no spaces in the query (e.g., \"NewYork\" instead of \"New York\").",
+    "rule": "When using the `get_air_quality_data` API, ensure that city names are provided without spaces, and consider using alternative parameters like 'lat' and 'lon' for more accurate results.",
     "_meta": {
       "problem_sessions": 4,
       "missing_action_input": 2
     }
   },
   "get_weather_forecast": {
-    "rule": "**",
+    "rule": "Ensure query parameters (e.g., city names) are URL-encoded or enclosed in quotes, and optional parameters are separated by commas.**",
     "_meta": {
       "problem_sessions": 5,
       "missing_action_input": 5
