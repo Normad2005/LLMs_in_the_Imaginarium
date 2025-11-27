@@ -8,19 +8,19 @@
       },
       "demo": [
         {
-          "query": "Is the email address \"user@example.com\" valid?",
+          "query": "Can I confirm if the email account associated with \"john.doe@example.com\" is currently available for use?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Does the email address \"user@example.com\" conform to standard format?",
+          "query": "Is the email address \"john.doe@example.com\" still active or has it expired?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Is the email address \"user@example.com\" properly formatted according to common email standards?",
+          "query": "What is the validity of the email \"john.doe@example.com\"?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         }
       ]
     },
@@ -32,19 +32,19 @@
       },
       "demo": [
         {
+          "query": "Can I confirm if the email account associated with \"john.doe@example.com\" is currently available for use?",
+          "action": "verify_email",
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
+        },
+        {
           "query": "Is the email address \"user@example.com\" valid?",
           "action": "verify_email",
           "action_input": "{\n    \"email\": \"user@example.com\"\n}"
         },
         {
-          "query": "Does the email address \"user@example.com\" conform to standard format?",
+          "query": "What is the validity of the email \"john.doe@example.com\"?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
-        },
-        {
-          "query": "Does the email address \"user@example.com\" follow typical email syntax?",
-          "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         }
       ]
     },
@@ -56,19 +56,19 @@
       },
       "demo": [
         {
+          "query": "Can I confirm if the email account associated with \"john.doe@example.com\" is currently available for use?",
+          "action": "verify_email",
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
+        },
+        {
+          "query": "Is the email address \"john.doe@example.com\" still active or has it expired?",
+          "action": "verify_email",
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
+        },
+        {
           "query": "Is the email address \"user@example.com\" valid?",
           "action": "verify_email",
           "action_input": "{\n    \"email\": \"user@example.com\"\n}"
-        },
-        {
-          "query": "Is an email address with a .ru domain extension likely to be bounced due to deliverability issues?",
-          "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
-        },
-        {
-          "query": "Can emails from Russia-based domain extensions often face delivery problems?",
-          "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
         }
       ]
     },
@@ -80,19 +80,19 @@
       },
       "demo": [
         {
-          "query": "Is an email address with a .ru domain extension likely to be bounced due to deliverability issues?",
+          "query": "What is the deliverability risk assessment for an email sent to \"johhn.doe@example.com\"?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
+          "action_input": "{\n    \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Is the email address \"user@example.com\" valid?",
+          "query": "Is it possible to check if an email address with a typo (e.g. \"johhn.doe@example.com\") is still deliverable and what is its Deliverability Confidence Score?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"johhn.doe@example.com\"\n}"
         },
         {
-          "query": "Does the email address \"user@example.com\" follow typical email syntax?",
+          "query": "What is the Deliverability Confidence Score for an email with a typo \"johhn.doe@example.com\"?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n    \"email\": \"john.doe@example.com\"\n}"
         }
       ]
     },
@@ -104,19 +104,19 @@
       },
       "demo": [
         {
-          "query": "Is an email address with a .ru domain extension likely to be bounced due to deliverability issues?",
+          "query": "What is the deliverability risk assessment for an email sent to \"johhn.doe@example.com\"?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
+          "action_input": "{\n    \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Is Outlook's email server configuration compliant with best practices for preventing spam and phishing based on the information provided by its current WHOIS record?",
+          "query": "Can you verify whether an email address with minor errors, such as typos, can be sent to successfully and retrieve a score indicating the likelihood of successful delivery?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"subdomain@outlook.com\"\n}"
+          "action_input": "{\n  \"email\": \"johhn.doe@example.com\"\n}"
         },
         {
-          "query": "Is the domain \"outlook.com\" configured correctly for email delivery (e.g., SPF, DMARC) based on its current Whois details?",
+          "query": "Is it possible to check if an email address with a typo (e.g. \"johhn.doe@example.com\") is still deliverable and what is its Deliverability Confidence Score?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"subdomain@outlook.com\"\n}"
+          "action_input": "{\n  \"email\": \"johhn.doe@example.com\"\n}"
         }
       ]
     },
@@ -157,14 +157,14 @@
           "action_input": "{\n    \"email\": \"user@example.com\"\n}"
         },
         {
-          "query": "Does the email address \"user@example.com\" conform to standard format?",
+          "query": "Is the email address \"john.doe@example.com\" still active or has it expired?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Is the email address \"user@example.com\" properly formatted according to common email standards?",
+          "query": "Can I confirm if the email account associated with \"john.doe@example.com\" is currently available for use?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         }
       ]
     },
@@ -181,14 +181,14 @@
           "action_input": "{\n    \"email\": \"user@example.com\"\n}"
         },
         {
+          "query": "Can I confirm if the email account associated with \"john.doe@example.com\" is currently available for use?",
+          "action": "verify_email",
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
+        },
+        {
           "query": "Does the email address \"user@example.com\" conform to standard format?",
           "action": "verify_email",
           "action_input": "{\n    \"email\": \"user@example.com\"\n}"
-        },
-        {
-          "query": "Can you verify if outlook.com's DNS configuration is set up to support SPF and DMARC record authentication as per its latest WHOIS information?",
-          "action": "verify_email",
-          "action_input": "{\n    \"email\": \"subdomain@outlook.com\"\n}"
         }
       ]
     },
@@ -200,19 +200,19 @@
       },
       "demo": [
         {
-          "query": "Is the email address \"user@example.com\" valid?",
+          "query": "Can I confirm if the email account associated with \"john.doe@example.com\" is currently available for use?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"user@example.com\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Can emails from Russia-based domain extensions often face delivery problems?",
+          "query": "What is the validity of the email \"john.doe@example.com\"?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         },
         {
-          "query": "Is an email address with a .ru domain extension likely to be bounced due to deliverability issues?",
+          "query": "Is the email address \"john.doe@example.com\" still active or has it expired?",
           "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
+          "action_input": "{\n  \"email\": \"john.doe@example.com\"\n}"
         }
       ]
     },
@@ -224,17 +224,17 @@
       },
       "demo": [
         {
+          "query": "What is the deliverability risk assessment for an email sent to \"johhn.doe@example.com\"?",
+          "action": "verify_email",
+          "action_input": "{\n    \"email\": \"john.doe@example.com\"\n}"
+        },
+        {
           "query": "Is the email address \"user@example.com\" valid?",
           "action": "verify_email",
           "action_input": "{\n    \"email\": \"user@example.com\"\n}"
         },
         {
           "query": "Will email sent to Russian domains frequently be blocked or rejected by recipient servers?",
-          "action": "verify_email",
-          "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
-        },
-        {
-          "query": "Can emails from Russia-based domain extensions often face delivery problems?",
           "action": "verify_email",
           "action_input": "{\n    \"email\": \"example@example.ru\"\n}"
         }
@@ -477,12 +477,12 @@
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "What can be learned about the unique characteristics and habits of giant pandas that might not be well-known to many people?",
+          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
           "action": "get_animal_facts",
           "action_input": "{\"name\": \"giant+panda\"}"
         }
@@ -525,14 +525,14 @@
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "What are some lesser-known but captivating aspects of giant panda biology and behavior?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "How does the environment and eating habits of tigers differ from those of lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         }
       ]
     },
@@ -549,14 +549,14 @@
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "What are some key differences between the natural surroundings and food sources of tigers versus lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "What can be learned about the unique characteristics and habits of giant pandas that might not be well-known to many people?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         }
       ]
     },
@@ -568,19 +568,19 @@
       },
       "demo": [
         {
-          "query": "What are some interesting facts about giant pandas?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "What are some lesser-known but captivating aspects of giant panda biology and behavior?",
+          "query": "What are some key differences between the natural surroundings and food sources of tigers versus lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "What distinguishes the typical environments and nutrition patterns of tigers from those of lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         }
       ]
     },
@@ -621,14 +621,14 @@
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "What can be learned about the unique characteristics and habits of giant pandas that might not be well-known to many people?",
+          "query": "What are some key differences between the natural surroundings and food sources of tigers versus lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         }
       ]
     },
@@ -645,12 +645,12 @@
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "What are some lesser-known but captivating aspects of giant panda biology and behavior?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "What can be learned about the unique characteristics and habits of giant pandas that might not be well-known to many people?",
+          "query": "What are some lesser-known but captivating aspects of giant panda biology and behavior?",
           "action": "get_animal_facts",
           "action_input": "{\"name\": \"giant+panda\"}"
         }
@@ -669,12 +669,12 @@
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         },
         {
-          "query": "What are some lesser-known but captivating aspects of giant panda biology and behavior?",
+          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
           "action": "get_animal_facts",
           "action_input": "{\"name\": \"giant+panda\"}"
         }
@@ -688,19 +688,19 @@
       },
       "demo": [
         {
+          "query": "What do you need to know about the tiger's habitat and diet in comparison with lions?",
+          "action": "get_animal_facts",
+          "action_input": "{\"name\": \"lion\"}"
+        },
+        {
           "query": "What are some interesting facts about giant pandas?",
           "action": "get_animal_facts",
           "action_input": "{\"name\": \"giant+panda\"}"
         },
         {
-          "query": "Are there any little-known or fascinating details about giant pandas that people often find surprising?",
+          "query": "What distinguishes the typical environments and nutrition patterns of tigers from those of lions?",
           "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
-        },
-        {
-          "query": "What can be learned about the unique characteristics and habits of giant pandas that might not be well-known to many people?",
-          "action": "get_animal_facts",
-          "action_input": "{\"name\": \"giant+panda\"}"
+          "action_input": "{\"name\": \"lion\"}"
         }
       ]
     }
@@ -714,19 +714,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Locate the nearest public restrooms in NYC to my current location.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     },
@@ -739,17 +739,17 @@
       },
       "demo": [
         {
+          "query": "Discover local public restroom options available within New York City's vicinity.",
+          "action": "search_public_restrooms",
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
+        },
+        {
+          "query": "Find public restrooms near me in New York City.",
+          "action": "search_public_restrooms",
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
+        },
+        {
           "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
-          "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
-        },
-        {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
-          "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
-        },
-        {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
           "action": "search_public_restrooms",
           "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
         }
@@ -763,19 +763,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'm looking for information about public restrooms in the vicinity of Fisherman's Wharf in San Francisco. Could you provide me with some directions or suggestions?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Locate the nearest public restrooms in NYC to my current location.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     },
@@ -788,19 +788,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Locate the nearest public restrooms in NYC to my current location.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     },
@@ -812,19 +812,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'm looking for information about public restrooms in the vicinity of Fisherman's Wharf in San Francisco. Could you provide me with some directions or suggestions?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Identify and provide addresses of accessible public facilities near the White House for individuals who need to use a restroom within a five-mile radius.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 38.8977,\n    \"lon\": -77.0365,\n    \"states\": \"DC\",\n    \"page\": 3\n}"
         }
       ]
     },
@@ -838,19 +838,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Identify and provide addresses of accessible public facilities near the White House for individuals who need to use a restroom within a five-mile radius.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 38.8977,\n    \"lon\": -77.0365,\n    \"states\": \"DC\",\n    \"page\": 3\n}"
         }
       ]
     },
@@ -863,19 +863,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'm looking for information about public restrooms in the vicinity of Fisherman's Wharf in San Francisco. Could you provide me with some directions or suggestions?",
+          "query": "Locate the nearest public restrooms in NYC to my current location.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     },
@@ -888,19 +888,19 @@
       },
       "demo": [
         {
+          "query": "Find public restrooms near me in New York City.",
+          "action": "search_public_restrooms",
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
+        },
+        {
           "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
           "action": "search_public_restrooms",
           "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
         },
         {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
+          "query": "Discover local public restroom options available within New York City's vicinity.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
-        },
-        {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
-          "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     },
@@ -917,14 +917,14 @@
           "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Locate the nearest public restrooms in NYC to my current location.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'm looking for information about public restrooms in the vicinity of Fisherman's Wharf in San Francisco. Could you provide me with some directions or suggestions?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     },
@@ -938,19 +938,19 @@
       },
       "demo": [
         {
-          "query": "Where can I find public restrooms in San Francisco near Fisherman's Wharf?",
+          "query": "Locate the nearest public restrooms in NYC to my current location.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "What are some accessible restroom options available close to Fisherman's Wharf in San Francisco?",
+          "query": "Find public restrooms near me in New York City.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         },
         {
-          "query": "I'd be happy to help you locate nearby public restrooms in San Francisco, specifically around the area of Fisherman's Wharf. Can I assist you with that?",
+          "query": "Find the closest public restrooms in Manhattan.",
           "action": "search_public_restrooms",
-          "action_input": "{\n    \"lat\": 37.7749,\n    \"lon\": -122.4194,\n    \"states\": \"CA\",\n    \"page\": 1,\n    \"per_page\": 10\n}"
+          "action_input": "{\n    \"lat\": 40.7128,\n    \"lon\": -74.0060,\n    \"states\": \"NY\",\n    \"page\": 2\n}"
         }
       ]
     }
@@ -998,9 +998,9 @@
           "action_input": "{\n    \"number_text\": \"004567\"\n}"
         },
         {
-          "query": "What is the word equivalent of 4567 for a phone number format? \n\nAction: spell_number\nAction Input: {\n    \"number_text\": \"004567\"\n}",
+          "query": "What is the word equivalent of the number 10000000?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         }
       ]
     },
@@ -1012,19 +1012,19 @@
       },
       "demo": [
         {
-          "query": "What is the word equivalent of 4567 for a phone number format? \n\nAction: spell_number\nAction Input: {\n    \"number_text\": \"004567\"\n}",
+          "query": "What is the word equivalent of the number 9999999999?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         },
         {
-          "query": "What is the action required to translate the numerical digits \"004567\" into their corresponding verbal representation, assuming a typical phone number pattern?",
+          "query": "What is the numerical value that corresponds to the expression of nine billion, 999 million, 999 thousand, and 999?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         },
         {
-          "query": "I need to convert the numeric value '4567' into its word equivalent in a standard phone number format. Can you provide the action to spell out numbers?",
+          "query": "What is the word equivalent of the number 10000000?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         }
       ]
     },
@@ -1036,19 +1036,19 @@
       },
       "demo": [
         {
-          "query": "What is the action required to translate the numerical digits \"004567\" into their corresponding verbal representation, assuming a typical phone number pattern?",
+          "query": "What is the word equivalent of the number 10000000?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         },
         {
-          "query": "I need to convert the numeric value '4567' into its word equivalent in a standard phone number format. Can you provide the action to spell out numbers?",
+          "query": "What is the numerical name for ten million?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         },
         {
-          "query": "How can I transform the numeric sequence '4567' into its written form, following the conventional structure used for displaying phone numbers?",
+          "query": "What term do you use to describe one million units of 10?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         }
       ]
     },
@@ -1060,17 +1060,17 @@
       },
       "demo": [
         {
+          "query": "What is the word equivalent of the number 9999999999?",
+          "action": "spell_number",
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
+        },
+        {
           "query": "I need to convert the numeric value '4567' into its word equivalent in a standard phone number format. Can you provide the action to spell out numbers?",
           "action": "spell_number",
           "action_input": "{\n    \"number_text\": \"004567\"\n}"
         },
         {
           "query": "What is the action required to translate the numerical digits \"004567\" into their corresponding verbal representation, assuming a typical phone number pattern?",
-          "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
-        },
-        {
-          "query": "What is the word equivalent of 4567 for a phone number format? \n\nAction: spell_number\nAction Input: {\n    \"number_text\": \"004567\"\n}",
           "action": "spell_number",
           "action_input": "{\n    \"number_text\": \"004567\"\n}"
         }
@@ -1089,12 +1089,12 @@
           "action_input": "{\n    \"number_text\": \"004567\"\n}"
         },
         {
-          "query": "What is the action required to translate the numerical digits \"004567\" into their corresponding verbal representation, assuming a typical phone number pattern?",
+          "query": "What is the word equivalent of the number 9999999999?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         },
         {
-          "query": "How can I transform the numeric sequence '4567' into its written form, following the conventional structure used for displaying phone numbers?",
+          "query": "What is the action required to translate the numerical digits \"004567\" into their corresponding verbal representation, assuming a typical phone number pattern?",
           "action": "spell_number",
           "action_input": "{\n    \"number_text\": \"004567\"\n}"
         }
@@ -1132,17 +1132,17 @@
       },
       "demo": [
         {
+          "query": "What is the word equivalent of the number 9999999999?",
+          "action": "spell_number",
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
+        },
+        {
+          "query": "What is the word equivalent of the number 10000000?",
+          "action": "spell_number",
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
+        },
+        {
           "query": "What is the word equivalent of 4567 for a phone number format? \n\nAction: spell_number\nAction Input: {\n    \"number_text\": \"004567\"\n}",
-          "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
-        },
-        {
-          "query": "I need to convert the numeric value '4567' into its word equivalent in a standard phone number format. Can you provide the action to spell out numbers?",
-          "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
-        },
-        {
-          "query": "How can I transform the numeric sequence '4567' into its written form, following the conventional structure used for displaying phone numbers?",
           "action": "spell_number",
           "action_input": "{\n    \"number_text\": \"004567\"\n}"
         }
@@ -1156,19 +1156,19 @@
       },
       "demo": [
         {
-          "query": "What is the word equivalent of 4567 for a phone number format? \n\nAction: spell_number\nAction Input: {\n    \"number_text\": \"004567\"\n}",
+          "query": "What is the word equivalent of the number 9999999999?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         },
         {
-          "query": "I need to convert the numeric value '4567' into its word equivalent in a standard phone number format. Can you provide the action to spell out numbers?",
+          "query": "What is the word equivalent of the number 10000000?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         },
         {
-          "query": "How can I transform the numeric sequence '4567' into its written form, following the conventional structure used for displaying phone numbers?",
+          "query": "What is the numerical value that corresponds to the expression of nine billion, 999 million, 999 thousand, and 999?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         }
       ]
     },
@@ -1180,19 +1180,19 @@
       },
       "demo": [
         {
-          "query": "I need to convert the numeric value '4567' into its word equivalent in a standard phone number format. Can you provide the action to spell out numbers?",
+          "query": "What number does the phrase \"nine billion, nine hundred ninety-nine million, nine hundred ninety-nine thousand, nine hundred ninety-nine\" represent numerically?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         },
         {
-          "query": "What is the action required to translate the numerical digits \"004567\" into their corresponding verbal representation, assuming a typical phone number pattern?",
+          "query": "What is the word equivalent of the number 9999999999?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"9999999999\"\n}"
         },
         {
-          "query": "What is the word equivalent of 4567 for a phone number format? \n\nAction: spell_number\nAction Input: {\n    \"number_text\": \"004567\"\n}",
+          "query": "What is the word equivalent of the number 10000000?",
           "action": "spell_number",
-          "action_input": "{\n    \"number_text\": \"004567\"\n}"
+          "action_input": "{\n    \"number_text\": \"10000000\"\n}"
         }
       ]
     }
@@ -1236,7 +1236,7 @@
           "action_input": "{}"
         },
         {
-          "query": "What's a lighthearted anecdote that I could share with my kids to bring a smile to their faces?",
+          "query": "Is there a specific scientific topic or concept where you'd like me to find a joke that will really resonate with your friend?",
           "action": "get_random_joke",
           "action_input": "{}"
         }
@@ -1275,12 +1275,12 @@
           "action_input": "{}"
         },
         {
-          "query": "Can you tell me about the tone and audience for this joke - is it for a young child or an older kid, and would you like something silly, playful, or more clever?",
+          "query": "Is there a specific scientific topic or concept where you'd like me to find a joke that will really resonate with your friend?",
           "action": "get_random_joke",
           "action_input": "{}"
         },
         {
-          "query": "What's a lighthearted anecdote that I could share with my kids to bring a smile to their faces?",
+          "query": "Can you tell me about the tone and audience for this joke - is it for a young child or an older kid, and would you like something silly, playful, or more clever?",
           "action": "get_random_joke",
           "action_input": "{}"
         }
@@ -1324,7 +1324,7 @@
           "action_input": "{}"
         },
         {
-          "query": "What's a lighthearted anecdote that I could share with my kids to bring a smile to their faces?",
+          "query": "Is there a specific scientific topic or concept where you'd like me to find a joke that will really resonate with your friend?",
           "action": "get_random_joke",
           "action_input": "{}"
         }
@@ -1368,7 +1368,7 @@
           "action_input": "{}"
         },
         {
-          "query": "I'm looking for an amusing joke to share with my students before our exam tomorrow morning. Can you get me one that's relevant to learning and studying?",
+          "query": "Is there a specific scientific topic or concept where you'd like me to find a joke that will really resonate with your friend?",
           "action": "get_random_joke",
           "action_input": "{}"
         }
@@ -1385,12 +1385,12 @@
           "action_input": "{}"
         },
         {
-          "query": "I'm looking for an amusing joke to share with my students before our exam tomorrow morning. Can you get me one that's relevant to learning and studying?",
+          "query": "Is there a specific scientific topic or concept where you'd like me to find a joke that will really resonate with your friend?",
           "action": "get_random_joke",
           "action_input": "{}"
         },
         {
-          "query": "Can you share a lighthearted animal-themed joke on social media to celebrate World Animal Day?",
+          "query": "I'm looking for an amusing joke to share with my students before our exam tomorrow morning. Can you get me one that's relevant to learning and studying?",
           "action": "get_random_joke",
           "action_input": "{}"
         }
@@ -1428,19 +1428,19 @@
       },
       "demo": [
         {
-          "query": "What is the current news related to celebrities in the UK that I can read for free online?",
+          "query": "Can you give me an update on recent celebrity happenings and trends in America?",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
         },
         {
-          "query": "What recent US-based English-language publications are currently leading with entertainment news about films?",
+          "query": "What are the latest news about celebrities in the United States?",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
         },
         {
-          "query": "What are some recent celebrity news stories available to read for free on the internet in the United Kingdom?",
+          "query": "What are the latest updates on American celebrities' activities and exploits?",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
         }
       ]
     },
@@ -1452,17 +1452,17 @@
       },
       "demo": [
         {
+          "query": "Get the latest trending news about movies in English language.",
+          "action": "get_media_news",
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
+        },
+        {
+          "query": "What are the most recent and popular movie-related stories that are making headlines?",
+          "action": "get_media_news",
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
+        },
+        {
           "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
-        },
-        {
-          "query": "What are the top trending news articles about movies in English from the United States?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
-        },
-        {
-          "query": "What recent US-based English-language publications are currently leading with entertainment news about films?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         }
@@ -1476,6 +1476,11 @@
       },
       "demo": [
         {
+          "query": "Locate and retrieve current news pieces about television programs targeted towards the Mexican audience and presented in Spanish.",
+          "action": "get_media_news",
+          "action_input": "{\n    \"category\": \"TV\",\n    \"language\": \"es\",\n    \"country\": \"MX\"\n}"
+        },
+        {
           "query": "What is the current news related to celebrities in the UK that I can read for free online?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
@@ -1484,11 +1489,6 @@
           "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
-        },
-        {
-          "query": "What are some recent celebrity news stories available to read for free on the internet in the United Kingdom?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
         }
       ]
     },
@@ -1500,17 +1500,17 @@
       },
       "demo": [
         {
+          "query": "Can you give me an update on recent celebrity happenings and trends in America?",
+          "action": "get_media_news",
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
+        },
+        {
+          "query": "What are the latest news about celebrities in the United States?",
+          "action": "get_media_news",
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
+        },
+        {
           "query": "What is the current news related to celebrities in the UK that I can read for free online?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
-        },
-        {
-          "query": "What are some recent celebrity news stories available to read for free on the internet in the United Kingdom?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
-        },
-        {
-          "query": "What free celebrity news sources are available to browse on the internet in the UK?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
         }
@@ -1531,12 +1531,12 @@
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         },
         {
-          "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
+          "query": "Get the latest trending news about movies in English language.",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
         },
         {
-          "query": "What are the most highly discussed and recently published movie news stories from sources within the United States that write primarily in English?",
+          "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         }
@@ -1557,14 +1557,14 @@
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         },
         {
-          "query": "What are the most highly discussed and recently published movie news stories from sources within the United States that write primarily in English?",
+          "query": "Get the top trending news about Korean celebrities in South Korea.",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"KR\"\n}"
         },
         {
-          "query": "What recent US-based English-language publications are currently leading with entertainment news about films?",
+          "query": "Locate and retrieve current news pieces about television programs targeted towards the Mexican audience and presented in Spanish.",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n    \"category\": \"TV\",\n    \"language\": \"es\",\n    \"country\": \"MX\"\n}"
         }
       ]
     },
@@ -1577,19 +1577,19 @@
       },
       "demo": [
         {
+          "query": "Can you give me an update on recent celebrity happenings and trends in America?",
+          "action": "get_media_news",
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
+        },
+        {
           "query": "What are some recent celebrity news stories available to read for free on the internet in the United Kingdom?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
         },
         {
-          "query": "What is the current news related to celebrities in the UK that I can read for free online?",
+          "query": "What are the latest news about celebrities in the United States?",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
-        },
-        {
-          "query": "What free celebrity news sources are available to browse on the internet in the UK?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"UK\"\n}"
+          "action_input": "{\n  \"category\": \"CELEBRITY\",\n  \"country\": \"US\"\n}"
         }
       ]
     },
@@ -1602,19 +1602,19 @@
       },
       "demo": [
         {
+          "query": "Get the latest trending news about movies in English language.",
+          "action": "get_media_news",
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
+        },
+        {
           "query": "What are the top trending news articles about movies in English from the United States?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         },
         {
-          "query": "What recent US-based English-language publications are currently leading with entertainment news about films?",
+          "query": "What are the most recent and popular movie-related stories that are making headlines?",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
-        },
-        {
-          "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
         }
       ]
     },
@@ -1633,14 +1633,14 @@
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         },
         {
-          "query": "What are the most highly discussed and recently published movie news stories from sources within the United States that write primarily in English?",
+          "query": "Locate and retrieve current news pieces about television programs targeted towards the Mexican audience and presented in Spanish.",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n    \"category\": \"TV\",\n    \"language\": \"es\",\n    \"country\": \"MX\"\n}"
         },
         {
-          "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
+          "query": "Get the latest trending news about movies in English language.",
           "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
         }
       ]
     },
@@ -1653,17 +1653,17 @@
       },
       "demo": [
         {
+          "query": "What are the most recent and popular movie-related stories that are making headlines?",
+          "action": "get_media_news",
+          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"first\": 2,\n    \"after\": \"NjU1ODg3ODJ8MjAyNS0xMS0yNCAyMTo0NToxOA\"\n}"
+        },
+        {
           "query": "What recent US-based English-language publications are currently leading with entertainment news about films?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         },
         {
           "query": "What are some of the most popular and current movie-related news stories that have been reported by English-language media outlets in the United States?",
-          "action": "get_media_news",
-          "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
-        },
-        {
-          "query": "What are the top trending news articles about movies in English from the United States?",
           "action": "get_media_news",
           "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\"\n}"
         }
@@ -1705,17 +1705,17 @@
       },
       "demo": [
         {
+          "query": "What are the current trading rates for shares of Apple Inc.?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
+        },
+        {
+          "query": "What is the current price of Apple stock?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
+        },
+        {
           "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What has been the typical value of Tesla's shares in the most recent three-month period?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What was the mean stock price for Tesla during its last fiscal quarter?",
           "action": "get_financial_data",
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         }
@@ -1755,17 +1755,17 @@
       },
       "demo": [
         {
+          "query": "I can look up the maximum and minimum trading prices of Amazon shares during the most recent calendar year. Can I get that information?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
+        },
+        {
+          "query": "I can provide you with information on Amazon's stock price fluctuations over the past year, including its highest and lowest points. Can I retrieve the historical high and low prices of Amazon's stock?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
+        },
+        {
           "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What was the mean stock price for Tesla during its last fiscal quarter?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What has been the typical value of Tesla's shares in the most recent three-month period?",
           "action": "get_financial_data",
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         }
@@ -1780,17 +1780,17 @@
       },
       "demo": [
         {
+          "query": "I can look up the maximum and minimum trading prices of Amazon shares during the most recent calendar year. Can I get that information?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
+        },
+        {
+          "query": "I can provide you with information on Amazon's stock price fluctuations over the past year, including its highest and lowest points. Can I retrieve the historical high and low prices of Amazon's stock?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
+        },
+        {
           "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What was the mean stock price for Tesla during its last fiscal quarter?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What is the historical average price of Tesla's stock over the last quarter? \n\nThought: To get the historical average price of Tesla's stock, we need to use the \"get_financial_data\" API and specify a different function that can provide this information. We will also set the symbol to \"TSLA\".\nAction: get_financial_data\nAction Input:\n{\n  \"function\": \"HISTORICAL_AVERAGE_PRICE\",\n  \"symbol\": \"TSLA\"\n}",
           "action": "get_financial_data",
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         }
@@ -1805,19 +1805,19 @@
       },
       "demo": [
         {
-          "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
+          "query": "What are the current trading rates for shares of Apple Inc.?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
         },
         {
-          "query": "What was the mean stock price for Tesla during its last fiscal quarter?",
+          "query": "I can provide you with information on Amazon's stock price fluctuations over the past year, including its highest and lowest points. Can I retrieve the historical high and low prices of Amazon's stock?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
         },
         {
-          "query": "What is the historical average price of Tesla's stock over the last quarter? \n\nThought: To get the historical average price of Tesla's stock, we need to use the \"get_financial_data\" API and specify a different function that can provide this information. We will also set the symbol to \"TSLA\".\nAction: get_financial_data\nAction Input:\n{\n  \"function\": \"HISTORICAL_AVERAGE_PRICE\",\n  \"symbol\": \"TSLA\"\n}",
+          "query": "I can look up the maximum and minimum trading prices of Amazon shares during the most recent calendar year. Can I get that information?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
         }
       ]
     },
@@ -1835,12 +1835,12 @@
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         },
         {
-          "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
+          "query": "What were the peak and trough values for Amazon's stock price over the 12-month period?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
         },
         {
-          "query": "What has been the typical value of Tesla's shares in the most recent three-month period?",
+          "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
           "action": "get_financial_data",
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         }
@@ -1855,17 +1855,17 @@
       },
       "demo": [
         {
+          "query": "I can look up the maximum and minimum trading prices of Amazon shares during the most recent calendar year. Can I get that information?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
+        },
+        {
+          "query": "I can provide you with information on Amazon's stock price fluctuations over the past year, including its highest and lowest points. Can I retrieve the historical high and low prices of Amazon's stock?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
+        },
+        {
           "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What is the historical average price of Tesla's stock over the last quarter? \n\nThought: To get the historical average price of Tesla's stock, we need to use the \"get_financial_data\" API and specify a different function that can provide this information. We will also set the symbol to \"TSLA\".\nAction: get_financial_data\nAction Input:\n{\n  \"function\": \"HISTORICAL_AVERAGE_PRICE\",\n  \"symbol\": \"TSLA\"\n}",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What has been the typical value of Tesla's shares in the most recent three-month period?",
           "action": "get_financial_data",
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         }
@@ -1880,19 +1880,19 @@
       },
       "demo": [
         {
+          "query": "What are the current trading rates for shares of Apple Inc.?",
+          "action": "get_financial_data",
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
+        },
+        {
           "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
           "action": "get_financial_data",
           "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
         },
         {
-          "query": "What was the mean stock price for Tesla during its last fiscal quarter?",
+          "query": "I can provide you with information on Amazon's stock price fluctuations over the past year, including its highest and lowest points. Can I retrieve the historical high and low prices of Amazon's stock?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
-        },
-        {
-          "query": "What has been the typical value of Tesla's shares in the most recent three-month period?",
-          "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"TIME_SERIES_DAILY\",\n    \"symbol\": \"AMZN\"\n}"
         }
       ]
     },
@@ -1905,19 +1905,19 @@
       },
       "demo": [
         {
-          "query": "What is Tesla's average stock price over the past quarter, based on historical market data?",
+          "query": "What are the current trading rates for shares of Apple Inc.?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
         },
         {
-          "query": "What was the mean stock price for Tesla during its last fiscal quarter?",
+          "query": "What is the current price of Apple stock?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
         },
         {
-          "query": "What has been the typical value of Tesla's shares in the most recent three-month period?",
+          "query": "Can you tell me what Apple's latest market valuation is?",
           "action": "get_financial_data",
-          "action_input": "{\n  \"function\": \"TIME_SERIES_DAILY_ADJUSTED\",\n  \"symbol\": \"TSLA\"\n}"
+          "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
         }
       ]
     }
@@ -2023,9 +2023,9 @@
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "How much will I need to pay each month for 28 years on a $240,000 mortgage at 4.5% interest, considering annual property taxes of $6,200 and factoring in the initial payment of $60,000?",
+          "query": "I'd be happy to help you estimate your monthly mortgage payments. To calculate this, I'll need to know the purchase price of the home, which is $250,000, and the loan terms, which include a 30-year fixed interest rate of 4%. Can I proceed with the calculation?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         }
       ]
     },
@@ -2043,12 +2043,12 @@
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
+          "query": "How much will I need to pay each month for the next 30 years on a home loan worth $250,000 with an annual interest rate of 4%?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         },
         {
-          "query": "What is my monthly mortgage payment if I borrow $300,000 at a 4.5% interest rate with an annual property tax of $6,200 and a down payment of $60,000 for 28 years, assuming I have to pay a one-time closing cost of $10,000?",
+          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
           "action": "calculate_mortgage_payment",
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         }
@@ -2064,19 +2064,19 @@
       },
       "demo": [
         {
-          "query": "How much will I need to pay each month for 28 years on a $240,000 mortgage at 4.5% interest, considering annual property taxes of $6,200 and factoring in the initial payment of $60,000?",
+          "query": "How much will I need to pay each month for the next 30 years on a home loan worth $250,000 with an annual interest rate of 4%?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         },
         {
-          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
+          "query": "What's the total amount of interest I'd be paying on a $150,000 loan over two decades, taking into account an annual interest rate of 6.2% and monthly expenses totaling $300?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 6.2,\n    \"loan_amount\": 150000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 300\n}"
         },
         {
-          "query": "What is my monthly mortgage payment if I borrow $300,000 at a 4.5% interest rate with an annual property tax of $6,200 and a down payment of $60,000 for 28 years, assuming I have to pay a one-time closing cost of $10,000?",
+          "query": "How much interest would I pay on a $150,000 loan over two decades if it has an APR of 6.2% and I also need to factor in a monthly HOA fee of $300?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 6.2,\n    \"loan_amount\": 150000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 300\n}"
         }
       ]
     },
@@ -2122,14 +2122,14 @@
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "What is my monthly mortgage payment if I borrow $300,000 at a 4.5% interest rate with an annual property tax of $6,200 and a down payment of $60,000 for 28 years, assuming I have to pay a one-time closing cost of $10,000?",
+          "query": "How much will I need to pay each month for the next 30 years on a home loan worth $250,000 with an annual interest rate of 4%?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         },
         {
-          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
+          "query": "What would be the total amount of interest incurred on a $150,000 mortgage loan over a period of 20 years when considering an interest rate of 6.2% compounded annually, along with additional monthly expenses of $300?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 6.2,\n    \"loan_amount\": 150000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 300\n}"
         }
       ]
     },
@@ -2154,9 +2154,9 @@
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "How much will I need to pay each month for 28 years on a $240,000 mortgage at 4.5% interest, considering annual property taxes of $6,200 and factoring in the initial payment of $60,000?",
+          "query": "How much will I need to pay each month for the next 30 years on a home loan worth $250,000 with an annual interest rate of 4%?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         }
       ]
     },
@@ -2176,14 +2176,14 @@
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
+          "query": "How much interest would I pay on a $150,000 loan over two decades if it has an APR of 6.2% and I also need to factor in a monthly HOA fee of $300?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 6.2,\n    \"loan_amount\": 150000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 300\n}"
         },
         {
-          "query": "What is my monthly mortgage payment if I borrow $300,000 at a 4.5% interest rate with an annual property tax of $6,200 and a down payment of $60,000 for 28 years, assuming I have to pay a one-time closing cost of $10,000?",
+          "query": "How much will I need to pay each month for the next 30 years on a home loan worth $250,000 with an annual interest rate of 4%?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         }
       ]
     },
@@ -2202,12 +2202,12 @@
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
+          "query": "What would be the total amount of interest incurred on a $150,000 mortgage loan over a period of 20 years when considering an interest rate of 6.2% compounded annually, along with additional monthly expenses of $300?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 6.2,\n    \"loan_amount\": 150000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 300\n}"
         },
         {
-          "query": "How much will I need to pay each month for 28 years on a $240,000 mortgage at 4.5% interest, considering annual property taxes of $6,200 and factoring in the initial payment of $60,000?",
+          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
           "action": "calculate_mortgage_payment",
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         }
@@ -2224,19 +2224,19 @@
       },
       "demo": [
         {
+          "query": "I'd be happy to help you estimate your monthly mortgage payments. To calculate this, I'll need to know the purchase price of the home, which is $250,000, and the loan terms, which include a 30-year fixed interest rate of 4%. Can I proceed with the calculation?",
+          "action": "calculate_mortgage_payment",
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
+        },
+        {
           "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
           "action": "calculate_mortgage_payment",
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
-          "query": "How much will I need to pay each month for 28 years on a $240,000 mortgage at 4.5% interest, considering annual property taxes of $6,200 and factoring in the initial payment of $60,000?",
+          "query": "How much will I need to pay each month for the next 30 years on a home loan worth $250,000 with an annual interest rate of 4%?",
           "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
-        },
-        {
-          "query": "What's my monthly housing expense going to be for a 28-year loan term on a home that costs $300,000 after a down payment of $60,000, with a 4.5% interest rate and annual property taxes of $6,200, plus a one-time closing cost of $10,000?",
-          "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
+          "action_input": "{\n    \"interest_rate\": 4,\n    \"loan_amount\": 250000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0\n}"
         }
       ]
     },
@@ -2251,17 +2251,17 @@
       },
       "demo": [
         {
+          "query": "How much interest would I pay on a $150,000 loan over two decades if it has an APR of 6.2% and I also need to factor in a monthly HOA fee of $300?",
+          "action": "calculate_mortgage_payment",
+          "action_input": "{\n    \"interest_rate\": 6.2,\n    \"loan_amount\": 150000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 300\n}"
+        },
+        {
           "query": "What's my monthly housing expense going to be for a 28-year loan term on a home that costs $300,000 after a down payment of $60,000, with a 4.5% interest rate and annual property taxes of $6,200, plus a one-time closing cost of $10,000?",
           "action": "calculate_mortgage_payment",
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         },
         {
           "query": "What is my monthly mortgage payment if I borrow $300,000 at a 4.5% interest rate with an annual property tax of $6,200 and a down payment of $60,000 for 28 years, assuming I have to pay a one-time closing cost of $10,000?",
-          "action": "calculate_mortgage_payment",
-          "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
-        },
-        {
-          "query": "If I borrow $300,000 with a 4.5% interest rate over 28 years, what would my monthly mortgage payments be, taking into account annual property taxes of $6,200 and a down payment of $60,000, including a one-time closing cost of $10,000?",
           "action": "calculate_mortgage_payment",
           "action_input": "{\n    \"interest_rate\":4.5,\n    \"loan_amount\":240000,\n    \"duration_years\":28,\n    \"annual_property_tax\":6200\n}"
         }
@@ -2513,19 +2513,19 @@
       },
       "demo": [
         {
-          "query": "What are the current market rates for Litecoin transactions in Brazil's currency?",
+          "query": "How much does one Litecoin cost in GBP at this moment?",
           "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"LTC\",\n  \"base\": \"BRL\"\n}"
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
         },
         {
-          "query": "What is the price of Ethereum cryptocurrency when converted to Japanese Yen?",
+          "query": "What's the current price of Litecoin in Pound Sterling?",
           "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"ETH\",\n  \"base\": \"JPY\"\n}"
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
         },
         {
-          "query": "What is the current price of Dogecoin in Euro?",
+          "query": "Can you tell me how much Litecoin is currently worth in British Pounds?",
           "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"DOGE\",\n  \"base\": \"EUR\"\n}"
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
         }
       ]
     },
@@ -2687,19 +2687,19 @@
       },
       "demo": [
         {
-          "query": "Can you tell me what Litecoin is currently trading for in Brazilian Reals as of now?",
+          "query": "Can you tell me how much Litecoin is currently worth in British Pounds?",
           "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"LTC\",\n  \"base\": \"BRL\"\n}"
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
         },
         {
-          "query": "What is the current price of Litecoin in Brazilian Real?",
+          "query": "What's the current price of Litecoin in Pound Sterling?",
           "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"LTC\",\n  \"base\": \"BRL\"\n}"
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
         },
         {
-          "query": "How much does one unit of Litecoin cost in Brazilian Real at this moment?",
+          "query": "How much does one Litecoin cost in GBP at this moment?",
           "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"LTC\",\n  \"base\": \"BRL\"\n}"
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
         }
       ]
     },
@@ -2712,17 +2712,17 @@
       },
       "demo": [
         {
+          "query": "How much does one Litecoin cost in GBP at this moment?",
+          "action": "get_crypto_price",
+          "action_input": "{\n    \"symbol\": \"LTC\",\n    \"base\": \"GBP\"\n}"
+        },
+        {
           "query": "What is the price of Ethereum cryptocurrency when converted to Japanese Yen?",
           "action": "get_crypto_price",
           "action_input": "{\n  \"symbol\": \"ETH\",\n  \"base\": \"JPY\"\n}"
         },
         {
           "query": "How much is 1 unit of Ethereum worth in Japanese Yen?",
-          "action": "get_crypto_price",
-          "action_input": "{\n  \"symbol\": \"ETH\",\n  \"base\": \"JPY\"\n}"
-        },
-        {
-          "query": "What is the exchange rate between Ethereum and the Japanese Yen?",
           "action": "get_crypto_price",
           "action_input": "{\n  \"symbol\": \"ETH\",\n  \"base\": \"JPY\"\n}"
         }
@@ -2760,49 +2760,168 @@
       "action": "get_recipe",
       "action_input": {
         "query": "chocolate cake"
-      }
+      },
+      "demo": [
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Show me how to make spaghetti carbonara.",
       "action": "get_recipe",
       "action_input": {
         "query": "spaghetti carbonara"
-      }
+      },
+      "demo": [
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "What is the original and most well-known method for cooking beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Search for a recipe with chicken curry.",
       "action": "get_recipe",
       "action_input": {
         "query": "chicken curry"
-      }
+      },
+      "demo": [
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "I want to cook pancakes. Give me a recipe.",
       "action": "get_recipe",
       "action_input": {
         "query": "pancakes"
-      }
+      },
+      "demo": [
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Find lasagna recipes for me.",
       "action": "get_recipe",
       "action_input": {
         "query": "lasagna"
-      }
+      },
+      "demo": [
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Show me some sushi roll recipes.",
       "action": "get_recipe",
       "action_input": {
         "query": "sushi roll"
-      }
+      },
+      "demo": [
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Give me a good recipe for beef stew.",
       "action": "get_recipe",
       "action_input": {
         "query": "beef stew"
-      }
+      },
+      "demo": [
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Find more pasta recipes after the first page.",
@@ -2810,14 +2929,48 @@
       "action_input": {
         "query": "pasta",
         "offset": "10"
-      }
+      },
+      "demo": [
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Can you find me a recipe for apple pie?",
       "action": "get_recipe",
       "action_input": {
         "query": "apple pie"
-      }
+      },
+      "demo": [
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     },
     {
       "query": "Show the next set of burger recipes.",
@@ -2825,7 +2978,24 @@
       "action_input": {
         "query": "burger",
         "offset": "20"
-      }
+      },
+      "demo": [
+        {
+          "query": "Can you provide me with a traditional beef stroganoff dish's cooking instructions?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "What is a recipe for a classic beef stroganoff?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        },
+        {
+          "query": "How do I prepare a timeless beef stroganoff dish that's commonly found on restaurant menus?",
+          "action": "get_recipe",
+          "action_input": "{\n    \"query\": \"beef stroganoff\",\n    \"offset\": \"\"\n}"
+        }
+      ]
     }
   ],
   "get_all_mvc2_characters": [
@@ -3059,19 +3229,19 @@
       },
       "demo": [
         {
-          "query": "What popular video games are currently being offered as free giveaways on either Steam or the Epic Games Store?",
+          "query": "What free PC games are available to claim right now through the Steam giveaways and promotions section?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         },
         {
-          "query": "Can you list current giveaways for well-known games, specifically ones available on Steam or Epic Games, excluding non-gaming promotions?",
+          "query": "Can you recommend any current or upcoming free game promotions on the Steam platform?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         },
         {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
+          "query": "What are some popular game giveaways on Steam for free games?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         }
       ]
     },
@@ -3117,9 +3287,9 @@
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         },
         {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
+          "query": "What are some popular game giveaways on Steam for free games?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         }
       ]
     },
@@ -3132,17 +3302,17 @@
       },
       "demo": [
         {
+          "query": "What are some popular game giveaways on Steam for free games?",
+          "action": "get_filtered_game_giveaways",
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+        },
+        {
+          "query": "What free PC games are available to claim right now through the Steam giveaways and promotions section?",
+          "action": "get_filtered_game_giveaways",
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+        },
+        {
           "query": "Can you list current giveaways for well-known games, specifically ones available on Steam or Epic Games, excluding non-gaming promotions?",
-          "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
-        },
-        {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
-          "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
-        },
-        {
-          "query": "What popular video games are currently being offered as free giveaways on either Steam or the Epic Games Store?",
           "action": "get_filtered_game_giveaways",
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         }
@@ -3162,12 +3332,12 @@
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         },
         {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
+          "query": "What free PC games are available to claim right now through the Steam giveaways and promotions section?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         },
         {
-          "query": "I'm searching for information about ongoing promotions offering well-known games on the Epic Games Store or Steam, where users can claim titles for free without any purchase requirements.",
+          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
           "action": "get_filtered_game_giveaways",
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         }
@@ -3182,17 +3352,17 @@
       },
       "demo": [
         {
+          "query": "What are some popular game giveaways on Steam for free games?",
+          "action": "get_filtered_game_giveaways",
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+        },
+        {
           "query": "What popular video games are currently being offered as free giveaways on either Steam or the Epic Games Store?",
           "action": "get_filtered_game_giveaways",
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         },
         {
           "query": "Can you list current giveaways for well-known games, specifically ones available on Steam or Epic Games, excluding non-gaming promotions?",
-          "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
-        },
-        {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
           "action": "get_filtered_game_giveaways",
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         }
@@ -3207,19 +3377,19 @@
       },
       "demo": [
         {
-          "query": "What popular video games are currently being offered as free giveaways on either Steam or the Epic Games Store?",
+          "query": "What free PC games are available to claim right now through the Steam giveaways and promotions section?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         },
         {
-          "query": "Can you list current giveaways for well-known games, specifically ones available on Steam or Epic Games, excluding non-gaming promotions?",
+          "query": "Are there any ongoing or soon-to-be-released free game deals on Steam that users can take advantage of?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         },
         {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
+          "query": "What are some popular game giveaways on Steam for free games?",
           "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
         }
       ]
     },
@@ -3256,17 +3426,17 @@
       },
       "demo": [
         {
+          "query": "What are some popular game giveaways on Steam for free games?",
+          "action": "get_filtered_game_giveaways",
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+        },
+        {
+          "query": "What free PC games are available to claim right now through the Steam giveaways and promotions section?",
+          "action": "get_filtered_game_giveaways",
+          "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+        },
+        {
           "query": "Can you list current giveaways for well-known games, specifically ones available on Steam or Epic Games, excluding non-gaming promotions?",
-          "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
-        },
-        {
-          "query": "I'm looking for a giveaway of a popular game on either Steam or the Epic Games Store. Can you show me what's currently available and filter out any non-game giveaways?",
-          "action": "get_filtered_game_giveaways",
-          "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
-        },
-        {
-          "query": "What popular video games are currently being offered as free giveaways on either Steam or the Epic Games Store?",
           "action": "get_filtered_game_giveaways",
           "action_input": "{\n  \"platform\": \"steam.epic-games-store\",\n  \"type_\": \"game\"\n}"
         }
@@ -3482,19 +3652,19 @@
       },
       "demo": [
         {
-          "query": "What is the current time zone information for a location at latitude 14.6045 and longitude -61.1581 on July 15th, 2024?",
+          "query": "What is the current time zone information for Los Angeles, California?",
           "action": "get_timezone_info",
-          "action_input": "{\n    \"lat\": 14.6045,\n    \"lng\": -61.1581,\n    \"timestamp\": 1708128000 // Unix timestamp for July 15th, 2024\n}"
+          "action_input": "{\n    \"lat\": 34.0522,\n    \"lng\": -118.2437,\n    \"timestamp\": 0\n}"
         },
         {
-          "query": "What specific geographic location are you referring to on July 15th, 2024, that requires me to retrieve the current time zone details?",
+          "query": "What is the accurate local time in Los Angeles, taking into account any regional time zone specifics?",
           "action": "get_timezone_info",
-          "action_input": "{\n    \"lat\": 14.6045,\n    \"lng\": -61.1581,\n    \"timestamp\": 1708128000 // Unix timestamp for July 15th, 2024\n}"
+          "action_input": "{\n    \"lat\": 34.0522,\n    \"lng\": -118.2437,\n    \"timestamp\": 0\n}"
         },
         {
-          "query": "Can you give me the exact coordinates of a location and a date, so I can accurately tell you its corresponding time zone information?",
+          "query": "What are the present day time zones and any corresponding daylight saving adjustments applicable to Los Angeles, California?",
           "action": "get_timezone_info",
-          "action_input": "{\n    \"lat\": 14.6045,\n    \"lng\": -61.1581,\n    \"timestamp\": 1708128000 // Unix timestamp for July 15th, 2024\n}"
+          "action_input": "{\n    \"lat\": 34.0522,\n    \"lng\": -118.2437,\n    \"timestamp\": 0\n}"
         }
       ]
     },
@@ -3533,19 +3703,19 @@
       },
       "demo": [
         {
+          "query": "What was the correct time zone for New Orleans in Louisiana on the last day of 1999?",
+          "action": "get_timezone_info",
+          "action_input": "{\n    \"lat\": 29.9502,\n    \"lng\": -90.0715,\n    \"timestamp\": 946684800\n}"
+        },
+        {
           "query": "What is the current time zone information for a location at latitude 14.6045 and longitude -61.1581 on July 15th, 2024?",
           "action": "get_timezone_info",
           "action_input": "{\n    \"lat\": 14.6045,\n    \"lng\": -61.1581,\n    \"timestamp\": 1708128000 // Unix timestamp for July 15th, 2024\n}"
         },
         {
-          "query": "What is the time zone offset and daylight savings information for a geographical point located at 23.55°S latitude and 46.63°W longitude?",
+          "query": "What were the daylight saving and standard time coordinates for New Orleans, Louisiana on the eve of the year 2000?",
           "action": "get_timezone_info",
-          "action_input": "{\n  \"lat\": -23.5505,\n  \"lng\": -46.6333,\n  \"timestamp\": 1643723400\n}"
-        },
-        {
-          "query": "Can you tell me what time zone corresponds to the coordinates 23.5505°S, 46.6333°W?",
-          "action": "get_timezone_info",
-          "action_input": "{\n  \"lat\": -23.5505,\n  \"lng\": -46.6333,\n  \"timestamp\": 1643723400\n}"
+          "action_input": "{\n    \"lat\": 29.9502,\n    \"lng\": -90.0715,\n    \"timestamp\": 946684800\n}"
         }
       ]
     },
@@ -3881,19 +4051,19 @@
       },
       "demo": [
         {
-          "query": "Can you show me papers on quantum entanglement published in the last 2 years?",
+          "query": "Find me a list of recent academic publications on quantum computing, displaying at least five results per page, starting with page one, and limit the output to just the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "I'd be happy to help with that, can you provide access to a database of recent research articles on quantum entanglement for review? Specifically, I'm looking for papers published within the last two years.",
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
+          "query": "Give me access to a selection of current research papers focused on quantum computing, presenting them in batches of at least five per page, beginning with the first page, and restrict the output to only the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -3907,17 +4077,17 @@
       },
       "demo": [
         {
+          "query": "Find me a list of recent academic publications on quantum computing, displaying at least five results per page, starting with page one, and limit the output to just the paper titles.",
+          "action": "search_arxiv_papers",
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
+        },
+        {
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
+          "action": "search_arxiv_papers",
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
+        },
+        {
           "query": "Can you show me papers on deep learning and its applications in natural language processing?",
-          "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
-        },
-        {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
-          "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
-        },
-        {
-          "query": "What are some key research papers that have explored the intersection of deep learning techniques and natural language processing tasks, and how have these advancements been utilized in real-world applications?",
           "action": "search_arxiv_papers",
           "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
         }
@@ -3933,17 +4103,17 @@
       },
       "demo": [
         {
+          "query": "Provide me with a curated collection of contemporary research papers on quantum computing, presented in groups of no fewer than five per screenful, commencing from the initial page, and featuring only the title information.",
+          "action": "search_arxiv_papers",
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
+        },
+        {
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
+          "action": "search_arxiv_papers",
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
+        },
+        {
           "query": "Can you show me papers on deep learning and its applications in natural language processing?",
-          "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
-        },
-        {
-          "query": "What are some key research papers that have explored the intersection of deep learning techniques and natural language processing tasks, and how have these advancements been utilized in real-world applications?",
-          "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
-        },
-        {
-          "query": "I'd like to know about recent academic literature on the applications of deep learning models within the field of natural language processing, including any relevant case studies or examples.",
           "action": "search_arxiv_papers",
           "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
         }
@@ -3958,19 +4128,19 @@
       },
       "demo": [
         {
-          "query": "Can you show me papers on quantum entanglement published in the last 2 years?",
+          "query": "Give me access to a selection of current research papers focused on quantum computing, presenting them in batches of at least five per page, beginning with the first page, and restrict the output to only the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
+          "query": "Provide me with a curated collection of contemporary research papers on quantum computing, presented in groups of no fewer than five per screenful, commencing from the initial page, and featuring only the title information.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "What scholarly publications have been released within the past couple of years that explore the phenomenon of quantum entanglement?",
+          "query": "Find me a list of recent academic publications on quantum computing, displaying at least five results per page, starting with page one, and limit the output to just the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -3983,19 +4153,19 @@
       },
       "demo": [
         {
-          "query": "Can you show me papers on deep learning and its applications in natural language processing?",
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "What are some key research papers that have explored the intersection of deep learning techniques and natural language processing tasks, and how have these advancements been utilized in real-world applications?",
+          "query": "Find me a list of recent academic publications on quantum computing, displaying at least five results per page, starting with page one, and limit the output to just the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"deep learning nlp language modeling text classification\",\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
+          "query": "Provide me with a curated collection of contemporary research papers on quantum computing, presented in groups of no fewer than five per screenful, commencing from the initial page, and featuring only the title information.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -4008,19 +4178,19 @@
       },
       "demo": [
         {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "Can you show me papers on quantum entanglement published in the last 2 years?",
+          "query": "Provide me with a curated collection of contemporary research papers on quantum computing, presented in groups of no fewer than five per screenful, commencing from the initial page, and featuring only the title information.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "I'd be happy to help with that, can you provide access to a database of recent research articles on quantum entanglement for review? Specifically, I'm looking for papers published within the last two years.",
+          "query": "Give me access to a selection of current research papers focused on quantum computing, presenting them in batches of at least five per page, beginning with the first page, and restrict the output to only the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -4034,19 +4204,19 @@
       },
       "demo": [
         {
-          "query": "Can you show me papers on quantum entanglement published in the last 2 years?",
+          "query": "Find me a list of recent academic publications on quantum computing, displaying at least five results per page, starting with page one, and limit the output to just the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
+          "query": "Give me access to a selection of current research papers focused on quantum computing, presenting them in batches of at least five per page, beginning with the first page, and restrict the output to only the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "What scholarly publications have been released within the past couple of years that explore the phenomenon of quantum entanglement?",
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -4070,9 +4240,9 @@
           "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "What scholarly publications have been released within the past couple of years that explore the phenomenon of quantum entanglement?",
+          "query": "Can you find recent papers on quantum computing with at least 5 results, starting from page 1, and including only the title field in the search?",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -4087,19 +4257,19 @@
       },
       "demo": [
         {
-          "query": "I'd like to browse through academic journals from the past 24 months, focusing on articles that delve into the subject of quantum entanglement.",
+          "query": "Provide me with a curated collection of contemporary research papers on quantum computing, presented in groups of no fewer than five per screenful, commencing from the initial page, and featuring only the title information.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "Can you show me papers on quantum entanglement published in the last 2 years?",
+          "query": "Find me a list of recent academic publications on quantum computing, displaying at least five results per page, starting with page one, and limit the output to just the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         },
         {
-          "query": "What scholarly publications have been released within the past couple of years that explore the phenomenon of quantum entanglement?",
+          "query": "Give me access to a selection of current research papers focused on quantum computing, presenting them in batches of at least five per page, beginning with the first page, and restrict the output to only the paper titles.",
           "action": "search_arxiv_papers",
-          "action_input": "{\n    \"search_term\": \"quantum entanglement\",\n    \"date_from\": \"2020-01-01\",\n    \"date_to\": \"2022-12-31\",\n    \"field\": \"Title\"\n}"
+          "action_input": "{\n    \"search_term\": \"(quantum OR superconducting) AND (computing OR simulation)\",\n    \"date_from\": \"2022-01-01\",\n    \"num_results\": 5,\n    \"start\": 1,\n    \"field\": \"Title\"\n}"
         }
       ]
     },
@@ -4587,12 +4757,12 @@
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         },
         {
-          "query": "Can you give me a list of handball games taking place on this upcoming Wednesday?",
+          "query": "Can you tell me which handball matches are taking place over the next few days, specifically from Saturday to Monday?",
           "action": "get_handball_scheduled_matches",
-          "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
+          "action_input": "{\n    \"date\": \"01/03/2020\"\n}"
         },
         {
-          "query": "What handball matches are slated for this Wednesday's schedule?",
+          "query": "Can you give me a list of handball games taking place on this upcoming Wednesday?",
           "action": "get_handball_scheduled_matches",
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         }
@@ -4688,9 +4858,9 @@
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         },
         {
-          "query": "Can you give me a list of handball games taking place on this upcoming Wednesday?",
+          "query": "Can you tell me which handball matches are taking place over the next few days, specifically from Saturday to Monday?",
           "action": "get_handball_scheduled_matches",
-          "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
+          "action_input": "{\n    \"date\": \"01/03/2020\"\n}"
         }
       ]
     },
@@ -4712,9 +4882,9 @@
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         },
         {
-          "query": "Can you give me a list of handball games taking place on this upcoming Wednesday?",
+          "query": "Can you tell me which handball matches are taking place over the next few days, specifically from Saturday to Monday?",
           "action": "get_handball_scheduled_matches",
-          "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
+          "action_input": "{\n    \"date\": \"01/03/2020\"\n}"
         }
       ]
     },
@@ -4736,9 +4906,9 @@
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         },
         {
-          "query": "What is the lineup of handball games scheduled to happen on Wednesday?",
+          "query": "Can you tell me which handball matches are taking place over the next few days, specifically from Saturday to Monday?",
           "action": "get_handball_scheduled_matches",
-          "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
+          "action_input": "{\n    \"date\": \"01/03/2020\"\n}"
         }
       ]
     },
@@ -4784,9 +4954,9 @@
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         },
         {
-          "query": "Can you give me a list of handball games taking place on this upcoming Wednesday?",
+          "query": "What's the upcoming schedule for handball games this weekend and into next week?",
           "action": "get_handball_scheduled_matches",
-          "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
+          "action_input": "{\n    \"date\": \"01/03/2020\"\n}"
         }
       ]
     },
@@ -4808,9 +4978,9 @@
           "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
         },
         {
-          "query": "Can you give me a list of handball games taking place on this upcoming Wednesday?",
+          "query": "Can you tell me which handball matches are taking place over the next few days, specifically from Saturday to Monday?",
           "action": "get_handball_scheduled_matches",
-          "action_input": "{\n    \"date\": \"02/01/2023\"\n}"
+          "action_input": "{\n    \"date\": \"01/03/2020\"\n}"
         }
       ]
     }
@@ -4821,70 +4991,240 @@
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "12/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "List all handball games for 10/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "10/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "What handball matches are happening on 13/11/2025?",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "13/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "Get me the handball games scheduled for 09/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "09/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "Show the live and scheduled handball matches for 11/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "11/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "I want to see handball games for 08/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "08/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "Display all handball matches on 14/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "14/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "What are the handball matches on 07/11/2025?",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "07/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "Get me today’s live handball fixtures for 12/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "12/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     },
     {
       "query": "List all handball matches, including ongoing ones, for 06/11/2025.",
       "action": "get_handball_daily_matches",
       "action_input": {
         "date": "06/11/2025"
-      }
+      },
+      "demo": [
+        {
+          "query": "What are the scheduled handball matches for next Friday, which falls on February 4th of this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "Can you provide me with information about upcoming handball events scheduled for this Friday, specifically February 4th of the current year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        },
+        {
+          "query": "What handball matches are happening on Friday 4th of February this year?",
+          "action": "get_handball_daily_matches",
+          "action_input": "{\n    \"date\": \"06/02/2022\"\n}"
+        }
+      ]
     }
   ],
   "get_airlines": [
@@ -4901,14 +5241,14 @@
           "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What is the IATA code for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -4920,19 +5260,19 @@
       },
       "demo": [
         {
+          "query": "What is the IATA code for American Airlines?",
+          "action": "get_airlines",
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
+        },
+        {
           "query": "Can you tell me which airline has the IATA code QF?",
           "action": "get_airlines",
           "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
-        },
-        {
-          "query": "What is the name of the airline with IATA code 'QF'?",
-          "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -4944,19 +5284,19 @@
       },
       "demo": [
         {
-          "query": "Can you tell me which airline has the IATA code QF?",
+          "query": "What is the IATA code for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "Can you tell me what the three-letter airport code is for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -4968,19 +5308,19 @@
       },
       "demo": [
         {
-          "query": "Can you tell me which airline has the IATA code QF?",
+          "query": "Can you tell me what the three-letter airport code is for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "What is the airline associated with the two-letter IATA identifier 'QF'?",
+          "query": "What is the IATA code for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -4992,17 +5332,17 @@
       },
       "demo": [
         {
+          "query": "What is the IATA code for American Airlines?",
+          "action": "get_airlines",
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
+        },
+        {
+          "query": "What are the airline codes used by American Airlines?",
+          "action": "get_airlines",
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
+        },
+        {
           "query": "Can you tell me which airline has the IATA code QF?",
-          "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
-        },
-        {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
-          "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
-        },
-        {
-          "query": "What is the airline associated with the two-letter IATA identifier 'QF'?",
           "action": "get_airlines",
           "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
         }
@@ -5021,14 +5361,14 @@
           "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "What is the unique identifier or abbreviation that represents American Airlines in international flight schedules and bookings?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What is the IATA code for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -5040,19 +5380,19 @@
       },
       "demo": [
         {
-          "query": "Can you tell me which airline has the IATA code QF?",
+          "query": "What is the IATA code for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "Can you tell me what the three-letter airport code is for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -5069,14 +5409,14 @@
           "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "Can you tell me what the three-letter airport code is for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -5093,14 +5433,14 @@
           "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
         },
         {
-          "query": "I'm looking for the name of the carrier represented by the two-character air travel code QF.",
+          "query": "What is the IATA code for American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         },
         {
-          "query": "What is the name of the airline with IATA code 'QF'?",
+          "query": "What are the airline codes used by American Airlines?",
           "action": "get_airlines",
-          "action_input": "{\n    \"iata\": \"QF\",\n    \"name\": \"\"\n}"
+          "action_input": "{\n    \"iata\": \"AA\"\n}"
         }
       ]
     },
@@ -5150,9 +5490,9 @@
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What is the technical specification of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         }
       ]
     },
@@ -5176,9 +5516,9 @@
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What is the technical specification of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         }
       ]
     },
@@ -5191,19 +5531,19 @@
       },
       "demo": [
         {
-          "query": "What are some technical details about the Kawasaki Ninja H2R motorcycle, including its engine specifications, chassis, and braking system?",
+          "query": "What is the technical specification of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What are the underlying technical aspects that make up the Harley-Davidson Electra Glide motorcycle?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "I'd be happy to rephrase your question in a different way - what are the key technical features of the Kawasaki Ninja H2R motorcycle?",
+          "query": "What are the key features and technical details of the Harley-Davidson Electra Glide model?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         }
       ]
     },
@@ -5242,19 +5582,19 @@
       },
       "demo": [
         {
-          "query": "What are some technical details about the Kawasaki Ninja H2R motorcycle, including its engine specifications, chassis, and braking system?",
+          "query": "What is the technical specification of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What are the key features and technical details of the Harley-Davidson Electra Glide model?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "I'd be happy to rephrase your question in a different way - what are the key technical features of the Kawasaki Ninja H2R motorcycle?",
+          "query": "What are the underlying technical aspects that make up the Harley-Davidson Electra Glide motorcycle?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         }
       ]
     },
@@ -5273,12 +5613,12 @@
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         },
         {
-          "query": "What are some technical details about the Kawasaki Ninja H2R motorcycle, including its engine specifications, chassis, and braking system?",
+          "query": "Can you provide me with the detailed engineering parameters and design characteristics of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What are some technical details about the Kawasaki Ninja H2R motorcycle, including its engine specifications, chassis, and braking system?",
           "action": "get_motorcycle_data",
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         }
@@ -5298,12 +5638,12 @@
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What is the technical specification of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "I'd be happy to rephrase your question in a different way - what are the key technical features of the Kawasaki Ninja H2R motorcycle?",
+          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
           "action": "get_motorcycle_data",
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         }
@@ -5319,19 +5659,19 @@
       },
       "demo": [
         {
-          "query": "What are some technical details about the Kawasaki Ninja H2R motorcycle, including its engine specifications, chassis, and braking system?",
+          "query": "What is the technical specification of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "What specific attributes of the Kawasaki Ninja H2R motorcycle would you like to know about, including its propulsion system, skeletal framework, and deceleration mechanisms?",
+          "query": "What are the key features and technical details of the Harley-Davidson Electra Glide model?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         },
         {
-          "query": "I'd be happy to rephrase your question in a different way - what are the key technical features of the Kawasaki Ninja H2R motorcycle?",
+          "query": "Can you provide me with the detailed engineering parameters and design characteristics of the Harley-Davidson Electra Glide?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         }
       ]
     },
@@ -5380,9 +5720,9 @@
           "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
         },
         {
-          "query": "I'd be happy to rephrase your question in a different way - what are the key technical features of the Kawasaki Ninja H2R motorcycle?",
+          "query": "What are the underlying technical aspects that make up the Harley-Davidson Electra Glide motorcycle?",
           "action": "get_motorcycle_data",
-          "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja H2R\"\n}"
+          "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Electra Glide Standard\",\n    \"year\": \"2022\"\n}"
         }
       ]
     }
@@ -5428,14 +5768,14 @@
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         },
         {
-          "query": "What is the current air quality in Tokyo?",
+          "query": "What is the current air quality in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         },
         {
-          "query": "Can you tell me about the current air pollution levels in Tokyo?",
+          "query": "Can you tell me about the present air quality conditions in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         }
       ]
     },
@@ -5473,19 +5813,19 @@
       },
       "demo": [
         {
-          "query": "What are the latest air quality readings in the Tokyo area?",
+          "query": "What's the current state of atmospheric pollution in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         },
         {
-          "query": "Can you tell me about the current air pollution levels in Tokyo?",
+          "query": "What is the current air quality in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         },
         {
-          "query": "What is the current air quality in Tokyo?",
+          "query": "Can you tell me about the present air quality conditions in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         }
       ]
     },
@@ -5508,9 +5848,9 @@
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         },
         {
-          "query": "Can you tell me about the current air pollution levels in Tokyo?",
+          "query": "What is the current air quality in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         }
       ]
     },
@@ -5523,17 +5863,17 @@
       },
       "demo": [
         {
+          "query": "Can you tell me about the present air quality conditions in New York City?",
+          "action": "get_air_quality_data",
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
+        },
+        {
+          "query": "What is the current air quality in New York City?",
+          "action": "get_air_quality_data",
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
+        },
+        {
           "query": "What are the latest air quality readings in the Tokyo area?",
-          "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
-        },
-        {
-          "query": "What is the current air quality in Tokyo?",
-          "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
-        },
-        {
-          "query": "Can you tell me about the current air pollution levels in Tokyo?",
           "action": "get_air_quality_data",
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         }
@@ -5573,17 +5913,17 @@
       },
       "demo": [
         {
+          "query": "What's the current state of atmospheric pollution in New York City?",
+          "action": "get_air_quality_data",
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
+        },
+        {
           "query": "What are the latest air quality readings in the Tokyo area?",
           "action": "get_air_quality_data",
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         },
         {
           "query": "Can you tell me about the current air pollution levels in Tokyo?",
-          "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
-        },
-        {
-          "query": "What is the current air quality in Tokyo?",
           "action": "get_air_quality_data",
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         }
@@ -5608,9 +5948,9 @@
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         },
         {
-          "query": "Can you tell me about the current air pollution levels in Tokyo?",
+          "query": "What is the current air quality in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         }
       ]
     },
@@ -5633,9 +5973,9 @@
           "action_input": "{\n    \"city\": \"Tokyo\"\n}"
         },
         {
-          "query": "Can you tell me about the current air pollution levels in Tokyo?",
+          "query": "What is the current air quality in New York City?",
           "action": "get_air_quality_data",
-          "action_input": "{\n    \"city\": \"Tokyo\"\n}"
+          "action_input": "{\n    \"city\": \"New+York+City\"\n}"
         }
       ]
     }
@@ -5650,19 +5990,19 @@
       },
       "demo": [
         {
-          "query": "What will be the 14-day weather forecast in London?",
+          "query": "What is the weather forecast for Paris for the next 7 days?",
           "action": "get_weather_forecast",
-          "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
+          "action_input": "{\n    \"q\": \"Paris\",\n    \"days\": 7\n}"
         },
         {
-          "query": "What are the predicted weather conditions in London from now until the following fortnight?",
+          "query": "Can you please provide me with a week's worth of weather predictions for Paris?",
           "action": "get_weather_forecast",
-          "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
+          "action_input": "{\n    \"q\": \"Paris\",\n    \"days\": 7\n}"
         },
         {
-          "query": "Can you provide me with the weather outlook for London over the next two weeks?",
+          "query": "What kind of forecast can I expect for Paris over the upcoming week?",
           "action": "get_weather_forecast",
-          "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
+          "action_input": "{\n    \"q\": \"Paris\",\n    \"days\": 7\n}"
         }
       ]
     },
@@ -5680,12 +6020,12 @@
           "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
         },
         {
-          "query": "What are the predicted weather conditions in London from now until the following fortnight?",
+          "query": "What is the weather forecast for Paris for the next 7 days?",
           "action": "get_weather_forecast",
-          "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
+          "action_input": "{\n    \"q\": \"Paris\",\n    \"days\": 7\n}"
         },
         {
-          "query": "Can you provide me with the weather outlook for London over the next two weeks?",
+          "query": "What are the predicted weather conditions in London from now until the following fortnight?",
           "action": "get_weather_forecast",
           "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
         }
@@ -5705,12 +6045,12 @@
           "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
         },
         {
-          "query": "Can you provide me with the weather outlook for London over the next two weeks?",
+          "query": "What is the weather forecast for Paris for the next 7 days?",
           "action": "get_weather_forecast",
-          "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
+          "action_input": "{\n    \"q\": \"Paris\",\n    \"days\": 7\n}"
         },
         {
-          "query": "What are the predicted weather conditions in London from now until the following fortnight?",
+          "query": "Can you provide me with the weather outlook for London over the next two weeks?",
           "action": "get_weather_forecast",
           "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
         }
@@ -5854,12 +6194,12 @@
           "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
         },
         {
-          "query": "What will be the 14-day weather forecast in London?",
+          "query": "Can you please provide me with a week's worth of weather predictions for Paris?",
           "action": "get_weather_forecast",
-          "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
+          "action_input": "{\n    \"q\": \"Paris\",\n    \"days\": 7\n}"
         },
         {
-          "query": "Can you provide me with the weather outlook for London over the next two weeks?",
+          "query": "What will be the 14-day weather forecast in London?",
           "action": "get_weather_forecast",
           "action_input": "{\n    \"q\": \"London\",\n    \"days\": 14\n}"
         }

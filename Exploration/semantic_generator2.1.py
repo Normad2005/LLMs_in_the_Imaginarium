@@ -78,6 +78,11 @@ def parse_rule(resp: str):
 
 # ---------- core logic ----------
 def collect_problematic_examples(data: Dict[str, Any]):
+    """
+    包含兩種情況：
+   1️⃣ reflection == "No"
+    2️⃣ reflection == "Yes" 且 其中任一 chain["parsed"]["parse_successful"] == False
+    """
     results = {}
     for api_name, sessions in data.items():
         bad_sessions = []
