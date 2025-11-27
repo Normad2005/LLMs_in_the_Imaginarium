@@ -7,13 +7,13 @@ from my_llm import chat_my
 
 
 def main(
-    input_path: str = "results/ste/data_20251112-091248.json",
+    input_path: str = "results/ste/data_20251126-203519.json",
     filter_model_ckpt: str = "llama3.1:8b-instruct-fp16",
     paraphrase_model_ckpt: str = "llama3.1:8b-instruct-fp16",
     target_num_train_per_API: int = 30, #平均每個api產出量目標
     num_para_train_max: int = 3, #每筆最多改寫幾次
     dir_write: str = "results/ste/",
-    save_file_name: str = "tool_data_train.json",
+    save_file_name: str = "temp_data_train.json",
 ):
     os.makedirs(dir_write, exist_ok=True)
 
