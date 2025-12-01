@@ -211,6 +211,59 @@
     }
   ],
 
+  "get_dog_breeds_metadata": [
+    {
+      "query": "I’m trying to remember the name of a breed that starts with 'akita'. Can you look it up for me?",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "akita" }
+    },
+    {
+      "query": "Show me breeds related to the term 'shep'. I want to compare different shepherd-type dogs.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "shep" }
+    },
+    {
+      "query": "Which dog breeds have names containing 'bull'? I'm checking options for strong working dogs.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "bull" }
+    },
+    {
+      "query": "Find all breeds that include the word 'terri'. I’m researching terriers for a project.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "terri" }
+    },
+    {
+      "query": "I forgot the full name, but I think it had 'retriev' in it. Can you search that?",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "retriev" }
+    },
+    {
+      "query": "Can you pull up any dog breeds with 'auss' in their name? Might be Australian something.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "auss" }
+    },
+    {
+      "query": "Look for breeds containing the term 'dane'. I’m curious about giant dog categories.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "dane" }
+    },
+    {
+      "query": "Could you find all the breeds whose names include 'spitz'? I'm comparing northern-type dogs.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "spitz" }
+    },
+    {
+      "query": "Search for breeds with 'collie' somewhere in the name. I’m trying to recall a specific variant.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "collie" }
+    },
+    {
+      "query": "I think the breed I saw had 'malam' in the name. Can you check which breeds match that?",
+      "action": "get_dog_breeds_metadata",
+      "action_input": { "search": "malam" }
+    }
+  ],
+
   "spell_number": [
     {
     "query": "Convert 42 to words.",
@@ -367,6 +420,59 @@
       "query": "List the most recent general entertainment headlines.",
       "action": "get_media_news",
       "action_input": {"category": "TOP", "first": 15}
+    }
+  ],
+
+  "search_manga": [
+    {
+      "query": "Find manga related to Naruto.",
+      "action": "search_manga",
+      "action_input": { "text": "Naruto" }
+    },
+    {
+      "query": "Search for romance manga but only non-NSFW ones.",
+      "action": "search_manga",
+      "action_input": { "text": "romance", "nsfw": "false" }
+    },
+    {
+      "query": "Show me Korean manhwa about reincarnation.",
+      "action": "search_manga",
+      "action_input": { "text": "reincarnation", "type": "korea" }
+    },
+    {
+      "query": "Look for Chinese martial arts manga with NSFW included.",
+      "action": "search_manga",
+      "action_input": { "text": "martial arts", "nsfw": "true", "type": "china" }
+    },
+    {
+      "query": "Find works by the author 'Eiichiro Oda'.",
+      "action": "search_manga",
+      "action_input": { "text": "Eiichiro Oda" }
+    },
+    {
+      "query": "Search for fantasy manga, Japan-only, no adult content.",
+      "action": "search_manga",
+      "action_input": { "text": "fantasy", "nsfw": "false", "type": "japan" }
+    },
+    {
+      "query": "Show me any NSFW manga with the keyword 'vampire'.",
+      "action": "search_manga",
+      "action_input": { "text": "vampire", "nsfw": "true" }
+    },
+    {
+      "query": "Search for manga named Blue Lock.",
+      "action": "search_manga",
+      "action_input": { "text": "Blue Lock" }
+    },
+    {
+      "query": "Find Korean romance titles without NSFW content.",
+      "action": "search_manga",
+      "action_input": { "text": "romance", "nsfw": "false", "type": "korea" }
+    },
+    {
+      "query": "Search for manga with the keyword time travel from all origins including NSFW.",
+      "action": "search_manga",
+      "action_input": { "text": "time travel", "nsfw": "true", "type": "all" }
     }
   ],
 
@@ -582,59 +688,6 @@
     }
   ],
 
-  "get_crypto_price": [
-    {
-      "query": "What’s the current price of Bitcoin?",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "BTC" }
-    },
-    {
-      "query": "Check Ethereum’s value in USD.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "ETH", "base": "USD" }
-    },
-    {
-      "query": "Show me the latest Dogecoin price in Tether.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "DOGE", "base": "USDT" }
-    },
-    {
-      "query": "How much is Solana worth in Euros?",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "SOL", "base": "EUR" }
-    },
-    {
-      "query": "Get the price of XRP in Japanese Yen.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "XRP", "base": "JPY" }
-    },
-    {
-      "query": "What’s the exchange rate of BNB to ETH?",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "BNB", "base": "ETH" }
-    },
-    {
-      "query": "Tell me the current value of Cardano in Canadian dollars.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "ADA", "base": "CAD" }
-    },
-    {
-      "query": "How much is Litecoin worth right now?",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "LTC" }
-    },
-    {
-      "query": "Check the price of Polygon (MATIC) in Bitcoin.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "MATIC", "base": "BTC" }
-    },
-    {
-      "query": "Show me the current Shiba Inu price in US dollars.",
-      "action": "get_crypto_price",
-      "action_input": { "symbol": "SHIB", "base": "USD" }
-    }
-  ],
-
   "get_recipe": [
     {
     "query": "Find me a recipe for chocolate cake.",
@@ -685,6 +738,59 @@
       "query": "Show the next set of burger recipes.",
       "action": "get_recipe",
       "action_input": { "query": "burger", "offset": "20" }
+    }
+  ],
+
+  "search_cocktails": [
+    {
+      "query": "Find me cocktails that use vodka.",
+      "action": "search_cocktails",
+      "action_input": { "ingredients": "vodka" }
+    },
+    {
+      "query": "Show me recipes for a mojito.",
+      "action": "search_cocktails",
+      "action_input": { "name": "mojito" }
+    },
+    {
+      "query": "What cocktails contain rum and lime juice?",
+      "action": "search_cocktails",
+      "action_input": { "ingredients": "rum,lime juice" }
+    },
+    {
+      "query": "Search cocktails with the word 'martini' in their name.",
+      "action": "search_cocktails",
+      "action_input": { "name": "martini" }
+    },
+    {
+      "query": "Find drinks that require tequila and triple sec.",
+      "action": "search_cocktails",
+      "action_input": { "ingredients": "tequila,triple sec" }
+    },
+    {
+      "query": "Show cocktails similar to bloody mary.",
+      "action": "search_cocktails",
+      "action_input": { "name": "bloody" }
+    },
+    {
+      "query": "I want cocktails that use gin, lemon juice, and sugar syrup.",
+      "action": "search_cocktails",
+      "action_input": { "ingredients": "gin,lemon juice,sugar syrup" }
+    },
+    {
+      "query": "Look up cocktails with espresso in them.",
+      "action": "search_cocktails",
+      "action_input": { "ingredients": "espresso" }
+    },
+    {
+      "query": "Give me drinks with the name 'old fashioned'.",
+      "action": "search_cocktails",
+      "action_input": { "name": "old fashioned" }
+    },
+    {
+      "query": "Find cocktails that include bourbon and bitters.",
+      "action": "search_cocktails",
+      "action_input": { "ingredients": "bourbon,bitters" }
     }
   ],
 
@@ -794,56 +900,109 @@
     }
   ],
 
-  "get_game_giveaways_by_type": [
+  "get_lol_champion_stats": [
     {
-    "query": "Show me all live game giveaways.",
-    "action": "get_game_giveaways_by_type",
-    "action_input": { "type": "game" }
+      "query": "Show me the full stat breakdown for Ahri, including her base health and any scaling values.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Ahri" }
     },
     {
-      "query": "Find all current loot giveaways.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "loot" }
+      "query": "I’m comparing mid-laners—can you pull up Syndra’s detailed in-game stats?",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Syndra" }
     },
     {
-      "query": "List any beta access giveaways happening right now.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "beta" }
+      "query": "Give me the complete champion statistics for Garen so I can check his armor and AD growth.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Garen" }
     },
     {
-      "query": "Get every active free game giveaway.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "game" }
+      "query": "What are the base and scaling stats for Vayne? I want to review her health, attack damage, and attack speed.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Vayne" }
     },
     {
-      "query": "Are there any loot drops or rewards available?",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "loot" }
+      "query": "Retrieve detailed gameplay stats for Jhin, including mana, HP, and his per-level scaling.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Jhin" }
     },
     {
-      "query": "Check for any beta test giveaways for upcoming games.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "beta" }
+      "query": "I’m prepping for jungle matchups—show me the stat sheet for Lee Sin.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Lee Sin" }
     },
     {
-      "query": "Show all the game giveaways currently running.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "game" }
+      "query": "Can you fetch the full in-game stat profile of Orianna? I need her mana numbers specifically.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Orianna" }
     },
     {
-      "query": "Fetch live loot giveaways right now.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "loot" }
+      "query": "Pull the complete champion stats for Darius, including his health regen and AD per level.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Darius" }
     },
     {
-      "query": "Find available beta access promotions.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "beta" }
+      "query": "Show me Ekko’s base stats and all scaling attributes. I want to check his growth patterns.",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Ekko" }
     },
     {
-      "query": "Give me a list of active giveaways for free games.",
-      "action": "get_game_giveaways_by_type",
-      "action_input": { "type": "game" }
+      "query": "I’m doing some top-lane prep—could you pull up the full stat profile for Fiora, including her HP growth and base attack damage?",
+      "action": "get_lol_champion_stats",
+      "action_input": { "name": "Fiora" }
+    }
+  ],
+
+  "get_salary_estimation": [
+    {
+      "query": "What’s the salary range for a software engineer in San Francisco?",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "software engineer", "location": "san francisco" }
+    },
+    {
+      "query": "Give me salary estimates for a data analyst working in Chicago with 1–3 years experience.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "data analyst", "location": "chicago", "years_of_experience": "ONE_TO_THREE" }
+    },
+    {
+      "query": "How much does a senior product manager make in New York City? Only show median salary and location.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "senior product manager", "location": "new york city", "fields": "median_salary,location" }
+    },
+    {
+      "query": "What’s the estimated salary for a UX designer in Canada?",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "ux designer", "location": "canada", "location_type": "COUNTRY" }
+    },
+    {
+      "query": "Find the salary range for a backend developer in Austin with more than 15 years of experience.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "backend developer", "location": "austin", "years_of_experience": "ABOVE_FIFTEEN" }
+    },
+    {
+      "query": "Show me salary estimates for a machine learning engineer in California, state-level only.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "machine learning engineer", "location": "california", "location_type": "STATE" }
+    },
+    {
+      "query": "What does a cloud architect earn in Seattle? Include only job_title, median_salary, and total_max.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "cloud architect", "location": "seattle", "fields": "job_title,median_salary,total_max" }
+    },
+    {
+      "query": "Estimate the salary for a junior QA engineer in Boston with less than one year of experience.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "qa engineer", "location": "boston", "years_of_experience": "LESS_THAN_ONE" }
+    },
+    {
+      "query": "Give me salary details for a cybersecurity specialist working anywhere in the United States.",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "cybersecurity specialist", "location": "united states", "location_type": "COUNTRY" }
+    },
+    {
+      "query": "What’s the salary for a DevOps engineer in Los Angeles for someone with 4–6 years of experience?",
+      "action": "get_salary_estimation",
+      "action_input": { "job_title": "devops engineer", "location": "los angeles", "years_of_experience": "FOUR_TO_SIX" }
     }
   ],
 
@@ -950,6 +1109,119 @@
       "query": "List distant planets located between 100 and 1000 light years away.",
       "action": "get_planet_data",
       "action_input": { "min_distance_light_year": 100, "max_distance_light_year": 1000 }
+    }
+  ],
+
+  "get_celestial_body_position": [
+    {
+      "query": "What's the position of the Sun from January 1 to January 3 for my default location?",
+      "action": "get_celestial_body_position",
+      "action_input": { 
+        "body": "Sun",
+        "from_date": "2025-01-01",
+        "to_date": "2025-01-03"
+      }
+    },
+    {
+      "query": "Give me the Moon’s altitude and azimuth in Tokyo from March 10 to March 11.",
+      "action": "get_celestial_body_position",
+      "action_input": { 
+        "body": "Moon",
+        "latitude": 35.6895,
+        "longitude": 139.6917,
+        "from_date": "2025-03-10",
+        "to_date": "2025-03-11"
+      }
+    },
+    {
+      "query": "Track Mars’ position tonight at 20:00 in Los Angeles.",
+      "action": "get_celestial_body_position",
+      "action_input": { 
+        "body": "Mars",
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "from_date": "2025-04-01",
+        "to_date": "2025-04-01",
+        "time": "20:00:00"
+      }
+    },
+    {
+      "query": "Show me Jupiter's movement from April 4 to April 6 with elevation 500 meters.",
+      "action": "get_celestial_body_position",
+      "action_input": { 
+        "body": "Jupiter",
+        "from_date": "2025-04-04",
+        "to_date": "2025-04-06",
+        "elevation": 500
+      }
+    },
+    {
+      "query": "Provide the Sun’s position at 06:30 tomorrow for Taipei.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "Sun",
+        "latitude": 25.0330,
+        "longitude": 121.5654,
+        "from_date": "2025-05-12",
+        "to_date": "2025-05-12",
+        "time": "06:30:00"
+      }
+    },
+    {
+      "query": "I want the Moon's coordinates from May 1 to May 2 at 03:00 for a location at 100 meters elevation.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "Moon",
+        "from_date": "2025-05-01",
+        "to_date": "2025-05-02",
+        "elevation": 100,
+        "time": "03:00:00"
+      }
+    },
+    {
+      "query": "Give Saturn’s sky position in Paris from July 10 to July 12.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "Saturn",
+        "latitude": 48.8566,
+        "longitude": 2.3522,
+        "from_date": "2025-07-10",
+        "to_date": "2025-07-12"
+      }
+    },
+    {
+      "query": "Track Venus at 22:15 between August 1 and August 3 for New York City.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "Venus",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "from_date": "2025-08-01",
+        "to_date": "2025-08-03",
+        "time": "22:15:00"
+      }
+    },
+    {
+      "query": "What's the position of Mars for my default coordinates from September 9 to September 10 at 14:00?",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "Mars",
+        "from_date": "2025-09-09",
+        "to_date": "2025-09-10",
+        "time": "14:00:00"
+      }
+    },
+    {
+      "query": "Show the Sun’s altitude over Denver from December 20 to December 22 with elevation 1600 meters.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "Sun",
+        "latitude": 39.7392,
+        "longitude": -104.9903,
+        "elevation": 1600,
+        "from_date": "2025-12-20",
+        "to_date": "2025-12-22"
+      }
     }
   ],
 
@@ -1194,59 +1466,6 @@
     {
       "query": "List handball matches happening on 06/11/2025.",
       "action": "get_handball_scheduled_matches",
-      "action_input": {"date": "06/11/2025"}
-    }
-  ],
-
-  "get_handball_daily_matches": [
-    {
-      "query": "Show me today's handball matches, including live ones.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "12/11/2025"}
-    },
-    {
-      "query": "List all handball games for 10/11/2025.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "10/11/2025"}
-    },
-    {
-      "query": "What handball matches are happening on 13/11/2025?",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "13/11/2025"}
-    },
-    {
-      "query": "Get me the handball games scheduled for 09/11/2025.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "09/11/2025"}
-    },
-    {
-      "query": "Show the live and scheduled handball matches for 11/11/2025.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "11/11/2025"}
-    },
-    {
-      "query": "I want to see handball games for 08/11/2025.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "08/11/2025"}
-    },
-    {
-      "query": "Display all handball matches on 14/11/2025.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "14/11/2025"}
-    },
-    {
-      "query": "What are the handball matches on 07/11/2025?",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "07/11/2025"}
-    },
-    {
-      "query": "Get me today’s live handball fixtures for 12/11/2025.",
-      "action": "get_handball_daily_matches",
-      "action_input": {"date": "12/11/2025"}
-    },
-    {
-      "query": "List all handball matches, including ongoing ones, for 06/11/2025.",
-      "action": "get_handball_daily_matches",
       "action_input": {"date": "06/11/2025"}
     }
   ],

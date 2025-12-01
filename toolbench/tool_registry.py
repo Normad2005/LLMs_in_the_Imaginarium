@@ -1,7 +1,4 @@
-TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
-    # Business
-    "generate_temp_upload_urls": {"category": "Business", "tool_name": "Fake Brightcove"},
-
+TOOL_REGISTRY = {
     # Business_Software
     "verify_email": {"category": "Business Software", "tool_name": "Global Email V4"},
 
@@ -13,17 +10,17 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     "search_public_restrooms": {"category": "Data", "tool_name": "Public Bathrooms"},
 
     # Datebase
-    "get_industry_list": {"category": "Database", "tool_name": "siteDomain"},
-
-    "get_language_list": {"category": "Database", "tool_name": "siteDomain"},
+    "get_dog_breeds_metadata": {"category": "Database", "tool_name": "DogBreed"},
 
     # Education
     "spell_number": {"category": "Education", "tool_name": "Numbers Translator"},
 
     # Entertainment
-    "get_random_joke": {"category": "Entertainment", "tool_name": "Joke"},
+    "get_random_joke": {"category": "Entertainment", "tool_name": "BestJoke"},
 
-    "get_media_news": {"category": "Entertainment", "tool_name": "Media"},
+    "get_media_news": {"category": "Entertainment", "tool_name": "IMDb"},
+
+    "search_manga": {"category": "Entertainment", "tool_name": "MangaVerse"},
 
     # Finance
     "get_financial_data": {"category": "Finance", "tool_name": "Alpha Vantage"},
@@ -34,23 +31,28 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
     "get_inflation_data": {"category": "Finance", "tool_name": "Inflation"},
 
-    "get_crypto_price": {"category": "Finance", "tool_name": "Crypto Price"},
-
     # Food
     "get_recipe": {"category": "Food", "tool_name": "Recipe"},
+
+    "search_cocktails": {"category": "Food", "tool_name": "Cocktail"},
 
     # Gaming
     "get_all_mvc2_characters": {"category": "Gaming", "tool_name": "Marvel Vs Capcom 2"},
 
     "get_filtered_game_giveaways": {"category": "Gaming", "tool_name": "gamerpower"},
 
-    "get_game_giveaways_by_type": {"category": "Gaming", "tool_name": "gamerpower"},
+    "get_lol_champion_stats": {"category": "Gaming", "tool_name": "League of Legends Stats"},
+
+    # Jobs
+    "get_salary_estimation": {"category": "Jobs", "tool_name": "JSearch"},
 
     # Location
     "get_timezone_info": {"category": "Location", "tool_name": "Stadia Maps Time Zone API"},
 
     #Science
     "get_planet_data": {"category": "Science", "tool_name": "Planets"},
+
+    "get_celestial_body_position": {"category": "Science", "tool_name": "Astronomy"},
 
     #Search
     "search_arxiv_papers": {"category": "Search", "tool_name": "arXiv"},
@@ -62,8 +64,6 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
 
     "get_handball_scheduled_matches": {"category": "Sports", "tool_name": "handball_data"},
 
-    "get_handball_daily_matches": {"category": "Sports", "tool_name": "handball_data"},
-
     # Transportation
     "get_airlines": {"category": "Transportation", "tool_name": "Airlines"},
 
@@ -73,5 +73,4 @@ TOOL_REGISTRY = { #這個是tool_test測試用的，ste用的在tool_matadata
     "get_air_quality_data": {"category": "Weather", "tool_name": "Air Quality"},
 
     "get_weather_forecast": {"category": "Weather", "tool_name": "WeatherAPI"}
-    
 }

@@ -44,7 +44,7 @@ def run_tool(api_name: str, args: dict, truncate: int = 2048):
         result = {"error": str(e), "response": ""}
 
     result_str = json.dumps(result, ensure_ascii=False, indent=2)
-    return result_str[:truncate]
+    return result_str[:truncate] #這個有需要嗎
 
 # === 安全解析 JSON ===
 def safe_json_loads(s: str):
@@ -63,7 +63,7 @@ def LTM(queries, results):
     return [f"Query: {q} | Solved: {results[i]}" for i, q in enumerate(queries)]
 
 # === STE 主程式 ===
-def main(model_ckpt="llama3.1:8b-instruct-fp16", num_episodes=3, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
+def main(model_ckpt="gpt-oss", num_episodes=3, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
     os.makedirs(dir_write, exist_ok=True)
 
     # === 載入 Prompt Template ===

@@ -1,7 +1,10 @@
 from Exploration.my_llm import call_ollama
 
+# llama3.1:8b-instruct-fp16
+# gpt-oss
+
 def main():
-    model = "llama3.1:8b-instruct-fp16"  # 實驗室的可用模型
+    model = "gpt-oss"
     prompt = "Hello"
 
     try:

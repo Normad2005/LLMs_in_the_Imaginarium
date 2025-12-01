@@ -65,6 +65,18 @@
     ]
   },
 
+  "get_dog_breeds_metadata": {
+    "description": "Searches for and retrieves basic metadata for specific dog breeds from around the world based on a search term.",
+    "required_parameters": [
+      {
+        "name": "search",
+        "type": "String",
+        "description": "Search term to query for dog breeds. Supports partial matching (e.g., 'alaskan' will match 'Alaskan Husky' or 'Alaskan Malamute')."
+      }
+    ],
+    "optional_parameters": []
+  },
+
   "spell_number": {
     "description": "Convert numerical numbers to words.",
     "required_parameters": [
@@ -113,6 +125,30 @@
         "name": "language",
         "type": "String",
         "description": "The language code. Must be used in pair with the 'country' parameter to get news information in the related language if available."
+      }
+    ]
+  },
+
+  "search_manga": {
+    "description": "Searches for manga based on title, author, or keywords, with filtering options for NSFW content and the manga's origin (Japan, China, or Korea).",
+    "required_parameters": [
+      {
+        "name": "text",
+        "type": "String",
+        "description": "The search term to query for manga title or content (e.g., 'Naruto')."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "nsfw",
+        "type": "String",
+        "description": "Filter results by Not Safe For Work status. Use 'true' to get all manga (NSFW and non-NSFW), use 'false' to get only non-NSFW manga."
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "description": "The origin of the manga. Please choose from 'all', 'japan', 'china', or 'korea'.",
+        "default": "all"
       }
     ]
   },
@@ -222,25 +258,6 @@
     ]
   },
 
-  "get_crypto_price": {
-    "description": "Provides lightning-fast access to real-time crypto market data, including prices and exchange rates for over 4000 cryptocurrencies and 100 fiat currencies.",
-    "required_parameters": [
-      {
-        "name": "symbol",
-        "type": "String",
-        "description": "Cryptocurrency symbol (e.g., BTC, ETH, BNB). Case insensitive."
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "base",
-        "type": "String",
-        "description": "The pricing currency to convert to. Can be a fiat or another supported cryptocurrency. Defaults to USDT.",
-        "default": "USDT"
-      }
-    ]
-  },
-
   "get_recipe": {
     "description": "Searches for recipes where the dish name includes the query text.",
     "required_parameters": [
@@ -256,6 +273,23 @@
         "name": "offset",
         "type": "String",
         "description": "number of results to offset for pagination."
+      }
+    ]
+  },
+
+  "search_cocktails": {
+    "description": "Searches for cocktail recipes and information based on the cocktail's name or a list of required ingredients.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "name",
+        "type": "String",
+        "description": "Name of the cocktail. This parameter supports partial matches (e.g., 'bloody' will match 'bloody mary' and 'bloody margarita')."
+      },
+      {
+        "name": "ingredients",
+        "type": "String",
+        "description": "A comma-separated string of ingredients to search (e.g., 'vodka,lemon juice'). Only cocktails containing ALL listed ingredients will be returned."
       }
     ]
   },
@@ -286,17 +320,51 @@
     ]
   },
 
-  "get_game_giveaways_by_type": {
-    "description": "Get live giveaways by type, eg: game, loot, beta",
+  "get_lol_champion_stats": {
+    "description": "Retrieves the basic metadata and detailed in-game statistics for a specific League of Legends champion, including health, mana, attack damage, and various scaling stats.",
     "required_parameters": [
       {
-        "name": "type",
-        "type": "STRING",
-        "description": "The type of giveaway to filter by (e.g., game, loot, beta).",
-        "default": "game"
+        "name": "name",
+        "type": "String",
+        "description": "The name of the League of Legends champion to query (e.g., 'Ekko', 'Jhin')."
       }
     ],
     "optional_parameters": []
+  },
+
+  "get_salary_estimation": {
+    "description": "Retrieves detailed salary estimation data, including minimum, maximum, and median base/total salary, for a specified job title and location, with optional filtering by location type and years of experience.",
+    "required_parameters": [
+      {
+        "name": "job_title",
+        "type": "String",
+        "description": "The job title for which to get salary estimation (e.g., 'nodejs developer')."
+      },
+      {
+        "name": "location",
+        "type": "String",
+        "description": "The free-text location/area in which to get salary estimation (e.g., 'new york')."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "location_type",
+        "type": "Enum",
+        "description": "Specify the type of the location for additional accuracy. Allowed values: ANY, CITY, STATE, COUNTRY.",
+        "default": "ANY"
+      },
+      {
+        "name": "years_of_experience",
+        "type": "Enum",
+        "description": "Get job estimation for a specific experience level range (years). Allowed values: ALL, LESS_THAN_ONE, ONE_TO_THREE, FOUR_TO_SIX, SEVEN_TO_NINE, TEN_TO_FOURTEEN, ABOVE_FIFTEEN.",
+        "default": "ALL"
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "description": "A comma separated list of job salary fields to include in the response (field projection). By default all fields are returned. Example: 'job_title,median_salary,location'."
+      }
+    ]
   },
 
   "get_timezone_info": {
@@ -393,6 +461,52 @@
     ]
   },
 
+  "get_celestial_body_position": {
+    "description": "Retrieves astronomical position data (e.g., azimuth, altitude) for a celestial body based on the observer's location (latitude, longitude, elevation) and a specified date and time range.",
+    "required_parameters": [
+      {
+        "name": "body",
+        "type": "String",
+        "description": "The name of the celestial body (e.g., 'Sun', 'Moon', 'Mars', 'Jupiter') whose position is being requested."
+      },
+      {
+        "name": "latitude",
+        "type": "Number",
+        "description": "The latitude component of the observer's location.",
+        "default": "33.775867"
+      },
+      {
+        "name": "longitude",
+        "type": "Number",
+        "description": "The longitude component of the observer's location.",
+        "default": "-84.39733"
+      },
+      {
+        "name": "from_date",
+        "type": "String",
+        "description": "The start date for the query in 'yyyy-mm-dd' format."
+      },
+      {
+        "name": "to_date",
+        "type": "String",
+        "description": "The end date for the query in 'yyyy-mm-dd' format."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "elevation",
+        "type": "Number",
+        "description": "The elevation (in meters) of the observer's location.",
+        "default": "166"
+      },
+      {
+        "name": "time",
+        "type": "String",
+        "description": "The time component to be used with the date (e.g., 'HH:MM:SS'). If not specified, a default time will be used."
+      }
+    ]
+  },
+
   "search_arxiv_papers": {
     "description": "Provides a way to search the arXiv repository for scientific papers using a variety of filters and search parameters.",
     "required_parameters": [
@@ -456,19 +570,6 @@
 
   "get_handball_scheduled_matches": {
     "description": "Daily match list including scheduled matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
-    "required_parameters": [
-      {
-        "name": "date",
-        "type": "STRING",
-        "description": "The date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
-        "default": "28/01/2021"
-      }
-    ],
-    "optional_parameters": []
-  },
-
-  "get_handball_daily_matches": {
-    "description": "Daily match list including live matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
     "required_parameters": [
       {
         "name": "date",
@@ -583,5 +684,4 @@
       }
     ]
   }
-
 }

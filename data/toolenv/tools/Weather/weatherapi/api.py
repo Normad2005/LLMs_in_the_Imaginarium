@@ -1,5 +1,6 @@
 import http.client
 import json
+from urllib.parse import quote
 from config.api_keys import RAPIDAPI_KEY  # ← 共用金鑰
 
 def get_weather_forecast(
@@ -27,6 +28,7 @@ def get_weather_forecast(
     conn = http.client.HTTPSConnection("weatherapi-com.p.rapidapi.com")
 
     # 組合查詢字串
+    q = quote(q)
     query = f"/forecast.json?q={q}&days={days}"
 
     headers = {

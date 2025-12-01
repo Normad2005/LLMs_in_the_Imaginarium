@@ -1,5 +1,6 @@
 import http.client
 import json
+from urllib.parse import quote
 from config.api_keys import RAPIDAPI_KEY  # ← 共用金鑰
 
 def get_air_quality_data(
@@ -34,10 +35,13 @@ def get_air_quality_data(
     # === 建立查詢字串 ===
     query_params = []
     if city:
+        city = quote(city)
         query_params.append(f"city={city}")
     if state:
+        state = quote(state)
         query_params.append(f"state={state}")
     if country:
+        country = quote(country)
         query_params.append(f"country={country}")
     if lat is not None and lon is not None:
         query_params.append(f"lat={lat}")
