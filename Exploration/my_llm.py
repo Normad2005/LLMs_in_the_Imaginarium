@@ -25,7 +25,7 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7,
             "Content-Type": "application/json",
             "Authorization": f"Bearer {LAB_KEY}"
         }
-        payload = {"model": "llama3.1:8b-instruct-fp16", "prompt": prompt}
+        payload = {"model": model, "prompt": prompt}
 
         for attempt in range(1, max_retries + 1):
             try:

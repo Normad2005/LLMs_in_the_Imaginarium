@@ -63,7 +63,7 @@ def LTM(queries, results):
     return [f"Query: {q} | Solved: {results[i]}" for i, q in enumerate(queries)]
 
 # === STE 主程式 ===
-def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
+def main(model_ckpt="gpt-oss:120b", num_episodes=6, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
     os.makedirs(dir_write, exist_ok=True)
 
     # === 載入 Prompt Template ===
@@ -110,7 +110,7 @@ def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_
 
             # === Step 2: ReAct Chain ===
             prompt_a = template_a.format(api_descriptions=api_info,api_names=api_name, query=query)
-            messages = chat_my(messages, prompt_a)
+            messages = chat_my(messages, prompt_a, model=model_ckpt)
             temp = messages[-1]["content"]
             parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
@@ -138,7 +138,7 @@ def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_
                 })
                 print(f"🔁 Turn {turn}: {parsed.get('action')} → {obs[:120]}")
 
-                messages = chat_my(messages, "Observation: " + obs)
+                messages = chat_my(messages, "Observation: " + obs, model=model_ckpt)
                 temp = messages[-1]["content"]
                 parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
@@ -173,7 +173,7 @@ def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_
                 else:
                     follow_q += "\n\nOnly output the query itself, nothing else.\nUser Query:"
 
-                response = chat_my(messages, follow_q)[-1]["content"]
+                response = chat_my(messages, follow_q, model=model_ckpt)[-1]["content"]
                 follow_query = response.strip()
                 print(f"💬 Follow Query: {follow_query}")
                 explored_queries.append(follow_query)
@@ -181,7 +181,7 @@ def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_
 
                 # === ReAct for follow-up ===
                 prompt_follow_a = template_a_follow.format(query=follow_query)
-                messages = chat_my(messages, prompt_follow_a)
+                messages = chat_my(messages, prompt_follow_a, model=model_ckpt)
                 temp = messages[-1]["content"]
                 parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
@@ -209,7 +209,7 @@ def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_
                     })
                     print(f"🔁 Follow Turn {turn}: {parsed.get('action')} → {obs[:120]}")
 
-                    messages = chat_my(messages, "Observation: " + obs)
+                    messages = chat_my(messages, "Observation: " + obs, model=model_ckpt)
                     temp = messages[-1]["content"]
                     parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
@@ -237,7 +237,13 @@ def main(model_ckpt="gpt-oss", num_episodes=6, num_stm_slots=2, max_turn=5, dir_
         data_dict[api_name] = all_sessions
 
     # === 寫出結果 ===
-    out_path = os.path.join(dir_write, f"data_{RUN_ID}.json")
+    if model_ckpt == "gpt-oss:120b":
+        out_path = f"gpt_{RUN_ID}.json"
+    elif model_ckpt == "llama3.1:8b-instruct-fp16":
+        out_path = f"llama_{RUN_ID}.json"
+    else:
+        out_path = f"data_{RUN_ID}.json"
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data_dict, f, indent=2, ensure_ascii=False)
     print(f"\n📁 Results saved to {out_path}")

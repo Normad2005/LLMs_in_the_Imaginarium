@@ -1,4 +1,4 @@
-Your task is to answer the user's query as best you can. You have access to the following tools which you can use via API call to help with your response:
+Your task is to create a realistic user query that could be answered with the available tools. You have access to the following tools which you can use via API call to help with your response:
 
 {api_descriptions}
 
