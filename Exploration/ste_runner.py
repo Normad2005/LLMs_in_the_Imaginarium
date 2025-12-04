@@ -238,11 +238,11 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=6, num_stm_slots=2, max_turn=5,
 
     # === 寫出結果 ===
     if model_ckpt == "gpt-oss:120b":
-        out_path = f"gpt_{RUN_ID}.json"
+        out_path = os.path.join(dir_write, f"gpt_{RUN_ID}.json")
     elif model_ckpt == "llama3.1:8b-instruct-fp16":
-        out_path = f"llama_{RUN_ID}.json"
+        out_path = os.path.join(dir_write, f"llama_{RUN_ID}.json")
     else:
-        out_path = f"data_{RUN_ID}.json"
+        out_path = os.path.join(dir_write, f"data_{RUN_ID}.json")
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data_dict, f, indent=2, ensure_ascii=False)

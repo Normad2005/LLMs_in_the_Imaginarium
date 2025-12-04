@@ -7,13 +7,12 @@ from my_llm import chat_my
 
 
 def main(
-    input_path: str = "results/ste/gpt-oss_20251202-004903.json",
-    filter_model_ckpt: str = "llama3.1:8b-instruct-fp16",
-    paraphrase_model_ckpt: str = "llama3.1:8b-instruct-fp16",
+    input_path: str = "results/ste/gpt_20251203-220811.json",
+    filter_model_ckpt: str = "gpt-oss:120b",
+    paraphrase_model_ckpt: str = "gpt-oss:120b",
     target_num_train_per_API: int = 30, #平均每個api產出量目標
     num_para_train_max: int = 3, #每筆最多改寫幾次
     dir_write: str = "results/ste/",
-    save_file_name: str = "temp_data_train.json",
 ):
     os.makedirs(dir_write, exist_ok=True)
 
@@ -116,13 +115,13 @@ Original query:
 
 Only output the **paraphrase itself**, nothing else.
 Your paraphrase:"""
-            messages = chat_my(messages, para_prompt)
+            messages = chat_my(messages, para_prompt, model=paraphrase_model_ckpt)
             ex_list.append({"query": messages[-1]['content']})
 
             # 其他改寫版本
             for _ in range(num_para - 1):
                 follow_prompt = "Try paraphrasing it again in a new way (avoid being too similar):"
-                messages = chat_my(messages, follow_prompt)
+                messages = chat_my(messages, follow_prompt, model=paraphrase_model_ckpt)
                 ex_list.append({"query": messages[-1]['content']})
 
             para_list.append(ex_list)
@@ -142,6 +141,13 @@ Your paraphrase:"""
                 tool_data_train.append(tmp)
 
     random.shuffle(tool_data_train)
+
+    if paraphrase_model_ckpt == "gpt-oss:120b":
+        save_file_name = "gpt_tool_data_train.json"
+    elif paraphrase_model_ckpt == "llama3.1:8b-instruct-fp16":
+        save_file_name = "llama_tool_data_train.json"
+    else:
+        save_file_name = "tool_data_train.json"
     out_path = os.path.join(dir_write, save_file_name)
 
     with open(out_path, "w", encoding="utf-8") as f:
