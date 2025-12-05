@@ -15,10 +15,10 @@ from typing import Dict, Any
 from my_llm import call_ollama
 
 # ---------- config ----------
-DATA_PATH = "results/ste/data_20251112-091248.json"
+DATA_PATH = "results/ste/gpt_20251203-220811.json"
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 OUT_PATH = "results/semantic_memory_v2_thought.json"
-MODEL_CKPT = "llama3.1:8b-instruct-fp16"
+MODEL_CKPT = "gpt-oss:120b"
 
 MAX_CHAINS_PER_SESSION = 6
 MAX_EXAMPLES_PER_API = 6

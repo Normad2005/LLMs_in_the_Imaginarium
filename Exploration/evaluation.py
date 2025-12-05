@@ -5,28 +5,40 @@ import json
 import re
 
 string_match_APIs = [
-    "generate_temp_upload_urls",
-    "verify_email",
-    "english_talking_get_answer",
-    "get_car_makes",
-    "get_industry_list",
-    "get_language_list",
-    "spell_number",
-    "get_random_joke",
-    "get_financial_data",
-    "convert_currency",
-    "get_recipe",
-    "get_all_mvc2_characters",
-    "get_single_mvsc2_character",
-    "gamerpower_filter_and_group_giveaways",
-    "gamerpower_get_giveaways_by_type",
-    "get_timezone_info",
-    "get_soccer_tournaments",
-    "get_f1_latest_news",
-    "get_handball_scheduled_matches",
-    "get_handball_daily_matches",
-    "get_airlines"
+  "verify_email",
+  "get_car_makes",
+  "get_animal_facts",
+  "search_public_restrooms",
+  "get_dog_breeds_metadata",
+  "spell_number",
+  "get_random_joke",
+  "get_media_news",
+  "search_manga",
+  "get_financial_data",
+  "convert_currency",
+  "calculate_mortgage_payment",
+  "get_inflation_data",
+  "get_recipe",
+  "search_cocktails",
+  "get_all_mvc2_characters",
+  "get_filtered_game_giveaways",
+  "get_lol_champion_stats",
+  "get_salary_estimation",
+  "get_timezone_info",
+  "get_planet_data",
+  "get_celestial_body_position",
+  "search_arxiv_papers",
+  "get_soccer_tournaments",
+  "get_f1_latest_news",
+  "get_handball_scheduled_matches",
+  "get_airlines",
+  "get_motorcycle_data",
+  "get_air_quality_data",
+  "get_weather_forecast"
 ]
+
+model_ckpts = "gpt-oss:120b"
+
 
 with open("tool_metadata/tool_description.json", "r", encoding="utf-8") as f:
     TOOL_DESCRIPTION = json.load(f)
@@ -64,7 +76,8 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visuali
             if is_parsed:
                 parsed = item['parsed_result']
             else:
-                res = item[key_output].strip() #暫時用不到
+                #暫時用不到
+                res = item[key_output].strip()
                 #parsed = parse_response(res, API_name_list=list(dataset.keys()), api_descriptions="XXX", proc_toolken=True, ground_API=True)
             
             if parsed['finish']:
@@ -125,7 +138,7 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visuali
                     "The argument names and structure should exactly follow the API Description.\n"\
                     "Now say your judgment. Your response should always start with \"Yes.\" or \"No.\" indicating whether it's correct.\nYour response:"
 
-                    jud = chat_my(messages, msg.format(json.dumps(TOOL_DESCRIPTION[gt_api], indent=2, ensure_ascii=False), gt_api, json.dumps(gt_dict), gt_api, format_action_input(model_dict)))[-1]['content']
+                    jud = chat_my(messages, msg.format(json.dumps(TOOL_DESCRIPTION[gt_api], indent=2, ensure_ascii=False), gt_api, json.dumps(gt_dict), gt_api, format_action_input(model_dict)), model=model_ckpts)[-1]['content']
 
                     item['args_correct'] = int("No." not in jud)
                     

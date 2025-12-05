@@ -5,7 +5,7 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer, util
 
 def main(
-    train_path="results/ste/tool_data_train.json",
+    train_path="results/ste/gpt_tool_data_train.json",
     test_path="tool_metadata/tool_test.json",
     save_path="tool_metadata/tool_test_with_demo.json",
     num_examples_retrieve=3,

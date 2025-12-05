@@ -268,13 +268,7 @@
         "default": "italian wedding soup"
       }
     ],
-    "optional_parameters": [
-      {
-        "name": "offset",
-        "type": "String",
-        "description": "number of results to offset for pagination."
-      }
-    ]
+    "optional_parameters": []
   },
 
   "search_cocktails": {
@@ -622,12 +616,6 @@
         "name": "year",
         "type": "String",
         "description": "Release year of motorcycle model. Must be in the form of YYYY (e.g. 2022)."
-      },
-      {
-        "name": "offset",
-        "type": "Number",
-        "description": "Number of results to offset for pagination.",
-        "default": "0"
       }
     ]
   },

@@ -1570,9 +1570,9 @@
       "action_input": {"make": "KTM", "model": "Duke"}
     },
     {
-      "query": "Find 2023 Yamaha motorcycle data, starting from the 10th result.",
+      "query": "Find 2023 Yamaha motorcycle data",
       "action": "get_motorcycle_data",
-      "action_input": {"make": "Yamaha", "year": "2023", "offset": 10}
+      "action_input": {"make": "Yamaha", "year": "2023"}
     }
   ],
 
