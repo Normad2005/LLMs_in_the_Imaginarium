@@ -10,8 +10,8 @@ def main(
     input_path: str = "results/ste/gpt_20251203-220811.json",
     filter_model_ckpt: str = "gpt-oss:120b",
     paraphrase_model_ckpt: str = "gpt-oss:120b",
-    target_num_train_per_API: int = 30, #平均每個api產出量目標
-    num_para_train_max: int = 3, #每筆最多改寫幾次
+    target_num_train_per_API: int = 150, #平均每個api產出量目標
+    num_para_train_max: int = 6, #每筆最多改寫幾次
     dir_write: str = "results/ste/",
 ):
     os.makedirs(dir_write, exist_ok=True)
@@ -150,7 +150,7 @@ Your paraphrase:"""
         save_file_name = "tool_data_train.json"
     out_path = os.path.join(dir_write, save_file_name)
 
-    with open(out_path, "w", encoding="utf-8") as f:
+    with open(out_path, "a", encoding="utf-8") as f:
         json.dump(tool_data_train, f, indent=2, ensure_ascii=False)
 
     print(f"\n📦 Saved {len(tool_data_train)} examples to {out_path}")
