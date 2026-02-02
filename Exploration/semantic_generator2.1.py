@@ -15,9 +15,9 @@ from typing import Dict, Any
 from my_llm import call_ollama
 
 # ---------- config ----------
-DATA_PATH = "results/ste/gpt_20251203-220811.json"
+DATA_PATH = "results/ste/gpt_20251226-153325.json"
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
-OUT_PATH = "results/semantic_memory_v2_thought.json"
+OUT_PATH = "results/semantic_memory_0201.json"
 MODEL_CKPT = "gpt-oss:120b"
 
 MAX_CHAINS_PER_SESSION = 6

@@ -1,0 +1,212 @@
+{
+  "verify_email": {
+    "rule": "** Whenever a user asks to validate, check, or get details about a specific email address, immediately invoke `verify_email` with `action_input` set to `{\"email\": \"<the address>\"}` and never omit the action or its input.",
+    "_meta": {
+      "problem_sessions": 10,
+      "missing_action_input": 15
+    }
+  },
+  "get_car_makes": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 13,
+      "missing_action_input": 29
+    }
+  },
+  "get_animal_facts": {
+    "rule": "** After calling `get_animal_facts`, immediately check whether the returned list is empty; if it is, abort further API calls and respond that no facts were found for the given name.",
+    "_meta": {
+      "problem_sessions": 9,
+      "missing_action_input": 14
+    }
+  },
+  "search_public_restrooms": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 17,
+      "missing_action_input": 14
+    }
+  },
+  "get_dog_breeds_metadata": {
+    "rule": "** Only query `get_dog_breeds_metadata` with a valid `search` string and answer user questions using solely the fields `breedName`, `breedType`, and `breedDescription` returned by the API; do not claim or fabricate additional breed attributes that the endpoint does not supply.",
+    "_meta": {
+      "problem_sessions": 7,
+      "missing_action_input": 11
+    }
+  },
+  "spell_number": {
+    "rule": "(no rule extracted)",
+    "_meta": {
+      "problem_sessions": 4,
+      "missing_action_input": 8
+    }
+  },
+  "get_random_joke": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 11,
+      "missing_action_input": 51
+    }
+  },
+  "get_media_news": {
+    "rule": "** When invoking `get_media_news`, always pass a non‑empty `action_input` that includes a concrete `first` value (e.g., 5) and, if you supply `country`, you must also supply the matching `language`; then use the returned data to answer the user instead of making another call with missing or empty parameters.",
+    "_meta": {
+      "problem_sessions": 20,
+      "missing_action_input": 23
+    }
+  },
+  "search_manga": {
+    "rule": "** Always include a non‑empty `\"text\"` string in every `search_manga` request (e.g., `{\"text\":\"your query\", …}`), and only add the optional `\"nsfw\"` and `\"type\"` fields using the exact string values defined in the API specification.",
+    "_meta": {
+      "problem_sessions": 19,
+      "missing_action_input": 16
+    }
+  },
+  "get_financial_data": {
+    "rule": "** *Whenever you need a quote, call `get_financial_data` with a non‑empty `action_input` that includes the exact keys `\"function\": \"GLOBAL_QUOTE\"` and `\"symbol\": \"<ticker>\"`, then parse the returned string for the price and change.*",
+    "_meta": {
+      "problem_sessions": 11,
+      "missing_action_input": 15
+    }
+  },
+  "convert_currency": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 13,
+      "missing_action_input": 18
+    }
+  },
+  "calculate_mortgage_payment": {
+    "rule": "(no rule extracted)",
+    "_meta": {
+      "problem_sessions": 7,
+      "missing_action_input": 12
+    }
+  },
+  "get_inflation_data": {
+    "rule": "** Call `get_inflation_data` with either `{}` or `{\"type\": \"CPI\"|\"HICP\"}` — do not pass a `country` argument; instead filter the returned full‑dataset yourself to answer country‑specific or threshold questions.",
+    "_meta": {
+      "problem_sessions": 17,
+      "missing_action_input": 28
+    }
+  },
+  "get_recipe": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 17,
+      "missing_action_input": 29
+    }
+  },
+  "search_cocktails": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 11,
+      "missing_action_input": 17
+    }
+  },
+  "get_all_mvc2_characters": {
+    "rule": "** *When invoking `get_all_mvc2_characters`, always provide `action_input: {}` (an empty JSON object) and never omit or supply a non‑object value.*",
+    "_meta": {
+      "problem_sessions": 17,
+      "missing_action_input": 49
+    }
+  },
+  "get_filtered_game_giveaways": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 14,
+      "missing_action_input": 20
+    }
+  },
+  "get_lol_champion_stats": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 17,
+      "missing_action_input": 22
+    }
+  },
+  "get_salary_estimation": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 11,
+      "missing_action_input": 16
+    }
+  },
+  "get_timezone_info": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 5,
+      "missing_action_input": 7
+    }
+  },
+  "get_planet_data": {
+    "rule": "** *Whenever you invoke `get_planet_data`, always provide a non‑empty `action_input` dictionary and explicitly include both the `min_` and `max_` fields for every numeric filter the user mentions, never relying on the API’s default 0 values.*",
+    "_meta": {
+      "problem_sessions": 16,
+      "missing_action_input": 23
+    }
+  },
+  "get_celestial_body_position": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 16,
+      "missing_action_input": 19
+    }
+  },
+  "search_arxiv_papers": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 18,
+      "missing_action_input": 23
+    }
+  },
+  "get_soccer_tournaments": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 16,
+      "missing_action_input": 38
+    }
+  },
+  "get_f1_latest_news": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 12,
+      "missing_action_input": 39
+    }
+  },
+  "get_handball_scheduled_matches": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 12,
+      "missing_action_input": 17
+    }
+  },
+  "get_airlines": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 13,
+      "missing_action_input": 23
+    }
+  },
+  "get_motorcycle_data": {
+    "rule": "Always include a correctly‑spelled, non‑empty `make` (and optionally `year`) in the request; if the API returns an empty list, immediately retry with the same `make` (and `year`) but omit or shorten the `model` to leverage partial matching.**",
+    "_meta": {
+      "problem_sessions": 15,
+      "missing_action_input": 25
+    }
+  },
+  "get_air_quality_data": {
+    "rule": "**",
+    "_meta": {
+      "problem_sessions": 15,
+      "missing_action_input": 25
+    }
+  },
+  "get_weather_forecast": {
+    "rule": "For any forecast request, first call `get_weather_forecast` with a valid `q` and `days` ≤ 1 (or ≤ 3) per request, chaining multiple calls if more days are needed, and never answer without a successful API response.**",
+    "_meta": {
+      "problem_sessions": 18,
+      "missing_action_input": 23
+    }
+  }
+}
