@@ -5,34 +5,34 @@ import json
 import re
 
 string_match_APIs = [
-  "verify_email",
-  "get_car_makes",
+  
+  
   "get_animal_facts",
   "search_public_restrooms",
   "get_dog_breeds_metadata",
-  "spell_number",
-  "get_random_joke",
+  
+  
   "get_media_news",
   "search_manga",
   "get_financial_data",
-  "convert_currency",
-  "calculate_mortgage_payment",
+  
+  
   "get_inflation_data",
   "get_recipe",
   "search_cocktails",
-  "get_all_mvc2_characters",
+  
   "get_filtered_game_giveaways",
-  "get_lol_champion_stats",
+  
   "get_salary_estimation",
   "get_timezone_info",
   "get_planet_data",
   "get_celestial_body_position",
   "search_arxiv_papers",
-  "get_soccer_tournaments",
-  "get_f1_latest_news",
+  
+  
   "get_handball_scheduled_matches",
-  "get_airlines",
-  "get_motorcycle_data",
+  
+  
   "get_air_quality_data",
   "get_weather_forecast"
 ]
@@ -190,5 +190,5 @@ def eval_batch(file_name, key_list=None):
     print("correct:", round(100*correct/total, 3))
 
 if __name__ == "__main__":
-    eval_pred_file("results/icl/outputs_semantic.json")
-    eval_batch("results/icl/outputs_semantic.json")
+    eval_pred_file("results/icl/outputs_icl.json")
+    eval_batch("results/icl/outputs_icl.json")
