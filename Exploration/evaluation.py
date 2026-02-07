@@ -5,36 +5,20 @@ import json
 import re
 
 string_match_APIs = [
-  
-  
-  "get_animal_facts",
-  "search_public_restrooms",
-  "get_dog_breeds_metadata",
-  
-  
-  "get_media_news",
-  "search_manga",
-  "get_financial_data",
-  
-  
-  "get_inflation_data",
-  "get_recipe",
-  "search_cocktails",
-  
+  "verify_email",
+  "get_car_makes",
+  "spell_number",
+  "get_random_joke",
+  "convert_currency",
+  "calculate_mortgage_payment",
+  "get_all_mvc2_characters",
   "get_filtered_game_giveaways",
-  
-  "get_salary_estimation",
-  "get_timezone_info",
-  "get_planet_data",
-  "get_celestial_body_position",
-  "search_arxiv_papers",
-  
-  
+  "get_lol_champion_stats",
+  "get_soccer_tournaments",
+  "get_f1_latest_news",
   "get_handball_scheduled_matches",
-  
-  
-  "get_air_quality_data",
-  "get_weather_forecast"
+  "get_airlines",
+  "get_motorcycle_data",
 ]
 
 model_ckpts = "gpt-oss:120b"
