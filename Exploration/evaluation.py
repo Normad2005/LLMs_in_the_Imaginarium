@@ -174,5 +174,5 @@ def eval_batch(file_name, key_list=None):
     print("correct:", round(100*correct/total, 3))
 
 if __name__ == "__main__":
-    eval_pred_file("results/icl/outputs_icl.json")
-    eval_batch("results/icl/outputs_icl.json")
+    eval_pred_file("results/icl/outputs_semantic.json")
+    eval_batch("results/icl/outputs_semantic.json")
