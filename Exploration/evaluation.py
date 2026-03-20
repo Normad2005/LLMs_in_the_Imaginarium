@@ -50,10 +50,17 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visuali
     with open(file_name, "r", encoding='utf-8') as f:
         dataset = json.load(f)
 
+    from tqdm import tqdm
+    import os
+    total_items = sum(len(items) for items in dataset.values())
+    file_short_name = os.path.basename(file_name)
+    pbar = tqdm(total=total_items, desc=f"Evaluating ({file_short_name})", leave=False)
+
     for gt_api in dataset:
 
         examples = dataset[gt_api]
         for ii in range(len(examples)):
+            pbar.set_postfix({"API": gt_api[:15], "idx": ii})
             item = examples[ii]
         
             item['no_call'] = 0
@@ -127,8 +134,11 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visuali
                     item['args_correct'] = int("No." not in jud)
                     
             examples[ii] = item
+            pbar.update(1)
 
         dataset[gt_api] = examples
+
+    pbar.close()
 
     with open(file_name, "w", encoding='utf-8') as f:
         json.dump(dataset, f)
@@ -169,10 +179,21 @@ def eval_batch(file_name, key_list=None):
                 correct += item['args_correct']
                 continue
     
-    print("wellformed:", round(100*(non_err/total), 3))
-    print("api match:", round(100*api_match/non_err, 3))
-    print("correct:", round(100*correct/total, 3))
+    res_wellformed = round(100*(non_err/total), 3) if total > 0 else 0
+    res_api_match = round(100*api_match/non_err, 3) if non_err > 0 else 0
+    res_correct = round(100*correct/total, 3) if total > 0 else 0
+    
+    print("wellformed:", res_wellformed)
+    print("api match:", res_api_match)
+    print("correct:", res_correct)
+    
+    return {"wellformed": res_wellformed, "api_match": res_api_match, "correct": res_correct}
 
 if __name__ == "__main__":
-    eval_pred_file("results/icl/outputs_semantic.json")
-    eval_batch("results/icl/outputs_semantic.json")
+    import sys
+    if len(sys.argv) > 1:
+        eval_pred_file(sys.argv[1])
+        eval_batch(sys.argv[1])
+    else:
+        eval_pred_file("results/icl/outputs_semantic.json")
+        eval_batch("results/icl/outputs_semantic.json")
