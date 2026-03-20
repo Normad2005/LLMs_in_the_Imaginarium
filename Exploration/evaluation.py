@@ -146,6 +146,8 @@ def eval_batch(file_name, key_list=None):
     total = 0
     api_match = 0
     non_err = 0
+    total_prompt_chars = 0
+    prompt_chars_count = 0
         
     for key, examples in dataset_evaled.items():
         if not (key_list is None or key in key_list):
@@ -153,6 +155,12 @@ def eval_batch(file_name, key_list=None):
 
         for item in examples:
             total += 1
+
+            # 累計 prompt token 數（若有記錄且有效）
+            pt = item.get("prompt_tokens", -1)
+            if pt and pt > 0:
+                total_prompt_chars += pt
+                prompt_chars_count += 1
             
             if item['no_call']:
                 no_call += 1
@@ -170,9 +178,12 @@ def eval_batch(file_name, key_list=None):
                 continue
     
     print("wellformed:", round(100*(non_err/total), 3))
-    print("api match:", round(100*api_match/non_err, 3))
+    print("api match:", round(100*api_match/non_err, 3) if non_err else "N/A")
     print("correct:", round(100*correct/total, 3))
+    if prompt_chars_count:
+        avg_tokens = total_prompt_chars / prompt_chars_count
+        print(f"avg prompt tokens: {round(avg_tokens)}")
 
 if __name__ == "__main__":
-    eval_pred_file("results/icl/outputs_semantic.json")
-    eval_batch("results/icl/outputs_semantic.json")
+    eval_pred_file("results/icl/outputs_ICL_filtered.json")
+    eval_batch("results/icl/outputs_ICL_filtered.json")

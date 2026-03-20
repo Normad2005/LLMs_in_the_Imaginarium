@@ -1,0 +1,1466 @@
+{
+  "verify_email": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Email Deliverability Verification",
+        "scenario": "Validate a single email address to confirm it exists, is reachable, and assess its deliverability confidence.",
+        "tool_errata": [
+          "Pass a JSON object that contains **only** the required key `email` with the raw email address as a plain string (e.g., `\"email\": \"user@example.com\"`).",
+          "Strip any surrounding whitespace or punctuation from the email before inserting it into the request."
+        ],
+        "examples": [
+          {
+            "query": "Is the email address marketing@techstartup.io valid and deliverable, and does it have any typo suggestions?",
+            "action": "verify_email",
+            "action_input": "{\n    \"email\": \"marketing@techstartup.io\"\n}"
+          },
+          {
+            "query": "Can you verify whether the email address sales@openai.com is currently valid and deliverable, provide any typo correction suggestions, give its Deliverability Confidence Score, and let me know if the domain is identified as a mobile email provider?",
+            "action": "verify_email",
+            "action_input": "{\n    \"email\": \"sales@openai.com\"\n}"
+          },
+          {
+            "query": "Can you verify whether the email address events@charityworld.org is currently valid and deliverable, provide any typo correction suggestions, give its Deliverability Confidence Score, indicate if the domain is identified as a mobile or disposable email provider, and include the domain’s registration and expiration dates as well as any known breach count?",
+            "action": "verify_email",
+            "action_input": "{\n    \"email\": \"events@charityworld.org\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_car_makes": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "list_all_makes",
+        "scenario": "Retrieve the complete list of car manufacturers from the dataset.",
+        "tool_errata": [
+          "The API requires no parameters; always call it with an empty JSON object `{}` as the Action Input."
+        ],
+        "examples": [
+          {
+            "query": "Which car makes in the dataset have names that contain the substring \"us\"?",
+            "action": "get_car_makes",
+            "action_input": "{\n}"
+          },
+          {
+            "query": "What car makes in the dataset have names that start with the letter 'M'?",
+            "action": "get_car_makes",
+            "action_input": "{}"
+          },
+          {
+            "query": "What is the ID number for the car make \"Toyota\" in the dataset?",
+            "action": "get_car_makes",
+            "action_input": "{\n    \n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_animal_facts": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Animal facts lookup",
+        "scenario": "Retrieve scientific facts about a specific animal using its common name (full or partial).",
+        "tool_errata": [
+          "The only required parameter is **name**, which must be a non‑empty string containing the animal’s common name (full or partial) that matches at least one record in the facts database.",
+          "If the API returns an empty list, treat it as “no facts available” and do not retry with broader or different terms."
+        ],
+        "examples": [
+          {
+            "query": "Can you share an interesting scientific fact about the pangolin’s scales?",
+            "action": "get_animal_facts",
+            "action_input": "{\n    \"name\": \"pangolin\"\n}"
+          },
+          {
+            "query": "Can you share an interesting scientific fact about the axolotl’s ability to regenerate?",
+            "action": "get_animal_facts",
+            "action_input": "{\n    \"name\": \"axolotl\"\n}"
+          },
+          {
+            "query": "Can you share an interesting scientific fact about the honeybee’s waggle dance?",
+            "action": "get_animal_facts",
+            "action_input": "{\n    \"name\": \"honey bee\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "search_public_restrooms": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "state_filter_search",
+        "scenario": "Search for public restrooms within specified US states (or default states if omitted).",
+        "tool_errata": [
+          "states must be a string of uppercase two‑letter US state abbreviations separated only by commas, e.g. \"NY,FL\"; omit it to use the API’s default of \"NY,FL\".",
+          "For a state‑filter search, do not include lat or lon; the call requires only the states parameter (page and per_page are optional)."
+        ],
+        "examples": [
+          {
+            "query": "Find wheelchair‑accessible public restrooms with baby‑changing tables within a 1‑mile radius of the Denver Convention Center in Denver, Colorado.",
+            "action": "search_public_restrooms",
+            "action_input": "{\n    \"lat\": 39.7525,\n    \"lon\": -104.999,\n    \"states\": \"CO\",\n    \"per_page\": 100,\n    \"page\": 3\n}"
+          },
+          {
+            "query": "Where are the nearest public lavatories to the main entrance of Bethesda Fountain in Central Park, New York (coordinates 40.7740, ‑73.9708) within a short walk?",
+            "action": "search_public_restrooms",
+            "action_input": "{\n    \"lat\": 40.7740,\n    \"lon\": -73.9708,\n    \"states\": \"NY\",\n    \"per_page\": 100,\n    \"page\": 1\n}"
+          },
+          {
+            "query": "What public restroom facilities can be found within a short walk of the main entrance to Bethesda Fountain in Central Park, New York (coordinates 40.7740, ‑73.9708)?",
+            "action": "search_public_restrooms",
+            "action_input": "{\n    \"lat\": 40.7740,\n    \"lon\": -73.9708,\n    \"states\": \"NY\",\n    \"per_page\": 100,\n    \"page\": 1\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "proximity_search",
+        "scenario": "Search for public restrooms near a specific geographic point using latitude and longitude.",
+        "tool_errata": [
+          "lat and lon must both be provided together as numbers; omitting either triggers an error.",
+          "states, when included, must be uppercase two‑letter abbreviations separated by commas without spaces (e.g., \"TX\" or \"NY,FL\").",
+          "When searching near a US location, always set states to the relevant state abbreviation(s) to restrict results to that area."
+        ],
+        "examples": [
+          {
+            "query": "Find wheelchair‑accessible public restrooms within a 2‑mile radius of the Dallas Convention Center in Dallas, TX.",
+            "action": "search_public_restrooms",
+            "action_input": "{\n    \"lat\": 32.7767,\n    \"lon\": -96.7970,\n    \"states\": \"TX\",\n    \"per_page\": 100,\n    \"page\": 2\n}"
+          },
+          {
+            "query": "Where are the nearest public lavatories to the main entrance of Bethesda Fountain in Central Park, New York (coordinates 40.7740, ‑73.9708) within a short walk?",
+            "action": "search_public_restrooms",
+            "action_input": "{\n    \"lat\": 40.7740,\n    \"lon\": -73.9708,\n    \"states\": \"NY\",\n    \"per_page\": 100,\n    \"page\": 1\n}"
+          },
+          {
+            "query": "What public restroom facilities can be found within a short walk of the main entrance to Bethesda Fountain in Central Park, New York (coordinates 40.7740, ‑73.9708)?",
+            "action": "search_public_restrooms",
+            "action_input": "{\n    \"lat\": 40.7740,\n    \"lon\": -73.9708,\n    \"states\": \"NY\",\n    \"per_page\": 100,\n    \"page\": 1\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_dog_breeds_metadata": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Breed metadata search",
+        "scenario": "Retrieve basic metadata for dog breeds that match a given search term.",
+        "tool_errata": [
+          "Provide an Action Input JSON that contains **only** the key `\"search\"` with a non‑empty string value (e.g., `\"Alaskan\"`); no other keys or parameters are allowed.",
+          "The search string is case‑insensitive and supports partial matching, so a single call returns metadata for **all** breeds whose names contain that term—no additional calls are needed."
+        ],
+        "examples": [
+          {
+            "query": "Can you provide basic information about the Welsh Corgi and any other dog breeds that have “Welsh” in their name?",
+            "action": "get_dog_breeds_metadata",
+            "action_input": "{\n    \"search\": \"Welsh\"\n}"
+          },
+          {
+            "query": "Can you provide basic information about the German Shepherd and any other dog breeds that have “Shepherd” in their name?",
+            "action": "get_dog_breeds_metadata",
+            "action_input": "{\n    \"search\": \"Belgian Shepherd\"\n}"
+          },
+          {
+            "query": "Can you provide basic information about the Rhodesian Ridgeback and any other dog breeds that have “Ridgeback” in their name?",
+            "action": "get_dog_breeds_metadata",
+            "action_input": "{\n    \"search\": \"Ridgeback\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "spell_number": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Number to Words",
+        "scenario": "When a user wants to convert a numeric value into its spelled‑out word form.",
+        "tool_errata": [
+          "Provide the numeric value as the `number_text` parameter exactly as a plain string of digits (e.g., `\"23879908709817834\"`), without commas, spaces, or any other non‑digit characters.",
+          "Include no additional parameters; only the required `number_text` field should be sent."
+        ],
+        "examples": [
+          {
+            "query": "Please write the number 1,234,567,890,123,456,789 in words.",
+            "action": "spell_number",
+            "action_input": "{\n    \"number_text\": \"1234567890123456789\"\n}"
+          },
+          {
+            "query": "Could you write the number 987,654,321,012,345,678,901 in words?",
+            "action": "spell_number",
+            "action_input": "{\n    \"number_text\": \"987654321012345678901\"\n}"
+          },
+          {
+            "query": "Could you write out the number of bytes in a petabyte, 1,125,899,906,842,624, in words?",
+            "action": "spell_number",
+            "action_input": "{\n    \"number_text\": \"1125899906842624\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_random_joke": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Fetch random joke",
+        "scenario": "Retrieve a random joke without any input parameters.",
+        "tool_errata": [
+          "The get_random_joke API takes no parameters; always provide an empty JSON object `{}` as the Action Input."
+        ],
+        "examples": [
+          {
+            "query": "I'm stuck in a long line at the grocery store and could use a quick laugh—can you share a random joke?",
+            "action": "get_random_joke",
+            "action_input": "{\n}"
+          },
+          {
+            "query": "I'm about to start my weekly soccer practice and would love a quick, light‑hearted joke to share with my teammates—could you give me a random joke?",
+            "action": "get_random_joke",
+            "action_input": "{}"
+          },
+          {
+            "query": "Can you share a quick joke I can use to break the ice at the start of my meeting?",
+            "action": "get_random_joke",
+            "action_input": "{}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_media_news": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "General trending news",
+        "scenario": "Retrieve the latest general media news without any specific filtering.",
+        "tool_errata": [
+          "Omit the `country` and `language` parameters; they must not be included when no regional filtering is desired.",
+          "Use no parameters or set `category` to the string `\"TOP\"` (type String) to request general trending news; optional `first` (Number) and `after` (String) may be omitted to use defaults."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 1,
+        "name": "Category-specific news",
+        "scenario": "Fetch news focused on a particular media type such as movies, TV shows, or celebrities.",
+        "tool_errata": [
+          "Provide the category parameter with one of the exact uppercase values: TOP, MOVIE, TV, CELEBRITY, or UNKNOWN.",
+          "When using country or language, include both together; country must be an ISO‑3166 two‑letter code (e.g., US, GB) and language must be an ISO‑639‑1 two‑letter code in lowercase (e.g., en, hi).",
+          "The first parameter is optional; if set, give a positive integer (default is 20 if omitted)."
+        ],
+        "examples": [
+          {
+            "query": "What are the latest celebrity news articles from the United Kingdom, written in English?",
+            "action": "get_media_news",
+            "action_input": "{\n    \"category\": \"CELEBRITY\",\n    \"country\": \"GB\",\n    \"language\": \"en\",\n    \"first\": 20\n}"
+          },
+          {
+            "query": "What are the latest movie news headlines from the United States, written in English?",
+            "action": "get_media_news",
+            "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\",\n    \"first\": 50\n}"
+          },
+          {
+            "query": "Could you list the most recent English-language movie news headlines from the United States?",
+            "action": "get_media_news",
+            "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\",\n    \"first\": 50\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "Localized news",
+        "scenario": "Obtain news tailored to a specific country and language.",
+        "tool_errata": [
+          "Always include both `country` and `language` parameters together; they must appear in the same request.",
+          "`country` must be an uppercase ISO‑3166‑1 alpha‑2 code (e.g., `\"ES\"`, `\"US\"`), and `language` must be a lowercase ISO‑639‑1 code (e.g., `\"es\"`, `\"en\"`).",
+          "`category` is optional; omit it for general news or set it (e.g., `\"CELEBRITY\"` or `\"TV\"`) when you need a specific media type."
+        ],
+        "examples": [
+          {
+            "query": "Could you list the most recent English-language movie news headlines from the United States?",
+            "action": "get_media_news",
+            "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\",\n    \"first\": 50\n}"
+          },
+          {
+            "query": "List the freshest U.S.-based film headlines available in English.",
+            "action": "get_media_news",
+            "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\",\n    \"first\": 50\n}"
+          },
+          {
+            "query": "Fetch the newest English-language film news headlines released in the United States.",
+            "action": "get_media_news",
+            "action_input": "{\n    \"category\": \"MOVIE\",\n    \"country\": \"US\",\n    \"language\": \"en\",\n    \"first\": 50\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "search_manga": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Search manga by keyword",
+        "scenario": "User wants to find manga matching a text query, optionally restricting results by NSFW status and/or origin (Japan, China, Korea).",
+        "tool_errata": [
+          "Include the three parameters in every call: `text` as a non‑empty string of keywords, `nsfw` as the literal string `\"true\"` or `\"false\"`, and `type` as one of the exact lowercase options `\"all\"`, `\"japan\"`, `\"china\"`, or `\"korea\"`.",
+          "Use `nsfw: \"false\"` to obtain only non‑NSFW manga; `nsfw: \"true\"` returns both NSFW and non‑NSFW titles (it does not filter to NSFW only).",
+          "The `type` parameter must match the allowed values exactly in lowercase; any deviation (e.g., capitalized or misspelled) will result in no valid filtering."
+        ],
+        "examples": [
+          {
+            "query": "Can you suggest a few non‑NSFW Japanese manga that blend mystery and supernatural elements in a modern urban setting?",
+            "action": "search_manga",
+            "action_input": "{\n    \"text\": \"city supernatural mystery manga\",\n    \"nsfw\": \"false\",\n    \"type\": \"japan\"\n}"
+          },
+          {
+            "query": "Can you recommend some non‑NSFW Korean manhwa (webtoons) that focus on virtual reality MMORPG adventures?",
+            "action": "search_manga",
+            "action_input": "{\n    \"text\": \"online game\",\n    \"nsfw\": \"false\",\n    \"type\": \"korea\"\n}"
+          },
+          {
+            "query": "Could you suggest some non‑adult Japanese manga that mix detective investigations with supernatural mystery themes?",
+            "action": "search_manga",
+            "action_input": "{\n    \"text\": \"mystery supernatural manga\",\n    \"nsfw\": \"false\",\n    \"type\": \"japan\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_financial_data": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Real‑time Quote",
+        "scenario": "Retrieve the latest market price and related data for a specific ticker.",
+        "tool_errata": [
+          "Include the required parameter `\"function\"` with the exact string value `\"GLOBAL_QUOTE\"`.",
+          "Include the required parameter `\"symbol\"` set to the ticker symbol in all‑caps (e.g., `\"AMZN\"`), not the company name.",
+          "Both `\"function\"` and `\"symbol\"` must be present in the JSON request; omitting either results in an error."
+        ],
+        "examples": [
+          {
+            "query": "What was the day's low and the trading volume for Shopify (SHOP) stock today?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"SHOP\"\n}"
+          },
+          {
+            "query": "What were the opening price and the trading volume for Amazon (AMZN) stock today?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AMZN\"\n}"
+          },
+          {
+            "query": "What's the current price and daily change for Apple’s stock (AAPL)?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "Historical Time Series",
+        "scenario": "Obtain past price data (daily, intraday, weekly, etc.) for a ticker.",
+        "tool_errata": [
+          "Set the **function** parameter to the exact string `\"GLOBAL_QUOTE\"` (case‑sensitive).",
+          "Set the **symbol** parameter to the ticker symbol in all uppercase letters with no surrounding whitespace.",
+          "Include only the two required keys (**function** and **symbol**) in the request; no extra parameters are allowed."
+        ],
+        "examples": [
+          {
+            "query": "What were the previous closing price and today's high for Tesla (TSLA) stock?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"TSLA\"\n}"
+          },
+          {
+            "query": "What was the day's low price and the percentage change for Disney (DIS) stock today?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"DIS\"\n}"
+          },
+          {
+            "query": "What’s the current price for Tesla’s stock (TSLA)?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"TSLA\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "Company Overview",
+        "scenario": "Get fundamental company information such as sector, description, and key metrics.",
+        "tool_errata": [
+          "Include the required parameter **function** as a string (e.g., `\"GLOBAL_QUOTE\"`).",
+          "Include the required parameter **symbol** as a string representing the ticker symbol (e.g., `\"TSLA\"`)."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 3,
+        "name": "Symbol Search",
+        "scenario": "Search for matching ticker symbols based on a keyword or partial name.",
+        "tool_errata": [
+          "Include both required parameters `function` and `symbol` in every call.",
+          "Set `function` to the exact string name of the Symbol Search operation (e.g., `\"SYMBOL_SEARCH\"`).",
+          "Provide `symbol` as a string containing the keyword or partial company name to search."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 4,
+        "name": "Financial Statements",
+        "scenario": "Fetch earnings, income statements, balance sheets, or cash‑flow data for a company.",
+        "tool_errata": [
+          "Provide the parameter **function** with the exact string value **\"GLOBAL_QUOTE\"**.",
+          "Provide the parameter **symbol** as an uppercase ticker symbol (e.g., NVDA) without extra spaces.",
+          "No additional parameters are needed for this scenario."
+        ],
+        "examples": [
+          {
+            "query": "What was the trading volume for Nvidia (NVDA) stock today?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"NVDA\"\n}"
+          },
+          {
+            "query": "What's the current price and daily change for Apple’s stock (AAPL)?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"AAPL\"\n}"
+          },
+          {
+            "query": "Could you give me the latest JPMorgan Chase (JPM) share price and its percentage change for the day?",
+            "action": "get_financial_data",
+            "action_input": "{\n    \"function\": \"GLOBAL_QUOTE\",\n    \"symbol\": \"JPM\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "convert_currency": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Currency conversion",
+        "scenario": "Convert an amount from one currency to another using the specified base and target currency codes.",
+        "tool_errata": [
+          "Include both required parameters `base` and `target` in every request.",
+          "Values for `base` and `target` must be uppercase three‑letter ISO currency codes (e.g., \"USD\", \"JPY\").",
+          "Supply only these two string parameters; do not add extra fields."
+        ],
+        "examples": [
+          {
+            "query": "How many Chinese yuan would I receive for 1,200 US dollars?",
+            "action": "convert_currency",
+            "action_input": "{\n    \"base\": \"USD\",\n    \"target\": \"CNY\"\n}"
+          },
+          {
+            "query": "How many Brazilian reais would I receive for 1,200 US dollars?",
+            "action": "convert_currency",
+            "action_input": "{\n    \"base\": \"USD\",\n    \"target\": \"BRL\"\n}"
+          },
+          {
+            "query": "How many Japanese yen would I receive for 750 Australian dollars?",
+            "action": "convert_currency",
+            "action_input": "{\n    \"base\": \"AUD\",\n    \"target\": \"JPY\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "calculate_mortgage_payment": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "basic_mortgage_payment",
+        "scenario": "Calculate the monthly (or annual) mortgage payment using the loan principal, interest rate, and loan term.",
+        "tool_errata": [
+          "Include exactly one Action Input block per call; do not split the parameters across multiple Action Input sections.",
+          "Supply interest_rate (Number), loan_amount (Number), and duration_years (Number) as required fields; optionally include monthly_hoa (Number), annual_property_tax (String containing only the numeric amount, e.g., \"4800\"), and annual_home_insurance (Number). All numeric values must be plain numbers without formatting characters."
+        ],
+        "examples": [
+          {
+            "query": "I’m planning to buy a $750,000 single‑family home with a $150,000 down payment. If I get a 4.5% interest rate on a 30‑year mortgage, have no HOA fees, expect to pay $6,500 per year in property taxes, and $2,200 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 4.5,\n    \"loan_amount\": 600000,\n    \"home_value\": 750000,\n    \"downpayment\": 150000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 0,\n    \"annual_property_tax\": \"6500\",\n    \"annual_home_insurance\": 2200\n}"
+          },
+          {
+            "query": "I’m interested in buying a $500,000 townhouse with a $100,000 down payment. If I get a 3.8% interest rate on a 20‑year mortgage, have monthly HOA fees of $180, expect to pay $4,800 per year in property taxes, and $1,500 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 3.8,\n    \"loan_amount\": 400000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 180,\n    \"annual_property_tax\": \"4800\",\n    \"annual_home_insurance\": 1500\n}"
+          },
+          {
+            "query": "I’m looking to buy a $350,000 home and plan to put $70,000 down. If I get a 4.2% interest rate on a 15‑year mortgage, have a monthly HOA fee of $250, expect to pay $3,500 per year in property taxes, and $1,200 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 4.2,\n    \"loan_amount\": 280000,\n    \"duration_years\": 15,\n    \"monthly_hoa\": 250,\n    \"annual_property_tax\": \"3500\",\n    \"annual_home_insurance\": 1200\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "full_housing_cost_estimate",
+        "scenario": "Estimate the total monthly housing cost, including mortgage payment plus HOA fees, property tax, and homeowner's insurance.",
+        "tool_errata": [
+          "Always include **loan_amount** as a numeric value equal to (home_value – downpayment); the API does not infer it from home_value and downpayment.",
+          "Provide **annual_property_tax** as a string containing the numeric amount (e.g., `\"4200\"`), not as a raw number.",
+          "All other required and optional numeric parameters (interest_rate, duration_years, monthly_hoa, annual_home_insurance) must be numbers within their documented ranges (interest_rate ≤ 10000, duration_years 1‑10000)."
+        ],
+        "examples": [
+          {
+            "query": "I’m planning to buy a $475,000 townhouse with a $95,000 down payment. If I get a 3.9% interest rate on a 30‑year mortgage, have monthly HOA fees of $220, expect to pay $5,200 per year in property taxes, and $1,300 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 3.9,\n    \"loan_amount\": 380000,\n    \"home_value\": 475000,\n    \"downpayment\": 95000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 220,\n    \"annual_property_tax\": \"5200\",\n    \"annual_home_insurance\": 1300\n}"
+          },
+          {
+            "query": "I’m looking to buy a $1,200,000 beachfront condo with a $300,000 down payment. If I secure a 4.1% interest rate on a 30‑year mortgage, have monthly HOA fees of $350, expect to pay $12,000 per year in property taxes, and $3,000 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 4.1,\n    \"loan_amount\": 900000,\n    \"home_value\": 1200000,\n    \"downpayment\": 300000,\n    \"duration_years\": 30,\n    \"monthly_hoa\": 350,\n    \"annual_property_tax\": \"12000\",\n    \"annual_home_insurance\": 3000\n}"
+          },
+          {
+            "query": "I’m planning to purchase a $1,050,000 lakefront property with a $210,000 down payment. If I obtain a 3.25% interest rate on a 15‑year mortgage, have monthly HOA fees of $275, expect to pay $8,400 per year in property taxes, and $2,100 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 3.25,\n    \"loan_amount\": 840000,\n    \"duration_years\": 15,\n    \"monthly_hoa\": 275,\n    \"annual_property_tax\": \"8400\",\n    \"annual_home_insurance\": 2100\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "loan_amount_from_home_value",
+        "scenario": "Calculate the mortgage payment when the user provides the home value and downpayment, letting the API derive the loan principal.",
+        "tool_errata": [
+          "Provide interest_rate (Number) and, when needed, duration_years (Number); supply home_value (Number) and downpayment (Number) and omit loan_amount so the API derives loan_amount = home_value − downpayment.",
+          "Pass annual_property_tax as a string containing the numeric value (e.g., \"9500\").",
+          "Ensure downpayment does not exceed home_value."
+        ],
+        "examples": [
+          {
+            "query": "I’m looking to purchase a $850,000 ranch-style home with a $200,000 down payment. If I get a 3.75% interest rate on a 25‑year mortgage, have no HOA fees, expect to pay $9,500 per year in property taxes, and $1,800 per year for homeowners insurance, what will my total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 3.75,\n    \"loan_amount\": 650000,\n    \"duration_years\": 25,\n    \"monthly_hoa\": 0,\n    \"annual_property_tax\": \"9500\",\n    \"annual_home_insurance\": 1800\n}"
+          },
+          {
+            "query": "Given a $420,000 duplex, a 5 % down payment, a 3.9 % interest loan amortized over 20 years, annual property taxes of $4,200, homeowner’s insurance of $1,100, and no HOA fees, what will the total monthly payment be?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 3.9,\n    \"home_value\": 420000,\n    \"downpayment\": 21000,\n    \"loan_amount\": 399000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 0,\n    \"annual_property_tax\": \"4200\",\n    \"annual_home_insurance\": 1100\n}"
+          },
+          {
+            "query": "Assuming I acquire a suburban residence for $780,000, make a 15% down payment, and secure a 20‑year loan at a 3.9% interest rate, with annual property taxes of about $6,500, yearly homeowner’s insurance of $1,400, and a $120 monthly HOA fee, what will my combined monthly payment amount to?",
+            "action": "calculate_mortgage_payment",
+            "action_input": "{\n    \"interest_rate\": 3.9,\n    \"loan_amount\": 663000,\n    \"home_value\": 780000,\n    \"downpayment\": 117000,\n    \"duration_years\": 20,\n    \"monthly_hoa\": 120,\n    \"annual_property_tax\": \"6500\",\n    \"annual_home_insurance\": 1400\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_inflation_data": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Retrieve inflation data",
+        "scenario": "Obtain the latest inflation statistics for major countries, optionally specifying the indicator type (CPI or HICP).",
+        "tool_errata": [
+          "Use the optional parameter `type` only when you need HICP; accepted string values are exactly `\"CPI\"` or `\"HICP\"` (case‑sensitive). Omit it or set it to `\"CPI\"` to get CPI data.",
+          "The API returns data for all supported countries; after the call, locate the entry whose `\"country\"` field matches the requested country (case‑insensitive) and read its inflation values from that record."
+        ],
+        "examples": [
+          {
+            "query": "What was the most recent HICP inflation rate for Germany?",
+            "action": "get_inflation_data",
+            "action_input": "{\n    \"type\": \"HICP\"\n}"
+          },
+          {
+            "query": "What is the most recent yearly CPI inflation rate for Austria?",
+            "action": "get_inflation_data",
+            "action_input": "{\n    \"type\": \"CPI\"\n}"
+          },
+          {
+            "query": "According to the latest HICP data, which country registers the highest year‑over‑year inflation rate?",
+            "action": "get_inflation_data",
+            "action_input": "{\n    \"type\": \"HICP\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_recipe": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Search recipes by name",
+        "scenario": "User wants to find recipes whose titles contain a specific keyword or phrase.",
+        "tool_errata": [
+          "The required `query` parameter must be a non‑empty plain‑text string containing only the core dish name keywords (e.g., “chicken tikka masala”, “chocolate chip cookie”) and should omit adjectives or modifiers such as “classic”, “authentic”, “gluten‑free”, etc., which can prevent matches.",
+          "If the API response is an empty list, issue a new request with a broader query that removes any remaining modifiers."
+        ],
+        "examples": [
+          {
+            "query": "Can you give me a recipe for classic beef stroganoff?",
+            "action": "get_recipe",
+            "action_input": "{\n    \"query\": \"beef stroganoff\"\n}"
+          },
+          {
+            "query": "Can you give me a recipe for classic French onion soup?",
+            "action": "get_recipe",
+            "action_input": "{\n    \"query\": \"French onion soup\"\n}"
+          },
+          {
+            "query": "Can you give me a recipe for classic Italian tiramisu?",
+            "action": "get_recipe",
+            "action_input": "{\n    \"query\": \"tiramisu recipe\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "search_cocktails": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "search_by_name",
+        "scenario": "Find cocktails that match a given (partial) name.",
+        "tool_errata": [
+          "Provide the `name` parameter as a non‑empty string containing the (partial) cocktail name to search for.",
+          "Omit the `ingredients` parameter entirely for this scenario."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 1,
+        "name": "search_by_ingredients",
+        "scenario": "Find cocktails that contain all of the specified ingredients.",
+        "tool_errata": [
+          "Include the **ingredients** parameter; its value must be a comma‑separated list of the desired ingredients.",
+          "The list must contain **no raw spaces**—encode spaces as “%20” (or omit them) because spaces cause URL‑encoding errors."
+        ],
+        "examples": [
+          {
+            "query": "I have rum, ginger beer, and lime juice—what cocktail can I make with these ingredients?",
+            "action": "search_cocktails",
+            "action_input": "{\n    \"name\": \"Dark and Stormy\"\n}"
+          },
+          {
+            "query": "I have rum, pineapple juice, and coconut cream—what cocktail can I make with these ingredients?",
+            "action": "search_cocktails",
+            "action_input": "{\n    \"name\": \"piña colada\"\n}"
+          },
+          {
+            "query": "I have tequila, orange liqueur, and lime juice—what cocktail can I make with these ingredients?",
+            "action": "search_cocktails",
+            "action_input": "{\n    \"name\": \"Margarita\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "search_by_name_and_ingredients",
+        "scenario": "Find cocktails that match a given name and also contain all listed ingredients.",
+        "tool_errata": [
+          "When using the `ingredients` parameter, supply a comma‑separated list that contains **no literal space characters** (e.g., URL‑encode spaces as `%20` or omit them) to avoid URL‑construction errors.",
+          "For this scenario, include **both** `name` and `ingredients` in the same API call; providing only one will not enforce the combined name‑and‑ingredients filter."
+        ],
+        "examples": [
+          {
+            "query": "What ingredients are required to make a Negroni cocktail?",
+            "action": "search_cocktails",
+            "action_input": "{\n    \"name\": \"Negroni\"\n}"
+          },
+          {
+            "query": "I have bourbon, sweet vermouth, and orange bitters—what cocktail can I make with these ingredients?",
+            "action": "search_cocktails",
+            "action_input": "{\n    \"ingredients\": \"bourbon,sweet%20vermouth,orange%20bitters\"\n}"
+          },
+          {
+            "query": "I have vodka, cranberry juice, and lime juice—what cocktail can I make with these ingredients?",
+            "action": "search_cocktails",
+            "action_input": "{\n    \"name\": \"Cosmopolitan\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 3,
+        "name": "browse_all_cocktails",
+        "scenario": "Retrieve a full list of available cocktails without applying any filters.",
+        "tool_errata": [
+          "Omit both optional parameters (“name” and “ingredients”) when calling search_cocktails; send an empty request (no fields) to retrieve the full cocktail list."
+        ],
+        "examples": []
+      }
+    ]
+  },
+  "get_all_mvc2_characters": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "retrieve_all_characters",
+        "scenario": "Fetch the complete list of MVC2 characters without any filtering or additional input.",
+        "tool_errata": [
+          "Use an empty JSON object `{}` as the Action Input since the API requires no parameters.",
+          "Invoke the API only once; a single call returns the full list of MVC2 characters.",
+          "Ensure the Action Input contains no extra fields or comments—exactly `{}`."
+        ],
+        "examples": [
+          {
+            "query": "How many Capcom characters are playable in Marvel vs. Capcom 2, and what are their names?",
+            "action": "get_all_mvc2_characters",
+            "action_input": "{\n}\nObservation: {\n  \"error\": \"\",\n  \"response\": \"[{'name': 'Blackheart', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/3/34/MVC2_Blackheart.jpg/revision/latest?cb=20110914071301', 'universe': 'Marvel'}, {'name': 'Cable', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/b/be/MVC2_Cable.jpg/revision/latest?cb=20110914072054', 'universe': 'Marvel'}, {'name': 'Captain America', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/2/21/MVC2_Captain_America.jpg/revision/latest?cb=20110914072107', 'universe': 'Marvel'}, {'name': 'Captain Marvel', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/0/0b/MVC2_Captain_Marvel.jpg/revision/latest?cb=20110914072127', 'universe': 'Marvel'}, {'name': 'Cerebrus', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/5/5f/MVC2_Cerebrus.jpg/revision/latest?cb=20110914072146', 'universe': 'Marvel'}, {'name': 'Chloe', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/5/58/MVC2_Chloe.jpg/revision/latest?cb=20110914072157', 'universe': 'Marvel'}, {'name': 'Colossus', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/4/45/MVC2_Colossus.jpg/revision/latest?cb=20110914072210', 'universe': 'Marvel'}, {'name': 'Cyclops', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/7/73/MVC2_Cyclops.jpg/revision/latest?cb=20110914072231', 'universe': 'Marvel'}, {'name': 'Daimyo', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/0/08/MVC2_Daimyo.jpg/revision/latest?cb=20110914072250', 'universe': 'Marvel'}, {'name': 'Deadpool', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/4/46/MVC2_Deadpool.jpg/revision/latest?cb=20110914072259', 'universe': 'Marvel'}, {'name': 'Doctor Doom', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/3/33/MVC2_Doctor_Doom.jpg/revision/latest?cb=20110914072311', 'universe': 'Marvel'}, {'name': 'Doomfist', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/5/58/MVC2_Doomfist.jpg/revision/latest?cb=20110914072330', 'universe': 'Marvel'}, {'name': 'Elektra', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/2/2b/MVC2_Elektra.jpg/revision/latest?cb=20110914072342', 'universe': 'Marvel'}, {'name': 'Falcon', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/9/9c/MVC2_Falcon.jpg/revision/latest?cb=20110914072355', 'universe': 'Marvel'}, {'name': 'Gambit', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/4/42/MVC2_Gambit.jpg/revision/latest?cb=20110914072407', 'universe': 'Marvel'}, {'name': 'Giant Man', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/1/1b/MVC2_Giant_Man.jpg/revision/latest?cb=20110914072422', 'universe': 'Marvel'}, {'name': 'Gorilla-Man', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/4/41/MVC2_Gorilla_Man.jpg/revision/latest?cb=20110914072435', 'universe': 'Marvel'}, {'name': 'Hawkeye', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/e/ea/MVC2_Hawkeye.jpg/revision/latest?cb=20110914072447', 'universe': 'Marvel'}, {'name': 'Heath Ledger', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/5/5c/MVC2_Heath_Ledger.jpg/revision/latest?cb=20110914072459', 'universe': 'Marvel'}, {'name': 'Hulk', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/0/09/MVC2_Hulk.jpg/revision/latest?cb=20110914072508', 'universe': 'Marvel'}, {'name': 'Iceman', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/8/86/MVC2_Iceman.jpg/revision/latest?cb=20110914072521', 'universe': 'Marvel'}, {'name': 'Iron Man', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/2/26/MVC2_Iron_Man.jpg/revision/latest?cb=20110914072531', 'universe': 'Marvel'}, {'name': 'Joker', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/7/78/MVC2_Joker.jpg/revision/latest?cb=20110914072545', 'universe': 'Marvel'}, {'name': 'Juno', 'head_shot': 'https://vignette.wikia.nocookie.net/marvelvscapcom/images/5/55/MVC_2_Juno.png?ref=search', 'universe': 'Marvel'}, '...']\"}"
+          },
+          {
+            "query": "How many playable characters in Marvel vs. Capcom 2 have a hyphen in their name, and what are those names?",
+            "action": "get_all_mvc2_characters",
+            "action_input": "{}"
+          },
+          {
+            "query": "How many playable characters in Marvel vs. Capcom 2 come from the Resident Evil series, and what are their names?",
+            "action": "get_all_mvc2_characters",
+            "action_input": "{}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_filtered_game_giveaways": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Platform‑focused giveaway search",
+        "scenario": "User wants giveaways available on specific gaming platform(s), regardless of giveaway type.",
+        "tool_errata": [
+          "Pass the platform list as one string with identifiers separated by periods (e.g., `\"steam.epic-games-store\"`).",
+          "Omit the optional `type` argument entirely; only include the required `platform` parameter."
+        ],
+        "examples": [
+          {
+            "query": "Could you provide a list of the free game giveaways currently available on Steam and the Epic Games Store?",
+            "action": "get_filtered_game_giveaways",
+            "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+          },
+          {
+            "query": "Provide a rundown of the loot giveaways that are currently active on the Epic Games Store.",
+            "action": "get_filtered_game_giveaways",
+            "action_input": "{\n    \"platform\": \"epic-games-store\"\n}"
+          },
+          {
+            "query": "Could you reveal which games are presently free on the Epic Games Store and on Android devices?",
+            "action": "get_filtered_game_giveaways",
+            "action_input": "{\n    \"platform\": \"android\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "Type‑focused giveaway search",
+        "scenario": "User wants giveaways of a particular type (e.g., loot) across all platforms, using the default platform grouping.",
+        "tool_errata": [
+          "Use the keyword `type_` (with a trailing underscore) to specify the giveaway type (e.g., `\"loot\"`); the name `type` is invalid.",
+          "The `platform` parameter is required but can be omitted to automatically use its default value `\"epic-games-store.steam.android\"` which includes all platforms; otherwise supply a single platform name in lowercase (e.g., `\"android\"`).",
+          "All parameter values must be lowercase strings exactly matching the platform or type identifiers (e.g., `\"steam\"`, `\"loot\"`)."
+        ],
+        "examples": [
+          {
+            "query": "What free loot giveaways are currently available on Android?",
+            "action": "get_filtered_game_giveaways",
+            "action_input": "{\n    \"platform\": \"android\"\n}"
+          },
+          {
+            "query": "Could you provide a list of the free game giveaways currently available on Steam and the Epic Games Store?",
+            "action": "get_filtered_game_giveaways",
+            "action_input": "{\n    \"platform\": \"steam\",\n    \"type_\": \"game\"\n}"
+          },
+          {
+            "query": "Provide a rundown of the loot giveaways that are currently active on the Epic Games Store.",
+            "action": "get_filtered_game_giveaways",
+            "action_input": "{\n    \"platform\": \"epic-games-store\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_lol_champion_stats": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "champion_stats_lookup",
+        "scenario": "Retrieve the basic metadata and detailed in‑game statistics for a specific League of Legends champion.",
+        "tool_errata": [
+          "Include only the required parameter **name** in the request JSON, with no other fields.",
+          "The value for **name** must be the exact champion name as used in League of Legends, capitalized (e.g., \"Yasuo\", \"Lux\").",
+          "Do not supply any optional parameters (the API has none)."
+        ],
+        "examples": [
+          {
+            "query": "What are Ahri's base attack damage and attack damage increase per level in League of Legends?",
+            "action": "get_lol_champion_stats",
+            "action_input": "{\n    \"name\": \"Ahri\"\n}"
+          },
+          {
+            "query": "What are Yasuo's base attack damage and attack damage increase per level in League of Legends?",
+            "action": "get_lol_champion_stats",
+            "action_input": "{\n    \"name\": \"Yasuo\"\n}"
+          },
+          {
+            "query": "What are Ashe’s base movement speed and attack range in League of Legends?",
+            "action": "get_lol_champion_stats",
+            "action_input": "{\n    \"name\": \"Ashe\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_salary_estimation": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "General salary estimate",
+        "scenario": "Retrieve overall salary ranges for a job title in a location without filtering by experience level.",
+        "tool_errata": [
+          "Provide only the required parameters: `job_title` (string) and `location` (string); omit `years_of_experience` so the API uses its default of `ALL`.",
+          "If any optional parameters are included, set `location_type` to `ANY` (or omit it) and do not set `years_of_experience` to a specific range, as non‑default values can filter out the general salary data."
+        ],
+        "examples": [
+          {
+            "query": "What is the median base salary for a cloud infrastructure engineer in Sydney, Australia with 1 to 3 years of experience?",
+            "action": "get_salary_estimation",
+            "action_input": "{\n    \"job_title\": \"cloud infrastructure engineer\",\n    \"location\": \"Australia\",\n    \"location_type\": \"COUNTRY\",\n    \"years_of_experience\": \"ONE_TO_THREE\"\n}"
+          },
+          {
+            "query": "What is the maximum total compensation for a senior network engineer in Dubai, United Arab Emirates with 7 to 9 years of experience?",
+            "action": "get_salary_estimation",
+            "action_input": "{\n    \"job_title\": \"Senior Network Engineer\",\n    \"location\": \"Dubai, United Arab Emirates\",\n    \"location_type\": \"CITY\",\n    \"years_of_experience\": \"SEVEN_TO_NINE\"\n}"
+          },
+          {
+            "query": "What is the maximum base salary for a senior cybersecurity analyst in Dubai, United Arab Emirates with 4 to 6 years of experience?",
+            "action": "get_salary_estimation",
+            "action_input": "{\n    \"job_title\": \"senior cybersecurity analyst\",\n    \"location\": \"Dubai, United Arab Emirates\",\n    \"location_type\": \"ANY\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "Experience‑specific salary estimate",
+        "scenario": "Retrieve salary ranges for a job title in a location filtered to a particular years‑of‑experience bracket.",
+        "tool_errata": [
+          "Provide the required `job_title` and `location` as plain strings (e.g., `\"Site Reliability Engineer\"` and `\"Seattle, Washington\"`).",
+          "Supply `years_of_experience` using the exact enum token in uppercase (e.g., `ONE_TO_THREE`, `LESS_THAN_ONE`, `FOUR_TO_SIX`, etc.).",
+          "If the location is a specific city, set `location_type` to `CITY` to increase accuracy (otherwise it defaults to `ANY`)."
+        ],
+        "examples": [
+          {
+            "query": "What is the median total compensation for a Site Reliability Engineer in Seattle, Washington with 1 to 3 years of experience?",
+            "action": "get_salary_estimation",
+            "action_input": "{\n    \"job_title\": \"Site Reliability Engineer\",\n    \"location\": \"Seattle, Washington\",\n    \"location_type\": \"CITY\",\n    \"years_of_experience\": \"ONE_TO_THREE\"\n}"
+          },
+          {
+            "query": "What pay bracket—minimum, median, and maximum—do senior product managers in London, UK, usually see after 10 to 14 years on the job?",
+            "action": "get_salary_estimation",
+            "action_input": "{\n    \"job_title\": \"senior product manager\",\n    \"location\": \"London, United Kingdom\",\n    \"location_type\": \"CITY\",\n    \"years_of_experience\": \"TEN_TO_FOURTEEN\"\n}"
+          },
+          {
+            "query": "Could you detail the bottom, middle, and top salary levels for a senior data analyst in Zurich, Switzerland, with four to six years of experience?",
+            "action": "get_salary_estimation",
+            "action_input": "{\n    \"job_title\": \"senior data analyst\",\n    \"location\": \"Zurich, Switzerland\",\n    \"location_type\": \"CITY\",\n    \"years_of_experience\": \"FOUR_TO_SIX\",\n    \"fields\": \"minimum_salary,median_salary,maximum_salary\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_timezone_info": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Current timezone lookup",
+        "scenario": "Retrieve the present UTC and DST offsets for a given latitude and longitude.",
+        "tool_errata": [
+          "Include both `lat` and `lng` as numeric decimal‑degree values (e.g., 34.0522, -118.2437) within their valid ranges (lat ∈ [-90, 90], lng ∈ [-180, 180]).",
+          "Omit the `timestamp` argument to retrieve the present offsets; if you supply it, it must be a UNIX epoch integer (seconds since 1970‑01‑01 UTC).",
+          "Do not provide any extra fields beyond `lat`, `lng`, and optional `timestamp`."
+        ],
+        "examples": [
+          {
+            "query": "What were the UTC offset and DST offset for Cape Town, South Africa (latitude ‑33.9249, longitude 18.4241) on 10 July 2022 at 4:20 PM local time?",
+            "action": "get_timezone_info",
+            "action_input": "{\n    \"lat\": -33.9249,\n    \"lng\": 18.4241,\n    \"timestamp\": 1657462800\n}"
+          },
+          {
+            "query": "For Moscow (lat 55.7522, lon 37.6156), what was the UTC offset and was daylight‑saving time in effect on July 1 2022?",
+            "action": "get_timezone_info",
+            "action_input": "{\n    \"lat\": 55.7522,\n    \"lng\": 37.6156,\n    \"timestamp\": 1656633600\n}"
+          },
+          {
+            "query": "What UTC offset applied and was daylight‑saving time in effect on 1 July 2022 at latitude 55.7522, longitude 37.6156 (Moscow, Russia)?",
+            "action": "get_timezone_info",
+            "action_input": "{\n    \"lat\": 55.7522,\n    \"lng\": 37.6156,\n    \"timestamp\": 1656633600\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "Historical/future timezone lookup",
+        "scenario": "Retrieve the UTC and DST offsets for a specific point in time at a given latitude and longitude.",
+        "tool_errata": [
+          "lat and lng must be supplied as decimal numbers (positive for north/east, negative for south/west).",
+          "Provide timestamp as an integer Unix epoch in seconds (not milliseconds) representing the exact local date‑time requested at those coordinates; include it whenever a specific historical or future moment is queried."
+        ],
+        "examples": [
+          {
+            "query": "What were the UTC offset and DST offset for New York City, USA (latitude 40.7128, longitude ‑74.0060) on 5 November 2023 at 9:45 AM local time?",
+            "action": "get_timezone_info",
+            "action_input": "{\n    \"lat\": 40.7128,\n    \"lng\": -74.0060,\n    \"timestamp\": 1699195500\n}"
+          },
+          {
+            "query": "What were the UTC offset and DST offset for Honolulu, Hawaii (latitude 21.3069, longitude ‑157.8583) on 12 February 2024 at 8:45 AM local time?",
+            "action": "get_timezone_info",
+            "action_input": "{\n    \"lat\": 21.3069,\n    \"lng\": -157.8583,\n    \"timestamp\": 1707763500\n}"
+          },
+          {
+            "query": "What were the UTC offset and DST offset for Moscow, Russia (latitude 55.7558, longitude 37.6173) on 1 December 2023 at 9:00 AM local time?",
+            "action": "get_timezone_info",
+            "action_input": "{\n    \"lat\": 55.7558,\n    \"lng\": 37.6173,\n    \"timestamp\": 1701410400\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_planet_data": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "lookup_by_name",
+        "scenario": "Retrieve data for a specific planet or exoplanet when its name is known.",
+        "tool_errata": [
+          "Include the “name” parameter with a non‑empty string value exactly matching the planet or exoplanet name.",
+          "Omit all other optional parameters (or leave them unset so defaults apply)."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 1,
+        "name": "search_by_properties",
+        "scenario": "Find planets that match one or more numeric criteria such as mass, radius, orbital period, temperature, or distance.",
+        "tool_errata": [
+          "Include only the numeric filter parameters relevant to the query (any of min_mass, max_mass, min_radius, max_radius, min_period, max_period, min_temperature, max_temperature, min_distance_light_year, max_distance_light_year) and supply each as a plain number (no units); omit any filters you do not intend to apply.",
+          "Do not set a lower‑bound parameter to 0 to indicate “no limit”; simply omit that parameter, since missing min_* defaults to 0.",
+          "If both a min_ and a max_ are supplied for the same attribute, ensure min ≤ max or the query will return empty results."
+        ],
+        "examples": [
+          {
+            "query": "Which exoplanets are located between 100 and 400 light‑years from Earth, have masses greater than 0.8 Jupiter masses, orbital periods shorter than 50 days, and average surface temperatures between 1000 K and 2000 K?",
+            "action": "get_planet_data",
+            "action_input": "{\n    \"min_distance_light_year\": 100,\n    \"max_distance_light_year\": 400,\n    \"min_mass\": 0.8,\n    \"max_period\": 50,\n    \"min_temperature\": 1000,\n    \"max_temperature\": 2000\n}"
+          },
+          {
+            "query": "Which exoplanets have masses less than 0.2 Jupiter masses, radii between 0.4 and 0.8 Jupiter radii, orbital periods shorter than 30 days, and are within 80 light‑years of Earth?",
+            "action": "get_planet_data",
+            "action_input": "{\n    \"max_mass\": 0.2,\n    \"min_radius\": 0.4,\n    \"max_radius\": 0.8,\n    \"max_period\": 50,\n    \"max_distance_light_year\": 80\n}"
+          },
+          {
+            "query": "Which exoplanets have masses greater than 5 Jupiter masses, orbital periods longer than 1000 days, and are located between 300 and 1000 light‑years from Earth?",
+            "action": "get_planet_data",
+            "action_input": "{\n    \"min_mass\": 5,\n    \"min_period\": 1000,\n    \"min_distance_light_year\": 600,\n    \"max_distance_light_year\": 1000\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_celestial_body_position": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Single moment lookup",
+        "scenario": "Retrieve the position of a celestial body for a specific date (and optional time).",
+        "tool_errata": [
+          "Supply both `from_date` and `to_date` in “yyyy-mm-dd” format; for a single‑moment query they must be the same date.",
+          "Include the `time` parameter as “HH:MM:SS” when a specific moment is needed; omit it to use the API’s default time.",
+          "Provide `latitude`, `longitude`, and optional `elevation` as numeric values (no quotes); `elevation` may be left out to use its default."
+        ],
+        "examples": [
+          {
+            "query": "What are the azimuth and altitude of Venus on 2025-09-12 at 04:30:00 for an observer at latitude 48.8566, longitude 2.3522, elevation 35 m?",
+            "action": "get_celestial_body_position",
+            "action_input": "{\n    \"body\": \"Venus\",\n    \"latitude\": 48.8566,\n    \"longitude\": 2.3522,\n    \"from_date\": \"2025-09-12\",\n    \"to_date\": \"2025-09-12\",\n    \"time\": \"04:30:00\",\n    \"elevation\": 35\n}"
+          },
+          {
+            "query": "What were Mars’s altitude above the horizon and its azimuth for an observer in Atlanta, GA (latitude 33.775867 N, longitude ‑84.39733 W, elevation 166 m) on July 4 2024 at 21:30 local time?",
+            "action": "get_celestial_body_position",
+            "action_input": "{\n    \"body\": \"Mars\",\n    \"latitude\": 33.775867,\n    \"longitude\": -84.39733,\n    \"elevation\": 166,\n    \"from_date\": \"2024-07-04\",\n    \"to_date\": \"2024-07-04\",\n    \"time\": \"21:30:00\"\n}"
+          },
+          {
+            "query": "Could you provide the azimuth and altitude of Neptune for an observer located in Honolulu (21.3069° N, ‑157.8583° W, 20 m elevation) on 12 September 2025 at 22:30 local time?",
+            "action": "get_celestial_body_position",
+            "action_input": "{\n    \"body\": \"Neptune\",\n    \"latitude\": 21.3069,\n    \"longitude\": -157.8583,\n    \"elevation\": 20,\n    \"from_date\": \"2025-09-13\",\n    \"to_date\": \"2025-09-13\",\n    \"time\": \"08:30:00\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "Date range series",
+        "scenario": "Retrieve positions of a celestial body across a start and end date, producing multiple data points.",
+        "tool_errata": [
+          "Include the required parameters: `body` (String), `latitude` (Number), `longitude` (Number), `from_date` (String in “yyyy-mm-dd” format), and `to_date` (String in “yyyy-mm-dd” format).",
+          "Do not supply optional parameters (`elevation`, `time`) unless you need to override their defaults.",
+          "Verify that `from_date` and `to_date` are valid dates and that `from_date` is not later than `to_date`."
+        ],
+        "examples": []
+      }
+    ]
+  },
+  "search_arxiv_papers": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "basic_keyword_search",
+        "scenario": "Retrieve papers matching a general keyword across all fields with no additional filters.",
+        "tool_errata": [
+          "Include only the required parameter **search_term** with a non‑empty string value (e.g., `\"search_term\": \"graph transformer\"`); omit all optional parameters.",
+          "Do not supply any optional fields (date_from, date_to, field, start, num_results, date_type) unless you explicitly want to change the defaults; the API expects a basic keyword query to rely on its built‑in defaults."
+        ],
+        "examples": [
+          {
+            "query": "List the titles, authors, abstracts, and submission dates of the five most recent arXiv papers whose titles contain the phrase \"climate change mitigation\" and that were submitted between 2022-01-01 and 2022-03-31.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"mitigation\",\n    \"date_from\": \"2022-01-01\",\n    \"date_to\": \"2022-03-31\",\n    \"field\": \"Title\",\n    \"num_results\": 20\n}"
+          },
+          {
+            "query": "Give the titles, authors, abstracts, and submission dates for the five most recent arXiv papers submitted between January 1 2022 and March 31 2022 that have the phrase “climate change mitigation” in their titles.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"mitigation\",\n    \"date_from\": \"2022-01-01\",\n    \"date_to\": \"2022-03-31\",\n    \"field\": \"Title\",\n    \"num_results\": 20\n}"
+          },
+          {
+            "query": "Obtain the five latest arXiv submissions dated from April 1 to April 30 2023 that contain the phrase “energy‑based models” in their titles, and list each paper’s title, author(s), abstract, and submission date.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"energy-based models\",\n    \"date_from\": \"2023-04-01\",\n    \"date_to\": \"2023-04-30\",\n    \"num_results\": 10,\n    \"field\": \"Title\",\n    \"start\": 2\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "field_specific_search",
+        "scenario": "Search for papers where the keyword appears in a specific field such as Title, Authors, or Comments.",
+        "tool_errata": [
+          "Set **field** to the exact capitalized option (“Title”, “Authors”, “Comments”, or “All fields”) when limiting the search to a specific field.",
+          "When supplying **date_from** or **date_to**, also include **date_type** with the exact value “Submission Date” to enable date filtering.",
+          "Use dates in the strict “YYYY‑MM‑DD” format and ensure **date_from** is not later than **date_to**."
+        ],
+        "examples": [
+          {
+            "query": "List the titles, authors, abstracts, and submission dates of the five most recent arXiv papers whose titles contain the phrase \"climate change mitigation\" and that were submitted between 2022-01-01 and 2022-03-31.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"mitigation\",\n    \"date_from\": \"2022-01-01\",\n    \"date_to\": \"2022-03-31\",\n    \"field\": \"Title\",\n    \"num_results\": 20\n}"
+          },
+          {
+            "query": "Give the titles, authors, abstracts, and submission dates for the five most recent arXiv papers submitted between January 1 2022 and March 31 2022 that have the phrase “climate change mitigation” in their titles.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"mitigation\",\n    \"date_from\": \"2022-01-01\",\n    \"date_to\": \"2022-03-31\",\n    \"field\": \"Title\",\n    \"num_results\": 20\n}"
+          },
+          {
+            "query": "Obtain the five latest arXiv submissions dated from April 1 to April 30 2023 that contain the phrase “energy‑based models” in their titles, and list each paper’s title, author(s), abstract, and submission date.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"energy-based models\",\n    \"date_from\": \"2023-04-01\",\n    \"date_to\": \"2023-04-30\",\n    \"num_results\": 10,\n    \"field\": \"Title\",\n    \"start\": 2\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "date_range_search",
+        "scenario": "Find papers submitted (or otherwise dated) within a specified start and/or end date.",
+        "tool_errata": [
+          "Include the required parameters: `search_term` (string) and set `field` to `\"Title\"` when searching titles; allowed field values are exactly `\"Title\"`, `\"Authors\"`, `\"Comments\"`, or `\"All fields\"`.",
+          "To filter by dates, provide `date_from` and/or `date_to` in `YYYY‑MM‑DD` format **and** set `date_type` to the exact string `\"Submission Date\"` (the default is not applied automatically).",
+          "`num_results` must be a positive integer (minimum 1); omit `start` unless you need pagination beyond the first page."
+        ],
+        "examples": [
+          {
+            "query": "List up to seven arXiv papers whose titles contain the phrase “graph theory” that were submitted between 2019-01-01 and 2020-12-31.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"graph theory\",\n    \"field\": \"Title\",\n    \"date_from\": \"2019-01-01\",\n    \"date_to\": \"2020-12-31\",\n    \"start\": 2,\n    \"num_results\": 7\n}"
+          },
+          {
+            "query": "List the titles, authors, abstracts, and submission dates of the five most recent arXiv papers whose titles contain the phrase \"climate change mitigation\" and that were submitted between 2022-01-01 and 2022-03-31.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"mitigation\",\n    \"date_from\": \"2022-01-01\",\n    \"date_to\": \"2022-03-31\",\n    \"field\": \"Title\",\n    \"num_results\": 20\n}"
+          },
+          {
+            "query": "Give the titles, authors, abstracts, and submission dates for the five most recent arXiv papers submitted between January 1 2022 and March 31 2022 that have the phrase “climate change mitigation” in their titles.",
+            "action": "search_arxiv_papers",
+            "action_input": "{\n    \"search_term\": \"mitigation\",\n    \"date_from\": \"2022-01-01\",\n    \"date_to\": \"2022-03-31\",\n    \"field\": \"Title\",\n    \"num_results\": 20\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_soccer_tournaments": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "list_all_tournaments",
+        "scenario": "Retrieve the complete list of soccer tournaments.",
+        "tool_errata": [
+          "Provide an empty JSON object `{}` as the Action Input; do not include any parameters."
+        ],
+        "examples": [
+          {
+            "query": "Could you provide a list of the soccer tournaments that are currently recognized?",
+            "action": "get_soccer_tournaments",
+            "action_input": "{\n    \n}"
+          },
+          {
+            "query": "Which recognized soccer tournaments are for club participants, are not marked as official, and what are their IDs and country short codes?",
+            "action": "get_soccer_tournaments",
+            "action_input": "{\n    \n}"
+          },
+          {
+            "query": "Which recognized soccer tournaments are for national teams (not clubs), and what are their IDs and country short codes?",
+            "action": "get_soccer_tournaments",
+            "action_input": "{}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_f1_latest_news": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "fetch_latest_f1_news",
+        "scenario": "Retrieve the most recent Formula 1 news articles from all available sources.",
+        "tool_errata": [
+          "Call `get_f1_latest_news` with an empty JSON object `{}`; the endpoint has no required or optional parameters.",
+          "Do not include any filters (e.g., dates, topics, keywords) in the request; apply any necessary filtering to the returned articles after the Observation."
+        ],
+        "examples": [
+          {
+            "query": "What are the most recent Formula 1 news articles from the past three days about the announced 2025 race calendar additions, including details on new venues, dates, and reactions from teams and drivers?",
+            "action": "get_f1_latest_news",
+            "action_input": "{}"
+          },
+          {
+            "query": "What are the most recent Formula 1 news articles from the past three days about the upcoming Hungarian Grand Prix, including track resurfacing details, ticket availability, and any driver or team updates?",
+            "action": "get_f1_latest_news",
+            "action_input": "{\n}"
+          },
+          {
+            "query": "What are the most recent Formula 1 news articles from the past three days about the upcoming Italian Grand Prix at Monza, including track upgrades, ticket availability, and any driver or team statements?",
+            "action": "get_f1_latest_news",
+            "action_input": "{}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_handball_scheduled_matches": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Retrieve matches by date",
+        "scenario": "Fetch the list of handball matches scheduled for a specific date within the ±7‑day window.",
+        "tool_errata": [
+          "Include the required parameter **date** as a STRING formatted exactly as dd/MM/yyyy.",
+          "The date value must be within ±7 days of the current day; dates outside this window will not yield valid match data."
+        ],
+        "examples": [
+          {
+            "query": "Can you provide the list of handball matches scheduled for 10/12/2025?",
+            "action": "get_handball_scheduled_matches",
+            "action_input": "{\n    \"date\": \"10/12/2025\"\n}"
+          },
+          {
+            "query": "What handball matches are scheduled for 02/12/2025?",
+            "action": "get_handball_scheduled_matches",
+            "action_input": "{\n    \"date\": \"02/12/2025\"\n}"
+          },
+          {
+            "query": "Could you list the handball matches scheduled for 06/12/2025?",
+            "action": "get_handball_scheduled_matches",
+            "action_input": "{\n    \"date\": \"06/12/2025\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_airlines": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Search by ICAO code",
+        "scenario": "Retrieve airline information using a specific ICAO 3‑character code.",
+        "tool_errata": [
+          "Supply the ICAO code as a three‑character uppercase string in the “icao” parameter (e.g., \"AAL\").",
+          "Include only the “icao” field in the request; omit “iata” and “name” so the default name is not applied."
+        ],
+        "examples": [
+          {
+            "query": "What is the ICAO code for the airline that uses the IATA code “AA”?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"American\"\n}"
+          },
+          {
+            "query": "What is the name of the airline that uses the ICAO code “AAL”?",
+            "action": "get_airlines",
+            "action_input": "{\"name\":\"American\"}"
+          },
+          {
+            "query": "What is the IATA code for the airline that uses the ICAO code “AAL”?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"American Airlines\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "Search by IATA code",
+        "scenario": "Retrieve airline information using a specific IATA 2‑character code.",
+        "tool_errata": [
+          "Provide the `iata` parameter as a 2‑character string exactly matching the airline’s IATA code (e.g., `\"QF\"`).",
+          "If the API returns an empty list for the `iata` query, issue a second call using the `name` parameter with the airline’s name to retrieve the information."
+        ],
+        "examples": [
+          {
+            "query": "What airline uses the IATA code QF?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"Qantas\"\n}"
+          },
+          {
+            "query": "What are the IATA and ICAO codes for Southwest Airlines?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"Southwest Airlines\"\n}"
+          },
+          {
+            "query": "What is the IATA identifier for Qatar Airways and which country does the airline operate from?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"Qatar Airways\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "Search by airline name",
+        "scenario": "Retrieve airline information by providing the airline name or a partial name match.",
+        "tool_errata": [
+          "Provide only the **name** parameter with a non‑empty string (full or partial airline name); partial matching is supported.",
+          "Do not include any other parameters (e.g., iata, icao) when searching by airline name; omitting the name will return the default “Singapore Airlines”."
+        ],
+        "examples": [
+          {
+            "query": "What is the ICAO code for Lufthansa?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"Lufthansa\"\n}"
+          },
+          {
+            "query": "How many Boeing 777 aircraft does Emirates operate?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"Emirates\"\n}"
+          },
+          {
+            "query": "What is the base airport of the airline with ICAO code “AAL”?",
+            "action": "get_airlines",
+            "action_input": "{\n    \"name\": \"American Airlines\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_motorcycle_data": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "full_catalog",
+        "scenario": "Retrieve the complete motorcycle dataset without any filtering.",
+        "tool_errata": [
+          "Omit all optional parameters (make, model, year) when calling get_motorcycle_data to retrieve the full motorcycle catalog."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 1,
+        "name": "manufacturer_lookup",
+        "scenario": "Search for motorcycles from a specific manufacturer, optionally narrowing by model and/or year.",
+        "tool_errata": [
+          "Include the make parameter (string, case‑insensitive, supports partial matching) in every call for this scenario.",
+          "The model parameter is optional; provide it as a string (partial matching works) and if an exact‑match query returns no results, retry with a broader or differently spaced version of the model name (e.g., omit extra spaces or use a shorter keyword).",
+          "The year parameter, when used, must be a four‑digit string (YYYY); if a call with year yields an empty response, remove the year parameter and query again."
+        ],
+        "examples": [
+          {
+            "query": "What are the engine displacement, horsepower, torque, fuel capacity, and curb weight of the 2022 Harley‑Davidson Pan America 1250?",
+            "action": "get_motorcycle_data",
+            "action_input": "{\n    \"make\": \"Harley-Davidson\",\n    \"model\": \"Pan America 1250\",\n    \"year\": \"2022\"\n}"
+          },
+          {
+            "query": "What are the engine displacement, horsepower, torque, fuel capacity, and curb weight of the 2023 Honda Africa Twin?",
+            "action": "get_motorcycle_data",
+            "action_input": "{\n    \"make\": \"Honda\",\n    \"model\": \"Africa Twin\",\n    \"year\": \"2023\"\n}"
+          },
+          {
+            "query": "What are the engine displacement, horsepower, torque, fuel capacity, and curb weight of the 2023 Ducati Panigale V2?",
+            "action": "get_motorcycle_data",
+            "action_input": "{\n    \"make\": \"Ducati\",\n    \"model\": \"Panigale V2\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "model_lookup",
+        "scenario": "Find motorcycles matching a given model name across all manufacturers, optionally filtering by make and/or year.",
+        "tool_errata": [
+          "Include a non‑empty string value for the required “model” parameter (exact name “model”).",
+          "If “make” is supplied, provide it as a string; if “year” is supplied, provide it as a string in the four‑digit “YYYY” format.",
+          "Do not include any other parameters."
+        ],
+        "examples": []
+      },
+      {
+        "scenario_id": 3,
+        "name": "year_lookup",
+        "scenario": "List all motorcycles released in a particular year, optionally restricting by make and/or model.",
+        "tool_errata": [
+          "Include the “year” parameter as a four‑digit string (e.g., `\"2024\"`); it is mandatory for the year_lookup scenario.",
+          "“make” and “model” are optional; when used they must be plain strings and may be partial (e.g., `\"Harley\"` matches `\"Harley‑Davidson\"`).",
+          "Never omit the “year” key or supply it as a number—always provide it as a quoted string, even if “make” or “model” are also present."
+        ],
+        "examples": [
+          {
+            "query": "What are the engine displacement, horsepower, torque, seat height, and curb weight of the 2024 KTM 390 Duke?",
+            "action": "get_motorcycle_data",
+            "action_input": "{\n    \"make\": \"KTM\",\n    \"model\": \"390 Duke\"\n}"
+          },
+          {
+            "query": "What are the specifications, including engine displacement, horsepower, torque, and curb weight, of the 2022 Kawasaki Ninja 650?",
+            "action": "get_motorcycle_data",
+            "action_input": "{\n    \"make\": \"Kawasaki\",\n    \"model\": \"Ninja 650\",\n    \"year\": \"2022\"\n}"
+          },
+          {
+            "query": "Could you list the engine type, displacement, horsepower, torque, wet weight, and seat height specifications for the 2023 Moto Guzzi V85 TT?",
+            "action": "get_motorcycle_data",
+            "action_input": "{\n    \"make\": \"Moto Guzzi\",\n    \"model\": \"V85 TT\"\n}"
+          }
+        ]
+      }
+    ]
+  },
+  "get_air_quality_data": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Coordinate lookup",
+        "scenario": "Retrieve air quality data by providing exact latitude and longitude of the location.",
+        "tool_errata": [
+          "Provide both “lat” and “lon” in the same call; each must be a numeric (float) value for latitude and longitude.",
+          "Do not include any other optional parameters (city, state, country) when using the coordinate lookup scenario."
+        ],
+        "examples": [
+          {
+            "query": "What is the current air quality index and concentrations of PM2.5, PM10, O₃, NO₂, SO₂, and CO at the location of the Statue of Liberty (latitude 40.6892, longitude -74.0445)?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"lat\": 40.6892,\n    \"lon\": -74.0445\n}"
+          },
+          {
+            "query": "Provide the current AQI for Dubai, United Arab Emirates, together with the up‑to‑date concentrations of PM2.5, PM10, ozone (O₃), nitrogen dioxide (NO₂), sulfur dioxide (SO₂), and carbon monoxide (CO).",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Dubai\",\n    \"country\": \"United Arab Emirates\"\n}"
+          },
+          {
+            "query": "Could you tell me the latest Air Quality Index and the current levels of PM2.5, PM10, ozone, nitrogen dioxide, sulfur dioxide, and carbon monoxide in Mexico City, Mexico?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Mexico City\",\n    \"country\": \"Mexico\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 1,
+        "name": "City lookup",
+        "scenario": "Retrieve air quality for a specific city, optionally disambiguated with state and/or country.",
+        "tool_errata": [
+          "Provide the \"city\" parameter as a non‑empty string; this is the only required field for city‑lookup calls.",
+          "If you include a \"country\" parameter, supply it as a non‑empty string; include a \"state\" parameter only for U.S. locations and use the two‑letter uppercase abbreviation (e.g., \"CA\").",
+          "Do not include \"lat\" or \"lon\" unless you provide both together; otherwise omit both parameters."
+        ],
+        "examples": [
+          {
+            "query": "What is the current air quality index and pollutant levels in Los Angeles, California, USA?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Los Angeles\",\n    \"state\": \"California\",\n    \"country\": \"USA\"\n}"
+          },
+          {
+            "query": "What is the current air quality index and concentrations of PM2.5, PM10, O₃, NO₂, SO₂, and CO in Munich, Germany?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Munich\",\n    \"country\": \"Germany\"\n}"
+          },
+          {
+            "query": "What is the current air quality index and concentrations of PM2.5, PM10, O₃, NO₂, SO₂, and CO in Bangkok, Thailand?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Bangkok\",\n    \"country\": \"Thailand\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 2,
+        "name": "US state lookup",
+        "scenario": "Retrieve air quality for an entire U.S. state (state name required, country optional).",
+        "tool_errata": [
+          "Provide the \"state\" parameter with the full US state name (e.g., \"Texas\") as a string; this is the only required field for a state‑wide query.",
+          "Do not include latitude or longitude unless both are supplied together; for a state lookup omit both \"lat\" and \"lon\".",
+          "The \"country\" parameter is optional; if used, set it to \"USA\" (or \"United States\") as a string."
+        ],
+        "examples": [
+          {
+            "query": "What is the current air quality index and concentrations of PM2.5, PM10, O₃, NO₂, SO₂, and CO in Austin, Texas, USA?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Austin\",\n    \"state\": \"Texas\",\n    \"country\": \"USA\"\n}"
+          },
+          {
+            "query": "Provide the current AQI for Dubai, United Arab Emirates, together with the up‑to‑date concentrations of PM2.5, PM10, ozone (O₃), nitrogen dioxide (NO₂), sulfur dioxide (SO₂), and carbon monoxide (CO).",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Dubai\",\n    \"country\": \"United Arab Emirates\"\n}"
+          },
+          {
+            "query": "Could you tell me the latest Air Quality Index and the current levels of PM2.5, PM10, ozone, nitrogen dioxide, sulfur dioxide, and carbon monoxide in Mexico City, Mexico?",
+            "action": "get_air_quality_data",
+            "action_input": "{\n    \"city\": \"Mexico City\",\n    \"country\": \"Mexico\"\n}"
+          }
+        ]
+      },
+      {
+        "scenario_id": 3,
+        "name": "Country lookup",
+        "scenario": "Retrieve air quality data at the country level when only a country name is supplied.",
+        "tool_errata": [
+          "Include only the parameter **country** with a non‑empty string value for the country name; do not add any other location parameters.",
+          "Do not supply **lat** or **lon** (they must appear together if used, which they are not in this scenario).",
+          "Omit **city** and **state** parameters when the request is based solely on a country name."
+        ],
+        "examples": []
+      }
+    ]
+  },
+  "get_weather_forecast": {
+    "units": [
+      {
+        "scenario_id": 0,
+        "name": "Location-based forecast",
+        "scenario": "Retrieve hourly or 15‑minute weather forecast for a specific location identified by any supported query format (coordinates, city name, postal code, airport/IATA, METAR, or IP).",
+        "tool_errata": [
+          "q must be a non‑empty string in one of the supported formats (e.g., “latitude,longitude”, city name, postal code, “iata:CODE” or just the IATA code like “SFO”, “metar:CODE”, “auto:ip”, etc.).",
+          "days must be an integer from 1 to 14 inclusive; include it when you need a specific forecast length (default is 3 days)."
+        ],
+        "examples": [
+          {
+            "query": "Can you give me the 2‑day hourly weather forecast for the IATA code SFO (San Francisco International Airport)?",
+            "action": "get_weather_forecast",
+            "action_input": "{\n    \"q\": \"SFO\",\n    \"days\": 2\n}"
+          },
+          {
+            "query": "Can you give me the hourly weather forecast, including temperature, wind speed, and chance of rain, for Sydney, Australia over the next 5 days?",
+            "action": "get_weather_forecast",
+            "action_input": "{\n    \"q\": \"Sydney, Australia\",\n    \"days\": 5\n}"
+          },
+          {
+            "query": "Give me the detailed hour‑wise weather data for Sydney, Australia for the next five days, showing temperature, wind speed and rain chance.",
+            "action": "get_weather_forecast",
+            "action_input": "{\n    \"q\": \"Sydney, Australia\",\n    \"days\": 5\n}"
+          }
+        ]
+      }
+    ]
+  }
+}
