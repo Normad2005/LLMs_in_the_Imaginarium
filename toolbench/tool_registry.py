@@ -7,10 +7,14 @@ TOOL_REGISTRY = {
 
     "get_animal_facts": {"category": "Data", "tool_name": "Animals"},
 
+    "get_divisions_near_location": {"category": "Data", "tool_name": "GeoDB"},
+
     "search_public_restrooms": {"category": "Data", "tool_name": "Public Bathrooms"},
 
-    # Datebase
+    # Database
     "get_dog_breeds_metadata": {"category": "Database", "tool_name": "DogBreed"},
+
+    "search_exercises_by_name": {"category": "Database", "tool_name": "ExerciseDB"},
 
     # Education
     "spell_number": {"category": "Education", "tool_name": "Numbers Translator"},
@@ -68,6 +72,9 @@ TOOL_REGISTRY = {
     "get_airlines": {"category": "Transportation", "tool_name": "Airlines"},
 
     "get_motorcycle_data": {"category": "Transportation", "tool_name": "Motorcycles"},
+
+    # Travel
+    "get_airport_delay_statistics": {"category": "Travel", "tool_name": "AeroDataBox"},
 
     #Weather
     "get_air_quality_data": {"category": "Weather", "tool_name": "Air Quality"},

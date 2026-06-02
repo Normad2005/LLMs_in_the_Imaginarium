@@ -1,0 +1,438 @@
+{
+  "verify_email": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Verify Email Address",
+        "description": "Check if an email address is valid, deliverable, and obtain related details such as typo correction and confidence score.",
+        "key_parameters": [
+          "email"
+        ]
+      }
+    ]
+  },
+  "get_car_makes": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_car_makes",
+        "description": "Retrieve a list of all car makes in the dataset",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_animal_facts": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "retrieve_animal_facts",
+        "description": "I want interesting scientific facts about a specific animal species.",
+        "key_parameters": [
+          "name"
+        ]
+      }
+    ]
+  },
+  "search_public_restrooms": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_by_state",
+        "description": "Find public restrooms in one or more US states.",
+        "key_parameters": [
+          "states",
+          "page",
+          "per_page"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "search_by_location",
+        "description": "Find public restrooms near a specific latitude and longitude.",
+        "key_parameters": [
+          "lat",
+          "lon",
+          "page",
+          "per_page"
+        ]
+      }
+    ]
+  },
+  "get_dog_breeds_metadata": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_dog_breed_metadata",
+        "description": "Retrieve basic metadata for dog breeds that match a given search term.",
+        "key_parameters": [
+          "search"
+        ]
+      }
+    ]
+  },
+  "spell_number": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "spell_number",
+        "description": "Convert a numeric value into its written word form.",
+        "key_parameters": [
+          "number_text"
+        ]
+      }
+    ]
+  },
+  "get_random_joke": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "retrieve_random_joke",
+        "description": "I want to receive a random joke.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_media_news": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get Media News",
+        "description": "Retrieve current or trending news about movies, TV shows, celebrities, or general media, optionally filtered by category, country/language, and paginated.",
+        "key_parameters": [
+          "category",
+          "country",
+          "language",
+          "first",
+          "after"
+        ]
+      }
+    ]
+  },
+  "search_manga": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_manga",
+        "description": "Find manga matching a given title, author, or keywords, optionally filtering by NSFW status and origin.",
+        "key_parameters": [
+          "text"
+        ]
+      }
+    ]
+  },
+  "get_financial_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get current price quote",
+        "description": "Retrieve the latest market price and related data for a specific stock symbol.",
+        "key_parameters": [
+          "function",
+          "symbol"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "Get historical time‑series data",
+        "description": "Obtain daily, weekly, or intraday price history for a stock symbol.",
+        "key_parameters": [
+          "function",
+          "symbol"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "Get company fundamentals",
+        "description": "Fetch fundamental information such as market cap, EPS, and sector for a stock symbol.",
+        "key_parameters": [
+          "function",
+          "symbol"
+        ]
+      }
+    ]
+  },
+  "convert_currency": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Convert currency",
+        "description": "Convert an amount from one currency to another",
+        "key_parameters": [
+          "base",
+          "target"
+        ]
+      }
+    ]
+  },
+  "calculate_mortgage_payment": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Calculate payment with known loan amount",
+        "description": "I know the loan amount and want to see the monthly/annual mortgage payment.",
+        "key_parameters": [
+          "loan_amount",
+          "duration_years"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "Calculate payment from home value and downpayment",
+        "description": "I know the home value and my downpayment and want to calculate the mortgage payment.",
+        "key_parameters": [
+          "home_value",
+          "downpayment",
+          "duration_years"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "Calculate total ownership cost",
+        "description": "I want the full monthly cost including HOA fees, property tax, and insurance.",
+        "key_parameters": [
+          "monthly_hoa",
+          "annual_property_tax",
+          "annual_home_insurance"
+        ]
+      }
+    ]
+  },
+  "get_inflation_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "get_inflation_data",
+        "description": "Retrieve the latest inflation statistics for major countries, optionally specifying the indicator type (CPI or HICP).",
+        "key_parameters": [
+          "type"
+        ]
+      }
+    ]
+  },
+  "get_recipe": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_recipes_by_name",
+        "description": "Find recipes whose dish name contains a specific keyword or phrase.",
+        "key_parameters": [
+          "query"
+        ]
+      }
+    ]
+  },
+  "search_cocktails": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_cocktails",
+        "description": "Find cocktail recipes by providing a cocktail name, a list of ingredients, or both.",
+        "key_parameters": [
+          "name",
+          "ingredients"
+        ]
+      }
+    ]
+  },
+  "get_all_mvc2_characters": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_mvc2_characters",
+        "description": "Retrieve a complete list of every character in the MVC2 universe",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_filtered_game_giveaways": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get filtered game giveaways",
+        "description": "Retrieve game giveaways filtered by platform and optionally by giveaway type",
+        "key_parameters": [
+          "platform",
+          "type"
+        ]
+      }
+    ]
+  },
+  "get_lol_champion_stats": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get champion statistics",
+        "description": "Retrieve the basic metadata and detailed in‑game statistics for a specific League of Legends champion.",
+        "key_parameters": [
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_salary_estimation": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Retrieve salary estimation",
+        "description": "Get estimated salary details for a specific job title and location.",
+        "key_parameters": [
+          "job_title",
+          "location"
+        ]
+      }
+    ]
+  },
+  "get_timezone_info": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get time zone info for a location",
+        "description": "Obtain the UTC and DST offsets for a given latitude and longitude, optionally at a specific UNIX timestamp.",
+        "key_parameters": [
+          "lat",
+          "lng",
+          "timestamp"
+        ]
+      }
+    ]
+  },
+  "get_planet_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "retrieve_planet_data",
+        "description": "Obtain information about planets or exoplanets, optionally filtering by name or by ranges of mass, radius, orbital period, temperature, or distance.",
+        "key_parameters": [
+          "name",
+          "min_mass",
+          "max_mass",
+          "min_radius",
+          "max_radius",
+          "min_period",
+          "max_period",
+          "min_temperature",
+          "max_temperature",
+          "min_distance_light_year",
+          "max_distance_light_year"
+        ]
+      }
+    ]
+  },
+  "get_celestial_body_position": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "retrieve_celestial_body_position",
+        "description": "Get the azimuth and altitude of a specified celestial body for a given date range (and optional time) from a particular observer location.",
+        "key_parameters": [
+          "body",
+          "latitude",
+          "longitude",
+          "from_date",
+          "to_date"
+        ]
+      }
+    ]
+  },
+  "search_arxiv_papers": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_arxiv_papers",
+        "description": "Find arXiv papers matching a query, optionally narrowing by date range, field, pagination, or number of results.",
+        "key_parameters": [
+          "search_term"
+        ]
+      }
+    ]
+  },
+  "get_soccer_tournaments": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_soccer_tournaments",
+        "description": "I want to retrieve a list of soccer tournaments.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_f1_latest_news": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get latest F1 news",
+        "description": "I want to see the most recent Formula 1 news articles.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_handball_scheduled_matches": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get scheduled matches for a date",
+        "description": "Retrieve the list of handball matches scheduled on a specific date.",
+        "key_parameters": [
+          "date"
+        ]
+      }
+    ]
+  },
+  "get_airlines": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_airline",
+        "description": "Find airline details by providing an ICAO code, an IATA code, or a (partial) airline name.",
+        "key_parameters": [
+          "icao",
+          "iata",
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_motorcycle_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "retrieve_motorcycle_data",
+        "description": "Obtain detailed technical specifications for motorcycles, optionally filtered by make, model, and/or year.",
+        "key_parameters": [
+          "make",
+          "model",
+          "year"
+        ]
+      }
+    ]
+  },
+  "get_air_quality_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get air quality for location",
+        "description": "Retrieve the latest air quality information for a specific place.",
+        "key_parameters": [
+          "lat",
+          "lon",
+          "city",
+          "state",
+          "country"
+        ]
+      }
+    ]
+  },
+  "get_weather_forecast": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get weather forecast",
+        "description": "Retrieve an hourly and 15‑minute weather forecast for a specific location",
+        "key_parameters": [
+          "q",
+          "days"
+        ]
+      }
+    ]
+  }
+}

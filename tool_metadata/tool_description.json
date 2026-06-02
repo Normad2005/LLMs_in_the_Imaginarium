@@ -11,13 +11,11 @@
     ],
     "optional_parameters": []
   },
-
   "get_car_makes": {
     "description": "Return all car makes from a dataset",
     "required_parameters": [],
     "optional_parameters": []
   },
-
   "get_animal_facts": {
     "description": "Provides interesting scientific facts on thousands of different animal species.",
     "required_parameters": [
@@ -29,7 +27,106 @@
     ],
     "optional_parameters": []
   },
-
+  "get_divisions_near_location": {
+    "description": "Returns a list of administrative divisions (cities, counties, islands, or regions) located within a specified radius of a given GPS coordinate. Each result includes the division's name, country, region, population, and distance from the specified location. Supports filtering by country, time zone, population range, and name prefix. Results can be displayed in multiple languages and sorted by various fields.",
+    "required_parameters": [
+      {
+        "name": "locationId",
+        "type": "STRING",
+        "description": "The GPS coordinate of the center location, expressed in ISO-6709 format as latitude followed by longitude (e.g., '33.832213-118.387099' for a point near Los Angeles).",
+        "default": "33.832213-118.387099"
+      },
+      {
+        "name": "radius",
+        "type": "NUMBER",
+        "description": "The search radius around the specified GPS location within which to find nearby divisions.",
+        "default": "100"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "distanceUnit",
+        "type": "STRING",
+        "description": "The unit of distance to use for the radius. Accepted values: 'MI' (miles) or 'KM' (kilometers).",
+        "default": "KM"
+      },
+      {
+        "name": "countryIds",
+        "type": "STRING",
+        "description": "Restrict results to divisions within these countries only. Provide a comma-delimited list of ISO country codes or WikiData IDs (e.g., 'US,CA')."
+      },
+      {
+        "name": "excludedCountryIds",
+        "type": "STRING",
+        "description": "Exclude divisions belonging to these countries from the results. Provide a comma-delimited list of ISO country codes or WikiData IDs."
+      },
+      {
+        "name": "timeZoneIds",
+        "type": "STRING",
+        "description": "Restrict results to divisions located within these time zones only. Provide a comma-delimited list of time-zone IDs (e.g., 'America/New_York,Europe/London')."
+      },
+      {
+        "name": "minPopulation",
+        "type": "NUMBER",
+        "description": "Only include divisions with a population greater than or equal to this value.",
+        "default": "0"
+      },
+      {
+        "name": "maxPopulation",
+        "type": "NUMBER",
+        "description": "Only include divisions with a population less than or equal to this value.",
+        "default": "0"
+      },
+      {
+        "name": "namePrefix",
+        "type": "STRING",
+        "description": "Only return divisions whose names start with this prefix. If 'languageCode' is also set, the prefix is matched against the name in that language."
+      },
+      {
+        "name": "namePrefixDefaultLangResults",
+        "type": "BOOLEAN",
+        "description": "When performing name-prefix matching with a non-default language set, whether to also match against names in the default language."
+      },
+      {
+        "name": "languageCode",
+        "type": "STRING",
+        "description": "Return results with place names displayed in this language (e.g., 'en', 'de', 'fr', 'ru')."
+      },
+      {
+        "name": "asciiMode",
+        "type": "BOOLEAN",
+        "description": "If true, display results using ASCII characters only, removing diacritics and special characters."
+      },
+      {
+        "name": "hateoasMode",
+        "type": "BOOLEAN",
+        "description": "If true, include HATEOAS-style pagination links in the response."
+      },
+      {
+        "name": "includeDeleted",
+        "type": "STRING",
+        "description": "Whether to include divisions that have been marked as deleted. Accepted values: 'ALL', 'SINCE_YESTERDAY', 'SINCE_LAST_WEEK', 'NONE'.",
+        "default": "NONE"
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "The maximum number of division results to return per request.",
+        "default": "10"
+      },
+      {
+        "name": "offset",
+        "type": "NUMBER",
+        "description": "The zero-based offset into the result set, used for pagination.",
+        "default": "0"
+      },
+      {
+        "name": "sort",
+        "type": "STRING",
+        "description": "Specify how to sort the results. Format: '±SORT_FIELD,±SORT_FIELD' where '+' means ascending and '-' means descending. SORT_FIELD options: 'countryCode', 'elevation', 'name', 'population'. Example: '-population,+name'."
+      }
+    ]
+  },
   "search_public_restrooms": {
     "description": "Searches for public bathrooms, toilets, and restrooms worldwide. The database has over 60,000+ entries and supports searching by location and pagination.",
     "required_parameters": [],
@@ -64,7 +161,6 @@
       }
     ]
   },
-
   "get_dog_breeds_metadata": {
     "description": "Searches for and retrieves basic metadata for specific dog breeds from around the world based on a search term.",
     "required_parameters": [
@@ -76,26 +172,43 @@
     ],
     "optional_parameters": []
   },
-
-  "spell_number": {
-    "description": "Convert numerical numbers to words.",
+  "search_exercises_by_name": {
+    "description": "Searches for exercises using a case-insensitive substring match on the exercise name. Returns detailed exercise information including the target muscle group, secondary muscles, required equipment, step-by-step instructions, difficulty level, and category. Results can be sorted and paginated.",
     "required_parameters": [
       {
-        "name": "number_text",
+        "name": "name",
         "type": "STRING",
-        "description": "Numerical value of the number",
-        "default": "23879908709817834"
+        "description": "A name fragment used for case-insensitive substring matching against exercise names (e.g., 'arm' matches 'band kneeling one arm pulldown', 'arm curl', etc.).",
+        "default": "arm"
       }
     ],
-    "optional_parameters": []
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "The maximum number of exercise results to return per request. Use 0 to return the full result set (non-BASIC plans only). BASIC plans are capped at 10.",
+        "default": "10"
+      },
+      {
+        "name": "offset",
+        "type": "NUMBER",
+        "description": "The zero-based start index into the result set, used for pagination (e.g., 0 for the first page, 10 for the second page when limit is 10).",
+        "default": "0"
+      },
+      {
+        "name": "sortOrder",
+        "type": "STRING",
+        "description": "The sort direction for results. Accepted values: 'ascending' or 'descending'.",
+        "default": "ascending"
+      },
+      {
+        "name": "sortMethod",
+        "type": "STRING",
+        "description": "The field to sort results by. Accepted values: 'bodyPart', 'id', 'name', 'target', 'equipment', 'difficulty', 'category'.",
+        "default": "id"
+      }
+    ]
   },
-  
-  "get_random_joke": {
-    "description": "Get a random joke from this api.",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-
   "get_media_news": {
     "description": "Access current and trending news and articles related to movies, TV shows, and celebrities. Allows filtering by media category, country, and language, and supports result pagination.",
     "required_parameters": [],
@@ -128,7 +241,6 @@
       }
     ]
   },
-
   "search_manga": {
     "description": "Searches for manga based on title, author, or keywords, with filtering options for NSFW content and the manga's origin (Japan, China, or Korea).",
     "required_parameters": [
@@ -152,7 +264,6 @@
       }
     ]
   },
-
   "get_financial_data": {
     "description": "Customizable Endpoint for various financial data functions.",
     "required_parameters": [
@@ -171,7 +282,6 @@
     ],
     "optional_parameters": []
   },
-
   "convert_currency": {
     "description": "Convert currency using the three-letter currency codes.",
     "required_parameters": [
@@ -190,7 +300,6 @@
     ],
     "optional_parameters": []
   },
-
   "calculate_mortgage_payment": {
     "description": "Provides detailed mortgage and other home financing payment information. It uses the standard mortgage calculation formulas to calculate interest and monthly/annual payments.",
     "required_parameters": [
@@ -244,20 +353,6 @@
       }
     ]
   },
-
-  "get_inflation_data": {
-    "description": "Provides current economic inflation data for 38 major countries. The stats are usually updated monthly, although certain countries may lag behind or update more infrequently.",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "type",
-        "type": "String",
-        "description": "Inflation indicator type. Can be either CPI (Consumer Price Index) or HICP (Harmonized Index of Consumer Prices). If not provided, CPI will be used by default.",
-        "default": "CPI"
-      }
-    ]
-  },
-
   "get_recipe": {
     "description": "Searches for recipes where the dish name includes the query text.",
     "required_parameters": [
@@ -270,7 +365,6 @@
     ],
     "optional_parameters": []
   },
-
   "search_cocktails": {
     "description": "Searches for cocktail recipes and information based on the cocktail's name or a list of required ingredients.",
     "required_parameters": [],
@@ -287,13 +381,11 @@
       }
     ]
   },
-
   "get_all_mvc2_characters": {
     "description": "Access all characters in MVC2 (Marvel Vs Capcom) Universe",
     "required_parameters": [],
     "optional_parameters": []
   },
-
   "get_filtered_game_giveaways": {
     "description": "Filter and group platforms and giveaway types to get personalized results.",
     "required_parameters": [
@@ -313,7 +405,6 @@
       }
     ]
   },
-
   "get_lol_champion_stats": {
     "description": "Retrieves the basic metadata and detailed in-game statistics for a specific League of Legends champion, including health, mana, attack damage, and various scaling stats.",
     "required_parameters": [
@@ -325,7 +416,6 @@
     ],
     "optional_parameters": []
   },
-
   "get_salary_estimation": {
     "description": "Retrieves detailed salary estimation data, including minimum, maximum, and median base/total salary, for a specified job title and location, with optional filtering by location type and years of experience.",
     "required_parameters": [
@@ -360,7 +450,6 @@
       }
     ]
   },
-
   "get_timezone_info": {
     "description": "Provides time zone information, including UTC and DST offsets, for any specified point on land based on latitude, longitude, and an optional UNIX timestamp. Note: Accuracy is not guaranteed for historical timestamps due to potential changes in time zone boundaries.",
     "required_parameters": [
@@ -383,7 +472,6 @@
       }
     ]
   },
-
   "get_planet_data": {
     "description": "Provides astronomical data on thousands of planets and exoplanets discovered in our universe.",
     "required_parameters": [],
@@ -454,7 +542,6 @@
       }
     ]
   },
-
   "get_celestial_body_position": {
     "description": "Retrieves astronomical position data (e.g., azimuth, altitude) for a celestial body based on the observer's location (latitude, longitude, elevation) and a specified date and time range.",
     "required_parameters": [
@@ -500,7 +587,6 @@
       }
     ]
   },
-
   "search_arxiv_papers": {
     "description": "Provides a way to search the arXiv repository for scientific papers using a variety of filters and search parameters.",
     "required_parameters": [
@@ -549,19 +635,16 @@
       }
     ]
   },
-
   "get_soccer_tournaments": {
     "description": "Provides list of tournaments.",
     "required_parameters": [],
     "optional_parameters": []
   },
-
   "get_f1_latest_news": {
     "description": "This endpoint returns back recent articles from all sources",
     "required_parameters": [],
     "optional_parameters": []
   },
-
   "get_handball_scheduled_matches": {
     "description": "Daily match list including scheduled matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
     "required_parameters": [
@@ -574,7 +657,6 @@
     ],
     "optional_parameters": []
   },
-
   "get_airlines": {
     "description": "Searches for airline information using various identifiers or name.",
     "required_parameters": [],
@@ -597,7 +679,6 @@
       }
     ]
   },
-
   "get_motorcycle_data": {
     "description": "Provides highly-detailed technical data on tens of thousands of different motorcycle models from hundreds of manufacturers.",
     "required_parameters": [],
@@ -619,7 +700,24 @@
       }
     ]
   },
-
+  "get_airport_delay_statistics": {
+    "description": "Returns real-time departure and arrival delay statistics for a specified airport, identified by its IATA or ICAO code. Statistics cover a 2-hour observation window and include the total number of flights, number of cancellations, median delay duration, and a delay index for both departures and arrivals.",
+    "required_parameters": [
+      {
+        "name": "codeType",
+        "type": "STRING",
+        "description": "The type of airport code to search by. Accepted values: 'iata' (3-character IATA code, e.g., 'AMS', 'TPE') or 'icao' (4-character ICAO code, e.g., 'EHAM', 'RCTP').",
+        "default": "iata"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "description": "The airport code corresponding to the selected codeType. If codeType is 'iata', provide a 3-character IATA code (e.g., 'TPE'). If codeType is 'icao', provide a 4-character ICAO code (e.g., 'RCTP').",
+        "default": "TPE"
+      }
+    ],
+    "optional_parameters": []
+  },
   "get_air_quality_data": {
     "description": "Provides the latest air quality information for any city or geographic location in the world, including the Air Quality Index (AQI) and concentrations for major pollutants (CO, NO2, O3, SO2, PM2.5, PM10).",
     "required_parameters": [],
@@ -653,7 +751,6 @@
       }
     ]
   },
-
   "get_weather_forecast": {
     "description": "Provides up to 14-day hourly and 15-minute weather forecast data.",
     "required_parameters": [

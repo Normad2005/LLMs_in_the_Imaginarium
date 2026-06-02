@@ -1,0 +1,488 @@
+{
+  "verify_email": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Verify email address",
+        "description": "Check whether an email address is valid, live, and retrieve deliverability details such as typo correction and confidence score.",
+        "key_parameters": [
+          "email"
+        ]
+      }
+    ]
+  },
+  "get_car_makes": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_car_makes",
+        "description": "Retrieve the complete list of car makes from the dataset.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_animal_facts": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_animal_facts",
+        "description": "User wants scientific facts about a particular animal, providing its common name (partial matches allowed).",
+        "key_parameters": [
+          "name"
+        ]
+      }
+    ]
+  },
+  "search_public_restrooms": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_by_state",
+        "description": "Find public restrooms filtered by one or more US state abbreviations.",
+        "key_parameters": [
+          "states",
+          "page",
+          "per_page"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "search_by_coordinates",
+        "description": "Find public restrooms near a specific latitude and longitude.",
+        "key_parameters": [
+          "lat",
+          "lon",
+          "page",
+          "per_page"
+        ]
+      }
+    ]
+  },
+  "get_dog_breeds_metadata": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Search dog breed metadata",
+        "description": "Retrieve basic metadata for dog breeds that match a given search term.",
+        "key_parameters": [
+          "search"
+        ]
+      }
+    ]
+  },
+  "spell_number": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "convert_number_to_words",
+        "description": "User wants the textual representation of a numeric value.",
+        "key_parameters": [
+          "number_text"
+        ]
+      }
+    ]
+  },
+  "get_random_joke": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_random_joke",
+        "description": "When the user wants a random joke with no specific criteria.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_media_news": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get media news",
+        "description": "Retrieve current or trending news about movies, TV shows, and celebrities, optionally filtered by category, country/language, and paginated.",
+        "key_parameters": [
+          "category",
+          "country",
+          "language"
+        ]
+      }
+    ]
+  },
+  "search_manga": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_manga_by_text",
+        "description": "Find manga matching a text query, optionally filtering by NSFW status and origin.",
+        "key_parameters": [
+          "text"
+        ]
+      }
+    ]
+  },
+  "get_financial_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "real_time_quote",
+        "description": "Retrieve the latest price and volume for a single ticker.",
+        "key_parameters": [
+          "function",
+          "symbol"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "daily_historical_prices",
+        "description": "Fetch daily open/high/low/close data for a ticker over a recent period.",
+        "key_parameters": [
+          "function",
+          "symbol",
+          "outputsize"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "intraday_time_series",
+        "description": "Obtain intraday price data for a ticker at a specific interval.",
+        "key_parameters": [
+          "function",
+          "symbol",
+          "interval",
+          "outputsize"
+        ]
+      },
+      {
+        "intent_id": 3,
+        "name": "company_overview",
+        "description": "Get descriptive information about a company such as sector, market cap, and description.",
+        "key_parameters": [
+          "function",
+          "symbol"
+        ]
+      },
+      {
+        "intent_id": 4,
+        "name": "earnings_data",
+        "description": "Retrieve earnings reports or calendar data for a ticker.",
+        "key_parameters": [
+          "function",
+          "symbol",
+          "date_range"
+        ]
+      },
+      {
+        "intent_id": 5,
+        "name": "sector_performance",
+        "description": "Return performance metrics for all market sectors (no specific ticker required).",
+        "key_parameters": [
+          "function"
+        ]
+      }
+    ]
+  },
+  "convert_currency": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "convert_between_currencies",
+        "description": "Convert an amount from one currency to another, optionally specifying the base and/or target currency codes (defaults: USD to JPY).",
+        "key_parameters": [
+          "base",
+          "target"
+        ]
+      }
+    ]
+  },
+  "calculate_mortgage_payment": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "principal_based_payment",
+        "description": "User knows the loan principal and wants the basic monthly principal‑and‑interest payment.",
+        "key_parameters": [
+          "interest_rate",
+          "loan_amount",
+          "duration_years"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "price_and_downpayment_payment",
+        "description": "User knows the home price and downpayment and wants the mortgage payment derived from those values.",
+        "key_parameters": [
+          "interest_rate",
+          "home_value",
+          "downpayment",
+          "duration_years"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "total_ownership_cost",
+        "description": "User wants the full monthly cost of owning the home, including HOA fees, property tax and insurance.",
+        "key_parameters": [
+          "interest_rate",
+          "loan_amount",
+          "monthly_hoa",
+          "annual_property_tax",
+          "annual_home_insurance",
+          "duration_years"
+        ]
+      }
+    ]
+  },
+  "get_inflation_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Retrieve inflation data",
+        "description": "Obtain the latest inflation statistics for major countries, optionally specifying CPI or HICP as the indicator type.",
+        "key_parameters": [
+          "type"
+        ]
+      }
+    ]
+  },
+  "get_recipe": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_recipe_by_name",
+        "description": "Find recipes whose dish name includes the specified query text.",
+        "key_parameters": [
+          "query"
+        ]
+      }
+    ]
+  },
+  "search_cocktails": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_cocktails",
+        "description": "Find cocktail recipes using a name query, a list of ingredients, or a combination of both.",
+        "key_parameters": [
+          "name",
+          "ingredients"
+        ]
+      }
+    ]
+  },
+  "get_all_mvc2_characters": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_characters",
+        "description": "Retrieve the complete list of MVC2 (Marvel Vs Capcom) characters.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_filtered_game_giveaways": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get giveaways by platform (optional type)",
+        "description": "Retrieve game giveaways filtered by one or more platforms, optionally narrowing results by giveaway type.",
+        "key_parameters": [
+          "platform",
+          "type"
+        ]
+      }
+    ]
+  },
+  "get_lol_champion_stats": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get champion stats by name",
+        "description": "Retrieve the basic metadata and in‑game statistics for a specific champion when you know the champion's name.",
+        "key_parameters": [
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_salary_estimation": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "salary_estimation_lookup",
+        "description": "Retrieve salary estimation data for a given job title and location, optionally narrowing by location type, experience level, or selecting specific fields.",
+        "key_parameters": [
+          "job_title",
+          "location"
+        ]
+      }
+    ]
+  },
+  "get_timezone_info": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get timezone info for a location",
+        "description": "Retrieve the UTC and DST offsets for a given latitude/longitude, optionally for a specific UNIX timestamp (defaults to the current time).",
+        "key_parameters": [
+          "lat",
+          "lng",
+          "timestamp"
+        ]
+      }
+    ]
+  },
+  "get_planet_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "lookup_by_name",
+        "description": "Retrieve data for a specific planet when its name is known.",
+        "key_parameters": [
+          "name"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "search_by_attributes",
+        "description": "Find planets that satisfy one or more numeric attribute ranges (mass, radius, orbital period, temperature, distance).",
+        "key_parameters": [
+          "min_mass",
+          "max_mass",
+          "min_radius",
+          "max_radius",
+          "min_period",
+          "max_period",
+          "min_temperature",
+          "max_temperature",
+          "min_distance_light_year",
+          "max_distance_light_year"
+        ]
+      }
+    ]
+  },
+  "get_celestial_body_position": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get celestial body position",
+        "description": "Retrieve the azimuth and altitude of a specified celestial body for a given observer location over a date range, optionally providing elevation and a specific time.",
+        "key_parameters": [
+          "body",
+          "latitude",
+          "longitude",
+          "from_date",
+          "to_date"
+        ]
+      }
+    ]
+  },
+  "search_arxiv_papers": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_arxiv",
+        "description": "Retrieve arXiv papers matching a search term, optionally filtered by field, date range, and pagination.",
+        "key_parameters": [
+          "search_term",
+          "field",
+          "date_from",
+          "date_to"
+        ]
+      }
+    ]
+  },
+  "get_soccer_tournaments": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_tournaments",
+        "description": "Retrieve the complete list of soccer tournaments.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_f1_latest_news": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_latest_f1_news",
+        "description": "Retrieve the most recent Formula 1 news articles from all sources.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_handball_scheduled_matches": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Get matches for a date",
+        "description": "Retrieve the list of scheduled handball matches for a specific date within the allowed ±7‑day range.",
+        "key_parameters": [
+          "date"
+        ]
+      }
+    ]
+  },
+  "get_airlines": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "lookup_airline",
+        "description": "Retrieve airline information using an ICAO code, IATA code, or airline name (supports partial matches).",
+        "key_parameters": [
+          "icao",
+          "iata",
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_motorcycle_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Lookup motorcycle data",
+        "description": "Retrieve detailed technical specifications for motorcycles, optionally filtering by make, model, and/or year.",
+        "key_parameters": [
+          "make",
+          "model",
+          "year"
+        ]
+      }
+    ]
+  },
+  "get_air_quality_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "Air quality by coordinates",
+        "description": "Retrieve the latest air quality data for a location when the latitude and longitude are known.",
+        "key_parameters": [
+          "lat",
+          "lon"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "Air quality by place name",
+        "description": "Retrieve the latest air quality data for a location using its city name, optionally refined with state and/or country.",
+        "key_parameters": [
+          "city",
+          "state",
+          "country"
+        ]
+      }
+    ]
+  },
+  "get_weather_forecast": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "get_weather_forecast",
+        "description": "Retrieve an hourly or 15‑minute weather forecast for a location specified by city name, coordinates, postal code, airport/IATA code, METAR code, or IP address.",
+        "key_parameters": [
+          "q",
+          "days"
+        ]
+      }
+    ]
+  }
+}
