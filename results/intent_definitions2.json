@@ -3,8 +3,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Verify email address",
-        "description": "Check whether an email address is valid, live, and retrieve deliverability details such as typo correction and confidence score.",
+        "name": "verify_email_address",
+        "description": "I need to know if a specific email address actually exists and can receive messages, so I can clean my contact list, avoid bounces, and ensure my campaigns reach real inboxes.",
         "key_parameters": [
           "email"
         ]
@@ -15,8 +15,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "list_all_car_makes",
-        "description": "Retrieve the complete list of car makes from the dataset.",
+        "name": "list_car_makes",
+        "description": "I want to see a complete list of all car manufacturers available in the system, so I can explore options for a new vehicle.",
         "key_parameters": []
       }
     ]
@@ -25,10 +25,60 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "fetch_animal_facts",
-        "description": "User wants scientific facts about a particular animal, providing its common name (partial matches allowed).",
+        "name": "fetch_animal_fact",
+        "description": "I'm looking for an interesting scientific fact about an animal I have in mind—like a fox or a blue whale—so I can share it with friends or use it for a school project.",
         "key_parameters": [
           "name"
+        ]
+      }
+    ]
+  },
+  "get_divisions_near_location": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "geo_explore_search",
+        "description": "I'm traveling around a GPS coordinate and want to discover nearby cities, counties or islands. I may limit the search to certain countries or time zones, filter by population size, look for names that start with a prefix, and I want the results sorted (e.g., biggest to smallest).",
+        "key_parameters": [
+          "locationId",
+          "radius",
+          "distanceUnit",
+          "countryIds",
+          "excludedCountryIds",
+          "timeZoneIds",
+          "minPopulation",
+          "maxPopulation",
+          "namePrefix",
+          "namePrefixDefaultLangResults",
+          "sort",
+          "limit",
+          "offset"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "localized_display_query",
+        "description": "I need the nearby divisions presented in a specific language and optionally in plain ASCII characters, maybe for a multilingual app or a research report. I might also want to include recently deleted places for historical completeness.",
+        "key_parameters": [
+          "locationId",
+          "radius",
+          "languageCode",
+          "asciiMode",
+          "includeDeleted",
+          "namePrefix",
+          "namePrefixDefaultLangResults"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "paged_api_control",
+        "description": "I'm building an integration that pages through the results. I want to set how many items I get per page, jump to a specific offset, and receive HATEOAS navigation links.",
+        "key_parameters": [
+          "locationId",
+          "radius",
+          "limit",
+          "offset",
+          "hateoasMode"
         ]
       }
     ]
@@ -37,21 +87,21 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "search_by_state",
-        "description": "Find public restrooms filtered by one or more US state abbreviations.",
+        "name": "nearby_restroom_search",
+        "description": "I'm out walking in the city and want to see the closest public restrooms to my phone's GPS coordinates. I'd like the results in pages so I can scroll through them.",
         "key_parameters": [
-          "states",
+          "lat",
+          "lon",
           "page",
           "per_page"
         ]
       },
       {
         "intent_id": 1,
-        "name": "search_by_coordinates",
-        "description": "Find public restrooms near a specific latitude and longitude.",
+        "name": "state_restroom_listing",
+        "description": "I'm planning a road trip across a few US states and need a list of public bathrooms in those states, with the ability to page through the results.",
         "key_parameters": [
-          "lat",
-          "lon",
+          "states",
           "page",
           "per_page"
         ]
@@ -62,33 +112,27 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Search dog breed metadata",
-        "description": "Retrieve basic metadata for dog breeds that match a given search term.",
+        "name": "search_dog_breeds",
+        "description": "I'm looking for information about a specific dog breed, but I only know part of its name—like typing 'alaskan' to see both Alaskan Husky and Alaskan Malamute. I want a quick list of matching breeds with basic details.",
         "key_parameters": [
           "search"
         ]
       }
     ]
   },
-  "spell_number": {
+  "search_exercises_by_name": {
     "intents": [
       {
         "intent_id": 0,
-        "name": "convert_number_to_words",
-        "description": "User wants the textual representation of a numeric value.",
+        "name": "find_exercises_by_name",
+        "description": "I want to discover workout exercises that match a keyword I type (e.g., 'arm' or 'push'), see their full details, and optionally control how many results I get, move through pages, or order them by difficulty, equipment, or muscle group.",
         "key_parameters": [
-          "number_text"
+          "name",
+          "limit",
+          "offset",
+          "sortOrder",
+          "sortMethod"
         ]
-      }
-    ]
-  },
-  "get_random_joke": {
-    "intents": [
-      {
-        "intent_id": 0,
-        "name": "fetch_random_joke",
-        "description": "When the user wants a random joke with no specific criteria.",
-        "key_parameters": []
       }
     ]
   },
@@ -96,10 +140,12 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Get media news",
-        "description": "Retrieve current or trending news about movies, TV shows, and celebrities, optionally filtered by category, country/language, and paginated.",
+        "name": "fetch_media_news",
+        "description": "I want to see the latest entertainment headlines – whether it's the general trending news or specific stories about movies, TV shows, or celebrities. I may also want the results tailored to a particular country and language (e.g., French news for France) and I’d like to control how many items I get per page and navigate through pages.",
         "key_parameters": [
           "category",
+          "first",
+          "after",
           "country",
           "language"
         ]
@@ -110,10 +156,12 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "search_manga_by_text",
-        "description": "Find manga matching a text query, optionally filtering by NSFW status and origin.",
+        "name": "search_manga_by_title_with_filters",
+        "description": "I want to find manga that match a keyword or phrase—like looking for 'One Piece'—and I might also want to limit the results to only safe‑for‑work titles or to manga from a specific region such as Japan, China, or Korea.",
         "key_parameters": [
-          "text"
+          "text",
+          "nsfw",
+          "type"
         ]
       }
     ]
@@ -122,59 +170,11 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "real_time_quote",
-        "description": "Retrieve the latest price and volume for a single ticker.",
+        "name": "fetch_stock_quote",
+        "description": "A user wants to see the latest market price for a specific stock ticker, such as asking for Tesla's current quote or checking the price of any other publicly traded symbol.",
         "key_parameters": [
           "function",
           "symbol"
-        ]
-      },
-      {
-        "intent_id": 1,
-        "name": "daily_historical_prices",
-        "description": "Fetch daily open/high/low/close data for a ticker over a recent period.",
-        "key_parameters": [
-          "function",
-          "symbol",
-          "outputsize"
-        ]
-      },
-      {
-        "intent_id": 2,
-        "name": "intraday_time_series",
-        "description": "Obtain intraday price data for a ticker at a specific interval.",
-        "key_parameters": [
-          "function",
-          "symbol",
-          "interval",
-          "outputsize"
-        ]
-      },
-      {
-        "intent_id": 3,
-        "name": "company_overview",
-        "description": "Get descriptive information about a company such as sector, market cap, and description.",
-        "key_parameters": [
-          "function",
-          "symbol"
-        ]
-      },
-      {
-        "intent_id": 4,
-        "name": "earnings_data",
-        "description": "Retrieve earnings reports or calendar data for a ticker.",
-        "key_parameters": [
-          "function",
-          "symbol",
-          "date_range"
-        ]
-      },
-      {
-        "intent_id": 5,
-        "name": "sector_performance",
-        "description": "Return performance metrics for all market sectors (no specific ticker required).",
-        "key_parameters": [
-          "function"
         ]
       }
     ]
@@ -183,8 +183,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "convert_between_currencies",
-        "description": "Convert an amount from one currency to another, optionally specifying the base and/or target currency codes (defaults: USD to JPY).",
+        "name": "convert_currency",
+        "description": "A user wants to know the equivalent amount when converting money from one currency to another, such as checking how many Japanese Yen they would receive for US Dollars.",
         "key_parameters": [
           "base",
           "target"
@@ -196,8 +196,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "principal_based_payment",
-        "description": "User knows the loan principal and wants the basic monthly principal‑and‑interest payment.",
+        "name": "basic_mortgage_estimate",
+        "description": "I want to quickly see what my monthly mortgage payment would be for a loan I’m considering, given the interest rate, loan amount, and how many years I’ll pay it back.",
         "key_parameters": [
           "interest_rate",
           "loan_amount",
@@ -206,38 +206,17 @@
       },
       {
         "intent_id": 1,
-        "name": "price_and_downpayment_payment",
-        "description": "User knows the home price and downpayment and wants the mortgage payment derived from those values.",
-        "key_parameters": [
-          "interest_rate",
-          "home_value",
-          "downpayment",
-          "duration_years"
-        ]
-      },
-      {
-        "intent_id": 2,
-        "name": "total_ownership_cost",
-        "description": "User wants the full monthly cost of owning the home, including HOA fees, property tax and insurance.",
+        "name": "comprehensive_home_cost",
+        "description": "I’m buying a house and need a full picture of my monthly housing cost, including the loan payment, property taxes, homeowner’s insurance, HOA fees, and I also want to factor in my down‑payment and the home’s total price.",
         "key_parameters": [
           "interest_rate",
           "loan_amount",
+          "home_value",
+          "downpayment",
+          "duration_years",
           "monthly_hoa",
           "annual_property_tax",
-          "annual_home_insurance",
-          "duration_years"
-        ]
-      }
-    ]
-  },
-  "get_inflation_data": {
-    "intents": [
-      {
-        "intent_id": 0,
-        "name": "Retrieve inflation data",
-        "description": "Obtain the latest inflation statistics for major countries, optionally specifying CPI or HICP as the indicator type.",
-        "key_parameters": [
-          "type"
+          "annual_home_insurance"
         ]
       }
     ]
@@ -247,7 +226,7 @@
       {
         "intent_id": 0,
         "name": "search_recipe_by_name",
-        "description": "Find recipes whose dish name includes the specified query text.",
+        "description": "A home cook wants to find a recipe by typing a dish name or ingredient phrase, like 'chocolate chip cookies' or 'spicy thai noodle soup', and expects a list of matching recipes to choose from.",
         "key_parameters": [
           "query"
         ]
@@ -258,8 +237,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "search_cocktails",
-        "description": "Find cocktail recipes using a name query, a list of ingredients, or a combination of both.",
+        "name": "find_cocktail_by_name_or_ingredients",
+        "description": "A user wants to discover cocktail recipes they can make or learn about, either by typing part of the cocktail's name (e.g., 'bloody') or by listing the ingredients they have on hand (e.g., 'vodka, lemon juice'), and expects the system to return matching drinks.",
         "key_parameters": [
           "name",
           "ingredients"
@@ -271,8 +250,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "list_all_characters",
-        "description": "Retrieve the complete list of MVC2 (Marvel Vs Capcom) characters.",
+        "name": "list_all_mvc2_characters",
+        "description": "I want to see every character from Marvel vs. Capcom 2 so I can check their abilities, teams, and choose who to play with.",
         "key_parameters": []
       }
     ]
@@ -281,8 +260,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Get giveaways by platform (optional type)",
-        "description": "Retrieve game giveaways filtered by one or more platforms, optionally narrowing results by giveaway type.",
+        "name": "find_game_giveaways",
+        "description": "I'm looking for free game giveaways that match the platforms I use (like Steam, Epic Games Store, or Android). I may also want to narrow it down to just games or loot items, so I can see only the most relevant offers.",
         "key_parameters": [
           "platform",
           "type"
@@ -294,8 +273,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Get champion stats by name",
-        "description": "Retrieve the basic metadata and in‑game statistics for a specific champion when you know the champion's name.",
+        "name": "fetch_champion_stats",
+        "description": "A player wants to quickly look up the base health, mana, attack damage and scaling stats for a specific League of Legends champion, such as asking \"What are Ekko's stats?\" or \"Show me Jhin's abilities numbers.\"",
         "key_parameters": [
           "name"
         ]
@@ -307,10 +286,13 @@
       {
         "intent_id": 0,
         "name": "salary_estimation_lookup",
-        "description": "Retrieve salary estimation data for a given job title and location, optionally narrowing by location type, experience level, or selecting specific fields.",
+        "description": "I'm looking for the expected salary for a specific job title in a particular location. I may want to narrow the estimate by my experience level (e.g., junior, senior) and choose which salary figures (median, min, max) I see in the response.",
         "key_parameters": [
           "job_title",
-          "location"
+          "location",
+          "location_type",
+          "years_of_experience",
+          "fields"
         ]
       }
     ]
@@ -319,8 +301,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Get timezone info for a location",
-        "description": "Retrieve the UTC and DST offsets for a given latitude/longitude, optionally for a specific UNIX timestamp (defaults to the current time).",
+        "name": "lookup_timezone_for_location",
+        "description": "I want to know the time zone details (UTC offset and daylight‑saving info) for a specific place on Earth. I can give you the latitude and longitude, and if I need the offsets for a particular moment in the past or future, I’ll also provide a UNIX timestamp; otherwise you’ll use the current time.",
         "key_parameters": [
           "lat",
           "lng",
@@ -333,16 +315,16 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "lookup_by_name",
-        "description": "Retrieve data for a specific planet when its name is known.",
+        "name": "planet_lookup_by_name",
+        "description": "I want detailed information about a single planet I’ve heard of, like \"Kepler-186f\" or \"Proxima Centauri b\", and see its known properties.",
         "key_parameters": [
           "name"
         ]
       },
       {
         "intent_id": 1,
-        "name": "search_by_attributes",
-        "description": "Find planets that satisfy one or more numeric attribute ranges (mass, radius, orbital period, temperature, distance).",
+        "name": "planet_filter_exploration",
+        "description": "I’m an astronomer looking for planets that fit a set of physical criteria—mass, radius, orbital period, temperature, and distance from Earth—to shortlist candidates for further research.",
         "key_parameters": [
           "min_mass",
           "max_mass",
@@ -362,14 +344,26 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Get celestial body position",
-        "description": "Retrieve the azimuth and altitude of a specified celestial body for a given observer location over a date range, optionally providing elevation and a specific time.",
+        "name": "basic_celestial_position_lookup",
+        "description": "I just want to know when the Sun or Moon will be visible from my home today or tomorrow. I’ll rely on the system’s default latitude, longitude and elevation, and I don’t care about a specific time of day – just the overall rise, set, or highest‑point window for the dates I ask about.",
+        "key_parameters": [
+          "body",
+          "from_date",
+          "to_date"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "custom_observer_position_calculation",
+        "description": "I’m planning a field observation from a remote mountain camp and need precise azimuth and altitude data for Mars on a specific night. I’ll provide my exact latitude, longitude, elevation, and the exact observation time (or a time range) so the calculation matches my site conditions.",
         "key_parameters": [
           "body",
           "latitude",
           "longitude",
+          "elevation",
           "from_date",
-          "to_date"
+          "to_date",
+          "time"
         ]
       }
     ]
@@ -378,13 +372,25 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "search_arxiv",
-        "description": "Retrieve arXiv papers matching a search term, optionally filtered by field, date range, and pagination.",
+        "name": "basic_arxiv_lookup",
+        "description": "I'm a student looking for a quick overview of recent papers on a topic. I just type the topic name and, if needed, ask for a few top results so I can skim the abstracts.",
         "key_parameters": [
           "search_term",
-          "field",
+          "num_results"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "filtered_arxiv_search",
+        "description": "I'm a researcher narrowing down literature. I need to search a term but only within a specific date window, maybe only in titles or author fields, and I want to page through many results.",
+        "key_parameters": [
+          "search_term",
           "date_from",
-          "date_to"
+          "date_to",
+          "date_type",
+          "field",
+          "start",
+          "num_results"
         ]
       }
     ]
@@ -393,8 +399,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "list_all_tournaments",
-        "description": "Retrieve the complete list of soccer tournaments.",
+        "name": "list_all_soccer_tournaments",
+        "description": "A soccer enthusiast asks to see a complete list of current and upcoming soccer tournaments around the world, just to explore what competitions they might want to follow or attend.",
         "key_parameters": []
       }
     ]
@@ -404,7 +410,7 @@
       {
         "intent_id": 0,
         "name": "fetch_latest_f1_news",
-        "description": "Retrieve the most recent Formula 1 news articles from all sources.",
+        "description": "I want to see the most recent Formula 1 news articles from all sources so I can stay up‑to‑date on race results, driver updates, and team announcements.",
         "key_parameters": []
       }
     ]
@@ -413,8 +419,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Get matches for a date",
-        "description": "Retrieve the list of scheduled handball matches for a specific date within the allowed ±7‑day range.",
+        "name": "fetch_daily_handball_matches",
+        "description": "I want to see the list of handball matches scheduled for a specific day so I can decide which games to follow or attend.",
         "key_parameters": [
           "date"
         ]
@@ -425,8 +431,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "lookup_airline",
-        "description": "Retrieve airline information using an ICAO code, IATA code, or airline name (supports partial matches).",
+        "name": "search_airline_by_identifier_or_name",
+        "description": "A traveler or aviation enthusiast wants to look up an airline's details. They might know the airline's ICAO three‑letter code, its IATA two‑letter code, or just a part of its name (e.g., typing 'United' to find United Airlines). The system should return matching airline information based on whichever identifier the user provides.",
         "key_parameters": [
           "icao",
           "iata",
@@ -439,8 +445,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "Lookup motorcycle data",
-        "description": "Retrieve detailed technical specifications for motorcycles, optionally filtering by make, model, and/or year.",
+        "name": "search_motorcycle_specs",
+        "description": "A motorcycle enthusiast wants detailed technical specifications for a bike they're interested in. They may mention the brand (e.g., Harley), a model name fragment (e.g., Ninja), and/or a specific production year (e.g., 2022) to narrow down the results.",
         "key_parameters": [
           "make",
           "model",
@@ -449,12 +455,25 @@
       }
     ]
   },
+  "get_airport_delay_statistics": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "get_airport_delay_stats",
+        "description": "I'm planning a trip and need to know how busy the airport I'm using is right now. I want real‑time departure and arrival delay numbers for a specific airport, identified by its IATA or ICAO code, so I can decide if I should leave earlier or consider a different flight.",
+        "key_parameters": [
+          "codeType",
+          "code"
+        ]
+      }
+    ]
+  },
   "get_air_quality_data": {
     "intents": [
       {
         "intent_id": 0,
-        "name": "Air quality by coordinates",
-        "description": "Retrieve the latest air quality data for a location when the latitude and longitude are known.",
+        "name": "aq_by_coordinates",
+        "description": "I'm out on a bike ride and my phone's GPS shows my exact latitude and longitude. I want to instantly know the Air Quality Index and pollutant levels right where I am, so I can decide whether to keep going or take a break.",
         "key_parameters": [
           "lat",
           "lon"
@@ -462,8 +481,8 @@
       },
       {
         "intent_id": 1,
-        "name": "Air quality by place name",
-        "description": "Retrieve the latest air quality data for a location using its city name, optionally refined with state and/or country.",
+        "name": "aq_by_place_name",
+        "description": "I'm planning a trip to a city (or a specific state in the US) and need to check the air quality before I book my hotel. I can give the city name, and optionally the state or country, and I want the latest AQI and pollutant details for that location.",
         "key_parameters": [
           "city",
           "state",
@@ -476,8 +495,8 @@
     "intents": [
       {
         "intent_id": 0,
-        "name": "get_weather_forecast",
-        "description": "Retrieve an hourly or 15‑minute weather forecast for a location specified by city name, coordinates, postal code, airport/IATA code, METAR code, or IP address.",
+        "name": "weather_forecast_by_location",
+        "description": "A user wants to know the upcoming weather for a particular place—by city name, coordinates, zip code, airport code, or their current IP—so they can plan activities, and they may optionally ask for a specific number of days beyond the default three.",
         "key_parameters": [
           "q",
           "days"

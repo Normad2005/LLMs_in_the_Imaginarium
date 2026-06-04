@@ -15,44 +15,73 @@ MAX_INTENTS    = 6   # hard upper bound — LLM is asked to respect this
 # ---------- prompt ----------
 # Uses __KEY__ placeholders to avoid .format() misinterpreting JSON braces.
 INTENT_PROMPT = """\
-You are analyzing an API to identify its distinct usage intents.
+You are an expert system architect optimizing complex APIs for Small Language Models (7-8B).
+Your goal is to split a large API description into 1 to 3 distinct "User Scenario Documents" (Intents) to prevent small models from experiencing cognitive overload.
 
-API name: __API_NAME__
-
-API description:
+API Name: __API_NAME__
+API Description:
 __API_DESCRIPTION__
 
-Task:
-Identify the fundamentally different ways a user might call this API.
-We are building tools for small language models (7-8B). Split an API into multiple intents ONLY when a small model would genuinely struggle to read the full description and know which parameters to use, because mixing different parameter groups in one document would cause confusion.
+---
 
-Default to 1 intent. Only split when you can clearly articulate why the combined document would confuse a small model.
+### [THE GOLDEN RULE]
+Ask yourself: "If a real human user types a request in a chatbot, what is their ultimate goal?" 
+You are splitting by USER GOALS (Scenarios), NOT by code functions or parameter types.
 
-Rules for splitting:
-- Do NOT split if the API is simple enough that a small model can immediately know what to fill in.
-- Do NOT split if the only difference is which optional filter parameters are provided.
-- Do NOT split if parameters are just different ways to narrow down the same type of query.
-- A GOOD split represents genuinely different user mental models where a small model reading only one intent's document would know exactly which parameters to provide, but would be confused by the combined document.
-- A BAD split divides an API by filter combinations.
+---
 
-BAD split example: get_motorcycle_data split into 5 intents (by make only / model only / year only / make+model / make+model+year). All serve the same goal. A small model handles all filter combinations from one document.
+### [CRITERIA: WHEN TO SPLIT OR KEEP]
 
-GOOD split example: calculate_mortgage_payment split into 3 intents: "I know my loan amount", "I know my home value and downpayment", "I want the full ownership cost including HOA and insurance". Each intent involves a clearly different parameter group that would be confusing if mixed together.
+1. DO NOT Split by Single Filters (Anti-Pattern: Function Splitting)
+   - Real users frequently combine filters (e.g., "Find items in US with price < $50"). 
+   - If you split 'Country' and 'Price' into separate intents, a composite query will break because no single document contains both parameters.
+   - Keep ALL standard search, filtering, and sorting parameters together if they serve the same query depth.
 
-Rule of thumb: Ask, "If I only show a small model the description for this one intent, would it be unambiguous about which parameters to provide?" If yes for each intent and no for the combined description, the split is justified. Otherwise, output exactly 1 intent.
+2. DO Split by Operational Depth (Pattern: Scenario Splitting)
+   - Split ONLY when the API contains parameters meant for entirely different user groups, distinct mindsets, or specialized app integration modes.
+   - Example: Separate routine, user-facing search queries from heavy system-level controls, technical background tasks, or niche localization/display overrides.
 
-Maximum __MAX_INTENTS__ intents.
+3. DO NOT Split Simple APIs
+   - If the total number of parameters is small (e.g., under 7 parameters), output exactly 1 intent. Do not force a split.
 
-Output valid JSON only — no explanation, no markdown fences.
-Format:
+---
+
+### [EXAMPLES FOR LOGICAL TRAINING]
+
+BAD SPLITTING (DO NOT DO THIS):
+An API called `get_motorcycle_data` is split into:
+- Intent 1: search_by_make
+- Intent 2: search_by_model
+- Intent 3: search_by_year
+WHY IT'S BAD: It splits parameters of the same nature. Users might search by make AND year simultaneously, which crashes this design.
+
+GOOD SPLITTING (FOLLOW THIS):
+An API called `get_divisions_near_location` is split into:
+- Intent 1: geo_explore_search (Handles routine users trying to find places nearby with all general filters included).
+- Intent 2: localized_and_developer_control_query (Handles developers or research tools needing special multi-language translation, ASCII sanitation, or backend system data like deleted records).
+WHY IT'S GOOD: It creates clean user scenarios that are mutually exclusive in real-life use cases, successfully shielding the small model from irrelevant parameters.
+
+---
+
+### [OUTPUT FORMAT]
+- Maximum intents: __MAX_INTENTS__ (Strictly recommend 1 to 3).
+- Output valid JSON array only. No markdown fences (```json), no explanations, no conversational text.
+
 [
   {
     "intent_id": 0,
-    "name": "<short English name>",
-    "description": "<one sentence from the user's perspective: what they are trying to accomplish>",
-    "key_parameters": ["<params central to this intent that would be confusing if mixed with other intents>"]
+    "name": "<short_snake_case_english_name_reflecting_the_scenario>",
+    "description": "<A 'I 'I'm ALWAYS a actually am...', building...'. concrete, first-person from how human like mimicking need...', or perspective, real-world request. scenario start strictly their think user voice want...' with words would written>",
+    "key_parameters": ["<param1>", "<param2>", "<param3>"]
   }
 ]
+
+---
+
+### [CRITICAL PARAMETER RULES]
+* Note on 'description': It MUST NOT be a dry technical summary. It MUST be a vivid, first-person user story (e.g., "I'm traveling around a GPS coordinate and want to...").
+* Note on 'key_parameters': This list MUST include ALL parameters needed for this scenario. 
+* UNIVERSAL PARAMETER RULE: Baseline parameters that control result size, pagination, or sorting (such as 'limit', 'offset', 'sort' or their equivalents) are the foundation of ALL queries. Do NOT separate them into a single intent, and DO NOT forget to include them in ALL intents that return lists of data, otherwise the small model will lose the ability to page or sort results in that scenario.
 """
 
 
