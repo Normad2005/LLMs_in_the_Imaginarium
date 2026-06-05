@@ -1,19 +1,25 @@
 import json
 import requests
 import time
+import copy
 
 LAB_KEY = "zhuantisheng"
 
-def call_ollama(model: str, prompt: str, temperature: float = 0.7,
-                host: str = "lab", max_retries: int = 100, retry_delay: float = 3.0):
+def call_ollama(model: str, prompt: str, temperature: float = 0.7, max_tokens: int = None, stop: str = None,
+                host: str = "lab", max_retries: int = 100, retry_delay: float = 3.0, return_tokens: bool = False):
     """
-    回傳 (output_text, prompt_token_count)
+    若 return_tokens 為 True，回傳 (output_text, prompt_token_count)
     prompt_token_count 來自 Ollama 最後一個 done chunk 的 prompt_eval_count。
-    若無法取得則回傳 -1。
+    否則僅回傳 output_text。
     """
     if host == "local":
         url = "http://localhost:11434/api/generate"
-        payload = {"model": model, "prompt": prompt, "options": {"temperature": temperature}}
+        options = {"temperature": temperature, "num_ctx": 16384}
+        if max_tokens is not None:
+            options["num_predict"] = max_tokens
+        if stop is not None:
+            options["stop"] = [stop]
+        payload = {"model": model, "prompt": prompt, "options": options}
         resp = requests.post(url, json=payload, stream=True)
         output = ""
         prompt_tokens = -1
@@ -24,7 +30,9 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7,
                     output += data["response"]
                 if data.get("done", False):
                     prompt_tokens = data.get("prompt_eval_count", -1)
-        return output.strip(), prompt_tokens
+        if return_tokens:
+            return output.strip(), prompt_tokens
+        return output.strip()
 
     else:
         # === 雲端 API ===
@@ -33,7 +41,12 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7,
             "Content-Type": "application/json",
             "Authorization": f"Bearer {LAB_KEY}"
         }
-        payload = {"model": model, "prompt": prompt}
+        options = {"temperature": temperature, "num_ctx": 16384}
+        if max_tokens is not None:
+            options["num_predict"] = max_tokens
+        if stop is not None:
+            options["stop"] = [stop]
+        payload = {"model": model, "prompt": prompt, "options": options}
 
         for attempt in range(1, max_retries + 1):
             try:
@@ -63,7 +76,9 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7,
                         continue
 
                 if not html_detected:
-                    return output.strip(), prompt_tokens
+                    if return_tokens:
+                        return output.strip(), prompt_tokens
+                    return output.strip()
 
             except requests.exceptions.RequestException as e:
                 print(f"[warn] Network error on attempt {attempt}/{max_retries}: {e}")
@@ -71,27 +86,38 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7,
             if attempt < max_retries:
                 time.sleep(retry_delay)
 
-        return "Ollama cloud API failed after multiple retries. Possible server timeout or network issue.", -1
+        if return_tokens:
+            return "Ollama cloud API failed after multiple retries. Possible server timeout or network issue.", -1
+        return "Ollama cloud API failed after multiple retries. Possible server timeout or network issue."
 
 
-def chat_my(messages, new_message, visualize=True, model="llama3.1:8b-instruct-fp16"):
+def chat_my(messages, new_message, visualize=True, model="llama3.1:8b-instruct-fp16", max_tokens=None, stop=None, return_tokens: bool = False):
     """
-    回傳 (messages, prompt_tokens)
-    prompt_tokens 是這次呼叫的 prompt token 數，-1 代表無法取得。
+    若 return_tokens 為 True，回傳 (messages, prompt_tokens)
+    否則僅回傳 messages。
     """
+    messages = copy.deepcopy(messages)
     messages.append({"role": "user", "content": new_message})
-    resp, prompt_tokens = get_chat_completion_my(model, messages)
-    messages.append({"role": "assistant", "content": resp})
-    if visualize:
-        visualize_messages(messages[-2:])
-    return messages, prompt_tokens
+    
+    if return_tokens:
+        resp, prompt_tokens = get_chat_completion_my(model, messages, max_tokens=max_tokens, stop=stop, return_tokens=True)
+        messages.append({"role": "assistant", "content": resp})
+        if visualize:
+            visualize_messages(messages[-2:])
+        return messages, prompt_tokens
+    else:
+        resp = get_chat_completion_my(model, messages, max_tokens=max_tokens, stop=stop, return_tokens=False)
+        messages.append({"role": "assistant", "content": resp})
+        if visualize:
+            visualize_messages(messages[-2:])
+        return messages
 
 def visualize_messages(messages):
     for m in messages:
         role = m["role"]
         print(f"{role.upper()}: {m['content']}\n")
 
-def get_chat_completion_my(model, messages):
+def get_chat_completion_my(model, messages, max_tokens=None, stop=None, return_tokens: bool = False):
     prompt = ""
     for m in messages:
         role = m["role"]
@@ -104,5 +130,9 @@ def get_chat_completion_my(model, messages):
             prompt += f"Assistant: {content}\n"
     prompt += "\nAssistant:"
 
-    text, prompt_tokens = call_ollama(model, prompt)
-    return text, prompt_tokens
+    if return_tokens:
+        text, prompt_tokens = call_ollama(model, prompt, max_tokens=max_tokens, stop=stop, return_tokens=True)
+        return text, prompt_tokens
+    else:
+        text = call_ollama(model, prompt, max_tokens=max_tokens, stop=stop, return_tokens=False)
+        return text

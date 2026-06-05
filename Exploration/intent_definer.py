@@ -105,7 +105,7 @@ def llm_define_intents(api_name: str, api_desc: dict, model: str) -> list:
     prompt = build_prompt(api_name, api_desc)
 
     try:
-        raw, _prompt_tokens = call_ollama(model, prompt, temperature=0)
+        raw = call_ollama(model, prompt, temperature=0)
 
         # Extract the first JSON array from the response
         m = re.search(r"\[[\s\S]*\]", raw)

@@ -1,12 +1,20 @@
-Your task is to create a realistic user query that could be answered with the available tools. You have access to the following tools which you can use via API call to help with your response:
+Your task is to create a realistic user query for a specific usage scenario of an API. 
 
+API Details:
 {api_descriptions}
 
-Now you have the chance to explore the available APIs. You can do this by 1) synthesizing some natural user query that calling the API could help, and 2) trying to respond to the user query with the help of the APIs. Here, you can focus on queries that only require calling the API once.
+Target Scenario (Intent):
+Intent Name: {intent_name}
+Scenario Description: {intent_description}
+Key Parameters for this Scenario: {intent_key_parameters}
+
+Please synthesize a natural user query that fits exactly into the Target Scenario. The query should imply the user's goal described above and provide realistic input values that correspond to the Key Parameters.
 
 When you create your query:
-- Avoid explicitly mentioning the API name or description (since users do not know the internal API names).
-- Include realistic and meaningful input values (e.g., a valid email address, a real city name, a date, or an ID) so that the API can actually be tested.
+- Avoid explicitly mentioning the API name or the internal parameter names.
+- Make it sound like a real user asking a chatbot or search engine.
+- Include realistic and meaningful input values (e.g., a valid email address, a real city name, a date, or an ID).
+- Make sure the query aligns closely with the Target Scenario and its key parameters.
 
 =========
 
@@ -50,9 +58,15 @@ Now you know a bit more about the API.
 Here is its description again to remind you of what it can do:  
 {api_descriptions}
 
+Target Scenario (Intent):
+Intent Name: {intent_name}
+Scenario Description: {intent_description}
+Key Parameters for this Scenario: {intent_key_parameters}
+
 Based on both the description and the previous usage, propose another realistic user query
-that could genuinely be solved using this API, but in a different scenario, with varied parameters,
-values, or contexts.
+that genuinely targets the same Target Scenario, but with different parameter values, 
+varied contexts, or a slightly different persona. Ensure it strictly remains within the bounds 
+of the Key Parameters.
 
 =========
 
