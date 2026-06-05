@@ -18,9 +18,9 @@
 
 為了徹底解決上述「巨型 API 文件導致 LLM 崩潰」的痛點，我們接下來的研究策略將圍繞在 **「將大 API 拆分為小 API (Decomposition)」**：
 
-### 第一步：情境分群 (Intent Clustering) - *目前 `intent_definer.py` 正在做的*
-1. 透過 STE 腳本讓 LLM 自由探索該 API 的各種可能用法，收集大量的 User Queries。
-2. 利用 KMeans 等分群演算法，將這些 Queries 進行 Embedding 分群，歸納出該 API 的幾個核心「使用情境 (Intents)」。
+### 第一步：情境定義 (Intent Definition) - *目前 `intent_definer.py` 正在做的*
+1. 我們將「龐大的 API 文件」交給充當 System Architect 的 LLM。
+2. 透過精心設計的 Prompt (Zero-shot/Few-shot)，讓 LLM 從「真實使用者情境 (User Scenarios)」的角度出發，將複雜的 API 邏輯拆解成 1~3 個獨立且互斥的核心使用意圖 (Intents)。
 
 ### 第二步：利用 STE 探索萃取「小 API 文件」 (Empirical API Decomposition) - *接下來的核心亮點*
 1. **核心痛點**：每一次 ReAct 呼叫，如果都把整包完整的 API 文件餵給 LLM，不僅浪費 Token，更會造成嚴重的「注意力渙散 (Cognitive Overload)」，導致 JSON 填寫錯誤。
@@ -36,8 +36,8 @@
 ### 第四步：實驗評估與比較基準 (Evaluation Metrics & Baselines)
 為了在論文/報告中強而有力地證明我們方法的優越性，接下來的評分 (Evaluation) 將著重於以下幾個維度：
 1. **比較基準 (Baselines)**：
-   * **Baseline (傳統 Retrieve)**：Retrieve 回「同樣數量/長度」的原始完整 API 文件（不做拆分）。
-   * **Proposed (Intent-based Small API)**：Retrieve 回我們透過 STE 萃取出的「意圖專屬小 API 文件」。
+   * **Baseline (傳統 Retrieve)**：Retrieve 回「同樣數量」的原始完整 API 文件（不做拆分）。
+   * **Proposed (Intent-based Small API)**：Retrieve 回「同樣數量」透過 STE 萃取出的「意圖專屬小 API 文件」。
 2. **評分指標 (Metrics)**：
    * **格式錯誤率 (JSON Error Rate)**：比較兩者在 Action JSON 填寫時的語法錯誤或幻覺頻率（證明小文件能降低 Cognitive Load）。
    * **任務成功率 (Task Success Rate)**：最終是否成功呼叫 API 並獲取正確資訊。
