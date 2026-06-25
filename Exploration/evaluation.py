@@ -7,8 +7,7 @@ import re
 string_match_APIs = [
   "verify_email",
   "get_car_makes",
-  "spell_number",
-  "get_random_joke",
+  "get_divisions_near_location",
   "convert_currency",
   "calculate_mortgage_payment",
   "get_all_mvc2_characters",

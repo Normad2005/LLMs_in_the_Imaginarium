@@ -1,0 +1,23 @@
+[
+  {
+    "id": "m1",
+    "query": "我打算買一間 2000 萬的房子，頭期款準備了 400 萬，目前的房貸利率是 2.1%，預計貸款 30 年，請問這樣每個月要繳多少房貸？",
+    "target_api": "calculate_mortgage_payment",
+    "target_intent_id": 2,
+    "intent_name": "mortgage_from_home_value"
+  },
+  {
+    "id": "m2",
+    "query": "我已經確定要跟銀行借 1500 萬了，利率是 1.85%，如果分 40 年攤還的話，每個月要繳多少錢？",
+    "target_api": "calculate_mortgage_payment",
+    "target_intent_id": 0,
+    "intent_name": "basic_mortgage_payment"
+  },
+  {
+    "id": "m3",
+    "query": "我貸款了 1000 萬，利率 2%，分 20 年還款。另外每個月大樓管理費是 3000，每年的房屋保險費大約 5000，請問這樣我每個月花在房子上的總開銷是多少？",
+    "target_api": "calculate_mortgage_payment",
+    "target_intent_id": 1,
+    "intent_name": "total_housing_cost"
+  }
+]
