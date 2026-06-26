@@ -79,5 +79,16 @@ TOOL_REGISTRY = {
     #Weather
     "get_air_quality_data": {"category": "Weather", "tool_name": "Air Quality"},
 
-    "get_weather_forecast": {"category": "Weather", "tool_name": "WeatherAPI"}
+    "get_weather_forecast": {"category": "Weather", "tool_name": "WeatherAPI"},
+
+    # Shopping
+    "search_amazon_products": {"category": "Shopping", "tool_name": "Real-Time Amazon Data"},
+
+    # Entertainment (additional)
+    "search_streaming_shows": {"category": "Entertainment", "tool_name": "Streaming Availability"},
+
+    # Travel (additional)
+    "get_restaurants_by_location": {"category": "Travel", "tool_name": "Travel Advisor"},
+
+    "get_hotels_by_location": {"category": "Travel", "tool_name": "Travel Advisor"}
 }

@@ -768,5 +768,231 @@
         "default": "3"
       }
     ]
+  },
+  "search_amazon_products": {
+    "description": "Search for Amazon products using keywords and filters. Returns real-time product listings including titles, prices, ratings, and availability from Amazon's marketplace.",
+    "required_parameters": [
+      {
+        "name": "query",
+        "type": "String",
+        "description": "The search keyword or phrase to look up on Amazon (e.g., 'wireless headphones', 'laptop stand').",
+        "default": "wireless headphones"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "page",
+        "type": "Number",
+        "description": "Page number for pagination of results. Starts at 1.",
+        "default": "1"
+      },
+      {
+        "name": "country",
+        "type": "String",
+        "description": "Amazon marketplace country code (e.g., 'US', 'GB', 'CA', 'DE', 'JP'). Default is 'US'.",
+        "default": "US"
+      },
+      {
+        "name": "sort_by",
+        "type": "String",
+        "description": "Sort order for results. Options: 'RELEVANCE', 'LOWEST_PRICE', 'HIGHEST_PRICE', 'REVIEWS', 'NEWEST'. Default is 'RELEVANCE'.",
+        "default": "RELEVANCE"
+      },
+      {
+        "name": "product_condition",
+        "type": "String",
+        "description": "Filter by product condition. Options: 'ALL', 'NEW', 'USED', 'RENEWED'. Default is 'ALL'.",
+        "default": "ALL"
+      },
+      {
+        "name": "min_price",
+        "type": "Number",
+        "description": "Minimum price filter in the marketplace's local currency."
+      },
+      {
+        "name": "max_price",
+        "type": "Number",
+        "description": "Maximum price filter in the marketplace's local currency."
+      }
+    ]
+  },
+  "search_streaming_shows": {
+    "description": "Search for movies and TV shows available on streaming platforms (Netflix, Amazon Prime, Disney+, Hulu, HBO Max, and 20+ others) across 60+ countries, with filters for genre, show type, and release year.",
+    "required_parameters": [
+      {
+        "name": "country",
+        "type": "String",
+        "description": "ISO 3166-1 alpha-2 country code to search streaming availability in (e.g., 'us', 'gb', 'ca', 'jp', 'au').",
+        "default": "us"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "catalogs",
+        "type": "String",
+        "description": "Comma-separated streaming service IDs to filter by (e.g., 'netflix', 'prime', 'disney', 'hulu', 'hbo'). If omitted, searches all available services."
+      },
+      {
+        "name": "show_type",
+        "type": "String",
+        "description": "Filter by content type. Options: 'movie', 'series'. If omitted, returns both."
+      },
+      {
+        "name": "genres",
+        "type": "String",
+        "description": "Comma-separated genre IDs to filter by (e.g., 'action', 'comedy', 'drama', 'thriller')."
+      },
+      {
+        "name": "keyword",
+        "type": "String",
+        "description": "Keyword to search for within show titles or descriptions."
+      },
+      {
+        "name": "order_by",
+        "type": "String",
+        "description": "Field to sort results by. Options: 'original_title', 'release_year', 'rating', 'popularity_alltime', 'popularity_1year', 'popularity_1month', 'popularity_1week'. Default is 'original_title'.",
+        "default": "original_title"
+      },
+      {
+        "name": "order_direction",
+        "type": "String",
+        "description": "Sort direction. Options: 'asc' (ascending) or 'desc' (descending). Default is 'asc'.",
+        "default": "asc"
+      }
+    ]
+  },
+  "get_restaurants_by_location": {
+    "description": "Search for restaurants within a geographic bounding box using GPS coordinates. Returns restaurant listings including name, cuisine, rating, and contact information, replicating TripAdvisor's restaurant search.",
+    "required_parameters": [
+      {
+        "name": "bl_latitude",
+        "type": "Number",
+        "description": "Bottom-left (southwest) latitude of the bounding box search area.",
+        "default": "11.847676"
+      },
+      {
+        "name": "tr_latitude",
+        "type": "Number",
+        "description": "Top-right (northeast) latitude of the bounding box search area.",
+        "default": "12.838442"
+      },
+      {
+        "name": "bl_longitude",
+        "type": "Number",
+        "description": "Bottom-left (southwest) longitude of the bounding box search area.",
+        "default": "108.587349"
+      },
+      {
+        "name": "tr_longitude",
+        "type": "Number",
+        "description": "Top-right (northeast) longitude of the bounding box search area.",
+        "default": "109.471078"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "Number",
+        "description": "Maximum number of restaurant results to return per request.",
+        "default": "30"
+      },
+      {
+        "name": "currency",
+        "type": "String",
+        "description": "Currency code for price display (e.g., 'USD', 'EUR', 'TWD').",
+        "default": "USD"
+      },
+      {
+        "name": "offset",
+        "type": "Number",
+        "description": "Pagination offset for retrieving subsequent pages of results.",
+        "default": "0"
+      },
+      {
+        "name": "lang",
+        "type": "String",
+        "description": "Language/locale code for the response (e.g., 'en_US', 'zh_TW', 'ja_JP').",
+        "default": "en_US"
+      }
+    ]
+  },
+  "get_hotels_by_location": {
+    "description": "Search for hotels within a geographic bounding box using GPS coordinates and travel dates. Returns hotel listings with pricing, ratings, and availability, replicating TripAdvisor's hotel search feature.",
+    "required_parameters": [
+      {
+        "name": "bl_latitude",
+        "type": "Number",
+        "description": "Bottom-left (southwest) latitude of the bounding box search area.",
+        "default": "11.847676"
+      },
+      {
+        "name": "tr_latitude",
+        "type": "Number",
+        "description": "Top-right (northeast) latitude of the bounding box search area.",
+        "default": "12.838442"
+      },
+      {
+        "name": "bl_longitude",
+        "type": "Number",
+        "description": "Bottom-left (southwest) longitude of the bounding box search area.",
+        "default": "108.587349"
+      },
+      {
+        "name": "tr_longitude",
+        "type": "Number",
+        "description": "Top-right (northeast) longitude of the bounding box search area.",
+        "default": "109.471078"
+      },
+      {
+        "name": "checkin",
+        "type": "String",
+        "description": "Check-in date in 'YYYY-MM-DD' format.",
+        "default": "2025-08-01"
+      },
+      {
+        "name": "checkout",
+        "type": "String",
+        "description": "Check-out date in 'YYYY-MM-DD' format.",
+        "default": "2025-08-05"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "adults",
+        "type": "Number",
+        "description": "Number of adult guests. Default is 2.",
+        "default": "2"
+      },
+      {
+        "name": "rooms",
+        "type": "Number",
+        "description": "Number of rooms required. Default is 1.",
+        "default": "1"
+      },
+      {
+        "name": "limit",
+        "type": "Number",
+        "description": "Maximum number of hotel results to return per request.",
+        "default": "30"
+      },
+      {
+        "name": "currency",
+        "type": "String",
+        "description": "Currency code for price display (e.g., 'USD', 'EUR', 'TWD').",
+        "default": "USD"
+      },
+      {
+        "name": "offset",
+        "type": "Number",
+        "description": "Pagination offset for retrieving subsequent pages of results.",
+        "default": "0"
+      },
+      {
+        "name": "lang",
+        "type": "String",
+        "description": "Language/locale code for the response (e.g., 'en_US', 'zh_TW', 'ja_JP').",
+        "default": "en_US"
+      }
+    ]
   }
 }

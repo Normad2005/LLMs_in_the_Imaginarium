@@ -118,5 +118,21 @@
   "get_weather_forecast": {
     "category": "Weather",
     "tool_name": "WeatherAPI"
+  },
+  "search_amazon_products": {
+    "category": "Shopping",
+    "tool_name": "Real-Time Amazon Data"
+  },
+  "search_streaming_shows": {
+    "category": "Entertainment",
+    "tool_name": "Streaming Availability"
+  },
+  "get_restaurants_by_location": {
+    "category": "Travel",
+    "tool_name": "Travel Advisor"
+  },
+  "get_hotels_by_location": {
+    "category": "Travel",
+    "tool_name": "Travel Advisor"
   }
 }
