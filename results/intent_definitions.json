@@ -468,5 +468,111 @@
         ]
       }
     ]
+  },
+  "search_amazon_products": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "amazon_product_search",
+        "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+        "key_parameters": [
+          "query",
+          "page",
+          "country",
+          "sort_by",
+          "product_condition",
+          "min_price",
+          "max_price"
+        ]
+      }
+    ]
+  },
+  "search_streaming_shows": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "find_streaming_content",
+        "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+        "key_parameters": [
+          "country",
+          "catalogs",
+          "show_type",
+          "genres",
+          "keyword",
+          "order_by",
+          "order_direction"
+        ]
+      }
+    ]
+  },
+  "get_restaurants_by_location": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "area_restaurant_explore",
+        "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+        "key_parameters": [
+          "bl_latitude",
+          "tr_latitude",
+          "bl_longitude",
+          "tr_longitude",
+          "limit",
+          "offset"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "localized_restaurant_search",
+        "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in EUR and all names/descriptions in French so I can understand them easily.",
+        "key_parameters": [
+          "bl_latitude",
+          "tr_latitude",
+          "bl_longitude",
+          "tr_longitude",
+          "limit",
+          "offset",
+          "currency",
+          "lang"
+        ]
+      }
+    ]
+  },
+  "get_hotels_by_location": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "basic_hotel_search",
+        "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+        "key_parameters": [
+          "bl_latitude",
+          "bl_longitude",
+          "tr_latitude",
+          "tr_longitude",
+          "checkin",
+          "checkout",
+          "limit",
+          "offset"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "advanced_hotel_search",
+        "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+        "key_parameters": [
+          "bl_latitude",
+          "bl_longitude",
+          "tr_latitude",
+          "tr_longitude",
+          "checkin",
+          "checkout",
+          "adults",
+          "rooms",
+          "limit",
+          "offset",
+          "currency",
+          "lang"
+        ]
+      }
+    ]
   }
 }

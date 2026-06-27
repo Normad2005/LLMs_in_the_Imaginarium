@@ -24,7 +24,9 @@ BACKGROUND_APIS = [
     "get_financial_data",
     "get_media_news",
     "search_arxiv_papers",
-    "get_weather_forecast"
+    "get_weather_forecast",
+    "calculate_mortgage_payment",
+    "get_divisions_near_location"
 ]
 
 def load_json(path):
@@ -82,6 +84,8 @@ def run_test():
         prompt_template = f.read().strip()
         
     results = []
+    
+    import random
 
     for q in queries:
         query_text = q["query"]
@@ -91,26 +95,43 @@ def run_test():
         print(f"\n=====================================")
         print(f"Testing Query: {query_text}")
         
+        # Determine randomized order once per query for fairness
+        api_names_list = list(BACKGROUND_APIS)
+        if target_api == "get_restaurants_by_location":
+            api_names_list.append("get_hotels_by_location") # Strong distractor
+        elif target_api == "get_hotels_by_location":
+            api_names_list.append("get_restaurants_by_location")
+            
+        api_names_list.append(target_api)
+        
+        # Deduplicate while preserving list
+        unique_apis = []
+        for a in api_names_list:
+            if a not in unique_apis:
+                unique_apis.append(a)
+        api_names_list = unique_apis
+        
+        random.shuffle(api_names_list)
+        
         for group in ["Group A (Control - Unsplit)", "Group B (Experimental - Split)"]:
             print(f"\n--- Running {group} ---")
             
-            # 1. Prepare context APIs
+            # 1. Prepare context APIs in the randomized order
             context_apis_str = []
-            api_names_list = list(BACKGROUND_APIS) + [target_api]
             
-            # Add background APIs
-            for bg_api in BACKGROUND_APIS:
-                desc = tool_desc[bg_api]
-                context_apis_str.append(f"API_name: {bg_api}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}")
+            target_api_desc = None
+            for current_api in api_names_list:
+                if current_api == target_api:
+                    if "Group A" in group:
+                        desc = build_api_context(target_api, intent_id=None, tool_desc=tool_desc, intent_defs=intent_defs)
+                    else:
+                        desc = build_api_context(target_api, intent_id=target_intent_id, tool_desc=tool_desc, intent_defs=intent_defs)
+                    target_api_desc = desc
+                else:
+                    desc = tool_desc[current_api]
                 
-            # Add Target API
-            if "Group A" in group:
-                target_api_desc = build_api_context(target_api, intent_id=None, tool_desc=tool_desc, intent_defs=intent_defs)
-            else:
-                target_api_desc = build_api_context(target_api, intent_id=target_intent_id, tool_desc=tool_desc, intent_defs=intent_defs)
+                context_apis_str.append(f"API_name: {current_api}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}")
                 
-            context_apis_str.append(f"API_name: {target_api}\nDescription:\n{json.dumps(target_api_desc, indent=2, ensure_ascii=False)}")
-            
             api_descriptions_full = "\n\n".join(context_apis_str)
             
             prompt_base = prompt_template.format(
