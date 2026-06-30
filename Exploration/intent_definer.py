@@ -117,14 +117,24 @@ def llm_define_intents(api_name: str, api_desc: dict, model: str) -> list:
         if not isinstance(parsed, list) or len(parsed) == 0:
             raise ValueError("LLM returned an empty or non-list JSON")
 
+        # Extract required parameters for static inheritance
+        req_params = [p["name"] for p in api_desc.get("required_parameters", [])]
+
         # Normalise and re-index so intent_ids are always 0-based integers
         intents = []
         for i, item in enumerate(parsed):
+            key_params = list(item.get("key_parameters", []))
+            
+            # Safety Mechanism (Static Inheritance): Forcefully inject required parameters
+            for rp in req_params:
+                if rp not in key_params:
+                    key_params.append(rp)
+                    
             intents.append({
                 "intent_id":      i,
                 "name":           str(item.get("name", f"Intent {i}")),
                 "description":    str(item.get("description", "")),
-                "key_parameters": list(item.get("key_parameters", [])),
+                "key_parameters": key_params,
             })
         return intents
 

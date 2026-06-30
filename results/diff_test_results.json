@@ -1,0 +1,422 @@
+[
+  {
+    "query_id": "batch_0",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To calculate the mortgage payment, we need to use the API function `calculate_mortgage_payment`. This function requires us to specify the annual interest rate and the duration of the loan.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"interest_rate\": 3.5,\n    \"duration_years\": 30,\n    \"loan_amount\": 1500000,\n    \"intent\": \"basic_mortgage_payment\"\n}"
+  },
+  {
+    "query_id": "batch_1",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To calculate the monthly mortgage payment for the given loan, we can use the \"calculate_mortgage_payment\" API function.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"interest_rate\": 5,\n    \"duration_years\": 15,\n    \"loan_amount\": 400000\n}"
+  },
+  {
+    "query_id": "batch_2",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To find the answer to this question, I can use the calculate_mortgage_payment API.\n\nAction: calculate_mortgage_payment\n\nAction Input:\n{\n    \"interest_rate\": 6.2,\n    \"duration_years\": 20,\n    \"loan_amount\": 250000\n}"
+  },
+  {
+    "query_id": "batch_3",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To calculate the mortgage payment, we need to determine the interest rate and loan duration.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"interest_rate\": 4.25,\n    \"duration_years\": 30,\n    \"loan_amount\": 800000,\n    \"intent\": \"basic_mortgage_payment\"\n}"
+  },
+  {
+    "query_id": "batch_4",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To calculate the monthly mortgage payment, we can use the \"calculate_mortgage_payment\" API with the intent \"basic_mortgage_payment\".\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"interest_rate\": 7.5,\n    \"duration_years\": 10,\n    \"loan_amount\": 50000\n}"
+  },
+  {
+    "query_id": "batch_5",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To calculate the user's total monthly housing cost, we need to consider the mortgage payment, HOA fees, property taxes, and home insurance.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n  \"intent\": \"total_housing_cost\",\n  \"interest_rate\": 4.0,\n  \"duration_years\": 30,\n  \"loan_amount\": 600000,\n  \"monthly_hoa\": 250,\n  \"annual_property_tax\": 1200,\n  \"annual_home_insurance\": 1000\n}"
+  },
+  {
+    "query_id": "batch_6",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'annual_home_insurance'}, Extra: set()",
+    "model_output": "Thought: To calculate the total monthly breakdown of the mortgage, I'll need to use the calculate_mortgage_payment API with the intent \"total_housing_cost\".\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n  \"interest_rate\": 5.5,\n  \"duration_years\": 25,\n  \"loan_amount\": 350000,\n  \"annual_property_tax\": 3000,\n  \"monthly_hoa\": 100\n}"
+  },
+  {
+    "query_id": "batch_7",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'annual_property_tax'}, Extra: set()",
+    "model_output": "Thought: To determine the user's total monthly housing cost, we need to calculate the mortgage payment first.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n  \"interest_rate\": 6.8,\n  \"duration_years\": 30,\n  \"loan_amount\": 1200000,\n  \"annual_home_insurance\": 2400,\n  \"monthly_hoa\": 500\n}"
+  },
+  {
+    "query_id": "batch_8",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'monthly_hoa', 'annual_home_insurance'}, Extra: set()",
+    "model_output": "Thought: To calculate the monthly mortgage payment, we'll use the API to perform a mortgage calculation.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"interest_rate\": 3.8,\n    \"duration_years\": 30,\n    \"loan_amount\": 450000,\n    \"annual_property_tax\": 4000\n}"
+  },
+  {
+    "query_id": "batch_9",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'monthly_hoa'}, Extra: {'intent'}",
+    "model_output": "Thought: The user wants to know their total housing expense for a specific mortgage scenario.\n\nAction: calculate_mortgage_payment\n\nAction Input:\n{\n    \"intent\": \"total_housing_cost\",\n    \"interest_rate\": 4.5,\n    \"duration_years\": 15,\n    \"annual_property_tax\": 6000,\n    \"annual_home_insurance\": 1500,\n    \"loan_amount\": 900000\n}"
+  },
+  {
+    "query_id": "batch_10",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To determine the monthly mortgage payment, we need to use a mortgage calculator API.\n\nAction: calculate_mortgage_payment\n\nAction Input:\n{\n    \"interest_rate\": 5.2,\n    \"duration_years\": 30,\n    \"home_value\": 850000,\n    \"downpayment\": 150000\n}"
+  },
+  {
+    "query_id": "batch_11",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'home_value', 'downpayment'}, Extra: {'loan_amount'}",
+    "model_output": "Thought: To calculate the monthly mortgage payment, I need to use the mortgage calculation formula.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"interest_rate\": 6.0,\n    \"duration_years\": 20,\n    \"loan_amount\": 240000\n}"
+  },
+  {
+    "query_id": "batch_12",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To calculate the mortgage payment, I need to determine the loan amount and the interest rate.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"intent\": \"mortgage_from_home_value\",\n    \"home_value\": 2000000,\n    \"downpayment\": 500000,\n    \"interest_rate\": 4.1,\n    \"duration_years\": 30\n}"
+  },
+  {
+    "query_id": "batch_13",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To calculate the mortgage amount and payment, we need to determine the loan amount first.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"intent\": \"mortgage_from_home_value\",\n    \"interest_rate\": 7.2,\n    \"duration_years\": 30,\n    \"home_value\": 180000,\n    \"downpayment\": 10000\n}"
+  },
+  {
+    "query_id": "batch_14",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To determine the monthly burden of your mortgage, we need to calculate the loan amount and then use the provided interest rate and duration.\n\nAction: calculate_mortgage_payment\nAction Input:\n{\n    \"intent\": \"mortgage_from_home_value\",\n    \"home_value\": 550000,\n    \"downpayment\": 50000,\n    \"interest_rate\": 3.9,\n    \"duration_years\": 15\n}"
+  },
+  {
+    "query_id": "batch_15",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'timeZoneIds', 'excludedCountryIds', 'maxPopulation', 'offset'}, Extra: set()",
+    "model_output": "Thought: To solve this problem, we need to find the list of administrative divisions (cities, counties, islands, or regions) located within a specified radius of a given GPS coordinate.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"radius\": 50,\n    \"distanceUnit\": \"MI\",\n    \"limit\": 1000,\n    \"locationId\": \"33.832213-118.387099\",\n    \"countryIds\": \"US\",\n    \"minPopulation\": 50000,\n    \"sort\": \"-distance\"\n}"
+  },
+  {
+    "query_id": "batch_16",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Invalid JSON in action_input",
+    "model_output": "Thought: To find the requested information, we can use the get_divisions_near_location API function with the geo_nearby_explorer intent.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"sort\": \"-population,+name\",\n    \"distanceUnit\": \"KM\",\n    \"limit\": 100,\n    \"radius\": 10,\n    \"offset\": 0,\n    \"locationId\": \"25.03,121.56\",\n    \"countryIds\": \"TW\", // Taiwan\n    \"minPopulation\": 10000,\n    \"namePrefix\": \"\"\n}"
+  },
+  {
+    "query_id": "batch_17",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'sort', 'timeZoneIds', 'limit', 'excludedCountryIds', 'minPopulation', 'maxPopulation', 'offset'}, Extra: set()",
+    "model_output": "Thought: To find the administrative divisions near Tokyo, I will need to use the get_divisions_near_location API.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"radius\": 20,\n    \"distanceUnit\": \"KM\",\n    \"locationId\": \"35.68,139.76\",\n    \"countryIds\": \"JP\"\n}"
+  },
+  {
+    "query_id": "batch_18",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'limit', 'excludedCountryIds', 'minPopulation', 'countryIds', 'maxPopulation', 'offset'}, Extra: set()",
+    "model_output": "Thought: To fulfill this request, we need to use the get_divisions_near_location API function to search for cities within a specific radius of Sydney's GPS coordinates and filter by timezone.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"locationId\": \"-33.86,151.20\",\n    \"radius\": \"100\",\n    \"distanceUnit\": \"KM\",\n    \"sort\": \"-population,+name\",\n    \"timeZoneIds\": \"Australia/Sydney\"\n}"
+  },
+  {
+    "query_id": "batch_19",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'sort', 'timeZoneIds', 'excludedCountryIds', 'minPopulation', 'countryIds', 'maxPopulation', 'offset'}, Extra: set()",
+    "model_output": "Thought: To get the required data, I'll need to call the API function get_divisions_near_location with the provided GPS coordinates and radius as input parameters.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"radius\": 50,\n    \"distanceUnit\": \"KM\",\n    \"limit\": 3,\n    \"locationId\": \"1.35,103.81\"\n}"
+  },
+  {
+    "query_id": "batch_20",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'distanceUnit', 'timeZoneIds', 'limit', 'excludedCountryIds', 'countryIds', 'maxPopulation', 'offset'}, Extra: set()",
+    "model_output": "Thought: To find the major hubs near a specific location, we can use the get_divisions_near_location API function with the geo_nearby_explorer intent.\n\nAction: get_divisions_near_location\n\nAction Input:\n{\n    \"radius\": 20,\n    \"sort\": \"-population\",\n    \"minPopulation\": 100000,\n    \"locationId\": \"40.71, -74.00\"\n}"
+  },
+  {
+    "query_id": "batch_21",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'distanceUnit', 'timeZoneIds', 'excludedCountryIds', 'minPopulation', 'countryIds', 'maxPopulation'}, Extra: set()",
+    "model_output": "Thought: To find the desired information, we need to use the get_divisions_near_location API function with specific parameters for sorting and pagination.\n\nAction: get_divisions_near_location\n\nAction Input:\n{\n    \"locationId\": \"52.52, 13.40\",\n    \"radius\": \"100KM\",\n    \"limit\": \"10\",\n    \"offset\": \"10\",\n    \"sort\": \"-name,+name\"\n}"
+  },
+  {
+    "query_id": "batch_22",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'timeZoneIds', 'limit', 'excludedCountryIds', 'minPopulation', 'countryIds', 'maxPopulation', 'offset'}, Extra: set()",
+    "model_output": "Thought: The user wants to find nearby places within a specific radius and sort the results by distance.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"locationId\": \"51.50,-0.12\",\n    \"radius\": 15,\n    \"distanceUnit\": \"MI\",\n    \"sort\": \"+distance\"\n}"
+  },
+  {
+    "query_id": "batch_23",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefix', 'sort', 'distanceUnit', 'timeZoneIds', 'limit', 'excludedCountryIds', 'countryIds', 'offset'}, Extra: set()",
+    "model_output": "Thought: To find small towns near the specified location, I will use the get_divisions_near_location API to search for divisions within a certain distance and filter by population size.\n\nAction: get_divisions_near_location\n\nAction Input:\n{\n    \"radius\": 30,\n    \"locationId\": \"48.85,2.35\",\n    \"minPopulation\": 0,\n    \"maxPopulation\": 5000\n}"
+  },
+  {
+    "query_id": "batch_24",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'distanceUnit', 'hateoasMode', 'namePrefixDefaultLangResults', 'offset'}, Extra: set()",
+    "model_output": "Thought: To accomplish this task, we'll use the get_divisions_near_location API with specific intent options to filter the results as per your requirements.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"locationId\": \"48.85,2.35\",\n    \"radius\": 100,\n    \"limit\": 50,\n    \"sort\": \"-distance,+name\",\n    \"languageCode\": \"fr\",\n    \"asciiMode\": true,\n    \"includeDeleted\": \"SINCE_YESTERDAY\"\n}"
+  },
+  {
+    "query_id": "batch_25",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'sort', 'distanceUnit', 'namePrefixDefaultLangResults', 'includeDeleted', 'asciiMode', 'offset'}, Extra: set()",
+    "model_output": "Thought: To solve this problem, we need to use the get_divisions_near_location API with the correct parameters.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"radius\": 100,\n    \"locationId\": \"51.50,-0.12\",\n    \"limit\": 5,\n    \"hateoasMode\": true,\n    \"languageCode\": \"de\"\n}"
+  },
+  {
+    "query_id": "batch_26",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'sort', 'distanceUnit', 'hateoasMode', 'namePrefixDefaultLangResults', 'limit', 'asciiMode', 'offset'}, Extra: set()",
+    "model_output": "Thought: To fulfill this request, we need to call the get_divisions_near_location API with the correct parameters.\n\nAction: get_divisions_near_location\n\nAction Input:\n{\n    \"locationId\": \"41.90, 12.49\",\n    \"radius\": 100,\n    \"includeDeleted\": \"SINCE_LAST_MONTH\",\n    \"languageCode\": \"it\"\n}"
+  },
+  {
+    "query_id": "batch_27",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'sort', 'distanceUnit', 'namePrefixDefaultLangResults', 'radius', 'includeDeleted', 'offset'}, Extra: set()",
+    "model_output": "Thought: To fetch the required data, I need to call the get_divisions_near_location API function with the provided GPS coordinates and parameters.\n\nAction: get_divisions_near_location\n\nAction Input:\n{\n    \"locationId\": \"34.05,-118.24\",\n    \"languageCode\": \"es\",\n    \"asciiMode\": true,\n    \"limit\": 20,\n    \"hateoasMode\": true\n}"
+  },
+  {
+    "query_id": "batch_28",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'sort', 'distanceUnit', 'namePrefixDefaultLangResults', 'limit', 'radius', 'asciiMode', 'offset'}, Extra: set()",
+    "model_output": "Thought: To fulfill the user's request, I need to call the get_divisions_near_location API with specific parameters.\n\nAction: get_divisions_near_location\n\nAction Input:\n{\n    \"locationId\": \"35.68,139.76\",\n    \"includeDeleted\": \"ALL\",\n    \"languageCode\": \"ja\",\n    \"hateoasMode\": true\n}"
+  },
+  {
+    "query_id": "batch_29",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'namePrefixDefaultLangResults', 'hateoasMode'}, Extra: set()",
+    "model_output": "Thought: The user wants to retrieve a list of administrative divisions near a specific GPS coordinate in Germany, with results displayed in the German language and ASCII characters only, including deleted records from yesterday.\n\nAction: get_divisions_near_location\nAction Input:\n{\n    \"locationId\": \"52.52,13.40\",\n    \"radius\": 50,\n    \"distanceUnit\": \"KM\",\n    \"sort\": \"+distance,+name\",\n    \"limit\": 10,\n    \"offset\": 0,\n    \"languageCode\": \"de\",\n    \"asciiMode\": true,\n    \"includeDeleted\": \"SINCE_YESTERDAY\"\n}"
+  },
+  {
+    "query_id": "batch_30",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: The user needs a list of hotels within the given geographic region for a specific date range.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"bl_latitude\": 40.7,\n    \"tr_latitude\": 40.8,\n    \"bl_longitude\": -74.1,\n    \"tr_longitude\": -74.0,\n    \"checkin\": \"2026-08-01\",\n    \"checkout\": \"2026-08-05\",\n    \"limit\": 5\n}"
+  },
+  {
+    "query_id": "batch_31",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'limit', 'offset'}, Extra: set()",
+    "model_output": "Thought: To find hotels in Los Angeles based on a specific geographic area and travel dates, I will use the get_hotels_by_location API.\n\nAction: get_hotels_by_location\n\nAction Input:\n{\n    \"tr_latitude\": 34.05,\n    \"tr_longitude\": -118.20,\n    \"bl_latitude\": 34.01,\n    \"bl_longitude\": -118.25,\n    \"checkin\": \"2026-12-10\",\n    \"checkout\": \"2026-12-12\"\n}"
+  },
+  {
+    "query_id": "batch_32",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To fulfill the user's request, I need to use the get_hotels_by_location API with specific parameters for hotel search and pagination.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"bl_latitude\": 51.50,\n    \"tr_latitude\": 51.52,\n    \"bl_longitude\": -0.12,\n    \"tr_longitude\": -0.10,\n    \"checkin\": \"2026-09-15\",\n    \"checkout\": \"2026-09-20\",\n    \"limit\": 10,\n    \"offset\": 10\n}"
+  },
+  {
+    "query_id": "batch_33",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find the best hotel options for you in Paris within the specified neighborhood, we'll need to use the get_hotels_by_location API with a specific intent (in this case, basic_hotel_search) and provide the necessary parameters.\n\nAction: get_hotels_by_location\nAction Input:\n{\n  \"checkin\": \"2026-10-01\",\n  \"tr_latitude\": 48.86,\n  \"bl_longitude\": 2.34,\n  \"checkout\": \"2026-10-05\",\n  \"limit\": 15,\n  \"tr_longitude\": 2.36,\n  \"bl_latitude\": 48.85\n}"
+  },
+  {
+    "query_id": "batch_34",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'limit', 'offset'}, Extra: set()",
+    "model_output": "Thought: To find a hotel in Tokyo within the specified location and dates, I need to use the get_hotels_by_location API with the provided GPS coordinates and travel dates.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"bl_latitude\": 35.65,\n    \"tr_latitude\": 35.70,\n    \"bl_longitude\": 139.70,\n    \"tr_longitude\": 139.75,\n    \"checkin\": \"2026-11-01\",\n    \"checkout\": \"2026-11-03\"\n}"
+  },
+  {
+    "query_id": "batch_35",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'bl_latitude'}, Extra: set()",
+    "model_output": "Thought: To find hotels for your family trip, I'll use the get_hotels_by_location API.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"checkin\": \"2026-10-10\",\n    \"tr_latitude\": 41.91,\n    \"limit\": 30,\n    \"bl_longitude\": 12.48,\n    \"adults\": 4,\n    \"rooms\": 2,\n    \"checkout\": \"2026-10-15\",\n    \"currency\": \"EUR\",\n    \"lang\": \"it_IT\",\n    \"tr_longitude\": 12.50,\n    \"offset\": 0\n}"
+  },
+  {
+    "query_id": "batch_36",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To answer this question, we can use the get_hotels_by_location API with the advanced_hotel_search intent.\n\nAction: get_hotels_by_location\n\nAction Input:\n{\n    \"checkin\": \"2026-12-24\",\n    \"checkout\": \"2026-12-28\",\n    \"bl_latitude\": 37.77,\n    \"tr_latitude\": 37.79,\n    \"bl_longitude\": -122.42,\n    \"tr_longitude\": -122.40,\n    \"limit\": 5,\n    \"offset\": 5,\n    \"adults\": 1,\n    \"rooms\": 1,\n    \"currency\": \"JPY\",\n    \"lang\": \"ja_JP\"\n}"
+  },
+  {
+    "query_id": "batch_37",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'limit', 'offset'}, Extra: set()",
+    "model_output": "Thought: The user wants to search for hotels in Singapore with specific travel dates and location.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"bl_latitude\": 1.30,\n    \"tr_latitude\": 1.32,\n    \"bl_longitude\": 103.80,\n    \"tr_longitude\": 103.82,\n    \"checkin\": \"2026-08-10\",\n    \"checkout\": \"2026-08-12\",\n    \"adults\": 2,\n    \"rooms\": 1,\n    \"lang\": \"zh_CN\",\n    \"currency\": \"SGD\"\n}"
+  },
+  {
+    "query_id": "batch_38",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Action: get_hotels_by_location\nAction Input:\n{\n    \"bl_latitude\": 52.36,\n    \"tr_latitude\": 52.38,\n    \"bl_longitude\": 4.88,\n    \"tr_longitude\": 4.90,\n    \"checkin\": \"2026-09-01\",\n    \"checkout\": \"2026-09-05\",\n    \"limit\": 10,\n    \"offset\": 0,\n    \"adults\": 3,\n    \"rooms\": 2,\n    \"currency\": \"GBP\",\n    \"lang\": \"en_GB\"\n}"
+  },
+  {
+    "query_id": "batch_39",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find hotels for you in Madrid, I need to use the get_hotels_by_location API with a specific intent for a short trip (basic_hotel_search) and customize it based on your requirements.\n\nAction: get_hotels_by_location\nAction Input:\n{\n  \"checkin\": \"2026-07-15\",\n  \"tr_latitude\": 40.43,\n  \"limit\": 50,\n  \"bl_longitude\": -3.71,\n  \"adults\": 2,\n  \"rooms\": 1,\n  \"currency\": \"EUR\",\n  \"lang\": \"es_ES\",\n  \"checkout\": \"2026-07-20\",\n  \"tr_longitude\": -3.69,\n  \"bl_latitude\": 40.41\n}"
+  },
+  {
+    "query_id": "batch_40",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: set(), Extra: {'intent'}",
+    "model_output": "Thought: To find a hotel room for the user's specified GPS box and travel dates, we need to use the get_hotels_by_location API with the advanced_hotel_search intent.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"intent\": \"advanced_hotel_search\",\n    \"adults\": 1,\n    \"bl_latitude\": 45.46,\n    \"bl_longitude\": 9.18,\n    \"checkin\": \"2026-05-10\",\n    \"checkout\": \"2026-05-15\",\n    \"currency\": \"EUR\",\n    \"lang\": \"\",\n    \"limit\": 20,\n    \"offset\": 0,\n    \"rooms\": 1,\n    \"tr_latitude\": 45.48,\n    \"tr_longitude\": 9.20\n}"
+  },
+  {
+    "query_id": "batch_41",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'currency', 'lang', 'offset'}, Extra: set()",
+    "model_output": "Thought: To solve this problem, we can use the get_hotels_by_location API to search for hotels in Berlin within the specified map boundaries and travel dates.\n\nAction: get_hotels_by_location\n\nAction Input:\n{\n    \"checkin\": \"2026-09-10\",\n    \"tr_latitude\": 52.53,\n    \"limit\": 1000,\n    \"bl_longitude\": 13.38,\n    \"adults\": 6,\n    \"rooms\": 3,\n    \"tr_longitude\": 13.41,\n    \"checkout\": \"2026-09-17\",\n    \"bl_latitude\": 52.50\n}"
+  },
+  {
+    "query_id": "batch_42",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'limit', 'lang', 'offset'}, Extra: {'intent'}",
+    "model_output": "Thought: To find hotels in Sydney within the specified location and dates, I will use the get_hotels_by_location API with the advanced_hotel_search intent.\n\nAction: get_hotels_by_location\n\nAction Input:\n{\n    \"intent\": \"advanced_hotel_search\",\n    \"bl_latitude\": -33.88,\n    \"tr_latitude\": -33.85,\n    \"bl_longitude\": 151.18,\n    \"tr_longitude\": 151.22,\n    \"checkin\": \"2026-11-20\",\n    \"checkout\": \"2026-11-25\",\n    \"adults\": 2,\n    \"rooms\": 1,\n    \"currency\": \"AUD\"\n}"
+  },
+  {
+    "query_id": "batch_43",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find places to stay in Toronto within a specific bounding box and date range, I can use the get_hotels_by_location API with the given parameters.\n\nAction: get_hotels_by_location\nAction Input:\n{\n    \"checkin\": \"2026-08-05\",\n    \"tr_latitude\": 43.66,\n    \"bl_longitude\": -79.37,\n    \"limit\": 5,\n    \"checkout\": \"2026-08-10\",\n    \"tr_longitude\": -79.40,\n    \"bl_latitude\": 43.64\n}"
+  },
+  {
+    "query_id": "batch_44",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'rooms', 'lang', 'offset'}, Extra: set()",
+    "model_output": "Thought: To provide a list of hotels in Dubai, I need to use the get_hotels_by_location API with the given coordinates and dates.\n\nAction: get_hotels_by_location\n\nAction Input:\n{\n    \"checkin\": \"2026-12-01\",\n    \"tr_latitude\": 25.22,\n    \"limit\": 10,\n    \"checkout\": \"2026-12-05\",\n    \"tr_longitude\": 55.30,\n    \"bl_latitude\": 25.18,\n    \"bl_longitude\": 55.26,\n    \"adults\": 2,\n    \"currency\": \"AED\"\n}"
+  },
+  {
+    "query_id": "batch_45",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find the recommended restaurants within the specified geographic bounding box, I will use the get_restaurants_by_location API.\n\nAction: get_restaurants_by_location\nAction Input:\n{\n    \"bl_latitude\": 40.7,\n    \"tr_latitude\": 40.8,\n    \"bl_longitude\": -74.1,\n    \"tr_longitude\": -74.0,\n    \"limit\": 5\n}"
+  },
+  {
+    "query_id": "batch_46",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To answer this question, I will need to use the get_restaurants_by_location API function with a bounding box specified by the user's map coordinates.\n\nAction: get_restaurants_by_location\nAction Input:\n{\n    \"tr_latitude\": 34.05,\n    \"bl_longitude\": -118.25,\n    \"limit\": null,\n    \"bl_latitude\": 34.01,\n    \"tr_longitude\": -118.20,\n    \"offset\": null\n}"
+  },
+  {
+    "query_id": "batch_47",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To fetch the desired restaurant results, I need to call the get_restaurants_by_location API with the specified parameters.\n\nAction: get_restaurants_by_location\nAction Input:\n{\n    \"tr_latitude\": 51.52,\n    \"limit\": 10,\n    \"bl_latitude\": 51.50,\n    \"offset\": 10,\n    \"bl_longitude\": -0.12,\n    \"tr_longitude\": -0.10\n}"
+  },
+  {
+    "query_id": "batch_48",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find the restaurants within a specific geographic region in Paris, we can use the get_restaurants_by_location API with the area_restaurant_explore intent.\n\nAction: get_restaurants_by_location\nAction Input:\n{\n    \"bl_latitude\": 48.85,\n    \"tr_latitude\": 48.86,\n    \"bl_longitude\": 2.34,\n    \"tr_longitude\": 2.36,\n    \"limit\": 20\n}"
+  },
+  {
+    "query_id": "batch_49",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'limit', 'offset'}, Extra: set()",
+    "model_output": "Thought: The user is looking for restaurant recommendations within a specific geographic area in Tokyo.\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"bl_latitude\": 35.65,\n    \"tr_latitude\": 35.70,\n    \"bl_longitude\": 139.70,\n    \"tr_longitude\": 139.75\n}"
+  },
+  {
+    "query_id": "batch_50",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Action: get_restaurants_by_location\nAction Input:\n{\n    \"tr_latitude\": 41.91,\n    \"limit\": 10,\n    \"tr_longitude\": 12.50,\n    \"bl_latitude\": 41.89,\n    \"bl_longitude\": 12.48,\n    \"offset\": 0,\n    \"currency\": \"EUR\",\n    \"lang\": \"it_IT\"\n}"
+  },
+  {
+    "query_id": "batch_51",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'currency'}, Extra: set()",
+    "model_output": "Thought: To find the desired information, we will need to use the \"get_restaurants_by_location\" API with specific parameters for location, language, currency, and pagination.\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"tr_latitude\": 37.79,\n    \"bl_latitude\": 37.77,\n    \"tr_longitude\": -122.40,\n    \"bl_longitude\": -122.42,\n    \"limit\": 5,\n    \"offset\": 5,\n    \"lang\": \"ja_JP\"\n}"
+  },
+  {
+    "query_id": "batch_52",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find restaurants in a specific geographic area with desired language and currency settings, we can use the get_restaurants_by_location API.\n\nAction: get_restaurants_by_location\nAction Input:\n{\n  \"tr_latitude\": 1.32,\n  \"bl_latitude\": 1.30,\n  \"tr_longitude\": 103.82,\n  \"limit\": 10,\n  \"bl_longitude\": 103.80,\n  \"lang\": \"zh_CN\",\n  \"currency\": \"SGD\"\n}"
+  },
+  {
+    "query_id": "batch_53",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'limit', 'offset'}, Extra: set()",
+    "model_output": "Thought: To find restaurants within the specified geographic box in Amsterdam, I can use the get_restaurants_by_location API function with the correct parameters.\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"bl_latitude\": 52.36,\n    \"tr_latitude\": 52.38,\n    \"bl_longitude\": 4.88,\n    \"tr_longitude\": 4.90,\n    \"currency\": \"GBP\",\n    \"lang\": \"en_GB\"\n}"
+  },
+  {
+    "query_id": "batch_54",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: The user wants to search for tapas bars or restaurants in a specific area of Madrid with certain preferences.\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"bl_latitude\": 40.41,\n    \"tr_latitude\": 40.43,\n    \"bl_longitude\": -3.71,\n    \"tr_longitude\": -3.69,\n    \"limit\": 10,\n    \"currency\": \"EUR\",\n    \"lang\": \"es_ES\"\n}"
+  },
+  {
+    "query_id": "batch_55",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To show the user a list of restaurants within their specified geographic bounding box with prices displayed in EUR, we need to use the get_restaurants_by_location API and select the localized_restaurant_search intent.\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"tr_latitude\": 45.48,\n    \"limit\": 15,\n    \"tr_longitude\": 9.20,\n    \"bl_latitude\": 45.46,\n    \"bl_longitude\": 9.18,\n    \"lang\": \"it_IT\",\n    \"currency\": \"EUR\"\n}"
+  },
+  {
+    "query_id": "batch_56",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'offset'}, Extra: set()",
+    "model_output": "Thought: To find restaurants near the specified location in Berlin, I will use the get_restaurants_by_location API with the provided GPS coordinates and a limit of 3 results.\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"tr_latitude\": 52.53,\n    \"bl_latitude\": 52.50,\n    \"tr_longitude\": 13.41,\n    \"bl_longitude\": 13.38,\n    \"limit\": 3\n}"
+  },
+  {
+    "query_id": "batch_57",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Mismatch. Missing: {'currency', 'lang', 'offset'}, Extra: set()",
+    "model_output": "Thought: The user is looking for restaurant suggestions in a specific geographic area within Sydney, with a latitude range of -33.88 to -33.85 and longitude range of 151.18 to 151.22. They also want the prices displayed in Australian Dollars (AUD).\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"bl_latitude\": -33.88,\n    \"tr_latitude\": -33.85,\n    \"bl_longitude\": 151.18,\n    \"tr_longitude\": 151.22,\n    \"limit\": 8\n}"
+  },
+  {
+    "query_id": "batch_58",
+    "group": "Group E (Diff Format)",
+    "passed": true,
+    "error": "",
+    "model_output": "Thought: To provide the user with a list of restaurants in Toronto, we can use the get_restaurants_by_location API.\n\nAction: get_restaurants_by_location\nAction Input:\n{\n    \"bl_latitude\": 43.64,\n    \"tr_latitude\": 43.66,\n    \"bl_longitude\": -79.40,\n    \"tr_longitude\": -79.37,\n    \"limit\": 10,\n    \"offset\": 0\n}"
+  },
+  {
+    "query_id": "batch_59",
+    "group": "Group E (Diff Format)",
+    "passed": false,
+    "error": "Invalid JSON in action_input",
+    "model_output": "Thought: The user is looking for restaurants in Dubai and wants the prices displayed in AED (United Arab Emirates Dirham).\n\nAction: get_restaurants_by_location\n\nAction Input:\n{\n    \"tr_latitude\": 25.22,\n    \"bl_longitude\": 55.26,\n    \"limit\": 10,\n    \"currency\": \"AED\",\n    \"lang\": \"ar_AE\", // Arabic language for Dubai\n    \"offset\": 0,\n    \"tr_longitude\": 55.30,\n    \"bl_latitude\": 25.18\n}"
+  }
+]

@@ -1,0 +1,578 @@
+{
+  "verify_email": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "verify_email_address",
+        "description": "I need to know if a specific email address is real and reachable so I can safely send a message or add it to my contact list without worrying about bounces.",
+        "key_parameters": [
+          "email"
+        ]
+      }
+    ]
+  },
+  "get_car_makes": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_car_makes",
+        "description": "I want to see every car make in the system so I can choose a brand for my next vehicle.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_animal_facts": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_animal_facts",
+        "description": "I'm curious about an animal—say, the gray fox—and I want to learn some interesting scientific facts about it.",
+        "key_parameters": [
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_divisions_near_location": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "geo_nearby_explorer",
+        "description": "I'm planning a trip and want to see which cities, counties or islands lie within a certain distance of my GPS coordinates, maybe only in the US or only those with more than 10 000 people, and I want the results sorted by distance or population.",
+        "key_parameters": [
+          "locationId",
+          "radius",
+          "distanceUnit",
+          "countryIds",
+          "excludedCountryIds",
+          "timeZoneIds",
+          "minPopulation",
+          "maxPopulation",
+          "namePrefix",
+          "limit",
+          "offset",
+          "sort"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "advanced_localization_and_system_query",
+        "description": "I'm a developer building a multilingual map widget, so I need the nearby divisions returned in French, with ASCII‑only names, and I also have to include any places that were deleted yesterday for audit purposes, while still being able to paginate and sort the list.",
+        "key_parameters": [
+          "locationId",
+          "radius",
+          "distanceUnit",
+          "languageCode",
+          "asciiMode",
+          "namePrefixDefaultLangResults",
+          "hateoasMode",
+          "includeDeleted",
+          "limit",
+          "offset",
+          "sort"
+        ]
+      }
+    ]
+  },
+  "search_public_restrooms": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "find_public_restrooms",
+        "description": "I'm traveling and need to locate a public restroom nearby. I want to see options around my current latitude and longitude, optionally limit the search to specific US states, and be able to scroll through the results page by page.",
+        "key_parameters": [
+          "states",
+          "lat",
+          "lon",
+          "page",
+          "per_page"
+        ]
+      }
+    ]
+  },
+  "get_dog_breeds_metadata": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_dog_breeds",
+        "description": "I'm trying to find basic information about dog breeds that match a term I have in mind, like 'alaskan' or 'bulldog', so I can learn more about them.",
+        "key_parameters": [
+          "search"
+        ]
+      }
+    ]
+  },
+  "search_exercises_by_name": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_exercises",
+        "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+        "key_parameters": [
+          "name",
+          "limit",
+          "offset",
+          "sortOrder",
+          "sortMethod"
+        ]
+      }
+    ]
+  },
+  "get_media_news": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_media_news",
+        "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+        "key_parameters": [
+          "category",
+          "first",
+          "after",
+          "country",
+          "language"
+        ]
+      }
+    ]
+  },
+  "search_manga": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_manga",
+        "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+        "key_parameters": [
+          "text",
+          "nsfw",
+          "type"
+        ]
+      }
+    ]
+  },
+  "get_financial_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_stock_global_quote",
+        "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+        "key_parameters": [
+          "function",
+          "symbol"
+        ]
+      }
+    ]
+  },
+  "convert_currency": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "convert_currency",
+        "description": "I'm planning a trip abroad and need to know how much my money will be worth in the destination currency, so I tell the system which currency I'm converting from and which currency I want to convert to.",
+        "key_parameters": [
+          "base",
+          "target"
+        ]
+      }
+    ]
+  },
+  "calculate_mortgage_payment": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "basic_mortgage_payment",
+        "description": "I know the loan amount I'm borrowing, the interest rate, and the term, and I want to see what my monthly mortgage payment will be.",
+        "key_parameters": [
+          "interest_rate",
+          "loan_amount",
+          "duration_years"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "total_housing_cost",
+        "description": "I want to understand my full monthly housing cost, including mortgage, HOA fees, property taxes, and insurance.",
+        "key_parameters": [
+          "interest_rate",
+          "loan_amount",
+          "duration_years",
+          "monthly_hoa",
+          "annual_property_tax",
+          "annual_home_insurance"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "mortgage_from_home_value",
+        "description": "I know the price of the home and how much I can put down, and I need to calculate the loan amount and monthly payment.",
+        "key_parameters": [
+          "interest_rate",
+          "home_value",
+          "downpayment",
+          "duration_years"
+        ]
+      }
+    ]
+  },
+  "get_recipe": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_recipe_by_name",
+        "description": "I want to find a recipe that matches the dish name I'm thinking of, such as Italian wedding soup, so I can see the ingredients and steps.",
+        "key_parameters": [
+          "query"
+        ]
+      }
+    ]
+  },
+  "search_cocktails": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "find_cocktail_by_name_or_ingredients",
+        "description": "I have a craving for a drink but only remember part of its name or the ingredients I have on hand, so I want to search for cocktail recipes that match the name fragment I know or that can be made with all the ingredients I list.",
+        "key_parameters": [
+          "name",
+          "ingredients"
+        ]
+      }
+    ]
+  },
+  "get_all_mvc2_characters": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_all_mvc2_characters",
+        "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_filtered_game_giveaways": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_giveaways",
+        "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+        "key_parameters": [
+          "platform",
+          "type"
+        ]
+      }
+    ]
+  },
+  "get_lol_champion_stats": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_champion_stats",
+        "description": "I want to see the detailed stats and scaling values for a specific League of Legends champion, like Ekko or Jhin, so I can plan my build and strategy.",
+        "key_parameters": [
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_salary_estimation": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "salary_estimate_query",
+        "description": "I'm trying to figure out how much I could earn as a specific job title in a particular place. I want to see the minimum, maximum, and median salaries, maybe limit the results to a city or state, filter by my years of experience, and I only need certain fields like the median salary and location.",
+        "key_parameters": [
+          "job_title",
+          "location",
+          "location_type",
+          "years_of_experience",
+          "fields"
+        ]
+      }
+    ]
+  },
+  "get_timezone_info": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "get_timezone_for_location",
+        "description": "I'm standing at a specific latitude and longitude and need to know the local UTC and DST offsets—either for right now or for a particular moment in the past or future.",
+        "key_parameters": [
+          "lat",
+          "lng",
+          "timestamp"
+        ]
+      }
+    ]
+  },
+  "get_planet_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "planet_lookup_by_name",
+        "description": "I'm curious about a specific world I heard of—like Kepler-452b—and I want to see its basic data such as mass, radius, orbital period, temperature, and how far it is from Earth.",
+        "key_parameters": [
+          "name"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "planet_search_by_scientific_criteria",
+        "description": "I'm a researcher exploring exoplanets that fit certain scientific thresholds, so I need to filter by ranges of mass, radius, orbital period, temperature, and distance from Earth to find candidates for my study.",
+        "key_parameters": [
+          "min_mass",
+          "max_mass",
+          "min_radius",
+          "max_radius",
+          "min_period",
+          "max_period",
+          "min_temperature",
+          "max_temperature",
+          "min_distance_light_year",
+          "max_distance_light_year"
+        ]
+      }
+    ]
+  },
+  "get_celestial_body_position": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_celestial_body_position",
+        "description": "I'm planning an observation session and need to know where a specific celestial body (like the Moon or Mars) will appear in the sky from my current spot over a certain date range, possibly adjusting for my exact elevation and preferred observation times.",
+        "key_parameters": [
+          "body",
+          "latitude",
+          "longitude",
+          "from_date",
+          "to_date",
+          "elevation",
+          "time"
+        ]
+      }
+    ]
+  },
+  "search_arxiv_papers": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_arxiv_papers",
+        "description": "I'm trying to find scientific papers on a topic I'm researching, so I type a keyword, maybe limit the results to a date range, pick whether I want to search titles, authors, or the whole abstract, and decide how many papers I need and which page to start on.",
+        "key_parameters": [
+          "search_term",
+          "date_from",
+          "date_to",
+          "date_type",
+          "field",
+          "start",
+          "num_results"
+        ]
+      }
+    ]
+  },
+  "get_soccer_tournaments": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "list_soccer_tournaments",
+        "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_f1_latest_news": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_latest_f1_news",
+        "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+        "key_parameters": []
+      }
+    ]
+  },
+  "get_handball_scheduled_matches": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_daily_matches",
+        "description": "I want to see the handball matches scheduled for a particular day so I can plan which games to watch or attend.",
+        "key_parameters": [
+          "date"
+        ]
+      }
+    ]
+  },
+  "get_airlines": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "lookup_airline",
+        "description": "I'm trying to find information about an airline. I might know its ICAO code, its IATA code, or just a fragment of its name, and I want the system to return the matching airline details.",
+        "key_parameters": [
+          "icao",
+          "iata",
+          "name"
+        ]
+      }
+    ]
+  },
+  "get_motorcycle_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "search_motorcycle_specifications",
+        "description": "I'm looking for detailed specs of a motorcycle and want to filter by brand, model name, and production year to find exactly the bike I'm interested in.",
+        "key_parameters": [
+          "make",
+          "model",
+          "year"
+        ]
+      }
+    ]
+  },
+  "get_airport_delay_statistics": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "fetch_airport_delay_statistics",
+        "description": "I'm planning a trip and need to know how busy the airport I'm using is right now, so I want real‑time departure and arrival delay stats for that airport.",
+        "key_parameters": [
+          "codeType",
+          "code"
+        ]
+      }
+    ]
+  },
+  "get_air_quality_data": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "get_air_quality_by_location",
+        "description": "I'm planning a trip and need to know the current air quality for the place I'm heading to, whether I have its city name, state and country, or just the GPS coordinates, so I can decide if it's safe to travel.",
+        "key_parameters": [
+          "lat",
+          "lon",
+          "city",
+          "state",
+          "country"
+        ]
+      }
+    ]
+  },
+  "get_weather_forecast": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "weather_forecast_query",
+        "description": "I'm planning my trip and need to know what the weather will be like, so I ask for a forecast by providing a location (city name, coordinates, zip code, etc.) and optionally how many days ahead I want to see.",
+        "key_parameters": [
+          "q",
+          "days"
+        ]
+      }
+    ]
+  },
+  "search_amazon_products": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "amazon_product_search",
+        "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+        "key_parameters": [
+          "query",
+          "page",
+          "country",
+          "sort_by",
+          "product_condition",
+          "min_price",
+          "max_price"
+        ]
+      }
+    ]
+  },
+  "search_streaming_shows": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "find_streaming_content",
+        "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+        "key_parameters": [
+          "country",
+          "catalogs",
+          "show_type",
+          "genres",
+          "keyword",
+          "order_by",
+          "order_direction"
+        ]
+      }
+    ]
+  },
+  "get_restaurants_by_location": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "area_restaurant_explore",
+        "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+        "key_parameters": [
+          "bl_latitude",
+          "tr_latitude",
+          "bl_longitude",
+          "tr_longitude",
+          "limit",
+          "offset"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "localized_restaurant_search",
+        "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in EUR and all names/descriptions in French so I can understand them easily.",
+        "key_parameters": [
+          "bl_latitude",
+          "tr_latitude",
+          "bl_longitude",
+          "tr_longitude",
+          "limit",
+          "offset",
+          "currency",
+          "lang"
+        ]
+      }
+    ]
+  },
+  "get_hotels_by_location": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "basic_hotel_search",
+        "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+        "key_parameters": [
+          "bl_latitude",
+          "bl_longitude",
+          "tr_latitude",
+          "tr_longitude",
+          "checkin",
+          "checkout",
+          "limit",
+          "offset"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "advanced_hotel_search",
+        "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+        "key_parameters": [
+          "bl_latitude",
+          "bl_longitude",
+          "tr_latitude",
+          "tr_longitude",
+          "checkin",
+          "checkout",
+          "adults",
+          "rooms",
+          "limit",
+          "offset",
+          "currency",
+          "lang"
+        ]
+      }
+    ]
+  }
+}
