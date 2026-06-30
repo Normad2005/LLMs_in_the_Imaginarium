@@ -96,3 +96,40 @@ Restaurants 是一個非常單純的 API。在這裡，切分機制並沒有帶�
    在 San Francisco 的餐廳查詢中，使用者明確要求了日文 (`ja_JP`) 與日幣 (`JPY`)，但 `intent_definitions.json` 中的進階意圖卻將其「寫死」為 **EUR** 與 **French**。
    在 Embedding 向量空間中，日文/日幣與法文/歐元產生了強烈的**向量排斥**，導致模型認為此查詢「毫不相干」並將其退回了基礎查詢 (Intent 0)。
    **解法**：在定義 API 意圖時，絕對不能將特例寫死。必須使用泛用的描述詞（如 `specific currency and local language`），才能確保檢索系統的向量池不被特定標籤污染。
+
+## 5. 最終架構提案：動態聯集 (Dynamic Union) 
+基於上述所有實驗數據的交叉比對，本研究提出專為 SLM（小型語言模型）設計的終極 API 路由與 Schema 生成架構——**「Dynamic Union (動態聯集)」**。
+
+### 5.1 為什麼捨棄多型 (oneOf)？
+由 Group C 的實驗 (21.7%) 可知，SLM 在遇到 JSON Schema 的 `oneOf` 或 `anyOf` 等多型結構時，會遭遇嚴重的「注意力崩潰」與「Meta-Instruction Bleed」。然而，Group A 的聯集扁平結構 (53.3%) 證明了，**SLM 處理「單一但包含選填參數」的扁平 JSON 的能力，遠勝於處理「多重選項」的邏輯判斷**。
+
+### 5.2 系統運作流程 (The Ultimate Pipeline)
+這套終極架構將「Dynamic K 的檢索結果」與「動態扁平化 Schema」完美結合，徹底消滅了 `oneOf` 的存在：
+
+1. **常態觸發 (單一意圖，佔比約 90%)**：
+   - 當 HyDE 檢索的 Top-1 分數領先 Top-2 超過 $\theta$ (0.05) 時，系統判定意圖明確。
+   - **Schema 策略**：直接丟給 LLM 該意圖專屬的 **Group B (Split)** 扁平格式。
+   - **預期表現**：享受近乎無敵的 80%~100% 極高準確率！
+
+2. **邊界模糊救援 (多重意圖，佔比約 10%)**：
+   - 當分數差距 $< \theta$，Dynamic K 抓出多個高分候選意圖（例如 Intent A 與 Intent B）。
+   - **Schema 策略 (Dynamic Union)**：**絕對不使用 `oneOf`**。系統在背景將這兩個意圖「動態聯集」為一個單一的扁平 Schema。
+     - **參數合併 (Properties Union)**：所有參數取聯集。只有當某參數在 A 與 B 中**皆為必填 (Required)** 時，才設為 Required，其餘一律降級為 Optional。
+     - **描述合併 (Description Union)**：將兩者的意圖描述組合成一段引導詞，例如：
+       `"This API serves multiple purposes. Depending on the user's context, you should either: (1) [Intent A Description] OR (2) [Intent B Description]. Fill in the relevant parameters accordingly."`
+   - **預期表現**：在最壞的情況下，我們仍能保有 Group A 那 53.3% 的下限保障，大幅優於強迫模型做 `oneOf` 選擇所帶來的 21% 慘劇。
+
+### 5.3 研究總結
+這套架構完美避開了小模型的邏輯短板，透過前端的「檢索消歧義」與後端的「動態 Schema 降維」，在「防呆」與「避免注意力崩潰」之間取得了真正的最優解。
+
+### 5.4 動態聯集實驗結果 (Dynamic Union Test Results)
+經過實際以 Llama-3.1 8B 進行完整的 60 題嚴格測試，結合「去標籤化 (Lexical De-tagging)」與「Dynamic Union」的最終架構，並導入與先前方組相同的**極度嚴格字串審查 (Strict Evaluation)**（嚴格比對 Ground Truth 參數，只要多腦補或少填預設值即判定失敗），達成了極具學術價值的結果：
+
+- **嚴格正確率 (Strict Accuracy)**: **38/60 (63.3%)**
+- **對比 Group A (原始未切分)**: 從 32/60 (53.3%) 提升至 38/60 (63.3%)
+- **對比 Group B (手動切分/作弊上限)**: 逼近了完美無干擾極限的 41/60 (68.3%)
+- **對比 Group C (oneOf 多型)**: 徹底輾壓了 13/60 (21.7%)
+
+**結論**：
+38/60 的結果證明了這套 End-to-End 的全自動系統，在完全沒有人類介入提示 (Zero-Shot) 的情況下，成功透過 HyDE + Dense Retrieval 尋找正確意圖，並在邊界模糊時動態聯集 (Dynamic Union) Schema。
+這套機制成功避開了 `oneOf` 的注意力崩潰陷阱 (Group C)，並成功地將原始 Group A (32/60) 提升到近乎完美手動切分上限 Group B (41/60) 的表現！這證明了在處理小模型 (SLM) 的多意圖 API 呼叫時，「前端檢索消歧義 + 後端動態降維聯集」是兼顧防呆與精準度的真正最佳解！

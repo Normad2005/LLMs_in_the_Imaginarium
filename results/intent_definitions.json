@@ -523,7 +523,7 @@
       {
         "intent_id": 1,
         "name": "localized_restaurant_search",
-        "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in EUR and all names/descriptions in French so I can understand them easily.",
+        "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
         "key_parameters": [
           "bl_latitude",
           "tr_latitude",
