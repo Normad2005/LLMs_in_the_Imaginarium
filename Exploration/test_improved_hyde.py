@@ -8,10 +8,12 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from Exploration.my_llm import chat_my
 
 # Configuration
+TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 INTENT_DEF_PATH = "results/intent_definitions.json"
-TEST_QUERIES_PATH = "data/test_split_queries.json"
-MODEL_CKPT = "llama3.1:8b-instruct-fp16"
+TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
 OUTPUT_PATH = "results/improved_hyde_results.json"
+MODEL_CKPT = "llama3.1:8b-instruct-fp16"
+TOP_K = 10  # Number of APIs to retrieve
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -49,18 +51,18 @@ def main():
 
     print("Loading Data...")
     intent_defs = load_json(INTENT_DEF_PATH)
-    queries = load_json(TEST_QUERIES_PATH)
+    dataset = load_json(TEST_QUERIES_PATH)
     
     # 1. Flatten all intents and embed them
     all_intents = []
     print("Embedding Intent Descriptions...")
     for api_name, api_data in intent_defs.items():
         for intent in api_data.get("intents", []):
-            desc = intent["description"]
-            full_text = f"API: {api_name}. Intent: {intent['name']}. Description: {desc}"
+            full_text = f"API: {api_name}. Intent: {intent['name']}. Description: {intent['description']}"
             all_intents.append({
                 "api_name": api_name,
                 "intent_id": intent["intent_id"],
+                "intent_data": intent,
                 "text": full_text
             })
             
@@ -71,75 +73,107 @@ def main():
         all_intents[i]["embedding"] = emb
 
     # 2. Evaluate Queries
-    top10_hits = 0
-    top1_hits = 0
-    total_queries = len(queries)
+    global_api_hits = 0
+    intra_intent_hits = 0
+    total_queries = sum(len(q_list) for q_list in dataset.values())
     
     out_results = []
     
-    for idx, q in enumerate(queries):
-        query_text = q["query"]
-        target_api = q["target_api"]
-        target_intent_id = q["target_intent_id"]
-        
-        print(f"\n[{idx+1}/{total_queries}] Query: {query_text}")
-        
-        hyde_desc = generate_hyde_description(query_text)
-        print(f"  HyDE Desc: {hyde_desc[:150]}...")
-        
-        query_emb = embedder.encode([hyde_desc])[0]
-        
-        for intent in all_intents:
-            intent["score"] = float(cosine_similarity(query_emb, intent["embedding"]))
+    query_idx = 0
+    for target_api, queries in dataset.items():
+        for q in queries:
+            query_idx += 1
+            query_text = q["query"]
+            target_intent_id = q["target_intent_id"]
             
-        api_best_intents = {}
-        for intent in all_intents:
-            api = intent["api_name"]
-            if api not in api_best_intents or intent["score"] > api_best_intents[api]["score"]:
-                api_best_intents[api] = intent
+            print(f"\n[{query_idx}/{total_queries}] Query: {query_text}")
+        
+            hyde_desc = generate_hyde_description(query_text)
+            print(f"  HyDE Desc: {hyde_desc[:150]}...")
+        
+            query_emb = embedder.encode([hyde_desc])[0]
+        
+            # Score all intents
+            for intent in all_intents:
+                intent["score"] = float(cosine_similarity(query_emb, intent["embedding"]))
+            
+            # API-level max pooling: for each API, take the highest-scoring intent
+            api_best_intents = {}
+            for intent in all_intents:
+                api = intent["api_name"]
+                if api not in api_best_intents or intent["score"] > api_best_intents[api]["score"]:
+                    api_best_intents[api] = intent
                 
-        sorted_best_apis = sorted(api_best_intents.values(), key=lambda x: x["score"], reverse=True)
-        top10_results = sorted_best_apis[:10]
-        
-        found_in_top10 = False
-        is_top1 = False
-        
-        for r_idx, res in enumerate(top10_results):
-            if res["api_name"] == target_api and res["intent_id"] == target_intent_id:
-                found_in_top10 = True
-                if r_idx == 0:
-                    is_top1 = True
-                break
-                
-        res_obj = {
-            "query": query_text,
-            "ground_truth_api": target_api,
-            "ground_truth_intent_id": target_intent_id,
-            "hyde_desc": hyde_desc,
-            "top_3": [
-                {"api_name": r["api_name"], "intent_id": r["intent_id"], "score": r["score"]} for r in top10_results[:3]
-            ],
-            "result": "HIT" if found_in_top10 else "MISS"
-        }
-        out_results.append(res_obj)
-        
-        if found_in_top10:
-            top10_hits += 1
-            if is_top1:
-                top1_hits += 1
-            print(f"  [HIT] Top-1: {is_top1}")
-        else:
-            print(f"  [MISS]")
+            sorted_best_apis = sorted(api_best_intents.values(), key=lambda x: x["score"], reverse=True)
+            top_k_results = sorted_best_apis[:TOP_K]
+            top_k_api_names = {r["api_name"] for r in top_k_results}
 
-    print("\n==============================")
-    print("IMPROVED HYDE EVALUATION RESULTS")
-    print(f"Total Queries: {total_queries}")
-    print(f"Top-1 Accuracy: {top1_hits}/{total_queries} ({(top1_hits/total_queries)*100:.2f}%)")
-    print(f"Top-10 Accuracy: {top10_hits}/{total_queries} ({(top10_hits/total_queries)*100:.2f}%)")
-    print("==============================")
-    
+            # --- Metric 1: Global API Recall@K ---
+            # Did target_api appear anywhere in the Top-K retrieved APIs?
+            global_api_hit = target_api in top_k_api_names
+
+            # --- Metric 2: Intra-API Intent Recall@1 ---
+            # Among target_api's intents, is the highest-scoring one the correct intent?
+            intra_intent_hit = False
+            if global_api_hit:
+                target_api_intents = sorted(
+                    [i for i in all_intents if i["api_name"] == target_api],
+                    key=lambda x: x["score"],
+                    reverse=True
+                )
+                if target_api_intents and target_api_intents[0]["intent_id"] == target_intent_id:
+                    intra_intent_hit = True
+
+            if global_api_hit:
+                global_api_hits += 1
+            if intra_intent_hit:
+                intra_intent_hits += 1
+
+            print(f"  Global API Hit: {global_api_hit} | Intra-Intent Hit: {intra_intent_hit}")
+
+            # Build rich top-K data (for use by test_dynamic_union_runner.py)
+            top_k_data = []
+            for r in top_k_results:
+                api_name = r["api_name"]
+                # Collect all intent scores for this API (for Dynamic K thresholding)
+                api_intent_scores = sorted(
+                    [{"intent_id": i["intent_id"], "score": i["score"], "intent_data": i["intent_data"]}
+                     for i in all_intents if i["api_name"] == api_name],
+                    key=lambda x: x["score"],
+                    reverse=True
+                )
+                top_k_data.append({
+                    "api_name": api_name,
+                    "best_intent_id": r["intent_id"],
+                    "best_score": r["score"],
+                    "all_intent_scores": api_intent_scores
+                })
+
+            res_obj = {
+                "query_id": q["query_id"],
+                "query": query_text,
+                "ground_truth_api": target_api,
+                "ground_truth_intent_id": target_intent_id,
+                "hyde_desc": hyde_desc,
+                "top_k_apis": top_k_data,
+                "global_api_hit": global_api_hit,
+                "intra_intent_hit": intra_intent_hit,
+                "result": "HIT" if global_api_hit else "MISS"
+            }
+            out_results.append(res_obj)
+
+    print(f"\n{'='*50}")
+    print(f"RETRIEVAL EVALUATION SUMMARY (Top-{TOP_K})")
+    print(f"{'='*50}")
+    print(f"Total Queries       : {total_queries}")
+    print(f"Global API Recall@{TOP_K} : {global_api_hits}/{total_queries} ({100*global_api_hits/total_queries:.2f}%)")
+    print(f"Intra-Intent Recall@1: {intra_intent_hits}/{global_api_hits if global_api_hits else 1} ({100*intra_intent_hits/global_api_hits:.2f}% of API hits)" if global_api_hits else "Intra-Intent Recall@1: N/A")
+    print(f"{'='*50}")
+
+    print("\nRetrieval Complete. Saving results...")
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(out_results, f, ensure_ascii=False, indent=2)
+    print(f"Saved to {OUTPUT_PATH}")
 
 if __name__ == "__main__":
     main()

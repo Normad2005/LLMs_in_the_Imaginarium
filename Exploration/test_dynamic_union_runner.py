@@ -13,7 +13,7 @@ from Exploration.my_llm import chat_my
 # Configuration
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 INTENT_DEF_PATH = "results/intent_definitions.json"
-TEST_QUERIES_PATH = "data/test_split_queries.json"
+TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
 RESULTS_PATH = "results/dynamic_union_test_results.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
 THETA = 0.05
@@ -115,7 +115,7 @@ def run_test():
 
     tool_desc = load_json(TOOL_DESC_PATH)
     intent_defs = load_json(INTENT_DEF_PATH)
-    queries = load_json(TEST_QUERIES_PATH)
+    dataset = load_json(TEST_QUERIES_PATH)
     
     all_intents = []
     for api_name, api_data in intent_defs.items():
@@ -132,115 +132,115 @@ def run_test():
     with open("prompts/prompt_template.txt", "r", encoding="utf-8") as f:
         prompt_template = f.read().strip()
         
-    results = []
-    success_count = 0
-    total_queries = len(queries)
+    results = {}
 
-    for idx, q in enumerate(queries):
-        query_text = q["query"]
-        target_api = q["target_api"]
-        
-        print(f"\n[{idx+1}/{total_queries}] Query: {query_text}")
-        
-        # 1. HyDE Generation
-        hyde_desc = generate_hyde_description(query_text)
-        query_emb = embedder.encode([hyde_desc])[0]
-        
-        # 2. Dense Retrieval (API Level Max Pooling)
-        for intent in all_intents:
-            intent["score"] = cosine_similarity(query_emb, intent["embedding"])
+    for target_api, queries in dataset.items():
+        results[target_api] = []
+        for q in queries:
+            query_text = q["query"]
+            gt_action_input = q["action_input"]
             
-        api_best_intents = {}
-        for intent in all_intents:
-            api = intent["api_name"]
-            if api not in api_best_intents or intent["score"] > api_best_intents[api]["score"]:
-                api_best_intents[api] = intent
-                
-        sorted_apis = sorted(api_best_intents.values(), key=lambda x: x["score"], reverse=True)
-        top1_api_name = sorted_apis[0]["api_name"]
+            print(f"\n=====================================")
+            print(f"Testing Query: {query_text}")
         
-        print(f"  Top-1 API Retrieved: {top1_api_name}")
-        
-        # 3. Dynamic K Thresholding
-        api_all_intents = [i for i in all_intents if i["api_name"] == top1_api_name]
-        api_all_intents.sort(key=lambda x: x["score"], reverse=True)
-        
-        s_star = api_all_intents[0]["score"]
-        selected_intents = []
-        for i in api_all_intents:
-            if (s_star - i["score"]) <= THETA:
-                selected_intents.append(i["intent_data"])
-                
-        print(f"  Dynamic K selected {len(selected_intents)} intent(s) for schema generation.")
-        
-        # 4. Build Context APIs for LLM Prompt
-        api_names_list = list(BACKGROUND_APIS)
-        if target_api == "get_restaurants_by_location":
-            api_names_list.append("get_hotels_by_location")
-        elif target_api == "get_hotels_by_location":
-            api_names_list.append("get_restaurants_by_location")
-        api_names_list.append(target_api)
-        api_names_list = list(set(api_names_list))
-        random.shuffle(api_names_list)
-        
-        # If the retrieved API isn't in the background list, inject it so LLM can see it
-        if top1_api_name not in api_names_list:
-            api_names_list.append(top1_api_name)
+            # 1. HyDE Generation
+            hyde_desc = generate_hyde_description(query_text)
+            query_emb = embedder.encode([hyde_desc])[0]
             
-        context_apis_str = []
-        target_api_desc = None
-        
-        for current_api in api_names_list:
-            if current_api == top1_api_name:
-                desc = build_dynamic_union_schema(current_api, selected_intents, tool_desc)
-                # If target API is correctly retrieved, store its dynamic schema for parsing
-                if current_api == target_api:
-                    target_api_desc = desc
-            else:
-                desc = tool_desc[current_api]
-                if current_api == target_api and top1_api_name != target_api:
-                    # Target API was completely missed in retrieval, just give unsplit schema
-                    target_api_desc = desc
+            # 2. Dense Retrieval (API Level Max Pooling)
+            for intent in all_intents:
+                intent["score"] = cosine_similarity(query_emb, intent["embedding"])
+                
+            api_best_intents = {}
+            for intent in all_intents:
+                api = intent["api_name"]
+                if api not in api_best_intents or intent["score"] > api_best_intents[api]["score"]:
+                    api_best_intents[api] = intent
                     
-            context_apis_str.append(f"API_name: {current_api}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}")
+            sorted_apis = sorted(api_best_intents.values(), key=lambda x: x["score"], reverse=True)
+            top1_api_name = sorted_apis[0]["api_name"]
             
-        api_descriptions_full = "\n\n".join(context_apis_str)
-        prompt_base = prompt_template.format(
-            api_descriptions=api_descriptions_full,
-            api_names="\n".join(api_names_list)
-        )
-        prompt = prompt_base + "\n\nUser Query: " + query_text
-        
-        # 5. Call LLM
-        messages = [{"role": "system", "content": "You are a helpful assistant."}]
-        messages, _ = chat_my(messages, prompt, visualize=False, model=MODEL_CKPT, return_tokens=True)
-        model_output = messages[-1]["content"]
-        
-        # 6. Parse and evaluate
-        parsed = parse_response(model_output, api_names_list, json.dumps(target_api_desc), check_API_name=True)
-        
-        is_success = parsed["parse_successful"] and parsed["action"] == target_api
-        if is_success:
-            success_count += 1
-            print(f"  [HIT] Action: {parsed['action']} | Args: {parsed['action_input']}")
-        else:
-            print(f"  [MISS] Result: {parsed.get('parse_error_msg', 'Wrong API or parse failed')}")
+            print(f"  Top-1 API Retrieved: {top1_api_name}")
             
-        results.append({
-            "query_id": q["id"],
-            "query": query_text,
-            "top1_api": top1_api_name,
-            "intents_merged": len(selected_intents),
-            "model_output": model_output,
-            "parsed_result": parsed,
-            "is_success": is_success
-        })
-        
-    print(f"\n==============================")
-    print("DYNAMIC UNION EVALUATION RESULTS")
-    print(f"Total Queries: {total_queries}")
-    print(f"Success Rate: {success_count}/{total_queries} ({(success_count/total_queries)*100:.2f}%)")
-    print("==============================")
+            # 3. Dynamic K Thresholding
+            api_all_intents = [i for i in all_intents if i["api_name"] == top1_api_name]
+            api_all_intents.sort(key=lambda x: x["score"], reverse=True)
+            
+            s_star = api_all_intents[0]["score"]
+            selected_intents = []
+            for i in api_all_intents:
+                if (s_star - i["score"]) <= THETA:
+                    selected_intents.append(i["intent_data"])
+                    
+            print(f"  Dynamic K selected {len(selected_intents)} intent(s) for schema generation.")
+            
+            # 4. Build Context APIs for LLM Prompt
+            api_names_list = list(BACKGROUND_APIS)
+            if target_api == "get_restaurants_by_location":
+                api_names_list.append("get_hotels_by_location")
+            elif target_api == "get_hotels_by_location":
+                api_names_list.append("get_restaurants_by_location")
+            api_names_list.append(target_api)
+            api_names_list = list(set(api_names_list))
+            random.shuffle(api_names_list)
+            
+            # If the retrieved API isn't in the background list, inject it so LLM can see it
+            if top1_api_name not in api_names_list:
+                api_names_list.append(top1_api_name)
+                
+            context_apis_str = []
+            target_api_desc = None
+            
+            for current_api in api_names_list:
+                if current_api == top1_api_name:
+                    desc = build_dynamic_union_schema(current_api, selected_intents, tool_desc)
+                    # If target API is correctly retrieved, store its dynamic schema for parsing
+                    if current_api == target_api:
+                        target_api_desc = desc
+                else:
+                    desc = tool_desc[current_api]
+                    if current_api == target_api and top1_api_name != target_api:
+                        # Target API was completely missed in retrieval, just give unsplit schema
+                        target_api_desc = desc
+                        
+                context_apis_str.append(f"API_name: {current_api}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}")
+                
+            api_descriptions_full = "\n\n".join(context_apis_str)
+            prompt_base = prompt_template.format(
+                api_descriptions=api_descriptions_full,
+                api_names="\n".join(api_names_list)
+            )
+            prompt = prompt_base + "\n\nUser Query: " + query_text
+            
+            # 5. Call LLM
+            messages = [{"role": "system", "content": "You are a helpful assistant."}]
+            messages, token_info = chat_my(messages, prompt, visualize=False, model=MODEL_CKPT, return_tokens=True)
+            model_output = messages[-1]["content"]
+            prompt_tokens = token_info.get("prompt_tokens", 0)
+            
+            # 6. Parse and evaluate
+            parsed = parse_response(model_output, api_names_list, json.dumps(target_api_desc), check_API_name=True)
+            
+            is_success = parsed["parse_successful"] and parsed["action"] == target_api
+            if is_success:
+                print(f"  [HIT] Action: {parsed['action']} | Args: {parsed['action_input']}")
+            else:
+                print(f"  [MISS] Result: {parsed.get('parse_error_msg', 'Wrong API or parse failed')}")
+                
+            result_entry = {
+                "query_id": q["query_id"],
+                "query": query_text,
+                "top1_api": top1_api_name,
+                "intents_merged": len(selected_intents),
+                "model_output": model_output,
+                "parsed_result": parsed,
+                "action_input": gt_action_input,
+                "prompt_tokens": prompt_tokens,
+                "target_api_desc_used": target_api_desc
+            }
+            results[target_api].append(result_entry)
+            
+    print("\nEvaluation Complete.")
     
     os.makedirs(os.path.dirname(RESULTS_PATH), exist_ok=True)
     with open(RESULTS_PATH, "w", encoding="utf-8") as f:

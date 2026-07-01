@@ -12,7 +12,7 @@ def call_ollama(model: str, prompt: str, temperature: float = 0.7, max_tokens: i
     prompt_token_count 來自 Ollama 最後一個 done chunk 的 prompt_eval_count。
     否則僅回傳 output_text。
     """
-    print("###\nprompt\n", prompt)
+
     if host == "local":
         url = "http://localhost:11434/api/generate"
         options = {"temperature": temperature, "num_ctx": 16384}

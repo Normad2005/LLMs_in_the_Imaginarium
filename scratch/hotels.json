@@ -1,0 +1,36 @@
+[
+  {
+    "intent_id": 0,
+    "name": "basic_hotel_search",
+    "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+    "key_parameters": [
+      "bl_latitude",
+      "bl_longitude",
+      "tr_latitude",
+      "tr_longitude",
+      "checkin",
+      "checkout",
+      "limit",
+      "offset"
+    ]
+  },
+  {
+    "intent_id": 1,
+    "name": "advanced_hotel_search",
+    "description": "I'm organizing a family vacation and want to fine\u2011tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+    "key_parameters": [
+      "bl_latitude",
+      "bl_longitude",
+      "tr_latitude",
+      "tr_longitude",
+      "checkin",
+      "checkout",
+      "adults",
+      "rooms",
+      "limit",
+      "offset",
+      "currency",
+      "lang"
+    ]
+  }
+]

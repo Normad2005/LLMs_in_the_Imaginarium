@@ -7,9 +7,10 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from Exploration.utils import parse_response
 from Exploration.my_llm import chat_my
 
+# Configuration
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 INTENT_DEF_PATH = "results/intent_definitions.json"
-TEST_QUERIES_PATH = "data/test_split_queries.json"
+TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
 RESULTS_PATH = "results/oneof_test_results.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
 
@@ -67,109 +68,104 @@ def build_oneof_api_context(api_name, tool_desc, intent_defs):
 def run_test():
     tool_desc = load_json(TOOL_DESC_PATH)
     intent_defs = load_json(INTENT_DEF_PATH)
-    queries = load_json(TEST_QUERIES_PATH)
+    dataset = load_json(TEST_QUERIES_PATH)
     
     with open("prompts/prompt_template.txt", "r", encoding="utf-8") as f:
         prompt_template = f.read().strip()
         
-    results = []
-    
-    print(f"Starting Group C (Full oneOf) Evaluation with {MODEL_CKPT}...")
-    
-    stats = {
-        "calculate_mortgage_payment": {"pass": 0, "fail": 0},
-        "get_hotels_by_location": {"pass": 0, "fail": 0},
-        "get_restaurants_by_location": {"pass": 0, "fail": 0},
-        "get_divisions_near_location": {"pass": 0, "fail": 0}
-    }
+    results = {}
+    stats = {}
 
-    for idx, q in enumerate(queries):
-        query_text = q["query"]
-        target_api = q["target_api"]
-        target_intent_id = q["target_intent_id"]
+    for target_api, queries in dataset.items():
+        results[target_api] = []
+        stats[target_api] = {"pass": 0, "fail": 0}
         
-        # Determine expected keys based on intent definitions
-        target_intent_data = next(i for i in intent_defs[target_api]["intents"] if i["intent_id"] == target_intent_id)
-        expected_keys = set(target_intent_data["key_parameters"])
-        
-        api_names_list = list(BACKGROUND_APIS)
-        if target_api == "get_restaurants_by_location":
-            api_names_list.append("get_hotels_by_location")
-        elif target_api == "get_hotels_by_location":
-            api_names_list.append("get_restaurants_by_location")
+        for q in queries:
+            query_text = q["query"]
+            target_intent_id = q["target_intent_id"]
+            gt_action_input = q.get("action_input")
             
-        api_names_list.append(target_api)
-        
-        unique_apis = []
-        for a in api_names_list:
-            if a not in unique_apis:
-                unique_apis.append(a)
-        api_names_list = unique_apis
-        random.shuffle(api_names_list)
-        
-        context_apis_str = []
-        target_api_desc = None
-        
-        for current_api in api_names_list:
-            if current_api == target_api:
-                desc = build_oneof_api_context(target_api, tool_desc, intent_defs)
-                target_api_desc = desc
-            else:
-                desc = tool_desc[current_api]
+            print(f"\n=====================================")
+            print(f"Testing Query: {query_text}")
             
-            context_apis_str.append(f"API_name: {current_api}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}")
+            # Determine expected keys based on intent definitions
+            target_intent_data = next(i for i in intent_defs[target_api]["intents"] if i["intent_id"] == target_intent_id)
+            expected_keys = set(target_intent_data["key_parameters"])
             
-        api_descriptions_full = "\n\n".join(context_apis_str)
-        
-        prompt_base = prompt_template.format(
-            api_descriptions=api_descriptions_full,
-            api_names="\n".join(api_names_list)
-        )
-        prompt = prompt_base + "\n\nUser Query: " + query_text
-        
-        messages = [{"role": "system", "content": "You are a helpful assistant."}]
-        try:
-            messages, _ = chat_my(messages, prompt, visualize=False, model=MODEL_CKPT, return_tokens=True)
-            model_output = messages[-1]["content"]
+            api_names_list = list(BACKGROUND_APIS)
+            if target_api == "get_restaurants_by_location":
+                api_names_list.append("get_hotels_by_location")
+            elif target_api == "get_hotels_by_location":
+                api_names_list.append("get_restaurants_by_location")
+                
+            api_names_list.append(target_api)
             
-            parsed = parse_response(model_output, api_names_list, json.dumps(target_api_desc), check_API_name=True)
+            unique_apis = []
+            for a in api_names_list:
+                if a not in unique_apis:
+                    unique_apis.append(a)
+            api_names_list = unique_apis
+            random.shuffle(api_names_list)
             
-            passed = False
-            error_reason = ""
+            context_apis_str = []
+            target_api_desc = None
             
-            if parsed["parse_successful"] and parsed["action"] == target_api:
-                try:
-                    action_input_dict = json.loads(parsed["action_input"])
-                    actual_keys = set(action_input_dict.keys())
+            for current_api in api_names_list:
+                if current_api == target_api:
+                    desc = build_oneof_api_context(target_api, tool_desc, intent_defs)
+                    target_api_desc = desc
+                else:
+                    desc = tool_desc[current_api]
+                
+                context_apis_str.append(f"API_name: {current_api}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}")
+                
+            api_descriptions_full = "\n\n".join(context_apis_str)
+            
+            prompt_base = prompt_template.format(
+                api_descriptions=api_descriptions_full,
+                api_names="\n".join(api_names_list)
+            )
+            prompt = prompt_base + "\n\nUser Query: " + query_text
+            
+            messages = [{"role": "system", "content": "You are a helpful assistant."}]
+            try:
+                messages, prompt_tokens = chat_my(messages, prompt, visualize=False, model=MODEL_CKPT, return_tokens=True)
+                model_output = messages[-1]["content"]
+                
+                parsed = parse_response(model_output, api_names_list, json.dumps(target_api_desc), check_API_name=True)
+                
+                result_entry = {
+                    "query_id": q.get("id"),
+                    "model_output": model_output,
+                    "parsed_result": parsed,
+                    "target_api_desc_used": target_api_desc,
+                    "action_input": gt_action_input,
+                    "prompt_tokens": prompt_tokens,
+                    "query": query_text
+                }
+                results[target_api].append(result_entry)
+                
+                if parsed["parse_successful"] and parsed["action"] == target_api:
+                    print(f"✅ Success! Action: {parsed['action']}")
+                    print(f"Arguments: {parsed['action_input']}")
                     
-                    if actual_keys == expected_keys:
-                        passed = True
-                    else:
-                        error_reason = f"Mismatch. Missing: {expected_keys - actual_keys}, Extra: {actual_keys - expected_keys}"
-                except json.JSONDecodeError:
-                    error_reason = "Invalid JSON in action_input"
-            else:
-                error_reason = f"Parse failed or wrong API: {parsed.get('parse_error_msg', parsed.get('action'))}"
+                    try:
+                        action_input_dict = json.loads(parsed["action_input"])
+                        actual_keys = set(action_input_dict.keys())
+                        if actual_keys == expected_keys:
+                            stats[target_api]["pass"] += 1
+                        else:
+                            stats[target_api]["fail"] += 1
+                    except:
+                        stats[target_api]["fail"] += 1
+                else:
+                    print(f"❌ Failed parsing or wrong API selected: {parsed.get('parse_error_msg', 'Wrong API')}")
+                    stats[target_api]["fail"] += 1
                 
-            if passed:
-                stats[target_api]["pass"] += 1
-                print(f"[{idx+1}/60] ✅ PASS | {target_api}")
-            else:
+            except Exception as e:
                 stats[target_api]["fail"] += 1
-                print(f"[{idx+1}/60] ❌ FAIL | {target_api} | {error_reason}")
+                print(f"⚠️ ERROR | {e}")
                 
-            results.append({
-                "query_id": q["id"],
-                "group": "Group C (Full oneOf)",
-                "passed": passed,
-                "error": error_reason,
-                "model_output": model_output
-            })
-            
-        except Exception as e:
-            stats[target_api]["fail"] += 1
-            print(f"[{idx+1}/60] ⚠️ ERROR | {e}")
-            
     os.makedirs(os.path.dirname(RESULTS_PATH), exist_ok=True)
     with open(RESULTS_PATH, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)

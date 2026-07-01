@@ -1,8 +1,9 @@
+import json
+import re
+import os
 from copy import deepcopy
 from utils import find_reverse, random_choose, parse_response, strip_end
 from my_llm import chat_my
-import json
-import re
 
 string_match_APIs = [
   "verify_email",
@@ -18,6 +19,8 @@ string_match_APIs = [
   "get_handball_scheduled_matches",
   "get_airlines",
   "get_motorcycle_data",
+  "get_restaurants_by_location",
+  "get_hotels_by_location",
 ]
 
 model_ckpts = "gpt-oss:120b"
@@ -42,12 +45,13 @@ def format_action_input(raw_input):
     except Exception:
         pass
 
-    return raw_input
-
 def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visualize=False):
 
-    with open(file_name, "r", encoding='utf-8') as f:
-        dataset = json.load(f)
+    if type(file_name) == str:
+        with open(file_name, "r", encoding='utf-8') as f:
+            dataset = json.load(f)
+    else:
+        dataset = file_name
 
     for gt_api in dataset:
 
@@ -129,8 +133,11 @@ def eval_pred_file(file_name, key_output='model_output', is_parsed=True, visuali
 
         dataset[gt_api] = examples
 
-    with open(file_name, "w", encoding='utf-8') as f:
-        json.dump(dataset, f)
+    if type(file_name) == str:
+        with open(file_name, "w", encoding='utf-8') as f:
+            json.dump(dataset, f)
+
+    return dataset
         
         
 def eval_batch(file_name, key_list=None):
@@ -176,13 +183,65 @@ def eval_batch(file_name, key_list=None):
                 correct += item['args_correct']
                 continue
     
-    print("wellformed:", round(100*(non_err/total), 3))
-    print("api match:", round(100*api_match/non_err, 3) if non_err else "N/A")
-    print("correct:", round(100*correct/total, 3))
-    if prompt_chars_count:
-        avg_tokens = total_prompt_chars / prompt_chars_count
-        print(f"avg prompt tokens: {round(avg_tokens)}")
+    
+    wellformed_rate = 100 * (non_err / total)
+    api_match_rate = 100 * api_match / non_err if non_err else 0
+    correct_rate = 100 * correct / total
+    avg_tokens = total_prompt_chars / prompt_chars_count if prompt_chars_count else 0
+
+    print("### Table 1: Generation Performance (End-to-End)")
+    print("| Metric | Value |")
+    print("| --- | --- |")
+    print(f"| Well-formed Rate | {wellformed_rate:.2f}% |")
+    print(f"| API Match (LLM) | {api_match_rate:.2f}% |")
+    print(f"| Argument Correctness (Strict) | {correct_rate:.2f}% |")
+    print(f"| Avg Prompt Tokens | {avg_tokens:.0f} |")
+    print()
+
+def eval_retrieval(file_name):
+    if not os.path.exists(file_name):
+        return
+        
+    with open(file_name, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        
+    total = len(data)
+    global_hit = 0
+    intra_hit = 0
+    
+    for item in data:
+        if item.get("global_api_hit"):
+            global_hit += 1
+        if item.get("intra_intent_hit"):
+            intra_hit += 1
+                
+    global_acc = 100 * global_hit / total if total else 0
+    intra_acc = 100 * intra_hit / global_hit if global_hit else 0
+    
+    print(f"### Table 2: Retrieval Performance (HyDE + Dense Retrieval, Top-10)")
+    print("| Metric | Value |")
+    print("| --- | --- |")
+    print(f"| Global API Recall@10 | {global_acc:.2f}% |")
+    print(f"| Intra-API Intent Recall@1 | {intra_acc:.2f}% |")
+    print()
+
+def main():
+    configs = [
+        ("Unsplit (Lower Bound)",      "results/unsplit_test_results.json"),
+        ("Split (Golden Upper Bound)", "results/split_test_results.json"),
+        ("Dynamic Union (End-to-End)", "results/dynamic_union_test_results.json"),
+    ]
+
+    for label, path in configs:
+        if not os.path.exists(path):
+            print(f"[SKIP] {label}: {path} not found.\n")
+            continue
+        print(f"================== {label} ==================")
+        dataset = eval_pred_file(path)
+        eval_batch(dataset)
+
+    print("================== Retrieval Evaluation ==================")
+    eval_retrieval("results/improved_hyde_results.json")
 
 if __name__ == "__main__":
-    eval_pred_file("results/icl/outputs_ICL_filtered.json")
-    eval_batch("results/icl/outputs_ICL_filtered.json")
+    main()
