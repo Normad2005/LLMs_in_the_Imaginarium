@@ -113,8 +113,9 @@ Restaurants 是一個非常單純的 API。在這裡，切分機制並沒有帶�
 **Step 2: API 內部意圖評分 (Intra-API Intent Scoring)**
 對於這 10 個被選出的 API，我們會深入每一個 API 內部，計算其各個 Intent（意圖）與 Query 的相似度（透過與該 Intent 事先生成的「假想情境 / Fake Queries」計算餘弦相似度）。我們定義 **Intra-API Intent Recall@1** 為：在答案所屬的 Target API 中，其內部**最高分 (Top-1) 的意圖是否正是標準答案 (Ground Truth) 所設定的意圖**。
 
-**Step 3: 動態門檻判定 (Dynamic K Thresholding, $\theta=0.05$)**
-取得 API 內部所有 Intent 的分數後，我們找出最高分 ($S_{max}$)。接著檢查其他 Intent 的分數 $S_i$：若 $S_{max} - S_i \le \theta$，則該 Intent 也被納入「高信心候選清單 (Selected Intents)」。
+**Step 3: 動態門檻判定 (Dynamic K Thresholding, 相對相似度 $\theta=0.15$)**
+取得 API 內部所有 Intent 的分數後，我們找出最高分 ($S_{max}$)。接著檢查其他 Intent 的分數 $S_i$：若 $S_i \ge S_{max} \times (1 - \theta)$，則該 Intent 也被納入「高信心候選清單 (Selected Intents)」。
+> 💡 **Empirical Finding**: 實證表明，「相對相似度」遠優於「絕對相減」。因為當整體語意模糊（相似度普遍偏低）時，絕對相減法容易產生誤判；而採用相對門檻（容許比最高分衰退 15%），能在保證 100% 成功將漏網之魚救回 (100% Recall) 的同時，平均只引入極少數的雜訊意圖 (1.53 個)，極大化了 Schema 的精準度。
 
 **Step 4: 動態聯集生成 (Dynamic Union Schema Generation)**
 根據高信心候選清單的長度，動態決定最終提供給 LLM 的 JSON Schema 格式：
@@ -127,7 +128,7 @@ Restaurants 是一個非常單純的 API。在這裡，切分機制並沒有帶�
 2. **邊界模糊救援 (多重意圖，佔比約 30%)**：
    - 當分數差距 $\le \theta$，Dynamic K 抓出多個高分候選意圖（例如 Intent A 與 Intent B）。
    - **Schema 策略 (Dynamic Union)**：**絕對不使用 `oneOf`**。系統在背景將這些意圖「動態聯集」為一個單一的扁平 Schema。
-     - **參數合併 (Properties Union)**：所有參數取聯集。只有當某參數在所有候選意圖中**皆為必填 (Required)** 時，才設為 Required，其餘一律降級為 Optional。
+      - **參數合併 (Properties Union)**：所有意圖的有效參數 (Key Parameters) 取聯集。由於 API 層級的必填參數在定義意圖時已被靜態注入，因此聯集後的 Required 參數將直接繼承原始 API 的必填設定，其餘皆為 Optional。
      - **描述合併 (Description Union)**：將各個候選意圖的描述組合成一段引導詞，例如：
        `"This API serves multiple purposes. Depending on the user's context, you should either: (1) [Intent A Description] OR (2) [Intent B Description]. Fill in the relevant parameters accordingly."`
    - **預期表現**：在遇到意圖極度相似或模糊的情況時，它退化成一種包含所有可能參數的聯集結構，作為 SLM 保底防呆的安全網。
