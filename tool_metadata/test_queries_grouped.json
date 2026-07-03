@@ -170,7 +170,7 @@
     {
       "query": "I'm planning a road trip around coordinates 34.05, -118.24. I want to visit large US cities within a 50-mile radius that have over 50,000 residents. Can you list them sorted by distance?",
       "action_input": {
-        "locationId": "34.05,-118.24",
+        "locationId": "+34.05-118.24",
         "radius": 50,
         "distanceUnit": "MI",
         "countryIds": "US",
@@ -183,7 +183,7 @@
     {
       "query": "I need to find places around 25.03, 121.56. I'm only interested in towns within a 10 km radius that have a minimum population of 10,000.",
       "action_input": {
-        "locationId": "25.03,121.56",
+        "locationId": "+25.03+121.56",
         "radius": 10,
         "minPopulation": 10000
       },
@@ -193,7 +193,7 @@
     {
       "query": "Show me the administrative divisions located near Tokyo at 35.68, 139.76. Search within a 20 km radius, but restrict the results strictly to Japan.",
       "action_input": {
-        "locationId": "35.68,139.76",
+        "locationId": "+35.68+139.76",
         "radius": 20,
         "countryIds": "JP"
       },
@@ -203,7 +203,7 @@
     {
       "query": "My app requires a list of cities surrounding Sydney (-33.86, 151.20) in a 100 km radius. Make sure they belong to the 'Australia/Sydney' timezone.",
       "action_input": {
-        "locationId": "-33.86,151.20",
+        "locationId": "-33.86+151.20",
         "radius": 100,
         "timeZoneIds": "Australia/Sydney"
       },
@@ -213,7 +213,7 @@
     {
       "query": "Get me a quick list of 3 divisions located near 1.35, 103.81 within a 50 km radius.",
       "action_input": {
-        "locationId": "1.35,103.81",
+        "locationId": "+1.35+103.81",
         "radius": 50,
         "limit": 3
       },
@@ -223,7 +223,7 @@
     {
       "query": "I want to explore major hubs near 40.71, -74.00 within 20 miles. Filter for populations over 100,000 and sort them by descending population.",
       "action_input": {
-        "locationId": "40.71,-74.00",
+        "locationId": "+40.71-74.00",
         "radius": 20,
         "distanceUnit": "MI",
         "minPopulation": 100000,
@@ -235,7 +235,7 @@
     {
       "query": "I am looking for the second page of results for cities around 52.52, 13.40 (100 km radius). Give me 10 results, skip the first 10, and sort alphabetically by name.",
       "action_input": {
-        "locationId": "52.52,13.40",
+        "locationId": "+52.52+13.40",
         "radius": 100,
         "limit": 10,
         "offset": 10,
@@ -247,7 +247,7 @@
     {
       "query": "Find places near 51.50, -0.12 within 15 miles. Sort by distance.",
       "action_input": {
-        "locationId": "51.50,-0.12",
+        "locationId": "+51.50-0.12",
         "radius": 15,
         "distanceUnit": "MI",
         "sort": "+distance"
@@ -258,7 +258,7 @@
     {
       "query": "Look for small towns near 48.85, 2.35 within 30 km with a max population of 5000.",
       "action_input": {
-        "locationId": "48.85,2.35",
+        "locationId": "+48.85+2.35",
         "radius": 30,
         "maxPopulation": 5000
       },
@@ -268,7 +268,7 @@
     {
       "query": "As a system admin, I need to fetch divisions near 48.85, 2.35 within 100km. Please return the names in French using pure ASCII format, and include any records deleted since yesterday for my daily audit.",
       "action_input": {
-        "locationId": "48.85,2.35",
+        "locationId": "+48.85+2.35",
         "radius": 100,
         "languageCode": "fr",
         "asciiMode": true,
@@ -280,7 +280,7 @@
     {
       "query": "For our international widget, query the divisions near 51.50, -0.12 within a 100 km radius. Use HATEOAS links, limit to 5 per page, and display the names in German.",
       "action_input": {
-        "locationId": "51.50,-0.12",
+        "locationId": "+51.50-0.12",
         "radius": 100,
         "languageCode": "de",
         "hateoasMode": true,
@@ -292,7 +292,7 @@
     {
       "query": "I am conducting a data cleanup. Check the 100 km area around 41.90, 12.49 for any division records deleted since last month. Output language should be Italian.",
       "action_input": {
-        "locationId": "41.90,12.49",
+        "locationId": "+41.90+12.49",
         "radius": 100,
         "languageCode": "it",
         "includeDeleted": "SINCE_LAST_MONTH"
@@ -303,7 +303,7 @@
     {
       "query": "Fetch the divisions near 34.05, -118.24 in Spanish, using ASCII mode, and return up to 20 results with HATEOAS enabled.",
       "action_input": {
-        "locationId": "34.05,-118.24",
+        "locationId": "+34.05-118.24",
         "radius": 100,
         "languageCode": "es",
         "asciiMode": true,
@@ -316,7 +316,7 @@
     {
       "query": "Query divisions near 35.68, 139.76. Include all deleted records, format names in Japanese, and provide HATEOAS pagination links.",
       "action_input": {
-        "locationId": "35.68,139.76",
+        "locationId": "+35.68+139.76",
         "radius": 100,
         "languageCode": "ja",
         "hateoasMode": true,
@@ -328,7 +328,7 @@
     {
       "query": "System log check: find divisions within 50km of 52.52, 13.40. Needs to be ASCII mode, German language, including records deleted since yesterday.",
       "action_input": {
-        "locationId": "52.52,13.40",
+        "locationId": "+52.52+13.40",
         "radius": 50,
         "languageCode": "de",
         "asciiMode": true,

@@ -1,5 +1,6 @@
 # === ste_runner.py ===
 import sys, os
+sys.stdout.reconfigure(encoding='utf-8')
 import re
 import json
 from datetime import datetime
@@ -20,14 +21,6 @@ with open("tool_metadata/tool_registry.json", "r", encoding="utf-8") as f:
 
 with open("tool_metadata/tool_description.json", "r", encoding="utf-8") as f:
     TOOL_DESCRIPTION = json.load(f)
-
-INTENT_DEFINITIONS_PATH = "results/intent_definitions.json"
-if os.path.exists(INTENT_DEFINITIONS_PATH):
-    with open(INTENT_DEFINITIONS_PATH, "r", encoding="utf-8") as f:
-        INTENT_DEFINITIONS = json.load(f)
-else:
-    INTENT_DEFINITIONS = {}
-
 
 # === API 呼叫 ===
 def run_tool(api_name: str, args: dict, truncate: int = 2048):
@@ -70,7 +63,7 @@ def LTM(queries, results):
     return [f"Query: {q} | Solved: {results[i]}" for i, q in enumerate(queries)]
 
 # === STE 主程式 ===
-def main(model_ckpt="gpt-oss:120b", num_episodes=5, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
+def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
     os.makedirs(dir_write, exist_ok=True)
 
     # === 載入 Prompt Template ===
@@ -101,71 +94,132 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=5, num_stm_slots=2, max_turn=5,
         data_dict = {}
 
     # === 從 RapidAPI Registry 載入所有 API ===
-    # api_list = list(TOOL_REGISTRY.keys())
-    api_list = ["get_divisions_near_location"]
+    api_list = [
+        "get_divisions_near_location",
+        "get_hotels_by_location",
+        "get_restaurants_by_location"
+    ]
 
     # === 每次只探索一個 API ===
     for api_name in api_list:
         if api_name not in data_dict:
-            data_dict[api_name] = {}
+            data_dict[api_name] = []
         
         print(f"\n===== Exploring {api_name} =====")
 
         api_info = f"API_name: {api_name}\nDescription:\n{json.dumps(TOOL_DESCRIPTION[api_name], indent=2, ensure_ascii=False)}"
-        intents = INTENT_DEFINITIONS.get(api_name, {}).get("intents", [])
-        if not intents:
-            intents = [{"name": "default", "description": "General usage", "key_parameters": []}]
 
-        for intent in intents:
-            intent_name = intent["name"]
-            intent_desc = intent["description"]
-            intent_params = ", ".join(intent["key_parameters"]) if intent["key_parameters"] else "None"
+        explored_queries, success_labels = [], []
+        api_sessions = data_dict[api_name]
 
-            # Check if this intent is already fully explored
-            if intent_name in data_dict[api_name] and len(data_dict[api_name][intent_name]) >= num_episodes * num_stm_slots:
-                print(f"  ⏭ Skipping Intent '{intent_name}' (Already processed)")
-                continue
+        # Resume from where we left off
+        completed_eps = len(api_sessions) // num_stm_slots if num_stm_slots > 0 else len(api_sessions)
+        ep_start = completed_eps
 
-            print(f"\n  === Exploring Intent: {intent_name} ===")
-            explored_queries, success_labels = [], []
-            intent_sessions = data_dict[api_name].get(intent_name, [])
+        if ep_start >= num_episodes:
+            print(f"  ⏭ Skipping '{api_name}' (Already processed)")
+            continue
 
-            # Resume from where we left off for this intent
-            completed_eps = len(intent_sessions) // num_stm_slots if num_stm_slots > 0 else len(intent_sessions)
-            ep_start = completed_eps
+        for ep in range(ep_start, num_episodes):
+            print(f"\n    --- Episode {ep} ---")
+            messages = [{"role": "system", "content": "You are a helpful assistant."}]
 
-            for ep in range(ep_start, num_episodes):
-                print(f"\n    --- Episode {ep} ---")
-                messages = [{"role": "system", "content": "You are a helpful assistant."}]
+            # === Step 1: Query 生成 ===
+            prompt_q = template_q.format(
+                api_descriptions=api_info
+            )
+            if explored_queries:
+                prompt_q_added_question = prompt_q + f"\n\n{PAST_Q_MSG_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{PAST_Q_MSG_post}"+ "\n\nOnly output the query itself, nothing else.\nUser Query:"
+            else:
+                prompt_q_added_question = prompt_q + "\n\nOnly output the query itself, nothing else.\nUser Query:"
 
-                # === Step 1: Query 生成 ===
-                prompt_q = template_q.format(
-                    api_descriptions=api_info,
-                    intent_name=intent_name,
-                    intent_description=intent_desc,
-                    intent_key_parameters=intent_params
+            query = ""
+            while not query:
+                response = chat_my(messages, prompt_q_added_question, max_tokens=1024, model=model_ckpt)[-1]["content"]
+                query = response.strip()
+            print(f"🧠 New Query: {query}")
+            explored_queries.append(query)
+            item = {"query": query, "chains": []}
+
+            messages = messages + [
+                {"role": "user", "content": prompt_q},
+                {"role": "assistant", "content": query}
+            ]
+
+            # === Step 2: ReAct Chain ===
+            prompt_a = template_a.format(api_descriptions=api_info, api_names=api_name, query=query)
+            messages = chat_my(messages, prompt_a, stop="Observation:", max_tokens=1024, model=model_ckpt)
+            temp = messages[-1]["content"]
+            parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
+
+            for turn in range(max_turn):
+                if not parsed["parse_successful"]:
+                    obs = parsed["parse_error_msg"]
+                elif parsed["finish"]:
+                    item["chains"].append({
+                        "step": turn,
+                        "parsed": parsed,
+                        "observation": "Final Answer"
+                    })
+                    break
+                else:
+                    try:
+                        args = safe_json_loads(parsed["action_input"])
+                        obs = run_tool(api_name, args)
+                    except Exception as e:
+                        obs = f"Error: {e}"
+
+                item["chains"].append({
+                    "step": turn,
+                    "parsed": parsed,
+                    "observation": obs
+                })
+                print(f"🔁 Turn {turn}: {parsed.get('action')} → {obs[:120]}")
+
+                messages = chat_my(messages, "Observation: " + obs, stop="Observation:", max_tokens=1024, model=model_ckpt)
+                temp = messages[-1]["content"]
+                parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
+
+            # === Step 3: Reflection ===
+            prompt_reflection = "Do you think you successfully fulfilled this query in the end? Respond with \"Yes\" or \"No\"."
+            messages = chat_my(messages, prompt_reflection, stop="Observation:", max_tokens=1024, model=model_ckpt)
+            res = messages[-1]["content"]
+            successful = "Yes" if "Yes" in res else "No"
+            print(f"✅ Reflection: {successful}")
+
+            item["reflection"] = successful
+            success_labels.append(successful)
+            api_sessions.append(item)
+
+            # === Step 4: Follow-up ===
+            for f_idx in range(num_stm_slots - 1):
+                print(f"\n      --- Follow-up #{f_idx + 1} ---")
+
+                follow_q = template_q_follow.format(
+                    api_descriptions=api_info
                 )
                 if explored_queries:
-                    prompt_q_added_question = prompt_q + f"\n\n{PAST_Q_MSG_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{PAST_Q_MSG_post}"+ "\n\nOnly output the query itself, nothing else.\nUser Query:"
+                    follow_q_added_question = follow_q + f"\n\n{PAST_Q_MSG_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{PAST_Q_MSG_post}"+ "\n\nOnly output the query itself, nothing else.\nUser Query:"
                 else:
-                    prompt_q_added_question = prompt_q + "\n\nOnly output the query itself, nothing else.\nUser Query:"
+                    follow_q_added_question = follow_q + "\n\nOnly output the query itself, nothing else.\nUser Query:"
 
-                query = ""
-                while not query:
-                    response = chat_my(messages, prompt_q_added_question, max_tokens=360, model=model_ckpt)[-1]["content"]
-                    query = response.strip()
-                print(f"🧠 New Query: {query}")
-                explored_queries.append(query)
-                item = {"intent": intent_name, "query": query, "chains": []}
-
+                follow_query = ""
+                while not follow_query:
+                    response = chat_my(messages, follow_q_added_question, max_tokens=1024, model=model_ckpt)[-1]["content"]
+                    follow_query = response.strip()
+                
                 messages = messages + [
-                    {"role": "user", "content": prompt_q},
-                    {"role": "assistant", "content": query}
+                    {"role": "user", "content": follow_q},
+                    {"role": "assistant", "content": follow_query}
                 ]
 
-                # === Step 2: ReAct Chain ===
-                prompt_a = template_a.format(api_descriptions=api_info, api_names=api_name, query=query)
-                messages = chat_my(messages, prompt_a, stop="Observation:", max_tokens=360, model=model_ckpt)
+                print(f"💬 Follow Query: {follow_query}")
+                explored_queries.append(follow_query)
+                item_follow = {"query": follow_query, "chains": []}
+
+                # === ReAct for follow-up ===
+                prompt_follow_a = template_a_follow.format(query=follow_query)
+                messages = chat_my(messages, prompt_follow_a, stop="Observation:", max_tokens=1024, model=model_ckpt)
                 temp = messages[-1]["content"]
                 parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
@@ -173,7 +227,7 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=5, num_stm_slots=2, max_turn=5,
                     if not parsed["parse_successful"]:
                         obs = parsed["parse_error_msg"]
                     elif parsed["finish"]:
-                        item["chains"].append({
+                        item_follow["chains"].append({
                             "step": turn,
                             "parsed": parsed,
                             "observation": "Final Answer"
@@ -186,107 +240,33 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=5, num_stm_slots=2, max_turn=5,
                         except Exception as e:
                             obs = f"Error: {e}"
 
-                    item["chains"].append({
+                    item_follow["chains"].append({
                         "step": turn,
                         "parsed": parsed,
                         "observation": obs
                     })
-                    print(f"🔁 Turn {turn}: {parsed.get('action')} → {obs[:120]}")
+                    print(f"🔁 Follow Turn {turn}: {parsed.get('action')} → {obs[:120]}")
 
-                    messages = chat_my(messages, "Observation: " + obs, stop="Observation:", max_tokens=360, model=model_ckpt)
+                    messages = chat_my(messages, "Observation: " + obs, stop="Observation:", max_tokens=1024, model=model_ckpt)
                     temp = messages[-1]["content"]
                     parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
 
-                # === Step 3: Reflection ===
-                prompt_reflection = "Do you think you successfully fulfilled this query in the end? Respond with \"Yes\" or \"No\"."
-                messages = chat_my(messages, prompt_reflection, stop="Observation:", max_tokens=360, model=model_ckpt)
+                # === Reflection for follow-up ===
+                prompt_reflection_f = "Do you think you successfully fulfilled this query in the end? Respond with \"Yes\" or \"No\"."
+                messages = chat_my(messages, prompt_reflection_f, stop="Observation:", max_tokens=1024, model=model_ckpt)
                 res = messages[-1]["content"]
                 successful = "Yes" if "Yes" in res else "No"
-                print(f"✅ Reflection: {successful}")
+                print(f"✅ Follow-up Reflection: {successful}")
 
-                item["reflection"] = successful
+                item_follow["reflection"] = successful
                 success_labels.append(successful)
-                intent_sessions.append(item)
-
-                # === Step 4: Follow-up ===
-                for f_idx in range(num_stm_slots - 1):
-                    print(f"\n      --- Follow-up #{f_idx + 1} ---")
-
-                    follow_q = template_q_follow.format(
-                        api_descriptions=api_info,
-                        intent_name=intent_name,
-                        intent_description=intent_desc,
-                        intent_key_parameters=intent_params
-                    )
-                    if explored_queries:
-                        follow_q_added_question = follow_q + f"\n\n{PAST_Q_MSG_pre}\n" + "\n".join(LTM(explored_queries, success_labels)) + f"\n\n{PAST_Q_MSG_post}"+ "\n\nOnly output the query itself, nothing else.\nUser Query:"
-                    else:
-                        follow_q_added_question = follow_q + "\n\nOnly output the query itself, nothing else.\nUser Query:"
-
-                    follow_query = ""
-                    while not follow_query:
-                        response = chat_my(messages, follow_q_added_question, max_tokens=360, model=model_ckpt)[-1]["content"]
-                        follow_query = response.strip()
-                    
-                    messages = messages + [
-                        {"role": "user", "content": follow_q},
-                        {"role": "assistant", "content": follow_query}
-                    ]
-
-                    print(f"💬 Follow Query: {follow_query}")
-                    explored_queries.append(follow_query)
-                    item_follow = {"intent": intent_name, "query": follow_query, "chains": []}
-
-                    # === ReAct for follow-up ===
-                    prompt_follow_a = template_a_follow.format(query=follow_query)
-                    messages = chat_my(messages, prompt_follow_a, stop="Observation:", max_tokens=360, model=model_ckpt)
-                    temp = messages[-1]["content"]
-                    parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
-
-                    for turn in range(max_turn):
-                        if not parsed["parse_successful"]:
-                            obs = parsed["parse_error_msg"]
-                        elif parsed["finish"]:
-                            item_follow["chains"].append({
-                                "step": turn,
-                                "parsed": parsed,
-                                "observation": "Final Answer"
-                            })
-                            break
-                        else:
-                            try:
-                                args = safe_json_loads(parsed["action_input"])
-                                obs = run_tool(api_name, args)
-                            except Exception as e:
-                                obs = f"Error: {e}"
-
-                        item_follow["chains"].append({
-                            "step": turn,
-                            "parsed": parsed,
-                            "observation": obs
-                        })
-                        print(f"🔁 Follow Turn {turn}: {parsed.get('action')} → {obs[:120]}")
-
-                        messages = chat_my(messages, "Observation: " + obs, stop="Observation:", max_tokens=360, model=model_ckpt)
-                        temp = messages[-1]["content"]
-                        parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
-
-                    # === Reflection for follow-up ===
-                    prompt_reflection_f = "Do you think you successfully fulfilled this query in the end? Respond with \"Yes\" or \"No\"."
-                    messages = chat_my(messages, prompt_reflection_f, stop="Observation:", max_tokens=360, model=model_ckpt)
-                    res = messages[-1]["content"]
-                    successful = "Yes" if "Yes" in res else "No"
-                    print(f"✅ Follow-up Reflection: {successful}")
-
-                    item_follow["reflection"] = successful
-                    success_labels.append(successful)
-                    intent_sessions.append(item_follow)
+                api_sessions.append(item_follow)
 
             # === Update dict and incrementally write ===
-            data_dict[api_name][intent_name] = intent_sessions
+            data_dict[api_name] = api_sessions
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(data_dict, f, indent=2, ensure_ascii=False)
-            print(f"💾 Saved progress for '{api_name}' / '{intent_name}' to {out_path}")
+            print(f"💾 Saved progress for '{api_name}' to {out_path}")
 
     print(f"\n🎉 All exploring done! Final results saved to {out_path}")
 

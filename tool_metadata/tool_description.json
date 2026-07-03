@@ -33,8 +33,8 @@
       {
         "name": "locationId",
         "type": "STRING",
-        "description": "The GPS coordinate of the center location, expressed in ISO-6709 format as latitude followed by longitude (e.g., '33.832213-118.387099' for a point near Los Angeles).",
-        "default": "33.832213-118.387099"
+        "description": "The GPS coordinate of the center location, expressed in ISO-6709 format as latitude followed by longitude (format: ±DD.DDDD±DDD.DDDD).",
+        "default": "+33.832213-118.387099"
       },
       {
         "name": "radius",

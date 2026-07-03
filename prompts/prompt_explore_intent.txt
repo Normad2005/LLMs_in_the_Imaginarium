@@ -3,14 +3,18 @@ Your task is to create a realistic user query for a specific usage scenario of a
 API Details:
 {api_descriptions}
 
-Please synthesize a natural user query that fits a likely usage scenario. The query should imply the user's goal and provide realistic input values.
+Target Scenario (Intent):
+Intent Name: {intent_name}
+Scenario Description: {intent_description}
+Key Parameters for this Scenario: {intent_key_parameters}
+
+Please synthesize a natural user query that fits exactly into the Target Scenario. The query should imply the user's goal described above and provide realistic input values that correspond to the Key Parameters.
 
 When you create your query:
 - Avoid explicitly mentioning the API name or the internal parameter names.
 - Make it sound like a real user asking a chatbot or search engine.
 - Include realistic and meaningful input values (e.g., a valid email address, a real city name, a date, or an ID).
-
-Only output the query itself, nothing else.
+- Make sure the query aligns closely with the Target Scenario and its key parameters.
 
 =========
 
@@ -54,9 +58,15 @@ Now you know a bit more about the API.
 Here is its description again to remind you of what it can do:  
 {api_descriptions}
 
+Target Scenario (Intent):
+Intent Name: {intent_name}
+Scenario Description: {intent_description}
+Key Parameters for this Scenario: {intent_key_parameters}
+
 Based on both the description and the previous usage, propose another realistic user query
-that explores the API further, but with different parameter values, 
-varied contexts, or a slightly different persona.
+that genuinely targets the same Target Scenario, but with different parameter values, 
+varied contexts, or a slightly different persona. Ensure it strictly remains within the bounds 
+of the Key Parameters.
 
 =========
 

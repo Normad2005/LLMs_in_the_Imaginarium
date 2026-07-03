@@ -79,11 +79,12 @@ def get_rapidapi_response(input_dict: dict, api_customization: bool=False, tools
     input_params_str = ""
     if len(tool_input) > 0:
         for key, value in tool_input.items():
-            if isinstance(value, str):
-                input_params_str += f'{key}="{value}", '
-            else:
-                input_params_str += f'{key}={value}, '
+            input_params_str += f"{key}={repr(value)}, "
     if not api_customization:
         input_params_str += f"toolbench_rapidapi_key='{rapidapi_key}'"
     success_flag, switch_flag, response_dict, save_cache = run(code_string, api_name, input_params_str)
-    return {"error": response_dict['error'], "response": str(response_dict['response'])[:2048]}
+    try:
+        resp_str = json.dumps(response_dict['response'], ensure_ascii=False)
+    except Exception:
+        resp_str = str(response_dict['response'])
+    return {"error": response_dict['error'], "response": resp_str[:2048]}

@@ -147,9 +147,10 @@ Restaurants 是一個非常單純的 API。在這裡，切分機制並沒有帶�
 
 | Runner / Schema Format | Well-formed Rate | API Match | Argument Correctness (Strict) | Avg Prompt Tokens |
 | --- | --- | --- | --- | --- |
-| **Unsplit (Lower Bound)** | 95.00% | 100.00% | **68.33%** | 4,405 |
-| **Split (Golden Upper Bound)** | 96.67% | 100.00% | **75.00%** | 4,266 |
-| **Dynamic Union (End-to-End)** | 98.33% | 98.31% | **68.33%** | 4,350 |
+| **Unsplit (Lower Bound)** | 95.00% | 100.00% | **71.67%** | 4,397 |
+| **Split (Golden Upper Bound)** | 96.67% | 100.00% | **73.33%** | 4,259 |
+| **Dynamic Union (End-to-End)** | 93.33% | 100.00% | **68.33%** | 4,239 |
+| **Top-1 Intent (Ablation, No Union)**| 93.33% | 100.00% | **65.00%** | 3,904 |
 
 #### Table 2: Retrieval Performance (HyDE + Dense Retrieval, Top-10)
 | Metric | Value |
