@@ -11,7 +11,7 @@ from Exploration.my_llm import chat_my
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 INTENT_DEF_PATH = "results/intent_definitions.json"
 TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
-OUTPUT_PATH = "results/improved_hyde_results.json"
+RESULTS_PATH = "results/improved_hyde_results.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
 TOP_K = 10  # Number of APIs to retrieve
 
@@ -78,11 +78,24 @@ def main():
     total_queries = sum(len(q_list) for q_list in dataset.values())
     
     out_results = []
+    evaluated_qids = set()
+    
+    if os.path.exists(RESULTS_PATH):
+        try:
+            with open(RESULTS_PATH, 'r', encoding='utf-8') as f:
+                out_results = json.load(f)
+            evaluated_qids = {r["query_id"] for r in out_results}
+            print(f"Loaded existing results from {RESULTS_PATH}. Will skip {len(evaluated_qids)} already evaluated queries.")
+        except Exception as e:
+            print(f"Warning: could not load existing results ({e}). Starting fresh.")
     
     query_idx = 0
     for target_api, queries in dataset.items():
         for q in queries:
             query_idx += 1
+            
+            if q["query_id"] in evaluated_qids:
+                continue
             query_text = q["query"]
             target_intent_id = q["target_intent_id"]
             
@@ -171,9 +184,9 @@ def main():
     print(f"{'='*50}")
 
     print("\nRetrieval Complete. Saving results...")
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+    with open(RESULTS_PATH, 'w', encoding='utf-8') as f:
         json.dump(out_results, f, ensure_ascii=False, indent=2)
-    print(f"Saved to {OUTPUT_PATH}")
+    print(f"Saved to {RESULTS_PATH}")
 
 if __name__ == "__main__":
     main()

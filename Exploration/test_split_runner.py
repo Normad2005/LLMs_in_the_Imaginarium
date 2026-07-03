@@ -68,15 +68,29 @@ def run_test():
         prompt_template = f.read().strip()
 
     results = {}
+    if os.path.exists(RESULTS_PATH):
+        try:
+            with open(RESULTS_PATH, "r", encoding="utf-8") as f:
+                results = json.load(f)
+            print(f"Loaded existing results from {RESULTS_PATH}. Will skip already evaluated queries.")
+        except Exception as e:
+            print(f"Warning: could not load existing results ({e}). Starting fresh.")
 
     print(f"Starting Split (Group B / Golden Upper Bound) Evaluation with {MODEL_CKPT}...")
     print(f"Using pre-computed HyDE Top-10 from: {HYDE_RESULTS_PATH}\n")
 
     for target_api, queries in dataset.items():
-        results[target_api] = []
+        if target_api not in results:
+            results[target_api] = []
+            
+        evaluated_qids = {r["query_id"] for r in results[target_api]}
+
         for q in queries:
-            query_text = q["query"]
             query_id = q["query_id"]
+            if query_id in evaluated_qids:
+                continue
+                
+            query_text = q["query"]
             gt_action_input = q["action_input"]
             target_intent_id = q["target_intent_id"]
 
