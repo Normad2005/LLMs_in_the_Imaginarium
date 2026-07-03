@@ -104,21 +104,33 @@ Restaurants 是一個非常單純的 API。在這裡，切分機制並沒有帶�
 ### 5.1 為什麼捨棄多型 (oneOf)？
 由 Group C 的實驗 (21.7%) 可知，SLM 在遇到 JSON Schema 的 `oneOf` 或 `anyOf` 等多型結構時，會遭遇嚴重的「注意力崩潰」與「Meta-Instruction Bleed」。然而，Group A 的聯集扁平結構 (53.3%) 證明了，**SLM 處理「單一但包含選填參數」的扁平 JSON 的能力，遠勝於處理「多重選項」的邏輯判斷**。
 
-### 5.2 系統運作流程 (The Ultimate Pipeline)
-這套終極架構將「Dynamic K 的檢索結果」與「動態扁平化 Schema」完美結合，徹底消滅了 `oneOf` 的存在：
+### 5.2 系統運作流程 (The Methodology)
+這套終極架構將「Dynamic K 的檢索結果」與「動態扁平化 Schema」完美結合，徹底消滅了 `oneOf` 的存在。運作流程分為以下步驟：
 
-1. **常態觸發 (單一意圖，佔比約 90%)**：
-   - 當 HyDE 檢索的 Top-1 分數領先 Top-2 超過 $\theta$ (0.05) 時，系統判定意圖明確。
-   - **Schema 策略**：直接丟給 LLM 該意圖專屬的 **Group B (Split)** 扁平格式。
-   - **預期表現**：享受近乎無敵的 80%~100% 極高準確率！
+**Step 1: 跨 API 檢索 (Global API Retrieval)**
+使用 HyDE 加上 Dense Retrieval，從整個資料庫中找出與使用者 Query 最匹配的 Top-10 個 API。此階段我們取得了 **Global API Recall@10 = 100%** 的好成績。
 
-2. **邊界模糊救援 (多重意圖，佔比約 10%)**：
-   - 當分數差距 $< \theta$，Dynamic K 抓出多個高分候選意圖（例如 Intent A 與 Intent B）。
-   - **Schema 策略 (Dynamic Union)**：**絕對不使用 `oneOf`**。系統在背景將這兩個意圖「動態聯集」為一個單一的扁平 Schema。
-     - **參數合併 (Properties Union)**：所有參數取聯集。只有當某參數在 A 與 B 中**皆為必填 (Required)** 時，才設為 Required，其餘一律降級為 Optional。
-     - **描述合併 (Description Union)**：將兩者的意圖描述組合成一段引導詞，例如：
+**Step 2: API 內部意圖評分 (Intra-API Intent Scoring)**
+對於這 10 個被選出的 API，我們會深入每一個 API 內部，計算其各個 Intent（意圖）與 Query 的相似度（透過與該 Intent 事先生成的「假想情境 / Fake Queries」計算餘弦相似度）。我們定義 **Intra-API Intent Recall@1** 為：在答案所屬的 Target API 中，其內部**最高分 (Top-1) 的意圖是否正是標準答案 (Ground Truth) 所設定的意圖**。
+
+**Step 3: 動態門檻判定 (Dynamic K Thresholding, $\theta=0.05$)**
+取得 API 內部所有 Intent 的分數後，我們找出最高分 ($S_{max}$)。接著檢查其他 Intent 的分數 $S_i$：若 $S_{max} - S_i \le \theta$，則該 Intent 也被納入「高信心候選清單 (Selected Intents)」。
+
+**Step 4: 動態聯集生成 (Dynamic Union Schema Generation)**
+根據高信心候選清單的長度，動態決定最終提供給 LLM 的 JSON Schema 格式：
+
+1. **常態觸發 (單一意圖，佔比約 70%)**：
+   - 當 $S_{max}$ 遙遙領先其他意圖（差距 $> \theta$），候選清單只有一個 Intent。
+   - **Schema 策略**：系統判定意圖明確，直接丟給 LLM 該意圖專屬的 **Group B (Split)** 扁平格式。
+   - **預期表現**：享受近乎無敵的極高準確率，完美排除無關參數的干擾。
+
+2. **邊界模糊救援 (多重意圖，佔比約 30%)**：
+   - 當分數差距 $\le \theta$，Dynamic K 抓出多個高分候選意圖（例如 Intent A 與 Intent B）。
+   - **Schema 策略 (Dynamic Union)**：**絕對不使用 `oneOf`**。系統在背景將這些意圖「動態聯集」為一個單一的扁平 Schema。
+     - **參數合併 (Properties Union)**：所有參數取聯集。只有當某參數在所有候選意圖中**皆為必填 (Required)** 時，才設為 Required，其餘一律降級為 Optional。
+     - **描述合併 (Description Union)**：將各個候選意圖的描述組合成一段引導詞，例如：
        `"This API serves multiple purposes. Depending on the user's context, you should either: (1) [Intent A Description] OR (2) [Intent B Description]. Fill in the relevant parameters accordingly."`
-   - **預期表現**：在最壞的情況下，我們仍能保有 Group A 那 53.3% 的下限保障，大幅優於強迫模型做 `oneOf` 選擇所帶來的 21% 慘劇。
+   - **預期表現**：在遇到意圖極度相似或模糊的情況時，它退化成一種包含所有可能參數的聯集結構，作為 SLM 保底防呆的安全網。
 
 ### 5.3 研究總結
 這套架構完美避開了小模型的邏輯短板，透過前端的「檢索消歧義」與後端的「動態 Schema 降維」，在「防呆」與「避免注意力崩潰」之間取得了真正的最優解。
