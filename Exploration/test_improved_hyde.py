@@ -78,24 +78,28 @@ def main():
     total_queries = sum(len(q_list) for q_list in dataset.values())
     
     out_results = []
-    evaluated_qids = set()
+    evaluated_apis = set()
     
     if os.path.exists(RESULTS_PATH):
         try:
             with open(RESULTS_PATH, 'r', encoding='utf-8') as f:
                 out_results = json.load(f)
-            evaluated_qids = {r["query_id"] for r in out_results}
-            print(f"Loaded existing results from {RESULTS_PATH}. Will skip {len(evaluated_qids)} already evaluated queries.")
+            # Find which APIs have already been evaluated based on their results
+            evaluated_apis = {r.get("ground_truth_api") for r in out_results if "ground_truth_api" in r}
+            print(f"Loaded existing results from {RESULTS_PATH}. Will skip {len(evaluated_apis)} already evaluated APIs.")
         except Exception as e:
             print(f"Warning: could not load existing results ({e}). Starting fresh.")
     
     query_idx = 0
     for target_api, queries in dataset.items():
+        if target_api in evaluated_apis:
+            print(f"Skipping API '{target_api}' (already evaluated)")
+            # Need to still advance query_idx so the counter is correct
+            query_idx += len(queries)
+            continue
+            
         for q in queries:
             query_idx += 1
-            
-            if q["query_id"] in evaluated_qids:
-                continue
             query_text = q["query"]
             target_intent_id = q["target_intent_id"]
             

@@ -48,16 +48,14 @@ def run_test():
     print(f"Using pre-computed HyDE Top-10 from: {HYDE_RESULTS_PATH}\n")
 
     for target_api, queries in dataset.items():
-        if target_api not in results:
-            results[target_api] = []
+        if target_api in results and len(results[target_api]) > 0:
+            print(f"Skipping API '{target_api}' (already evaluated in results.json)")
+            continue
             
-        evaluated_qids = {r["query_id"] for r in results[target_api]}
+        results[target_api] = []
 
         for q in queries:
             query_id = q["query_id"]
-            if query_id in evaluated_qids:
-                continue
-                
             query_text = q["query"]
             gt_action_input = q["action_input"]
 
