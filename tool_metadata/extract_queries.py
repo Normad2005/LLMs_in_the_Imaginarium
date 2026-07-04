@@ -4,8 +4,10 @@ import argparse
 
 # List of APIs you want to extract (you can edit this directly!)
 APIS_TO_TEST = [
-    # "verify_email",
-    # "search_public_restrooms",
+    "calculate_mortgage_payment",
+    "get_hotels_by_location",
+    "get_restaurants_by_location",
+    "get_divisions_near_location"
 ]
 
 def main():
