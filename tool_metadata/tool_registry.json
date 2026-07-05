@@ -7,6 +7,10 @@
     "category": "Data",
     "tool_name": "Car database"
   },
+  "get_vehicle_specifications": {
+    "category": "Data",
+    "tool_name": "Cars by API-Ninjas"
+  },
   "get_animal_facts": {
     "category": "Data",
     "tool_name": "Animals"
@@ -75,6 +79,10 @@
     "category": "Location",
     "tool_name": "Stadia Maps Time Zone API"
   },
+  "calculate_route": {
+    "category": "Mapping",
+    "tool_name": "MapToolkit"
+  },
   "get_planet_data": {
     "category": "Science",
     "tool_name": "Planets"
@@ -103,13 +111,13 @@
     "category": "Transportation",
     "tool_name": "Airlines"
   },
+  "get_flights_in_bounding_box": {
+    "category": "Transportation",
+    "tool_name": "Flight Radar"
+  },
   "get_motorcycle_data": {
     "category": "Transportation",
     "tool_name": "Motorcycles"
-  },
-  "get_airport_delay_statistics": {
-    "category": "Travel",
-    "tool_name": "AeroDataBox"
   },
   "get_air_quality_data": {
     "category": "Weather",

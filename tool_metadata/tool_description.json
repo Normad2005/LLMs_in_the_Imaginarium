@@ -11,10 +11,138 @@
     ],
     "optional_parameters": []
   },
+  "get_random_word": {
+    "description": "Retrieves a random word based on specified constraints such as length and character patterns.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "wordLength",
+        "type": "Number",
+        "description": "The exact length of the random word to retrieve. A value of 0 means no exact length constraint.",
+        "default": "0"
+      },
+      {
+        "name": "minLength",
+        "type": "Number",
+        "description": "The minimum length of the random word.",
+        "default": "0"
+      },
+      {
+        "name": "maxLength",
+        "type": "Number",
+        "description": "The maximum length of the random word.",
+        "default": "0"
+      },
+      {
+        "name": "includes",
+        "type": "String",
+        "description": "The specific characters that must be contained within the word."
+      },
+      {
+        "name": "excludes",
+        "type": "String",
+        "description": "The specific characters that must not appear in the word."
+      },
+      {
+        "name": "beginsWith",
+        "type": "String",
+        "description": "The specific character or substring that the word must start with."
+      },
+      {
+        "name": "endsWith",
+        "type": "String",
+        "description": "The specific character or substring that the word must end with."
+      }
+    ]
+  },
   "get_car_makes": {
     "description": "Return all car makes from a dataset",
     "required_parameters": [],
     "optional_parameters": []
+  },
+  "get_vehicle_specifications": {
+    "description": "Provides comprehensive vehicle specification information. Users can filter vehicle data using combinations of manufacturer, model, fuel efficiency (MPG), cylinder count, transmission type, year, drive type, and fuel type.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "model",
+        "type": "String",
+        "description": "Model of vehicle."
+      },
+      {
+        "name": "make",
+        "type": "String",
+        "description": "Vehicle manufacturer."
+      },
+      {
+        "name": "min_city_mpg",
+        "type": "Number",
+        "description": "Minimum City fuel efficiency in miles per gallon.",
+        "default": "0"
+      },
+      {
+        "name": "max_city_mpg",
+        "type": "Number",
+        "description": "Maximum city fuel efficiency in miles per gallon.",
+        "default": "0"
+      },
+      {
+        "name": "min_hwy_mpg",
+        "type": "Number",
+        "description": "Minimum highway fuel efficiency in miles per gallon.",
+        "default": "0"
+      },
+      {
+        "name": "max_hwy_mpg",
+        "type": "Number",
+        "description": "Maximum highway fuel efficiency in miles per gallon.",
+        "default": "0"
+      },
+      {
+        "name": "min_comb_mpg",
+        "type": "Number",
+        "description": "Minimum combination (city + highway) fuel efficiency in miles per gallon.",
+        "default": "0"
+      },
+      {
+        "name": "max_comb_mpg",
+        "type": "Number",
+        "description": "Maximum combination (city + highway) fuel efficiency in miles per gallon.",
+        "default": "0"
+      },
+      {
+        "name": "cylinders",
+        "type": "Number",
+        "description": "Number of cylinders. Possible values: 2, 3 4, 5, 6, 8, 10, 12, 16",
+        "default": "0"
+      },
+      {
+        "name": "transmission",
+        "type": "String",
+        "description": "Type of transmission. Possible values: manual, automatic"
+      },
+      {
+        "name": "year",
+        "type": "String",
+        "description": "Vehicle model year."
+      },
+      {
+        "name": "drive",
+        "type": "String",
+        "description": "Drive transmission. Possible values: fwd (front-wheel drive), rwd (rear-wheel drive), awd (all-wheel drive), 4wd (four-wheel drive)"
+      },
+      {
+        "name": "fuel_type",
+        "type": "String",
+        "description": "Type of fuel used. Possible values: gas, diesel, electricity"
+      },
+      {
+        "name": "limit",
+        "type": "String",
+        "description": "How many results to return. Must be between 1 and 30.",
+        "default": "5"
+      }
+    ]
   },
   "get_animal_facts": {
     "description": "Provides interesting scientific facts on thousands of different animal species.",
@@ -472,6 +600,60 @@
       }
     ]
   },
+  "calculate_route": {
+    "description": "Provides detailed routing information based on multiple waypoints. Supports various route types, custom layout weights, language-specific directions, and voice instructions.",
+    "required_parameters": [
+      {
+        "name": "points",
+        "type": "String",
+        "description": "Define multiple routing waypoints, consisting of latitude and longitude in the format '{lat},{lng}[|{lat},{lng} ...]'. At least 2 points are required."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "routeType",
+        "type": "String",
+        "description": "The transport mode for routing. For example: 'bike'.",
+        "default": "bike"
+      },
+      {
+        "name": "weighting",
+        "type": "String",
+        "description": "Route optimization weighting strategy. Only available if the set routeType is 'bike'.",
+        "default": "networks"
+      },
+      {
+        "name": "language",
+        "type": "String",
+        "description": "Language for the given instructions. Must be a valid ISO 639-1 language code.",
+        "default": "en"
+      },
+      {
+        "name": "voice_instructions",
+        "type": "String",
+        "description": "Enables voice instructions formatted for text-to-speech engines.",
+        "default": "false"
+      },
+      {
+        "name": "finish_instruction",
+        "type": "String",
+        "description": "Adds a specific finish instruction at the end of the calculated route.",
+        "default": "false"
+      },
+      {
+        "name": "format",
+        "type": "String",
+        "description": "The output response format. Options usually include json, gpx, or kml.",
+        "default": "json"
+      },
+      {
+        "name": "filename",
+        "type": "String",
+        "description": "The file name assigned to the output. Only available if the set format is 'gpx' or 'kml'.",
+        "default": ""
+      }
+    ]
+  },
   "get_planet_data": {
     "description": "Provides astronomical data on thousands of planets and exoplanets discovered in our universe.",
     "required_parameters": [],
@@ -679,6 +861,73 @@
       }
     ]
   },
+  "get_flights_in_bounding_box": {
+    "description": "Retrieves real-time flight data within a specified geographic bounding box defined by bottom-left and top-right coordinates, with options to filter by aircraft characteristics, speed, and airline.",
+    "required_parameters": [
+      {
+        "name": "bl_lat",
+        "type": "Number",
+        "description": "The bottom left latitude of the bounding box.",
+        "default": "13.607884"
+      },
+      {
+        "name": "bl_lng",
+        "type": "Number",
+        "description": "The bottom left longitude of the bounding box.",
+        "default": "100.641975"
+      },
+      {
+        "name": "tr_lat",
+        "type": "Number",
+        "description": "The top right latitude of the bounding box.",
+        "default": "13.771029"
+      },
+      {
+        "name": "tr_lng",
+        "type": "Number",
+        "description": "The top right longitude of the bounding box.",
+        "default": "100.861566"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "Number",
+        "description": "The number of flights per response. Cannot exceed 300.",
+        "default": "300"
+      },
+      {
+        "name": "speed",
+        "type": "String",
+        "description": "Filter flights by ground speed. The format must be 'min,max'. For example: '0,460'."
+      },
+      {
+        "name": "altitude",
+        "type": "String",
+        "description": "Filter flights by altitude. The format must be 'min,max'. For example: '0,48000'."
+      },
+      {
+        "name": "airline",
+        "type": "String",
+        "description": "Filter flights by airline. Enter the 3-letter ICAO airline code (e.g., 'THA' for Thai Airways)."
+      },
+      {
+        "name": "type",
+        "type": "String",
+        "description": "Filter flights by aircraft type. Enter the ICAO or IATA aircraft type code (e.g., 'A359' or '77W')."
+      },
+      {
+        "name": "airport",
+        "type": "String",
+        "description": "Filter flights by airport. Enter the 3-letter IATA airport code (e.g., 'BKK' or 'TPE')."
+      },
+      {
+        "name": "reg",
+        "type": "String",
+        "description": "Filter flights by aircraft registration number. For example: 'D-AIHV'."
+      }
+    ]
+  },
   "get_motorcycle_data": {
     "description": "Provides highly-detailed technical data on tens of thousands of different motorcycle models from hundreds of manufacturers.",
     "required_parameters": [],
@@ -699,24 +948,6 @@
         "description": "Release year of motorcycle model. Must be in the form of YYYY (e.g. 2022)."
       }
     ]
-  },
-  "get_airport_delay_statistics": {
-    "description": "Returns real-time departure and arrival delay statistics for a specified airport, identified by its IATA or ICAO code. Statistics cover a 2-hour observation window and include the total number of flights, number of cancellations, median delay duration, and a delay index for both departures and arrivals.",
-    "required_parameters": [
-      {
-        "name": "codeType",
-        "type": "STRING",
-        "description": "The type of airport code to search by. Accepted values: 'iata' (3-character IATA code, e.g., 'AMS', 'TPE') or 'icao' (4-character ICAO code, e.g., 'EHAM', 'RCTP').",
-        "default": "iata"
-      },
-      {
-        "name": "code",
-        "type": "STRING",
-        "description": "The airport code corresponding to the selected codeType. If codeType is 'iata', provide a 3-character IATA code (e.g., 'TPE'). If codeType is 'icao', provide a 4-character ICAO code (e.g., 'RCTP').",
-        "default": "TPE"
-      }
-    ],
-    "optional_parameters": []
   },
   "get_air_quality_data": {
     "description": "Provides the latest air quality information for any city or geographic location in the world, including the Air Quality Index (AQI) and concentrations for major pollutants (CO, NO2, O3, SO2, PM2.5, PM10).",

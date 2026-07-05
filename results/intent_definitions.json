@@ -574,5 +574,123 @@
         ]
       }
     ]
+  },
+  "get_vehicle_specifications": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "vehicle_spec_search",
+        "description": "I'm trying to find vehicles that fit my needs, so I specify the make, model, year, fuel efficiency, engine size, transmission type, drive type, and fuel type, and I tell the system how many results I want back.",
+        "key_parameters": [
+          "make",
+          "model",
+          "year",
+          "min_city_mpg",
+          "max_city_mpg",
+          "min_hwy_mpg",
+          "max_hwy_mpg",
+          "min_comb_mpg",
+          "max_comb_mpg",
+          "cylinders",
+          "transmission",
+          "drive",
+          "fuel_type",
+          "limit"
+        ]
+      }
+    ]
+  },
+  "get_flights_in_bounding_box": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "explore_flights_by_area",
+        "description": "I'm looking at a map and want to see every aircraft currently flying inside the rectangle I draw, just to get a quick sense of traffic around me.",
+        "key_parameters": [
+          "bl_lat",
+          "bl_lng",
+          "tr_lat",
+          "tr_lng",
+          "limit"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "search_flights_by_characteristics",
+        "description": "I'm an aviation enthusiast/researcher and need to find flights inside a specific region that match certain criteria like speed, altitude, airline, aircraft type, airport, or registration.",
+        "key_parameters": [
+          "bl_lat",
+          "bl_lng",
+          "tr_lat",
+          "tr_lng",
+          "limit",
+          "speed",
+          "altitude",
+          "airline",
+          "type",
+          "airport",
+          "reg"
+        ]
+      }
+    ]
+  },
+  "get_random_word": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "generate_random_word",
+        "description": "I want a random word that matches the exact constraints I have in mind—maybe a specific length, or it must contain certain letters while avoiding others, or it should start or end with a particular substring—for my writing prompt, game clue, or language exercise.",
+        "key_parameters": [
+          "wordLength",
+          "minLength",
+          "maxLength",
+          "includes",
+          "excludes",
+          "beginsWith",
+          "endsWith"
+        ]
+      }
+    ]
+  },
+  "calculate_route": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "basic_route_query",
+        "description": "I'm planning a trip and need step‑by‑step directions between several locations, choosing whether I'm walking, biking, or driving, and I want the instructions in my language, possibly with voice cues, and I prefer the result in JSON.",
+        "key_parameters": [
+          "points",
+          "routeType",
+          "language",
+          "voice_instructions",
+          "finish_instruction",
+          "format"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "cyclist_weighted_route",
+        "description": "I'm a cyclist looking for the fastest bike route that takes into account specific network preferences, so I need a bike‑only route with a custom weighting strategy and the directions in my language.",
+        "key_parameters": [
+          "points",
+          "routeType",
+          "weighting",
+          "language",
+          "format"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "file_export_route",
+        "description": "I need to download the route as a GPX/KML file to load into my GPS device, so I want the route generated and saved under a specific filename.",
+        "key_parameters": [
+          "points",
+          "format",
+          "filename",
+          "routeType",
+          "language"
+        ]
+      }
+    ]
   }
 }

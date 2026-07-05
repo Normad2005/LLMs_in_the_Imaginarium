@@ -779,57 +779,56 @@
   "calculate_mortgage_payment": [
     {
       "query": "I talked to the bank today, and I've locked in a $1,500,000 loan at 3.5% interest for 30 years. Could you tell me what my basic monthly payment will be?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 3.5,
         "loan_amount": 1500000,
         "duration_years": 30
       },
+      "query_id": "batch_0",
       "target_intent_id": 0
     },
     {
       "query": "If I borrow exactly $400,000 over a 15-year term with a 5% rate, how much do I owe each month?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 5.0,
         "loan_amount": 400000,
         "duration_years": 15
       },
+      "query_id": "batch_1",
       "target_intent_id": 0
     },
     {
       "query": "We're taking out a loan of $250k. Our interest rate is 6.2%, and we chose a 20-year repayment schedule. What's the monthly installment?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 6.2,
         "loan_amount": 250000,
         "duration_years": 20
       },
+      "query_id": "batch_2",
       "target_intent_id": 0
     },
     {
       "query": "Calculate the payment for a straight $800,000 mortgage over 30 years at 4.25%.",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 4.25,
         "loan_amount": 800000,
         "duration_years": 30
       },
+      "query_id": "batch_3",
       "target_intent_id": 0
     },
     {
       "query": "I need to know the monthly cost of a $50,000 loan, 10-year term, at 7.5% interest.",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 7.5,
         "loan_amount": 50000,
         "duration_years": 10
       },
+      "query_id": "batch_4",
       "target_intent_id": 0
     },
     {
       "query": "I got approved for a $600,000 loan at 4.0% for 30 years. The community charges $250 a month for HOA, and I got a quote of $1,200 annually for property tax. I also have $1,000 a year in home insurance. What's my true monthly cost?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 4.0,
         "loan_amount": 600000,
@@ -838,11 +837,11 @@
         "annual_property_tax": 1200,
         "annual_home_insurance": 1000
       },
+      "query_id": "batch_5",
       "target_intent_id": 1
     },
     {
       "query": "My loan is $350k at 5.5% for 25 years. The taxes are around $3000 yearly, and HOA is $100 per month. Give me the total monthly breakdown.",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 5.5,
         "loan_amount": 350000,
@@ -850,11 +849,11 @@
         "annual_property_tax": 3000,
         "monthly_hoa": 100
       },
+      "query_id": "batch_6",
       "target_intent_id": 1
     },
     {
       "query": "I'm borrowing $1.2M at 6.8% for 30 years. With annual home insurance of $2400 and monthly HOA of $500, what will I be paying every month?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 6.8,
         "loan_amount": 1200000,
@@ -862,22 +861,22 @@
         "annual_home_insurance": 2400,
         "monthly_hoa": 500
       },
+      "query_id": "batch_7",
       "target_intent_id": 1
     },
     {
       "query": "Just finalizing my budget. Loan is $450,000, 30 years, 3.8% rate. Property taxes are $4000 a year. What's the payment?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 3.8,
         "loan_amount": 450000,
         "duration_years": 30,
         "annual_property_tax": 4000
       },
+      "query_id": "batch_8",
       "target_intent_id": 1
     },
     {
       "query": "For a $900,000 loan at 4.5% over 15 years, with $6000 annual taxes and $1500 annual insurance, calculate my total housing expense.",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 4.5,
         "loan_amount": 900000,
@@ -885,61 +884,62 @@
         "annual_property_tax": 6000,
         "annual_home_insurance": 1500
       },
+      "query_id": "batch_9",
       "target_intent_id": 1
     },
     {
       "query": "I'm eyeing a beautiful $850,000 house in the suburbs. I've saved up $150,000 for the downpayment. If the bank gives me a 5.2% rate for 30 years, how much will I pay monthly?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 5.2,
         "home_value": 850000,
         "downpayment": 150000,
         "duration_years": 30
       },
+      "query_id": "batch_10",
       "target_intent_id": 2
     },
     {
       "query": "We want to buy a condo priced at $300,000. We can put down 20%, which is $60,000. The mortgage rate is 6.0% for 20 years. What's the payment?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 6.0,
         "home_value": 300000,
         "downpayment": 60000,
         "duration_years": 20
       },
+      "query_id": "batch_11",
       "target_intent_id": 2
     },
     {
       "query": "Looking at a $2 million mansion. I'll put down $500,000. Rate is 4.1% on a 30-year fixed. Figure out my monthly payment.",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 4.1,
         "home_value": 2000000,
         "downpayment": 500000,
         "duration_years": 30
       },
+      "query_id": "batch_12",
       "target_intent_id": 2
     },
     {
       "query": "A starter home is selling for $180,000. I have $10,000 for the downpayment. With a 7.2% rate over 30 years, how much is the mortgage?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 7.2,
         "home_value": 180000,
         "downpayment": 10000,
         "duration_years": 30
       },
+      "query_id": "batch_13",
       "target_intent_id": 2
     },
     {
       "query": "I'm purchasing a property worth $550k. My downpayment is $50k. The 15-year rate is currently 3.9%. What's the monthly burden?",
-      "action": "calculate_mortgage_payment",
       "action_input": {
         "interest_rate": 3.9,
         "home_value": 550000,
         "downpayment": 50000,
         "duration_years": 15
       },
+      "query_id": "batch_14",
       "target_intent_id": 2
     }
   ],
@@ -1470,78 +1470,140 @@
   ],
   "get_planet_data": [
     {
-      "query": "Show me data for the planet Earth.",
+      "query": "My kid is doing a school project on Jupiter and needs some quick facts. Can you pull up its astronomical data?",
       "action": "get_planet_data",
       "action_input": {
-        "name": "Earth"
-      }
+        "name": "Jupiter"
+      },
+      "target_intent_id": 0
     },
     {
-      "query": "Find planets with a mass between 0.5 and 2 Jupiters.",
+      "query": "I was reading a sci-fi book that mentioned the exoplanet Kepler-186f. I'm curious if it's a real planet and what its properties are.",
+      "action": "get_planet_data",
+      "action_input": {
+        "name": "Kepler-186f"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me the basic statistics for Mars, like its mass and radius?",
+      "action": "get_planet_data",
+      "action_input": {
+        "name": "Mars"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm writing an article about the solar system. Could you fetch the full details for Saturn?",
+      "action": "get_planet_data",
+      "action_input": {
+        "name": "Saturn"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up the properties of Proxima Centauri b? I read it's the closest exoplanet to us.",
+      "action": "get_planet_data",
+      "action_input": {
+        "name": "Proxima Centauri b"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "We're studying icy bodies in astronomy class. What data do you have on Neptune?",
+      "action": "get_planet_data",
+      "action_input": {
+        "name": "Neptune"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know the mass, radius, and distance of TRAPPIST-1e. Please retrieve its stats.",
+      "action": "get_planet_data",
+      "action_input": {
+        "name": "TRAPPIST-1e"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm an astrophysics student looking for habitable zone candidates. I need planets that are between 0.5 and 2.0 Earth masses, with an orbital period between 200 and 400 days, and located within 50 light years from us.",
       "action": "get_planet_data",
       "action_input": {
         "min_mass": 0.5,
-        "max_mass": 2
-      }
-    },
-    {
-      "query": "List planets with radius smaller than 0.8 Jupiters.",
-      "action": "get_planet_data",
-      "action_input": {
-        "max_radius": 0.8
-      }
-    },
-    {
-      "query": "Get planets with an orbital period between 100 and 400 Earth days.",
-      "action": "get_planet_data",
-      "action_input": {
-        "min_period": 100,
-        "max_period": 400
-      }
-    },
-    {
-      "query": "Find exoplanets with a surface temperature between 200K and 500K.",
-      "action": "get_planet_data",
-      "action_input": {
-        "min_temperature": 200,
-        "max_temperature": 500
-      }
-    },
-    {
-      "query": "Show planets that are within 50 light years from Earth.",
-      "action": "get_planet_data",
-      "action_input": {
+        "max_mass": 2.0,
+        "min_period": 200,
+        "max_period": 400,
         "max_distance_light_year": 50
-      }
+      },
+      "target_intent_id": 1
     },
     {
-      "query": "Give me all planets larger than 1 Jupiter radius.",
+      "query": "Are there any massive gas giants out there? I'm searching for planets with a mass between 10 and 50 Jupiter masses and a temperature over 1000 Kelvin.",
       "action": "get_planet_data",
       "action_input": {
-        "min_radius": 1
-      }
-    },
-    {
-      "query": "Search for planets named Kepler-22b.",
-      "action": "get_planet_data",
-      "action_input": {
-        "name": "Kepler-22b"
-      }
-    },
-    {
-      "query": "Find hot exoplanets with temperatures above 1000K.",
-      "action": "get_planet_data",
-      "action_input": {
+        "min_mass": 10,
+        "max_mass": 50,
         "min_temperature": 1000
-      }
+      },
+      "target_intent_id": 1
     },
     {
-      "query": "List distant planets located between 100 and 1000 light years away.",
+      "query": "I want to study small, compact worlds. Show me planets with a radius less than 0.8 Earth radii and an orbital period of less than 10 days.",
       "action": "get_planet_data",
       "action_input": {
-        "min_distance_light_year": 100,
-        "max_distance_light_year": 1000
-      }
+        "max_radius": 0.8,
+        "max_period": 10
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm looking for Earth-like planets. Show me ones with a radius between 0.9 and 1.2 Earth radii and a temperature between 250 and 300 Kelvin.",
+      "action": "get_planet_data",
+      "action_input": {
+        "min_radius": 0.9,
+        "max_radius": 1.2,
+        "min_temperature": 250,
+        "max_temperature": 300
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Find me massive, distant exoplanets. The mass should be at least 5 Jupiter masses, and they should be located further than 1000 light years from Earth.",
+      "action": "get_planet_data",
+      "action_input": {
+        "min_mass": 5,
+        "min_distance_light_year": 1000
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I need a list of hot Jupiters. Filter for planets with a mass between 0.5 and 3.0 Jupiter masses, and an orbital period of less than 5 days.",
+      "action": "get_planet_data",
+      "action_input": {
+        "min_mass": 0.5,
+        "max_mass": 3.0,
+        "max_period": 5
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Are there any extremely cold exoplanets nearby? I want planets within 20 light years that have a maximum temperature of 100 Kelvin.",
+      "action": "get_planet_data",
+      "action_input": {
+        "max_distance_light_year": 20,
+        "max_temperature": 100
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "My research focuses on super-Earths with very long orbits. Can you find planets with a mass between 2 and 10 Earth masses and a period of over 500 days?",
+      "action": "get_planet_data",
+      "action_input": {
+        "min_mass": 2,
+        "max_mass": 10,
+        "min_period": 500
+      },
+      "target_intent_id": 1
     }
   ],
   "get_celestial_body_position": [
@@ -2666,6 +2728,383 @@
         "currency": "AED"
       },
       "target_intent_id": 1
+    }
+  ],
+  "get_flights_in_bounding_box": [
+    {
+      "query": "I'm looking at a map of the San Francisco Bay Area, roughly from latitude 37.5 to 37.9 and longitude -122.5 to -122.1. Can you show me up to 50 planes currently flying in this view?",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 37.5,
+        "tr_lat": 37.9,
+        "bl_lng": -122.5,
+        "tr_lng": -122.1,
+        "limit": 50
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "My current radar screen covers the region bounded by lat 51.0 to 51.6 and lon -0.5 to 0.3 over London. Are there any flights passing through? Just give me the first 20.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 51.0,
+        "tr_lat": 51.6,
+        "bl_lng": -0.5,
+        "tr_lng": 0.3,
+        "limit": 20
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm tracking air traffic over Tokyo. The map coordinates are 35.5 to 35.8 north, and 139.6 to 139.9 east. List 100 aircraft currently in this sector.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 35.5,
+        "tr_lat": 35.8,
+        "bl_lng": 139.6,
+        "tr_lng": 139.9,
+        "limit": 100
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am standing at the window looking out over the Los Angeles area. Coordinates are 33.7 to 34.3 lat and -118.6 to -118.0 lon. Are there any commercial jets visible? List up to 40.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 33.7,
+        "tr_lat": 34.3,
+        "bl_lng": -118.6,
+        "tr_lng": -118.0,
+        "limit": 40
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "My monitor is locked onto the airspace above Sydney (latitude -34.0 to -33.6, longitude 150.9 to 151.3). Can you populate the map with the first 50 flights?",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": -34.0,
+        "tr_lat": -33.6,
+        "bl_lng": 150.9,
+        "tr_lng": 151.3,
+        "limit": 50
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm tracking aircraft movements across the English Channel. The box is from lat 50.0 to 51.0 and lon 0.0 to 1.5. Return a batch of 75 aircraft.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 50.0,
+        "tr_lat": 51.0,
+        "bl_lng": 0.0,
+        "tr_lng": 1.5,
+        "limit": 75
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "We need a traffic summary over Beijing. Coordinates: 39.7 to 40.2 north, 116.1 to 116.7 east. Get me up to 100 live flights.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 39.7,
+        "tr_lat": 40.2,
+        "bl_lng": 116.1,
+        "tr_lng": 116.7,
+        "limit": 100
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm watching the skies over Paris (lat 48.8 to 49.0, lon 2.3 to 2.6). I only want to see high-altitude flights cruising between 30000 and 40000 feet. Also, filter it so I only see Air France (AFR) planes.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 48.8,
+        "tr_lat": 49.0,
+        "bl_lng": 2.3,
+        "tr_lng": 2.6,
+        "altitude": "30000,40000",
+        "airline": "AFR",
+        "limit": 300
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Scan the airspace near Chicago (lat 41.7 to 42.0, lon -87.8 to -87.5). Are there any Boeing 777s (77W) flying incredibly fast, like between 400 and 600 knots? Show me up to 10 of them.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 41.7,
+        "tr_lat": 42.0,
+        "bl_lng": -87.8,
+        "tr_lng": -87.5,
+        "speed": "400,600",
+        "type": "77W",
+        "limit": 10
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "My viewport is set over Dubai, from latitude 25.0 to 25.4 and longitude 55.1 to 55.5. I'm specifically tracking an Emirates flight headed to DXB airport with the tail registration A6-EVS.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 25.0,
+        "tr_lat": 25.4,
+        "bl_lng": 55.1,
+        "tr_lng": 55.5,
+        "airport": "DXB",
+        "reg": "A6-EVS",
+        "limit": 300
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm monitoring the zone around Frankfurt (lat 50.0 to 50.3, lon 8.4 to 8.8). I only want to see Lufthansa (DLH) flights that are descending below 10,000 feet. Show up to 20.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 50.0,
+        "tr_lat": 50.3,
+        "bl_lng": 8.4,
+        "tr_lng": 8.8,
+        "airline": "DLH",
+        "altitude": "0,10000",
+        "limit": 20
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Are there any slow-moving aircraft, like helicopters or light planes, over New York right now (lat 40.5 to 40.9, lon -74.2 to -73.7)? Filter for speeds between 0 and 150 knots.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 40.5,
+        "tr_lat": 40.9,
+        "bl_lng": -74.2,
+        "tr_lng": -73.7,
+        "speed": "0,150",
+        "limit": 300
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Focus the radar on the area bounded by 1.2 to 1.5 north and 103.6 to 104.0 east (Singapore). I need to isolate all Airbus A380s (A388) inbound or outbound. Maximum 15 results.",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 1.2,
+        "tr_lat": 1.5,
+        "bl_lng": 103.6,
+        "tr_lng": 104.0,
+        "type": "A388",
+        "limit": 15
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Over the skies of Atlanta (33.5 to 33.8 lat, -84.6 to -84.2 lon), I'm trying to track down a specific Delta plane with registration N501DN. Is it in this box?",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 33.5,
+        "tr_lat": 33.8,
+        "bl_lng": -84.6,
+        "tr_lng": -84.2,
+        "reg": "N501DN",
+        "limit": 300
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm a spotter looking at the map over Amsterdam (52.2 to 52.4 lat, 4.6 to 4.9 lon). I want to see all flights that are explicitly associated with Schiphol airport (AMS).",
+      "action": "get_flights_in_bounding_box",
+      "action_input": {
+        "bl_lat": 52.2,
+        "tr_lat": 52.4,
+        "bl_lng": 4.6,
+        "tr_lng": 4.9,
+        "airport": "AMS",
+        "limit": 300
+      },
+      "target_intent_id": 1
+    }
+  ],
+  "calculate_route": [
+    {
+      "query": "I need driving directions from my hotel at 40.7128,-74.0060 to the museum at 40.7580,-73.9855. Please give me the instructions in Spanish, and make sure to include voice cues since I'll be driving.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "40.7128,-74.0060|40.7580,-73.9855",
+        "routeType": "car",
+        "language": "es",
+        "voice_instructions": "true",
+        "finish_instruction": "true",
+        "format": "json"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you map out a walking path from 51.5074,-0.1278 to 51.5033,-0.1195? I need the output in plain JSON format with English turn-by-turn guidance, and don't worry about any finish instructions.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "51.5074,-0.1278|51.5033,-0.1195",
+        "routeType": "foot",
+        "language": "en",
+        "voice_instructions": "false",
+        "finish_instruction": "false",
+        "format": "json"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am walking from 35.6895,139.6917 to 35.6580,139.7016 in Tokyo. I need the turn-by-turn directions in Japanese, and please make sure voice cues are disabled.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "35.6895,139.6917|35.6580,139.7016",
+        "routeType": "foot",
+        "language": "ja",
+        "voice_instructions": "false",
+        "format": "json"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "We are driving an RV across the country from 39.7392,-104.9903 to 40.7608,-111.8910. Give us the car route in English with a special finish instruction when we pull into the campground.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "39.7392,-104.9903|40.7608,-111.8910",
+        "routeType": "car",
+        "language": "en",
+        "finish_instruction": "true",
+        "format": "json"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "Route a delivery truck from 41.8781,-87.6298 to 39.9612,-82.9988. I need the JSON payload with English text instructions, and absolutely no voice instructions.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "41.8781,-87.6298|39.9612,-82.9988",
+        "routeType": "truck",
+        "language": "en",
+        "voice_instructions": "false",
+        "format": "json"
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm planning a cycling trip from 48.8566,2.3522 to 48.8014,2.1204. Since I'm on a bike, please optimize the route weighting for 'quiet_roads' and give me the directions in English JSON.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "48.8566,2.3522|48.8014,2.1204",
+        "routeType": "bike",
+        "weighting": "quiet_roads",
+        "language": "en",
+        "format": "json"
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Plot a bicycle route across the city from 52.5200,13.4050 to 52.5015,13.3444. I want the weighting strategy set to 'networks' to stick to designated cycling paths. Keep it in German.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "52.5200,13.4050|52.5015,13.3444",
+        "routeType": "bike",
+        "weighting": "networks",
+        "language": "de",
+        "format": "json"
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm commuting to work on my bicycle from 51.0504,13.7373 to 51.0259,13.7252. I want a safe route, so please weight it for 'networks'. German directions are fine.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "51.0504,13.7373|51.0259,13.7252",
+        "routeType": "bike",
+        "weighting": "networks",
+        "language": "de",
+        "format": "json"
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Can you find a scenic bike path between 45.4215,-75.6972 and 45.3512,-75.7583? I prefer a route weighted towards 'quiet_roads'. Give me the result in English.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "45.4215,-75.6972|45.3512,-75.7583",
+        "routeType": "bike",
+        "weighting": "quiet_roads",
+        "language": "en",
+        "format": "json"
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm racing from 43.7001,7.2691 to 43.5528,7.0174 on a road bike. Calculate the fastest route without any network weighting preference (just default). Provide instructions in French.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "43.7001,7.2691|43.5528,7.0174",
+        "routeType": "bike",
+        "language": "fr",
+        "format": "json"
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "I need to download a GPX file for my hiking GPS device. The trail goes from 47.3769,8.5417 to 46.2044,6.1432 on foot. Please name the file 'swiss_hike'.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "47.3769,8.5417|46.2044,6.1432",
+        "format": "gpx",
+        "filename": "swiss_hike",
+        "routeType": "foot",
+        "language": "en"
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "Generate a KML file named 'road_trip' for a car route from 37.7749,-122.4194 to 34.0522,-118.2437 so I can load it into Google Earth.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "37.7749,-122.4194|34.0522,-118.2437",
+        "format": "kml",
+        "filename": "road_trip",
+        "routeType": "car",
+        "language": "en"
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "We mapped a road trip from 25.7617,-80.1918 all the way down to 24.5551,-81.7800 by car. I want to save this route as a KML file. Just call it 'florida_keys'.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "25.7617,-80.1918|24.5551,-81.7800",
+        "routeType": "car",
+        "format": "kml",
+        "filename": "florida_keys",
+        "language": "en"
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "I'm organizing a marathon route on foot starting at 42.3601,-71.0589 and ending at 42.3314,-71.1662. Export the exact path to a GPX file named 'boston_run'.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "42.3601,-71.0589|42.3314,-71.1662",
+        "routeType": "foot",
+        "format": "gpx",
+        "filename": "boston_run",
+        "language": "en"
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "Create a truck delivery manifest route from 32.7767,-96.7970 to 29.7604,-95.3698. I need the geometry data as a KML file titled 'texas_delivery'. English is good.",
+      "action": "calculate_route",
+      "action_input": {
+        "points": "32.7767,-96.7970|29.7604,-95.3698",
+        "routeType": "truck",
+        "format": "kml",
+        "filename": "texas_delivery",
+        "language": "en"
+      },
+      "target_intent_id": 2
     }
   ]
 }

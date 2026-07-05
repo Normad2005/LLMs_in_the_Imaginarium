@@ -7,7 +7,10 @@ APIS_TO_TEST = [
     "calculate_mortgage_payment",
     "get_hotels_by_location",
     "get_restaurants_by_location",
-    "get_divisions_near_location"
+    "get_divisions_near_location",
+    "get_planet_data",
+    "get_flights_in_bounding_box",
+    "calculate_route",
 ]
 
 def main():

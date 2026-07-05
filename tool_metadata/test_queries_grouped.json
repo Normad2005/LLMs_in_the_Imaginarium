@@ -764,5 +764,520 @@
       "query_id": "batch_59",
       "target_intent_id": 1
     }
+  ],
+  "get_planet_data": [
+    {
+      "query": "My kid is doing a school project on Jupiter and needs some quick facts. Can you pull up its astronomical data?",
+      "action_input": {
+        "name": "Jupiter"
+      },
+      "query_id": "batch_60",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I was reading a sci-fi book that mentioned the exoplanet Kepler-186f. I'm curious if it's a real planet and what its properties are.",
+      "action_input": {
+        "name": "Kepler-186f"
+      },
+      "query_id": "batch_61",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me the basic statistics for Mars, like its mass and radius?",
+      "action_input": {
+        "name": "Mars"
+      },
+      "query_id": "batch_62",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm writing an article about the solar system. Could you fetch the full details for Saturn?",
+      "action_input": {
+        "name": "Saturn"
+      },
+      "query_id": "batch_63",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up the properties of Proxima Centauri b? I read it's the closest exoplanet to us.",
+      "action_input": {
+        "name": "Proxima Centauri b"
+      },
+      "query_id": "batch_64",
+      "target_intent_id": 0
+    },
+    {
+      "query": "We're studying icy bodies in astronomy class. What data do you have on Neptune?",
+      "action_input": {
+        "name": "Neptune"
+      },
+      "query_id": "batch_65",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know the mass, radius, and distance of TRAPPIST-1e. Please retrieve its stats.",
+      "action_input": {
+        "name": "TRAPPIST-1e"
+      },
+      "query_id": "batch_66",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm an astrophysics student looking for habitable zone candidates. I need planets that are between 0.5 and 2.0 Earth masses, with an orbital period between 200 and 400 days, and located within 50 light years from us.",
+      "action_input": {
+        "min_mass": 0.5,
+        "max_mass": 2.0,
+        "min_period": 200,
+        "max_period": 400,
+        "max_distance_light_year": 50
+      },
+      "query_id": "batch_67",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Are there any massive gas giants out there? I'm searching for planets with a mass between 10 and 50 Jupiter masses and a temperature over 1000 Kelvin.",
+      "action_input": {
+        "min_mass": 10,
+        "max_mass": 50,
+        "min_temperature": 1000
+      },
+      "query_id": "batch_68",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I want to study small, compact worlds. Show me planets with a radius less than 0.8 Earth radii and an orbital period of less than 10 days.",
+      "action_input": {
+        "max_radius": 0.8,
+        "max_period": 10
+      },
+      "query_id": "batch_69",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm looking for Earth-like planets. Show me ones with a radius between 0.9 and 1.2 Earth radii and a temperature between 250 and 300 Kelvin.",
+      "action_input": {
+        "min_radius": 0.9,
+        "max_radius": 1.2,
+        "min_temperature": 250,
+        "max_temperature": 300
+      },
+      "query_id": "batch_70",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Find me massive, distant exoplanets. The mass should be at least 5 Jupiter masses, and they should be located further than 1000 light years from Earth.",
+      "action_input": {
+        "min_mass": 5,
+        "min_distance_light_year": 1000
+      },
+      "query_id": "batch_71",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I need a list of hot Jupiters. Filter for planets with a mass between 0.5 and 3.0 Jupiter masses, and an orbital period of less than 5 days.",
+      "action_input": {
+        "min_mass": 0.5,
+        "max_mass": 3.0,
+        "max_period": 5
+      },
+      "query_id": "batch_72",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Are there any extremely cold exoplanets nearby? I want planets within 20 light years that have a maximum temperature of 100 Kelvin.",
+      "action_input": {
+        "max_distance_light_year": 20,
+        "max_temperature": 100
+      },
+      "query_id": "batch_73",
+      "target_intent_id": 1
+    },
+    {
+      "query": "My research focuses on super-Earths with very long orbits. Can you find planets with a mass between 2 and 10 Earth masses and a period of over 500 days?",
+      "action_input": {
+        "min_mass": 2,
+        "max_mass": 10,
+        "min_period": 500
+      },
+      "query_id": "batch_74",
+      "target_intent_id": 1
+    }
+  ],
+  "get_flights_in_bounding_box": [
+    {
+      "query": "I'm looking at a map of the San Francisco Bay Area, roughly from latitude 37.5 to 37.9 and longitude -122.5 to -122.1. Can you show me up to 50 planes currently flying in this view?",
+      "action_input": {
+        "bl_lat": 37.5,
+        "tr_lat": 37.9,
+        "bl_lng": -122.5,
+        "tr_lng": -122.1,
+        "limit": 50
+      },
+      "query_id": "batch_75",
+      "target_intent_id": 0
+    },
+    {
+      "query": "My current radar screen covers the region bounded by lat 51.0 to 51.6 and lon -0.5 to 0.3 over London. Are there any flights passing through? Just give me the first 20.",
+      "action_input": {
+        "bl_lat": 51.0,
+        "tr_lat": 51.6,
+        "bl_lng": -0.5,
+        "tr_lng": 0.3,
+        "limit": 20
+      },
+      "query_id": "batch_76",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm tracking air traffic over Tokyo. The map coordinates are 35.5 to 35.8 north, and 139.6 to 139.9 east. List 100 aircraft currently in this sector.",
+      "action_input": {
+        "bl_lat": 35.5,
+        "tr_lat": 35.8,
+        "bl_lng": 139.6,
+        "tr_lng": 139.9,
+        "limit": 100
+      },
+      "query_id": "batch_77",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am standing at the window looking out over the Los Angeles area. Coordinates are 33.7 to 34.3 lat and -118.6 to -118.0 lon. Are there any commercial jets visible? List up to 40.",
+      "action_input": {
+        "bl_lat": 33.7,
+        "tr_lat": 34.3,
+        "bl_lng": -118.6,
+        "tr_lng": -118.0,
+        "limit": 40
+      },
+      "query_id": "batch_78",
+      "target_intent_id": 0
+    },
+    {
+      "query": "My monitor is locked onto the airspace above Sydney (latitude -34.0 to -33.6, longitude 150.9 to 151.3). Can you populate the map with the first 50 flights?",
+      "action_input": {
+        "bl_lat": -34.0,
+        "tr_lat": -33.6,
+        "bl_lng": 150.9,
+        "tr_lng": 151.3,
+        "limit": 50
+      },
+      "query_id": "batch_79",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm tracking aircraft movements across the English Channel. The box is from lat 50.0 to 51.0 and lon 0.0 to 1.5. Return a batch of 75 aircraft.",
+      "action_input": {
+        "bl_lat": 50.0,
+        "tr_lat": 51.0,
+        "bl_lng": 0.0,
+        "tr_lng": 1.5,
+        "limit": 75
+      },
+      "query_id": "batch_80",
+      "target_intent_id": 0
+    },
+    {
+      "query": "We need a traffic summary over Beijing. Coordinates: 39.7 to 40.2 north, 116.1 to 116.7 east. Get me up to 100 live flights.",
+      "action_input": {
+        "bl_lat": 39.7,
+        "tr_lat": 40.2,
+        "bl_lng": 116.1,
+        "tr_lng": 116.7,
+        "limit": 100
+      },
+      "query_id": "batch_81",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm watching the skies over Paris (lat 48.8 to 49.0, lon 2.3 to 2.6). I only want to see high-altitude flights cruising between 30000 and 40000 feet. Also, filter it so I only see Air France (AFR) planes.",
+      "action_input": {
+        "bl_lat": 48.8,
+        "tr_lat": 49.0,
+        "bl_lng": 2.3,
+        "tr_lng": 2.6,
+        "altitude": "30000,40000",
+        "airline": "AFR",
+        "limit": 300
+      },
+      "query_id": "batch_82",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Scan the airspace near Chicago (lat 41.7 to 42.0, lon -87.8 to -87.5). Are there any Boeing 777s (77W) flying incredibly fast, like between 400 and 600 knots? Show me up to 10 of them.",
+      "action_input": {
+        "bl_lat": 41.7,
+        "tr_lat": 42.0,
+        "bl_lng": -87.8,
+        "tr_lng": -87.5,
+        "speed": "400,600",
+        "type": "77W",
+        "limit": 10
+      },
+      "query_id": "batch_83",
+      "target_intent_id": 1
+    },
+    {
+      "query": "My viewport is set over Dubai, from latitude 25.0 to 25.4 and longitude 55.1 to 55.5. I'm specifically tracking an Emirates flight headed to DXB airport with the tail registration A6-EVS.",
+      "action_input": {
+        "bl_lat": 25.0,
+        "tr_lat": 25.4,
+        "bl_lng": 55.1,
+        "tr_lng": 55.5,
+        "airport": "DXB",
+        "reg": "A6-EVS",
+        "limit": 300
+      },
+      "query_id": "batch_84",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm monitoring the zone around Frankfurt (lat 50.0 to 50.3, lon 8.4 to 8.8). I only want to see Lufthansa (DLH) flights that are descending below 10,000 feet. Show up to 20.",
+      "action_input": {
+        "bl_lat": 50.0,
+        "tr_lat": 50.3,
+        "bl_lng": 8.4,
+        "tr_lng": 8.8,
+        "airline": "DLH",
+        "altitude": "0,10000",
+        "limit": 20
+      },
+      "query_id": "batch_85",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Are there any slow-moving aircraft, like helicopters or light planes, over New York right now (lat 40.5 to 40.9, lon -74.2 to -73.7)? Filter for speeds between 0 and 150 knots.",
+      "action_input": {
+        "bl_lat": 40.5,
+        "tr_lat": 40.9,
+        "bl_lng": -74.2,
+        "tr_lng": -73.7,
+        "speed": "0,150",
+        "limit": 300
+      },
+      "query_id": "batch_86",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Focus the radar on the area bounded by 1.2 to 1.5 north and 103.6 to 104.0 east (Singapore). I need to isolate all Airbus A380s (A388) inbound or outbound. Maximum 15 results.",
+      "action_input": {
+        "bl_lat": 1.2,
+        "tr_lat": 1.5,
+        "bl_lng": 103.6,
+        "tr_lng": 104.0,
+        "type": "A388",
+        "limit": 15
+      },
+      "query_id": "batch_87",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Over the skies of Atlanta (33.5 to 33.8 lat, -84.6 to -84.2 lon), I'm trying to track down a specific Delta plane with registration N501DN. Is it in this box?",
+      "action_input": {
+        "bl_lat": 33.5,
+        "tr_lat": 33.8,
+        "bl_lng": -84.6,
+        "tr_lng": -84.2,
+        "reg": "N501DN",
+        "limit": 300
+      },
+      "query_id": "batch_88",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm a spotter looking at the map over Amsterdam (52.2 to 52.4 lat, 4.6 to 4.9 lon). I want to see all flights that are explicitly associated with Schiphol airport (AMS).",
+      "action_input": {
+        "bl_lat": 52.2,
+        "tr_lat": 52.4,
+        "bl_lng": 4.6,
+        "tr_lng": 4.9,
+        "airport": "AMS",
+        "limit": 300
+      },
+      "query_id": "batch_89",
+      "target_intent_id": 1
+    }
+  ],
+  "calculate_route": [
+    {
+      "query": "I need driving directions from my hotel at 40.7128,-74.0060 to the museum at 40.7580,-73.9855. Please give me the instructions in Spanish, and make sure to include voice cues since I'll be driving.",
+      "action_input": {
+        "points": "40.7128,-74.0060|40.7580,-73.9855",
+        "routeType": "car",
+        "language": "es",
+        "voice_instructions": "true",
+        "finish_instruction": "true",
+        "format": "json"
+      },
+      "query_id": "batch_90",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you map out a walking path from 51.5074,-0.1278 to 51.5033,-0.1195? I need the output in plain JSON format with English turn-by-turn guidance, and don't worry about any finish instructions.",
+      "action_input": {
+        "points": "51.5074,-0.1278|51.5033,-0.1195",
+        "routeType": "foot",
+        "language": "en",
+        "voice_instructions": "false",
+        "finish_instruction": "false",
+        "format": "json"
+      },
+      "query_id": "batch_91",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am walking from 35.6895,139.6917 to 35.6580,139.7016 in Tokyo. I need the turn-by-turn directions in Japanese, and please make sure voice cues are disabled.",
+      "action_input": {
+        "points": "35.6895,139.6917|35.6580,139.7016",
+        "routeType": "foot",
+        "language": "ja",
+        "voice_instructions": "false",
+        "format": "json"
+      },
+      "query_id": "batch_92",
+      "target_intent_id": 0
+    },
+    {
+      "query": "We are driving an RV across the country from 39.7392,-104.9903 to 40.7608,-111.8910. Give us the car route in English with a special finish instruction when we pull into the campground.",
+      "action_input": {
+        "points": "39.7392,-104.9903|40.7608,-111.8910",
+        "routeType": "car",
+        "language": "en",
+        "finish_instruction": "true",
+        "format": "json"
+      },
+      "query_id": "batch_93",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Route a delivery truck from 41.8781,-87.6298 to 39.9612,-82.9988. I need the JSON payload with English text instructions, and absolutely no voice instructions.",
+      "action_input": {
+        "points": "41.8781,-87.6298|39.9612,-82.9988",
+        "routeType": "truck",
+        "language": "en",
+        "voice_instructions": "false",
+        "format": "json"
+      },
+      "query_id": "batch_94",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm planning a cycling trip from 48.8566,2.3522 to 48.8014,2.1204. Since I'm on a bike, please optimize the route weighting for 'quiet_roads' and give me the directions in English JSON.",
+      "action_input": {
+        "points": "48.8566,2.3522|48.8014,2.1204",
+        "routeType": "bike",
+        "weighting": "quiet_roads",
+        "language": "en",
+        "format": "json"
+      },
+      "query_id": "batch_95",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Plot a bicycle route across the city from 52.5200,13.4050 to 52.5015,13.3444. I want the weighting strategy set to 'networks' to stick to designated cycling paths. Keep it in German.",
+      "action_input": {
+        "points": "52.5200,13.4050|52.5015,13.3444",
+        "routeType": "bike",
+        "weighting": "networks",
+        "language": "de",
+        "format": "json"
+      },
+      "query_id": "batch_96",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm commuting to work on my bicycle from 51.0504,13.7373 to 51.0259,13.7252. I want a safe route, so please weight it for 'networks'. German directions are fine.",
+      "action_input": {
+        "points": "51.0504,13.7373|51.0259,13.7252",
+        "routeType": "bike",
+        "weighting": "networks",
+        "language": "de",
+        "format": "json"
+      },
+      "query_id": "batch_97",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Can you find a scenic bike path between 45.4215,-75.6972 and 45.3512,-75.7583? I prefer a route weighted towards 'quiet_roads'. Give me the result in English.",
+      "action_input": {
+        "points": "45.4215,-75.6972|45.3512,-75.7583",
+        "routeType": "bike",
+        "weighting": "quiet_roads",
+        "language": "en",
+        "format": "json"
+      },
+      "query_id": "batch_98",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm racing from 43.7001,7.2691 to 43.5528,7.0174 on a road bike. Calculate the fastest route without any network weighting preference (just default). Provide instructions in French.",
+      "action_input": {
+        "points": "43.7001,7.2691|43.5528,7.0174",
+        "routeType": "bike",
+        "language": "fr",
+        "format": "json"
+      },
+      "query_id": "batch_99",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I need to download a GPX file for my hiking GPS device. The trail goes from 47.3769,8.5417 to 46.2044,6.1432 on foot. Please name the file 'swiss_hike'.",
+      "action_input": {
+        "points": "47.3769,8.5417|46.2044,6.1432",
+        "format": "gpx",
+        "filename": "swiss_hike",
+        "routeType": "foot",
+        "language": "en"
+      },
+      "query_id": "batch_100",
+      "target_intent_id": 2
+    },
+    {
+      "query": "Generate a KML file named 'road_trip' for a car route from 37.7749,-122.4194 to 34.0522,-118.2437 so I can load it into Google Earth.",
+      "action_input": {
+        "points": "37.7749,-122.4194|34.0522,-118.2437",
+        "format": "kml",
+        "filename": "road_trip",
+        "routeType": "car",
+        "language": "en"
+      },
+      "query_id": "batch_101",
+      "target_intent_id": 2
+    },
+    {
+      "query": "We mapped a road trip from 25.7617,-80.1918 all the way down to 24.5551,-81.7800 by car. I want to save this route as a KML file. Just call it 'florida_keys'.",
+      "action_input": {
+        "points": "25.7617,-80.1918|24.5551,-81.7800",
+        "routeType": "car",
+        "format": "kml",
+        "filename": "florida_keys",
+        "language": "en"
+      },
+      "query_id": "batch_102",
+      "target_intent_id": 2
+    },
+    {
+      "query": "I'm organizing a marathon route on foot starting at 42.3601,-71.0589 and ending at 42.3314,-71.1662. Export the exact path to a GPX file named 'boston_run'.",
+      "action_input": {
+        "points": "42.3601,-71.0589|42.3314,-71.1662",
+        "routeType": "foot",
+        "format": "gpx",
+        "filename": "boston_run",
+        "language": "en"
+      },
+      "query_id": "batch_103",
+      "target_intent_id": 2
+    },
+    {
+      "query": "Create a truck delivery manifest route from 32.7767,-96.7970 to 29.7604,-95.3698. I need the geometry data as a KML file titled 'texas_delivery'. English is good.",
+      "action_input": {
+        "points": "32.7767,-96.7970|29.7604,-95.3698",
+        "routeType": "truck",
+        "format": "kml",
+        "filename": "texas_delivery",
+        "language": "en"
+      },
+      "query_id": "batch_104",
+      "target_intent_id": 2
+    }
   ]
 }
