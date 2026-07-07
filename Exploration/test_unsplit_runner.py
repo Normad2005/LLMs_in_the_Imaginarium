@@ -10,7 +10,7 @@ from Exploration.my_llm import chat_my
 # Configuration
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
-TOP_K = 10
+TOP_K = 15
 HYDE_RESULTS_PATH = f"results/hyde_results_top{TOP_K}.json"
 RESULTS_PATH = f"results/unsplit_test_results_top{TOP_K}.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"

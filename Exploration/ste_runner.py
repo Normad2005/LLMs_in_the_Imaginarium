@@ -63,7 +63,7 @@ def LTM(queries, results):
     return [f"Query: {q} | Solved: {results[i]}" for i, q in enumerate(queries)]
 
 # === STE 主程式 ===
-def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5, dir_write="results/ste/"):
+def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5, dir_write="results/ste/", resume_path=None):
     os.makedirs(dir_write, exist_ok=True)
 
     # === 載入 Prompt Template ===
@@ -79,25 +79,35 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5
     PAST_Q_MSG_pre = "Below are queries you have already explored and whether you successfully solved them with the API's help:"
     PAST_Q_MSG_post = "Based on these, try to explore queries that can help you understand the API further; avoid synthesizing queries that are too close to the existing ones."
 
-    if model_ckpt == "gpt-oss:120b":
+    # === 決定輸出路徑 ===
+    if resume_path is not None:
+        # 直接續跑既有檔案，不產生新時間戳
+        out_path = resume_path
+        print(f"📂 Resuming from: {out_path}")
+    elif model_ckpt == "gpt-oss:120b":
         out_path = os.path.join(dir_write, f"gpt_{RUN_ID}.json")
     elif model_ckpt == "llama3.1:8b-instruct-fp16":
         out_path = os.path.join(dir_write, f"llama_{RUN_ID}.json")
     else:
         out_path = os.path.join(dir_write, f"data_{RUN_ID}.json")
 
-    # Load existing to resume if path exists (useful if RUN_ID is fixed externally)
+    # Load existing to resume if path exists
     if os.path.exists(out_path):
         with open(out_path, "r", encoding="utf-8") as f:
             data_dict = json.load(f)
+        print(f"✅ Loaded existing data: {list(data_dict.keys())}")
     else:
         data_dict = {}
 
     # === 從 RapidAPI Registry 載入所有 API ===
     api_list = [
+        "calculate_mortgage_payment",
         "get_divisions_near_location",
         "get_hotels_by_location",
-        "get_restaurants_by_location"
+        "get_restaurants_by_location",
+        "get_planet_data",
+        "get_flights_in_bounding_box",
+        "calculate_route",
     ]
 
     # === 每次只探索一個 API ===
@@ -271,4 +281,6 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5
     print(f"\n🎉 All exploring done! Final results saved to {out_path}")
 
 if __name__ == "__main__":
-    main()
+    main(
+        resume_path="results/ste/gpt_20260703-165413.json"
+    )

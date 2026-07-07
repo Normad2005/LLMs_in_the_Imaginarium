@@ -103,9 +103,13 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5
 
     # === 從 RapidAPI Registry 載入所有 API ===
     api_list = [
+        "calculate_mortgage_payment",
         "get_divisions_near_location",
         "get_hotels_by_location",
-        "get_restaurants_by_location"
+        "get_restaurants_by_location",
+        "get_planet_data",
+        "get_flights_in_bounding_box",
+        "calculate_route",
     ]
 
     # === 每次只探索一個 API ===
