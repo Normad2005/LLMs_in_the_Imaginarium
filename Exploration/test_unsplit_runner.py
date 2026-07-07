@@ -10,8 +10,9 @@ from Exploration.my_llm import chat_my
 # Configuration
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
-HYDE_RESULTS_PATH = "results/improved_hyde_results.json"
-RESULTS_PATH = "results/unsplit_test_results.json"
+TOP_K = 10
+HYDE_RESULTS_PATH = f"results/hyde_results_top{TOP_K}.json"
+RESULTS_PATH = f"results/unsplit_test_results_top{TOP_K}.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
 
 def load_json(path):

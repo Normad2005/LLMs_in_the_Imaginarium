@@ -5,7 +5,7 @@ import copy
 
 LAB_KEY = "zhuantisheng"
 
-def call_ollama(model: str, prompt: str, temperature: float = 0.7, max_tokens: int = None, stop: str = None,
+def call_ollama(model: str, prompt: str, temperature: float = 0, max_tokens: int = None, stop: str = None,
                 host: str = "lab", max_retries: int = 100, retry_delay: float = 3.0, return_tokens: bool = False):
     """
     若 return_tokens 為 True，回傳 (output_text, prompt_token_count)

@@ -57,5 +57,5 @@ def test_thresholds(hyde_results):
         print(f"Ratio THETA: {theta:<4} | Recall: {recall:5.2f}% | Avg Intents: {avg_selected:.2f}")
 
 if __name__ == '__main__':
-    hyde_res = load_json('results/improved_hyde_results.json')
+    hyde_res = load_json('results/hyde_results_top15_mpnet.json')
     test_thresholds(hyde_res)

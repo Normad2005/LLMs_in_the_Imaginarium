@@ -11,9 +11,9 @@ from Exploration.my_llm import chat_my
 TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 INTENT_DEF_PATH = "results/intent_definitions.json"
 TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
-RESULTS_PATH = "results/improved_hyde_results.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
-TOP_K = 10  # Number of APIs to retrieve
+TOP_K = 15  # Number of APIs to retrieve
+RESULTS_PATH = f"results/hyde_results_top{TOP_K}_mpnet.json"
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -40,14 +40,14 @@ def cosine_similarity(v1, v2):
     return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
 
 def main():
-    print("Loading SentenceTransformer model (all-MiniLM-L6-v2) on CPU...")
+    print("Loading SentenceTransformer model (paraphrase-mpnet-base-v2) on CPU...")
     try:
         from sentence_transformers import SentenceTransformer
     except ImportError:
         print("Please install sentence-transformers: pip install sentence-transformers")
         sys.exit(1)
         
-    embedder = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
+    embedder = SentenceTransformer('paraphrase-mpnet-base-v2', device='cpu')
 
     print("Loading Data...")
     intent_defs = load_json(INTENT_DEF_PATH)

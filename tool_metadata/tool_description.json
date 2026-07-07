@@ -161,7 +161,7 @@
       {
         "name": "locationId",
         "type": "STRING",
-        "description": "The GPS coordinate of the center location, expressed in ISO-6709 format as latitude followed by longitude (format: ±DD.DDDD±DDD.DDDD).",
+        "description": "The GPS coordinate of the center location, must follow ISO-6709 format (e.g. +34.05+118.24 or +34.05-118.24) where + denotes North/East and - denotes South/West.",
         "default": "+33.832213-118.387099"
       },
       {
@@ -613,13 +613,13 @@
       {
         "name": "routeType",
         "type": "String",
-        "description": "The transport mode for routing. For example: 'bike'.",
+        "description": "The vehicle for which the route should be calculated. Available options: car, bike, foot, or transit (transit is currently restricted to NRW, Germany).",
         "default": "bike"
       },
       {
         "name": "weighting",
         "type": "String",
-        "description": "Route optimization weighting strategy. Only available if the set routeType is 'bike'.",
+        "description": "Special weighting of the routing. Only available for the routeType 'bike'. Available options: networks, shortest, fastest.",
         "default": "networks"
       },
       {
@@ -631,19 +631,19 @@
       {
         "name": "voice_instructions",
         "type": "String",
-        "description": "Enables voice instructions formatted for text-to-speech engines.",
-        "default": "false"
+        "description": "Enables voice instructions for text to speech engines, extending the instructions attribute. 0=disabled, 1=enabled.",
+        "default": "0"
       },
       {
         "name": "finish_instruction",
         "type": "String",
-        "description": "Adds a specific finish instruction at the end of the calculated route.",
-        "default": "false"
+        "description": "Set to 1 if you need a finish-instruction (with sign 4) in the instruction-list. 0=disabled, 1=enabled.",
+        "default": "0"
       },
       {
         "name": "format",
         "type": "String",
-        "description": "The output response format. Options usually include json, gpx, or kml.",
+        "description": "Specifies the resulting format of the route. Available options: json, gpx, kml.",
         "default": "json"
       },
       {
@@ -833,7 +833,7 @@
       {
         "name": "date",
         "type": "STRING",
-        "description": "The date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+        "description": "The date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only ± 7 days.",
         "default": "28/01/2021"
       }
     ],
