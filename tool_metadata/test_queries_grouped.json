@@ -164,513 +164,6 @@
       },
       "query_id": "batch_14",
       "target_intent_id": 2
-    },
-    {
-      "query": "I talked to the bank today, and I've locked in a $1,500,000 loan at 3.5% interest for 30 years. Could you tell me what my basic monthly payment will be?",
-      "action_input": {
-        "interest_rate": 3.5,
-        "loan_amount": 1500000,
-        "duration_years": 30
-      },
-      "query_id": "batch_105",
-      "target_intent_id": 0
-    },
-    {
-      "query": "If I borrow exactly $400,000 over a 15-year term with a 5% rate, how much do I owe each month?",
-      "action_input": {
-        "interest_rate": 5.0,
-        "loan_amount": 400000,
-        "duration_years": 15
-      },
-      "query_id": "batch_106",
-      "target_intent_id": 0
-    },
-    {
-      "query": "We're taking out a loan of $250k. Our interest rate is 6.2%, and we chose a 20-year repayment schedule. What's the monthly installment?",
-      "action_input": {
-        "interest_rate": 6.2,
-        "loan_amount": 250000,
-        "duration_years": 20
-      },
-      "query_id": "batch_107",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Calculate the payment for a straight $800,000 mortgage over 30 years at 4.25%.",
-      "action_input": {
-        "interest_rate": 4.25,
-        "loan_amount": 800000,
-        "duration_years": 30
-      },
-      "query_id": "batch_108",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I need to know the monthly cost of a $50,000 loan, 10-year term, at 7.5% interest.",
-      "action_input": {
-        "interest_rate": 7.5,
-        "loan_amount": 50000,
-        "duration_years": 10
-      },
-      "query_id": "batch_109",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I got approved for a $600,000 loan at 4.0% for 30 years. The community charges $250 a month for HOA, and I got a quote of $1,200 annually for property tax. I also have $1,000 a year in home insurance. What's my true monthly cost?",
-      "action_input": {
-        "interest_rate": 4.0,
-        "loan_amount": 600000,
-        "duration_years": 30,
-        "monthly_hoa": 250,
-        "annual_property_tax": 1200,
-        "annual_home_insurance": 1000
-      },
-      "query_id": "batch_110",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My loan is $350k at 5.5% for 25 years. The taxes are around $3000 yearly, and HOA is $100 per month. Give me the total monthly breakdown.",
-      "action_input": {
-        "interest_rate": 5.5,
-        "loan_amount": 350000,
-        "duration_years": 25,
-        "annual_property_tax": 3000,
-        "monthly_hoa": 100
-      },
-      "query_id": "batch_111",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm borrowing $1.2M at 6.8% for 30 years. With annual home insurance of $2400 and monthly HOA of $500, what will I be paying every month?",
-      "action_input": {
-        "interest_rate": 6.8,
-        "loan_amount": 1200000,
-        "duration_years": 30,
-        "annual_home_insurance": 2400,
-        "monthly_hoa": 500
-      },
-      "query_id": "batch_112",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Just finalizing my budget. Loan is $450,000, 30 years, 3.8% rate. Property taxes are $4000 a year. What's the payment?",
-      "action_input": {
-        "interest_rate": 3.8,
-        "loan_amount": 450000,
-        "duration_years": 30,
-        "annual_property_tax": 4000
-      },
-      "query_id": "batch_113",
-      "target_intent_id": 1
-    },
-    {
-      "query": "For a $900,000 loan at 4.5% over 15 years, with $6000 annual taxes and $1500 annual insurance, calculate my total housing expense.",
-      "action_input": {
-        "interest_rate": 4.5,
-        "loan_amount": 900000,
-        "duration_years": 15,
-        "annual_property_tax": 6000,
-        "annual_home_insurance": 1500
-      },
-      "query_id": "batch_114",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm eyeing a beautiful $850,000 house in the suburbs. I've saved up $150,000 for the downpayment. If the bank gives me a 5.2% rate for 30 years, how much will I pay monthly?",
-      "action_input": {
-        "interest_rate": 5.2,
-        "home_value": 850000,
-        "downpayment": 150000,
-        "duration_years": 30
-      },
-      "query_id": "batch_115",
-      "target_intent_id": 2
-    },
-    {
-      "query": "We want to buy a condo priced at $300,000. We can put down 20%, which is $60,000. The mortgage rate is 6.0% for 20 years. What's the payment?",
-      "action_input": {
-        "interest_rate": 6.0,
-        "home_value": 300000,
-        "downpayment": 60000,
-        "duration_years": 20
-      },
-      "query_id": "batch_116",
-      "target_intent_id": 2
-    },
-    {
-      "query": "Looking at a $2 million mansion. I'll put down $500,000. Rate is 4.1% on a 30-year fixed. Figure out my monthly payment.",
-      "action_input": {
-        "interest_rate": 4.1,
-        "home_value": 2000000,
-        "downpayment": 500000,
-        "duration_years": 30
-      },
-      "query_id": "batch_117",
-      "target_intent_id": 2
-    },
-    {
-      "query": "A starter home is selling for $180,000. I have $10,000 for the downpayment. With a 7.2% rate over 30 years, how much is the mortgage?",
-      "action_input": {
-        "interest_rate": 7.2,
-        "home_value": 180000,
-        "downpayment": 10000,
-        "duration_years": 30
-      },
-      "query_id": "batch_118",
-      "target_intent_id": 2
-    },
-    {
-      "query": "I'm purchasing a property worth $550k. My downpayment is $50k. The 15-year rate is currently 3.9%. What's the monthly burden?",
-      "action_input": {
-        "interest_rate": 3.9,
-        "home_value": 550000,
-        "downpayment": 50000,
-        "duration_years": 15
-      },
-      "query_id": "batch_119",
-      "target_intent_id": 2
-    }
-  ],
-  "get_divisions_near_location": [
-    {
-      "query": "I'm planning a road trip around coordinates 34.05, -118.24. I want to visit large US cities within a 50-mile radius that have over 50,000 residents. Can you list them sorted by distance, from closest to farthest?",
-      "action_input": {
-        "locationId": "+34.05-118.24",
-        "radius": 50,
-        "distanceUnit": "MI",
-        "countryIds": "US",
-        "minPopulation": 50000,
-        "sort": "+distance"
-      },
-      "query_id": "batch_15",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I need to find places around 25.03, 121.56. I'm only interested in towns within a 10 km radius that have a minimum population of 10,000.",
-      "action_input": {
-        "locationId": "+25.03+121.56",
-        "radius": 10,
-        "minPopulation": 10000
-      },
-      "query_id": "batch_16",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Show me the administrative divisions located near Tokyo at 35.68, 139.76. Search within a 20 km radius, but restrict the results strictly to Japan.",
-      "action_input": {
-        "locationId": "+35.68+139.76",
-        "radius": 20,
-        "countryIds": "JP"
-      },
-      "query_id": "batch_17",
-      "target_intent_id": 0
-    },
-    {
-      "query": "My app requires a list of cities surrounding Sydney (-33.86, 151.20) in a 100 km radius. Make sure they belong to the 'Australia/Sydney' timezone.",
-      "action_input": {
-        "locationId": "-33.86+151.20",
-        "radius": 100,
-        "timeZoneIds": "Australia/Sydney"
-      },
-      "query_id": "batch_18",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Get me a quick list of 3 divisions located near 1.35, 103.81 within a 50 km radius.",
-      "action_input": {
-        "locationId": "+1.35+103.81",
-        "radius": 50,
-        "limit": 3
-      },
-      "query_id": "batch_19",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I want to explore major hubs near 40.71, -74.00 within 20 miles. Filter for populations over 100,000 and sort them by descending population.",
-      "action_input": {
-        "locationId": "+40.71-74.00",
-        "radius": 20,
-        "distanceUnit": "MI",
-        "minPopulation": 100000,
-        "sort": "-population"
-      },
-      "query_id": "batch_20",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I am looking for the second page of results for cities around 52.52, 13.40 (100 km radius). Give me 10 results, skip the first 10, and sort alphabetically by name.",
-      "action_input": {
-        "locationId": "+52.52+13.40",
-        "radius": 100,
-        "limit": 10,
-        "offset": 10,
-        "sort": "+name"
-      },
-      "query_id": "batch_21",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Find places near 51.50, -0.12 within 15 miles. Sort by distance, from closest to farthest.",
-      "action_input": {
-        "locationId": "+51.50-0.12",
-        "radius": 15,
-        "distanceUnit": "MI",
-        "sort": "+distance"
-      },
-      "query_id": "batch_22",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Look for small towns near 48.85, 2.35 within 30 km with a max population of 5000.",
-      "action_input": {
-        "locationId": "+48.85+2.35",
-        "radius": 30,
-        "maxPopulation": 5000
-      },
-      "query_id": "batch_23",
-      "target_intent_id": 0
-    },
-    {
-      "query": "As a system admin, I need to fetch divisions near 48.85, 2.35 within 100km. Please return the names in French using pure ASCII format, and include any records deleted since yesterday for my daily audit.",
-      "action_input": {
-        "locationId": "+48.85+2.35",
-        "radius": 100,
-        "languageCode": "fr",
-        "asciiMode": true,
-        "includeDeleted": "SINCE_YESTERDAY"
-      },
-      "query_id": "batch_24",
-      "target_intent_id": 1
-    },
-    {
-      "query": "For our international widget, query the divisions near 51.50, -0.12 within a 100 km radius. Use HATEOAS links, limit to 5 per page, and display the names in German.",
-      "action_input": {
-        "locationId": "+51.50-0.12",
-        "radius": 100,
-        "languageCode": "de",
-        "hateoasMode": true,
-        "limit": 5
-      },
-      "query_id": "batch_25",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I am conducting a data cleanup. Check the 100 km area around 41.90, 12.49 for any division records deleted since last month. Output language should be Italian.",
-      "action_input": {
-        "locationId": "+41.90+12.49",
-        "radius": 100,
-        "languageCode": "it",
-        "includeDeleted": "SINCE_LAST_MONTH"
-      },
-      "query_id": "batch_26",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Fetch the divisions near 34.05, -118.24 in Spanish, using ASCII mode, and return up to 20 results with HATEOAS enabled.",
-      "action_input": {
-        "locationId": "+34.05-118.24",
-        "radius": 100,
-        "languageCode": "es",
-        "asciiMode": true,
-        "hateoasMode": true,
-        "limit": 20
-      },
-      "query_id": "batch_27",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Query divisions near 35.68, 139.76. Include all deleted records, format names in Japanese, and provide HATEOAS pagination links.",
-      "action_input": {
-        "locationId": "+35.68+139.76",
-        "radius": 100,
-        "languageCode": "ja",
-        "hateoasMode": true,
-        "includeDeleted": "ALL"
-      },
-      "query_id": "batch_28",
-      "target_intent_id": 1
-    },
-    {
-      "query": "System log check: find divisions within 50km of 52.52, 13.40. Needs to be ASCII mode, German language, including records deleted since yesterday.",
-      "action_input": {
-        "locationId": "+52.52+13.40",
-        "radius": 50,
-        "languageCode": "de",
-        "asciiMode": true,
-        "includeDeleted": "SINCE_YESTERDAY"
-      },
-      "query_id": "batch_29",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm planning a road trip around coordinates 34.05, -118.24. I want to visit large US cities within a 50-mile radius that have over 50,000 residents. Can you list them sorted by distance, from closest to farthest?",
-      "action_input": {
-        "locationId": "+34.05-118.24",
-        "radius": 50,
-        "distanceUnit": "MI",
-        "countryIds": "US",
-        "minPopulation": 50000,
-        "sort": "+distance"
-      },
-      "query_id": "batch_150",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I need to find places around 25.03, 121.56. I'm only interested in towns within a 10 km radius that have a minimum population of 10,000.",
-      "action_input": {
-        "locationId": "+25.03+121.56",
-        "radius": 10,
-        "minPopulation": 10000
-      },
-      "query_id": "batch_151",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Show me the administrative divisions located near Tokyo at 35.68, 139.76. Search within a 20 km radius, but restrict the results strictly to Japan.",
-      "action_input": {
-        "locationId": "+35.68+139.76",
-        "radius": 20,
-        "countryIds": "JP"
-      },
-      "query_id": "batch_152",
-      "target_intent_id": 0
-    },
-    {
-      "query": "My app requires a list of cities surrounding Sydney (-33.86, 151.20) in a 100 km radius. Make sure they belong to the 'Australia/Sydney' timezone.",
-      "action_input": {
-        "locationId": "-33.86+151.20",
-        "radius": 100,
-        "timeZoneIds": "Australia/Sydney"
-      },
-      "query_id": "batch_153",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Get me a quick list of 3 divisions located near 1.35, 103.81 within a 50 km radius.",
-      "action_input": {
-        "locationId": "+1.35+103.81",
-        "radius": 50,
-        "limit": 3
-      },
-      "query_id": "batch_154",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I want to explore major hubs near 40.71, -74.00 within 20 miles. Filter for populations over 100,000 and sort them by descending population.",
-      "action_input": {
-        "locationId": "+40.71-74.00",
-        "radius": 20,
-        "distanceUnit": "MI",
-        "minPopulation": 100000,
-        "sort": "-population"
-      },
-      "query_id": "batch_155",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I am looking for the second page of results for cities around 52.52, 13.40 (100 km radius). Give me 10 results, skip the first 10, and sort alphabetically by name.",
-      "action_input": {
-        "locationId": "+52.52+13.40",
-        "radius": 100,
-        "limit": 10,
-        "offset": 10,
-        "sort": "+name"
-      },
-      "query_id": "batch_156",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Find places near 51.50, -0.12 within 15 miles. Sort by distance, from closest to farthest.",
-      "action_input": {
-        "locationId": "+51.50-0.12",
-        "radius": 15,
-        "distanceUnit": "MI",
-        "sort": "+distance"
-      },
-      "query_id": "batch_157",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Look for small towns near 48.85, 2.35 within 30 km with a max population of 5000.",
-      "action_input": {
-        "locationId": "+48.85+2.35",
-        "radius": 30,
-        "maxPopulation": 5000
-      },
-      "query_id": "batch_158",
-      "target_intent_id": 0
-    },
-    {
-      "query": "As a system admin, I need to fetch divisions near 48.85, 2.35 within 100km. Please return the names in French using pure ASCII format, and include any records deleted since yesterday for my daily audit.",
-      "action_input": {
-        "locationId": "+48.85+2.35",
-        "radius": 100,
-        "languageCode": "fr",
-        "asciiMode": true,
-        "includeDeleted": "SINCE_YESTERDAY"
-      },
-      "query_id": "batch_159",
-      "target_intent_id": 1
-    },
-    {
-      "query": "For our international widget, query the divisions near 51.50, -0.12 within a 100 km radius. Use HATEOAS links, limit to 5 per page, and display the names in German.",
-      "action_input": {
-        "locationId": "+51.50-0.12",
-        "radius": 100,
-        "languageCode": "de",
-        "hateoasMode": true,
-        "limit": 5
-      },
-      "query_id": "batch_160",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I am conducting a data cleanup. Check the 100 km area around 41.90, 12.49 for any division records deleted since last month. Output language should be Italian.",
-      "action_input": {
-        "locationId": "+41.90+12.49",
-        "radius": 100,
-        "languageCode": "it",
-        "includeDeleted": "SINCE_LAST_MONTH"
-      },
-      "query_id": "batch_161",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Fetch the divisions near 34.05, -118.24 in Spanish, using ASCII mode, and return up to 20 results with HATEOAS enabled.",
-      "action_input": {
-        "locationId": "+34.05-118.24",
-        "radius": 100,
-        "languageCode": "es",
-        "asciiMode": true,
-        "hateoasMode": true,
-        "limit": 20
-      },
-      "query_id": "batch_162",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Query divisions near 35.68, 139.76. Include all deleted records, format names in Japanese, and provide HATEOAS pagination links.",
-      "action_input": {
-        "locationId": "+35.68+139.76",
-        "radius": 100,
-        "languageCode": "ja",
-        "hateoasMode": true,
-        "includeDeleted": "ALL"
-      },
-      "query_id": "batch_163",
-      "target_intent_id": 1
-    },
-    {
-      "query": "System log check: find divisions within 50km of 52.52, 13.40. Needs to be ASCII mode, German language, including records deleted since yesterday.",
-      "action_input": {
-        "locationId": "+52.52+13.40",
-        "radius": 50,
-        "languageCode": "de",
-        "asciiMode": true,
-        "includeDeleted": "SINCE_YESTERDAY"
-      },
-      "query_id": "batch_164",
-      "target_intent_id": 1
     }
   ],
   "get_hotels_by_location": [
@@ -685,7 +178,7 @@
         "checkout": "2026-08-05",
         "limit": 5
       },
-      "query_id": "batch_30",
+      "query_id": "batch_15",
       "target_intent_id": 0
     },
     {
@@ -698,7 +191,7 @@
         "checkin": "2026-12-10",
         "checkout": "2026-12-12"
       },
-      "query_id": "batch_31",
+      "query_id": "batch_16",
       "target_intent_id": 0
     },
     {
@@ -713,7 +206,7 @@
         "limit": 10,
         "offset": 10
       },
-      "query_id": "batch_32",
+      "query_id": "batch_17",
       "target_intent_id": 0
     },
     {
@@ -727,7 +220,7 @@
         "checkout": "2026-10-05",
         "limit": 15
       },
-      "query_id": "batch_33",
+      "query_id": "batch_18",
       "target_intent_id": 0
     },
     {
@@ -740,7 +233,7 @@
         "checkin": "2026-11-01",
         "checkout": "2026-11-03"
       },
-      "query_id": "batch_34",
+      "query_id": "batch_19",
       "target_intent_id": 0
     },
     {
@@ -757,7 +250,7 @@
         "currency": "EUR",
         "lang": "it_IT"
       },
-      "query_id": "batch_35",
+      "query_id": "batch_20",
       "target_intent_id": 1
     },
     {
@@ -776,7 +269,7 @@
         "currency": "JPY",
         "lang": "ja_JP"
       },
-      "query_id": "batch_36",
+      "query_id": "batch_21",
       "target_intent_id": 1
     },
     {
@@ -793,7 +286,7 @@
         "currency": "SGD",
         "lang": "zh_CN"
       },
-      "query_id": "batch_37",
+      "query_id": "batch_22",
       "target_intent_id": 1
     },
     {
@@ -810,7 +303,7 @@
         "currency": "GBP",
         "lang": "en_GB"
       },
-      "query_id": "batch_38",
+      "query_id": "batch_23",
       "target_intent_id": 1
     },
     {
@@ -827,7 +320,7 @@
         "currency": "EUR",
         "lang": "es_ES"
       },
-      "query_id": "batch_39",
+      "query_id": "batch_24",
       "target_intent_id": 1
     },
     {
@@ -844,7 +337,7 @@
         "limit": 20,
         "currency": "EUR"
       },
-      "query_id": "batch_40",
+      "query_id": "batch_25",
       "target_intent_id": 1
     },
     {
@@ -859,7 +352,7 @@
         "adults": 6,
         "rooms": 3
       },
-      "query_id": "batch_41",
+      "query_id": "batch_26",
       "target_intent_id": 1
     },
     {
@@ -875,7 +368,7 @@
         "rooms": 1,
         "currency": "AUD"
       },
-      "query_id": "batch_42",
+      "query_id": "batch_27",
       "target_intent_id": 1
     },
     {
@@ -889,7 +382,7 @@
         "checkout": "2026-08-10",
         "limit": 5
       },
-      "query_id": "batch_43",
+      "query_id": "batch_28",
       "target_intent_id": 0
     },
     {
@@ -905,241 +398,7 @@
         "rooms": 1,
         "currency": "AED"
       },
-      "query_id": "batch_44",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My map app is currently displaying the region bounded by latitudes 40.7 and 40.8, and longitudes -74.1 and -74.0. I need to book a hotel here from 2026-08-01 to 2026-08-05. Show me 5 options.",
-      "action_input": {
-        "bl_latitude": 40.7,
-        "tr_latitude": 40.8,
-        "bl_longitude": -74.1,
-        "tr_longitude": -74.0,
-        "checkin": "2026-08-01",
-        "checkout": "2026-08-05",
-        "limit": 5
-      },
-      "query_id": "batch_120",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm looking at an area in Los Angeles. The bottom-left corner of my screen is lat 34.01, lon -118.25, and the top-right is lat 34.05, lon -118.20. Find accommodations for dates 2026-12-10 to 2026-12-12.",
-      "action_input": {
-        "bl_latitude": 34.01,
-        "tr_latitude": 34.05,
-        "bl_longitude": -118.25,
-        "tr_longitude": -118.2,
-        "checkin": "2026-12-10",
-        "checkout": "2026-12-12"
-      },
-      "query_id": "batch_121",
-      "target_intent_id": 0
-    },
-    {
-      "query": "System: Query 10 hotels with an offset of 10 for dates 2026-09-15 to 2026-09-20. The map viewport is lat 51.50 to 51.52, lon -0.12 to -0.10.",
-      "action_input": {
-        "bl_latitude": 51.5,
-        "tr_latitude": 51.52,
-        "bl_longitude": -0.12,
-        "tr_longitude": -0.1,
-        "checkin": "2026-09-15",
-        "checkout": "2026-09-20",
-        "limit": 10,
-        "offset": 10
-      },
-      "query_id": "batch_122",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'll be in Paris. The specific neighborhood I want is within latitudes 48.85 and 48.86, and longitudes 2.34 and 2.36. I need a place to stay from 2026-10-01 to 2026-10-05. Please list up to 15 hotels.",
-      "action_input": {
-        "bl_latitude": 48.85,
-        "tr_latitude": 48.86,
-        "bl_longitude": 2.34,
-        "tr_longitude": 2.36,
-        "checkin": "2026-10-01",
-        "checkout": "2026-10-05",
-        "limit": 15
-      },
-      "query_id": "batch_123",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Find me a hotel in Tokyo. The target area is bounded between 35.65 and 35.70 latitude, and 139.70 and 139.75 longitude. Check-in is on 2026-11-01, checking out on 2026-11-03.",
-      "action_input": {
-        "bl_latitude": 35.65,
-        "tr_latitude": 35.7,
-        "bl_longitude": 139.7,
-        "tr_longitude": 139.75,
-        "checkin": "2026-11-01",
-        "checkout": "2026-11-03"
-      },
-      "query_id": "batch_124",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm planning a family trip to Rome from 2026-10-10 to 2026-10-15. We have 4 adults and need 2 rooms. I've zoomed my map to lat 41.89 to 41.91 and lon 12.48 to 12.50. Show the prices in EUR and descriptions in Italian (it_IT).",
-      "action_input": {
-        "bl_latitude": 41.89,
-        "tr_latitude": 41.91,
-        "bl_longitude": 12.48,
-        "tr_longitude": 12.5,
-        "checkin": "2026-10-10",
-        "checkout": "2026-10-15",
-        "adults": 4,
-        "rooms": 2,
-        "currency": "EUR",
-        "lang": "it_IT"
-      },
-      "query_id": "batch_125",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I want to see the second page (skip 5, show 5) of hotels for 1 adult in 1 room in San Francisco. Bounding box is lat 37.77 to 37.79, lon -122.42 to -122.40. I'll be there 2026-12-24 to 2026-12-28. I prefer Japanese language (ja_JP) and JPY currency.",
-      "action_input": {
-        "bl_latitude": 37.77,
-        "tr_latitude": 37.79,
-        "bl_longitude": -122.42,
-        "tr_longitude": -122.4,
-        "checkin": "2026-12-24",
-        "checkout": "2026-12-28",
-        "adults": 1,
-        "rooms": 1,
-        "limit": 5,
-        "offset": 5,
-        "currency": "JPY",
-        "lang": "ja_JP"
-      },
-      "query_id": "batch_126",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My partner and I (2 adults, 1 room) are going to Singapore from 2026-08-10 to 2026-08-12. The area of interest is lat 1.30 to 1.32, lon 103.80 to 103.82. Set the language to zh_CN and currency to SGD.",
-      "action_input": {
-        "bl_latitude": 1.3,
-        "tr_latitude": 1.32,
-        "bl_longitude": 103.8,
-        "tr_longitude": 103.82,
-        "checkin": "2026-08-10",
-        "checkout": "2026-08-12",
-        "adults": 2,
-        "rooms": 1,
-        "currency": "SGD",
-        "lang": "zh_CN"
-      },
-      "query_id": "batch_127",
-      "target_intent_id": 1
-    },
-    {
-      "query": "We have a group of 3 adults requiring 2 rooms in Amsterdam from 2026-09-01 to 2026-09-05. The map shows latitudes 52.36 to 52.38 and longitudes 4.88 to 4.90. Please display in GBP and en_GB.",
-      "action_input": {
-        "bl_latitude": 52.36,
-        "tr_latitude": 52.38,
-        "bl_longitude": 4.88,
-        "tr_longitude": 4.9,
-        "checkin": "2026-09-01",
-        "checkout": "2026-09-05",
-        "adults": 3,
-        "rooms": 2,
-        "currency": "GBP",
-        "lang": "en_GB"
-      },
-      "query_id": "batch_128",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I am traveling with a friend (2 adults, 1 room) to Madrid. Our target zone is lat 40.41 to 40.43, lon -3.71 to -3.69. Check in 2026-07-15, checkout 2026-07-20. Use EUR and es_ES language settings.",
-      "action_input": {
-        "bl_latitude": 40.41,
-        "tr_latitude": 40.43,
-        "bl_longitude": -3.71,
-        "tr_longitude": -3.69,
-        "checkin": "2026-07-15",
-        "checkout": "2026-07-20",
-        "adults": 2,
-        "rooms": 1,
-        "currency": "EUR",
-        "lang": "es_ES"
-      },
-      "query_id": "batch_129",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Search for a hotel room for 1 adult within the GPS box: lat 45.46 to 45.48, lon 9.18 to 9.20. Dates are 2026-05-10 to 2026-05-15. Show 20 results in EUR.",
-      "action_input": {
-        "bl_latitude": 45.46,
-        "tr_latitude": 45.48,
-        "bl_longitude": 9.18,
-        "tr_longitude": 9.2,
-        "checkin": "2026-05-10",
-        "checkout": "2026-05-15",
-        "adults": 1,
-        "rooms": 1,
-        "limit": 20,
-        "currency": "EUR"
-      },
-      "query_id": "batch_130",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I need 3 rooms for 6 adults in Berlin. Map boundaries: lat 52.50 to 52.53, lon 13.38 to 13.41. Check-in 2026-09-10, check-out 2026-09-17.",
-      "action_input": {
-        "bl_latitude": 52.5,
-        "tr_latitude": 52.53,
-        "bl_longitude": 13.38,
-        "tr_longitude": 13.41,
-        "checkin": "2026-09-10",
-        "checkout": "2026-09-17",
-        "adults": 6,
-        "rooms": 3
-      },
-      "query_id": "batch_131",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Look for hotels in Sydney (lat -33.88 to -33.85, lon 151.18 to 151.22) from 2026-11-20 to 2026-11-25. 2 adults, 1 room. AUD currency.",
-      "action_input": {
-        "bl_latitude": -33.88,
-        "tr_latitude": -33.85,
-        "bl_longitude": 151.18,
-        "tr_longitude": 151.22,
-        "checkin": "2026-11-20",
-        "checkout": "2026-11-25",
-        "adults": 2,
-        "rooms": 1,
-        "currency": "AUD"
-      },
-      "query_id": "batch_132",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Find places to stay in Toronto from 2026-08-05 to 2026-08-10. Bounding box: lat 43.64 to 43.66, lon -79.40 to -79.37. Limit to 5 results.",
-      "action_input": {
-        "bl_latitude": 43.64,
-        "tr_latitude": 43.66,
-        "bl_longitude": -79.4,
-        "tr_longitude": -79.37,
-        "checkin": "2026-08-05",
-        "checkout": "2026-08-10",
-        "limit": 5
-      },
-      "query_id": "batch_133",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm going to Dubai (lat 25.18 to 25.22, lon 55.26 to 55.30). Dates 2026-12-01 to 2026-12-05. Need 1 room for 2 adults. Currency AED.",
-      "action_input": {
-        "bl_latitude": 25.18,
-        "tr_latitude": 25.22,
-        "bl_longitude": 55.26,
-        "tr_longitude": 55.3,
-        "checkin": "2026-12-01",
-        "checkout": "2026-12-05",
-        "adults": 2,
-        "rooms": 1,
-        "currency": "AED"
-      },
-      "query_id": "batch_134",
+      "query_id": "batch_29",
       "target_intent_id": 1
     }
   ],
@@ -1153,7 +412,7 @@
         "tr_longitude": -74.0,
         "limit": 5
       },
-      "query_id": "batch_45",
+      "query_id": "batch_30",
       "target_intent_id": 0
     },
     {
@@ -1163,363 +422,346 @@
         "tr_latitude": 34.05,
         "bl_longitude": -118.25,
         "tr_longitude": -118.2
+      },
+      "query_id": "batch_31",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch 10 restaurant results with an offset of 10 for the coordinates lat 51.50 to 51.52, lon -0.12 to -0.10.",
+      "action_input": {
+        "bl_latitude": 51.5,
+        "tr_latitude": 51.52,
+        "bl_longitude": -0.12,
+        "tr_longitude": -0.1,
+        "limit": 10,
+        "offset": 10
+      },
+      "query_id": "batch_32",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am in Paris right now. The area I'm searching is between latitudes 48.85 and 48.86, and longitudes 2.34 and 2.36. Limit the search to 20 restaurants.",
+      "action_input": {
+        "bl_latitude": 48.85,
+        "tr_latitude": 48.86,
+        "bl_longitude": 2.34,
+        "tr_longitude": 2.36,
+        "limit": 20
+      },
+      "query_id": "batch_33",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm hungry in Tokyo! My map screen shows 35.65 to 35.70 N, 139.70 to 139.75 E. Where can I eat?",
+      "action_input": {
+        "bl_latitude": 35.65,
+        "tr_latitude": 35.7,
+        "bl_longitude": 139.7,
+        "tr_longitude": 139.75
+      },
+      "query_id": "batch_34",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm visiting Rome and want to eat out. My map boundaries are latitudes 41.89 to 41.91, and longitudes 12.48 to 12.50. I'd like the prices in EUR and descriptions in Italian (it_IT). Just show me 10 places.",
+      "action_input": {
+        "bl_latitude": 41.89,
+        "tr_latitude": 41.91,
+        "bl_longitude": 12.48,
+        "tr_longitude": 12.5,
+        "currency": "EUR",
+        "lang": "it_IT",
+        "limit": 10
+      },
+      "query_id": "batch_35",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm planning a dinner in San Francisco. Bounding box: lat 37.77 to 37.79, lon -122.42 to -122.40. Show me the second page of 5 restaurants, display them in Japanese (ja_JP), and price them in JPY.",
+      "action_input": {
+        "bl_latitude": 37.77,
+        "tr_latitude": 37.79,
+        "bl_longitude": -122.42,
+        "tr_longitude": -122.4,
+        "limit": 5,
+        "offset": 5,
+        "currency": "JPY",
+        "lang": "ja_JP"
+      },
+      "query_id": "batch_36",
+      "target_intent_id": 1
+    },
+    {
+      "query": "We're dining in Singapore. The area is lat 1.30 to 1.32, lon 103.80 to 103.82. Give me the results in Simplified Chinese (zh_CN) and SGD currency.",
+      "action_input": {
+        "bl_latitude": 1.3,
+        "tr_latitude": 1.32,
+        "bl_longitude": 103.8,
+        "tr_longitude": 103.82,
+        "currency": "SGD",
+        "lang": "zh_CN"
+      },
+      "query_id": "batch_37",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Looking for food in Amsterdam. Box is lat 52.36 to 52.38, lon 4.88 to 4.90. Use GBP for currency and en_GB for language.",
+      "action_input": {
+        "bl_latitude": 52.36,
+        "tr_latitude": 52.38,
+        "bl_longitude": 4.88,
+        "tr_longitude": 4.9,
+        "currency": "GBP",
+        "lang": "en_GB"
+      },
+      "query_id": "batch_38",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Find tapas bars or restaurants in Madrid. Area is lat 40.41 to 40.43, lon -3.71 to -3.69. I prefer EUR currency and es_ES language.",
+      "action_input": {
+        "bl_latitude": 40.41,
+        "tr_latitude": 40.43,
+        "bl_longitude": -3.71,
+        "tr_longitude": -3.69,
+        "currency": "EUR",
+        "lang": "es_ES"
+      },
+      "query_id": "batch_39",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm near Milan, lat 45.46 to 45.48, lon 9.18 to 9.20. Show me 15 restaurant options in EUR.",
+      "action_input": {
+        "bl_latitude": 45.46,
+        "tr_latitude": 45.48,
+        "bl_longitude": 9.18,
+        "tr_longitude": 9.2,
+        "limit": 15,
+        "currency": "EUR"
+      },
+      "query_id": "batch_40",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Looking for a quick bite in Berlin, lat 52.50 to 52.53, lon 13.38 to 13.41. Just give me 3 results.",
+      "action_input": {
+        "bl_latitude": 52.5,
+        "tr_latitude": 52.53,
+        "bl_longitude": 13.38,
+        "tr_longitude": 13.41,
+        "limit": 3
+      },
+      "query_id": "batch_41",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am traveling through Sydney. My app shows lat -33.88 to -33.85, lon 151.18 to 151.22. What are 8 restaurants I can eat at? Use AUD.",
+      "action_input": {
+        "bl_latitude": -33.88,
+        "tr_latitude": -33.85,
+        "bl_longitude": 151.18,
+        "tr_longitude": 151.22,
+        "limit": 8,
+        "currency": "AUD"
+      },
+      "query_id": "batch_42",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Give me the first page of 10 restaurants in Toronto (lat 43.64 to 43.66, lon -79.40 to -79.37).",
+      "action_input": {
+        "bl_latitude": 43.64,
+        "tr_latitude": 43.66,
+        "bl_longitude": -79.4,
+        "tr_longitude": -79.37,
+        "limit": 10
+      },
+      "query_id": "batch_43",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Finding a place to eat in Dubai, lat 25.18 to 25.22, lon 55.26 to 55.30. Set currency to AED.",
+      "action_input": {
+        "bl_latitude": 25.18,
+        "tr_latitude": 25.22,
+        "bl_longitude": 55.26,
+        "tr_longitude": 55.3,
+        "currency": "AED"
+      },
+      "query_id": "batch_44",
+      "target_intent_id": 1
+    }
+  ],
+  "get_divisions_near_location": [
+    {
+      "query": "I'm planning a road trip around coordinates 34.05, -118.24. I want to visit large US cities within a 50-mile radius that have over 50,000 residents. Can you list them sorted by distance, from closest to farthest?",
+      "action_input": {
+        "locationId": "+34.05-118.24",
+        "radius": 50,
+        "distanceUnit": "MI",
+        "countryIds": "US",
+        "minPopulation": 50000,
+        "sort": "+distance"
+      },
+      "query_id": "batch_45",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need to find places around 25.03, 121.56. I'm only interested in towns within a 10 km radius that have a minimum population of 10,000.",
+      "action_input": {
+        "locationId": "+25.03+121.56",
+        "radius": 10,
+        "minPopulation": 10000
       },
       "query_id": "batch_46",
       "target_intent_id": 0
     },
     {
-      "query": "Fetch 10 restaurant results with an offset of 10 for the coordinates lat 51.50 to 51.52, lon -0.12 to -0.10.",
+      "query": "Show me the administrative divisions located near Tokyo at 35.68, 139.76. Search within a 20 km radius, but restrict the results strictly to Japan.",
       "action_input": {
-        "bl_latitude": 51.5,
-        "tr_latitude": 51.52,
-        "bl_longitude": -0.12,
-        "tr_longitude": -0.1,
-        "limit": 10,
-        "offset": 10
+        "locationId": "+35.68+139.76",
+        "radius": 20,
+        "countryIds": "JP"
       },
       "query_id": "batch_47",
       "target_intent_id": 0
     },
     {
-      "query": "I am in Paris right now. The area I'm searching is between latitudes 48.85 and 48.86, and longitudes 2.34 and 2.36. Limit the search to 20 restaurants.",
+      "query": "My app requires a list of cities surrounding Sydney (-33.86, 151.20) in a 100 km radius. Make sure they belong to the 'Australia/Sydney' timezone.",
       "action_input": {
-        "bl_latitude": 48.85,
-        "tr_latitude": 48.86,
-        "bl_longitude": 2.34,
-        "tr_longitude": 2.36,
-        "limit": 20
+        "locationId": "-33.86+151.20",
+        "radius": 100,
+        "timeZoneIds": "Australia/Sydney"
       },
       "query_id": "batch_48",
       "target_intent_id": 0
     },
     {
-      "query": "I'm hungry in Tokyo! My map screen shows 35.65 to 35.70 N, 139.70 to 139.75 E. Where can I eat?",
+      "query": "Get me a quick list of 3 divisions located near 1.35, 103.81 within a 50 km radius.",
       "action_input": {
-        "bl_latitude": 35.65,
-        "tr_latitude": 35.7,
-        "bl_longitude": 139.7,
-        "tr_longitude": 139.75
+        "locationId": "+1.35+103.81",
+        "radius": 50,
+        "limit": 3
       },
       "query_id": "batch_49",
       "target_intent_id": 0
     },
     {
-      "query": "I'm visiting Rome and want to eat out. My map boundaries are latitudes 41.89 to 41.91, and longitudes 12.48 to 12.50. I'd like the prices in EUR and descriptions in Italian (it_IT). Just show me 10 places.",
+      "query": "I want to explore major hubs near 40.71, -74.00 within 20 miles. Filter for populations over 100,000 and sort them by descending population.",
       "action_input": {
-        "bl_latitude": 41.89,
-        "tr_latitude": 41.91,
-        "bl_longitude": 12.48,
-        "tr_longitude": 12.5,
-        "currency": "EUR",
-        "lang": "it_IT",
-        "limit": 10
+        "locationId": "+40.71-74.00",
+        "radius": 20,
+        "distanceUnit": "MI",
+        "minPopulation": 100000,
+        "sort": "-population"
       },
       "query_id": "batch_50",
-      "target_intent_id": 1
+      "target_intent_id": 0
     },
     {
-      "query": "I'm planning a dinner in San Francisco. Bounding box: lat 37.77 to 37.79, lon -122.42 to -122.40. Show me the second page of 5 restaurants, display them in Japanese (ja_JP), and price them in JPY.",
+      "query": "I am looking for the second page of results for cities around 52.52, 13.40 (100 km radius). Give me 10 results, skip the first 10, and sort alphabetically by name.",
       "action_input": {
-        "bl_latitude": 37.77,
-        "tr_latitude": 37.79,
-        "bl_longitude": -122.42,
-        "tr_longitude": -122.4,
-        "limit": 5,
-        "offset": 5,
-        "currency": "JPY",
-        "lang": "ja_JP"
+        "locationId": "+52.52+13.40",
+        "radius": 100,
+        "limit": 10,
+        "offset": 10,
+        "sort": "+name"
       },
       "query_id": "batch_51",
-      "target_intent_id": 1
+      "target_intent_id": 0
     },
     {
-      "query": "We're dining in Singapore. The area is lat 1.30 to 1.32, lon 103.80 to 103.82. Give me the results in Simplified Chinese (zh_CN) and SGD currency.",
+      "query": "Find places near 51.50, -0.12 within 15 miles. Sort by distance, from closest to farthest.",
       "action_input": {
-        "bl_latitude": 1.3,
-        "tr_latitude": 1.32,
-        "bl_longitude": 103.8,
-        "tr_longitude": 103.82,
-        "currency": "SGD",
-        "lang": "zh_CN"
+        "locationId": "+51.50-0.12",
+        "radius": 15,
+        "distanceUnit": "MI",
+        "sort": "+distance"
       },
       "query_id": "batch_52",
-      "target_intent_id": 1
+      "target_intent_id": 0
     },
     {
-      "query": "Looking for food in Amsterdam. Box is lat 52.36 to 52.38, lon 4.88 to 4.90. Use GBP for currency and en_GB for language.",
+      "query": "Look for small towns near 48.85, 2.35 within 30 km with a max population of 5000.",
       "action_input": {
-        "bl_latitude": 52.36,
-        "tr_latitude": 52.38,
-        "bl_longitude": 4.88,
-        "tr_longitude": 4.9,
-        "currency": "GBP",
-        "lang": "en_GB"
+        "locationId": "+48.85+2.35",
+        "radius": 30,
+        "maxPopulation": 5000
       },
       "query_id": "batch_53",
-      "target_intent_id": 1
+      "target_intent_id": 0
     },
     {
-      "query": "Find tapas bars or restaurants in Madrid. Area is lat 40.41 to 40.43, lon -3.71 to -3.69. I prefer EUR currency and es_ES language.",
+      "query": "As a system admin, I need to fetch divisions near 48.85, 2.35 within 100km. Please return the names in French using pure ASCII format, and include any records deleted since yesterday for my daily audit.",
       "action_input": {
-        "bl_latitude": 40.41,
-        "tr_latitude": 40.43,
-        "bl_longitude": -3.71,
-        "tr_longitude": -3.69,
-        "currency": "EUR",
-        "lang": "es_ES"
+        "locationId": "+48.85+2.35",
+        "radius": 100,
+        "languageCode": "fr",
+        "asciiMode": true,
+        "includeDeleted": "SINCE_YESTERDAY"
       },
       "query_id": "batch_54",
       "target_intent_id": 1
     },
     {
-      "query": "I'm near Milan, lat 45.46 to 45.48, lon 9.18 to 9.20. Show me 15 restaurant options in EUR.",
+      "query": "For our international widget, query the divisions near 51.50, -0.12 within a 100 km radius. Use HATEOAS links, limit to 5 per page, and display the names in German.",
       "action_input": {
-        "bl_latitude": 45.46,
-        "tr_latitude": 45.48,
-        "bl_longitude": 9.18,
-        "tr_longitude": 9.2,
-        "limit": 15,
-        "currency": "EUR"
+        "locationId": "+51.50-0.12",
+        "radius": 100,
+        "languageCode": "de",
+        "hateoasMode": true,
+        "limit": 5
       },
       "query_id": "batch_55",
       "target_intent_id": 1
     },
     {
-      "query": "Looking for a quick bite in Berlin, lat 52.50 to 52.53, lon 13.38 to 13.41. Just give me 3 results.",
+      "query": "I am conducting a data cleanup. Check the 100 km area around 41.90, 12.49 for any division records deleted since last month. Output language should be Italian.",
       "action_input": {
-        "bl_latitude": 52.5,
-        "tr_latitude": 52.53,
-        "bl_longitude": 13.38,
-        "tr_longitude": 13.41,
-        "limit": 3
+        "locationId": "+41.90+12.49",
+        "radius": 100,
+        "languageCode": "it",
+        "includeDeleted": "SINCE_LAST_MONTH"
       },
       "query_id": "batch_56",
-      "target_intent_id": 0
+      "target_intent_id": 1
     },
     {
-      "query": "I am traveling through Sydney. My app shows lat -33.88 to -33.85, lon 151.18 to 151.22. What are 8 restaurants I can eat at? Use AUD.",
+      "query": "Fetch the divisions near 34.05, -118.24 in Spanish, using ASCII mode, and return up to 20 results with HATEOAS enabled.",
       "action_input": {
-        "bl_latitude": -33.88,
-        "tr_latitude": -33.85,
-        "bl_longitude": 151.18,
-        "tr_longitude": 151.22,
-        "limit": 8,
-        "currency": "AUD"
+        "locationId": "+34.05-118.24",
+        "radius": 100,
+        "languageCode": "es",
+        "asciiMode": true,
+        "hateoasMode": true,
+        "limit": 20
       },
       "query_id": "batch_57",
       "target_intent_id": 1
     },
     {
-      "query": "Give me the first page of 10 restaurants in Toronto (lat 43.64 to 43.66, lon -79.40 to -79.37).",
+      "query": "Query divisions near 35.68, 139.76. Include all deleted records, format names in Japanese, and provide HATEOAS pagination links.",
       "action_input": {
-        "bl_latitude": 43.64,
-        "tr_latitude": 43.66,
-        "bl_longitude": -79.4,
-        "tr_longitude": -79.37,
-        "limit": 10
+        "locationId": "+35.68+139.76",
+        "radius": 100,
+        "languageCode": "ja",
+        "hateoasMode": true,
+        "includeDeleted": "ALL"
       },
       "query_id": "batch_58",
-      "target_intent_id": 0
+      "target_intent_id": 1
     },
     {
-      "query": "Finding a place to eat in Dubai, lat 25.18 to 25.22, lon 55.26 to 55.30. Set currency to AED.",
+      "query": "System log check: find divisions within 50km of 52.52, 13.40. Needs to be ASCII mode, German language, including records deleted since yesterday.",
       "action_input": {
-        "bl_latitude": 25.18,
-        "tr_latitude": 25.22,
-        "bl_longitude": 55.26,
-        "tr_longitude": 55.3,
-        "currency": "AED"
+        "locationId": "+52.52+13.40",
+        "radius": 50,
+        "languageCode": "de",
+        "asciiMode": true,
+        "includeDeleted": "SINCE_YESTERDAY"
       },
       "query_id": "batch_59",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My phone's GPS indicates my current view spans from latitude 40.7 to 40.8, and longitude -74.1 to -74.0. Can you recommend 5 restaurants in this area?",
-      "action_input": {
-        "bl_latitude": 40.7,
-        "tr_latitude": 40.8,
-        "bl_longitude": -74.1,
-        "tr_longitude": -74.0,
-        "limit": 5
-      },
-      "query_id": "batch_135",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm walking around Los Angeles. The bounding box of my map is lat 34.01 to 34.05, lon -118.25 to -118.20. Show me dining options here.",
-      "action_input": {
-        "bl_latitude": 34.01,
-        "tr_latitude": 34.05,
-        "bl_longitude": -118.25,
-        "tr_longitude": -118.2
-      },
-      "query_id": "batch_136",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Fetch 10 restaurant results with an offset of 10 for the coordinates lat 51.50 to 51.52, lon -0.12 to -0.10.",
-      "action_input": {
-        "bl_latitude": 51.5,
-        "tr_latitude": 51.52,
-        "bl_longitude": -0.12,
-        "tr_longitude": -0.1,
-        "limit": 10,
-        "offset": 10
-      },
-      "query_id": "batch_137",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I am in Paris right now. The area I'm searching is between latitudes 48.85 and 48.86, and longitudes 2.34 and 2.36. Limit the search to 20 restaurants.",
-      "action_input": {
-        "bl_latitude": 48.85,
-        "tr_latitude": 48.86,
-        "bl_longitude": 2.34,
-        "tr_longitude": 2.36,
-        "limit": 20
-      },
-      "query_id": "batch_138",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm hungry in Tokyo! My map screen shows 35.65 to 35.70 N, 139.70 to 139.75 E. Where can I eat?",
-      "action_input": {
-        "bl_latitude": 35.65,
-        "tr_latitude": 35.7,
-        "bl_longitude": 139.7,
-        "tr_longitude": 139.75
-      },
-      "query_id": "batch_139",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm visiting Rome and want to eat out. My map boundaries are latitudes 41.89 to 41.91, and longitudes 12.48 to 12.50. I'd like the prices in EUR and descriptions in Italian (it_IT). Just show me 10 places.",
-      "action_input": {
-        "bl_latitude": 41.89,
-        "tr_latitude": 41.91,
-        "bl_longitude": 12.48,
-        "tr_longitude": 12.5,
-        "currency": "EUR",
-        "lang": "it_IT",
-        "limit": 10
-      },
-      "query_id": "batch_140",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm planning a dinner in San Francisco. Bounding box: lat 37.77 to 37.79, lon -122.42 to -122.40. Show me the second page of 5 restaurants, display them in Japanese (ja_JP), and price them in JPY.",
-      "action_input": {
-        "bl_latitude": 37.77,
-        "tr_latitude": 37.79,
-        "bl_longitude": -122.42,
-        "tr_longitude": -122.4,
-        "limit": 5,
-        "offset": 5,
-        "currency": "JPY",
-        "lang": "ja_JP"
-      },
-      "query_id": "batch_141",
-      "target_intent_id": 1
-    },
-    {
-      "query": "We're dining in Singapore. The area is lat 1.30 to 1.32, lon 103.80 to 103.82. Give me the results in Simplified Chinese (zh_CN) and SGD currency.",
-      "action_input": {
-        "bl_latitude": 1.3,
-        "tr_latitude": 1.32,
-        "bl_longitude": 103.8,
-        "tr_longitude": 103.82,
-        "currency": "SGD",
-        "lang": "zh_CN"
-      },
-      "query_id": "batch_142",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Looking for food in Amsterdam. Box is lat 52.36 to 52.38, lon 4.88 to 4.90. Use GBP for currency and en_GB for language.",
-      "action_input": {
-        "bl_latitude": 52.36,
-        "tr_latitude": 52.38,
-        "bl_longitude": 4.88,
-        "tr_longitude": 4.9,
-        "currency": "GBP",
-        "lang": "en_GB"
-      },
-      "query_id": "batch_143",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Find tapas bars or restaurants in Madrid. Area is lat 40.41 to 40.43, lon -3.71 to -3.69. I prefer EUR currency and es_ES language.",
-      "action_input": {
-        "bl_latitude": 40.41,
-        "tr_latitude": 40.43,
-        "bl_longitude": -3.71,
-        "tr_longitude": -3.69,
-        "currency": "EUR",
-        "lang": "es_ES"
-      },
-      "query_id": "batch_144",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm near Milan, lat 45.46 to 45.48, lon 9.18 to 9.20. Show me 15 restaurant options in EUR.",
-      "action_input": {
-        "bl_latitude": 45.46,
-        "tr_latitude": 45.48,
-        "bl_longitude": 9.18,
-        "tr_longitude": 9.2,
-        "limit": 15,
-        "currency": "EUR"
-      },
-      "query_id": "batch_145",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Looking for a quick bite in Berlin, lat 52.50 to 52.53, lon 13.38 to 13.41. Just give me 3 results.",
-      "action_input": {
-        "bl_latitude": 52.5,
-        "tr_latitude": 52.53,
-        "bl_longitude": 13.38,
-        "tr_longitude": 13.41,
-        "limit": 3
-      },
-      "query_id": "batch_146",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I am traveling through Sydney. My app shows lat -33.88 to -33.85, lon 151.18 to 151.22. What are 8 restaurants I can eat at? Use AUD.",
-      "action_input": {
-        "bl_latitude": -33.88,
-        "tr_latitude": -33.85,
-        "bl_longitude": 151.18,
-        "tr_longitude": 151.22,
-        "limit": 8,
-        "currency": "AUD"
-      },
-      "query_id": "batch_147",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Give me the first page of 10 restaurants in Toronto (lat 43.64 to 43.66, lon -79.40 to -79.37).",
-      "action_input": {
-        "bl_latitude": 43.64,
-        "tr_latitude": 43.66,
-        "bl_longitude": -79.4,
-        "tr_longitude": -79.37,
-        "limit": 10
-      },
-      "query_id": "batch_148",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Finding a place to eat in Dubai, lat 25.18 to 25.22, lon 55.26 to 55.30. Set currency to AED.",
-      "action_input": {
-        "bl_latitude": 25.18,
-        "tr_latitude": 25.22,
-        "bl_longitude": 55.26,
-        "tr_longitude": 55.3,
-        "currency": "AED"
-      },
-      "query_id": "batch_149",
       "target_intent_id": 1
     }
   ],
@@ -1658,142 +900,6 @@
         "min_period": 500
       },
       "query_id": "batch_74",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My kid is doing a school project on Jupiter and needs some quick facts. Can you pull up its astronomical data?",
-      "action_input": {
-        "name": "Jupiter"
-      },
-      "query_id": "batch_165",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I was reading a sci-fi book that mentioned the exoplanet Kepler-186f. I'm curious if it's a real planet and what its properties are.",
-      "action_input": {
-        "name": "Kepler-186f"
-      },
-      "query_id": "batch_166",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Can you give me the basic statistics for Mars, like its mass and radius?",
-      "action_input": {
-        "name": "Mars"
-      },
-      "query_id": "batch_167",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm writing an article about the solar system. Could you fetch the full details for Saturn?",
-      "action_input": {
-        "name": "Saturn"
-      },
-      "query_id": "batch_168",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Can you look up the properties of Proxima Centauri b? I read it's the closest exoplanet to us.",
-      "action_input": {
-        "name": "Proxima Centauri b"
-      },
-      "query_id": "batch_169",
-      "target_intent_id": 0
-    },
-    {
-      "query": "We're studying icy bodies in astronomy class. What data do you have on Neptune?",
-      "action_input": {
-        "name": "Neptune"
-      },
-      "query_id": "batch_170",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I want to know the mass, radius, and distance of TRAPPIST-1e. Please retrieve its stats.",
-      "action_input": {
-        "name": "TRAPPIST-1e"
-      },
-      "query_id": "batch_171",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm an astrophysics student looking for habitable zone candidates. I need planets that are between 0.5 and 2.0 Earth masses, with an orbital period between 200 and 400 days, and located within 50 light years from us.",
-      "action_input": {
-        "min_mass": 0.5,
-        "max_mass": 2.0,
-        "min_period": 200,
-        "max_period": 400,
-        "max_distance_light_year": 50
-      },
-      "query_id": "batch_172",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Are there any massive gas giants out there? I'm searching for planets with a mass between 10 and 50 Jupiter masses and a temperature over 1000 Kelvin.",
-      "action_input": {
-        "min_mass": 10,
-        "max_mass": 50,
-        "min_temperature": 1000
-      },
-      "query_id": "batch_173",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I want to study small, compact worlds. Show me planets with a radius less than 0.8 Earth radii and an orbital period of less than 10 days.",
-      "action_input": {
-        "max_radius": 0.8,
-        "max_period": 10
-      },
-      "query_id": "batch_174",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm looking for Earth-like planets. Show me ones with a radius between 0.9 and 1.2 Earth radii and a temperature between 250 and 300 Kelvin.",
-      "action_input": {
-        "min_radius": 0.9,
-        "max_radius": 1.2,
-        "min_temperature": 250,
-        "max_temperature": 300
-      },
-      "query_id": "batch_175",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Find me massive, distant exoplanets. The mass should be at least 5 Jupiter masses, and they should be located further than 1000 light years from Earth.",
-      "action_input": {
-        "min_mass": 5,
-        "min_distance_light_year": 1000
-      },
-      "query_id": "batch_176",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I need a list of hot Jupiters. Filter for planets with a mass between 0.5 and 3.0 Jupiter masses, and an orbital period of less than 5 days.",
-      "action_input": {
-        "min_mass": 0.5,
-        "max_mass": 3.0,
-        "max_period": 5
-      },
-      "query_id": "batch_177",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Are there any extremely cold exoplanets nearby? I want planets within 20 light years that have a maximum temperature of 100 Kelvin.",
-      "action_input": {
-        "max_distance_light_year": 20,
-        "max_temperature": 100
-      },
-      "query_id": "batch_178",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My research focuses on super-Earths with very long orbits. Can you find planets with a mass between 2 and 10 Earth masses and a period of over 500 days?",
-      "action_input": {
-        "min_mass": 2,
-        "max_mass": 10,
-        "min_period": 500
-      },
-      "query_id": "batch_179",
       "target_intent_id": 1
     }
   ],
@@ -1985,194 +1091,6 @@
       },
       "query_id": "batch_89",
       "target_intent_id": 1
-    },
-    {
-      "query": "I'm looking at a map of the San Francisco Bay Area, roughly from latitude 37.5 to 37.9 and longitude -122.5 to -122.1. Can you show me up to 50 planes currently flying in this view?",
-      "action_input": {
-        "bl_lat": 37.5,
-        "tr_lat": 37.9,
-        "bl_lng": -122.5,
-        "tr_lng": -122.1,
-        "limit": 50
-      },
-      "query_id": "batch_180",
-      "target_intent_id": 0
-    },
-    {
-      "query": "My current radar screen covers the region bounded by lat 51.0 to 51.6 and lon -0.5 to 0.3 over London. Are there any flights passing through? Just give me the first 20.",
-      "action_input": {
-        "bl_lat": 51.0,
-        "tr_lat": 51.6,
-        "bl_lng": -0.5,
-        "tr_lng": 0.3,
-        "limit": 20
-      },
-      "query_id": "batch_181",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm tracking air traffic over Tokyo. The map coordinates are 35.5 to 35.8 north, and 139.6 to 139.9 east. List 100 aircraft currently in this sector.",
-      "action_input": {
-        "bl_lat": 35.5,
-        "tr_lat": 35.8,
-        "bl_lng": 139.6,
-        "tr_lng": 139.9,
-        "limit": 100
-      },
-      "query_id": "batch_182",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I am standing at the window looking out over the Los Angeles area. Coordinates are 33.7 to 34.3 lat and -118.6 to -118.0 lon. Are there any commercial jets visible? List up to 40.",
-      "action_input": {
-        "bl_lat": 33.7,
-        "tr_lat": 34.3,
-        "bl_lng": -118.6,
-        "tr_lng": -118.0,
-        "limit": 40
-      },
-      "query_id": "batch_183",
-      "target_intent_id": 0
-    },
-    {
-      "query": "My monitor is locked onto the airspace above Sydney (latitude -34.0 to -33.6, longitude 150.9 to 151.3). Can you populate the map with the first 50 flights?",
-      "action_input": {
-        "bl_lat": -34.0,
-        "tr_lat": -33.6,
-        "bl_lng": 150.9,
-        "tr_lng": 151.3,
-        "limit": 50
-      },
-      "query_id": "batch_184",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm tracking aircraft movements across the English Channel. The box is from lat 50.0 to 51.0 and lon 0.0 to 1.5. Return a batch of 75 aircraft.",
-      "action_input": {
-        "bl_lat": 50.0,
-        "tr_lat": 51.0,
-        "bl_lng": 0.0,
-        "tr_lng": 1.5,
-        "limit": 75
-      },
-      "query_id": "batch_185",
-      "target_intent_id": 0
-    },
-    {
-      "query": "We need a traffic summary over Beijing. Coordinates: 39.7 to 40.2 north, 116.1 to 116.7 east. Get me up to 100 live flights.",
-      "action_input": {
-        "bl_lat": 39.7,
-        "tr_lat": 40.2,
-        "bl_lng": 116.1,
-        "tr_lng": 116.7,
-        "limit": 100
-      },
-      "query_id": "batch_186",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm watching the skies over Paris (lat 48.8 to 49.0, lon 2.3 to 2.6). I only want to see high-altitude flights cruising between 30000 and 40000 feet. Also, filter it so I only see Air France (AFR) planes.",
-      "action_input": {
-        "bl_lat": 48.8,
-        "tr_lat": 49.0,
-        "bl_lng": 2.3,
-        "tr_lng": 2.6,
-        "altitude": "30000,40000",
-        "airline": "AFR",
-        "limit": 300
-      },
-      "query_id": "batch_187",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Scan the airspace near Chicago (lat 41.7 to 42.0, lon -87.8 to -87.5). Are there any Boeing 777s (77W) flying incredibly fast, like between 400 and 600 knots? Show me up to 10 of them.",
-      "action_input": {
-        "bl_lat": 41.7,
-        "tr_lat": 42.0,
-        "bl_lng": -87.8,
-        "tr_lng": -87.5,
-        "speed": "400,600",
-        "type": "77W",
-        "limit": 10
-      },
-      "query_id": "batch_188",
-      "target_intent_id": 1
-    },
-    {
-      "query": "My viewport is set over Dubai, from latitude 25.0 to 25.4 and longitude 55.1 to 55.5. I'm specifically tracking an Emirates flight headed to DXB airport with the tail registration A6-EVS.",
-      "action_input": {
-        "bl_lat": 25.0,
-        "tr_lat": 25.4,
-        "bl_lng": 55.1,
-        "tr_lng": 55.5,
-        "airport": "DXB",
-        "reg": "A6-EVS"
-      },
-      "query_id": "batch_189",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm monitoring the zone around Frankfurt (lat 50.0 to 50.3, lon 8.4 to 8.8). I only want to see Lufthansa (DLH) flights that are descending below 10,000 feet. Show up to 20.",
-      "action_input": {
-        "bl_lat": 50.0,
-        "tr_lat": 50.3,
-        "bl_lng": 8.4,
-        "tr_lng": 8.8,
-        "airline": "DLH",
-        "altitude": "0,10000",
-        "limit": 20
-      },
-      "query_id": "batch_190",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Are there any slow-moving aircraft, like helicopters or light planes, over New York right now (lat 40.5 to 40.9, lon -74.2 to -73.7)? Filter for speeds between 0 and 150 knots.",
-      "action_input": {
-        "bl_lat": 40.5,
-        "tr_lat": 40.9,
-        "bl_lng": -74.2,
-        "tr_lng": -73.7,
-        "speed": "0,150"
-      },
-      "query_id": "batch_191",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Focus the radar on the area bounded by 1.2 to 1.5 north and 103.6 to 104.0 east (Singapore). I need to isolate all Airbus A380s (A388) inbound or outbound. Maximum 15 results.",
-      "action_input": {
-        "bl_lat": 1.2,
-        "tr_lat": 1.5,
-        "bl_lng": 103.6,
-        "tr_lng": 104.0,
-        "type": "A388",
-        "limit": 15
-      },
-      "query_id": "batch_192",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Over the skies of Atlanta (33.5 to 33.8 lat, -84.6 to -84.2 lon), I'm trying to track down a specific Delta plane with registration N501DN. Is it in this box?",
-      "action_input": {
-        "bl_lat": 33.5,
-        "tr_lat": 33.8,
-        "bl_lng": -84.6,
-        "tr_lng": -84.2,
-        "reg": "N501DN"
-      },
-      "query_id": "batch_193",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm a spotter looking at the map over Amsterdam (52.2 to 52.4 lat, 4.6 to 4.9 lon). I want to see all flights that are explicitly associated with Schiphol airport (AMS).",
-      "action_input": {
-        "bl_lat": 52.2,
-        "tr_lat": 52.4,
-        "bl_lng": 4.6,
-        "tr_lng": 4.9,
-        "airport": "AMS"
-      },
-      "query_id": "batch_194",
-      "target_intent_id": 1
     }
   ],
   "calculate_route": [
@@ -2341,172 +1259,517 @@
       },
       "query_id": "batch_104",
       "target_intent_id": 2
-    },
+    }
+  ],
+  "list_of_deals": [
     {
-      "query": "I need driving directions from my hotel at 40.7128,-74.0060 to the museum at 40.7580,-73.9855. Please give me the instructions in Spanish, and make sure to include voice cues since I'll be driving.",
+      "query": "I have a $10 budget and just want to browse some games on sale right now. Can you show me the first page of results, keeping it to 10 games per page? Sort them by price.",
       "action_input": {
-        "points": "40.7128,-74.0060|40.7580,-73.9855",
-        "routeType": "car",
-        "language": "es",
-        "voice_instructions": "1",
-        "finish_instruction": "1"
+        "upperPrice": 10,
+        "onSale": 1,
+        "pageNumber": 0,
+        "pageSize": 10,
+        "sortBy": "Price"
       },
-      "query_id": "batch_195",
+      "query_id": "batch_105",
       "target_intent_id": 0
     },
     {
-      "query": "Can you map out a walking path from 51.5074,-0.1278 to 51.5033,-0.1195? I need the output in plain JSON format with English turn-by-turn guidance, and don't worry about any finish instructions.",
+      "query": "Could you search for the exact title \"The Witcher 3\" and see if there are any deals for it? I don't care about the price limit.",
       "action_input": {
-        "points": "51.5074,-0.1278|51.5033,-0.1195",
-        "routeType": "foot",
-        "language": "en",
-        "format": "json"
+        "title": "The Witcher 3",
+        "exact": 1
       },
-      "query_id": "batch_196",
+      "query_id": "batch_106",
       "target_intent_id": 0
     },
     {
-      "query": "I am walking from 35.6895,139.6917 to 35.6580,139.7016 in Tokyo. I need the turn-by-turn directions in Japanese, and please make sure voice cues are disabled.",
+      "query": "I'm looking for any game with \"Assassin\" in the name, priced between $15 and $30. Sort the deals by Release date, descending order.",
       "action_input": {
-        "points": "35.6895,139.6917|35.6580,139.7016",
-        "routeType": "foot",
-        "language": "ja"
+        "title": "Assassin",
+        "lowerPrice": 15,
+        "upperPrice": 30,
+        "sortBy": "Release",
+        "desc": 1
       },
-      "query_id": "batch_197",
+      "query_id": "batch_107",
       "target_intent_id": 0
     },
     {
-      "query": "We are driving an RV across the country from 39.7392,-104.9903 to 40.7608,-111.8910. Give us the car route in English with a special finish instruction when we pull into the campground.",
+      "query": "Show me the third page of deals (20 items per page) sorted by Savings. I only want things that are genuinely discounted.",
       "action_input": {
-        "points": "39.7392,-104.9903|40.7608,-111.8910",
-        "routeType": "car",
-        "language": "en",
-        "finish_instruction": "1"
+        "pageNumber": 2,
+        "pageSize": 20,
+        "sortBy": "Savings",
+        "onSale": 1
       },
-      "query_id": "batch_198",
+      "query_id": "batch_108",
       "target_intent_id": 0
     },
     {
-      "query": "Route a delivery truck from 41.8781,-87.6298 to 39.9612,-82.9988. I need the JSON payload with English text instructions, and absolutely no voice instructions.",
+      "query": "Let's do some window shopping. Sort the list by Deal Rating and show me games above $40.",
       "action_input": {
-        "points": "41.8781,-87.6298|39.9612,-82.9988",
-        "routeType": "truck",
-        "language": "en",
-        "format": "json"
+        "sortBy": "Deal Rating",
+        "lowerPrice": 40
       },
-      "query_id": "batch_199",
+      "query_id": "batch_109",
       "target_intent_id": 0
     },
     {
-      "query": "I'm planning a cycling trip from 48.8566,2.3522 to 48.8014,2.1204. Since I'm on a bike, please optimize the route weighting for 'quiet_roads' and give me the directions in English JSON.",
+      "query": "I'm a huge fan of Epic Games. Show me some AAA titles on sale there. I only want high-quality stuff with a Metacritic score of at least 85.",
       "action_input": {
-        "points": "48.8566,2.3522|48.8014,2.1204",
-        "routeType": "bike",
-        "weighting": "quiet_roads",
-        "language": "en",
-        "format": "json"
+        "storeID": "25",
+        "AAA": 1,
+        "metacritic": 85,
+        "onSale": 1
       },
-      "query_id": "batch_200",
+      "query_id": "batch_110",
       "target_intent_id": 1
     },
     {
-      "query": "Plot a bicycle route across the city from 52.5200,13.4050 to 52.5015,13.3444. I want the weighting strategy set to 'networks' to stick to designated cycling paths. Keep it in German.",
+      "query": "Check if there are any deals for Steam App IDs 730 or 570. I only buy games that redeem on Steam, and they must have a Steam rating of 90 or higher.",
       "action_input": {
-        "points": "52.5200,13.4050|52.5015,13.3444",
-        "routeType": "bike",
-        "weighting": "networks",
-        "language": "de"
+        "steamAppID": "730,570",
+        "steamworks": 1,
+        "steamRating": 90
       },
-      "query_id": "batch_201",
+      "query_id": "batch_111",
       "target_intent_id": 1
     },
     {
-      "query": "I'm commuting to work on my bicycle from 51.0504,13.7373 to 51.0259,13.7252. I want a safe route, so please weight it for 'networks'. German directions are fine.",
+      "query": "My budget is $20. Give me exactly the game \"Cyberpunk 2077\" but only if it has a Metacritic over 80 and is from Steam or GoG.",
       "action_input": {
-        "points": "51.0504,13.7373|51.0259,13.7252",
-        "routeType": "bike",
-        "weighting": "networks",
-        "language": "de"
+        "upperPrice": 20,
+        "title": "Cyberpunk 2077",
+        "exact": 1,
+        "metacritic": 80,
+        "storeID": "1,7"
       },
-      "query_id": "batch_202",
+      "query_id": "batch_112",
       "target_intent_id": 1
     },
     {
-      "query": "Can you find a scenic bike path between 45.4215,-75.6972 and 45.3512,-75.7583? I prefer a route weighted towards 'quiet_roads'. Give me the result in English.",
+      "query": "Sort the AAA games by Reviews in descending order. I want to see the 5th page, 50 games per page, and only games with a Metacritic score of at least 75.",
       "action_input": {
-        "points": "45.4215,-75.6972|45.3512,-75.7583",
-        "routeType": "bike",
-        "weighting": "quiet_roads",
-        "language": "en"
+        "AAA": 1,
+        "sortBy": "Reviews",
+        "desc": 1,
+        "pageNumber": 4,
+        "pageSize": 50,
+        "metacritic": 75
       },
-      "query_id": "batch_203",
+      "query_id": "batch_113",
       "target_intent_id": 1
     },
     {
-      "query": "I'm racing from 43.7001,7.2691 to 43.5528,7.0174 on a road bike. Calculate the fastest route without any network weighting preference (just default). Provide instructions in French.",
+      "query": "Any steamworks games under $5 with a Steam rating of 95? Don't sort them, just the default sorting is fine.",
       "action_input": {
-        "points": "43.7001,7.2691|43.5528,7.0174",
-        "routeType": "bike",
-        "language": "fr"
+        "steamworks": 1,
+        "upperPrice": 5,
+        "steamRating": 95
       },
-      "query_id": "batch_204",
+      "query_id": "batch_114",
       "target_intent_id": 1
     },
     {
-      "query": "I need to download a GPX file for my hiking GPS device. The trail goes from 47.3769,8.5417 to 46.2044,6.1432 on foot. Please name the file 'swiss_hike'.",
+      "query": "I'm setting up a widget for my blog. Generate an RSS feed for deals under $15.",
       "action_input": {
-        "points": "47.3769,8.5417|46.2044,6.1432",
-        "format": "gpx",
-        "filename": "swiss_hike",
-        "routeType": "foot"
+        "output": "rss",
+        "upperPrice": 15
       },
-      "query_id": "batch_205",
+      "query_id": "batch_115",
       "target_intent_id": 2
     },
     {
-      "query": "Generate a KML file named 'road_trip' for a car route from 37.7749,-122.4194 to 34.0522,-118.2437 so I can load it into Google Earth.",
+      "query": "Can you export a feed of AAA games with a Metacritic score above 90? I need the output as an RSS feed to embed on my site.",
       "action_input": {
-        "points": "37.7749,-122.4194|34.0522,-118.2437",
-        "format": "kml",
-        "filename": "road_trip",
-        "routeType": "car"
+        "AAA": 1,
+        "metacritic": 90,
+        "output": "rss"
       },
-      "query_id": "batch_206",
+      "query_id": "batch_116",
       "target_intent_id": 2
     },
     {
-      "query": "We mapped a road trip from 25.7617,-80.1918 all the way down to 24.5551,-81.7800 by car. I want to save this route as a KML file. Just call it 'florida_keys'.",
+      "query": "Send me an RSS output for the game \"Skyrim\" on Steam so I can get notified when the price drops.",
       "action_input": {
-        "points": "25.7617,-80.1918|24.5551,-81.7800",
-        "routeType": "car",
-        "format": "kml",
-        "filename": "florida_keys"
+        "title": "Skyrim",
+        "exact": 1,
+        "storeID": "1",
+        "output": "rss"
       },
-      "query_id": "batch_207",
+      "query_id": "batch_117",
       "target_intent_id": 2
     },
     {
-      "query": "I'm organizing a marathon route on foot starting at 42.3601,-71.0589 and ending at 42.3314,-71.1662. Export the exact path to a GPX file named 'boston_run'.",
+      "query": "I need an RSS feed of steamworks games that have a steam rating of 90 or more, sorted by recent deals.",
       "action_input": {
-        "points": "42.3601,-71.0589|42.3314,-71.1662",
-        "routeType": "foot",
-        "format": "gpx",
-        "filename": "boston_run"
+        "output": "rss",
+        "steamworks": 1,
+        "steamRating": 90,
+        "sortBy": "recent"
       },
-      "query_id": "batch_208",
+      "query_id": "batch_118",
       "target_intent_id": 2
     },
     {
-      "query": "Create a truck delivery manifest route from 32.7767,-96.7970 to 29.7604,-95.3698. I need the geometry data as a KML file titled 'texas_delivery'. English is good.",
+      "query": "Export the deals for Steam App ID 400 as an RSS link for my Discord bot.",
       "action_input": {
-        "points": "32.7767,-96.7970|29.7604,-95.3698",
-        "routeType": "truck",
-        "format": "kml",
-        "filename": "texas_delivery",
-        "language": "en"
+        "steamAppID": "400",
+        "output": "rss"
       },
-      "query_id": "batch_209",
+      "query_id": "batch_119",
       "target_intent_id": 2
+    }
+  ],
+  "search_businesses": [
+    {
+      "query": "I'm traveling and need a verified plumber near my current location at latitude 34.05 and longitude -118.24. Just show me the top 5 results.",
+      "action_input": {
+        "query": "plumber",
+        "verified": true,
+        "lat": 34.05,
+        "lng": -118.24,
+        "limit": 5
+      },
+      "query_id": "batch_120",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up some coffee shops around here? My GPS is 40.71, -74.00, and I'd like the results returned in Spanish.",
+      "action_input": {
+        "query": "coffee shops",
+        "lat": 40.71,
+        "lng": -74.0,
+        "language": "es"
+      },
+      "query_id": "batch_121",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find me electronics stores that are currently open in the US region. Limit the search to 10 places.",
+      "action_input": {
+        "query": "electronics stores",
+        "business_status": "OPEN",
+        "region": "us",
+        "limit": 10
+      },
+      "query_id": "batch_122",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me a list of nearby hospitals at a zoom level of 12. Only show me the ones that are verified.",
+      "action_input": {
+        "query": "hospitals",
+        "zoom": "12",
+        "verified": true
+      },
+      "query_id": "batch_123",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for \"Vegan Bakery\" and filter by the subtype \"Bakery\". Set the limit to 20 results.",
+      "action_input": {
+        "query": "Vegan Bakery",
+        "subtypes": "Bakery",
+        "limit": 20
+      },
+      "query_id": "batch_124",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Are there any temporarily closed gyms in the UK? Just show me 3.",
+      "action_input": {
+        "query": "gyms",
+        "business_status": "CLOSED_TEMPORARILY",
+        "region": "gb",
+        "limit": 3
+      },
+      "query_id": "batch_125",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check if the restaurant \"Joe's Pizza\" is verified. My coordinates are 41.87 and -87.62.",
+      "action_input": {
+        "query": "Joe's Pizza",
+        "verified": true,
+        "lat": 41.87,
+        "lng": -87.62
+      },
+      "query_id": "batch_126",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm looking for a Japanese translation of nearby hotels around 48.85 latitude and 2.35 longitude.",
+      "action_input": {
+        "query": "hotels",
+        "language": "ja",
+        "lat": 48.85,
+        "lng": 2.35
+      },
+      "query_id": "batch_127",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for hair salons with the subtype \"Barber\". Limit it to 10 places.",
+      "action_input": {
+        "query": "hair salons",
+        "subtypes": "Barber",
+        "limit": 10
+      },
+      "query_id": "batch_128",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Let me see 5 fast food places around a zoom level of 10 that are currently closed.",
+      "action_input": {
+        "query": "fast food",
+        "zoom": "10",
+        "limit": 5,
+        "business_status": "CLOSED"
+      },
+      "query_id": "batch_129",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to scrape the contact info for 15 marketing agencies. Please extract their emails and social profiles, and only return their business_id and phone_number.",
+      "action_input": {
+        "query": "marketing agencies",
+        "limit": 15,
+        "extract_emails_and_contacts": true,
+        "fields": "business_id,phone_number"
+      },
+      "query_id": "batch_130",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Find me tech startups and get me their direct contact details. I want to scrape their emails.",
+      "action_input": {
+        "query": "tech startups",
+        "extract_emails_and_contacts": true
+      },
+      "query_id": "batch_131",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Pull up data for \"Target stores\" and just give me their full address and type. Don't fetch more than 5 results.",
+      "action_input": {
+        "query": "Target stores",
+        "fields": "full_address,type",
+        "limit": 5
+      },
+      "query_id": "batch_132",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I need to reach out to real estate agents. Scrape their contact info and give me 50 results with only the type and phone_number fields.",
+      "action_input": {
+        "query": "real estate agents",
+        "extract_emails_and_contacts": true,
+        "limit": 50,
+        "fields": "type,phone_number"
+      },
+      "query_id": "batch_133",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Get me the contact emails of 10 law firms. Scraping is required.",
+      "action_input": {
+        "query": "law firms",
+        "limit": 10,
+        "extract_emails_and_contacts": true
+      },
+      "query_id": "batch_134",
+      "target_intent_id": 1
+    }
+  ],
+  "get_trades_futures": [
+    {
+      "query": "Give me the 50 most recent futures trades for BTC and USDT on BINANCE. Sort them from latest to earliest.",
+      "action_input": {
+        "market_venue": "BINANCE",
+        "symbol": "BTC",
+        "base": "USDT",
+        "limit": 50,
+        "sort": "desc"
+      },
+      "query_id": "batch_135",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the trade history for ETH to USDC on OKX starting from 2023-01-01T00:00:00 UTC to 2023-01-02T00:00:00 UTC. Order them ascending.",
+      "action_input": {
+        "market_venue": "OKX",
+        "symbol": "ETH",
+        "base": "USDC",
+        "start": "2023-01-01T00:00:00",
+        "end": "2023-01-02T00:00:00",
+        "sort": "asc"
+      },
+      "query_id": "batch_136",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Show me the futures trades for ADA/USDT on KuCoin. I just need 10 results.",
+      "action_input": {
+        "market_venue": "KuCoin",
+        "symbol": "ADA",
+        "base": "USDT",
+        "limit": 10
+      },
+      "query_id": "batch_137",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are the earliest trades for SOL/USDT on Bybit? I want to see the first 100 records starting from 2022-05-15T08:00:00 UTC.",
+      "action_input": {
+        "market_venue": "Bybit",
+        "symbol": "SOL",
+        "base": "USDT",
+        "start": "2022-05-15T08:00:00",
+        "limit": 100,
+        "sort": "asc"
+      },
+      "query_id": "batch_138",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch 20 recent records for the DOGE/USDT pair on BINANCE.",
+      "action_input": {
+        "market_venue": "BINANCE",
+        "symbol": "DOGE",
+        "base": "USDT",
+        "limit": 20
+      },
+      "query_id": "batch_139",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me the latest trades for XRP/BUSD on Kraken. Limit to 5.",
+      "action_input": {
+        "market_venue": "Kraken",
+        "symbol": "XRP",
+        "base": "BUSD",
+        "limit": 5,
+        "sort": "desc"
+      },
+      "query_id": "batch_140",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need 200 trades for DOT/USDT on BINANCE ending at 2023-10-31T12:00:00 UTC.",
+      "action_input": {
+        "market_venue": "BINANCE",
+        "symbol": "DOT",
+        "base": "USDT",
+        "limit": 200,
+        "end": "2023-10-31T12:00:00"
+      },
+      "query_id": "batch_141",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find trades for LINK/USDC on Coinbase from 2024-01-01T00:00:00 UTC to 2024-01-01T23:59:59 UTC, sorting them earliest to latest.",
+      "action_input": {
+        "market_venue": "Coinbase",
+        "symbol": "LINK",
+        "base": "USDC",
+        "start": "2024-01-01T00:00:00",
+        "end": "2024-01-01T23:59:59",
+        "sort": "asc"
+      },
+      "query_id": "batch_142",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Show me the weekly futures contracts for BTC/USDT on BINANCE. Limit to 50 results.",
+      "action_input": {
+        "market_venue": "BINANCE",
+        "symbol": "BTC",
+        "base": "USDT",
+        "expiration": "weekly",
+        "limit": 50
+      },
+      "query_id": "batch_143",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I want to see quarterly futures trades for ETH/USDT on OKX that expire on 2023-12-29. Give me the 10 earliest.",
+      "action_input": {
+        "market_venue": "OKX",
+        "symbol": "ETH",
+        "base": "USDT",
+        "expiration": "quarterly",
+        "delivery_date": "2023-12-29",
+        "limit": 10,
+        "sort": "asc"
+      },
+      "query_id": "batch_144",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Retrieve 100 monthly expiration trades for SOL/USDC on Bybit.",
+      "action_input": {
+        "market_venue": "Bybit",
+        "symbol": "SOL",
+        "base": "USDC",
+        "expiration": "monthly",
+        "limit": 100
+      },
+      "query_id": "batch_145",
+      "target_intent_id": 1
+    },
+    {
+      "query": "I'm looking for perpetual contracts for ADA/USDT on BINANCE between 2023-06-01T00:00:00 and 2023-06-02T00:00:00 UTC.",
+      "action_input": {
+        "market_venue": "BINANCE",
+        "symbol": "ADA",
+        "base": "USDT",
+        "expiration": "perpetual",
+        "start": "2023-06-01T00:00:00",
+        "end": "2023-06-02T00:00:00"
+      },
+      "query_id": "batch_146",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Get me the latest 20 trades for XRP/USDT on Kraken for the contract delivering on 2024-03-29.",
+      "action_input": {
+        "market_venue": "Kraken",
+        "symbol": "XRP",
+        "base": "USDT",
+        "delivery_date": "2024-03-29",
+        "limit": 20,
+        "sort": "desc"
+      },
+      "query_id": "batch_147",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Search for weekly futures for DOGE/USDT on BINANCE. I need the earliest 5 records from 2023-08-01T10:00:00.",
+      "action_input": {
+        "market_venue": "BINANCE",
+        "symbol": "DOGE",
+        "base": "USDT",
+        "expiration": "weekly",
+        "start": "2023-08-01T10:00:00",
+        "limit": 5,
+        "sort": "asc"
+      },
+      "query_id": "batch_148",
+      "target_intent_id": 1
+    },
+    {
+      "query": "Can you fetch the trades for LTC/BUSD quarterly contracts on KuCoin delivering on 2023-09-29?",
+      "action_input": {
+        "market_venue": "KuCoin",
+        "symbol": "LTC",
+        "base": "BUSD",
+        "expiration": "quarterly",
+        "delivery_date": "2023-09-29"
+      },
+      "query_id": "batch_149",
+      "target_intent_id": 1
     }
   ]
 }

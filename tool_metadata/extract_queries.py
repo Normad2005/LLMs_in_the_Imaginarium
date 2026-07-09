@@ -11,6 +11,9 @@ APIS_TO_TEST = [
     "get_planet_data",
     "get_flights_in_bounding_box",
     "calculate_route",
+    "list_of_deals",
+    "search_businesses",
+    "get_trades_futures"
 ]
 
 def main():

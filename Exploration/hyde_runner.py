@@ -12,7 +12,7 @@ TOOL_DESC_PATH = "tool_metadata/tool_description.json"
 INTENT_DEF_PATH = "results/intent_definitions.json"
 TEST_QUERIES_PATH = "tool_metadata/test_queries_grouped.json"
 MODEL_CKPT = "llama3.1:8b-instruct-fp16"
-TOP_K = 10  # Number of APIs to retrieve
+TOP_K = 15  # Number of APIs to retrieve
 RESULTS_PATH = f"results/hyde_results_top{TOP_K}.json"
 
 def load_json(path):

@@ -23,6 +23,10 @@
     "category": "Data",
     "tool_name": "Public Bathrooms"
   },
+  "search_businesses": {
+    "category": "Data",
+    "tool_name": "Local Business Data"
+  },
   "get_dog_breeds_metadata": {
     "category": "Database",
     "tool_name": "DogBreed"
@@ -71,6 +75,10 @@
     "category": "Gaming",
     "tool_name": "League of Legends Stats"
   },
+  "list_of_deals": {
+    "category": "Gaming",
+    "tool_name": "CheapShark - Game Deals"
+  },
   "get_salary_estimation": {
     "category": "Jobs",
     "tool_name": "JSearch"
@@ -94,6 +102,10 @@
   "search_arxiv_papers": {
     "category": "Search",
     "tool_name": "arXiv"
+  },
+  "get_trades_futures": {
+    "category": "Search",
+    "tool_name": "Cryptocurrency Financial Data"
   },
   "get_soccer_tournaments": {
     "category": "Sports",

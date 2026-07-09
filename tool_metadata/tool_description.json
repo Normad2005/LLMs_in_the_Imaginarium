@@ -11,138 +11,10 @@
     ],
     "optional_parameters": []
   },
-  "get_random_word": {
-    "description": "Retrieves a random word based on specified constraints such as length and character patterns.",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "wordLength",
-        "type": "Number",
-        "description": "The exact length of the random word to retrieve. A value of 0 means no exact length constraint.",
-        "default": "0"
-      },
-      {
-        "name": "minLength",
-        "type": "Number",
-        "description": "The minimum length of the random word.",
-        "default": "0"
-      },
-      {
-        "name": "maxLength",
-        "type": "Number",
-        "description": "The maximum length of the random word.",
-        "default": "0"
-      },
-      {
-        "name": "includes",
-        "type": "String",
-        "description": "The specific characters that must be contained within the word."
-      },
-      {
-        "name": "excludes",
-        "type": "String",
-        "description": "The specific characters that must not appear in the word."
-      },
-      {
-        "name": "beginsWith",
-        "type": "String",
-        "description": "The specific character or substring that the word must start with."
-      },
-      {
-        "name": "endsWith",
-        "type": "String",
-        "description": "The specific character or substring that the word must end with."
-      }
-    ]
-  },
   "get_car_makes": {
     "description": "Return all car makes from a dataset",
     "required_parameters": [],
     "optional_parameters": []
-  },
-  "get_vehicle_specifications": {
-    "description": "Provides comprehensive vehicle specification information. Users can filter vehicle data using combinations of manufacturer, model, fuel efficiency (MPG), cylinder count, transmission type, year, drive type, and fuel type.",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "model",
-        "type": "String",
-        "description": "Model of vehicle."
-      },
-      {
-        "name": "make",
-        "type": "String",
-        "description": "Vehicle manufacturer."
-      },
-      {
-        "name": "min_city_mpg",
-        "type": "Number",
-        "description": "Minimum City fuel efficiency in miles per gallon.",
-        "default": "0"
-      },
-      {
-        "name": "max_city_mpg",
-        "type": "Number",
-        "description": "Maximum city fuel efficiency in miles per gallon.",
-        "default": "0"
-      },
-      {
-        "name": "min_hwy_mpg",
-        "type": "Number",
-        "description": "Minimum highway fuel efficiency in miles per gallon.",
-        "default": "0"
-      },
-      {
-        "name": "max_hwy_mpg",
-        "type": "Number",
-        "description": "Maximum highway fuel efficiency in miles per gallon.",
-        "default": "0"
-      },
-      {
-        "name": "min_comb_mpg",
-        "type": "Number",
-        "description": "Minimum combination (city + highway) fuel efficiency in miles per gallon.",
-        "default": "0"
-      },
-      {
-        "name": "max_comb_mpg",
-        "type": "Number",
-        "description": "Maximum combination (city + highway) fuel efficiency in miles per gallon.",
-        "default": "0"
-      },
-      {
-        "name": "cylinders",
-        "type": "Number",
-        "description": "Number of cylinders. Possible values: 2, 3 4, 5, 6, 8, 10, 12, 16",
-        "default": "0"
-      },
-      {
-        "name": "transmission",
-        "type": "String",
-        "description": "Type of transmission. Possible values: manual, automatic"
-      },
-      {
-        "name": "year",
-        "type": "String",
-        "description": "Vehicle model year."
-      },
-      {
-        "name": "drive",
-        "type": "String",
-        "description": "Drive transmission. Possible values: fwd (front-wheel drive), rwd (rear-wheel drive), awd (all-wheel drive), 4wd (four-wheel drive)"
-      },
-      {
-        "name": "fuel_type",
-        "type": "String",
-        "description": "Type of fuel used. Possible values: gas, diesel, electricity"
-      },
-      {
-        "name": "limit",
-        "type": "String",
-        "description": "How many results to return. Must be between 1 and 30.",
-        "default": "5"
-      }
-    ]
   },
   "get_animal_facts": {
     "description": "Provides interesting scientific facts on thousands of different animal species.",
@@ -286,6 +158,84 @@
         "type": "Number",
         "description": "The number of results to return per page.",
         "default": "10"
+      }
+    ]
+  },
+  "search_businesses": {
+    "description": "Searches for businesses and locations on Google Maps using keywords, supporting geographical biasing, category filtering, and contact data enrichment.",
+    "required_parameters": [
+      {
+        "name": "query",
+        "type": "String",
+        "description": "Search query or keyword. Examples: Plumbers near New-York, USA or Bars in 94102, USA."
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "Number",
+        "description": "Maximum number of businesses to return. Allowed values range from 1 to 500.",
+        "default": "20"
+      },
+      {
+        "name": "lat",
+        "type": "Number",
+        "description": "Latitude of the coordinates point to bias results towards a specific location.",
+        "default": "37.359428"
+      },
+      {
+        "name": "lng",
+        "type": "Number",
+        "description": "Longitude of the coordinates point to bias results towards a specific location.",
+        "default": "-121.925337"
+      },
+      {
+        "name": "zoom",
+        "type": "String",
+        "description": "Zoom level on which to make the search, determining the viewport along with lat and lng.",
+        "default": "13"
+      },
+      {
+        "name": "language",
+        "type": "String",
+        "description": "Set the language of the results using standard ISO 639-1 language codes.",
+        "default": "en"
+      },
+      {
+        "name": "region",
+        "type": "String",
+        "description": "Query Google Maps from a particular region or country using ISO 3166 Alpha-2 codes.",
+        "default": "us"
+      },
+      {
+        "name": "subtypes",
+        "type": "String",
+        "description": "Find businesses with specific subtypes, specified as a comma-separated list of categories. Examples: Plumber,Carpenter,Electrician.",
+        "default": ""
+      },
+      {
+        "name": "verified",
+        "type": "Boolean",
+        "description": "Filter to only return verified businesses.",
+        "default": "false"
+      },
+      {
+        "name": "business_status",
+        "type": "String",
+        "description": "Filter by business operational status. Comma-separated list of values: OPEN, CLOSED_TEMPORARILY, CLOSED.",
+        "default": ""
+      },
+      {
+        "name": "extract_emails_and_contacts",
+        "type": "Boolean",
+        "description": "Extract emails, social profiles, and phones by scraping the business website. Note that enabling this may incur additional API credits.",
+        "default": "false"
+      },
+      {
+        "name": "fields",
+        "type": "String",
+        "description": "A comma-separated list of business fields to include in the response for field projection. Example: business_id,type,phone_number,full_address.",
+        "default": ""
       }
     ]
   },
@@ -543,6 +493,108 @@
       }
     ],
     "optional_parameters": []
+  },
+  "list_of_deals": {
+    "description": "Get a paged list of game deals matching any number of optional filtering criteria, including price ranges, ratings, stores, and titles.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "lowerPrice",
+        "type": "Number",
+        "description": "Only returns deals with a price greater than this value.",
+        "default": "0"
+      },
+      {
+        "name": "upperPrice",
+        "type": "Number",
+        "description": "Only returns deals with a price less than or equal to this value. A value of 50 acts as no limit.",
+        "default": "50"
+      },
+      {
+        "name": "title",
+        "type": "String",
+        "description": "Looks for the string contained anywhere in the game name.",
+        "default": "batman"
+      },
+      {
+        "name": "exact",
+        "type": "Boolean",
+        "description": "Flag to allow only exact string match for the title parameter. 0=false, 1=true.",
+        "default": "0"
+      },
+      {
+        "name": "steamAppID",
+        "type": "String",
+        "description": "Look for deals on specific games. Comma separated list of Steam App IDs.",
+        "default": ""
+      },
+      {
+        "name": "storeID",
+        "type": "String",
+        "description": "Comma separated list of store IDs to filter on. Examples: 1: Steam, 2: GamersGate, 3: GreenManGaming, 7: GoG, 25: Epic Games Store.",
+        "default": "1,2,3"
+      },
+      {
+        "name": "steamRating",
+        "type": "Number",
+        "description": "Minimum Steam reviews rating score for a game.",
+        "default": "0"
+      },
+      {
+        "name": "metacritic",
+        "type": "Number",
+        "description": "Minimum Metacritic rating score for a game.",
+        "default": "0"
+      },
+      {
+        "name": "onSale",
+        "type": "Boolean",
+        "description": "Flag to include only games that are currently on sale. 0=false, 1=true.",
+        "default": "0"
+      },
+      {
+        "name": "AAA",
+        "type": "Boolean",
+        "description": "Flag to include only deals with a retail price greater than 29 dollars. 0=false, 1=true.",
+        "default": "0"
+      },
+      {
+        "name": "steamworks",
+        "type": "Boolean",
+        "description": "Flag to include only deals that redeem on Steam. 0=false, 1=true.",
+        "default": "0"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "description": "Criteria to sort the list by. Available options: Deal Rating, Title, Savings, Price, Metacritic, Reviews, Release, Store, recent.",
+        "default": "Deal Rating"
+      },
+      {
+        "name": "desc",
+        "type": "Boolean",
+        "description": "Determines sort direction. 0=ascending, 1=descending.",
+        "default": "0"
+      },
+      {
+        "name": "output",
+        "type": "String",
+        "description": "Option to output deals in RSS format. Overrides page number and size to 0 and 100 if set.",
+        "default": "json"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "description": "The requested page number, 0 indexed.",
+        "default": "0"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "description": "The size of pages returned. Maximum value is 60.",
+        "default": "60"
+      }
+    ]
   },
   "get_salary_estimation": {
     "description": "Retrieves detailed salary estimation data, including minimum, maximum, and median base/total salary, for a specified job title and location, with optional filtering by location type and years of experience.",
@@ -814,6 +866,67 @@
         "description": "The maximum number of results to return.",
         "default": "5",
         "minimum": "1"
+      }
+    ]
+  },
+  "get_trades_futures": {
+    "description": "Retrieves public futures trade records filtered by market venue, trading pair, and time ranges, with support for specific contract expiration types.",
+    "required_parameters": [
+      {
+        "name": "market_venue",
+        "type": "String",
+        "description": "The name of the exchange or venue. Example: BINANCE.",
+        "default": "BINANCE"
+      },
+      {
+        "name": "base",
+        "type": "String",
+        "description": "The second listed currency of a currency pair. Example: USDT.",
+        "default": "USDT"
+      },
+      {
+        "name": "symbol",
+        "type": "String",
+        "description": "The first listed currency of a currency pair. Example: BTC.",
+        "default": "BTC"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "sort",
+        "type": "String",
+        "description": "The ordering of results. Available options: asc (earliest to latest), desc (latest to earliest).",
+        "default": "asc"
+      },
+      {
+        "name": "start",
+        "type": "String",
+        "description": "Start of the requested time period. Format: YYYY-MM-DDTHH:MM:SS UTC.",
+        "default": "2023-05-05T10:05:00"
+      },
+      {
+        "name": "end",
+        "type": "String",
+        "description": "End of the requested time period. Format: YYYY-MM-DDTHH:MM:SS UTC.",
+        "default": "2023-05-06T10:05:00"
+      },
+      {
+        "name": "limit",
+        "type": "Number",
+        "description": "Maximum number of records to return. Maximum value is 10000.",
+        "default": "100"
+      },
+      {
+        "name": "expiration",
+        "type": "String",
+        "description": "The lifespan of a futures contract. Available options: perpetual, weekly, quarterly, monthly.",
+        "default": "perpetual"
+      },
+      {
+        "name": "delivery_date",
+        "type": "String",
+        "description": "The last day when a future contract is valid. Format: YYYY-MM-DD.",
+        "default": ""
       }
     ]
   },

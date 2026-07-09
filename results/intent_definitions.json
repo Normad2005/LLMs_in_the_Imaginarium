@@ -634,24 +634,6 @@
       }
     ]
   },
-  "get_random_word": {
-    "intents": [
-      {
-        "intent_id": 0,
-        "name": "generate_random_word",
-        "description": "I want a random word that matches the exact constraints I have in mind—maybe a specific length, or it must contain certain letters while avoiding others, or it should start or end with a particular substring—for my writing prompt, game clue, or language exercise.",
-        "key_parameters": [
-          "wordLength",
-          "minLength",
-          "maxLength",
-          "includes",
-          "excludes",
-          "beginsWith",
-          "endsWith"
-        ]
-      }
-    ]
-  },
   "calculate_route": {
     "intents": [
       {
@@ -689,6 +671,137 @@
           "filename",
           "routeType",
           "language"
+        ]
+      }
+    ]
+  },
+  "list_of_deals": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "browse_deals",
+        "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+        "key_parameters": [
+          "lowerPrice",
+          "upperPrice",
+          "title",
+          "exact",
+          "onSale",
+          "sortBy",
+          "desc",
+          "pageNumber",
+          "pageSize"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "targeted_deal_search",
+        "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+        "key_parameters": [
+          "lowerPrice",
+          "upperPrice",
+          "title",
+          "exact",
+          "steamAppID",
+          "storeID",
+          "steamRating",
+          "metacritic",
+          "onSale",
+          "AAA",
+          "steamworks",
+          "sortBy",
+          "desc",
+          "pageNumber",
+          "pageSize"
+        ]
+      },
+      {
+        "intent_id": 2,
+        "name": "deal_feed_export",
+        "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+        "key_parameters": [
+          "lowerPrice",
+          "upperPrice",
+          "title",
+          "exact",
+          "steamAppID",
+          "storeID",
+          "steamRating",
+          "metacritic",
+          "onSale",
+          "AAA",
+          "steamworks",
+          "output",
+          "sortBy",
+          "desc",
+          "pageNumber",
+          "pageSize"
+        ]
+      }
+    ]
+  },
+  "search_businesses": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "basic_business_search",
+        "description": "I'm looking for a list of nearby businesses—like plumbers or bars—based on a keyword, and I want to control how many results I get, bias the search to my current GPS coordinates, choose a language or region, filter by categories, verified status, or whether they're currently open.",
+        "key_parameters": [
+          "query",
+          "limit",
+          "lat",
+          "lng",
+          "zoom",
+          "language",
+          "region",
+          "subtypes",
+          "verified",
+          "business_status"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "enriched_business_lookup",
+        "description": "I need detailed contact information for the businesses I find, so I want the API to scrape their websites for emails, phone numbers, and social profiles, and I only want specific fields returned in the response.",
+        "key_parameters": [
+          "query",
+          "limit",
+          "extract_emails_and_contacts",
+          "fields"
+        ]
+      }
+    ]
+  },
+  "get_trades_futures": {
+    "intents": [
+      {
+        "intent_id": 0,
+        "name": "basic_futures_trade_history",
+        "description": "I want to view recent futures trades for a specific exchange and trading pair, optionally within a certain time window, sorted the way I prefer, and limited to a manageable number of records.",
+        "key_parameters": [
+          "market_venue",
+          "base",
+          "symbol",
+          "sort",
+          "start",
+          "end",
+          "limit"
+        ]
+      },
+      {
+        "intent_id": 1,
+        "name": "expiration_focused_futures_query",
+        "description": "I need to retrieve futures trades that match a particular contract expiration type—like weekly or quarterly—and possibly filter by the contract's delivery date, while still controlling the market, pair, time range, sorting, and result size.",
+        "key_parameters": [
+          "market_venue",
+          "base",
+          "symbol",
+          "sort",
+          "start",
+          "end",
+          "limit",
+          "expiration",
+          "delivery_date"
         ]
       }
     ]

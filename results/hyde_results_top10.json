@@ -36765,5 +36765,4760 @@
     "global_api_hit": true,
     "intra_intent_hit": true,
     "result": "HIT"
+  },
+  {
+    "query_id": "batch_105",
+    "query": "I have a $10 budget and just want to browse some games on sale right now. Can you show me the first page of results, keeping it to 10 games per page? Sort them by price.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 0,
+    "hyde_desc": "I'm looking to browse games that are currently on sale within my $10 budget and I'd like to see the first page of results with 10 games per page, sorted by price.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 0,
+        "best_score": 0.6933289766311646,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.6933289766311646,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.5487729907035828,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.4353063106536865,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.5117766261100769,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.5117766261100769,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.4031994342803955,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.4031994342803955,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.3842064440250397,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3842064440250397,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.38250207901000977,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.38250207901000977,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_arxiv_papers",
+        "best_intent_id": 0,
+        "best_score": 0.37225696444511414,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.37225696444511414,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_arxiv_papers",
+              "description": "I'm trying to find scientific papers on a topic I'm researching, so I type a keyword, maybe limit the results to a date range, pick whether I want to search titles, authors, or the whole abstract, and decide how many papers I need and which page to start on.",
+              "key_parameters": [
+                "search_term",
+                "date_from",
+                "date_to",
+                "date_type",
+                "field",
+                "start",
+                "num_results"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.3608119487762451,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3608119487762451,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_hotels_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.3340584933757782,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.3340584933757782,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "advanced_hotel_search",
+              "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "adults",
+                "rooms",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.2554880976676941,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_hotel_search",
+              "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.3308594226837158,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.3308594226837158,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.29900699853897095,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_exercises_by_name",
+        "best_intent_id": 0,
+        "best_score": 0.3303477466106415,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3303477466106415,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_exercises",
+              "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+              "key_parameters": [
+                "name",
+                "limit",
+                "offset",
+                "sortOrder",
+                "sortMethod"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_106",
+    "query": "Could you search for the exact title \"The Witcher 3\" and see if there are any deals for it? I don't care about the price limit.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 0,
+    "hyde_desc": "I'm looking to find any available deals for a specific game titled \"The Witcher 3\" without considering a price limit, which means I want to see all potential discounts and promotions regardless of how much they cost.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.5248042941093445,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.5248042941093445,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.5227537751197815,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.2638872563838959,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.3345213532447815,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3345213532447815,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.31237444281578064,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.31237444281578064,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.22393745183944702,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.22393745183944702,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.0806313306093216,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.2069181203842163,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2069181203842163,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.16507463157176971,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.16507463157176971,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.15857121348381042,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.15857121348381042,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_motorcycle_data",
+        "best_intent_id": 0,
+        "best_score": 0.14528235793113708,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.14528235793113708,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_motorcycle_specifications",
+              "description": "I'm looking for detailed specs of a motorcycle and want to filter by brand, model name, and production year to find exactly the bike I'm interested in.",
+              "key_parameters": [
+                "make",
+                "model",
+                "year"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_exercises_by_name",
+        "best_intent_id": 0,
+        "best_score": 0.14215892553329468,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.14215892553329468,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_exercises",
+              "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+              "key_parameters": [
+                "name",
+                "limit",
+                "offset",
+                "sortOrder",
+                "sortMethod"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_financial_data",
+        "best_intent_id": 0,
+        "best_score": 0.13396860659122467,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.13396860659122467,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_stock_global_quote",
+              "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+              "key_parameters": [
+                "function",
+                "symbol"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": false,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_107",
+    "query": "I'm looking for any game with \"Assassin\" in the name, priced between $15 and $30. Sort the deals by Release date, descending order.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 0,
+    "hyde_desc": "I'm looking for games with \"Assassin\" in their name that I can buy within a specific price range, between $15 and $30, and I want to see them sorted by release date in reverse chronological order.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 0,
+        "best_score": 0.5914815664291382,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.5914815664291382,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.5161198377609253,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.36123451590538025,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.3844113051891327,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3844113051891327,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.34674495458602905,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.34674495458602905,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.3225688934326172,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3225688934326172,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_exercises_by_name",
+        "best_intent_id": 0,
+        "best_score": 0.3057872951030731,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3057872951030731,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_exercises",
+              "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+              "key_parameters": [
+                "name",
+                "limit",
+                "offset",
+                "sortOrder",
+                "sortMethod"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.302380234003067,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.302380234003067,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.2544938027858734,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2544938027858734,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_financial_data",
+        "best_intent_id": 0,
+        "best_score": 0.24763712286949158,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.24763712286949158,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_stock_global_quote",
+              "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+              "key_parameters": [
+                "function",
+                "symbol"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.22910571098327637,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.22910571098327637,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.22909118235111237,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.22909118235111237,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_108",
+    "query": "Show me the third page of deals (20 items per page) sorted by Savings. I only want things that are genuinely discounted.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 0,
+    "hyde_desc": "I'm looking to view the third page of a list of deals that are sorted by the amount of savings they offer, with each page showing 20 items, and I only want to see genuine discounts.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 0,
+        "best_score": 0.6291600465774536,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.6291600465774536,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.4561207592487335,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.4338224530220032,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.47226348519325256,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.47226348519325256,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.2830900549888611,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.2830900549888611,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.2741386890411377,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.2782270610332489,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2782270610332489,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.27779343724250793,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.27779343724250793,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_arxiv_papers",
+        "best_intent_id": 0,
+        "best_score": 0.2697465717792511,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2697465717792511,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_arxiv_papers",
+              "description": "I'm trying to find scientific papers on a topic I'm researching, so I type a keyword, maybe limit the results to a date range, pick whether I want to search titles, authors, or the whole abstract, and decide how many papers I need and which page to start on.",
+              "key_parameters": [
+                "search_term",
+                "date_from",
+                "date_to",
+                "date_type",
+                "field",
+                "start",
+                "num_results"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.26308131217956543,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.26308131217956543,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_hotels_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.26233118772506714,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.26233118772506714,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "advanced_hotel_search",
+              "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "adults",
+                "rooms",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.2517102360725403,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_hotel_search",
+              "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_car_makes",
+        "best_intent_id": 0,
+        "best_score": 0.25435423851013184,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.25435423851013184,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_car_makes",
+              "description": "I want to see every car make in the system so I can choose a brand for my next vehicle.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "calculate_mortgage_payment",
+        "best_intent_id": 0,
+        "best_score": 0.24859638512134552,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.24859638512134552,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_mortgage_payment",
+              "description": "I know the loan amount I'm borrowing, the interest rate, and the term, and I want to see what my monthly mortgage payment will be.",
+              "key_parameters": [
+                "interest_rate",
+                "loan_amount",
+                "duration_years"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.16349424421787262,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "mortgage_from_home_value",
+              "description": "I know the price of the home and how much I can put down, and I need to calculate the loan amount and monthly payment.",
+              "key_parameters": [
+                "interest_rate",
+                "home_value",
+                "downpayment",
+                "duration_years"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.1464463174343109,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "total_housing_cost",
+              "description": "I want to understand my full monthly housing cost, including mortgage, HOA fees, property taxes, and insurance.",
+              "key_parameters": [
+                "interest_rate",
+                "loan_amount",
+                "duration_years",
+                "monthly_hoa",
+                "annual_property_tax",
+                "annual_home_insurance"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_109",
+    "query": "Let's do some window shopping. Sort the list by Deal Rating and show me games above $40.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 0,
+    "hyde_desc": "I want to browse through a list of games that I can purchase and have them sorted by their deal rating so I can see which ones are offering the best value, and I'm only interested in games that cost more than $40.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.7097308039665222,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.7097308039665222,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.6988142728805542,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.3334543704986572,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.47223806381225586,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.47223806381225586,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.44449496269226074,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.44449496269226074,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.32414907217025757,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.32414907217025757,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.32057833671569824,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.32057833671569824,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.2867160737514496,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.2867160737514496,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.21118949353694916,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.27332574129104614,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.27332574129104614,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_lol_champion_stats",
+        "best_intent_id": 0,
+        "best_score": 0.2684190571308136,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2684190571308136,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_champion_stats",
+              "description": "I want to see the detailed stats and scaling values for a specific League of Legends champion, like Ekko or Jhin, so I can plan my build and strategy.",
+              "key_parameters": [
+                "name"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_exercises_by_name",
+        "best_intent_id": 0,
+        "best_score": 0.262383371591568,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.262383371591568,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_exercises",
+              "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+              "key_parameters": [
+                "name",
+                "limit",
+                "offset",
+                "sortOrder",
+                "sortMethod"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_hotels_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.2513514459133148,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.2513514459133148,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "advanced_hotel_search",
+              "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "adults",
+                "rooms",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.24411043524742126,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_hotel_search",
+              "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": false,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_110",
+    "query": "I'm a huge fan of Epic Games. Show me some AAA titles on sale there. I only want high-quality stuff with a Metacritic score of at least 85.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 1,
+    "hyde_desc": "I'm looking to discover high-quality AAA games on Epic Games that are currently on sale and have received a Metacritic score of at least 85, which suggests I'm seeking top-rated titles with significant critical acclaim.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.48283225297927856,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.48283225297927856,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.28811201453208923,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.14701016247272491,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.2320100963115692,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2320100963115692,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.23063096404075623,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.23063096404075623,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.20061412453651428,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.20061412453651428,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.19223186373710632,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.19223186373710632,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.1809874325990677,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.1809874325990677,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.1769314408302307,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.1769314408302307,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_lol_champion_stats",
+        "best_intent_id": 0,
+        "best_score": 0.1537068784236908,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.1537068784236908,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_champion_stats",
+              "description": "I want to see the detailed stats and scaling values for a specific League of Legends champion, like Ekko or Jhin, so I can plan my build and strategy.",
+              "key_parameters": [
+                "name"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.13756610453128815,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.13756610453128815,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_f1_latest_news",
+        "best_intent_id": 0,
+        "best_score": 0.12579570710659027,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.12579570710659027,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_latest_f1_news",
+              "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+              "key_parameters": []
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_111",
+    "query": "Check if there are any deals for Steam App IDs 730 or 570. I only buy games that redeem on Steam, and they must have a Steam rating of 90 or higher.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 1,
+    "hyde_desc": "I'm looking to find deals on specific Steam games with high ratings that redeem on Steam, and I only consider titles with App IDs 730 or 570, which have a minimum Steam rating of 90.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.7218033075332642,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.7218033075332642,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.5029840469360352,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.3085995614528656,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.37333911657333374,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.37333911657333374,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.3426946699619293,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3426946699619293,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.24995538592338562,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.24995538592338562,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.24169521033763885,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.24169521033763885,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.23063518106937408,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.23063518106937408,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_hotels_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.2234608381986618,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.2234608381986618,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "advanced_hotel_search",
+              "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "adults",
+                "rooms",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.18650023639202118,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_hotel_search",
+              "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.21889807283878326,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.21889807283878326,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.11020652204751968,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_lol_champion_stats",
+        "best_intent_id": 0,
+        "best_score": 0.17473329603672028,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.17473329603672028,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_champion_stats",
+              "description": "I want to see the detailed stats and scaling values for a specific League of Legends champion, like Ekko or Jhin, so I can plan my build and strategy.",
+              "key_parameters": [
+                "name"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.16613878309726715,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.16613878309726715,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_112",
+    "query": "My budget is $20. Give me exactly the game \"Cyberpunk 2077\" but only if it has a Metacritic over 80 and is from Steam or GoG.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 1,
+    "hyde_desc": "I'm looking to purchase Cyberpunk 2077 from either Steam or GoG with a Metacritic score over 80, and I have a budget of exactly $20.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.371777206659317,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.371777206659317,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.2636110782623291,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.13934528827667236,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.22806504368782043,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.22806504368782043,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.16423949599266052,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.16423949599266052,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.13013184070587158,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.13013184070587158,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.1287553608417511,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.1287553608417511,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.11594045162200928,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.11594045162200928,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.09994690120220184,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.09994690120220184,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": -0.011807980947196484,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.09733746945858002,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.09733746945858002,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_hotels_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.09522293508052826,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.09522293508052826,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "advanced_hotel_search",
+              "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "adults",
+                "rooms",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.0285421721637249,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_hotel_search",
+              "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_planet_data",
+        "best_intent_id": 1,
+        "best_score": 0.0928027480840683,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.0928027480840683,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "planet_search_by_scientific_criteria",
+              "description": "I'm a researcher exploring exoplanets that fit certain scientific thresholds, so I need to filter by ranges of mass, radius, orbital period, temperature, and distance from Earth to find candidates for my study.",
+              "key_parameters": [
+                "min_mass",
+                "max_mass",
+                "min_radius",
+                "max_radius",
+                "min_period",
+                "max_period",
+                "min_temperature",
+                "max_temperature",
+                "min_distance_light_year",
+                "max_distance_light_year"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.037227194756269455,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "planet_lookup_by_name",
+              "description": "I'm curious about a specific world I heard of—like Kepler-452b—and I want to see its basic data such as mass, radius, orbital period, temperature, and how far it is from Earth.",
+              "key_parameters": [
+                "name"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_113",
+    "query": "Sort the AAA games by Reviews in descending order. I want to see the 5th page, 50 games per page, and only games with a Metacritic score of at least 75.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 1,
+    "hyde_desc": "I want to see a list of AAA games sorted by their reviews in descending order, specifically on the 5th page with 50 games per page, and I'm only interested in games that have received at least a Metacritic score of 75.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.49903932213783264,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.49903932213783264,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.4945804476737976,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.2944335639476776,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.37248384952545166,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.37248384952545166,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.35498756170272827,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.35498756170272827,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.3199053108692169,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3199053108692169,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.3154422640800476,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3154422640800476,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.3101293444633484,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3101293444633484,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.2938627004623413,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2938627004623413,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_exercises_by_name",
+        "best_intent_id": 0,
+        "best_score": 0.28360509872436523,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.28360509872436523,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_exercises",
+              "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+              "key_parameters": [
+                "name",
+                "limit",
+                "offset",
+                "sortOrder",
+                "sortMethod"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_f1_latest_news",
+        "best_intent_id": 0,
+        "best_score": 0.2733282744884491,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2733282744884491,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_latest_f1_news",
+              "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 0,
+        "best_score": 0.2662985324859619,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2662985324859619,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.13349901139736176,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_114",
+    "query": "Any steamworks games under $5 with a Steam rating of 95? Don't sort them, just the default sorting is fine.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 1,
+    "hyde_desc": "I'm looking for Steam games that are available on Steamworks and cost less than $5, with a Steam rating of 95 out of 100, and I want to see them in their default order without any sorting.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.5005512833595276,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.5005512833595276,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.49838119745254517,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.2680228650569916,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.31101298332214355,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.31101298332214355,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.2998335659503937,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2998335659503937,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.2894662916660309,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2894662916660309,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.22940193116664886,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.22940193116664886,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_exercises_by_name",
+        "best_intent_id": 0,
+        "best_score": 0.2134433388710022,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2134433388710022,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_exercises",
+              "description": "I'm looking for workout moves that contain a certain word in their name, like 'arm', so I can see the details, compare difficulty levels, and pick the right ones for my routine. I may want to limit how many I see, jump to the next page, or sort them by name, equipment, or difficulty.",
+              "key_parameters": [
+                "name",
+                "limit",
+                "offset",
+                "sortOrder",
+                "sortMethod"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_hotels_by_location",
+        "best_intent_id": 0,
+        "best_score": 0.1916414201259613,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.1916414201259613,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_hotel_search",
+              "description": "I'm planning a short trip and just need to see which hotels are available inside a map area for my travel dates. I don't have special guest or language requirements, I just want the default list of options.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "limit",
+                "offset"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.12804369628429413,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "advanced_hotel_search",
+              "description": "I'm organizing a family vacation and want to fine‑tune the search: specify the number of adults and rooms, see prices in a chosen currency, get results in my language, and control pagination.",
+              "key_parameters": [
+                "bl_latitude",
+                "bl_longitude",
+                "tr_latitude",
+                "tr_longitude",
+                "checkin",
+                "checkout",
+                "adults",
+                "rooms",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.16258269548416138,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.16258269548416138,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.1614837497472763,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.1614837497472763,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.1172594353556633,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.15930183231830597,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.15930183231830597,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_115",
+    "query": "I'm setting up a widget for my blog. Generate an RSS feed for deals under $15.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 2,
+    "hyde_desc": "I'm trying to create an RSS feed that will automatically update with information about deals on my blog that cost less than $15. I want this feed to specifically include items under a price threshold of $15.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 2,
+        "best_score": 0.504885733127594,
+        "all_intent_scores": [
+          {
+            "intent_id": 2,
+            "score": 0.504885733127594,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.38706856966018677,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.33434298634529114,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.35445699095726013,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.35445699095726013,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.12467934936285019,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.32350999116897583,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.32350999116897583,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.3073466718196869,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3073466718196869,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_financial_data",
+        "best_intent_id": 0,
+        "best_score": 0.2699238657951355,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2699238657951355,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_stock_global_quote",
+              "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+              "key_parameters": [
+                "function",
+                "symbol"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_f1_latest_news",
+        "best_intent_id": 0,
+        "best_score": 0.26936933398246765,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.26936933398246765,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_latest_f1_news",
+              "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.21920658648014069,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.21920658648014069,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "calculate_mortgage_payment",
+        "best_intent_id": 2,
+        "best_score": 0.21839118003845215,
+        "all_intent_scores": [
+          {
+            "intent_id": 2,
+            "score": 0.21839118003845215,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "mortgage_from_home_value",
+              "description": "I know the price of the home and how much I can put down, and I need to calculate the loan amount and monthly payment.",
+              "key_parameters": [
+                "interest_rate",
+                "home_value",
+                "downpayment",
+                "duration_years"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.20113424956798553,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_mortgage_payment",
+              "description": "I know the loan amount I'm borrowing, the interest rate, and the term, and I want to see what my monthly mortgage payment will be.",
+              "key_parameters": [
+                "interest_rate",
+                "loan_amount",
+                "duration_years"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.11444524675607681,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "total_housing_cost",
+              "description": "I want to understand my full monthly housing cost, including mortgage, HOA fees, property taxes, and insurance.",
+              "key_parameters": [
+                "interest_rate",
+                "loan_amount",
+                "duration_years",
+                "monthly_hoa",
+                "annual_property_tax",
+                "annual_home_insurance"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "convert_currency",
+        "best_intent_id": 0,
+        "best_score": 0.20893368124961853,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.20893368124961853,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "convert_currency",
+              "description": "I'm planning a trip abroad and need to know how much my money will be worth in the destination currency, so I tell the system which currency I'm converting from and which currency I want to convert to.",
+              "key_parameters": [
+                "base",
+                "target"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_salary_estimation",
+        "best_intent_id": 0,
+        "best_score": 0.19990670680999756,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.19990670680999756,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "salary_estimate_query",
+              "description": "I'm trying to figure out how much I could earn as a specific job title in a particular place. I want to see the minimum, maximum, and median salaries, maybe limit the results to a city or state, filter by my years of experience, and I only need certain fields like the median salary and location.",
+              "key_parameters": [
+                "job_title",
+                "location",
+                "location_type",
+                "years_of_experience",
+                "fields"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_116",
+    "query": "Can you export a feed of AAA games with a Metacritic score above 90? I need the output as an RSS feed to embed on my site.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 2,
+    "hyde_desc": "I want to get a list of AAA games with Metacritic scores above 90 so I can share it on my website and make it easily accessible to others through an RSS feed.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.5397070050239563,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.5397070050239563,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.3960441052913666,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.32749325037002563,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.3637334406375885,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3637334406375885,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.3590237498283386,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3590237498283386,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.34457677602767944,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.34457677602767944,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.336903840303421,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.336903840303421,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_lol_champion_stats",
+        "best_intent_id": 0,
+        "best_score": 0.33538469672203064,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.33538469672203064,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_champion_stats",
+              "description": "I want to see the detailed stats and scaling values for a specific League of Legends champion, like Ekko or Jhin, so I can plan my build and strategy.",
+              "key_parameters": [
+                "name"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_all_mvc2_characters",
+        "best_intent_id": 0,
+        "best_score": 0.31890687346458435,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.31890687346458435,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_all_mvc2_characters",
+              "description": "I want to see the complete roster of characters from Marvel vs. Capcom 2 so I can decide which fighters to use in my next match.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_f1_latest_news",
+        "best_intent_id": 0,
+        "best_score": 0.29079490900039673,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.29079490900039673,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_latest_f1_news",
+              "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.28987202048301697,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.28987202048301697,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.2853979766368866,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2853979766368866,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": false,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_117",
+    "query": "Send me an RSS output for the game \"Skyrim\" on Steam so I can get notified when the price drops.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 2,
+    "hyde_desc": "I want to receive notifications when the price of Skyrim on Steam drops so I can buy it at a lower cost. I'm looking for an RSS feed that will alert me about any changes in the game's price on the Steam platform.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 2,
+        "best_score": 0.3692006766796112,
+        "all_intent_scores": [
+          {
+            "intent_id": 2,
+            "score": 0.3692006766796112,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.3596944808959961,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.35515058040618896,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_financial_data",
+        "best_intent_id": 0,
+        "best_score": 0.30198967456817627,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.30198967456817627,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_stock_global_quote",
+              "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+              "key_parameters": [
+                "function",
+                "symbol"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_restaurants_by_location",
+        "best_intent_id": 1,
+        "best_score": 0.2571343779563904,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.2571343779563904,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "localized_restaurant_search",
+              "description": "I'm traveling abroad and need restaurant suggestions in this area, but I want the prices displayed in a specific currency and all names/descriptions in a local language so I can understand them easily.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset",
+                "currency",
+                "lang"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.09826405346393585,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "area_restaurant_explore",
+              "description": "I'm planning a day out and want to see which restaurants fall inside the geographic box I specify, showing me a manageable list and letting me page through more if I need them.",
+              "key_parameters": [
+                "bl_latitude",
+                "tr_latitude",
+                "bl_longitude",
+                "tr_longitude",
+                "limit",
+                "offset"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.2372155487537384,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2372155487537384,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.2269274890422821,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2269274890422821,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_handball_scheduled_matches",
+        "best_intent_id": 0,
+        "best_score": 0.2216404676437378,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2216404676437378,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_daily_matches",
+              "description": "I want to see the handball matches scheduled for a particular day so I can plan which games to watch or attend.",
+              "key_parameters": [
+                "date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "calculate_mortgage_payment",
+        "best_intent_id": 0,
+        "best_score": 0.22154229879379272,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.22154229879379272,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_mortgage_payment",
+              "description": "I know the loan amount I'm borrowing, the interest rate, and the term, and I want to see what my monthly mortgage payment will be.",
+              "key_parameters": [
+                "interest_rate",
+                "loan_amount",
+                "duration_years"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.20920680463314056,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "mortgage_from_home_value",
+              "description": "I know the price of the home and how much I can put down, and I need to calculate the loan amount and monthly payment.",
+              "key_parameters": [
+                "interest_rate",
+                "home_value",
+                "downpayment",
+                "duration_years"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.1356600821018219,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "total_housing_cost",
+              "description": "I want to understand my full monthly housing cost, including mortgage, HOA fees, property taxes, and insurance.",
+              "key_parameters": [
+                "interest_rate",
+                "loan_amount",
+                "duration_years",
+                "monthly_hoa",
+                "annual_property_tax",
+                "annual_home_insurance"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "convert_currency",
+        "best_intent_id": 0,
+        "best_score": 0.21669326722621918,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.21669326722621918,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "convert_currency",
+              "description": "I'm planning a trip abroad and need to know how much my money will be worth in the destination currency, so I tell the system which currency I'm converting from and which currency I want to convert to.",
+              "key_parameters": [
+                "base",
+                "target"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.2153950035572052,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2153950035572052,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.20624816417694092,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.20624816417694092,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_118",
+    "query": "I need an RSS feed of steamworks games that have a steam rating of 90 or more, sorted by recent deals.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 2,
+    "hyde_desc": "I'm looking to get an RSS feed that lists Steam games with a rating of 90 or more, and I want them sorted by their recent deals so I can easily keep track of discounted titles.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 1,
+        "best_score": 0.6349287033081055,
+        "all_intent_scores": [
+          {
+            "intent_id": 1,
+            "score": 0.6349287033081055,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.5943799018859863,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 2,
+            "score": 0.5726910829544067,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_streaming_shows",
+        "best_intent_id": 0,
+        "best_score": 0.46569332480430603,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.46569332480430603,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "find_streaming_content",
+              "description": "I'm looking for movies or TV series I can watch on streaming services in my country, and I want to narrow the list by platform, genre, type, or keywords, then sort the results the way I like.",
+              "key_parameters": [
+                "country",
+                "catalogs",
+                "show_type",
+                "genres",
+                "keyword",
+                "order_by",
+                "order_direction"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.43481147289276123,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.43481147289276123,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.43061065673828125,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.43061065673828125,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.4097822606563568,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.4097822606563568,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.4028851389884949,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.4028851389884949,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_financial_data",
+        "best_intent_id": 0,
+        "best_score": 0.350359708070755,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.350359708070755,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_stock_global_quote",
+              "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+              "key_parameters": [
+                "function",
+                "symbol"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_f1_latest_news",
+        "best_intent_id": 0,
+        "best_score": 0.3424058258533478,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3424058258533478,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_latest_f1_news",
+              "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_handball_scheduled_matches",
+        "best_intent_id": 0,
+        "best_score": 0.289786159992218,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.289786159992218,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_daily_matches",
+              "description": "I want to see the handball matches scheduled for a particular day so I can plan which games to watch or attend.",
+              "key_parameters": [
+                "date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_manga",
+        "best_intent_id": 0,
+        "best_score": 0.2758142948150635,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.2758142948150635,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_manga",
+              "description": "I'm trying to find manga that matches a title or keyword I'm interested in, and I may want to limit the results to safe‑for‑work titles only or include NSFW ones, and I might also want to focus on manga from a specific region like Japan, China, or Korea.",
+              "key_parameters": [
+                "text",
+                "nsfw",
+                "type"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": false,
+    "result": "HIT"
+  },
+  {
+    "query_id": "batch_119",
+    "query": "Export the deals for Steam App ID 400 as an RSS link for my Discord bot.",
+    "ground_truth_api": "list_of_deals",
+    "ground_truth_intent_id": 2,
+    "hyde_desc": "I want to retrieve and export the deals specifically for Steam App ID 400 as an RSS link that my Discord bot can use, which implies I need a structured feed of deal information.",
+    "top_k_apis": [
+      {
+        "api_name": "list_of_deals",
+        "best_intent_id": 2,
+        "best_score": 0.6027116775512695,
+        "all_intent_scores": [
+          {
+            "intent_id": 2,
+            "score": 0.6027116775512695,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "deal_feed_export",
+              "description": "I'm building a widget that shows the latest deals on my site, so I need a feed (RSS or JSON) of the current deals without worrying about pagination; the API should give me a ready‑to‑use list that I can embed.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "output",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.4988901913166046,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "targeted_deal_search",
+              "description": "I'm a hardcore gamer looking for deals on specific titles or platforms. I care about the store, Steam app IDs, and minimum review scores, and I want to filter out low‑rated games while still seeing the best offers.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "steamAppID",
+                "storeID",
+                "steamRating",
+                "metacritic",
+                "onSale",
+                "AAA",
+                "steamworks",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.42362308502197266,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "browse_deals",
+              "description": "I'm just browsing for cheap games right now. I want to see any deals under a certain price, maybe only the ones that are on sale, and I’d like the results sorted by the best savings so I can pick the biggest discounts quickly.",
+              "key_parameters": [
+                "lowerPrice",
+                "upperPrice",
+                "title",
+                "exact",
+                "onSale",
+                "sortBy",
+                "desc",
+                "pageNumber",
+                "pageSize"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_financial_data",
+        "best_intent_id": 0,
+        "best_score": 0.3992384374141693,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3992384374141693,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_stock_global_quote",
+              "description": "I want to see the latest market data for a specific ticker symbol, like TSLA, so I can know its current price and trading information.",
+              "key_parameters": [
+                "function",
+                "symbol"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_media_news",
+        "best_intent_id": 0,
+        "best_score": 0.3700515627861023,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3700515627861023,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_media_news",
+              "description": "I'm curious about what's happening in entertainment right now, so I want to pull the latest news articles—whether they're about movies, TV shows, celebrities, or general trending topics. I may also want to narrow it down to a specific country and language, and I need control over how many items I see at once and how to move through pages of results.",
+              "key_parameters": [
+                "category",
+                "first",
+                "after",
+                "country",
+                "language"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_soccer_tournaments",
+        "best_intent_id": 0,
+        "best_score": 0.3390020728111267,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3390020728111267,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "list_soccer_tournaments",
+              "description": "I'm planning my soccer viewing schedule and need a full list of upcoming tournaments so I can decide which matches to follow.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "search_amazon_products",
+        "best_intent_id": 0,
+        "best_score": 0.3311358392238617,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3311358392238617,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "amazon_product_search",
+              "description": "I'm browsing Amazon for items I need, so I type a keyword and want to see a list of matching products. I may want to flip through pages, choose the marketplace (US, UK, etc.), sort the results by relevance, price or reviews, and narrow the list by price range, condition (new, used, renewed) to quickly find the best deal.",
+              "key_parameters": [
+                "query",
+                "page",
+                "country",
+                "sort_by",
+                "product_condition",
+                "min_price",
+                "max_price"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_filtered_game_giveaways",
+        "best_intent_id": 0,
+        "best_score": 0.32943499088287354,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.32943499088287354,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "search_giveaways",
+              "description": "I'm looking for free game giveaways that match the platforms I play on and the type of giveaway I want, so I can see personalized results.",
+              "key_parameters": [
+                "platform",
+                "type"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_lol_champion_stats",
+        "best_intent_id": 0,
+        "best_score": 0.32729706168174744,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.32729706168174744,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_champion_stats",
+              "description": "I want to see the detailed stats and scaling values for a specific League of Legends champion, like Ekko or Jhin, so I can plan my build and strategy.",
+              "key_parameters": [
+                "name"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_handball_scheduled_matches",
+        "best_intent_id": 0,
+        "best_score": 0.3082563281059265,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3082563281059265,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_daily_matches",
+              "description": "I want to see the handball matches scheduled for a particular day so I can plan which games to watch or attend.",
+              "key_parameters": [
+                "date"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "get_f1_latest_news",
+        "best_intent_id": 0,
+        "best_score": 0.3027426600456238,
+        "all_intent_scores": [
+          {
+            "intent_id": 0,
+            "score": 0.3027426600456238,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "fetch_latest_f1_news",
+              "description": "I want to stay up‑to‑date with the newest Formula 1 stories, so I ask for the most recent articles from all sources.",
+              "key_parameters": []
+            }
+          }
+        ]
+      },
+      {
+        "api_name": "calculate_route",
+        "best_intent_id": 2,
+        "best_score": 0.3006294369697571,
+        "all_intent_scores": [
+          {
+            "intent_id": 2,
+            "score": 0.3006294369697571,
+            "intent_data": {
+              "intent_id": 2,
+              "name": "file_export_route",
+              "description": "I need to download the route as a GPX/KML file to load into my GPS device, so I want the route generated and saved under a specific filename.",
+              "key_parameters": [
+                "points",
+                "format",
+                "filename",
+                "routeType",
+                "language"
+              ]
+            }
+          },
+          {
+            "intent_id": 0,
+            "score": 0.2530592679977417,
+            "intent_data": {
+              "intent_id": 0,
+              "name": "basic_route_query",
+              "description": "I'm planning a trip and need step‑by‑step directions between several locations, choosing whether I'm walking, biking, or driving, and I want the instructions in my language, possibly with voice cues, and I prefer the result in JSON.",
+              "key_parameters": [
+                "points",
+                "routeType",
+                "language",
+                "voice_instructions",
+                "finish_instruction",
+                "format"
+              ]
+            }
+          },
+          {
+            "intent_id": 1,
+            "score": 0.15791693329811096,
+            "intent_data": {
+              "intent_id": 1,
+              "name": "cyclist_weighted_route",
+              "description": "I'm a cyclist looking for the fastest bike route that takes into account specific network preferences, so I need a bike‑only route with a custom weighting strategy and the directions in my language.",
+              "key_parameters": [
+                "points",
+                "routeType",
+                "weighting",
+                "language",
+                "format"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "global_api_hit": true,
+    "intra_intent_hit": true,
+    "result": "HIT"
   }
 ]
