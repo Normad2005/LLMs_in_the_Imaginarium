@@ -575,31 +575,6 @@
       }
     ]
   },
-  "get_vehicle_specifications": {
-    "intents": [
-      {
-        "intent_id": 0,
-        "name": "vehicle_spec_search",
-        "description": "I'm trying to find vehicles that fit my needs, so I specify the make, model, year, fuel efficiency, engine size, transmission type, drive type, and fuel type, and I tell the system how many results I want back.",
-        "key_parameters": [
-          "make",
-          "model",
-          "year",
-          "min_city_mpg",
-          "max_city_mpg",
-          "min_hwy_mpg",
-          "max_hwy_mpg",
-          "min_comb_mpg",
-          "max_comb_mpg",
-          "cylinders",
-          "transmission",
-          "drive",
-          "fuel_type",
-          "limit"
-        ]
-      }
-    ]
-  },
   "get_flights_in_bounding_box": {
     "intents": [
       {

@@ -3090,172 +3090,158 @@
   ],
   "list_of_deals": [
     {
-      "query": "I have a $10 budget and just want to browse some games on sale right now. Can you show me the first page of results, keeping it to 10 games per page? Sort them by price.",
+      "query": "Show me some discounted games under $15.",
+      "action": "list_of_deals",
       "action_input": {
-        "upperPrice": 10,
+        "upperPrice": 15,
+        "onSale": 1
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to see cheap games exactly matching the title 'Portal', please don't apply any other store or rating filters.",
+      "action": "list_of_deals",
+      "action_input": {
+        "title": "Portal",
+        "exact": 1,
+        "upperPrice": 50
+      },
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me the first page (20 items) of any games currently on sale?",
+      "action": "list_of_deals",
+      "action_input": {
         "onSale": 1,
         "pageNumber": 0,
-        "pageSize": 10,
-        "sortBy": "Price"
+        "pageSize": 20
       },
-      "action": "list_of_deals",
       "target_intent_id": 0
     },
     {
-      "query": "Could you search for the exact title \"The Witcher 3\" and see if there are any deals for it? I don't care about the price limit.",
-      "action_input": {
-        "title": "The Witcher 3",
-        "exact": 1
-      },
+      "query": "Find me discounted games sorted by Savings.",
       "action": "list_of_deals",
+      "action_input": {
+        "onSale": 1,
+        "sortBy": "Savings"
+      },
       "target_intent_id": 0
     },
     {
-      "query": "I'm looking for any game with \"Assassin\" in the name, priced between $15 and $30. Sort the deals by Release date, descending order.",
-      "action_input": {
-        "title": "Assassin",
-        "lowerPrice": 15,
-        "upperPrice": 30,
-        "sortBy": "Release",
-        "desc": 1
-      },
+      "query": "Show me games between $5 and $10 on sale.",
       "action": "list_of_deals",
-      "target_intent_id": 0
-    },
-    {
-      "query": "Show me the third page of deals (20 items per page) sorted by Savings. I only want things that are genuinely discounted.",
       "action_input": {
-        "pageNumber": 2,
-        "pageSize": 20,
-        "sortBy": "Savings",
+        "lowerPrice": 5,
+        "upperPrice": 10,
         "onSale": 1
       },
-      "action": "list_of_deals",
       "target_intent_id": 0
     },
     {
-      "query": "Let's do some window shopping. Sort the list by Deal Rating and show me games above $40.",
-      "action_input": {
-        "sortBy": "Deal Rating",
-        "lowerPrice": 40
-      },
+      "query": "Find me AAA games that redeem on Steam with a Metacritic score over 80.",
       "action": "list_of_deals",
-      "target_intent_id": 0
-    },
-    {
-      "query": "I'm a huge fan of Epic Games. Show me some AAA titles on sale there. I only want high-quality stuff with a Metacritic score of at least 85.",
       "action_input": {
-        "storeID": "25",
         "AAA": 1,
-        "metacritic": 85,
-        "onSale": 1
-      },
-      "action": "list_of_deals",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Check if there are any deals for Steam App IDs 730 or 570. I only buy games that redeem on Steam, and they must have a Steam rating of 90 or higher.",
-      "action_input": {
-        "steamAppID": "730,570",
         "steamworks": 1,
-        "steamRating": 90
+        "metacritic": 80
       },
-      "action": "list_of_deals",
       "target_intent_id": 1
     },
     {
-      "query": "My budget is $20. Give me exactly the game \"Cyberpunk 2077\" but only if it has a Metacritic over 80 and is from Steam or GoG.",
-      "action_input": {
-        "upperPrice": 20,
-        "title": "Cyberpunk 2077",
-        "exact": 1,
-        "metacritic": 80,
-        "storeID": "1,7"
-      },
+      "query": "Show me Steam deals (storeID 1) for games with a Steam rating of 90 or higher, sorted by Title.",
       "action": "list_of_deals",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Sort the AAA games by Reviews in descending order. I want to see the 5th page, 50 games per page, and only games with a Metacritic score of at least 75.",
       "action_input": {
-        "AAA": 1,
-        "sortBy": "Reviews",
-        "desc": 1,
-        "pageNumber": 4,
-        "pageSize": 50,
-        "metacritic": 75
-      },
-      "action": "list_of_deals",
-      "target_intent_id": 1
-    },
-    {
-      "query": "Any steamworks games under $5 with a Steam rating of 95? Don't sort them, just the default sorting is fine.",
-      "action_input": {
-        "steamworks": 1,
-        "upperPrice": 5,
-        "steamRating": 95
-      },
-      "action": "list_of_deals",
-      "target_intent_id": 1
-    },
-    {
-      "query": "I'm setting up a widget for my blog. Generate an RSS feed for deals under $15.",
-      "action_input": {
-        "output": "rss",
-        "upperPrice": 15
-      },
-      "action": "list_of_deals",
-      "target_intent_id": 2
-    },
-    {
-      "query": "Can you export a feed of AAA games with a Metacritic score above 90? I need the output as an RSS feed to embed on my site.",
-      "action_input": {
-        "AAA": 1,
-        "metacritic": 90,
-        "output": "rss"
-      },
-      "action": "list_of_deals",
-      "target_intent_id": 2
-    },
-    {
-      "query": "Send me an RSS output for the game \"Skyrim\" on Steam so I can get notified when the price drops.",
-      "action_input": {
-        "title": "Skyrim",
-        "exact": 1,
         "storeID": "1",
-        "output": "rss"
-      },
-      "action": "list_of_deals",
-      "target_intent_id": 2
-    },
-    {
-      "query": "I need an RSS feed of steamworks games that have a steam rating of 90 or more, sorted by recent deals.",
-      "action_input": {
-        "output": "rss",
-        "steamworks": 1,
         "steamRating": 90,
-        "sortBy": "recent"
+        "onSale": 1,
+        "sortBy": "Title"
       },
-      "action": "list_of_deals",
-      "target_intent_id": 2
+      "target_intent_id": 1
     },
     {
-      "query": "Export the deals for Steam App ID 400 as an RSS link for my Discord bot.",
+      "query": "I am looking for 'Batman' games on sale with a Metacritic score of at least 85.",
+      "action": "list_of_deals",
+      "action_input": {
+        "title": "Batman",
+        "onSale": 1,
+        "metacritic": 85
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Find deals for Steam App ID 400 that are under $20.",
+      "action": "list_of_deals",
       "action_input": {
         "steamAppID": "400",
-        "output": "rss"
+        "upperPrice": 20,
+        "onSale": 1
       },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Sort AAA games on sale by Deal Rating in descending order.",
       "action": "list_of_deals",
+      "action_input": {
+        "AAA": 1,
+        "onSale": 1,
+        "sortBy": "Deal Rating",
+        "desc": 1
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Generate an RSS feed for games under $10.",
+      "action": "list_of_deals",
+      "action_input": {
+        "output": "rss",
+        "upperPrice": 10
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "I need an RSS output of deals for AAA games.",
+      "action": "list_of_deals",
+      "action_input": {
+        "output": "rss",
+        "AAA": 1
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "Create an RSS feed for games that redeem on Steam.",
+      "action": "list_of_deals",
+      "action_input": {
+        "output": "rss",
+        "steamworks": 1
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "Send me an RSS feed of games with a Metacritic score of 95 or higher.",
+      "action": "list_of_deals",
+      "action_input": {
+        "output": "rss",
+        "metacritic": 95
+      },
+      "target_intent_id": 2
+    },
+    {
+      "query": "Generate an RSS feed for 'Portal' exact matches.",
+      "action": "list_of_deals",
+      "action_input": {
+        "output": "rss",
+        "title": "Portal",
+        "exact": 1
+      },
       "target_intent_id": 2
     }
   ],
   "search_businesses": [
     {
-      "query": "I'm traveling and need a verified plumber near my current location at latitude 34.05 and longitude -118.24. Just show me the top 5 results.",
+      "query": "Find Starbucks near latitude 34.05 and longitude -118.24. Limit to 5.",
       "action": "search_businesses",
       "action_input": {
-        "query": "plumber",
-        "verified": true,
+        "query": "Starbucks",
         "lat": 34.05,
         "lng": -118.24,
         "limit": 5
@@ -3263,63 +3249,60 @@
       "target_intent_id": 0
     },
     {
-      "query": "Can you look up some coffee shops around here? My GPS is 40.71, -74.00, and I'd like the results returned in Spanish.",
+      "query": "Look up McDonald's around 40.71, -74.00.",
       "action": "search_businesses",
       "action_input": {
-        "query": "coffee shops",
+        "query": "McDonald's",
         "lat": 40.71,
-        "lng": -74.0,
-        "language": "es"
+        "lng": -74.0
       },
       "target_intent_id": 0
     },
     {
-      "query": "Find me electronics stores that are currently open in the US region. Limit the search to 10 places.",
+      "query": "Find me Home Depot stores that are OPEN in the us region.",
       "action": "search_businesses",
       "action_input": {
-        "query": "electronics stores",
+        "query": "Home Depot",
         "business_status": "OPEN",
-        "region": "us",
-        "limit": 10
+        "region": "us"
       },
       "target_intent_id": 0
     },
     {
-      "query": "Give me a list of nearby hospitals at a zoom level of 12. Only show me the ones that are verified.",
+      "query": "Search for IKEA at a zoom level of 12. Only verified ones.",
       "action": "search_businesses",
       "action_input": {
-        "query": "hospitals",
+        "query": "IKEA",
         "zoom": "12",
         "verified": true
       },
       "target_intent_id": 0
     },
     {
-      "query": "Search for \"Vegan Bakery\" and filter by the subtype \"Bakery\". Set the limit to 20 results.",
+      "query": "Search for KFC and filter by the subtype Fast Food. Limit 10.",
       "action": "search_businesses",
       "action_input": {
-        "query": "Vegan Bakery",
-        "subtypes": "Bakery",
-        "limit": 20
+        "query": "KFC",
+        "subtypes": "Fast Food",
+        "limit": 10
       },
       "target_intent_id": 0
     },
     {
-      "query": "Are there any temporarily closed gyms in the UK? Just show me 3.",
+      "query": "Are there any temporarily closed Target stores in the us?",
       "action": "search_businesses",
       "action_input": {
-        "query": "gyms",
+        "query": "Target",
         "business_status": "CLOSED_TEMPORARILY",
-        "region": "gb",
-        "limit": 3
+        "region": "us"
       },
       "target_intent_id": 0
     },
     {
-      "query": "Check if the restaurant \"Joe's Pizza\" is verified. My coordinates are 41.87 and -87.62.",
+      "query": "Check if Walmart is verified at 41.87 and -87.62.",
       "action": "search_businesses",
       "action_input": {
-        "query": "Joe's Pizza",
+        "query": "Walmart",
         "verified": true,
         "lat": 41.87,
         "lng": -87.62
@@ -3327,31 +3310,31 @@
       "target_intent_id": 0
     },
     {
-      "query": "I'm looking for a Japanese translation of nearby hotels around 48.85 latitude and 2.35 longitude.",
+      "query": "Find Wendy's nearby 48.85 lat, 2.35 lng in language es.",
       "action": "search_businesses",
       "action_input": {
-        "query": "hotels",
-        "language": "ja",
+        "query": "Wendy's",
+        "language": "es",
         "lat": 48.85,
         "lng": 2.35
       },
       "target_intent_id": 0
     },
     {
-      "query": "Search for hair salons with the subtype \"Barber\". Limit it to 10 places.",
+      "query": "Search for Pizza Hut with subtype Pizza. Limit 10.",
       "action": "search_businesses",
       "action_input": {
-        "query": "hair salons",
-        "subtypes": "Barber",
+        "query": "Pizza Hut",
+        "subtypes": "Pizza",
         "limit": 10
       },
       "target_intent_id": 0
     },
     {
-      "query": "Let me see 5 fast food places around a zoom level of 10 that are currently closed.",
+      "query": "Let me see 5 Subway stores around zoom 10 that are closed.",
       "action": "search_businesses",
       "action_input": {
-        "query": "fast food",
+        "query": "Subway",
         "zoom": "10",
         "limit": 5,
         "business_status": "CLOSED"
@@ -3359,40 +3342,38 @@
       "target_intent_id": 0
     },
     {
-      "query": "I want to scrape the contact info for 15 marketing agencies. Please extract their emails and social profiles, and only return their business_id and phone_number.",
+      "query": "I want to scrape the contact info for Marketing Agency. Extract emails and contacts.",
       "action": "search_businesses",
       "action_input": {
-        "query": "marketing agencies",
-        "limit": 15,
-        "extract_emails_and_contacts": true,
-        "fields": "business_id,phone_number"
-      },
-      "target_intent_id": 1
-    },
-    {
-      "query": "Find me tech startups and get me their direct contact details. I want to scrape their emails.",
-      "action": "search_businesses",
-      "action_input": {
-        "query": "tech startups",
+        "query": "Marketing Agency",
         "extract_emails_and_contacts": true
       },
       "target_intent_id": 1
     },
     {
-      "query": "Pull up data for \"Target stores\" and just give me their full address and type. Don't fetch more than 5 results.",
+      "query": "Scrape Tech Startup contact details. Extract their emails.",
       "action": "search_businesses",
       "action_input": {
-        "query": "Target stores",
+        "query": "Tech Startup",
+        "extract_emails_and_contacts": true
+      },
+      "target_intent_id": 1
+    },
+    {
+      "query": "Pull up data for Plumber and just return their full address and type. Limit 5.",
+      "action": "search_businesses",
+      "action_input": {
+        "query": "Plumber",
         "fields": "full_address,type",
         "limit": 5
       },
       "target_intent_id": 1
     },
     {
-      "query": "I need to reach out to real estate agents. Scrape their contact info and give me 50 results with only the type and phone_number fields.",
+      "query": "Scrape contact info for Real Estate Agent and return 50 results with type and phone_number fields.",
       "action": "search_businesses",
       "action_input": {
-        "query": "real estate agents",
+        "query": "Real Estate Agent",
         "extract_emails_and_contacts": true,
         "limit": 50,
         "fields": "type,phone_number"
@@ -3400,11 +3381,10 @@
       "target_intent_id": 1
     },
     {
-      "query": "Get me the contact emails of 10 law firms. Scraping is required.",
+      "query": "Get me contact emails of Law Firm by scraping them.",
       "action": "search_businesses",
       "action_input": {
-        "query": "law firms",
-        "limit": 10,
+        "query": "Law Firm",
         "extract_emails_and_contacts": true
       },
       "target_intent_id": 1
