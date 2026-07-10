@@ -1,5 +1,6 @@
 import http.client
 import json
+from urllib.parse import quote
 from config.api_keys import RAPIDAPI_KEY
 
 
@@ -45,7 +46,7 @@ def search_streaming_shows(
     if genres:
         query_params += f"&genres={genres}"
     if keyword:
-        query_params += f"&keyword={keyword}"
+        query_params += f"&keyword={quote(keyword)}"
 
     headers = {
         "x-rapidapi-key": toolbench_rapidapi_key,
