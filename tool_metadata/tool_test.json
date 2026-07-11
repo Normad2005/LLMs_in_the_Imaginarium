@@ -1,73 +1,108 @@
 {
   "verify_email": [
     {
-      "query": "I'm cleaning my marketing newsletter list and need to make sure john.doe@gmail.com won't bounce.",
+      "query": "I have an old contact list, and I'm not sure if john.doe@gmail.com is still a valid address. Can you check?",
       "action": "verify_email",
       "action_input": {
         "email": "john.doe@gmail.com"
       }
     },
     {
-      "query": "I received a suspicious message from support@melissa.com; can you check if this address actually exists?",
+      "query": "Someone sent me a weird message from support@melissa.com. Is that even a real email?",
       "action": "verify_email",
       "action_input": {
         "email": "support@melissa.com"
       }
     },
     {
-      "query": "I want to reach out to the sales team at sales@company.co.uk but I'm not sure if the inbox is still active.",
+      "query": "Please verify if sales@company.co.uk is a working mailbox.",
       "action": "verify_email",
       "action_input": {
         "email": "sales@company.co.uk"
       }
     },
     {
-      "query": "Before I send this confidential contract to info@mybusiness.org, I need to be 100% sure it's a deliverable address.",
+      "query": "Before I send this confidential document, can you confirm that info@mybusiness.org is a deliverable address?",
       "action": "verify_email",
       "action_input": {
         "email": "info@mybusiness.org"
       }
     },
     {
-      "query": "Our system flagged test.email@outlook.com as potential spam. Could you investigate its deliverability?",
+      "query": "My newsletter bounced when I sent it to test.email@outlook.com. Can you check its status?",
       "action": "verify_email",
       "action_input": {
         "email": "test.email@outlook.com"
       }
     },
     {
-      "query": "I think I might have a typo in my notes for support@gnail.com. Is this a legitimate email or a mistake?",
-      "action": "verify_email",
-      "action_input": {
-        "email": "support@gnail.com"
-      }
-    },
-    {
-      "query": "I'm trying to register a user with admin@university.edu but I keep getting a delivery error. Can you diagnose the address?",
+      "query": "Can you validate the email address admin@university.edu?",
       "action": "verify_email",
       "action_input": {
         "email": "admin@university.edu"
       }
     },
     {
-      "query": "A new lead signed up with hello@mobile-domain.me; is this a real person's inbox or a fake setup?",
+      "query": "I'm getting an error when replying to contact@fakecorp.com, is the email valid?",
       "action": "verify_email",
       "action_input": {
-        "email": "hello@mobile-domain.me"
+        "email": "contact@fakecorp.com"
       }
     },
     {
-      "query": "I need to confirm if the domain for contact@nonexistent-domain.xyz is even capable of receiving mail.",
+      "query": "Please check if no-reply@amazon.com actually accepts incoming emails.",
       "action": "verify_email",
       "action_input": {
-        "email": "contact@nonexistent-domain.xyz"
+        "email": "no-reply@amazon.com"
       }
     },
     {
-      "query": "Is it safe to assume that noreply@github.com is a valid destination for automated system alerts?",
+      "query": "I need you to verify this email: service@apple.com",
       "action": "verify_email",
       "action_input": {
-        "email": "noreply@github.com"
+        "email": "service@apple.com"
+      }
+    },
+    {
+      "query": "Is hello@world.net a registered and active email address?",
+      "action": "verify_email",
+      "action_input": {
+        "email": "hello@world.net"
+      }
+    },
+    {
+      "query": "I am trying to reach hr@microsoft.com, can you see if it's valid?",
+      "action": "verify_email",
+      "action_input": {
+        "email": "hr@microsoft.com"
+      }
+    },
+    {
+      "query": "Verify the status of jobs@google.com for me.",
+      "action": "verify_email",
+      "action_input": {
+        "email": "jobs@google.com"
+      }
+    },
+    {
+      "query": "Can you check the deliverability for feedback@tesla.com?",
+      "action": "verify_email",
+      "action_input": {
+        "email": "feedback@tesla.com"
+      }
+    },
+    {
+      "query": "I suspect billing@netflix.com is a fake sender, can you verify the address?",
+      "action": "verify_email",
+      "action_input": {
+        "email": "billing@netflix.com"
+      }
+    },
+    {
+      "query": "Please tell me if user123@yahoo.com is a real email account.",
+      "action": "verify_email",
+      "action_input": {
+        "email": "user123@yahoo.com"
       }
     }
   ],
@@ -125,73 +160,108 @@
   ],
   "get_animal_facts": [
     {
-      "query": "My kid is obsessed with African wildlife and keeps asking how big an adult elephant actually gets and how they communicate within the herd.",
+      "query": "My son loves lions. Can you tell me an interesting fact about them?",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "elephant"
+        "name": "Lion"
       }
     },
     {
-      "query": "I'm watching a documentary about the Antarctic and I'm fascinated by how penguins can survive such extreme cold without being able to fly away.",
+      "query": "I need a fun fact about tigers for my school project.",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "penguin"
+        "name": "Tiger"
       }
     },
     {
-      "query": "I was reading about marine biology and the high intelligence of dolphins. I'd love to learn more about how their echolocation works in deep water.",
+      "query": "Tell me something cool about elephants.",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "dolphin"
+        "name": "Elephant"
       }
     },
     {
-      "query": "While planning a safari in Kenya, I realized I don't know much about the social hierarchy of a lion pride. Can you give me some background?",
+      "query": "What's an interesting scientific fact about giraffes?",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "lion"
+        "name": "Giraffe"
       }
     },
     {
-      "query": "A fox has been hanging around my backyard lately at night. Is this normal behavior for them in suburban areas, or should I be worried?",
+      "query": "Can you give me a fact about zebras?",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "fox"
+        "name": "Zebra"
       }
     },
     {
-      "query": "I'm interested in the giant panda conservation efforts in China. What kind of daily diet do they require to maintain their health in captivity?",
+      "query": "I want to know a trivia fact regarding kangaroos.",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "panda"
+        "name": "Kangaroo"
       }
     },
     {
-      "query": "I'm an illustrator working on a project featuring the American bald eagle. I need some specific details about their wingspan and nesting habits for accuracy.",
+      "query": "Give me a cool fact about penguins, I'm writing a story.",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "eagle"
+        "name": "Penguin"
       }
     },
     {
-      "query": "There's so much misinformation about shark attacks. I want to find some scientific facts about their actual hunting patterns and temperament.",
+      "query": "Do you know any interesting details about dolphins?",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "shark"
+        "name": "Dolphin"
       }
     },
     {
-      "query": "During my trip to Australia, I saw a koala sleeping in a tree. Why are they so inactive during the day? Is it related to what they eat?",
+      "query": "I'm curious about whales, can you tell me a fact?",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "koala"
+        "name": "Whale"
       }
     },
     {
-      "query": "I heard an owl outside my window last night. I've always wondered how they can fly so silently and if they really can rotate their heads all the way around.",
+      "query": "What is a terrifying or cool fact about sharks?",
       "action": "get_animal_facts",
       "action_input": {
-        "name": "owl"
+        "name": "Shark"
+      }
+    },
+    {
+      "query": "Tell me a fact about bears.",
+      "action": "get_animal_facts",
+      "action_input": {
+        "name": "Bear"
+      }
+    },
+    {
+      "query": "I'm doing a presentation on wolves, give me a fun fact.",
+      "action": "get_animal_facts",
+      "action_input": {
+        "name": "Wolf"
+      }
+    },
+    {
+      "query": "Can you provide an animal fact about the fox?",
+      "action": "get_animal_facts",
+      "action_input": {
+        "name": "Fox"
+      }
+    },
+    {
+      "query": "Give me a random fact about rabbits.",
+      "action": "get_animal_facts",
+      "action_input": {
+        "name": "Rabbit"
+      }
+    },
+    {
+      "query": "I need some information or a fact about deer.",
+      "action": "get_animal_facts",
+      "action_input": {
+        "name": "Deer"
       }
     }
   ],
@@ -369,266 +439,376 @@
   ],
   "search_public_restrooms": [
     {
-      "query": "I'm currently on a road trip heading toward New York City and we really need a pit stop. Can you find any public restrooms in NY state?",
+      "query": "I'm driving through New York and Florida, can you find me some public restrooms?",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "states": "NY,FL"
+      }
+    },
+    {
+      "query": "Can you get me a list of 15 public restrooms in California?",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "states": "CA",
+        "per_page": 15
+      }
+    },
+    {
+      "query": "I need to find bathrooms in Texas. Just show me the second page of results.",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "states": "TX",
+        "page": 2
+      }
+    },
+    {
+      "query": "Search for public toilets near latitude 34.05 and longitude -118.25.",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "lat": 34.05,
+        "lon": -118.25
+      }
+    },
+    {
+      "query": "Are there any public restrooms in Nevada? Please limit it to 5 results.",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "states": "NV",
+        "per_page": 5
+      }
+    },
+    {
+      "query": "Can you find public restrooms in NY?",
       "action": "search_public_restrooms",
       "action_input": {
         "states": "NY"
       }
     },
     {
-      "query": "I'm walking around downtown Los Angeles near the central library and I need to find a bathroom as soon as possible.",
+      "query": "I'm in Washington and Oregon, give me the 3rd page of bathroom results there.",
       "action": "search_public_restrooms",
       "action_input": {
-        "lat": 34.0522,
-        "lon": -118.2437
+        "states": "WA,OR",
+        "page": 3
       }
     },
     {
-      "query": "We are planning a cross-border hike between Florida and Georgia. Are there any public toilets available throughout those two states?",
+      "query": "Look up public restrooms around lat 40.71, lon -74.00, and give me 20 results per page.",
       "action": "search_public_restrooms",
       "action_input": {
-        "states": "FL,GA"
+        "lat": 40.71,
+        "lon": -74.0,
+        "per_page": 20
       }
     },
     {
-      "query": "I'm at this exact location (37.7749, -122.4194) in San Francisco and it's getting urgent. Is there a restroom nearby?",
+      "query": "Find me public toilets in Florida.",
       "action": "search_public_restrooms",
       "action_input": {
-        "lat": 37.7749,
-        "lon": -122.4194
+        "states": "FL"
       }
     },
     {
-      "query": "I'm organizing a marathon route through Texas and need to map out all the public bathrooms available for the runners.",
+      "query": "Search for bathrooms in CA, give me page 4.",
       "action": "search_public_restrooms",
       "action_input": {
-        "states": "TX"
+        "states": "CA",
+        "page": 4
       }
     },
     {
-      "query": "I've already looked at the first few options for restrooms in Chicago, but none of them are on my way. Can you show me the next page of results?",
+      "query": "I need restrooms near lat 36.16 and lon -115.13.",
       "action": "search_public_restrooms",
       "action_input": {
-        "lat": 41.8781,
-        "lon": -87.6298,
-        "page": 2
+        "lat": 36.16,
+        "lon": -115.13
       }
     },
     {
-      "query": "I need a quick list of the top 5 closest public restrooms in New York so I don't have to scroll through a long menu while driving.",
+      "query": "Give me a list of public restrooms in TX and NM.",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "states": "TX,NM"
+      }
+    },
+    {
+      "query": "Find public restrooms in Oregon. I just want 1 result.",
+      "action": "search_public_restrooms",
+      "action_input": {
+        "states": "OR",
+        "per_page": 1
+      }
+    },
+    {
+      "query": "Can you show me restrooms in NY, page 2 with 10 results?",
       "action": "search_public_restrooms",
       "action_input": {
         "states": "NY",
-        "per_page": 5
+        "page": 2,
+        "per_page": 10
       }
     },
     {
-      "query": "My family is spending the day at Miami Beach. Can you locate any public toilets within walking distance of the main boardwalk?",
+      "query": "I'm at lat 41.87 and lon -87.62, where are the restrooms?",
       "action": "search_public_restrooms",
       "action_input": {
-        "lat": 25.7907,
-        "lon": -80.13
-      }
-    },
-    {
-      "query": "I'm compiling a database of accessible facilities in California. Could you provide a list of all registered public restrooms in the state?",
-      "action": "search_public_restrooms",
-      "action_input": {
-        "states": "CA"
-      }
-    },
-    {
-      "query": "I'm near 40.7128, -74.0060 and I'm looking for a comprehensive list of nearby restrooms. Please show me 20 results at a time.",
-      "action": "search_public_restrooms",
-      "action_input": {
-        "lat": 40.7128,
-        "lon": -74.006,
-        "per_page": 20
+        "lat": 41.87,
+        "lon": -87.62
       }
     }
   ],
   "get_dog_breeds_metadata": [
     {
-      "query": "I was reading a Japanese story about a loyal dog, and I think the breed name started with 'akita'. Can you help me find the full metadata for it?",
+      "query": "Can you find information about the Golden Retriever breed?",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "akita"
+        "search": "Golden Retriever"
       }
     },
     {
-      "query": "I'm looking into herding dogs for my farm. Could you pull up all the breeds that have 'shep' in their name so I can compare the different varieties?",
+      "query": "I want to adopt a Bulldog, can you get me some metadata about them?",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "shep"
+        "search": "Bulldog"
       }
     },
     {
-      "query": "My neighbor has a very powerful working dog. I can't recall the exact breed, but I know it had 'bull' somewhere in the name. What are my options?",
+      "query": "Look up the Beagle dog breed for me.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "bull"
+        "search": "Beagle"
       }
     },
     {
-      "query": "I’m working on a blog post about small but feisty dogs. Can you list all the breeds that include the word 'terri' so I don't miss any of the terriers?",
+      "query": "Tell me about Poodles.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "terri"
+        "search": "Poodle"
       }
     },
     {
-      "query": "We are looking for a family-friendly pet. I forgot the full name of the popular one, but it definitely had 'retriev' in it. Can you search for that group?",
+      "query": "I need details on the German Shepherd breed.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "retriev"
+        "search": "German Shepherd"
       }
     },
     {
-      "query": "I saw a beautiful dog at the park that the owner said was an 'auss' something. Could you check which breeds match that prefix? It might be from Australia.",
+      "query": "Search for Chihuahua in the dog breed database.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "auss"
+        "search": "Chihuahua"
       }
     },
     {
-      "query": "I'm fascinated by giant dog breeds. I’ve heard of the Great Dane, but are there other breeds that contain 'dane' in their name that I should know about?",
+      "query": "Get metadata for Labrador.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "dane"
+        "search": "Labrador"
       }
     },
     {
-      "query": "I prefer dogs with thick coats and curled tails. I think this category is often called 'spitz'. Can you find all breeds with that term in the metadata?",
+      "query": "Can you look up Dachshunds?",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "spitz"
+        "search": "Dachshund"
       }
     },
     {
-      "query": "Someone mentioned that there are several types of 'collie' besides just the Border Collie. Can you show me all the entries that match that name?",
+      "query": "Find information on the Pug dog breed.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "collie"
+        "search": "Pug"
       }
     },
     {
-      "query": "I’m trying to identify a sled dog I saw in a movie. The name sounded like 'malam'. Could you search for breeds that contain that string?",
+      "query": "I need some stats on Boxers.",
       "action": "get_dog_breeds_metadata",
       "action_input": {
-        "search": "malam"
+        "search": "Boxer"
+      }
+    },
+    {
+      "query": "Tell me about the Husky breed.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": {
+        "search": "Husky"
+      }
+    },
+    {
+      "query": "Search for Corgi breed info.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": {
+        "search": "Corgi"
+      }
+    },
+    {
+      "query": "Get me metadata about Dalmatians.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": {
+        "search": "Dalmatian"
+      }
+    },
+    {
+      "query": "What can you tell me about the Shih Tzu?",
+      "action": "get_dog_breeds_metadata",
+      "action_input": {
+        "search": "Shih Tzu"
+      }
+    },
+    {
+      "query": "I'm curious about the Rottweiler breed, look it up.",
+      "action": "get_dog_breeds_metadata",
+      "action_input": {
+        "search": "Rottweiler"
       }
     }
   ],
   "search_manga": [
     {
-      "query": "I just finished watching the Naruto anime and I'm looking for the original manga chapters to see the differences in the art style.",
+      "query": "Can you search for the manga Naruto?",
       "action": "search_manga",
       "action_input": {
         "text": "Naruto"
       }
     },
     {
-      "query": "Can you recommend some wholesome romance manga? I want something sweet and lighthearted, but please make sure there's absolutely no NSFW content.",
+      "query": "Find me information about One Piece. Make sure to exclude NSFW content.",
       "action": "search_manga",
       "action_input": {
-        "text": "romance",
+        "text": "One Piece",
         "nsfw": "false"
       }
     },
     {
-      "query": "I've been really into those Korean manhwa lately, especially the ones where the protagonist gets a second chance at life through reincarnation. Do you have any good ones?",
+      "query": "I'm looking for Bleach, but I specifically want the manhua type.",
       "action": "search_manga",
       "action_input": {
-        "text": "reincarnation",
-        "type": "korea"
+        "text": "Bleach",
+        "type": "manhua"
       }
     },
     {
-      "query": "I'm looking for some gritty Chinese martial arts manhua with mature themes. I don't mind if they include NSFW scenes as long as the action is good.",
+      "query": "Search for Dragon Ball. Include all types.",
       "action": "search_manga",
       "action_input": {
-        "text": "martial arts",
-        "nsfw": "true",
-        "type": "china"
+        "text": "Dragon Ball",
+        "type": "all"
       }
     },
     {
-      "query": "I'm a huge fan of One Piece and I want to see if Eiichiro Oda has published any other short stories or earlier works.",
+      "query": "Look up Attack on Titan, nsfw allowed.",
       "action": "search_manga",
       "action_input": {
-        "text": "Eiichiro Oda"
-      }
-    },
-    {
-      "query": "My younger brother wants to start reading Japanese fantasy series. Could you find some age-appropriate titles that are strictly non-adult?",
-      "action": "search_manga",
-      "action_input": {
-        "text": "fantasy",
-        "nsfw": "false",
-        "type": "japan"
-      }
-    },
-    {
-      "query": "I'm looking for some dark, adult-oriented vampire stories. Show me the NSFW manga options available in this genre.",
-      "action": "search_manga",
-      "action_input": {
-        "text": "vampire",
+        "text": "Attack on Titan",
         "nsfw": "true"
       }
     },
     {
-      "query": "Everyone is talking about this soccer manga called Blue Lock because of the recent tournament. Can you find the series for me?",
+      "query": "Find the manga My Hero Academia.",
       "action": "search_manga",
       "action_input": {
-        "text": "Blue Lock"
+        "text": "My Hero Academia"
       }
     },
     {
-      "query": "I want to read a modern Korean romance story, but I prefer to avoid any explicit or NSFW material. What are the top clean titles?",
+      "query": "Search for Demon Slayer, make sure it's strictly a manga type.",
       "action": "search_manga",
       "action_input": {
-        "text": "romance",
-        "nsfw": "false",
-        "type": "korea"
+        "text": "Demon Slayer",
+        "type": "manga"
       }
     },
     {
-      "query": "I'm doing a deep dive into the 'time travel' trope across all regions—Japan, Korea, China—and I want to see everything, including the uncensored NSFW versions.",
+      "query": "Can you look up Jujutsu Kaisen? Exclude NSFW.",
       "action": "search_manga",
       "action_input": {
-        "text": "time travel",
-        "nsfw": "true",
+        "text": "Jujutsu Kaisen",
+        "nsfw": "false"
+      }
+    },
+    {
+      "query": "Find details on Death Note.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Death Note"
+      }
+    },
+    {
+      "query": "I want to search for Fullmetal Alchemist, type is all.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Fullmetal Alchemist",
         "type": "all"
+      }
+    },
+    {
+      "query": "Search for Tokyo Ghoul, allow nsfw.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Tokyo Ghoul",
+        "nsfw": "true"
+      }
+    },
+    {
+      "query": "Look up Fairy Tail manga without nsfw.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Fairy Tail",
+        "nsfw": "false"
+      }
+    },
+    {
+      "query": "Search for Hunter x Hunter.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Hunter x Hunter"
+      }
+    },
+    {
+      "query": "Find Sword Art Online, any type is fine.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Sword Art Online",
+        "type": "all"
+      }
+    },
+    {
+      "query": "Can you look up Black Clover? It must be a manhwa type.",
+      "action": "search_manga",
+      "action_input": {
+        "text": "Black Clover",
+        "type": "manhwa"
       }
     }
   ],
   "get_financial_data": [
     {
-      "query": "Tesla's stock seems to be moving quite a bit today; can you check the latest price and volume for TSLA?",
+      "query": "Can you give me the global quote for AAPL?",
       "action": "get_financial_data",
       "action_input": {
         "function": "GLOBAL_QUOTE",
-        "symbol": "TSLA"
-      }
-    },
-    {
-      "query": "I'm trying to visualize Apple's performance over the last month to spot any trends. Can you get me the daily stock history for AAPL?",
-      "action": "get_financial_data",
-      "action_input": {
-        "function": "TIME_SERIES_DAILY",
         "symbol": "AAPL"
       }
     },
     {
-      "query": "I need to know the current market price for Microsoft immediately because I'm thinking of placing an order. Give me the real-time quote for MSFT.",
+      "query": "I need the daily time series data for MSFT.",
       "action": "get_financial_data",
       "action_input": {
-        "function": "GLOBAL_QUOTE",
+        "function": "TIME_SERIES_DAILY",
         "symbol": "MSFT"
       }
     },
     {
-      "query": "For my long-term portfolio review, I need a broader view of Amazon's growth. Could you pull the weekly price series for AMZN?",
+      "query": "What's the current stock quote for GOOGL?",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "GOOGL"
+      }
+    },
+    {
+      "query": "Get the weekly time series for Amazon (AMZN).",
       "action": "get_financial_data",
       "action_input": {
         "function": "TIME_SERIES_WEEKLY",
@@ -636,143 +816,213 @@
       }
     },
     {
-      "query": "There's high volatility in the tech sector right now. I need the minute-by-minute intraday data for Google (GOOGL) to see the price action.",
-      "action": "get_financial_data",
-      "action_input": {
-        "function": "TIME_SERIES_INTRADAY",
-        "symbol": "GOOGL"
-      }
-    },
-    {
-      "query": "I'm planning a trip to Tokyo next month and want to know how much my dollars are worth. What's the current exchange rate for USD to JPY?",
-      "action": "get_financial_data",
-      "action_input": {
-        "function": "CURRENCY_EXCHANGE_RATE",
-        "symbol": "USDJPY"
-      }
-    },
-    {
-      "query": "Everyone is talking about Nvidia's earnings. How is NVDA doing in the market right now?",
+      "query": "Fetch the global quote for META.",
       "action": "get_financial_data",
       "action_input": {
         "function": "GLOBAL_QUOTE",
-        "symbol": "NVDA"
-      }
-    },
-    {
-      "query": "I need to update my spreadsheet with Meta's recent closing prices. Please fetch the daily time series for META.",
-      "action": "get_financial_data",
-      "action_input": {
-        "function": "TIME_SERIES_DAILY",
         "symbol": "META"
       }
     },
     {
-      "query": "Our company is settling an invoice in Euros. Can you provide the latest EUR to USD conversion rate so we can calculate the costs?",
+      "query": "Can I get the monthly time series for Tesla (TSLA)?",
       "action": "get_financial_data",
       "action_input": {
-        "function": "CURRENCY_EXCHANGE_RATE",
-        "symbol": "EURUSD"
+        "function": "TIME_SERIES_MONTHLY",
+        "symbol": "TSLA"
       }
     },
     {
-      "query": "I noticed IBM is mentioned in the news for their new AI chips. What is their stock currently trading at?",
+      "query": "I want the global quote for BRK.B.",
       "action": "get_financial_data",
       "action_input": {
         "function": "GLOBAL_QUOTE",
-        "symbol": "IBM"
+        "symbol": "BRK.B"
+      }
+    },
+    {
+      "query": "Give me the daily data for Visa (V).",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "TIME_SERIES_DAILY",
+        "symbol": "V"
+      }
+    },
+    {
+      "query": "Check the global quote for Johnson & Johnson (JNJ).",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "JNJ"
+      }
+    },
+    {
+      "query": "Get the intraday time series for WMT.",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "TIME_SERIES_INTRADAY",
+        "symbol": "WMT"
+      }
+    },
+    {
+      "query": "Look up the global quote for JPM.",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "JPM"
+      }
+    },
+    {
+      "query": "I need the weekly time series for PG.",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "TIME_SERIES_WEEKLY",
+        "symbol": "PG"
+      }
+    },
+    {
+      "query": "Fetch the global quote for Mastercard (MA).",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "MA"
+      }
+    },
+    {
+      "query": "Can you give me the daily time series for UNH?",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "TIME_SERIES_DAILY",
+        "symbol": "UNH"
+      }
+    },
+    {
+      "query": "What's the global quote for Disney (DIS)?",
+      "action": "get_financial_data",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "DIS"
       }
     }
   ],
   "convert_currency": [
     {
-      "query": "I'm planning a hiking trip to the Swiss Alps and then heading to London. If I have 2000 Swiss Francs left over, how many British Pounds will that get me?",
+      "query": "Can you convert 100 USD to EUR?",
       "action": "convert_currency",
       "action_input": {
-        "amount": 2000,
-        "base": "CHF",
-        "target": "GBP"
-      }
-    },
-    {
-      "query": "Could you help me convert 1000 USD to EUR for my upcoming business trip to Berlin?",
-      "action": "convert_currency",
-      "action_input": {
-        "amount": 1000,
         "base": "USD",
         "target": "EUR"
       }
     },
     {
-      "query": "I'm looking at a camera on a Canadian website priced at 500 CAD. I need to know how much that would be in Japanese Yen before I order it.",
+      "query": "What's the current exchange rate from EUR to GBP?",
       "action": "convert_currency",
       "action_input": {
-        "amount": 500,
-        "base": "CAD",
+        "base": "EUR",
+        "target": "GBP"
+      }
+    },
+    {
+      "query": "I need to know how much JPY I get for my GBP.",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "GBP",
         "target": "JPY"
       }
     },
     {
-      "query": "Just landed in New York with 75 Euros in my pocket. How many US Dollars can I exchange this for at the airport?",
+      "query": "Check the conversion rate from JPY to AUD.",
       "action": "convert_currency",
       "action_input": {
-        "amount": 75,
+        "base": "JPY",
+        "target": "AUD"
+      }
+    },
+    {
+      "query": "Can you do a currency conversion from AUD to CAD?",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "AUD",
+        "target": "CAD"
+      }
+    },
+    {
+      "query": "I have some CAD and want to convert it to CHF. What's the rate?",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "CAD",
+        "target": "CHF"
+      }
+    },
+    {
+      "query": "What is the exchange rate for CHF to CNY?",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "CHF",
+        "target": "CNY"
+      }
+    },
+    {
+      "query": "Find the conversion rate between CNY and SEK.",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "CNY",
+        "target": "SEK"
+      }
+    },
+    {
+      "query": "How many NZD would I get for SEK?",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "SEK",
+        "target": "NZD"
+      }
+    },
+    {
+      "query": "Convert NZD into USD for me.",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "NZD",
+        "target": "USD"
+      }
+    },
+    {
+      "query": "Check the USD to JPY exchange rate.",
+      "action": "convert_currency",
+      "action_input": {
+        "base": "USD",
+        "target": "JPY"
+      }
+    },
+    {
+      "query": "What's the rate to change EUR to USD?",
+      "action": "convert_currency",
+      "action_input": {
         "base": "EUR",
         "target": "USD"
       }
     },
     {
-      "query": "My freelance client in India just sent a payment of 1500 INR. I need to convert that to GBP to see my actual earnings.",
+      "query": "I want to convert my GBP into USD, what is the rate?",
       "action": "convert_currency",
       "action_input": {
-        "amount": 1500,
-        "base": "INR",
-        "target": "GBP"
-      }
-    },
-    {
-      "query": "How much is 100 Australian Dollars in Chinese Yuan?",
-      "action": "convert_currency",
-      "action_input": {
-        "amount": 100,
-        "base": "AUD",
-        "target": "CNY"
-      }
-    },
-    {
-      "query": "I've been holding some crypto and want to cash out 0.05 BTC. What's the current value in USD?",
-      "action": "convert_currency",
-      "action_input": {
-        "amount": 0.05,
-        "base": "BTC",
+        "base": "GBP",
         "target": "USD"
       }
     },
     {
-      "query": "I have 10,000 Norwegian Kroner in my savings account. If I move that to my Euro account today, what would the total be?",
+      "query": "Can you tell me the exchange rate from AUD to USD?",
       "action": "convert_currency",
       "action_input": {
-        "amount": 10000,
-        "base": "NOK",
-        "target": "EUR"
+        "base": "AUD",
+        "target": "USD"
       }
     },
     {
-      "query": "We are crossing the border from Singapore to Malaysia. Can you convert 200 Singapore Dollars to Malaysian Ringgit for our dinner tonight?",
+      "query": "Convert CAD to USD.",
       "action": "convert_currency",
       "action_input": {
-        "amount": 200,
-        "base": "SGD",
-        "target": "MYR"
-      }
-    },
-    {
-      "query": "Convert 5000 South Korean Won to Thai Baht.",
-      "action": "convert_currency",
-      "action_input": {
-        "amount": 5000,
-        "base": "KRW",
-        "target": "THB"
+        "base": "CAD",
+        "target": "USD"
       }
     }
   ],
@@ -945,147 +1195,218 @@
   ],
   "get_recipe": [
     {
-      "query": "My daughter's birthday is coming up and she specifically asked for a homemade chocolate cake with fudge frosting. Do you have a reliable recipe?",
+      "query": "Do you have a good recipe for italian wedding soup?",
       "action": "get_recipe",
       "action_input": {
-        "query": "chocolate cake"
+        "query": "italian wedding soup"
       }
     },
     {
-      "query": "I have some guanciale and pecorino cheese in the fridge; can you show me the traditional way to prepare spaghetti carbonara?",
+      "query": "I'm craving some chicken tikka masala, can you find a recipe?",
       "action": "get_recipe",
       "action_input": {
-        "query": "spaghetti carbonara"
+        "query": "chicken tikka masala"
       }
     },
     {
-      "query": "Search for a recipe with chicken curry.",
+      "query": "How do you make beef stroganoff? Get me a recipe.",
       "action": "get_recipe",
       "action_input": {
-        "query": "chicken curry"
+        "query": "beef stroganoff"
       }
     },
     {
-      "query": "It's Saturday morning and I want to surprise my family with fluffy buttermilk pancakes. What's the best way to make them from scratch?",
+      "query": "Can you search for a pad thai recipe?",
       "action": "get_recipe",
       "action_input": {
-        "query": "pancakes"
+        "query": "pad thai"
       }
     },
     {
-      "query": "I'm hosting a big family dinner and need a classic, multi-layered lasagna recipe that can feed at least eight people.",
+      "query": "I want to bake a margarita pizza tonight, find me a recipe.",
       "action": "get_recipe",
       "action_input": {
-        "query": "lasagna"
+        "query": "margarita pizza"
       }
     },
     {
-      "query": "Show me some sushi roll recipes.",
+      "query": "Give me the second page of results for chocolate cake recipes.",
       "action": "get_recipe",
       "action_input": {
-        "query": "sushi roll"
+        "query": "chocolate cake",
+        "offset": "1"
       }
     },
     {
-      "query": "It's freezing outside and I'm craving some comfort food. Do you have a slow-cooker recipe for a hearty beef stew with root vegetables?",
-      "action": "get_recipe",
-      "action_input": {
-        "query": "beef stew"
-      }
-    },
-    {
-      "query": "I've already looked through the basic spaghetti and penne options. Can you find more pasta recipes after the first page of results?",
-      "action": "get_recipe",
-      "action_input": {
-        "query": "pasta",
-        "offset": "10"
-      }
-    },
-    {
-      "query": "Can you find me a recipe for apple pie?",
+      "query": "I need an apple pie recipe.",
       "action": "get_recipe",
       "action_input": {
         "query": "apple pie"
       }
     },
     {
-      "query": "I'm researching different gourmet sliders for my food truck business. Show me the next set of burger recipes beyond the popular ones I just saw.",
+      "query": "Search for a caesar salad recipe, but skip the first few results using offset 2.",
       "action": "get_recipe",
       "action_input": {
-        "query": "burger",
-        "offset": "20"
+        "query": "caesar salad",
+        "offset": "2"
+      }
+    },
+    {
+      "query": "Find a good grilled cheese recipe.",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "grilled cheese"
+      }
+    },
+    {
+      "query": "Can you give me a recipe for tomato soup?",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "tomato soup"
+      }
+    },
+    {
+      "query": "I want to make pancakes for breakfast.",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "pancakes"
+      }
+    },
+    {
+      "query": "How do I make crispy waffles?",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "waffles"
+      }
+    },
+    {
+      "query": "Look up a french toast recipe, offset by 3.",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "french toast",
+        "offset": "3"
+      }
+    },
+    {
+      "query": "Get me a simple scrambled eggs recipe.",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "scrambled eggs"
+      }
+    },
+    {
+      "query": "I need instructions to cook an omelette.",
+      "action": "get_recipe",
+      "action_input": {
+        "query": "omelette"
       }
     }
   ],
   "search_cocktails": [
     {
-      "query": "I have a bottle of vodka sitting in my cabinet that I need to use up. Can you suggest some classic cocktails that feature it as the main spirit?",
+      "query": "How do I make a Margarita?",
       "action": "search_cocktails",
       "action_input": {
-        "ingredients": "vodka"
+        "name": "Margarita"
       }
     },
     {
-      "query": "I'm planning a tropical-themed party for this weekend and I really want to serve a refreshing mojito. Could you find the exact recipe for me?",
+      "query": "Can you give me the recipe for a classic Martini?",
       "action": "search_cocktails",
       "action_input": {
-        "name": "mojito"
+        "name": "Martini"
       }
     },
     {
-      "query": "I'm looking for a balanced drink that combines the kick of rum with the tartness of lime juice. What are my options?",
+      "query": "I want to mix an Old Fashioned. What do I need?",
       "action": "search_cocktails",
       "action_input": {
-        "ingredients": "rum,lime juice"
+        "name": "Old Fashioned"
       }
     },
     {
-      "query": "I've always enjoyed different variations of the martini, but I'm looking for something beyond the standard gin and vermouth. Show me all the drinks with 'martini' in their name.",
+      "query": "Find me a cocktail that uses rum and mint.",
       "action": "search_cocktails",
       "action_input": {
-        "name": "martini"
+        "ingredients": "rum, mint"
       }
     },
     {
-      "query": "I just bought some high-quality tequila and triple sec. Are there any famous cocktails besides a Margarita that require these two specific ingredients?",
+      "query": "Search for the Manhattan cocktail recipe.",
       "action": "search_cocktails",
       "action_input": {
-        "ingredients": "tequila,triple sec"
+        "name": "Manhattan"
       }
     },
     {
-      "query": "I'm a big fan of savory brunch drinks like the Bloody Mary, but I'm in the mood to try something slightly different today. Do you have anything similar in that style?",
+      "query": "Do you know how to make a Whiskey Sour?",
       "action": "search_cocktails",
       "action_input": {
-        "name": "bloody"
+        "name": "Whiskey Sour"
       }
     },
     {
-      "query": "I'm trying to practice my home bartending skills with a simple sour base. What can I make if I only have gin, lemon juice, and sugar syrup on hand?",
+      "query": "What's in a Daiquiri?",
       "action": "search_cocktails",
       "action_input": {
-        "ingredients": "gin,lemon juice,sugar syrup"
+        "name": "Daiquiri"
       }
     },
     {
-      "query": "I need a caffeine boost for tonight’s late-night event. Could you look up some sophisticated cocktail recipes that include espresso?",
+      "query": "Can you find drinks made with vodka and cranberry?",
       "action": "search_cocktails",
       "action_input": {
-        "ingredients": "espresso"
+        "ingredients": "vodka, cranberry"
       }
     },
     {
-      "query": "My grandfather used to talk about the 'Old Fashioned' all the time. I'd like to see the traditional recipe and its history.",
+      "query": "I need the ingredients for a Negroni.",
       "action": "search_cocktails",
       "action_input": {
-        "name": "old fashioned"
+        "name": "Negroni"
       }
     },
     {
-      "query": "I'm looking for a strong, spirit-forward drink. Do you have any recipes that specifically include bourbon and bitters?",
+      "query": "How do you prepare a Moscow Mule?",
       "action": "search_cocktails",
       "action_input": {
-        "ingredients": "bourbon,bitters"
+        "name": "Moscow Mule"
+      }
+    },
+    {
+      "query": "What is the recipe for a Bloody Mary?",
+      "action": "search_cocktails",
+      "action_input": {
+        "name": "Bloody Mary"
+      }
+    },
+    {
+      "query": "Search for cocktails that include tequila and lime.",
+      "action": "search_cocktails",
+      "action_input": {
+        "ingredients": "tequila, lime"
+      }
+    },
+    {
+      "query": "Find the Mai Tai cocktail.",
+      "action": "search_cocktails",
+      "action_input": {
+        "name": "Mai Tai"
+      }
+    },
+    {
+      "query": "I want to make a Gimlet.",
+      "action": "search_cocktails",
+      "action_input": {
+        "name": "Gimlet"
+      }
+    },
+    {
+      "query": "What are the ingredients for a White Russian?",
+      "action": "search_cocktails",
+      "action_input": {
+        "name": "White Russian"
       }
     }
   ],
@@ -1143,328 +1464,490 @@
   ],
   "get_filtered_game_giveaways": [
     {
-      "query": "I just set up my new gaming PC and logged into Steam. Are there any full games I can add to my library for free right now?",
-      "action": "get_filtered_game_giveaways",
-      "action_input": {
-        "platform": "steam"
-      }
-    },
-    {
-      "query": "I heard that the Epic Games Store gives away premium titles every week. Can you check what the current freebie is?",
+      "query": "Are there any free games on the Epic Games Store right now?",
       "action": "get_filtered_game_giveaways",
       "action_input": {
         "platform": "epic-games-store"
       }
     },
     {
-      "query": "I'm looking for some new entertainment for my phone. Are there any paid Android games currently running a $0 promotion?",
+      "query": "Find some free loot giveaways for PC.",
       "action": "get_filtered_game_giveaways",
       "action_input": {
-        "platform": "android"
+        "platform": "pc",
+        "type_": "loot"
       }
     },
     {
-      "query": "I'm not looking for full games, but I want to upgrade my characters in my Steam library. Is there any free DLC or loot available for Steam users?",
+      "query": "Check if there are any game giveaways on PS4.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "ps4",
+        "type_": "game"
+      }
+    },
+    {
+      "query": "I want to find free games or loot for Xbox One.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "xbox-one"
+      }
+    },
+    {
+      "query": "Are there any current giveaways for Nintendo Switch? I'm looking for games.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "switch",
+        "type_": "game"
+      }
+    },
+    {
+      "query": "Show me free games on Steam.",
       "action": "get_filtered_game_giveaways",
       "action_input": {
         "platform": "steam",
-        "type": "loot"
+        "type_": "game"
       }
     },
     {
-      "query": "I usually play on PC through either Epic or Steam. Show me all the free games currently listed on both platforms so I don't miss out.",
-      "action": "get_filtered_game_giveaways",
-      "action_input": {
-        "platform": "epic-games-store.steam",
-        "type": "game"
-      }
-    },
-    {
-      "query": "My kid wants some new games on their tablet, but I'm on a tight budget. Can you find any mobile game giveaways for Android?",
+      "query": "Search for loot giveaways on Android.",
       "action": "get_filtered_game_giveaways",
       "action_input": {
         "platform": "android",
-        "type": "game"
+        "type_": "loot"
       }
     },
     {
-      "query": "I'm a PC gamer who uses Steam. I've been looking for some extra in-game items or skins—could you list any active loot drops?",
+      "query": "Is there anything free on the Epic Games Store that is a game?",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "epic-games-store",
+        "type_": "game"
+      }
+    },
+    {
+      "query": "Find PC giveaways.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "pc"
+      }
+    },
+    {
+      "query": "Look up free loot for PS4.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "ps4",
+        "type_": "loot"
+      }
+    },
+    {
+      "query": "Get a list of free games for Xbox.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "xbox-one",
+        "type_": "game"
+      }
+    },
+    {
+      "query": "Check for free stuff on Switch.",
+      "action": "get_filtered_game_giveaways",
+      "action_input": {
+        "platform": "switch"
+      }
+    },
+    {
+      "query": "Are there any Steam loot giveaways?",
       "action": "get_filtered_game_giveaways",
       "action_input": {
         "platform": "steam",
-        "type": "loot"
+        "type_": "loot"
       }
     },
     {
-      "query": "Does Epic Games have any bundles or special loot packs available for free this month? I want to see if there's anything for my online games.",
+      "query": "Find free games for Android.",
       "action": "get_filtered_game_giveaways",
       "action_input": {
-        "platform": "epic-games-store",
-        "type": "loot"
+        "platform": "android",
+        "type_": "game"
       }
     },
     {
-      "query": "I play games on my PC through Steam and on my phone through Android. Let me know about every giveaway happening on these two platforms.",
+      "query": "Can you show me PC game giveaways?",
       "action": "get_filtered_game_giveaways",
       "action_input": {
-        "platform": "steam.android"
-      }
-    },
-    {
-      "query": "I want to see everything Epic is offering for free today. That includes both full game downloads and any extra digital loot or currency.",
-      "action": "get_filtered_game_giveaways",
-      "action_input": {
-        "platform": "epic-games-store",
-        "type": "game.loot"
+        "platform": "pc",
+        "type_": "game"
       }
     }
   ],
   "get_lol_champion_stats": [
     {
-      "query": "Show me the full stat breakdown for Ahri, including her base health and any scaling values.",
+      "query": "Can you get me the stats for Ahri in League of Legends?",
       "action": "get_lol_champion_stats",
       "action_input": {
         "name": "Ahri"
       }
     },
     {
-      "query": "I’m comparing mid-laners—can you pull up Syndra’s detailed in-game stats?",
+      "query": "What are Yasuo's base stats?",
       "action": "get_lol_champion_stats",
       "action_input": {
-        "name": "Syndra"
+        "name": "Yasuo"
       }
     },
     {
-      "query": "Give me the complete champion statistics for Garen so I can check his armor and AD growth.",
+      "query": "I need the champion info for Teemo.",
       "action": "get_lol_champion_stats",
       "action_input": {
-        "name": "Garen"
+        "name": "Teemo"
       }
     },
     {
-      "query": "What are the base and scaling stats for Vayne? I want to review her health, attack damage, and attack speed.",
-      "action": "get_lol_champion_stats",
-      "action_input": {
-        "name": "Vayne"
-      }
-    },
-    {
-      "query": "Retrieve detailed gameplay stats for Jhin, including mana, HP, and his per-level scaling.",
-      "action": "get_lol_champion_stats",
-      "action_input": {
-        "name": "Jhin"
-      }
-    },
-    {
-      "query": "I’m prepping for jungle matchups—show me the stat sheet for Lee Sin.",
+      "query": "Look up the stats for Lee Sin.",
       "action": "get_lol_champion_stats",
       "action_input": {
         "name": "Lee Sin"
       }
     },
     {
-      "query": "Can you fetch the full in-game stat profile of Orianna? I need her mana numbers specifically.",
+      "query": "Fetch the champion statistics for Thresh.",
       "action": "get_lol_champion_stats",
       "action_input": {
-        "name": "Orianna"
+        "name": "Thresh"
       }
     },
     {
-      "query": "Pull the complete champion stats for Darius, including his health regen and AD per level.",
+      "query": "Can you give me Jinx's stats?",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Jinx"
+      }
+    },
+    {
+      "query": "What are the base numbers for Ezreal?",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Ezreal"
+      }
+    },
+    {
+      "query": "Search for Lux's champion data.",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Lux"
+      }
+    },
+    {
+      "query": "I want to see the stats for Vayne.",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Vayne"
+      }
+    },
+    {
+      "query": "Find Zed's champion stats.",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Zed"
+      }
+    },
+    {
+      "query": "Look up Darius in the LoL stats.",
       "action": "get_lol_champion_stats",
       "action_input": {
         "name": "Darius"
       }
     },
     {
-      "query": "Show me Ekko’s base stats and all scaling attributes. I want to check his growth patterns.",
+      "query": "What are Garen's stats?",
       "action": "get_lol_champion_stats",
       "action_input": {
-        "name": "Ekko"
+        "name": "Garen"
       }
     },
     {
-      "query": "I’m doing some top-lane prep—could you pull up the full stat profile for Fiora, including her HP growth and base attack damage?",
+      "query": "Get me the statistics for Ashe.",
       "action": "get_lol_champion_stats",
       "action_input": {
-        "name": "Fiora"
+        "name": "Ashe"
+      }
+    },
+    {
+      "query": "Can you check Miss Fortune's base numbers?",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Miss Fortune"
+      }
+    },
+    {
+      "query": "Fetch the champion info for Riven.",
+      "action": "get_lol_champion_stats",
+      "action_input": {
+        "name": "Riven"
       }
     }
   ],
   "get_salary_estimation": [
     {
-      "query": "What’s the salary range for a software engineer in San Francisco?",
+      "query": "How much does a Software Engineer make in New York?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "software engineer",
-        "location": "san francisco"
+        "job_title": "Software Engineer",
+        "location": "New York"
       }
     },
     {
-      "query": "Give me salary estimates for a data analyst working in Chicago with 1–3 years experience.",
+      "query": "What is the estimated salary for a Data Scientist in San Francisco with 3 years of experience?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "data analyst",
-        "location": "chicago",
-        "years_of_experience": "ONE_TO_THREE"
+        "job_title": "Data Scientist",
+        "location": "San Francisco",
+        "years_of_experience": "3"
       }
     },
     {
-      "query": "How much does a senior product manager make in New York City? Only show median salary and location.",
+      "query": "I want to know the salary of a Product Manager in London.",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "senior product manager",
-        "location": "new york city",
-        "fields": "median_salary,location"
+        "job_title": "Product Manager",
+        "location": "London"
       }
     },
     {
-      "query": "What’s the estimated salary for a UX designer in Canada?",
+      "query": "Can you estimate a Nurse's salary in Berlin, specifically for in-person roles?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "ux designer",
-        "location": "canada",
-        "location_type": "COUNTRY"
+        "job_title": "Nurse",
+        "location": "Berlin",
+        "location_type": "in-person"
       }
     },
     {
-      "query": "Find the salary range for a backend developer in Austin with more than 15 years of experience.",
+      "query": "How much do Teachers earn in Toronto?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "backend developer",
-        "location": "austin",
-        "years_of_experience": "ABOVE_FIFTEEN"
+        "job_title": "Teacher",
+        "location": "Toronto"
       }
     },
     {
-      "query": "Show me salary estimates for a machine learning engineer in California, state-level only.",
+      "query": "What's the typical pay for a Web Developer in Austin, Texas?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "machine learning engineer",
-        "location": "california",
-        "location_type": "STATE"
+        "job_title": "Web Developer",
+        "location": "Austin, Texas"
       }
     },
     {
-      "query": "What does a cloud architect earn in Seattle? Include only job_title, median_salary, and total_max.",
+      "query": "Can you check the salary for a Graphic Designer working remotely in the US?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "cloud architect",
-        "location": "seattle",
-        "fields": "job_title,median_salary,total_max"
+        "job_title": "Graphic Designer",
+        "location": "US",
+        "location_type": "REMOTE"
       }
     },
     {
-      "query": "Estimate the salary for a junior QA engineer in Boston with less than one year of experience.",
+      "query": "I need salary data for an Accountant in Chicago.",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "qa engineer",
-        "location": "boston",
-        "years_of_experience": "LESS_THAN_ONE"
+        "job_title": "Accountant",
+        "location": "Chicago"
       }
     },
     {
-      "query": "Give me salary details for a cybersecurity specialist working anywhere in the United States.",
+      "query": "What is a Marketing Manager's salary in Seattle with 5+ years experience?",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "cybersecurity specialist",
-        "location": "united states",
-        "location_type": "COUNTRY"
+        "job_title": "Marketing Manager",
+        "location": "Seattle",
+        "years_of_experience": "5"
       }
     },
     {
-      "query": "What’s the salary for a DevOps engineer in Los Angeles for someone with 4–6 years of experience?",
+      "query": "Look up the salary for a Civil Engineer in Sydney.",
       "action": "get_salary_estimation",
       "action_input": {
-        "job_title": "devops engineer",
-        "location": "los angeles",
-        "years_of_experience": "FOUR_TO_SIX"
+        "job_title": "Civil Engineer",
+        "location": "Sydney"
+      }
+    },
+    {
+      "query": "How much does a Chef make in Paris?",
+      "action": "get_salary_estimation",
+      "action_input": {
+        "job_title": "Chef",
+        "location": "Paris"
+      }
+    },
+    {
+      "query": "Estimate the pay for a Systems Analyst in Tokyo.",
+      "action": "get_salary_estimation",
+      "action_input": {
+        "job_title": "Systems Analyst",
+        "location": "Tokyo"
+      }
+    },
+    {
+      "query": "What is the average salary for a Sales Executive in Dubai?",
+      "action": "get_salary_estimation",
+      "action_input": {
+        "job_title": "Sales Executive",
+        "location": "Dubai"
+      }
+    },
+    {
+      "query": "Check the remote salary for a Devops Engineer in Canada.",
+      "action": "get_salary_estimation",
+      "action_input": {
+        "job_title": "Devops Engineer",
+        "location": "Canada",
+        "location_type": "REMOTE"
+      }
+    },
+    {
+      "query": "How much do Electricians earn in Boston?",
+      "action": "get_salary_estimation",
+      "action_input": {
+        "job_title": "Electrician",
+        "location": "Boston"
       }
     }
   ],
   "get_timezone_info": [
     {
-      "query": "What’s the timezone at latitude 40.7128 and longitude -74.0060?",
-      "action": "get_timezone_info",
-      "action_input": {
-        "lat": 40.7128,
-        "lng": -74.006
-      }
-    },
-    {
-      "query": "Find the timezone info for Tokyo, Japan at coordinates 35.6895, 139.6917.",
-      "action": "get_timezone_info",
-      "action_input": {
-        "lat": 35.6895,
-        "lng": 139.6917
-      }
-    },
-    {
-      "query": "Get the UTC offset for Paris at 48.8566, 2.3522 as of January 1, 2020.",
-      "action": "get_timezone_info",
-      "action_input": {
-        "lat": 48.8566,
-        "lng": 2.3522,
-        "timestamp": 1577836800
-      }
-    },
-    {
-      "query": "What timezone is at -33.8688 latitude, 151.2093 longitude right now?",
-      "action": "get_timezone_info",
-      "action_input": {
-        "lat": -33.8688,
-        "lng": 151.2093
-      }
-    },
-    {
-      "query": "Show me timezone data for Los Angeles (34.0522, -118.2437) during summer 2022.",
-      "action": "get_timezone_info",
-      "action_input": {
-        "lat": 34.0522,
-        "lng": -118.2437,
-        "timestamp": 1656633600
-      }
-    },
-    {
-      "query": "Get the time zone details for London (51.5074, -0.1278).",
-      "action": "get_timezone_info",
-      "action_input": {
-        "lat": 51.5074,
-        "lng": -0.1278
-      }
-    },
-    {
-      "query": "What was the timezone offset for New York City (40.7128, -74.0060) on December 25, 1995?",
+      "query": "Can you check the timezone for latitude 40.7128 and longitude -74.0060 at timestamp 1600000000?",
       "action": "get_timezone_info",
       "action_input": {
         "lat": 40.7128,
         "lng": -74.006,
-        "timestamp": 819590400
+        "timestamp": 1600000000
       }
     },
     {
-      "query": "Give me timezone information for 19.4326 latitude and -99.1332 longitude.",
+      "query": "What is the time zone info at lat 34.0522, lng -118.2437 (timestamp 1600010000)?",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 34.0522,
+        "lng": -118.2437,
+        "timestamp": 1600010000
+      }
+    },
+    {
+      "query": "I need the timezone at coordinates 51.5074, -0.1278 for the timestamp 1600020000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "timestamp": 1600020000
+      }
+    },
+    {
+      "query": "Find the timezone info for lat 35.6762, lng 139.6503 at time 1600030000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 35.6762,
+        "lng": 139.6503,
+        "timestamp": 1600030000
+      }
+    },
+    {
+      "query": "Look up timezone data at lat 48.8566 and lng 2.3522 using timestamp 1600040000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "timestamp": 1600040000
+      }
+    },
+    {
+      "query": "Check the timezone at lat -33.8688 and lng 151.2093 (timestamp 1600050000).",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": -33.8688,
+        "lng": 151.2093,
+        "timestamp": 1600050000
+      }
+    },
+    {
+      "query": "What's the timezone for 55.7558, 37.6173 at timestamp 1600060000?",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 55.7558,
+        "lng": 37.6173,
+        "timestamp": 1600060000
+      }
+    },
+    {
+      "query": "I need timezone info for latitude -23.5505 and longitude -46.6333, timestamp 1600070000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": -23.5505,
+        "lng": -46.6333,
+        "timestamp": 1600070000
+      }
+    },
+    {
+      "query": "Get me the timezone at lat 39.9042, lng 116.4074 with timestamp 1600080000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 39.9042,
+        "lng": 116.4074,
+        "timestamp": 1600080000
+      }
+    },
+    {
+      "query": "Find the time zone at coordinates lat 19.4326, lng -99.1332 (timestamp 1600090000).",
       "action": "get_timezone_info",
       "action_input": {
         "lat": 19.4326,
-        "lng": -99.1332
+        "lng": -99.1332,
+        "timestamp": 1600090000
       }
     },
     {
-      "query": "What’s the local time offset for Rio de Janeiro at -22.9068, -43.1729 on March 15, 2023?",
+      "query": "Check timezone info for lat 28.6139, lng 77.2090 at timestamp 1600100000.",
       "action": "get_timezone_info",
       "action_input": {
-        "lat": -22.9068,
-        "lng": -43.1729,
-        "timestamp": 1678838400
+        "lat": 28.6139,
+        "lng": 77.209,
+        "timestamp": 1600100000
       }
     },
     {
-      "query": "Find timezone and DST info for Cape Town, South Africa (-33.9249, 18.4241).",
+      "query": "What is the time zone for lat 1.3521, lng 103.8198 at 1600110000?",
       "action": "get_timezone_info",
       "action_input": {
-        "lat": -33.9249,
-        "lng": 18.4241
+        "lat": 1.3521,
+        "lng": 103.8198,
+        "timestamp": 1600110000
+      }
+    },
+    {
+      "query": "Look up the timezone at lat 41.9028, lng 12.4964 using timestamp 1600120000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 41.9028,
+        "lng": 12.4964,
+        "timestamp": 1600120000
+      }
+    },
+    {
+      "query": "I want to know the timezone at lat 52.5200, lng 13.4050, timestamp 1600130000.",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": 52.52,
+        "lng": 13.405,
+        "timestamp": 1600130000
+      }
+    },
+    {
+      "query": "Get timezone information for lat -26.2041, lng 28.0473 (timestamp 1600140000).",
+      "action": "get_timezone_info",
+      "action_input": {
+        "lat": -26.2041,
+        "lng": 28.0473,
+        "timestamp": 1600140000
       }
     }
   ],
@@ -1608,200 +2091,291 @@
   ],
   "get_celestial_body_position": [
     {
-      "query": "What's the position of the Sun from January 1 to January 3 for my default location?",
+      "query": "Where is the moon between 2023-01-01 and 2023-01-10? Check from lat 33.77, lon -84.39.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Sun",
-        "from_date": "2025-01-01",
-        "to_date": "2025-01-03"
+        "body": "moon",
+        "from_date": "2023-01-01",
+        "to_date": "2023-01-10",
+        "latitude": 33.77,
+        "longitude": -84.39
       }
     },
     {
-      "query": "Give me the Moon’s altitude and azimuth in Tokyo from March 10 to March 11.",
+      "query": "Find the position of the sun from 2023-02-01 to 2023-02-15. My coordinates are lat 40.71, lon -74.00, elevation 10.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Moon",
-        "latitude": 35.6895,
-        "longitude": 139.6917,
-        "from_date": "2025-03-10",
-        "to_date": "2025-03-11"
+        "body": "sun",
+        "from_date": "2023-02-01",
+        "to_date": "2023-02-15",
+        "latitude": 40.71,
+        "longitude": -74.0,
+        "elevation": 10
       }
     },
     {
-      "query": "Track Mars’ position tonight at 20:00 in Los Angeles.",
+      "query": "Where will Mars be from 2023-03-01 to 2023-03-05? (lat: 51.50, lon: -0.12)",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Mars",
-        "latitude": 34.0522,
-        "longitude": -118.2437,
-        "from_date": "2025-04-01",
-        "to_date": "2025-04-01",
-        "time": "20:00:00"
+        "body": "mars",
+        "from_date": "2023-03-01",
+        "to_date": "2023-03-05",
+        "latitude": 51.5,
+        "longitude": -0.12
       }
     },
     {
-      "query": "Show me Jupiter's movement from April 4 to April 6 with elevation 500 meters.",
+      "query": "I want to track Venus between 2023-04-10 and 2023-04-20 from latitude 35.68, longitude 139.65.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Jupiter",
-        "from_date": "2025-04-04",
-        "to_date": "2025-04-06",
-        "elevation": 500
+        "body": "venus",
+        "from_date": "2023-04-10",
+        "to_date": "2023-04-20",
+        "latitude": 35.68,
+        "longitude": 139.65
       }
     },
     {
-      "query": "Provide the Sun’s position at 06:30 tomorrow for Taipei.",
+      "query": "Find Jupiter's position from 2023-05-01 to 2023-05-10 at lat 34.05, lon -118.24, elev 100.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Sun",
-        "latitude": 25.033,
-        "longitude": 121.5654,
-        "from_date": "2025-05-12",
-        "to_date": "2025-05-12",
-        "time": "06:30:00"
+        "body": "jupiter",
+        "from_date": "2023-05-01",
+        "to_date": "2023-05-10",
+        "latitude": 34.05,
+        "longitude": -118.24,
+        "elevation": 100
       }
     },
     {
-      "query": "I want the Moon's coordinates from May 1 to May 2 at 03:00 for a location at 100 meters elevation.",
+      "query": "Check where the moon is located from 2023-06-01 to 2023-06-05. (lat: 48.85, lon: 2.35)",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Moon",
-        "from_date": "2025-05-01",
-        "to_date": "2025-05-02",
-        "elevation": 100,
-        "time": "03:00:00"
+        "body": "moon",
+        "from_date": "2023-06-01",
+        "to_date": "2023-06-05",
+        "latitude": 48.85,
+        "longitude": 2.35
       }
     },
     {
-      "query": "Give Saturn’s sky position in Paris from July 10 to July 12.",
+      "query": "Look up the sun's position between 2023-07-01 and 2023-07-10 from lat -33.86, lon 151.20.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Saturn",
-        "latitude": 48.8566,
-        "longitude": 2.3522,
-        "from_date": "2025-07-10",
-        "to_date": "2025-07-12"
+        "body": "sun",
+        "from_date": "2023-07-01",
+        "to_date": "2023-07-10",
+        "latitude": -33.86,
+        "longitude": 151.2
       }
     },
     {
-      "query": "Track Venus at 22:15 between August 1 and August 3 for New York City.",
+      "query": "Track Mars from 2023-08-01 to 2023-08-08 at lat 55.75, lon 37.61, elevation 150.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Venus",
-        "latitude": 40.7128,
-        "longitude": -74.006,
-        "from_date": "2025-08-01",
-        "to_date": "2025-08-03",
-        "time": "22:15:00"
+        "body": "mars",
+        "from_date": "2023-08-01",
+        "to_date": "2023-08-08",
+        "latitude": 55.75,
+        "longitude": 37.61,
+        "elevation": 150
       }
     },
     {
-      "query": "What's the position of Mars for my default coordinates from September 9 to September 10 at 14:00?",
+      "query": "Where is Venus from 2023-09-01 to 2023-09-12? Observation from lat 1.35, lon 103.81.",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Mars",
-        "from_date": "2025-09-09",
-        "to_date": "2025-09-10",
-        "time": "14:00:00"
+        "body": "venus",
+        "from_date": "2023-09-01",
+        "to_date": "2023-09-12",
+        "latitude": 1.35,
+        "longitude": 103.81
       }
     },
     {
-      "query": "Show the Sun’s altitude over Denver from December 20 to December 22 with elevation 1600 meters.",
+      "query": "Get Jupiter's coordinates between 2023-10-01 and 2023-10-15 (lat 41.90, lon 12.49).",
       "action": "get_celestial_body_position",
       "action_input": {
-        "body": "Sun",
-        "latitude": 39.7392,
-        "longitude": -104.9903,
-        "elevation": 1600,
-        "from_date": "2025-12-20",
-        "to_date": "2025-12-22"
+        "body": "jupiter",
+        "from_date": "2023-10-01",
+        "to_date": "2023-10-15",
+        "latitude": 41.9,
+        "longitude": 12.49
+      }
+    },
+    {
+      "query": "Can you track the moon's position from 2023-11-01 to 2023-11-07? Lat 28.61, lon 77.20.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "moon",
+        "from_date": "2023-11-01",
+        "to_date": "2023-11-07",
+        "latitude": 28.61,
+        "longitude": 77.2
+      }
+    },
+    {
+      "query": "Where is the sun from 2023-12-01 to 2023-12-10 at lat 39.90, lon 116.40, elevation 50?",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "sun",
+        "from_date": "2023-12-01",
+        "to_date": "2023-12-10",
+        "latitude": 39.9,
+        "longitude": 116.4,
+        "elevation": 50
+      }
+    },
+    {
+      "query": "Find Mars between 2024-01-01 and 2024-01-10 from lat 19.43, lon -99.13.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "mars",
+        "from_date": "2024-01-01",
+        "to_date": "2024-01-10",
+        "latitude": 19.43,
+        "longitude": -99.13
+      }
+    },
+    {
+      "query": "Check Venus's position from 2024-02-01 to 2024-02-05. Coordinates lat 52.52, lon 13.40.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "venus",
+        "from_date": "2024-02-01",
+        "to_date": "2024-02-05",
+        "latitude": 52.52,
+        "longitude": 13.4
+      }
+    },
+    {
+      "query": "Look up Jupiter from 2024-03-01 to 2024-03-15 at lat -23.55, lon -46.63.",
+      "action": "get_celestial_body_position",
+      "action_input": {
+        "body": "jupiter",
+        "from_date": "2024-03-01",
+        "to_date": "2024-03-15",
+        "latitude": -23.55,
+        "longitude": -46.63
       }
     }
   ],
   "search_arxiv_papers": [
     {
-      "query": "I'm starting a new research project on hardware-efficient algorithms and need to see the latest breakthroughs in quantum computing.",
+      "query": "Can you search arxiv for papers about machine learning?",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "quantum computing"
+        "search_term": "machine learning"
       }
     },
     {
-      "query": "I need to catch up on the deep learning trends from the first half of 2023 for my thesis bibliography. Can you find papers from January to June that year?",
+      "query": "I need 10 recent papers on quantum computing.",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "deep learning",
-        "date_from": "2023-01-01",
-        "date_to": "2023-06-30"
-      }
-    },
-    {
-      "query": "Could you give me a list of about 10 publications that specifically have 'graph neural networks' in their title?",
-      "action": "search_arxiv_papers",
-      "action_input": {
-        "search_term": "graph neural networks",
-        "field": "Title",
+        "search_term": "quantum computing",
         "num_results": 10
       }
     },
     {
-      "query": "I'm looking for the classic works on black holes written by Stephen Hawking available on Arxiv.",
+      "query": "Find some research on black holes in the Computer Science field.",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "Stephen Hawking",
-        "field": "Authors"
+        "search_term": "black holes",
+        "field": "Computer Science"
       }
     },
     {
-      "query": "I've already looked at the top results for reinforcement learning; can you show me the next batch of papers starting from the 11th one?",
+      "query": "Search for neural networks. I'd like 5 results sorted by Last Updated Date.",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "reinforcement learning",
-        "start": 10
+        "search_term": "neural networks",
+        "num_results": 5,
+        "date_type": "Last Updated Date"
       }
     },
     {
-      "query": "What are the most recent developments in artificial intelligence submitted since the beginning of 2024?",
+      "query": "Get me papers about robotics.",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "artificial intelligence",
-        "date_from": "2024-01-01"
+        "search_term": "robotics"
       }
     },
     {
-      "query": "I remember seeing some LLM-related papers that mentioned specific implementation details in their comments section. Could you find 3 examples for me?",
+      "query": "Search arxiv for 'transformers' and give me 20 results.",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "LLM",
-        "field": "Comments",
-        "num_results": 3
+        "search_term": "transformers",
+        "num_results": 20
       }
     },
     {
-      "query": "I'm reviewing astrophysics research specifically published during the summer of 2022, roughly from May to August.",
-      "action": "search_arxiv_papers",
-      "action_input": {
-        "search_term": "astrophysics",
-        "date_from": "2022-05-01",
-        "date_to": "2022-08-01"
-      }
-    },
-    {
-      "query": "Our lab needs to review 15 of the most recent computer vision papers submitted throughout the year 2024.",
+      "query": "Look up research on computer vision in the Physics field.",
       "action": "search_arxiv_papers",
       "action_input": {
         "search_term": "computer vision",
-        "date_from": "2024-01-01",
-        "date_to": "2024-12-31",
-        "num_results": 15
+        "field": "Physics"
       }
     },
     {
-      "query": "Find me about 8 papers in the natural language processing field that focus on the transformer architecture.",
+      "query": "Find papers related to string theory.",
       "action": "search_arxiv_papers",
       "action_input": {
-        "search_term": "transformer NLP",
+        "search_term": "string theory"
+      }
+    },
+    {
+      "query": "Can you give me 15 papers on natural language processing? Use Submission Date.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "natural language processing",
+        "num_results": 15,
+        "date_type": "Submission Date"
+      }
+    },
+    {
+      "query": "Search for cryptography papers.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "cryptography"
+      }
+    },
+    {
+      "query": "I'm looking for 3 papers on autonomous vehicles in the Mathematics field.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "autonomous vehicles",
+        "num_results": 3,
+        "field": "Mathematics"
+      }
+    },
+    {
+      "query": "Find some recent papers on augmented reality.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "augmented reality"
+      }
+    },
+    {
+      "query": "Search arxiv for reinforcement learning, returning 8 results.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "reinforcement learning",
         "num_results": 8
+      }
+    },
+    {
+      "query": "Get me papers about graph neural networks.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "graph neural networks"
+      }
+    },
+    {
+      "query": "Look up quantum entanglement papers from the Physics field.",
+      "action": "search_arxiv_papers",
+      "action_input": {
+        "search_term": "quantum entanglement",
+        "field": "Physics"
       }
     }
   ],
@@ -1911,395 +2485,558 @@
   ],
   "get_handball_scheduled_matches": [
     {
-      "query": "I'm heading to the sports bar later tonight; can you check if there are any handball matches being broadcasted today, December 11th?",
+      "query": "Are there any handball matches scheduled for 28/01/2021?",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "12/11/2025"
+        "date": "28/01/2021"
       }
     },
     {
-      "query": "I missed the action earlier this week. What was the full lineup of handball games back on November 10th?",
+      "query": "Can you check the handball schedule for 15/02/2021?",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "10/11/2025"
+        "date": "15/02/2021"
       }
     },
     {
-      "query": "My Thursday is looking pretty clear. Are there any interesting handball matches planned for November 13th that I should watch?",
+      "query": "I need to know the scheduled handball games on 10/03/2021.",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "13/11/2025"
+        "date": "10/03/2021"
       }
     },
     {
-      "query": "I'm trying to settle a bet about which teams played last Saturday, November 8th. Could you pull up the handball schedule for that day?",
+      "query": "Find the handball matches on 05/04/2021.",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "08/11/2025"
+        "date": "05/04/2021"
       }
     },
     {
-      "query": "Can you show me the fixtures for the handball league on November 11th? I need to know if my favorite team is playing.",
+      "query": "What's the handball schedule for 20/05/2021?",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "11/11/2025"
+        "date": "20/05/2021"
       }
     },
     {
-      "query": "I'm organizing a viewing party for the upcoming Sunday on November 9th. Which handball games are scheduled for that afternoon?",
+      "query": "Look up scheduled handball games for 12/06/2021.",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "09/11/2025"
+        "date": "12/06/2021"
       }
     },
     {
-      "query": "I'll be traveling next Friday, the 14th, but I don't want to miss the handball scores. What's the match schedule looking like for that day?",
+      "query": "Check if there are any handball matches on 08/07/2021.",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "14/11/2025"
+        "date": "08/07/2021"
       }
     },
     {
-      "query": "Check the handball calendar for November 7th. I remember hearing there was a big tournament game happening then.",
+      "query": "Can you find the handball games for 14/08/2021?",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "07/11/2025"
+        "date": "14/08/2021"
       }
     },
     {
-      "query": "Are there any high-stakes handball games coming up on November 15th? I want to plan my weekend around the best matchups.",
+      "query": "Search the handball schedule for 09/09/2021.",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "15/11/2025"
+        "date": "09/09/2021"
       }
     },
     {
-      "query": "I'm doing a statistical analysis of European handball performance. Can you list all the games that took place on November 6th?",
+      "query": "I want to see the handball matches scheduled on 22/10/2021.",
       "action": "get_handball_scheduled_matches",
       "action_input": {
-        "date": "06/11/2025"
+        "date": "22/10/2021"
+      }
+    },
+    {
+      "query": "Get the scheduled handball matches for 03/11/2021.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {
+        "date": "03/11/2021"
+      }
+    },
+    {
+      "query": "Check the handball matches on 25/12/2021.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {
+        "date": "25/12/2021"
+      }
+    },
+    {
+      "query": "Find handball scheduled matches for 01/01/2022.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {
+        "date": "01/01/2022"
+      }
+    },
+    {
+      "query": "What handball games are on 14/02/2022?",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {
+        "date": "14/02/2022"
+      }
+    },
+    {
+      "query": "Look up the handball matches on 17/03/2022.",
+      "action": "get_handball_scheduled_matches",
+      "action_input": {
+        "date": "17/03/2022"
       }
     }
   ],
   "get_airlines": [
     {
-      "query": "I'm planning a luxury trip to Southeast Asia and I've heard great things about the service on Singapore Airlines. Can you find some general info about them?",
+      "query": "I'm flying with Delta Air Lines, can you find their details?",
       "action": "get_airlines",
       "action_input": {
-        "name": "Singapore Airlines"
+        "name": "Delta Air Lines"
       }
     },
     {
-      "query": "I see a flight on the departures board starting with the prefix 'SQ', but I'm not sure which carrier that is. Can you look up the airline details for that IATA code?",
+      "query": "Can you look up United Airlines for me?",
       "action": "get_airlines",
       "action_input": {
-        "iata": "SQ"
+        "name": "United Airlines"
       }
     },
     {
-      "query": "I'm monitoring air traffic on a radar app and noticed a plane with the callsign 'SIA'. Which airline does this ICAO code belong to?",
+      "query": "I need some information on American Airlines.",
       "action": "get_airlines",
       "action_input": {
-        "icao": "SIA"
+        "name": "American Airlines"
       }
     },
     {
-      "query": "My company just updated our corporate travel policy to prioritize Delta Airlines for domestic flights. I need to get some background information on their fleet and hubs.",
+      "query": "Find the airline info for Southwest Airlines.",
       "action": "get_airlines",
       "action_input": {
-        "name": "Delta Airlines"
+        "name": "Southwest Airlines"
       }
     },
     {
-      "query": "I'm looking at a codeshare flight and the ticket says it's operated by EK. Could you show me the airline details associated with that code?",
-      "action": "get_airlines",
-      "action_input": {
-        "iata": "EK"
-      }
-    },
-    {
-      "query": "I'm curious about the Middle Eastern 'big three' carriers. Can you start by pulling up some information about Emirates for me?",
-      "action": "get_airlines",
-      "action_input": {
-        "name": "Emirates"
-      }
-    },
-    {
-      "query": "A pilot friend of mine mentioned he just got hired by an airline with the ICAO designation AAL. I want to look up more details about his new employer.",
-      "action": "get_airlines",
-      "action_input": {
-        "icao": "AAL"
-      }
-    },
-    {
-      "query": "I might have a layover in Frankfurt, so I was thinking of booking with Lufthansa. What can you tell me about the airline?",
+      "query": "Can you get details for Lufthansa?",
       "action": "get_airlines",
       "action_input": {
         "name": "Lufthansa"
       }
     },
     {
-      "query": "I found a great baggage policy online for an airline with the IATA code CX, but I forgot the full name of the company. Can you look it up?",
+      "query": "Look up British Airways.",
       "action": "get_airlines",
       "action_input": {
-        "iata": "CX"
+        "name": "British Airways"
       }
     },
     {
-      "query": "My cousin is flying in from Australia on Qantas Airways. Since I've never flown with them, could you provide some information about the carrier?",
+      "query": "I want to know more about Air France.",
       "action": "get_airlines",
       "action_input": {
-        "name": "Qantas Airways"
+        "name": "Air France"
+      }
+    },
+    {
+      "query": "Get me the information for Emirates.",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Emirates"
+      }
+    },
+    {
+      "query": "Can you search for Qatar Airways?",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Qatar Airways"
+      }
+    },
+    {
+      "query": "Find details on Singapore Airlines.",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Singapore Airlines"
+      }
+    },
+    {
+      "query": "Look up Cathay Pacific.",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Cathay Pacific"
+      }
+    },
+    {
+      "query": "Can you get the airline information for ANA?",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "ANA"
+      }
+    },
+    {
+      "query": "Find Japan Airlines in the database.",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Japan Airlines"
+      }
+    },
+    {
+      "query": "Search for Korean Air.",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Korean Air"
+      }
+    },
+    {
+      "query": "Get information about Qantas.",
+      "action": "get_airlines",
+      "action_input": {
+        "name": "Qantas"
       }
     }
   ],
   "get_motorcycle_data": [
     {
-      "query": "I’m thinking about upgrading to a middleweight naked bike, and everyone keeps recommending the 2023 Yamaha MT-07. Can you pull up its full specs?",
+      "query": "Can you show me some motorcycles made by Honda?",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Honda"
+      }
+    },
+    {
+      "query": "Find Yamaha motorcycles, but skip the first 10 results.",
       "action": "get_motorcycle_data",
       "action_input": {
         "make": "Yamaha",
-        "model": "MT-07",
-        "year": "2023"
+        "offset": 10
       }
     },
     {
-      "query": "I found a used Honda CBR500R from 2022 at a local dealership. I need to check the factory engine data to see if it's been modified.",
-      "action": "get_motorcycle_data",
-      "action_input": {
-        "make": "Honda",
-        "model": "CBR500R",
-        "year": "2022"
-      }
-    },
-    {
-      "query": "I’m doing a research project on how Harley-Davidson updated their lineup back in 2021. Could you list all the models they released that year?",
-      "action": "get_motorcycle_data",
-      "action_input": {
-        "make": "Harley-Davidson",
-        "year": "2021"
-      }
-    },
-    {
-      "query": "My friend just bought a Kawasaki Ninja from the 2020 series, but he's not sure about the exact seat height. Can we look at the 2020 Ninja model list?",
+      "query": "Look up Kawasaki bikes from the year 2020.",
       "action": "get_motorcycle_data",
       "action_input": {
         "make": "Kawasaki",
-        "model": "Ninja",
         "year": "2020"
       }
     },
     {
-      "query": "I’ve always dreamed of owning a Ducati Panigale, but I’m worried about the maintenance intervals and dry weight. What are the technical details for that series?",
-      "action": "get_motorcycle_data",
-      "action_input": {
-        "make": "Ducati",
-        "model": "Panigale"
-      }
-    },
-    {
-      "query": "I am planning a cross-continent tour and need the fuel tank capacity and torque figures for the latest 2024 BMW R1250GS.",
-      "action": "get_motorcycle_data",
-      "action_input": {
-        "make": "BMW",
-        "model": "R1250GS",
-        "year": "2024"
-      }
-    },
-    {
-      "query": "I'm looking for a reliable second-hand commuter and heard Suzuki had a great lineup in 2019. What bikes did they have available back then?",
+      "query": "I'm looking for the Suzuki GSX-R1000.",
       "action": "get_motorcycle_data",
       "action_input": {
         "make": "Suzuki",
+        "model": "GSX-R1000"
+      }
+    },
+    {
+      "query": "Get me some Ducati motorcycles.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Ducati"
+      }
+    },
+    {
+      "query": "Search for BMW motorcycles.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "BMW"
+      }
+    },
+    {
+      "query": "Find Harley-Davidson bikes, with an offset of 5.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Harley-Davidson",
+        "offset": 5
+      }
+    },
+    {
+      "query": "Look up KTM motorcycles manufactured in 2021.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "KTM",
+        "year": "2021"
+      }
+    },
+    {
+      "query": "I want data on the Triumph Bonneville.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Triumph",
+        "model": "Bonneville"
+      }
+    },
+    {
+      "query": "Can you find motorcycles by Aprilia?",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Aprilia"
+      }
+    },
+    {
+      "query": "Search for Indian motorcycles.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Indian"
+      }
+    },
+    {
+      "query": "Find Royal Enfield bikes from 2019.",
+      "action": "get_motorcycle_data",
+      "action_input": {
+        "make": "Royal Enfield",
         "year": "2019"
       }
     },
     {
-      "query": "There is a 2022 Triumph Street Triple for sale nearby, but I can't remember if that specific year came with the Quickshifter as standard. Check the specs for me?",
+      "query": "Look up the MV Agusta F4.",
       "action": "get_motorcycle_data",
       "action_input": {
-        "make": "Triumph",
-        "model": "Street Triple",
-        "year": "2022"
+        "make": "MV Agusta",
+        "model": "F4"
       }
     },
     {
-      "query": "Which KTM Duke models are currently being produced? I need to compare the different displacements to see which one fits my license category.",
+      "query": "Get me motorcycles made by Husqvarna, offset by 20.",
       "action": "get_motorcycle_data",
       "action_input": {
-        "make": "KTM",
-        "model": "Duke"
+        "make": "Husqvarna",
+        "offset": 20
       }
     },
     {
-      "query": "I’m a big fan of Yamaha's recent designs. Could you show me what their entire catalog looked like for the 2023 model year?",
+      "query": "Search for Moto Guzzi bikes.",
       "action": "get_motorcycle_data",
       "action_input": {
-        "make": "Yamaha",
-        "year": "2023"
+        "make": "Moto Guzzi"
       }
     }
   ],
   "get_air_quality_data": [
     {
-      "query": "I'm planning a morning jog around Taipei 101 tomorrow. Is the air quality safe enough for outdoor exercise?",
+      "query": "What's the air quality like in Beijing?",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "Taipei",
-        "country": "Taiwan"
+        "city": "Beijing"
       }
     },
     {
-      "query": "My allergies have been acting up since I arrived in Los Angeles. Can you check the current AQI for California's biggest city?",
+      "query": "Can you check the air quality for New Delhi?",
+      "action": "get_air_quality_data",
+      "action_input": {
+        "city": "New Delhi"
+      }
+    },
+    {
+      "query": "I need to know the air quality in Los Angeles, California.",
       "action": "get_air_quality_data",
       "action_input": {
         "city": "Los Angeles",
-        "state": "California",
-        "country": "United States"
+        "state": "California"
       }
     },
     {
-      "query": "What’s the AQI in Tokyo, Japan?",
+      "query": "Get the air quality data for London, UK.",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "Tokyo",
-        "country": "Japan"
+        "city": "London",
+        "country": "UK"
       }
     },
     {
-      "query": "I'm worried about the smog levels in Paris during the current heatwave. Are the pollution levels currently hazardous?",
+      "query": "Check the air quality at latitude 48.85 and longitude 2.35.",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "Paris",
-        "country": "France"
+        "lat": 48.85,
+        "lon": 2.35
       }
     },
     {
-      "query": "I'm currently standing at coordinates 40.7128, -74.0060 and the sky looks quite hazy. Can you give me the local air data?",
+      "query": "Find the air quality for Tokyo.",
       "action": "get_air_quality_data",
       "action_input": {
-        "lat": 40.7128,
-        "lon": -74.006
+        "city": "Tokyo"
       }
     },
     {
-      "query": "Give me air quality info for New Delhi, India.",
+      "query": "What is the air quality index in Seoul?",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "New Delhi",
-        "country": "India"
+        "city": "Seoul"
       }
     },
     {
-      "query": "I’m taking my kids to the park in Sydney this afternoon. I need to know if the bushfire smoke has affected the air quality index yet.",
+      "query": "Look up air quality in Mexico City.",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "Sydney",
-        "country": "Australia"
+        "city": "Mexico City"
       }
     },
     {
-      "query": "Retrieve air pollution data for Mexico City, Mexico.",
+      "query": "Can you check Mumbai's air quality?",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "Mexico City",
-        "country": "Mexico"
+        "city": "Mumbai"
       }
     },
     {
-      "query": "We are heading to London for the weekend. Check the air quality near our hotel at 51.5072, -0.1276.",
+      "query": "I want to know the air quality in Cairo.",
       "action": "get_air_quality_data",
       "action_input": {
-        "lat": 51.5072,
-        "lon": -0.1276
+        "city": "Cairo"
       }
     },
     {
-      "query": "The news says Beijing is under a yellow alert for sandstorms. What is the current air quality index there right now?",
+      "query": "Get the air quality data for Moscow.",
       "action": "get_air_quality_data",
       "action_input": {
-        "city": "Beijing",
-        "country": "China"
+        "city": "Moscow"
+      }
+    },
+    {
+      "query": "Find the air quality in Berlin.",
+      "action": "get_air_quality_data",
+      "action_input": {
+        "city": "Berlin"
+      }
+    },
+    {
+      "query": "Check the air quality for Madrid, Spain.",
+      "action": "get_air_quality_data",
+      "action_input": {
+        "city": "Madrid",
+        "country": "Spain"
+      }
+    },
+    {
+      "query": "What's the air quality at lat 41.90, lon 12.49?",
+      "action": "get_air_quality_data",
+      "action_input": {
+        "lat": 41.9,
+        "lon": 12.49
+      }
+    },
+    {
+      "query": "Look up the air quality in Bangkok.",
+      "action": "get_air_quality_data",
+      "action_input": {
+        "city": "Bangkok"
       }
     }
   ],
   "get_weather_forecast": [
     {
-      "query": "I'm heading to Paris for a quick fashion shoot next week; could you show me what the weather looks like there for the next 5 days?",
+      "query": "What's the weather forecast for New York?",
       "action": "get_weather_forecast",
       "action_input": {
-        "q": "Paris",
+        "q": "New York"
+      }
+    },
+    {
+      "query": "Can I get a 5-day weather forecast for London?",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "London",
         "days": 5
       }
     },
     {
-      "query": "We are planning a weekend trip to New York City and need to know if we should pack umbrellas. Can I get a 3-day forecast?",
+      "query": "I need the weather in Paris for the next 7 days.",
       "action": "get_weather_forecast",
       "action_input": {
-        "q": "New York",
-        "days": 3
-      }
-    },
-    {
-      "query": "My flight to Tokyo is tomorrow morning. I'll be staying for a full week, so please provide a 7-day weather outlook for my stay.",
-      "action": "get_weather_forecast",
-      "action_input": {
-        "q": "Tokyo",
+        "q": "Paris",
         "days": 7
       }
     },
     {
-      "query": "I've arrived at my Airbnb at these exact coordinates: 48.8567, 2.3508. What does the sky look like for the rest of the day?",
+      "query": "Find the weather forecast for Tokyo.",
       "action": "get_weather_forecast",
       "action_input": {
-        "q": "48.8567,2.3508"
+        "q": "Tokyo"
       }
     },
     {
-      "query": "I'm organizing an outdoor marathon in London and need to monitor the conditions for the next 10 days to ensure runner safety.",
-      "action": "get_weather_forecast",
-      "action_input": {
-        "q": "London",
-        "days": 10
-      }
-    },
-    {
-      "query": "I have a long layover at DXB airport. Will the heat be manageable if I want to go out into Dubai for about 4 days?",
-      "action": "get_weather_forecast",
-      "action_input": {
-        "q": "iata:DXB",
-        "days": 4
-      }
-    },
-    {
-      "query": "I'm moving into an apartment in Toronto near postal code M5V 2T6. Should I expect snow or rain during the 2-day move-in period?",
-      "action": "get_weather_forecast",
-      "action_input": {
-        "q": "M5V 2T6",
-        "days": 2
-      }
-    },
-    {
-      "query": "Planning a two-week road trip starting from Sydney. I need a comprehensive 14-day forecast for the area to map out my itinerary.",
+      "query": "What will the weather be like in Sydney for the next 3 days?",
       "action": "get_weather_forecast",
       "action_input": {
         "q": "Sydney",
-        "days": 14
-      }
-    },
-    {
-      "query": "Is it going to be sunny enough for a beach day in Los Angeles? Check the predictions for the 90001 ZIP code area for the next 3 days.",
-      "action": "get_weather_forecast",
-      "action_input": {
-        "q": "90001",
         "days": 3
       }
     },
     {
-      "query": "I just landed and I'm not sure what the local conditions are like. Can you fetch the weather forecast automatically based on my current IP address?",
+      "query": "Check the forecast for Los Angeles.",
       "action": "get_weather_forecast",
       "action_input": {
-        "q": "auto:ip"
+        "q": "Los Angeles"
+      }
+    },
+    {
+      "query": "Can you get a 10-day forecast for Chicago?",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Chicago",
+        "days": 10
+      }
+    },
+    {
+      "query": "I want to know the weather for Miami.",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Miami"
+      }
+    },
+    {
+      "query": "Look up the 4-day forecast for Seattle.",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Seattle",
+        "days": 4
+      }
+    },
+    {
+      "query": "What's the forecast in Boston?",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Boston"
+      }
+    },
+    {
+      "query": "Check the weather in Berlin for the next 2 days.",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Berlin",
+        "days": 2
+      }
+    },
+    {
+      "query": "Find the weather for Madrid.",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Madrid"
+      }
+    },
+    {
+      "query": "Can you get a 6-day forecast for Rome?",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Rome",
+        "days": 6
+      }
+    },
+    {
+      "query": "I need the weather forecast for Amsterdam.",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Amsterdam"
+      }
+    },
+    {
+      "query": "Look up the weather in Vienna for 3 days.",
+      "action": "get_weather_forecast",
+      "action_input": {
+        "q": "Vienna",
+        "days": 3
       }
     }
   ],
@@ -3577,6 +4314,620 @@
         "delivery_date": "2023-09-29"
       },
       "target_intent_id": 1
+    }
+  ],
+  "get_media_news": [
+    {
+      "query": "Can you get me the latest TV news from the US?",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "TV",
+        "country": "US"
+      }
+    },
+    {
+      "query": "I'd like to read some celebrity news, just give me 5 articles.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "CELEBRITY",
+        "first": 5
+      }
+    },
+    {
+      "query": "Fetch movie news in Spanish (language: es-MX).",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "MOVIE",
+        "language": "es-MX"
+      }
+    },
+    {
+      "query": "Give me the top 20 TV news articles from the UK.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "TV",
+        "first": 20,
+        "country": "UK"
+      }
+    },
+    {
+      "query": "Get me some celebrity news from Canada.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "CELEBRITY",
+        "country": "CA"
+      }
+    },
+    {
+      "query": "What's the latest movie news in the US?",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "MOVIE",
+        "country": "US"
+      }
+    },
+    {
+      "query": "Find 10 TV news updates in French.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "TV",
+        "first": 10,
+        "language": "fr-FR"
+      }
+    },
+    {
+      "query": "I need celebrity news, specifically the next batch after the cursor 'abcd123'.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "CELEBRITY",
+        "after": "abcd123"
+      }
+    },
+    {
+      "query": "Can you give me 50 movie news articles from Australia?",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "MOVIE",
+        "first": 50,
+        "country": "AU"
+      }
+    },
+    {
+      "query": "Get TV news in German from Germany.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "TV",
+        "country": "DE",
+        "language": "de-DE"
+      }
+    },
+    {
+      "query": "Show me celebrity gossip and news from the US.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "CELEBRITY",
+        "country": "US"
+      }
+    },
+    {
+      "query": "I want to see the latest movie news.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "MOVIE"
+      }
+    },
+    {
+      "query": "Give me 15 TV news articles.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "TV",
+        "first": 15
+      }
+    },
+    {
+      "query": "Find celebrity news, just 1 article, from the UK.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "CELEBRITY",
+        "first": 1,
+        "country": "UK"
+      }
+    },
+    {
+      "query": "I want some movie news in Italian.",
+      "action": "get_media_news",
+      "action_input": {
+        "category": "MOVIE",
+        "language": "it-IT"
+      }
+    }
+  ],
+  "search_exercises_by_name": [
+    {
+      "query": "Can you suggest some exercises for my arms?",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "arm"
+      }
+    },
+    {
+      "query": "I need 5 exercises for my legs.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "leg",
+        "limit": 5
+      }
+    },
+    {
+      "query": "Find some chest exercises, please sort them descending by name.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "chest",
+        "sort_order": "descending",
+        "sort_method": "name"
+      }
+    },
+    {
+      "query": "What are some good back exercises? Skip the first 10.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "back",
+        "offset": 10
+      }
+    },
+    {
+      "query": "Show me 20 shoulder exercises, ordered ascending by id.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "shoulder",
+        "limit": 20,
+        "sort_order": "ascending",
+        "sort_method": "id"
+      }
+    },
+    {
+      "query": "Give me some exercises that target the core.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "core"
+      }
+    },
+    {
+      "query": "I want 3 exercises for the neck.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "neck",
+        "limit": 3
+      }
+    },
+    {
+      "query": "Search for bicep exercises, sort descending by id.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "bicep",
+        "sort_order": "descending",
+        "sort_method": "id"
+      }
+    },
+    {
+      "query": "Find tricep workouts.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "tricep"
+      }
+    },
+    {
+      "query": "Show me calf exercises, limit to 8.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "calf",
+        "limit": 8
+      }
+    },
+    {
+      "query": "What are some glute exercises? Sort them by name ascending.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "glute",
+        "sort_order": "ascending",
+        "sort_method": "name"
+      }
+    },
+    {
+      "query": "Search for forearm exercises with an offset of 5.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "forearm",
+        "offset": 5
+      }
+    },
+    {
+      "query": "I need exactly 1 abs exercise.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "abs",
+        "limit": 1
+      }
+    },
+    {
+      "query": "Find hamstring exercises, ordered descending by name.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "hamstring",
+        "sort_order": "descending",
+        "sort_method": "name"
+      }
+    },
+    {
+      "query": "Give me quad exercises.",
+      "action": "search_exercises_by_name",
+      "action_input": {
+        "name": "quad"
+      }
+    }
+  ],
+  "search_streaming_shows": [
+    {
+      "query": "Where can I stream Stranger Things in the US?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "US",
+        "keyword": "stranger things"
+      }
+    },
+    {
+      "query": "Can you check if Breaking Bad is available on UK streaming services?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "UK",
+        "keyword": "breaking bad"
+      }
+    },
+    {
+      "query": "I want to watch The Office in Canada, where is it streaming?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "CA",
+        "keyword": "the office"
+      }
+    },
+    {
+      "query": "Find where I can stream Friends in Australia. Please sort the results by year.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "AU",
+        "keyword": "friends",
+        "order_by": "year"
+      }
+    },
+    {
+      "query": "Search for Game of Thrones streaming availability in the US.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "US",
+        "keyword": "game of thrones"
+      }
+    },
+    {
+      "query": "Is The Mandalorian streaming anywhere in the UK?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "UK",
+        "keyword": "the mandalorian"
+      }
+    },
+    {
+      "query": "Look up where to stream The Witcher in Germany, ordered by original title.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "DE",
+        "keyword": "the witcher",
+        "order_by": "original_title"
+      }
+    },
+    {
+      "query": "Find Black Mirror on streaming platforms in the US, and only show series, no movies.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "US",
+        "keyword": "black mirror",
+        "show_type": "series"
+      }
+    },
+    {
+      "query": "Where can I watch Narcos in Spain?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "ES",
+        "keyword": "narcos"
+      }
+    },
+    {
+      "query": "Check streaming services for Peaky Blinders in the UK, sorting by year in descending order.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "UK",
+        "keyword": "peaky blinders",
+        "order_by": "year",
+        "order_direction": "desc"
+      }
+    },
+    {
+      "query": "Where is The Crown streaming in the US?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "US",
+        "keyword": "the crown"
+      }
+    },
+    {
+      "query": "Can you find Money Heist on Netflix or other catalogs in France?",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "FR",
+        "keyword": "money heist",
+        "catalogs": "netflix"
+      }
+    },
+    {
+      "query": "Check if Dark is streaming in the US.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "US",
+        "keyword": "dark"
+      }
+    },
+    {
+      "query": "Look for Mindhunter on US streaming services, searching for exact show granularity.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "US",
+        "keyword": "mindhunter",
+        "series_granularity": "show"
+      }
+    },
+    {
+      "query": "Find Ozark on streaming platforms in the UK.",
+      "action": "search_streaming_shows",
+      "action_input": {
+        "country": "UK",
+        "keyword": "ozark"
+      }
+    }
+  ],
+  "get_airport_delay_statistics": [
+    {
+      "query": "Are there many delays at Taipei airport right now? The IATA code is TPE.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "codeType": "iata",
+        "code": "TPE"
+      }
+    },
+    {
+      "query": "Check the delay statistics for JFK using its ICAO code KJFK.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "codeType": "icao",
+        "code": "KJFK"
+      }
+    },
+    {
+      "query": "Can you see if flights are delayed at London Heathrow (LHR)?",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "LHR"
+      }
+    },
+    {
+      "query": "I need the delay stats for Haneda airport, iata code HND.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "codeType": "iata",
+        "code": "HND"
+      }
+    },
+    {
+      "query": "Look up flight delays at Charles de Gaulle (CDG).",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "CDG"
+      }
+    },
+    {
+      "query": "Are there delays at Frankfurt Airport? Check using ICAO code EDDF.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "codeType": "icao",
+        "code": "EDDF"
+      }
+    },
+    {
+      "query": "Get the current delay situation at LAX.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "LAX"
+      }
+    },
+    {
+      "query": "Check O'Hare (ORD) for flight delays.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "ORD"
+      }
+    },
+    {
+      "query": "Is SFO experiencing a lot of delays right now?",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "SFO"
+      }
+    },
+    {
+      "query": "Look up the delay statistics for Singapore Changi (SIN).",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "SIN"
+      }
+    },
+    {
+      "query": "Are there delays in Dubai? The IATA code is DXB.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "codeType": "iata",
+        "code": "DXB"
+      }
+    },
+    {
+      "query": "Can you check if HKG has flight delays?",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "HKG"
+      }
+    },
+    {
+      "query": "I'm flying out of Sydney (SYD), are there any delays?",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "SYD"
+      }
+    },
+    {
+      "query": "Check Toronto Pearson (YYZ) for departure delays.",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "YYZ"
+      }
+    },
+    {
+      "query": "What's the delay status at Amsterdam Schiphol (AMS)?",
+      "action": "get_airport_delay_statistics",
+      "action_input": {
+        "code": "AMS"
+      }
+    }
+  ],
+  "search_amazon_products": [
+    {
+      "query": "Can you search Amazon for a new laptop?",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "laptop"
+      }
+    },
+    {
+      "query": "Find smartphones on Amazon US. I want page 2 of the results.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "smartphone",
+        "country": "US",
+        "page": 2
+      }
+    },
+    {
+      "query": "Search for headphones on Amazon, and only show me NEW products.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "headphones",
+        "product_condition": "NEW"
+      }
+    },
+    {
+      "query": "Look up computer monitors, sort by PRICE_LOW_TO_HIGH.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "monitor",
+        "sort_by": "PRICE_LOW_TO_HIGH"
+      }
+    },
+    {
+      "query": "Find me a mechanical keyboard on Amazon UK between 50 and 150.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "mechanical keyboard",
+        "country": "UK",
+        "min_price": 50,
+        "max_price": 150
+      }
+    },
+    {
+      "query": "Search Amazon for a wireless mouse.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "wireless mouse"
+      }
+    },
+    {
+      "query": "Look up gaming chairs on Amazon, give me page 3.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "gaming chair",
+        "page": 3
+      }
+    },
+    {
+      "query": "Find USED tablets on Amazon.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "tablet",
+        "product_condition": "USED"
+      }
+    },
+    {
+      "query": "Search for smartwatches, sorted by REVIEWS.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "smartwatch",
+        "sort_by": "REVIEWS"
+      }
+    },
+    {
+      "query": "I want to buy a blender in Canada, price max 100.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "blender",
+        "country": "CA",
+        "max_price": 100
+      }
+    },
+    {
+      "query": "Search Amazon for a coffee maker.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "coffee maker"
+      }
+    },
+    {
+      "query": "Find running shoes on Amazon, page 4.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "running shoes",
+        "page": 4
+      }
+    },
+    {
+      "query": "Look for REFURBISHED cameras.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "camera",
+        "product_condition": "REFURBISHED"
+      }
+    },
+    {
+      "query": "Search for office desks, price minimum 200.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "office desk",
+        "min_price": 200
+      }
+    },
+    {
+      "query": "Find a backpack on Amazon, sorted by PRICE_HIGH_TO_LOW.",
+      "action": "search_amazon_products",
+      "action_input": {
+        "query": "backpack",
+        "sort_by": "PRICE_HIGH_TO_LOW"
+      }
     }
   ]
 }
