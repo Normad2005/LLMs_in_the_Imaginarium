@@ -1,158 +1,162 @@
 {
-  "verify_email": {
-    "category": "Business Software",
-    "tool_name": "Global Email V4"
-  },
-  "get_car_makes": {
-    "category": "Data",
-    "tool_name": "Car database"
-  },
-  "get_vehicle_specifications": {
-    "category": "Data",
-    "tool_name": "Cars by API-Ninjas"
-  },
-  "get_animal_facts": {
-    "category": "Data",
-    "tool_name": "Animals"
-  },
-  "get_divisions_near_location": {
-    "category": "Data",
-    "tool_name": "GeoDB"
-  },
-  "search_public_restrooms": {
-    "category": "Data",
-    "tool_name": "Public Bathrooms"
-  },
-  "search_businesses": {
-    "category": "Data",
-    "tool_name": "Local Business Data"
-  },
-  "get_dog_breeds_metadata": {
-    "category": "Database",
-    "tool_name": "DogBreed"
-  },
-  "search_exercises_by_name": {
-    "category": "Database",
-    "tool_name": "ExerciseDB"
-  },
-  "get_media_news": {
-    "category": "Entertainment",
-    "tool_name": "IMDb"
-  },
-  "search_manga": {
-    "category": "Entertainment",
-    "tool_name": "MangaVerse"
-  },
-  "get_financial_data": {
-    "category": "Finance",
-    "tool_name": "Alpha Vantage"
-  },
-  "convert_currency": {
-    "category": "Finance",
-    "tool_name": "Exchange Rate API"
-  },
-  "calculate_mortgage_payment": {
-    "category": "Finance",
-    "tool_name": "Mortgage Calculator"
-  },
-  "get_recipe": {
-    "category": "Food",
-    "tool_name": "Recipe"
-  },
-  "search_cocktails": {
-    "category": "Food",
-    "tool_name": "Cocktail"
-  },
-  "get_all_mvc2_characters": {
-    "category": "Gaming",
-    "tool_name": "Marvel Vs Capcom 2"
-  },
-  "get_filtered_game_giveaways": {
-    "category": "Gaming",
-    "tool_name": "gamerpower"
-  },
-  "get_lol_champion_stats": {
-    "category": "Gaming",
-    "tool_name": "League of Legends Stats"
-  },
-  "list_of_deals": {
-    "category": "Gaming",
-    "tool_name": "CheapShark - Game Deals"
-  },
-  "get_salary_estimation": {
-    "category": "Jobs",
-    "tool_name": "JSearch"
-  },
-  "get_timezone_info": {
-    "category": "Location",
-    "tool_name": "Stadia Maps Time Zone API"
-  },
-  "calculate_route": {
-    "category": "Mapping",
-    "tool_name": "MapToolkit"
-  },
-  "get_planet_data": {
-    "category": "Science",
-    "tool_name": "Planets"
-  },
-  "get_celestial_body_position": {
-    "category": "Science",
-    "tool_name": "Astronomy"
-  },
-  "search_arxiv_papers": {
-    "category": "Search",
-    "tool_name": "arXiv"
-  },
-  "get_trades_futures": {
-    "category": "Search",
-    "tool_name": "Cryptocurrency Financial Data"
-  },
-  "get_soccer_tournaments": {
-    "category": "Sports",
-    "tool_name": "Soccer Data"
-  },
-  "get_f1_latest_news": {
-    "category": "Sports",
-    "tool_name": "F1 Latest News"
-  },
-  "get_handball_scheduled_matches": {
-    "category": "Sports",
-    "tool_name": "handball_data"
-  },
-  "get_airlines": {
-    "category": "Transportation",
-    "tool_name": "Airlines"
-  },
-  "get_flights_in_bounding_box": {
-    "category": "Transportation",
-    "tool_name": "Flight Radar"
-  },
-  "get_motorcycle_data": {
-    "category": "Transportation",
-    "tool_name": "Motorcycles"
-  },
-  "get_air_quality_data": {
-    "category": "Weather",
-    "tool_name": "Air Quality"
-  },
-  "get_weather_forecast": {
-    "category": "Weather",
-    "tool_name": "WeatherAPI"
-  },
-  "search_amazon_products": {
-    "category": "Shopping",
-    "tool_name": "Real-Time Amazon Data"
-  },
-  "search_streaming_shows": {
-    "category": "Entertainment",
-    "tool_name": "Streaming Availability"
-  },
-  "get_restaurants_by_location": {
-    "category": "Travel",
-    "tool_name": "Travel Advisor"
-  },
-  "get_hotels_by_location": {
-    "category": "Travel",
-    "tool_name": "Travel Advisor"
-  }
+    "verify_email": {
+        "category": "Business Software",
+        "tool_name": "Global Email V4"
+    },
+    "get_car_makes": {
+        "category": "Data",
+        "tool_name": "Car database"
+    },
+    "get_vehicle_specifications": {
+        "category": "Data",
+        "tool_name": "Cars by API-Ninjas"
+    },
+    "get_animal_facts": {
+        "category": "Data",
+        "tool_name": "Animals"
+    },
+    "get_divisions_near_location": {
+        "category": "Data",
+        "tool_name": "GeoDB"
+    },
+    "search_public_restrooms": {
+        "category": "Data",
+        "tool_name": "Public Bathrooms"
+    },
+    "search_businesses": {
+        "category": "Data",
+        "tool_name": "Local Business Data"
+    },
+    "get_dog_breeds_metadata": {
+        "category": "Database",
+        "tool_name": "DogBreed"
+    },
+    "search_exercises_by_name": {
+        "category": "Database",
+        "tool_name": "ExerciseDB"
+    },
+    "get_media_news": {
+        "category": "Entertainment",
+        "tool_name": "IMDb"
+    },
+    "search_manga": {
+        "category": "Entertainment",
+        "tool_name": "MangaVerse"
+    },
+    "get_financial_data": {
+        "category": "Finance",
+        "tool_name": "Alpha Vantage"
+    },
+    "convert_currency": {
+        "category": "Finance",
+        "tool_name": "Exchange Rate API"
+    },
+    "calculate_mortgage_payment": {
+        "category": "Finance",
+        "tool_name": "Mortgage Calculator"
+    },
+    "get_recipe": {
+        "category": "Food",
+        "tool_name": "Recipe"
+    },
+    "search_cocktails": {
+        "category": "Food",
+        "tool_name": "Cocktail"
+    },
+    "get_all_mvc2_characters": {
+        "category": "Gaming",
+        "tool_name": "Marvel Vs Capcom 2"
+    },
+    "get_filtered_game_giveaways": {
+        "category": "Gaming",
+        "tool_name": "gamerpower"
+    },
+    "get_lol_champion_stats": {
+        "category": "Gaming",
+        "tool_name": "League of Legends Stats"
+    },
+    "list_of_deals": {
+        "category": "Gaming",
+        "tool_name": "CheapShark - Game Deals"
+    },
+    "get_salary_estimation": {
+        "category": "Jobs",
+        "tool_name": "JSearch"
+    },
+    "get_timezone_info": {
+        "category": "Location",
+        "tool_name": "Stadia Maps Time Zone API"
+    },
+    "calculate_route": {
+        "category": "Mapping",
+        "tool_name": "MapToolkit"
+    },
+    "get_planet_data": {
+        "category": "Science",
+        "tool_name": "Planets"
+    },
+    "get_celestial_body_position": {
+        "category": "Science",
+        "tool_name": "Astronomy"
+    },
+    "search_arxiv_papers": {
+        "category": "Search",
+        "tool_name": "arXiv"
+    },
+    "get_trades_futures": {
+        "category": "Search",
+        "tool_name": "Cryptocurrency Financial Data"
+    },
+    "get_soccer_tournaments": {
+        "category": "Sports",
+        "tool_name": "Soccer Data"
+    },
+    "get_f1_latest_news": {
+        "category": "Sports",
+        "tool_name": "F1 Latest News"
+    },
+    "get_handball_scheduled_matches": {
+        "category": "Sports",
+        "tool_name": "handball_data"
+    },
+    "get_airlines": {
+        "category": "Transportation",
+        "tool_name": "Airlines"
+    },
+    "get_flights_in_bounding_box": {
+        "category": "Transportation",
+        "tool_name": "Flight Radar"
+    },
+    "get_motorcycle_data": {
+        "category": "Transportation",
+        "tool_name": "Motorcycles"
+    },
+    "get_air_quality_data": {
+        "category": "Weather",
+        "tool_name": "Air Quality"
+    },
+    "get_weather_forecast": {
+        "category": "Weather",
+        "tool_name": "WeatherAPI"
+    },
+    "search_amazon_products": {
+        "category": "Shopping",
+        "tool_name": "Real-Time Amazon Data"
+    },
+    "search_streaming_shows": {
+        "category": "Entertainment",
+        "tool_name": "Streaming Availability"
+    },
+    "get_restaurants_by_location": {
+        "category": "Travel",
+        "tool_name": "Travel Advisor"
+    },
+    "get_hotels_by_location": {
+        "category": "Travel",
+        "tool_name": "Travel Advisor"
+    },
+    "get_airport_delay_statistics": {
+        "category": "Travel",
+        "tool_name": "aerodatabox"
+    }
 }

@@ -1,38 +1,45 @@
-# === demo_retrieve.py ===
-"""
-跨 API 檢索版本。
-
-與原版差異：
-  原版：先鎖定 api_name，在該 API 的訓練資料裡找最相似 query
-  新版：所有 API 的訓練資料合併成一個 pool，直接跨 API 找最相似 query
-        demo 可能來自不同 API，讓模型從中學習正確的參數填寫方式
-
-輸出：每筆 test example 新增 "demo" 欄位，格式與原版相同：
-  [{ "query": "...", "action": "...", "action_input": {...} }, ...]
-"""
-
 import os
 import json
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer, util
 
-def main(
-    train_path="results/ste/gpt_tool_data_train.json",
-    test_path="tool_metadata/tool_test.json",
-    save_path="tool_metadata/tool_test_with_demo.json",
-    num_examples_retrieve=8,
-    model_name="sentence-transformers/paraphrase-mpnet-base-v2",
-):
-    # === 1. 載入資料 ===
+def main():
+    train_path = "results/ste/gpt_tool_data_train_35_APIs.json"
+    test_path = "tool_metadata/test_queries_grouped.json"
+    save_path = "tool_metadata/test_queries_with_demo_complex_APIs.json"
+    # 比照 STE 論文設定為 8 個範例
+    num_examples_retrieve = 8
+    model_name = "sentence-transformers/paraphrase-mpnet-base-v2"
+
+    # API_List.md 中的 10 個複雜 API
+    complex_apis = [
+        "calculate_mortgage_payment",
+        "get_divisions_near_location",
+        "get_hotels_by_location",
+        "get_restaurants_by_location",
+        "get_planet_data",
+        "get_flights_in_bounding_box",
+        "calculate_route",
+        "list_of_deals",
+        "search_businesses",
+        "get_trades_futures"
+    ]
+
+    print(f"Loading training data from {train_path}...")
     with open(train_path, "r", encoding="utf-8") as f:
         train_data = json.load(f)
+        
+    print(f"Loading test queries from {test_path}...")
     with open(test_path, "r", encoding="utf-8") as f:
-        test_data = json.load(f)
+        test_data_full = json.load(f)
+
+    # 過濾出 10 個複雜 API
+    test_data = {k: v for k, v in test_data_full.items() if k in complex_apis}
 
     print(f"✅ Loaded {len(train_data)} training examples.")
-    print(f"✅ Loaded {len(test_data)} APIs in test set.")
+    print(f"✅ Filtered test set down to {len(test_data)} complex APIs.")
 
-    # === 2. 去重（同 query 只保留一筆）===
+    # 對訓練集的 Query 進行去重
     seen_queries = set()
     train_items, train_queries = [], []
     for item in train_data:
@@ -44,16 +51,14 @@ def main(
 
     print(f"✅ Deduplicated to {len(train_items)} unique training queries.")
 
-    # === 3. 初始化嵌入模型 ===
     print(f"🔧 Loading embedding model: {model_name}")
     embed_model = SentenceTransformer(model_name)
 
-    # === 4. 對所有訓練 query 做 embedding（跨 API 合併）===
     print("🗂️  Encoding all training queries...")
     train_embeddings = embed_model.encode(train_queries, convert_to_tensor=True)
     print(f"  → Encoded {len(train_queries)} queries.")
 
-    # === 5. 為每筆 test example 跨 API 檢索最相似 demo ===
+    # 針對每一題尋找最相似的 8 個 Demo
     for api_name, examples in test_data.items():
         print(f"\n🔍 Processing API: {api_name} ({len(examples)} examples)")
 
@@ -62,29 +67,25 @@ def main(
             test_emb = embed_model.encode([query], convert_to_tensor=True)
             scores   = util.cos_sim(test_emb, train_embeddings)[0]
 
-            # 取 Top-K（跨所有 API）
             top_idx  = scores.argsort(descending=True)[:num_examples_retrieve]
             demo_list = [train_items[int(idx)] for idx in top_idx]
 
-            # 精簡 demo 結構
             examples[i]["demo"] = [
                 {
                     "query":        d["query"],
-                    "action":       d["action"],
-                    "action_input": d["action_input"],
+                    "action":       d.get("action", api_name),
+                    "action_input": d.get("action_input", {}),
                 }
                 for d in demo_list
             ]
 
         test_data[api_name] = examples
 
-    # === 6. 儲存輸出 ===
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
     with open(save_path, "w", encoding="utf-8") as f:
         json.dump(test_data, f, indent=2, ensure_ascii=False)
 
-    print(f"\n📦 Saved cross-API demo-augmented test set to: {save_path}")
-
+    print(f"\n📦 Saved demo-augmented test set to: {save_path}")
 
 if __name__ == "__main__":
     main()

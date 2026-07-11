@@ -101,13 +101,9 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5
 
     # === 從 RapidAPI Registry 載入所有 API ===
     api_list = [
-        "calculate_mortgage_payment",
-        "get_divisions_near_location",
-        "get_hotels_by_location",
-        "get_restaurants_by_location",
-        "get_planet_data",
-        "get_flights_in_bounding_box",
-        "calculate_route",
+        "search_exercises_by_name",
+        "search_streaming_shows",
+        "get_airport_delay_statistics",
     ]
 
     # === 每次只探索一個 API ===
@@ -282,5 +278,5 @@ def main(model_ckpt="gpt-oss:120b", num_episodes=10, num_stm_slots=2, max_turn=5
 
 if __name__ == "__main__":
     main(
-        resume_path="results/ste/gpt_20260703-165413.json"
+        resume_path=r"C:\Users\User\OneDrive\Desktop\temp\LLMs_in_the_Imaginarium\results\ste\merged_final_35_APIs.json"
     )

@@ -1,0 +1,359 @@
+{
+    "Unsplit (Group A)": {
+        "calculate_mortgage_payment": {
+            "accuracy_percent": 80.0,
+            "correct_count": 12,
+            "total_queries": 15
+        },
+        "get_restaurants_by_location": {
+            "accuracy_percent": 93.33,
+            "correct_count": 14,
+            "total_queries": 15
+        },
+        "get_planet_data": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "calculate_route": {
+            "accuracy_percent": 40.0,
+            "correct_count": 6,
+            "total_queries": 15
+        },
+        "get_trades_futures": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "list_of_deals": {
+            "accuracy_percent": 53.33,
+            "correct_count": 8,
+            "total_queries": 15
+        },
+        "search_businesses": {
+            "accuracy_percent": 46.67,
+            "correct_count": 7,
+            "total_queries": 15
+        },
+        "get_hotels_by_location": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "get_divisions_near_location": {
+            "accuracy_percent": 60.0,
+            "correct_count": 9,
+            "total_queries": 15
+        },
+        "get_flights_in_bounding_box": {
+            "accuracy_percent": 80.0,
+            "correct_count": 12,
+            "total_queries": 15
+        }
+    },
+    "Split (Group B)": {
+        "calculate_mortgage_payment": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_restaurants_by_location": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_planet_data": {
+            "accuracy_percent": 93.33,
+            "correct_count": 14,
+            "total_queries": 15
+        },
+        "calculate_route": {
+            "accuracy_percent": 60.0,
+            "correct_count": 9,
+            "total_queries": 15
+        },
+        "get_trades_futures": {
+            "accuracy_percent": 80.0,
+            "correct_count": 12,
+            "total_queries": 15
+        },
+        "list_of_deals": {
+            "accuracy_percent": 66.67,
+            "correct_count": 10,
+            "total_queries": 15
+        },
+        "search_businesses": {
+            "accuracy_percent": 60.0,
+            "correct_count": 9,
+            "total_queries": 15
+        },
+        "get_hotels_by_location": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_divisions_near_location": {
+            "accuracy_percent": 53.33,
+            "correct_count": 8,
+            "total_queries": 15
+        },
+        "get_flights_in_bounding_box": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        }
+    },
+    "Dynamic Union (Group C)": {
+        "calculate_mortgage_payment": {
+            "accuracy_percent": 80.0,
+            "correct_count": 12,
+            "total_queries": 15
+        },
+        "get_divisions_near_location": {
+            "accuracy_percent": 46.67,
+            "correct_count": 7,
+            "total_queries": 15
+        },
+        "get_hotels_by_location": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_restaurants_by_location": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "get_planet_data": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_flights_in_bounding_box": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "calculate_route": {
+            "accuracy_percent": 53.33,
+            "correct_count": 8,
+            "total_queries": 15
+        }
+    },
+    "Top-1 Intent (Ablation)": {
+        "calculate_mortgage_payment": {
+            "accuracy_percent": 73.33,
+            "correct_count": 11,
+            "total_queries": 15
+        },
+        "get_divisions_near_location": {
+            "accuracy_percent": 53.33,
+            "correct_count": 8,
+            "total_queries": 15
+        },
+        "get_hotels_by_location": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_restaurants_by_location": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "get_planet_data": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "get_flights_in_bounding_box": {
+            "accuracy_percent": 80.0,
+            "correct_count": 12,
+            "total_queries": 15
+        },
+        "calculate_route": {
+            "accuracy_percent": 40.0,
+            "correct_count": 6,
+            "total_queries": 15
+        }
+    },
+    "Oracle Complex APIs": {
+        "calculate_mortgage_payment": {
+            "accuracy_percent": 73.33,
+            "correct_count": 11,
+            "total_queries": 15
+        },
+        "get_hotels_by_location": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_restaurants_by_location": {
+            "accuracy_percent": 73.33,
+            "correct_count": 11,
+            "total_queries": 15
+        },
+        "get_divisions_near_location": {
+            "accuracy_percent": 73.33,
+            "correct_count": 11,
+            "total_queries": 15
+        },
+        "get_planet_data": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "get_flights_in_bounding_box": {
+            "accuracy_percent": 80.0,
+            "correct_count": 12,
+            "total_queries": 15
+        },
+        "calculate_route": {
+            "accuracy_percent": 40.0,
+            "correct_count": 6,
+            "total_queries": 15
+        },
+        "list_of_deals": {
+            "accuracy_percent": 26.67,
+            "correct_count": 4,
+            "total_queries": 15
+        },
+        "search_businesses": {
+            "accuracy_percent": 40.0,
+            "correct_count": 6,
+            "total_queries": 15
+        },
+        "get_trades_futures": {
+            "accuracy_percent": 60.0,
+            "correct_count": 9,
+            "total_queries": 15
+        }
+    },
+    "Oracle Simple APIs": {
+        "verify_email": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_animal_facts": {
+            "accuracy_percent": 93.33,
+            "correct_count": 14,
+            "total_queries": 15
+        },
+        "search_public_restrooms": {
+            "accuracy_percent": 93.33,
+            "correct_count": 14,
+            "total_queries": 15
+        },
+        "get_dog_breeds_metadata": {
+            "accuracy_percent": 93.33,
+            "correct_count": 14,
+            "total_queries": 15
+        },
+        "get_media_news": {
+            "accuracy_percent": 53.33,
+            "correct_count": 8,
+            "total_queries": 15
+        },
+        "search_manga": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "search_exercises_by_name": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "get_financial_data": {
+            "accuracy_percent": 66.67,
+            "correct_count": 10,
+            "total_queries": 15
+        },
+        "convert_currency": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_recipe": {
+            "accuracy_percent": 86.67,
+            "correct_count": 13,
+            "total_queries": 15
+        },
+        "search_streaming_shows": {
+            "accuracy_percent": 46.67,
+            "correct_count": 7,
+            "total_queries": 15
+        },
+        "search_cocktails": {
+            "accuracy_percent": 66.67,
+            "correct_count": 10,
+            "total_queries": 15
+        },
+        "get_filtered_game_giveaways": {
+            "accuracy_percent": 53.33,
+            "correct_count": 8,
+            "total_queries": 15
+        },
+        "get_lol_champion_stats": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_salary_estimation": {
+            "accuracy_percent": 40.0,
+            "correct_count": 6,
+            "total_queries": 15
+        },
+        "get_airport_delay_statistics": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_timezone_info": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_celestial_body_position": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "search_arxiv_papers": {
+            "accuracy_percent": 66.67,
+            "correct_count": 10,
+            "total_queries": 15
+        },
+        "get_handball_scheduled_matches": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "get_airlines": {
+            "accuracy_percent": 73.33,
+            "correct_count": 11,
+            "total_queries": 15
+        },
+        "get_motorcycle_data": {
+            "accuracy_percent": 73.33,
+            "correct_count": 11,
+            "total_queries": 15
+        },
+        "get_air_quality_data": {
+            "accuracy_percent": 93.33,
+            "correct_count": 14,
+            "total_queries": 15
+        },
+        "get_weather_forecast": {
+            "accuracy_percent": 100.0,
+            "correct_count": 15,
+            "total_queries": 15
+        },
+        "search_amazon_products": {
+            "accuracy_percent": 66.67,
+            "correct_count": 10,
+            "total_queries": 15
+        }
+    }
+}

@@ -1,0 +1,3347 @@
+{
+  "verify_email": [
+    {
+      "query": "I have an old contact list, and I'm not sure if john.doe@gmail.com is still a valid address. Can you check?",
+      "action_input": {
+        "email": "john.doe@gmail.com"
+      },
+      "query_id": "batch_0",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Someone sent me a weird message from support@melissa.com. Is that even a real email?",
+      "action_input": {
+        "email": "support@melissa.com"
+      },
+      "query_id": "batch_1",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Please verify if sales@company.co.uk is a working mailbox.",
+      "action_input": {
+        "email": "sales@company.co.uk"
+      },
+      "query_id": "batch_2",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Before I send this confidential document, can you confirm that info@mybusiness.org is a deliverable address?",
+      "action_input": {
+        "email": "info@mybusiness.org"
+      },
+      "query_id": "batch_3",
+      "target_intent_id": 0
+    },
+    {
+      "query": "My newsletter bounced when I sent it to test.email@outlook.com. Can you check its status?",
+      "action_input": {
+        "email": "test.email@outlook.com"
+      },
+      "query_id": "batch_4",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you validate the email address admin@university.edu?",
+      "action_input": {
+        "email": "admin@university.edu"
+      },
+      "query_id": "batch_5",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm getting an error when replying to contact@fakecorp.com, is the email valid?",
+      "action_input": {
+        "email": "contact@fakecorp.com"
+      },
+      "query_id": "batch_6",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Please check if no-reply@amazon.com actually accepts incoming emails.",
+      "action_input": {
+        "email": "no-reply@amazon.com"
+      },
+      "query_id": "batch_7",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need you to verify this email: service@apple.com",
+      "action_input": {
+        "email": "service@apple.com"
+      },
+      "query_id": "batch_8",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Is hello@world.net a registered and active email address?",
+      "action_input": {
+        "email": "hello@world.net"
+      },
+      "query_id": "batch_9",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I am trying to reach hr@microsoft.com, can you see if it's valid?",
+      "action_input": {
+        "email": "hr@microsoft.com"
+      },
+      "query_id": "batch_10",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Verify the status of jobs@google.com for me.",
+      "action_input": {
+        "email": "jobs@google.com"
+      },
+      "query_id": "batch_11",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check the deliverability for feedback@tesla.com?",
+      "action_input": {
+        "email": "feedback@tesla.com"
+      },
+      "query_id": "batch_12",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I suspect billing@netflix.com is a fake sender, can you verify the address?",
+      "action_input": {
+        "email": "billing@netflix.com"
+      },
+      "query_id": "batch_13",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Please tell me if user123@yahoo.com is a real email account.",
+      "action_input": {
+        "email": "user123@yahoo.com"
+      },
+      "query_id": "batch_14",
+      "target_intent_id": 0
+    }
+  ],
+  "get_animal_facts": [
+    {
+      "query": "My son loves lions. Can you tell me an interesting fact about them?",
+      "action_input": {
+        "name": "Lion"
+      },
+      "query_id": "batch_15",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need a fun fact about tigers for my school project.",
+      "action_input": {
+        "name": "Tiger"
+      },
+      "query_id": "batch_16",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Tell me something cool about elephants.",
+      "action_input": {
+        "name": "Elephant"
+      },
+      "query_id": "batch_17",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's an interesting scientific fact about giraffes?",
+      "action_input": {
+        "name": "Giraffe"
+      },
+      "query_id": "batch_18",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me a fact about zebras?",
+      "action_input": {
+        "name": "Zebra"
+      },
+      "query_id": "batch_19",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know a trivia fact regarding kangaroos.",
+      "action_input": {
+        "name": "Kangaroo"
+      },
+      "query_id": "batch_20",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me a cool fact about penguins, I'm writing a story.",
+      "action_input": {
+        "name": "Penguin"
+      },
+      "query_id": "batch_21",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Do you know any interesting details about dolphins?",
+      "action_input": {
+        "name": "Dolphin"
+      },
+      "query_id": "batch_22",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm curious about whales, can you tell me a fact?",
+      "action_input": {
+        "name": "Whale"
+      },
+      "query_id": "batch_23",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is a terrifying or cool fact about sharks?",
+      "action_input": {
+        "name": "Shark"
+      },
+      "query_id": "batch_24",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Tell me a fact about bears.",
+      "action_input": {
+        "name": "Bear"
+      },
+      "query_id": "batch_25",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm doing a presentation on wolves, give me a fun fact.",
+      "action_input": {
+        "name": "Wolf"
+      },
+      "query_id": "batch_26",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you provide an animal fact about the fox?",
+      "action_input": {
+        "name": "Fox"
+      },
+      "query_id": "batch_27",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me a random fact about rabbits.",
+      "action_input": {
+        "name": "Rabbit"
+      },
+      "query_id": "batch_28",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need some information or a fact about deer.",
+      "action_input": {
+        "name": "Deer"
+      },
+      "query_id": "batch_29",
+      "target_intent_id": 0
+    }
+  ],
+  "search_public_restrooms": [
+    {
+      "query": "I'm driving through New York and Florida, can you find me some public restrooms?",
+      "action_input": {
+        "states": "NY,FL"
+      },
+      "query_id": "batch_30",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you get me a list of 15 public restrooms in California?",
+      "action_input": {
+        "states": "CA",
+        "per_page": 15
+      },
+      "query_id": "batch_31",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need to find bathrooms in Texas. Just show me the second page of results.",
+      "action_input": {
+        "states": "TX",
+        "page": 2
+      },
+      "query_id": "batch_32",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for public toilets near latitude 34.05 and longitude -118.25.",
+      "action_input": {
+        "lat": 34.05,
+        "lon": -118.25
+      },
+      "query_id": "batch_33",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Are there any public restrooms in Nevada? Please limit it to 5 results.",
+      "action_input": {
+        "states": "NV",
+        "per_page": 5
+      },
+      "query_id": "batch_34",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you find public restrooms in NY?",
+      "action_input": {
+        "states": "NY"
+      },
+      "query_id": "batch_35",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm in Washington and Oregon, give me the 3rd page of bathroom results there.",
+      "action_input": {
+        "states": "WA,OR",
+        "page": 3
+      },
+      "query_id": "batch_36",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up public restrooms around lat 40.71, lon -74.00, and give me 20 results per page.",
+      "action_input": {
+        "lat": 40.71,
+        "lon": -74.0,
+        "per_page": 20
+      },
+      "query_id": "batch_37",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find me public toilets in Florida.",
+      "action_input": {
+        "states": "FL"
+      },
+      "query_id": "batch_38",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for bathrooms in CA, give me page 4.",
+      "action_input": {
+        "states": "CA",
+        "page": 4
+      },
+      "query_id": "batch_39",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need restrooms near lat 36.16 and lon -115.13.",
+      "action_input": {
+        "lat": 36.16,
+        "lon": -115.13
+      },
+      "query_id": "batch_40",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me a list of public restrooms in TX and NM.",
+      "action_input": {
+        "states": "TX,NM"
+      },
+      "query_id": "batch_41",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find public restrooms in Oregon. I just want 1 result.",
+      "action_input": {
+        "states": "OR",
+        "per_page": 1
+      },
+      "query_id": "batch_42",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you show me restrooms in NY, page 2 with 10 results?",
+      "action_input": {
+        "states": "NY",
+        "page": 2,
+        "per_page": 10
+      },
+      "query_id": "batch_43",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm at lat 41.87 and lon -87.62, where are the restrooms?",
+      "action_input": {
+        "lat": 41.87,
+        "lon": -87.62
+      },
+      "query_id": "batch_44",
+      "target_intent_id": 0
+    }
+  ],
+  "get_dog_breeds_metadata": [
+    {
+      "query": "Can you find information about the Golden Retriever breed?",
+      "action_input": {
+        "search": "Golden Retriever"
+      },
+      "query_id": "batch_45",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to adopt a Bulldog, can you get me some metadata about them?",
+      "action_input": {
+        "search": "Bulldog"
+      },
+      "query_id": "batch_46",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the Beagle dog breed for me.",
+      "action_input": {
+        "search": "Beagle"
+      },
+      "query_id": "batch_47",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Tell me about Poodles.",
+      "action_input": {
+        "search": "Poodle"
+      },
+      "query_id": "batch_48",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need details on the German Shepherd breed.",
+      "action_input": {
+        "search": "German Shepherd"
+      },
+      "query_id": "batch_49",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Chihuahua in the dog breed database.",
+      "action_input": {
+        "search": "Chihuahua"
+      },
+      "query_id": "batch_50",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get metadata for Labrador.",
+      "action_input": {
+        "search": "Labrador"
+      },
+      "query_id": "batch_51",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up Dachshunds?",
+      "action_input": {
+        "search": "Dachshund"
+      },
+      "query_id": "batch_52",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find information on the Pug dog breed.",
+      "action_input": {
+        "search": "Pug"
+      },
+      "query_id": "batch_53",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need some stats on Boxers.",
+      "action_input": {
+        "search": "Boxer"
+      },
+      "query_id": "batch_54",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Tell me about the Husky breed.",
+      "action_input": {
+        "search": "Husky"
+      },
+      "query_id": "batch_55",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Corgi breed info.",
+      "action_input": {
+        "search": "Corgi"
+      },
+      "query_id": "batch_56",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me metadata about Dalmatians.",
+      "action_input": {
+        "search": "Dalmatian"
+      },
+      "query_id": "batch_57",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What can you tell me about the Shih Tzu?",
+      "action_input": {
+        "search": "Shih Tzu"
+      },
+      "query_id": "batch_58",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm curious about the Rottweiler breed, look it up.",
+      "action_input": {
+        "search": "Rottweiler"
+      },
+      "query_id": "batch_59",
+      "target_intent_id": 0
+    }
+  ],
+  "get_media_news": [
+    {
+      "query": "Can you get me the latest TV news from the US?",
+      "action_input": {
+        "category": "TV",
+        "country": "US"
+      },
+      "query_id": "batch_60",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'd like to read some celebrity news, just give me 5 articles.",
+      "action_input": {
+        "category": "CELEBRITY",
+        "first": 5
+      },
+      "query_id": "batch_61",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch movie news in Spanish (language: es-MX).",
+      "action_input": {
+        "category": "MOVIE",
+        "language": "es-MX"
+      },
+      "query_id": "batch_62",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me the top 20 TV news articles from the UK.",
+      "action_input": {
+        "category": "TV",
+        "first": 20,
+        "country": "UK"
+      },
+      "query_id": "batch_63",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me some celebrity news from Canada.",
+      "action_input": {
+        "category": "CELEBRITY",
+        "country": "CA"
+      },
+      "query_id": "batch_64",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the latest movie news in the US?",
+      "action_input": {
+        "category": "MOVIE",
+        "country": "US"
+      },
+      "query_id": "batch_65",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find 10 TV news updates in French.",
+      "action_input": {
+        "category": "TV",
+        "first": 10,
+        "language": "fr-FR"
+      },
+      "query_id": "batch_66",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need celebrity news, specifically the next batch after the cursor 'abcd123'.",
+      "action_input": {
+        "category": "CELEBRITY",
+        "after": "abcd123"
+      },
+      "query_id": "batch_67",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me 50 movie news articles from Australia?",
+      "action_input": {
+        "category": "MOVIE",
+        "first": 50,
+        "country": "AU"
+      },
+      "query_id": "batch_68",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get TV news in German from Germany.",
+      "action_input": {
+        "category": "TV",
+        "country": "DE",
+        "language": "de-DE"
+      },
+      "query_id": "batch_69",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Show me celebrity gossip and news from the US.",
+      "action_input": {
+        "category": "CELEBRITY",
+        "country": "US"
+      },
+      "query_id": "batch_70",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to see the latest movie news.",
+      "action_input": {
+        "category": "MOVIE"
+      },
+      "query_id": "batch_71",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me 15 TV news articles.",
+      "action_input": {
+        "category": "TV",
+        "first": 15
+      },
+      "query_id": "batch_72",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find celebrity news, just 1 article, from the UK.",
+      "action_input": {
+        "category": "CELEBRITY",
+        "first": 1,
+        "country": "UK"
+      },
+      "query_id": "batch_73",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want some movie news in Italian.",
+      "action_input": {
+        "category": "MOVIE",
+        "language": "it-IT"
+      },
+      "query_id": "batch_74",
+      "target_intent_id": 0
+    }
+  ],
+  "search_manga": [
+    {
+      "query": "Can you search for the manga Naruto?",
+      "action_input": {
+        "text": "Naruto"
+      },
+      "query_id": "batch_75",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find me information about One Piece. Make sure to exclude NSFW content.",
+      "action_input": {
+        "text": "One Piece",
+        "nsfw": "false"
+      },
+      "query_id": "batch_76",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm looking for Bleach, but I specifically want the manhua type.",
+      "action_input": {
+        "text": "Bleach",
+        "type": "manhua"
+      },
+      "query_id": "batch_77",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Dragon Ball. Include all types.",
+      "action_input": {
+        "text": "Dragon Ball",
+        "type": "all"
+      },
+      "query_id": "batch_78",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up Attack on Titan, nsfw allowed.",
+      "action_input": {
+        "text": "Attack on Titan",
+        "nsfw": "true"
+      },
+      "query_id": "batch_79",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the manga My Hero Academia.",
+      "action_input": {
+        "text": "My Hero Academia"
+      },
+      "query_id": "batch_80",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Demon Slayer, make sure it's strictly a manga type.",
+      "action_input": {
+        "text": "Demon Slayer",
+        "type": "manga"
+      },
+      "query_id": "batch_81",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up Jujutsu Kaisen? Exclude NSFW.",
+      "action_input": {
+        "text": "Jujutsu Kaisen",
+        "nsfw": "false"
+      },
+      "query_id": "batch_82",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find details on Death Note.",
+      "action_input": {
+        "text": "Death Note"
+      },
+      "query_id": "batch_83",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to search for Fullmetal Alchemist, type is all.",
+      "action_input": {
+        "text": "Fullmetal Alchemist",
+        "type": "all"
+      },
+      "query_id": "batch_84",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Tokyo Ghoul, allow nsfw.",
+      "action_input": {
+        "text": "Tokyo Ghoul",
+        "nsfw": "true"
+      },
+      "query_id": "batch_85",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up Fairy Tail manga without nsfw.",
+      "action_input": {
+        "text": "Fairy Tail",
+        "nsfw": "false"
+      },
+      "query_id": "batch_86",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Hunter x Hunter.",
+      "action_input": {
+        "text": "Hunter x Hunter"
+      },
+      "query_id": "batch_87",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Sword Art Online, any type is fine.",
+      "action_input": {
+        "text": "Sword Art Online",
+        "type": "all"
+      },
+      "query_id": "batch_88",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up Black Clover? It must be a manhwa type.",
+      "action_input": {
+        "text": "Black Clover",
+        "type": "manhwa"
+      },
+      "query_id": "batch_89",
+      "target_intent_id": 0
+    }
+  ],
+  "search_exercises_by_name": [
+    {
+      "query": "Can you suggest some exercises for my arms?",
+      "action_input": {
+        "name": "arm"
+      },
+      "query_id": "batch_90",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need 5 exercises for my legs.",
+      "action_input": {
+        "name": "leg",
+        "limit": 5
+      },
+      "query_id": "batch_91",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find some chest exercises, please sort them descending by name.",
+      "action_input": {
+        "name": "chest",
+        "sort_order": "descending",
+        "sort_method": "name"
+      },
+      "query_id": "batch_92",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are some good back exercises? Skip the first 10.",
+      "action_input": {
+        "name": "back",
+        "offset": 10
+      },
+      "query_id": "batch_93",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Show me 20 shoulder exercises, ordered ascending by id.",
+      "action_input": {
+        "name": "shoulder",
+        "limit": 20,
+        "sort_order": "ascending",
+        "sort_method": "id"
+      },
+      "query_id": "batch_94",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me some exercises that target the core.",
+      "action_input": {
+        "name": "core"
+      },
+      "query_id": "batch_95",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want 3 exercises for the neck.",
+      "action_input": {
+        "name": "neck",
+        "limit": 3
+      },
+      "query_id": "batch_96",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for bicep exercises, sort descending by id.",
+      "action_input": {
+        "name": "bicep",
+        "sort_order": "descending",
+        "sort_method": "id"
+      },
+      "query_id": "batch_97",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find tricep workouts.",
+      "action_input": {
+        "name": "tricep"
+      },
+      "query_id": "batch_98",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Show me calf exercises, limit to 8.",
+      "action_input": {
+        "name": "calf",
+        "limit": 8
+      },
+      "query_id": "batch_99",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are some glute exercises? Sort them by name ascending.",
+      "action_input": {
+        "name": "glute",
+        "sort_order": "ascending",
+        "sort_method": "name"
+      },
+      "query_id": "batch_100",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for forearm exercises with an offset of 5.",
+      "action_input": {
+        "name": "forearm",
+        "offset": 5
+      },
+      "query_id": "batch_101",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need exactly 1 abs exercise.",
+      "action_input": {
+        "name": "abs",
+        "limit": 1
+      },
+      "query_id": "batch_102",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find hamstring exercises, ordered descending by name.",
+      "action_input": {
+        "name": "hamstring",
+        "sort_order": "descending",
+        "sort_method": "name"
+      },
+      "query_id": "batch_103",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me quad exercises.",
+      "action_input": {
+        "name": "quad"
+      },
+      "query_id": "batch_104",
+      "target_intent_id": 0
+    }
+  ],
+  "get_financial_data": [
+    {
+      "query": "Can you give me the global quote for AAPL?",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "AAPL"
+      },
+      "query_id": "batch_105",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the daily time series data for MSFT.",
+      "action_input": {
+        "function": "TIME_SERIES_DAILY",
+        "symbol": "MSFT"
+      },
+      "query_id": "batch_106",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the current stock quote for GOOGL?",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "GOOGL"
+      },
+      "query_id": "batch_107",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get the weekly time series for Amazon (AMZN).",
+      "action_input": {
+        "function": "TIME_SERIES_WEEKLY",
+        "symbol": "AMZN"
+      },
+      "query_id": "batch_108",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch the global quote for META.",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "META"
+      },
+      "query_id": "batch_109",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can I get the monthly time series for Tesla (TSLA)?",
+      "action_input": {
+        "function": "TIME_SERIES_MONTHLY",
+        "symbol": "TSLA"
+      },
+      "query_id": "batch_110",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want the global quote for BRK.B.",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "BRK.B"
+      },
+      "query_id": "batch_111",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me the daily data for Visa (V).",
+      "action_input": {
+        "function": "TIME_SERIES_DAILY",
+        "symbol": "V"
+      },
+      "query_id": "batch_112",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the global quote for Johnson & Johnson (JNJ).",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "JNJ"
+      },
+      "query_id": "batch_113",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get the intraday time series for WMT.",
+      "action_input": {
+        "function": "TIME_SERIES_INTRADAY",
+        "symbol": "WMT"
+      },
+      "query_id": "batch_114",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the global quote for JPM.",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "JPM"
+      },
+      "query_id": "batch_115",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the weekly time series for PG.",
+      "action_input": {
+        "function": "TIME_SERIES_WEEKLY",
+        "symbol": "PG"
+      },
+      "query_id": "batch_116",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch the global quote for Mastercard (MA).",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "MA"
+      },
+      "query_id": "batch_117",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me the daily time series for UNH?",
+      "action_input": {
+        "function": "TIME_SERIES_DAILY",
+        "symbol": "UNH"
+      },
+      "query_id": "batch_118",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the global quote for Disney (DIS)?",
+      "action_input": {
+        "function": "GLOBAL_QUOTE",
+        "symbol": "DIS"
+      },
+      "query_id": "batch_119",
+      "target_intent_id": 0
+    }
+  ],
+  "convert_currency": [
+    {
+      "query": "Can you convert 100 USD to EUR?",
+      "action_input": {
+        "base": "USD",
+        "target": "EUR"
+      },
+      "query_id": "batch_120",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the current exchange rate from EUR to GBP?",
+      "action_input": {
+        "base": "EUR",
+        "target": "GBP"
+      },
+      "query_id": "batch_121",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need to know how much JPY I get for my GBP.",
+      "action_input": {
+        "base": "GBP",
+        "target": "JPY"
+      },
+      "query_id": "batch_122",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the conversion rate from JPY to AUD.",
+      "action_input": {
+        "base": "JPY",
+        "target": "AUD"
+      },
+      "query_id": "batch_123",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you do a currency conversion from AUD to CAD?",
+      "action_input": {
+        "base": "AUD",
+        "target": "CAD"
+      },
+      "query_id": "batch_124",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I have some CAD and want to convert it to CHF. What's the rate?",
+      "action_input": {
+        "base": "CAD",
+        "target": "CHF"
+      },
+      "query_id": "batch_125",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the exchange rate for CHF to CNY?",
+      "action_input": {
+        "base": "CHF",
+        "target": "CNY"
+      },
+      "query_id": "batch_126",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the conversion rate between CNY and SEK.",
+      "action_input": {
+        "base": "CNY",
+        "target": "SEK"
+      },
+      "query_id": "batch_127",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How many NZD would I get for SEK?",
+      "action_input": {
+        "base": "SEK",
+        "target": "NZD"
+      },
+      "query_id": "batch_128",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Convert NZD into USD for me.",
+      "action_input": {
+        "base": "NZD",
+        "target": "USD"
+      },
+      "query_id": "batch_129",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the USD to JPY exchange rate.",
+      "action_input": {
+        "base": "USD",
+        "target": "JPY"
+      },
+      "query_id": "batch_130",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the rate to change EUR to USD?",
+      "action_input": {
+        "base": "EUR",
+        "target": "USD"
+      },
+      "query_id": "batch_131",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to convert my GBP into USD, what is the rate?",
+      "action_input": {
+        "base": "GBP",
+        "target": "USD"
+      },
+      "query_id": "batch_132",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you tell me the exchange rate from AUD to USD?",
+      "action_input": {
+        "base": "AUD",
+        "target": "USD"
+      },
+      "query_id": "batch_133",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Convert CAD to USD.",
+      "action_input": {
+        "base": "CAD",
+        "target": "USD"
+      },
+      "query_id": "batch_134",
+      "target_intent_id": 0
+    }
+  ],
+  "get_recipe": [
+    {
+      "query": "Do you have a good recipe for italian wedding soup?",
+      "action_input": {
+        "query": "italian wedding soup"
+      },
+      "query_id": "batch_135",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm craving some chicken tikka masala, can you find a recipe?",
+      "action_input": {
+        "query": "chicken tikka masala"
+      },
+      "query_id": "batch_136",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How do you make beef stroganoff? Get me a recipe.",
+      "action_input": {
+        "query": "beef stroganoff"
+      },
+      "query_id": "batch_137",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you search for a pad thai recipe?",
+      "action_input": {
+        "query": "pad thai"
+      },
+      "query_id": "batch_138",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to bake a margarita pizza tonight, find me a recipe.",
+      "action_input": {
+        "query": "margarita pizza"
+      },
+      "query_id": "batch_139",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Give me the second page of results for chocolate cake recipes.",
+      "action_input": {
+        "query": "chocolate cake",
+        "offset": "1"
+      },
+      "query_id": "batch_140",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need an apple pie recipe.",
+      "action_input": {
+        "query": "apple pie"
+      },
+      "query_id": "batch_141",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for a caesar salad recipe, but skip the first few results using offset 2.",
+      "action_input": {
+        "query": "caesar salad",
+        "offset": "2"
+      },
+      "query_id": "batch_142",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find a good grilled cheese recipe.",
+      "action_input": {
+        "query": "grilled cheese"
+      },
+      "query_id": "batch_143",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me a recipe for tomato soup?",
+      "action_input": {
+        "query": "tomato soup"
+      },
+      "query_id": "batch_144",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to make pancakes for breakfast.",
+      "action_input": {
+        "query": "pancakes"
+      },
+      "query_id": "batch_145",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How do I make crispy waffles?",
+      "action_input": {
+        "query": "waffles"
+      },
+      "query_id": "batch_146",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up a french toast recipe, offset by 3.",
+      "action_input": {
+        "query": "french toast",
+        "offset": "3"
+      },
+      "query_id": "batch_147",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me a simple scrambled eggs recipe.",
+      "action_input": {
+        "query": "scrambled eggs"
+      },
+      "query_id": "batch_148",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need instructions to cook an omelette.",
+      "action_input": {
+        "query": "omelette"
+      },
+      "query_id": "batch_149",
+      "target_intent_id": 0
+    }
+  ],
+  "search_streaming_shows": [
+    {
+      "query": "Where can I stream Stranger Things in the US?",
+      "action_input": {
+        "country": "US",
+        "keyword": "stranger things"
+      },
+      "query_id": "batch_150",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check if Breaking Bad is available on UK streaming services?",
+      "action_input": {
+        "country": "UK",
+        "keyword": "breaking bad"
+      },
+      "query_id": "batch_151",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to watch The Office in Canada, where is it streaming?",
+      "action_input": {
+        "country": "CA",
+        "keyword": "the office"
+      },
+      "query_id": "batch_152",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find where I can stream Friends in Australia. Please sort the results by year.",
+      "action_input": {
+        "country": "AU",
+        "keyword": "friends",
+        "order_by": "year"
+      },
+      "query_id": "batch_153",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Game of Thrones streaming availability in the US.",
+      "action_input": {
+        "country": "US",
+        "keyword": "game of thrones"
+      },
+      "query_id": "batch_154",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Is The Mandalorian streaming anywhere in the UK?",
+      "action_input": {
+        "country": "UK",
+        "keyword": "the mandalorian"
+      },
+      "query_id": "batch_155",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up where to stream The Witcher in Germany, ordered by original title.",
+      "action_input": {
+        "country": "DE",
+        "keyword": "the witcher",
+        "order_by": "original_title"
+      },
+      "query_id": "batch_156",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Black Mirror on streaming platforms in the US, and only show series, no movies.",
+      "action_input": {
+        "country": "US",
+        "keyword": "black mirror",
+        "show_type": "series"
+      },
+      "query_id": "batch_157",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Where can I watch Narcos in Spain?",
+      "action_input": {
+        "country": "ES",
+        "keyword": "narcos"
+      },
+      "query_id": "batch_158",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check streaming services for Peaky Blinders in the UK, sorting by year in descending order.",
+      "action_input": {
+        "country": "UK",
+        "keyword": "peaky blinders",
+        "order_by": "year",
+        "order_direction": "desc"
+      },
+      "query_id": "batch_159",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Where is The Crown streaming in the US?",
+      "action_input": {
+        "country": "US",
+        "keyword": "the crown"
+      },
+      "query_id": "batch_160",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you find Money Heist on Netflix or other catalogs in France?",
+      "action_input": {
+        "country": "FR",
+        "keyword": "money heist",
+        "catalogs": "netflix"
+      },
+      "query_id": "batch_161",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check if Dark is streaming in the US.",
+      "action_input": {
+        "country": "US",
+        "keyword": "dark"
+      },
+      "query_id": "batch_162",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look for Mindhunter on US streaming services, searching for exact show granularity.",
+      "action_input": {
+        "country": "US",
+        "keyword": "mindhunter",
+        "series_granularity": "show"
+      },
+      "query_id": "batch_163",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Ozark on streaming platforms in the UK.",
+      "action_input": {
+        "country": "UK",
+        "keyword": "ozark"
+      },
+      "query_id": "batch_164",
+      "target_intent_id": 0
+    }
+  ],
+  "search_cocktails": [
+    {
+      "query": "How do I make a Margarita?",
+      "action_input": {
+        "name": "Margarita"
+      },
+      "query_id": "batch_165",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me the recipe for a classic Martini?",
+      "action_input": {
+        "name": "Martini"
+      },
+      "query_id": "batch_166",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to mix an Old Fashioned. What do I need?",
+      "action_input": {
+        "name": "Old Fashioned"
+      },
+      "query_id": "batch_167",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find me a cocktail that uses rum and mint.",
+      "action_input": {
+        "ingredients": "rum, mint"
+      },
+      "query_id": "batch_168",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for the Manhattan cocktail recipe.",
+      "action_input": {
+        "name": "Manhattan"
+      },
+      "query_id": "batch_169",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Do you know how to make a Whiskey Sour?",
+      "action_input": {
+        "name": "Whiskey Sour"
+      },
+      "query_id": "batch_170",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's in a Daiquiri?",
+      "action_input": {
+        "name": "Daiquiri"
+      },
+      "query_id": "batch_171",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you find drinks made with vodka and cranberry?",
+      "action_input": {
+        "ingredients": "vodka, cranberry"
+      },
+      "query_id": "batch_172",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the ingredients for a Negroni.",
+      "action_input": {
+        "name": "Negroni"
+      },
+      "query_id": "batch_173",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How do you prepare a Moscow Mule?",
+      "action_input": {
+        "name": "Moscow Mule"
+      },
+      "query_id": "batch_174",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the recipe for a Bloody Mary?",
+      "action_input": {
+        "name": "Bloody Mary"
+      },
+      "query_id": "batch_175",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for cocktails that include tequila and lime.",
+      "action_input": {
+        "ingredients": "tequila, lime"
+      },
+      "query_id": "batch_176",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the Mai Tai cocktail.",
+      "action_input": {
+        "name": "Mai Tai"
+      },
+      "query_id": "batch_177",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to make a Gimlet.",
+      "action_input": {
+        "name": "Gimlet"
+      },
+      "query_id": "batch_178",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are the ingredients for a White Russian?",
+      "action_input": {
+        "name": "White Russian"
+      },
+      "query_id": "batch_179",
+      "target_intent_id": 0
+    }
+  ],
+  "get_filtered_game_giveaways": [
+    {
+      "query": "Are there any free games on the Epic Games Store right now?",
+      "action_input": {
+        "platform": "epic-games-store"
+      },
+      "query_id": "batch_180",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find some free loot giveaways for PC.",
+      "action_input": {
+        "platform": "pc",
+        "type_": "loot"
+      },
+      "query_id": "batch_181",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check if there are any game giveaways on PS4.",
+      "action_input": {
+        "platform": "ps4",
+        "type_": "game"
+      },
+      "query_id": "batch_182",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to find free games or loot for Xbox One.",
+      "action_input": {
+        "platform": "xbox-one"
+      },
+      "query_id": "batch_183",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Are there any current giveaways for Nintendo Switch? I'm looking for games.",
+      "action_input": {
+        "platform": "switch",
+        "type_": "game"
+      },
+      "query_id": "batch_184",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Show me free games on Steam.",
+      "action_input": {
+        "platform": "steam",
+        "type_": "game"
+      },
+      "query_id": "batch_185",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for loot giveaways on Android.",
+      "action_input": {
+        "platform": "android",
+        "type_": "loot"
+      },
+      "query_id": "batch_186",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Is there anything free on the Epic Games Store that is a game?",
+      "action_input": {
+        "platform": "epic-games-store",
+        "type_": "game"
+      },
+      "query_id": "batch_187",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find PC giveaways.",
+      "action_input": {
+        "platform": "pc"
+      },
+      "query_id": "batch_188",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up free loot for PS4.",
+      "action_input": {
+        "platform": "ps4",
+        "type_": "loot"
+      },
+      "query_id": "batch_189",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get a list of free games for Xbox.",
+      "action_input": {
+        "platform": "xbox-one",
+        "type_": "game"
+      },
+      "query_id": "batch_190",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check for free stuff on Switch.",
+      "action_input": {
+        "platform": "switch"
+      },
+      "query_id": "batch_191",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Are there any Steam loot giveaways?",
+      "action_input": {
+        "platform": "steam",
+        "type_": "loot"
+      },
+      "query_id": "batch_192",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find free games for Android.",
+      "action_input": {
+        "platform": "android",
+        "type_": "game"
+      },
+      "query_id": "batch_193",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you show me PC game giveaways?",
+      "action_input": {
+        "platform": "pc",
+        "type_": "game"
+      },
+      "query_id": "batch_194",
+      "target_intent_id": 0
+    }
+  ],
+  "get_lol_champion_stats": [
+    {
+      "query": "Can you get me the stats for Ahri in League of Legends?",
+      "action_input": {
+        "name": "Ahri"
+      },
+      "query_id": "batch_195",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are Yasuo's base stats?",
+      "action_input": {
+        "name": "Yasuo"
+      },
+      "query_id": "batch_196",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the champion info for Teemo.",
+      "action_input": {
+        "name": "Teemo"
+      },
+      "query_id": "batch_197",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the stats for Lee Sin.",
+      "action_input": {
+        "name": "Lee Sin"
+      },
+      "query_id": "batch_198",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch the champion statistics for Thresh.",
+      "action_input": {
+        "name": "Thresh"
+      },
+      "query_id": "batch_199",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me Jinx's stats?",
+      "action_input": {
+        "name": "Jinx"
+      },
+      "query_id": "batch_200",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are the base numbers for Ezreal?",
+      "action_input": {
+        "name": "Ezreal"
+      },
+      "query_id": "batch_201",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Lux's champion data.",
+      "action_input": {
+        "name": "Lux"
+      },
+      "query_id": "batch_202",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to see the stats for Vayne.",
+      "action_input": {
+        "name": "Vayne"
+      },
+      "query_id": "batch_203",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Zed's champion stats.",
+      "action_input": {
+        "name": "Zed"
+      },
+      "query_id": "batch_204",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up Darius in the LoL stats.",
+      "action_input": {
+        "name": "Darius"
+      },
+      "query_id": "batch_205",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What are Garen's stats?",
+      "action_input": {
+        "name": "Garen"
+      },
+      "query_id": "batch_206",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me the statistics for Ashe.",
+      "action_input": {
+        "name": "Ashe"
+      },
+      "query_id": "batch_207",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check Miss Fortune's base numbers?",
+      "action_input": {
+        "name": "Miss Fortune"
+      },
+      "query_id": "batch_208",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Fetch the champion info for Riven.",
+      "action_input": {
+        "name": "Riven"
+      },
+      "query_id": "batch_209",
+      "target_intent_id": 0
+    }
+  ],
+  "get_salary_estimation": [
+    {
+      "query": "How much does a Software Engineer make in New York?",
+      "action_input": {
+        "job_title": "Software Engineer",
+        "location": "New York"
+      },
+      "query_id": "batch_210",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the estimated salary for a Data Scientist in San Francisco with 3 years of experience?",
+      "action_input": {
+        "job_title": "Data Scientist",
+        "location": "San Francisco",
+        "years_of_experience": "3"
+      },
+      "query_id": "batch_211",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know the salary of a Product Manager in London.",
+      "action_input": {
+        "job_title": "Product Manager",
+        "location": "London"
+      },
+      "query_id": "batch_212",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you estimate a Nurse's salary in Berlin, specifically for in-person roles?",
+      "action_input": {
+        "job_title": "Nurse",
+        "location": "Berlin",
+        "location_type": "in-person"
+      },
+      "query_id": "batch_213",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How much do Teachers earn in Toronto?",
+      "action_input": {
+        "job_title": "Teacher",
+        "location": "Toronto"
+      },
+      "query_id": "batch_214",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the typical pay for a Web Developer in Austin, Texas?",
+      "action_input": {
+        "job_title": "Web Developer",
+        "location": "Austin, Texas"
+      },
+      "query_id": "batch_215",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check the salary for a Graphic Designer working remotely in the US?",
+      "action_input": {
+        "job_title": "Graphic Designer",
+        "location": "US",
+        "location_type": "REMOTE"
+      },
+      "query_id": "batch_216",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need salary data for an Accountant in Chicago.",
+      "action_input": {
+        "job_title": "Accountant",
+        "location": "Chicago"
+      },
+      "query_id": "batch_217",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is a Marketing Manager's salary in Seattle with 5+ years experience?",
+      "action_input": {
+        "job_title": "Marketing Manager",
+        "location": "Seattle",
+        "years_of_experience": "5"
+      },
+      "query_id": "batch_218",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the salary for a Civil Engineer in Sydney.",
+      "action_input": {
+        "job_title": "Civil Engineer",
+        "location": "Sydney"
+      },
+      "query_id": "batch_219",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How much does a Chef make in Paris?",
+      "action_input": {
+        "job_title": "Chef",
+        "location": "Paris"
+      },
+      "query_id": "batch_220",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Estimate the pay for a Systems Analyst in Tokyo.",
+      "action_input": {
+        "job_title": "Systems Analyst",
+        "location": "Tokyo"
+      },
+      "query_id": "batch_221",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the average salary for a Sales Executive in Dubai?",
+      "action_input": {
+        "job_title": "Sales Executive",
+        "location": "Dubai"
+      },
+      "query_id": "batch_222",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the remote salary for a Devops Engineer in Canada.",
+      "action_input": {
+        "job_title": "Devops Engineer",
+        "location": "Canada",
+        "location_type": "REMOTE"
+      },
+      "query_id": "batch_223",
+      "target_intent_id": 0
+    },
+    {
+      "query": "How much do Electricians earn in Boston?",
+      "action_input": {
+        "job_title": "Electrician",
+        "location": "Boston"
+      },
+      "query_id": "batch_224",
+      "target_intent_id": 0
+    }
+  ],
+  "get_airport_delay_statistics": [
+    {
+      "query": "Are there many delays at Taipei airport right now? The IATA code is TPE.",
+      "action_input": {
+        "codeType": "iata",
+        "code": "TPE"
+      },
+      "query_id": "batch_225",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the delay statistics for JFK using its ICAO code KJFK.",
+      "action_input": {
+        "codeType": "icao",
+        "code": "KJFK"
+      },
+      "query_id": "batch_226",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you see if flights are delayed at London Heathrow (LHR)?",
+      "action_input": {
+        "code": "LHR"
+      },
+      "query_id": "batch_227",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the delay stats for Haneda airport, iata code HND.",
+      "action_input": {
+        "codeType": "iata",
+        "code": "HND"
+      },
+      "query_id": "batch_228",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up flight delays at Charles de Gaulle (CDG).",
+      "action_input": {
+        "code": "CDG"
+      },
+      "query_id": "batch_229",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Are there delays at Frankfurt Airport? Check using ICAO code EDDF.",
+      "action_input": {
+        "codeType": "icao",
+        "code": "EDDF"
+      },
+      "query_id": "batch_230",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get the current delay situation at LAX.",
+      "action_input": {
+        "code": "LAX"
+      },
+      "query_id": "batch_231",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check O'Hare (ORD) for flight delays.",
+      "action_input": {
+        "code": "ORD"
+      },
+      "query_id": "batch_232",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Is SFO experiencing a lot of delays right now?",
+      "action_input": {
+        "code": "SFO"
+      },
+      "query_id": "batch_233",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the delay statistics for Singapore Changi (SIN).",
+      "action_input": {
+        "code": "SIN"
+      },
+      "query_id": "batch_234",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Are there delays in Dubai? The IATA code is DXB.",
+      "action_input": {
+        "codeType": "iata",
+        "code": "DXB"
+      },
+      "query_id": "batch_235",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check if HKG has flight delays?",
+      "action_input": {
+        "code": "HKG"
+      },
+      "query_id": "batch_236",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm flying out of Sydney (SYD), are there any delays?",
+      "action_input": {
+        "code": "SYD"
+      },
+      "query_id": "batch_237",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check Toronto Pearson (YYZ) for departure delays.",
+      "action_input": {
+        "code": "YYZ"
+      },
+      "query_id": "batch_238",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the delay status at Amsterdam Schiphol (AMS)?",
+      "action_input": {
+        "code": "AMS"
+      },
+      "query_id": "batch_239",
+      "target_intent_id": 0
+    }
+  ],
+  "get_timezone_info": [
+    {
+      "query": "Can you check the timezone for latitude 40.7128 and longitude -74.0060 at timestamp 1600000000?",
+      "action_input": {
+        "lat": 40.7128,
+        "lng": -74.006,
+        "timestamp": 1600000000
+      },
+      "query_id": "batch_240",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the time zone info at lat 34.0522, lng -118.2437 (timestamp 1600010000)?",
+      "action_input": {
+        "lat": 34.0522,
+        "lng": -118.2437,
+        "timestamp": 1600010000
+      },
+      "query_id": "batch_241",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the timezone at coordinates 51.5074, -0.1278 for the timestamp 1600020000.",
+      "action_input": {
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "timestamp": 1600020000
+      },
+      "query_id": "batch_242",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the timezone info for lat 35.6762, lng 139.6503 at time 1600030000.",
+      "action_input": {
+        "lat": 35.6762,
+        "lng": 139.6503,
+        "timestamp": 1600030000
+      },
+      "query_id": "batch_243",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up timezone data at lat 48.8566 and lng 2.3522 using timestamp 1600040000.",
+      "action_input": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "timestamp": 1600040000
+      },
+      "query_id": "batch_244",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the timezone at lat -33.8688 and lng 151.2093 (timestamp 1600050000).",
+      "action_input": {
+        "lat": -33.8688,
+        "lng": 151.2093,
+        "timestamp": 1600050000
+      },
+      "query_id": "batch_245",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the timezone for 55.7558, 37.6173 at timestamp 1600060000?",
+      "action_input": {
+        "lat": 55.7558,
+        "lng": 37.6173,
+        "timestamp": 1600060000
+      },
+      "query_id": "batch_246",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need timezone info for latitude -23.5505 and longitude -46.6333, timestamp 1600070000.",
+      "action_input": {
+        "lat": -23.5505,
+        "lng": -46.6333,
+        "timestamp": 1600070000
+      },
+      "query_id": "batch_247",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me the timezone at lat 39.9042, lng 116.4074 with timestamp 1600080000.",
+      "action_input": {
+        "lat": 39.9042,
+        "lng": 116.4074,
+        "timestamp": 1600080000
+      },
+      "query_id": "batch_248",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the time zone at coordinates lat 19.4326, lng -99.1332 (timestamp 1600090000).",
+      "action_input": {
+        "lat": 19.4326,
+        "lng": -99.1332,
+        "timestamp": 1600090000
+      },
+      "query_id": "batch_249",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check timezone info for lat 28.6139, lng 77.2090 at timestamp 1600100000.",
+      "action_input": {
+        "lat": 28.6139,
+        "lng": 77.209,
+        "timestamp": 1600100000
+      },
+      "query_id": "batch_250",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the time zone for lat 1.3521, lng 103.8198 at 1600110000?",
+      "action_input": {
+        "lat": 1.3521,
+        "lng": 103.8198,
+        "timestamp": 1600110000
+      },
+      "query_id": "batch_251",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the timezone at lat 41.9028, lng 12.4964 using timestamp 1600120000.",
+      "action_input": {
+        "lat": 41.9028,
+        "lng": 12.4964,
+        "timestamp": 1600120000
+      },
+      "query_id": "batch_252",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know the timezone at lat 52.5200, lng 13.4050, timestamp 1600130000.",
+      "action_input": {
+        "lat": 52.52,
+        "lng": 13.405,
+        "timestamp": 1600130000
+      },
+      "query_id": "batch_253",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get timezone information for lat -26.2041, lng 28.0473 (timestamp 1600140000).",
+      "action_input": {
+        "lat": -26.2041,
+        "lng": 28.0473,
+        "timestamp": 1600140000
+      },
+      "query_id": "batch_254",
+      "target_intent_id": 0
+    }
+  ],
+  "get_celestial_body_position": [
+    {
+      "query": "Where is the moon between 2023-01-01 and 2023-01-10? Check from lat 33.77, lon -84.39.",
+      "action_input": {
+        "body": "moon",
+        "from_date": "2023-01-01",
+        "to_date": "2023-01-10",
+        "latitude": 33.77,
+        "longitude": -84.39
+      },
+      "query_id": "batch_255",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the position of the sun from 2023-02-01 to 2023-02-15. My coordinates are lat 40.71, lon -74.00, elevation 10.",
+      "action_input": {
+        "body": "sun",
+        "from_date": "2023-02-01",
+        "to_date": "2023-02-15",
+        "latitude": 40.71,
+        "longitude": -74.0,
+        "elevation": 10
+      },
+      "query_id": "batch_256",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Where will Mars be from 2023-03-01 to 2023-03-05? (lat: 51.50, lon: -0.12)",
+      "action_input": {
+        "body": "mars",
+        "from_date": "2023-03-01",
+        "to_date": "2023-03-05",
+        "latitude": 51.5,
+        "longitude": -0.12
+      },
+      "query_id": "batch_257",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to track Venus between 2023-04-10 and 2023-04-20 from latitude 35.68, longitude 139.65.",
+      "action_input": {
+        "body": "venus",
+        "from_date": "2023-04-10",
+        "to_date": "2023-04-20",
+        "latitude": 35.68,
+        "longitude": 139.65
+      },
+      "query_id": "batch_258",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Jupiter's position from 2023-05-01 to 2023-05-10 at lat 34.05, lon -118.24, elev 100.",
+      "action_input": {
+        "body": "jupiter",
+        "from_date": "2023-05-01",
+        "to_date": "2023-05-10",
+        "latitude": 34.05,
+        "longitude": -118.24,
+        "elevation": 100
+      },
+      "query_id": "batch_259",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check where the moon is located from 2023-06-01 to 2023-06-05. (lat: 48.85, lon: 2.35)",
+      "action_input": {
+        "body": "moon",
+        "from_date": "2023-06-01",
+        "to_date": "2023-06-05",
+        "latitude": 48.85,
+        "longitude": 2.35
+      },
+      "query_id": "batch_260",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the sun's position between 2023-07-01 and 2023-07-10 from lat -33.86, lon 151.20.",
+      "action_input": {
+        "body": "sun",
+        "from_date": "2023-07-01",
+        "to_date": "2023-07-10",
+        "latitude": -33.86,
+        "longitude": 151.2
+      },
+      "query_id": "batch_261",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Track Mars from 2023-08-01 to 2023-08-08 at lat 55.75, lon 37.61, elevation 150.",
+      "action_input": {
+        "body": "mars",
+        "from_date": "2023-08-01",
+        "to_date": "2023-08-08",
+        "latitude": 55.75,
+        "longitude": 37.61,
+        "elevation": 150
+      },
+      "query_id": "batch_262",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Where is Venus from 2023-09-01 to 2023-09-12? Observation from lat 1.35, lon 103.81.",
+      "action_input": {
+        "body": "venus",
+        "from_date": "2023-09-01",
+        "to_date": "2023-09-12",
+        "latitude": 1.35,
+        "longitude": 103.81
+      },
+      "query_id": "batch_263",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get Jupiter's coordinates between 2023-10-01 and 2023-10-15 (lat 41.90, lon 12.49).",
+      "action_input": {
+        "body": "jupiter",
+        "from_date": "2023-10-01",
+        "to_date": "2023-10-15",
+        "latitude": 41.9,
+        "longitude": 12.49
+      },
+      "query_id": "batch_264",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you track the moon's position from 2023-11-01 to 2023-11-07? Lat 28.61, lon 77.20.",
+      "action_input": {
+        "body": "moon",
+        "from_date": "2023-11-01",
+        "to_date": "2023-11-07",
+        "latitude": 28.61,
+        "longitude": 77.2
+      },
+      "query_id": "batch_265",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Where is the sun from 2023-12-01 to 2023-12-10 at lat 39.90, lon 116.40, elevation 50?",
+      "action_input": {
+        "body": "sun",
+        "from_date": "2023-12-01",
+        "to_date": "2023-12-10",
+        "latitude": 39.9,
+        "longitude": 116.4,
+        "elevation": 50
+      },
+      "query_id": "batch_266",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Mars between 2024-01-01 and 2024-01-10 from lat 19.43, lon -99.13.",
+      "action_input": {
+        "body": "mars",
+        "from_date": "2024-01-01",
+        "to_date": "2024-01-10",
+        "latitude": 19.43,
+        "longitude": -99.13
+      },
+      "query_id": "batch_267",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check Venus's position from 2024-02-01 to 2024-02-05. Coordinates lat 52.52, lon 13.40.",
+      "action_input": {
+        "body": "venus",
+        "from_date": "2024-02-01",
+        "to_date": "2024-02-05",
+        "latitude": 52.52,
+        "longitude": 13.4
+      },
+      "query_id": "batch_268",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up Jupiter from 2024-03-01 to 2024-03-15 at lat -23.55, lon -46.63.",
+      "action_input": {
+        "body": "jupiter",
+        "from_date": "2024-03-01",
+        "to_date": "2024-03-15",
+        "latitude": -23.55,
+        "longitude": -46.63
+      },
+      "query_id": "batch_269",
+      "target_intent_id": 0
+    }
+  ],
+  "search_arxiv_papers": [
+    {
+      "query": "Can you search arxiv for papers about machine learning?",
+      "action_input": {
+        "search_term": "machine learning"
+      },
+      "query_id": "batch_270",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need 10 recent papers on quantum computing.",
+      "action_input": {
+        "search_term": "quantum computing",
+        "num_results": 10
+      },
+      "query_id": "batch_271",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find some research on black holes in the Computer Science field.",
+      "action_input": {
+        "search_term": "black holes",
+        "field": "Computer Science"
+      },
+      "query_id": "batch_272",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for neural networks. I'd like 5 results sorted by Last Updated Date.",
+      "action_input": {
+        "search_term": "neural networks",
+        "num_results": 5,
+        "date_type": "Last Updated Date"
+      },
+      "query_id": "batch_273",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me papers about robotics.",
+      "action_input": {
+        "search_term": "robotics"
+      },
+      "query_id": "batch_274",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search arxiv for 'transformers' and give me 20 results.",
+      "action_input": {
+        "search_term": "transformers",
+        "num_results": 20
+      },
+      "query_id": "batch_275",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up research on computer vision in the Physics field.",
+      "action_input": {
+        "search_term": "computer vision",
+        "field": "Physics"
+      },
+      "query_id": "batch_276",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find papers related to string theory.",
+      "action_input": {
+        "search_term": "string theory"
+      },
+      "query_id": "batch_277",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you give me 15 papers on natural language processing? Use Submission Date.",
+      "action_input": {
+        "search_term": "natural language processing",
+        "num_results": 15,
+        "date_type": "Submission Date"
+      },
+      "query_id": "batch_278",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for cryptography papers.",
+      "action_input": {
+        "search_term": "cryptography"
+      },
+      "query_id": "batch_279",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm looking for 3 papers on autonomous vehicles in the Mathematics field.",
+      "action_input": {
+        "search_term": "autonomous vehicles",
+        "num_results": 3,
+        "field": "Mathematics"
+      },
+      "query_id": "batch_280",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find some recent papers on augmented reality.",
+      "action_input": {
+        "search_term": "augmented reality"
+      },
+      "query_id": "batch_281",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search arxiv for reinforcement learning, returning 8 results.",
+      "action_input": {
+        "search_term": "reinforcement learning",
+        "num_results": 8
+      },
+      "query_id": "batch_282",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me papers about graph neural networks.",
+      "action_input": {
+        "search_term": "graph neural networks"
+      },
+      "query_id": "batch_283",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up quantum entanglement papers from the Physics field.",
+      "action_input": {
+        "search_term": "quantum entanglement",
+        "field": "Physics"
+      },
+      "query_id": "batch_284",
+      "target_intent_id": 0
+    }
+  ],
+  "get_handball_scheduled_matches": [
+    {
+      "query": "Are there any handball matches scheduled for 28/01/2021?",
+      "action_input": {
+        "date": "28/01/2021"
+      },
+      "query_id": "batch_285",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check the handball schedule for 15/02/2021?",
+      "action_input": {
+        "date": "15/02/2021"
+      },
+      "query_id": "batch_286",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need to know the scheduled handball games on 10/03/2021.",
+      "action_input": {
+        "date": "10/03/2021"
+      },
+      "query_id": "batch_287",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the handball matches on 05/04/2021.",
+      "action_input": {
+        "date": "05/04/2021"
+      },
+      "query_id": "batch_288",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the handball schedule for 20/05/2021?",
+      "action_input": {
+        "date": "20/05/2021"
+      },
+      "query_id": "batch_289",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up scheduled handball games for 12/06/2021.",
+      "action_input": {
+        "date": "12/06/2021"
+      },
+      "query_id": "batch_290",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check if there are any handball matches on 08/07/2021.",
+      "action_input": {
+        "date": "08/07/2021"
+      },
+      "query_id": "batch_291",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you find the handball games for 14/08/2021?",
+      "action_input": {
+        "date": "14/08/2021"
+      },
+      "query_id": "batch_292",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search the handball schedule for 09/09/2021.",
+      "action_input": {
+        "date": "09/09/2021"
+      },
+      "query_id": "batch_293",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to see the handball matches scheduled on 22/10/2021.",
+      "action_input": {
+        "date": "22/10/2021"
+      },
+      "query_id": "batch_294",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get the scheduled handball matches for 03/11/2021.",
+      "action_input": {
+        "date": "03/11/2021"
+      },
+      "query_id": "batch_295",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the handball matches on 25/12/2021.",
+      "action_input": {
+        "date": "25/12/2021"
+      },
+      "query_id": "batch_296",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find handball scheduled matches for 01/01/2022.",
+      "action_input": {
+        "date": "01/01/2022"
+      },
+      "query_id": "batch_297",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What handball games are on 14/02/2022?",
+      "action_input": {
+        "date": "14/02/2022"
+      },
+      "query_id": "batch_298",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the handball matches on 17/03/2022.",
+      "action_input": {
+        "date": "17/03/2022"
+      },
+      "query_id": "batch_299",
+      "target_intent_id": 0
+    }
+  ],
+  "get_airlines": [
+    {
+      "query": "I'm flying with Delta Air Lines, can you find their details?",
+      "action_input": {
+        "name": "Delta Air Lines"
+      },
+      "query_id": "batch_300",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you look up United Airlines for me?",
+      "action_input": {
+        "name": "United Airlines"
+      },
+      "query_id": "batch_301",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need some information on American Airlines.",
+      "action_input": {
+        "name": "American Airlines"
+      },
+      "query_id": "batch_302",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the airline info for Southwest Airlines.",
+      "action_input": {
+        "name": "Southwest Airlines"
+      },
+      "query_id": "batch_303",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you get details for Lufthansa?",
+      "action_input": {
+        "name": "Lufthansa"
+      },
+      "query_id": "batch_304",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up British Airways.",
+      "action_input": {
+        "name": "British Airways"
+      },
+      "query_id": "batch_305",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know more about Air France.",
+      "action_input": {
+        "name": "Air France"
+      },
+      "query_id": "batch_306",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me the information for Emirates.",
+      "action_input": {
+        "name": "Emirates"
+      },
+      "query_id": "batch_307",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you search for Qatar Airways?",
+      "action_input": {
+        "name": "Qatar Airways"
+      },
+      "query_id": "batch_308",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find details on Singapore Airlines.",
+      "action_input": {
+        "name": "Singapore Airlines"
+      },
+      "query_id": "batch_309",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up Cathay Pacific.",
+      "action_input": {
+        "name": "Cathay Pacific"
+      },
+      "query_id": "batch_310",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you get the airline information for ANA?",
+      "action_input": {
+        "name": "ANA"
+      },
+      "query_id": "batch_311",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Japan Airlines in the database.",
+      "action_input": {
+        "name": "Japan Airlines"
+      },
+      "query_id": "batch_312",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Korean Air.",
+      "action_input": {
+        "name": "Korean Air"
+      },
+      "query_id": "batch_313",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get information about Qantas.",
+      "action_input": {
+        "name": "Qantas"
+      },
+      "query_id": "batch_314",
+      "target_intent_id": 0
+    }
+  ],
+  "get_motorcycle_data": [
+    {
+      "query": "Can you show me some motorcycles made by Honda?",
+      "action_input": {
+        "make": "Honda"
+      },
+      "query_id": "batch_315",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Yamaha motorcycles, but skip the first 10 results.",
+      "action_input": {
+        "make": "Yamaha",
+        "offset": 10
+      },
+      "query_id": "batch_316",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up Kawasaki bikes from the year 2020.",
+      "action_input": {
+        "make": "Kawasaki",
+        "year": "2020"
+      },
+      "query_id": "batch_317",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I'm looking for the Suzuki GSX-R1000.",
+      "action_input": {
+        "make": "Suzuki",
+        "model": "GSX-R1000"
+      },
+      "query_id": "batch_318",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me some Ducati motorcycles.",
+      "action_input": {
+        "make": "Ducati"
+      },
+      "query_id": "batch_319",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for BMW motorcycles.",
+      "action_input": {
+        "make": "BMW"
+      },
+      "query_id": "batch_320",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Harley-Davidson bikes, with an offset of 5.",
+      "action_input": {
+        "make": "Harley-Davidson",
+        "offset": 5
+      },
+      "query_id": "batch_321",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up KTM motorcycles manufactured in 2021.",
+      "action_input": {
+        "make": "KTM",
+        "year": "2021"
+      },
+      "query_id": "batch_322",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want data on the Triumph Bonneville.",
+      "action_input": {
+        "make": "Triumph",
+        "model": "Bonneville"
+      },
+      "query_id": "batch_323",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you find motorcycles by Aprilia?",
+      "action_input": {
+        "make": "Aprilia"
+      },
+      "query_id": "batch_324",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Indian motorcycles.",
+      "action_input": {
+        "make": "Indian"
+      },
+      "query_id": "batch_325",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find Royal Enfield bikes from 2019.",
+      "action_input": {
+        "make": "Royal Enfield",
+        "year": "2019"
+      },
+      "query_id": "batch_326",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the MV Agusta F4.",
+      "action_input": {
+        "make": "MV Agusta",
+        "model": "F4"
+      },
+      "query_id": "batch_327",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get me motorcycles made by Husqvarna, offset by 20.",
+      "action_input": {
+        "make": "Husqvarna",
+        "offset": 20
+      },
+      "query_id": "batch_328",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for Moto Guzzi bikes.",
+      "action_input": {
+        "make": "Moto Guzzi"
+      },
+      "query_id": "batch_329",
+      "target_intent_id": 0
+    }
+  ],
+  "get_air_quality_data": [
+    {
+      "query": "What's the air quality like in Beijing?",
+      "action_input": {
+        "city": "Beijing"
+      },
+      "query_id": "batch_330",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check the air quality for New Delhi?",
+      "action_input": {
+        "city": "New Delhi"
+      },
+      "query_id": "batch_331",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need to know the air quality in Los Angeles, California.",
+      "action_input": {
+        "city": "Los Angeles",
+        "state": "California"
+      },
+      "query_id": "batch_332",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get the air quality data for London, UK.",
+      "action_input": {
+        "city": "London",
+        "country": "UK"
+      },
+      "query_id": "batch_333",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the air quality at latitude 48.85 and longitude 2.35.",
+      "action_input": {
+        "lat": 48.85,
+        "lon": 2.35
+      },
+      "query_id": "batch_334",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the air quality for Tokyo.",
+      "action_input": {
+        "city": "Tokyo"
+      },
+      "query_id": "batch_335",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What is the air quality index in Seoul?",
+      "action_input": {
+        "city": "Seoul"
+      },
+      "query_id": "batch_336",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up air quality in Mexico City.",
+      "action_input": {
+        "city": "Mexico City"
+      },
+      "query_id": "batch_337",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you check Mumbai's air quality?",
+      "action_input": {
+        "city": "Mumbai"
+      },
+      "query_id": "batch_338",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know the air quality in Cairo.",
+      "action_input": {
+        "city": "Cairo"
+      },
+      "query_id": "batch_339",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Get the air quality data for Moscow.",
+      "action_input": {
+        "city": "Moscow"
+      },
+      "query_id": "batch_340",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the air quality in Berlin.",
+      "action_input": {
+        "city": "Berlin"
+      },
+      "query_id": "batch_341",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the air quality for Madrid, Spain.",
+      "action_input": {
+        "city": "Madrid",
+        "country": "Spain"
+      },
+      "query_id": "batch_342",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the air quality at lat 41.90, lon 12.49?",
+      "action_input": {
+        "lat": 41.9,
+        "lon": 12.49
+      },
+      "query_id": "batch_343",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the air quality in Bangkok.",
+      "action_input": {
+        "city": "Bangkok"
+      },
+      "query_id": "batch_344",
+      "target_intent_id": 0
+    }
+  ],
+  "get_weather_forecast": [
+    {
+      "query": "What's the weather forecast for New York?",
+      "action_input": {
+        "q": "New York"
+      },
+      "query_id": "batch_345",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can I get a 5-day weather forecast for London?",
+      "action_input": {
+        "q": "London",
+        "days": 5
+      },
+      "query_id": "batch_346",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the weather in Paris for the next 7 days.",
+      "action_input": {
+        "q": "Paris",
+        "days": 7
+      },
+      "query_id": "batch_347",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the weather forecast for Tokyo.",
+      "action_input": {
+        "q": "Tokyo"
+      },
+      "query_id": "batch_348",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What will the weather be like in Sydney for the next 3 days?",
+      "action_input": {
+        "q": "Sydney",
+        "days": 3
+      },
+      "query_id": "batch_349",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the forecast for Los Angeles.",
+      "action_input": {
+        "q": "Los Angeles"
+      },
+      "query_id": "batch_350",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you get a 10-day forecast for Chicago?",
+      "action_input": {
+        "q": "Chicago",
+        "days": 10
+      },
+      "query_id": "batch_351",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to know the weather for Miami.",
+      "action_input": {
+        "q": "Miami"
+      },
+      "query_id": "batch_352",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the 4-day forecast for Seattle.",
+      "action_input": {
+        "q": "Seattle",
+        "days": 4
+      },
+      "query_id": "batch_353",
+      "target_intent_id": 0
+    },
+    {
+      "query": "What's the forecast in Boston?",
+      "action_input": {
+        "q": "Boston"
+      },
+      "query_id": "batch_354",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Check the weather in Berlin for the next 2 days.",
+      "action_input": {
+        "q": "Berlin",
+        "days": 2
+      },
+      "query_id": "batch_355",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find the weather for Madrid.",
+      "action_input": {
+        "q": "Madrid"
+      },
+      "query_id": "batch_356",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Can you get a 6-day forecast for Rome?",
+      "action_input": {
+        "q": "Rome",
+        "days": 6
+      },
+      "query_id": "batch_357",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I need the weather forecast for Amsterdam.",
+      "action_input": {
+        "q": "Amsterdam"
+      },
+      "query_id": "batch_358",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up the weather in Vienna for 3 days.",
+      "action_input": {
+        "q": "Vienna",
+        "days": 3
+      },
+      "query_id": "batch_359",
+      "target_intent_id": 0
+    }
+  ],
+  "search_amazon_products": [
+    {
+      "query": "Can you search Amazon for a new laptop?",
+      "action_input": {
+        "query": "laptop"
+      },
+      "query_id": "batch_360",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find smartphones on Amazon US. I want page 2 of the results.",
+      "action_input": {
+        "query": "smartphone",
+        "country": "US",
+        "page": 2
+      },
+      "query_id": "batch_361",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for headphones on Amazon, and only show me NEW products.",
+      "action_input": {
+        "query": "headphones",
+        "product_condition": "NEW"
+      },
+      "query_id": "batch_362",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up computer monitors, sort by PRICE_LOW_TO_HIGH.",
+      "action_input": {
+        "query": "monitor",
+        "sort_by": "PRICE_LOW_TO_HIGH"
+      },
+      "query_id": "batch_363",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find me a mechanical keyboard on Amazon UK between 50 and 150.",
+      "action_input": {
+        "query": "mechanical keyboard",
+        "country": "UK",
+        "min_price": 50,
+        "max_price": 150
+      },
+      "query_id": "batch_364",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search Amazon for a wireless mouse.",
+      "action_input": {
+        "query": "wireless mouse"
+      },
+      "query_id": "batch_365",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look up gaming chairs on Amazon, give me page 3.",
+      "action_input": {
+        "query": "gaming chair",
+        "page": 3
+      },
+      "query_id": "batch_366",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find USED tablets on Amazon.",
+      "action_input": {
+        "query": "tablet",
+        "product_condition": "USED"
+      },
+      "query_id": "batch_367",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for smartwatches, sorted by REVIEWS.",
+      "action_input": {
+        "query": "smartwatch",
+        "sort_by": "REVIEWS"
+      },
+      "query_id": "batch_368",
+      "target_intent_id": 0
+    },
+    {
+      "query": "I want to buy a blender in Canada, price max 100.",
+      "action_input": {
+        "query": "blender",
+        "country": "CA",
+        "max_price": 100
+      },
+      "query_id": "batch_369",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search Amazon for a coffee maker.",
+      "action_input": {
+        "query": "coffee maker"
+      },
+      "query_id": "batch_370",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find running shoes on Amazon, page 4.",
+      "action_input": {
+        "query": "running shoes",
+        "page": 4
+      },
+      "query_id": "batch_371",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Look for REFURBISHED cameras.",
+      "action_input": {
+        "query": "camera",
+        "product_condition": "REFURBISHED"
+      },
+      "query_id": "batch_372",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Search for office desks, price minimum 200.",
+      "action_input": {
+        "query": "office desk",
+        "min_price": 200
+      },
+      "query_id": "batch_373",
+      "target_intent_id": 0
+    },
+    {
+      "query": "Find a backpack on Amazon, sorted by PRICE_HIGH_TO_LOW.",
+      "action_input": {
+        "query": "backpack",
+        "sort_by": "PRICE_HIGH_TO_LOW"
+      },
+      "query_id": "batch_374",
+      "target_intent_id": 0
+    }
+  ]
+}
