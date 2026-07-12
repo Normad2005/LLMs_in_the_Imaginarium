@@ -11,11 +11,6 @@
     ],
     "optional_parameters": []
   },
-  "get_car_makes": {
-    "description": "Return all car makes from a dataset",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
   "get_animal_facts": {
     "description": "Provides interesting scientific facts on thousands of different animal species.",
     "required_parameters": [
@@ -458,11 +453,6 @@
         "description": "A comma-separated string of ingredients to search (e.g., 'vodka,lemon juice'). Only cocktails containing ALL listed ingredients will be returned."
       }
     ]
-  },
-  "get_all_mvc2_characters": {
-    "description": "Access all characters in MVC2 (Marvel Vs Capcom) Universe",
-    "required_parameters": [],
-    "optional_parameters": []
   },
   "get_filtered_game_giveaways": {
     "description": "Filter and group platforms and giveaway types to get personalized results.",
@@ -930,16 +920,6 @@
       }
     ]
   },
-  "get_soccer_tournaments": {
-    "description": "Provides list of tournaments.",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "get_f1_latest_news": {
-    "description": "This endpoint returns back recent articles from all sources",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
   "get_handball_scheduled_matches": {
     "description": "Daily match list including scheduled matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
     "required_parameters": [
@@ -1338,5 +1318,23 @@
         "default": "en_US"
       }
     ]
+  },
+  "get_airport_delay_statistics": {
+    "description": "Returns real-time departure and arrival delay statistics for a specified airport. The statistics cover a 2-hour observation window, including total number of flights, number of cancellations, median delay time, and delay indices for both departures and arrivals.",
+    "required_parameters": [
+      {
+        "name": "codeType",
+        "type": "STRING",
+        "description": "The type of airport code. Accepted values are: 'iata' (3 letters, e.g., 'AMS', 'TPE') or 'icao' (4 letters, e.g., 'EHAM', 'RCTP'). Default is 'iata'.",
+        "default": "iata"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "description": "The airport code corresponding to the codeType. Provide a 3-letter code for 'iata' (e.g., 'TPE') or a 4-letter code for 'icao' (e.g., 'RCTP'). Default is 'TPE'.",
+        "default": "TPE"
+      }
+    ],
+    "optional_parameters": []
   }
 }

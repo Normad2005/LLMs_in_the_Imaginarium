@@ -3,14 +3,6 @@
     "category": "Business Software",
     "tool_name": "Global Email V4"
   },
-  "get_car_makes": {
-    "category": "Data",
-    "tool_name": "Car database"
-  },
-  "get_vehicle_specifications": {
-    "category": "Data",
-    "tool_name": "Cars by API-Ninjas"
-  },
   "get_animal_facts": {
     "category": "Data",
     "tool_name": "Animals"
@@ -63,10 +55,6 @@
     "category": "Food",
     "tool_name": "Cocktail"
   },
-  "get_all_mvc2_characters": {
-    "category": "Gaming",
-    "tool_name": "Marvel Vs Capcom 2"
-  },
   "get_filtered_game_giveaways": {
     "category": "Gaming",
     "tool_name": "gamerpower"
@@ -107,14 +95,6 @@
     "category": "Search",
     "tool_name": "Cryptocurrency Financial Data"
   },
-  "get_soccer_tournaments": {
-    "category": "Sports",
-    "tool_name": "Soccer Data"
-  },
-  "get_f1_latest_news": {
-    "category": "Sports",
-    "tool_name": "F1 Latest News"
-  },
   "get_handball_scheduled_matches": {
     "category": "Sports",
     "tool_name": "handball_data"
@@ -154,5 +134,9 @@
   "get_hotels_by_location": {
     "category": "Travel",
     "tool_name": "Travel Advisor"
+  },
+  "get_airport_delay_statistics": {
+    "category": "Travel",
+    "tool_name": "aerodatabox"
   }
 }
