@@ -119,7 +119,11 @@ def run_test():
                     desc = build_split_schema(api_name, target_intent_id, tool_desc, intent_defs)
                     target_api_desc = desc
                 else:
-                    desc = tool_desc.get(api_name, {})
+                    best_intent_id = entry.get("best_intent_id")
+                    if best_intent_id:
+                        desc = build_split_schema(api_name, best_intent_id, tool_desc, intent_defs)
+                    else:
+                        desc = tool_desc.get(api_name, {})
                 context_apis_str.append(
                     f"API_name: {api_name}\nDescription:\n{json.dumps(desc, indent=2, ensure_ascii=False)}"
                 )
